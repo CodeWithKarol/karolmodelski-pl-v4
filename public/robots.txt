@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+
+# AI / wyszukiwarki – zezwalamy na cytowanie i indeksowanie
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Kontekst strony dla systemów AI
+# https://karolmodelski.pl/llms.txt
+
+Sitemap: https://karolmodelski.pl/sitemap-index.xml
