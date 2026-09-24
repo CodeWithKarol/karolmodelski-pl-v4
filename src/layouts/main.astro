@@ -1,13 +1,157 @@
 ---
 import "@/styles/global.css"
+import { Font } from "astro:assets"
+import { faq } from "@/data/faq"
+
+interface Props {
+  title?: string
+  description?: string
+  noindex?: boolean
+}
+
+const {
+  title = "Od pomysłu do własnej aplikacji w 30 dni | Karol Modelski",
+  description = "Masz pomysł na narzędzie lub aplikację? W 30 dni zamieniamy Twoją wizję w gotowy produkt dla pierwszych klientów. Bezpiecznie sprawdzasz rynek. Porozmawiajmy.",
+  noindex = false,
+} = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const ogImage = new URL("/og-image.png", Astro.site)
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://karolmodelski.pl/#organization",
+      name: "Karol Modelski",
+      url: "https://karolmodelski.pl/",
+      logo: "https://karolmodelski.pl/logo.png",
+      image: "https://karolmodelski.pl/og-image.png",
+      email: "kontakt@karolmodelski.pl",
+      telephone: "+48664598563",
+      taxID: "6112800950",
+      description:
+        "Twój techniczny partner we wdrażaniu aplikacji i produktów cyfrowych. Zamieniam pomysły w działający biznes w 30 dni.",
+      areaServed: "PL",
+      knowsLanguage: "pl",
+      sameAs: [
+        "https://www.linkedin.com/in/karol-modelski/",
+        "https://g.page/r/CZSVfAGtTiIzEBM",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: "kontakt@karolmodelski.pl",
+        telephone: "+48664598563",
+        availableLanguage: ["pl"],
+      },
+      founder: { "@id": "https://karolmodelski.pl/#person" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://karolmodelski.pl/#person",
+      name: "Karol Modelski",
+      url: "https://karolmodelski.pl/",
+      image: "https://karolmodelski.pl/karol-modelski.webp",
+      jobTitle: "Twórca aplikacji i produktów cyfrowych",
+      description:
+        "Techniczny partner pomysłodawców i inwestorów: zamienia pomysły w działające aplikacje i produkty cyfrowe w 30 dni, z gwarancją terminu i pełnym prawem własności po stronie klienta.",
+      knowsAbout: [
+        "tworzenie aplikacji",
+        "MVP w 30 dni",
+        "produkty cyfrowe",
+        "walidacja pomysłów na rynku",
+        "React",
+        "Astro",
+      ],
+      sameAs: [
+        "https://www.linkedin.com/in/karol-modelski/",
+        "https://g.page/r/CZSVfAGtTiIzEBM",
+      ],
+      worksFor: { "@id": "https://karolmodelski.pl/#organization" },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://karolmodelski.pl/#website",
+      url: "https://karolmodelski.pl/",
+      name: "Karol Modelski",
+      inLanguage: "pl-PL",
+      publisher: { "@id": "https://karolmodelski.pl/#organization" },
+    },
+    {
+      "@type": "Service",
+      "@id": "https://karolmodelski.pl/#sprint",
+      name: "30-dniowy Sprint – od pomysłu do działającej aplikacji",
+      provider: { "@id": "https://karolmodelski.pl/#organization" },
+      serviceType: "Wdrożenie aplikacji i produktów cyfrowych",
+      areaServed: "PL",
+      url: "https://karolmodelski.pl/#konsultacja",
+      description:
+        "Tworzenie działającej aplikacji, własnej strony i systemu analityki w 30 dni kalendarzowych – z gwarancją terminu i pełnym prawem własności po stronie klienta.",
+      offers: {
+        "@type": "Offer",
+        url: "https://karolmodelski.pl/#konsultacja",
+        description:
+          "30 dni na działającą aplikację gotową do testów. Przy opóźnieniu z naszej winy zwracamy 50% wynagrodzenia, a produkt przekazujemy bez dodatkowych opłat.",
+        priceCurrency: "PLN",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://karolmodelski.pl/#faq",
+      mainEntity: faq.map(({ question, answer }) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: answer,
+        },
+      })),
+    },
+  ],
+}
 ---
 
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Astro App</title>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <Font cssVariable="--font-inter" preload />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Karol Modelski" />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Karol Modelski" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Karol Modelski – Twój pomysł zamieniony w działającą aplikację w 30 dni"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
   </head>
   <body>
     <slot />
