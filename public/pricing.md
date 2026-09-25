@@ -10,10 +10,10 @@ Wszystkie ceny w PLN (netto/brutto do potwierdzenia w umowie). Dokładna kwota p
 - Zakres: omówienie pomysłu, wybór najważniejszych elementów na start, plan działania na 30 dni
 - Bez sprzedaży i bez technicznego żargonu
 
-## 30-dniowy Sprint (od pomysłu do działającego produktu)
+## 30-dniowy proces (od pomysłu do działającego produktu)
 - Cena: stała kwota ustalana indywidualnie przed startem (szczegóły po konsultacji)
 - Czas realizacji: 30 dni kalendarzowych od zamknięcia zakresu i przekazania materiałów oraz dostępów
-- Limit: maksymalnie jedno wdrożenie w miesiącu
+- Limit: maksymalnie jeden projekt w miesiącu
 - Zawiera:
   - dopracowany, intuicyjny wygląd oraz materiały graficzne do promocji
   - działającą kluczową funkcję produktu, uruchomioną na dowolnym urządzeniu
@@ -28,8 +28,8 @@ Wszystkie ceny w PLN (netto/brutto do potwierdzenia w umowie). Dokładna kwota p
 
 ### Warunki
 - Własność: 100% produktu i praw majątkowych przechodzi na klienta
-- Poufność: umowa NDA podpisywana przed omówieniem szczegółów
-- Gwarancja terminu: przy opóźnieniu z naszej winy zwrot 50% wynagrodzenia, a gotowy produkt przekazujemy bez dodatkowych opłat
+- Poufność: umowa o zachowaniu poufności podpisywana przed omówieniem szczegółów
+- Gwarancja terminu: przy opóźnieniu z mojej winy zwrot 50% wynagrodzenia, a gotowy produkt przekazuję bez dodatkowych opłat
 
 ## Kontakt
 - E-mail: kontakt@karolmodelski.pl
