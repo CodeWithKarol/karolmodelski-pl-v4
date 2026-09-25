@@ -2,10 +2,7 @@
 import Layout from "@/layouts/main.astro"
 import { Image } from "astro:assets"
 import wystapienie from "@/assets/images/karol-modelski-wystapienie.webp"
-import { Badge } from "@/components/ui/badge"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { buttonVariants } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Table,
   TableBody,
@@ -18,24 +15,7 @@ import {
 import { cn } from "@/lib/utils"
 import FaqAccordion from "@/components/faq-accordion"
 import ProfileAvatar from "@/components/profile-avatar"
-import {
-  ArrowRight,
-  ChartColumn,
-  Check,
-  Cpu,
-  Handshake,
-  Lock,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Palette,
-  Presentation,
-  Rocket,
-  ShieldCheck,
-  Target,
-  TrendingDown,
-  Wallet,
-} from "lucide-react"
+import { ArrowRight, Check, Mail, MapPin, MessageCircle } from "lucide-react"
 
 const eyebrow = "Zamiast 100 000 zł i 5 miesięcy w agencji IT"
 
@@ -44,45 +24,16 @@ const nextStartMonth = new Intl.DateTimeFormat("pl-PL", {
   year: "numeric",
 }).format(new Date(new Date().getFullYear(), new Date().getMonth() + 1, 1))
 
-const benefits = [
-  {
-    icon: Rocket,
-    title: "Działający produkt w 30 dni",
-    description:
-      "Twoi pierwsi użytkownicy mogą od razu uruchomić Twój produkt na dowolnym telefonie lub komputerze – bez barier, bez czekania i bez skomplikowanego instalowania.",
-  },
-  {
-    icon: ChartColumn,
-    title: "Jasne odpowiedzi zamiast domysłów",
-    description:
-      "Od razu widzisz czarno na białym: ile osób weszło, jak długo korzystali, ilu wraca każdego dnia i ilu poleca to znajomym.",
-  },
-  {
-    icon: Handshake,
-    title: "Mocna karta przetargowa",
-    description:
-      "Gdy rozmawiasz z inwestorami lub partnerami, nie opowiadasz o marzeniach z prezentacji – kładziesz na stole działający produkt i wyniki pierwszych testów.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Jeden partner i święty spokój",
-    description:
-      "Masz jednego zaufanego opiekuna, który pilnuje całego procesu, budżetu i terminów. Ty zajmujesz się biznesem i kontaktami z klientami.",
-  },
-]
-
 const problems = [
   {
-    icon: Presentation,
     title: "Kupujesz same rysunki i obietnice",
     description:
       "Płacisz kilkanaście tysięcy złotych, czekasz 3 miesiące i dostajesz ładną prezentację w pliku graficznym. Problem w tym, że w nic nie da się kliknąć na żywo, nic w środku nie działa i nikt nie może tego faktycznie sprawdzić. Mija czas, a Ty nadal nie masz w ręku niczego, co mogłoby przynieść zysk.",
   },
   {
-    icon: Wallet,
     title: "Wydajesz 100 000 zł, zanim ktokolwiek to zobaczy",
     description:
-      "Agencja przez pół roku buduje skomplikowane formularze, panele administracyjne i formalności, zamiast po prostu dać ludziom sprawdzić to, co w Twoim pomyśle najważniejsze. Najgorszy moment to ten, w którym po wydaniu wszystkich oszczędności okazuje się, że odbiorcy oczekiwali czegoś zupełnie innego.",
+      "Agencja przez pół roku buduje skomplikowane formularze, panele administracyjne i konta, zamiast po prostu dać ludziom sprawdzić to, co w Twoim pomyśle najważniejsze. Najgorszy moment to ten, w którym po wydaniu wszystkich oszczędności okazuje się, że odbiorcy oczekiwali czegoś zupełnie innego.",
   },
 ]
 
@@ -102,7 +53,7 @@ const comparisonColumns = [
     ours: false,
   },
   {
-    title: "Współpraca ze mną (30 dni)",
+    title: "Współpraca ze mną (4 tygodnie)",
     ours: true,
   },
 ]
@@ -113,31 +64,31 @@ const comparisonRows = [
     values: [
       "Za 4–6 miesięcy (albo wcale)",
       "Po 2–3 miesiącach rysowania",
-      "Już po 30 dniach kalendarzowych",
+      "Pierwsza działająca wersja po 4 tygodniach",
     ],
   },
   {
     label: "Co realnie dostajesz?",
     values: [
       "Rachunki za godziny i stertę dokumentów",
-      "Rysunki, w które nie da się kliknąć ani ich przetestować",
-      "Działający produkt, własną stronę i prawdziwych użytkowników",
+      "Rysunki, w które nie da się kliknąć na żywo",
+      "Działające narzędzie w sieci, stronę i prawdziwe dane",
     ],
   },
   {
     label: "Rozmowy z inwestorami",
     values: [
-      "Opowiadasz o planach ze slajdów",
+      "Opowiadasz o planach z prezentacji",
       "Pokazujesz nieruchomy szkic",
-      "Pokazujesz działający biznes i opinie pierwszych klientów",
+      "Kładziesz na stole działający produkt i wyniki testów",
     ],
   },
   {
-    label: "Koszty i budżet",
+    label: "Koszty i płatności",
     values: [
-      "Budżet bez dna, który ciągle rośnie",
-      "Koszt za sam szkic, potem płacisz od nowa",
-      "Z góry ustalona, bezpieczna kwota bez niespodzianek",
+      "Budżet bez dna; zaliczki przepadają przy opóźnieniach",
+      "Płacisz za same szkice, a programistom płacisz od nowa",
+      "Jedna ustalona kwota w 3 częściach wraz z postępem prac (40/40/20)",
     ],
   },
   {
@@ -145,71 +96,184 @@ const comparisonRows = [
     values: [
       "Często trzeba zaczynać od początku",
       "Trzeba budować od zera",
-      "Sprawdzony fundament, na którym od razu budujesz dalej i zarabiasz",
+      "Sprawdzony fundament, który 1:1 przenosisz do aplikacji mobilnej",
     ],
   },
 ]
 
-const deliverables = [
+const paymentStages = [
   {
-    icon: Palette,
-    title: "Atrakcyjny wygląd, który przyciąga uwagę",
+    share: "40%",
+    amount: "11 800 zł",
+    title: "1. część – Na start prac",
     description:
-      "Przygotowuję dopracowany, intuicyjny styl wizualny, który budzi zaufanie i sprawia, że korzystanie z produktu jest proste i przyjemne.",
-    points: [
-      "Otrzymujesz gotowe materiały graficzne, które możesz od razu wykorzystać w promocji, mediach i rozmowach biznesowych.",
-    ],
+      "Wpłacasz w dniu podpisania umowy i formalnego zobowiązania do poufności. Dzięki temu rezerwuję czas swój i zespołu wyłącznie na Twój projekt, ustalamy szczegóły i od razu ruszamy z budową wyglądu oraz działającego serca aplikacji.",
   },
   {
-    icon: Cpu,
-    title: "Działające serce Twojego pomysłu",
+    share: "40%",
+    amount: "11 800 zł",
+    title: "2. część – Gdy produkt jest gotowy do testów",
     description:
-      "Uruchamiam to, co najważniejsze: unikalną funkcję, która wciąga użytkowników, wywołuje efekt „wow” i sprawia, że po pierwszej minucie nie chcą odłożyć telefonu czy zamknąć przeglądarki.",
-    points: [
-      "Każdy może to od razu włączyć i przetestować na dowolnym urządzeniu.",
-    ],
+      "Płacisz dopiero po 4 tygodniach, kiedy narzędzie działa w internecie, Twoja strona jest włączona, a pierwsi ludzie mogą już w to klikać i sprawdzać.",
+  },
+  {
+    share: "20%",
+    amount: "5 900 zł",
+    title: "3. część – Na sam koniec, po Twoich testach",
+    description:
+      "Dopiero po tym, jak sam wszystko na spokojnie sprawdzisz (masz na to komfortowe 10 dni roboczych), a my naniesiemy ewentualne poprawki, zamykamy formalności i przekazuję Ci pełne prawa własności oraz dostęp do wszystkiego.",
+  },
+]
+
+const guarantees = [
+  {
+    title: "Gwarancja terminu",
+    description:
+      "Po wspólnym ustaleniu zakresu na pierwszej rozmowie pomagam Ci skompletować niezbędne materiały i skonfigurować adres strony. Gdy mamy komplet, zegar rusza: mamy równe 4 tygodnie na pierwszą działającą wersję. Jeśli z mojej winy nastąpi opóźnienie – pracuję wraz z zespołem bezpłatnie aż do skutku, a za każdy dzień opóźnienia potrącasz kary umowne bezpośrednio z kolejnej faktury.",
+  },
+  {
+    title: "3 miesiące gwarancji technicznej po wdrożeniu",
+    description:
+      "Nie zostajesz sam po oddaniu projektu. Otrzymujesz 3-miesięczną pisemną gwarancję na bezpłatne usuwanie ewentualnych błędów z szybkim czasem reakcji (do 24–48 godzin).",
+  },
+  {
+    title: "Sprawny kontakt z Twojej strony",
+    description:
+      "Żeby domknąć prace w 4 tygodnie, potrzebuję Twoich decyzji (np. wybór wyglądu z dwóch propozycji) w ciągu 24 godzin. Jeśli na coś czekamy – czas realizacji po prostu wydłuża się o tyle samo.",
+  },
+  {
+    title: "Wgląd w postępy od pierwszego dnia",
+    description:
+      "Od startu prac masz stały podgląd na żywo, jak powstaje Twój projekt. Widzisz na bieżąco, że prace idą do przodu.",
+  },
+]
+
+const offerStack = [
+  {
+    value: "55 000 zł",
+    note: "Koszt budowy w agencji IT",
+    title: "Działające serce pomysłu w przeglądarce",
+    description:
+      "Uruchamiamy tę jedną, kluczową funkcję, dla której ludzie w ogóle chcą z tego korzystać. Twoi odbiorcy wchodzą bezpośrednio przez link na telefonie lub komputerze – od razu sprawdzasz zainteresowanie, bez czekania na sklepy z aplikacjami.",
+    points: [],
+  },
+  {
+    value: "min. 25 000 zł",
+    note: "Oszczędność na pisaniu kodu od nowa",
+    title: "Fundament gotowy pod aplikację na telefon",
+    description:
+      "Wszystko budujemy w technologii, którą w kolejnym kroku przenosimy wprost do App Store i Google Play. Żadna praca nie ląduje w koszu, a Ty nie płacisz drugi raz za ten sam fundament.",
+    points: [],
+  },
+  {
+    value: "6 000 zł",
+    note: "Rynkowa wartość wdrożenia",
+    title: "Dwa języki od pierwszego dnia (polski i angielski)",
+    description:
+      "Aplikacja i strona działają od startu w dwóch językach. Możesz od razu testować pomysł na rynku międzynarodowym i bez wstydu pokazać go partnerom z zagranicy.",
+    points: [],
+  },
+  {
+    value: "7 500 zł",
+    note: "Rynkowy koszt stworzenia",
+    title: "Oficjalna strona z Twoją nazwą",
+    description:
+      "Prosta, czytelna wizytówka w sieci pod Twoim adresem. W 2 minuty wyjaśnia ludziom, na czym polega Twój pomysł, budzi zaufanie i zachęca do wypróbowania.",
+    points: [],
+  },
+  {
+    value: "5 000 zł",
+    note: "Rynkowy koszt konfiguracji",
+    title: "Podgląd zachowań użytkowników i szczere opinie",
+    description:
+      "Widzisz czarno na białym, jak ludzie reagują: ile osób weszło, ile czasu spędzili w środku i czy wracają kolejnego dnia. Przy próbie wyjścia zadajemy jedno krótkie pytanie, dzięki czemu od razu znasz ich zdanie.",
+    points: [],
+  },
+  {
+    value: "8 000 zł",
+    note: "Rynkowa wartość przygotowania",
+    title: "Zestaw materiałów do rozmów z partnerami i inwestorami",
+    description:
+      "Krótkie wideo pokazujące działający produkt w akcji, czytelne zrzuty ekranu oraz jednostronicowe podsumowanie techniczne, które buduje wiarygodność na spotkaniach o finansowanie. Zamiast opowiadać o marzeniach z prezentacji, kładziesz na stole dowód, że produkt już działa.",
+    points: [],
+  },
+  {
+    value: "ok. 2 500 zł",
+    note: "Realna oszczędność",
+    title: "Zero opłat za serwery podczas testów",
+    description:
+      "Wszystko uruchamiam w chmurze tak, że obsługa pierwszych tysięcy użytkowników kosztuje Cię równe 0 zł miesięcznie. Żadnych ukrytych rachunków w tle.",
+    points: [],
+  },
+  {
+    value: "5 000 zł",
+    note: "Rynkowa wartość",
+    title: "Czysty kod i pełna swoboda biznesowa",
+    description:
+      "Masz w umowie gwarancję, że nikt nie zażąda od Ciebie darmowego udostępniania kodu ani opłat licencyjnych. Możesz na tym w 100% legalnie i bezpiecznie zarabiać.",
+    points: [],
+  },
+  {
+    value: "5 000 zł",
+    note: "Rynkowa wartość konsultacji i analizy",
+    title: "Konkretny plan na kolejny krok (Wersja 2.0)",
+    description:
+      "Gdy zbierzemy pierwsze reakcje rynku, siadamy razem do wyników. Dostajesz jasne podsumowanie: które funkcje warto wdrożyć w następnej kolejności, w jakim czasie i ile to będzie kosztować.",
+    points: [],
+  },
+  {
+    value: "6 000 zł",
+    note: "Rynkowy koszt przygotowania umów IT",
+    title:
+      "Pełne bezpieczeństwo: umowa o zachowaniu poufności i 100% praw autorskich",
+    description:
+      "Zanim powiesz mi o szczegółach, podpisujemy umowę o zachowaniu poufności. Cały kod i 100% praw autorskich przechodzi na Ciebie – możesz z tym zrobić, co chcesz: rozwijać, sprzedać firmę albo wziąć inwestora.",
+    points: [],
   },
 ]
 
 const process = [
   {
-    badge: "Dni 1–7",
-    title: "Tydzień 1 · Wygląd projektu i pierwsze wrażenie",
+    badge: "Tygodnie 1–2",
+    title: "Wygląd i serce mechanizmu",
     description:
-      "Wspólnie ustalamy, jak Twój produkt ma działać krok po kroku, a ja przygotowuję dla Ciebie 2 zupełnie różne style wizualne do wyboru. Już po tygodniu widzisz na własne oczy, jak Twój pomysł będzie wyglądał w rękach pierwszych użytkowników.",
+      "Równolegle projektujemy wygląd (dwa różne kierunki wizualne do wyboru) i budujemy kluczowy silnik Twojego produktu. Dzięki temu grafika nie blokuje prac programistycznych.",
+    yourPart:
+      "4–6 godzin na starcie (2–4 spotkania na omówienie zasad i zakresu) + ok. 1 godzina na wybór stylu wizualnego.",
   },
   {
-    badge: "Dni 8–21",
-    title: "Tydzień 2–3 · Uruchomienie",
+    badge: "Tygodnie 3–4",
+    title: "Pełna funkcja, strona i badanie rynku",
     description:
-      "Sprawiam, że projekt ożywa. Buduję to, co w Twoim pomyśle najważniejsze – tak, by każdy mógł to od razu włączyć na telefonie lub komputerze, sprawdzić w praktyce i poczuć frajdę z korzystania.",
+      "Rozbudowujemy kluczową funkcję, uruchamiamy Twoją stronę internetową oraz włączamy podgląd reakcji ludzi: widzisz, ile osób wchodzi, jak długo klikają i czy wracają kolejnego dnia.",
+    yourPart:
+      "ok. 1 godzina – klikasz w wersję testową na telefonie lub komputerze i przekazujesz nam swoją opinię.",
   },
   {
-    badge: "Dni 22–30",
-    title: "Tydzień 4 · Własna strona i twarde fakty o rynku",
+    badge: "Tygodnie 5–8",
+    title: "Spokojne testy, poprawki i przekazanie praw",
     description:
-      "Uruchamiam Twoją oficjalną stronę internetową z opisem projektu oraz włączam system sprawdzający reakcje ludzi: widzisz, jak długo z tego korzystają, czy wracają kolejnego dnia i czy polecają ją dalej. W 30. dniu odbierasz gotowy, w 100% Twój produkt, który możesz od razu pokazywać rynkowi i partnerom.",
+      "Masz pełne 10 dni roboczych na przetestowanie narzędzia i spisanie ewentualnych uwag. My mamy do 7 dni roboczych na bezpłatne usunięcie zgłoszonych błędów. Na koniec przekazuję Ci produkt, stronę, kody źródłowe i 100% praw autorskich.",
+    yourPart:
+      "testujesz działanie produktu według prostej instrukcji i zgłaszasz uwagi.",
   },
 ]
 
-const bonuses = [
+const collaborationModel = [
   {
-    value: "4 500 zł – w pakiecie",
-    title: "Bonus 1: Gotowa, elegancka strona z Twoją nazwą",
+    title: "Ty robisz to, w czym jesteś najlepszy",
     description:
-      "Zamiast szukać kolejnych wykonawców i płacić za osobną stronę, przygotowuję dla Ciebie czytelną wizytówkę w internecie. W prosty sposób wyjaśnia ona ludziom, dlaczego Twój pomysł jest wyjątkowy, budzi zaufanie i zachęca do natychmiastowego wypróbowania.",
+      "Opowiadasz mi o swoim pomyśle, dzielisz się wiedzą o swoich klientach i mówisz, co Ci się podoba, a co nie.",
   },
   {
-    value: "3 000 zł – w pakiecie",
-    title: "Bonus 2: Narzędzie pokazujące prawdę o reakcjach odbiorców",
+    title: "Ja prowadzę cały projekt od strony technicznej",
     description:
-      "Nie musisz zgadywać, czy projekt się podoba. Włączam prosty podgląd, na którym czarno na białym widzisz: jak długo ludzie korzystają z rozwiązania, czy wracają kolejnego dnia i czy polecają ją dalej. Dodatkowo, gdy ktoś zamyka stronę, zadaję mu jedno krótkie pytanie, dzięki czemu od razu poznajesz szczere opinie pierwszych użytkowników.",
+      "Projektuję architekturę, piszę specyfikację, dobieram i koordynuję sprawdzony zespół specjalistów (grafik, deweloper, tester). Odpowiadam za jakość i termin, a Ty masz jeden punkt kontaktu.",
   },
   {
-    value: "3 500 zł – w pakiecie",
-    title: "Bonus 3: Budowanie rozgłosu na żywo od pierwszego dnia",
+    title: "Święty spokój",
     description:
-      "Dzielę się ciekawostkami i postępami z powstawania Twojego projektu w internecie. Pokazuję kulisy tworzenia, dzięki czemu ludzie zaczynają kibicować Twojemu pomysłowi, a Ty gromadzisz wokół siebie pierwszych zaciekawionych odbiorców jeszcze zanim oficjalnie wystartujesz.",
+      "Nie zarządzasz ludźmi, nie tłumaczysz się programistom i nie pilnujesz grafików. Przychodzisz na krótkie, konkretne spotkania, gdzie pokazuję Ci postępy i pytam: „Idziemy w prawo czy w lewo?”. Ty wybierasz kierunek, my dowozimy efekt.",
   },
 ]
 ---
@@ -217,705 +281,993 @@ const bonuses = [
 <Layout>
   <main>
     <section
-      class="relative flex min-h-svh items-center justify-center overflow-hidden px-4 py-20 sm:px-6 sm:py-24"
+      class="relative overflow-hidden bg-paper px-4 pt-32 pb-24 sm:px-6 sm:pt-40 sm:pb-32"
     >
       <div
         aria-hidden="true"
-        class="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+        class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
       >
-        <div
-          class="absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_at_center,black,transparent_72%)] bg-[size:64px_64px] opacity-40"
-        >
-        </div>
-        <div
-          class="absolute -top-40 left-1/2 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
-        >
-        </div>
-        <div
-          class="absolute -right-32 -bottom-48 h-[28rem] w-[28rem] rounded-full bg-primary/5 blur-3xl"
-        >
-        </div>
       </div>
 
-      <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
-        <Badge
-          variant="outline"
-          className="h-auto max-w-full rounded-2xl bg-background/60 px-3 py-1.5 text-balance whitespace-normal text-muted-foreground backdrop-blur sm:py-1 sm:whitespace-nowrap"
-        >
-          <TrendingDown data-icon="inline-start" className="opacity-70" />
-          {eyebrow}
-        </Badge>
+      <div class="mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="rise lg:col-span-7">
+            <p
+              class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase"
+            >
+              <span class="h-px w-8 bg-signal"></span>
+              00 · Wstęp
+            </p>
 
-        <h1
-          class="mt-5 text-3xl leading-[1.15] font-semibold tracking-tight text-balance sm:mt-6 sm:text-4xl sm:leading-[1.1] md:text-5xl lg:text-6xl"
-        >
-          Zamieniam Twój pomysł w działającą aplikację{" "}
-          <span class="relative isolate whitespace-nowrap">
-            <span
-              aria-hidden="true"
-              class="absolute inset-x-[-0.15em] inset-y-[0.08em] -z-10 rounded-md bg-primary/10"
-            ></span>
-            w 30 dni
-          </span>{" "}
-          – gotową do pokazania pierwszym odbiorcom.
-        </h1>
+            <h1
+              class="mt-6 font-heading text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl xl:text-7xl"
+            >
+              W 4 tygodnie sprawdź, czy Twój pomysł na aplikację ma wzięcie.
+            </h1>
 
-        <p
-          class="mt-6 max-w-2xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg"
-        >
-          W 30 dni zamieniam Twój pomysł w działającą aplikację gotową do
-          pokazania światu. Odbierasz kompletne narzędzie i na twardych danych
-          sprawdzasz, czy pomysł ma wzięcie na rynku.
-        </p>
+            <p
+              class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink-soft"
+            >
+              Odbierasz działającą aplikację webową (bez instalowania
+              czegokolwiek ze sklepu) i od razu widzisz, czy ludzie chcą z niej
+              korzystać. Pierwsza wersja do testów powstaje w 4 tygodnie, a
+              pełny odbiór z naniesieniem Twoich poprawek zamyka się zwykle w
+              6–8 tygodniach.
+            </p>
 
-        <div class="mt-10 flex w-full flex-col items-center gap-4">
-          <a
-            id="konsultacja"
-            href="https://calendly.com/kontakt-karolmodelski/konsultacja"
-            target="_blank"
-            rel="noopener noreferrer"
-            class={cn(
-              buttonVariants({ size: "lg" }),
-              "h-auto min-h-12 w-full gap-2 rounded-full px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
-            )}
-          >
-            Umów 20-minutową rozmowę o swoim pomyśle
-            <ArrowRight />
-          </a>
-          <p
-            class="mx-auto max-w-md text-center text-sm leading-relaxed text-pretty text-muted-foreground"
-          >
-            Wspólnie wybierzemy najważniejsze elementy na start, aby bezpiecznie
-            sprawdzić rynek i nie zmarnować budżetu.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="problemy" class="border-t px-4 py-20 sm:px-6 sm:py-28">
-      <div class="mx-auto max-w-5xl">
-        <div class="max-w-2xl">
-          <p
-            class="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
-          >
-            Gdzie uciekają pieniądze?
-          </p>
-          <h2
-            class="mt-3 text-2xl font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl"
-          >
-            Dlaczego tradycyjny start z agencją to najczęściej bolesna lekcja?
-          </h2>
-          <p
-            class="mt-4 text-base leading-relaxed text-pretty text-muted-foreground"
-          >
-            Gdy masz pomysł na aplikację lub narzędzie internetowe, tradycyjna
-            ścieżka najczęściej prowadzi w jedną z dwóch ślepych uliczek:
-          </p>
-        </div>
-
-        <div class="mt-10 max-w-3xl">
-          <p
-            class="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
-          >
-            Dwie ślepe uliczki
-          </p>
-          <div class="mt-5 space-y-4">
-            {
-              problems.map(({ icon: Icon, title, description }) => (
-                <Alert
-                  variant="destructive"
-                  className="border-destructive/40 p-4"
-                >
-                  <Icon />
-                  <AlertTitle className="text-base text-balance text-red-700 dark:text-red-400">
-                    {title}
-                  </AlertTitle>
-                  <AlertDescription className="leading-relaxed text-muted-foreground!">
-                    {description}
-                  </AlertDescription>
-                </Alert>
-              ))
-            }
+            <div class="mt-10 flex flex-col items-start gap-4">
+              <a
+                id="konsultacja"
+                href="https://calendly.com/kontakt-karolmodelski/konsultacja"
+                target="_blank"
+                rel="noopener noreferrer"
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[4px] px-7 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
+                )}
+              >
+                Porozmawiajmy o projekcie – zarezerwuj 20 minut
+                <ArrowRight />
+              </a>
+              <p
+                class="max-w-md text-sm leading-relaxed text-pretty text-ink-soft"
+              >
+                Wspólnie wybierzemy najważniejsze serce pomysłu na start, aby
+                bezpiecznie sprawdzić rynek i nie zmarnować budżetu.
+              </p>
+            </div>
           </div>
 
-          <p
-            class="mt-10 text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
+          <aside
+            class="rise lg:col-span-5 lg:border-l lg:border-line lg:pl-10"
+            style="animation-delay:.12s"
           >
-            O co naprawdę chodzi
-          </p>
-          <Alert className="mt-5 bg-muted/40 p-4">
-            <Target className="text-muted-foreground" />
-            <AlertTitle className="text-base text-balance">
-              {businessGoal.title}
-            </AlertTitle>
-            <AlertDescription className="leading-relaxed">
-              {businessGoal.description}
-            </AlertDescription>
-          </Alert>
+            <dl class="border-y border-line">
+              <div
+                class="flex items-baseline justify-between gap-6 border-b border-line py-5"
+              >
+                <dt
+                  class="font-mono text-xs tracking-[0.16em] text-ink-soft uppercase"
+                >
+                  Format
+                </dt>
+                <dd class="font-heading text-2xl font-semibold">4 tygodnie</dd>
+              </div>
+              <div
+                class="flex items-baseline justify-between gap-6 border-b border-line py-5"
+              >
+                <dt
+                  class="font-mono text-xs tracking-[0.16em] text-ink-soft uppercase"
+                >
+                  Wartość rynkowa
+                </dt>
+                <dd class="font-heading text-2xl font-semibold">125 000 zł</dd>
+              </div>
+              <div
+                class="flex items-baseline justify-between gap-6 border-b border-line py-5"
+              >
+                <dt
+                  class="font-mono text-xs tracking-[0.16em] text-ink-soft uppercase"
+                >
+                  Inwestycja
+                </dt>
+                <dd class="font-heading text-2xl font-semibold text-signal-ink">
+                  29 500 zł
+                </dd>
+              </div>
+              <div class="flex items-baseline justify-between gap-6 py-5">
+                <dt
+                  class="font-mono text-xs tracking-[0.16em] text-ink-soft uppercase"
+                >
+                  Dostępność
+                </dt>
+                <dd class="font-heading text-2xl font-semibold">1 / mies.</dd>
+              </div>
+            </dl>
+            <p class="mt-5 font-mono text-xs tracking-wide text-ink-soft">
+              {eyebrow}
+            </p>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section id="droga" class="border-t px-4 py-20 sm:px-6 sm:py-28">
+    <section
+      id="problemy"
+      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+    >
       <div class="mx-auto max-w-6xl">
-        <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
-          <div class="lg:col-span-5">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
             <p
-              class="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
+              class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
             >
-              Twoja droga do efektów
+              01 · Problem
             </p>
+          </div>
+
+          <div class="lg:col-span-9">
             <h2
-              class="mt-3 text-2xl font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl"
+              class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
             >
-              Od Twojego pomysłu do działającego produktu w 4 tygodnie
+              Dlaczego start z agencją to najczęściej bolesna lekcja?
             </h2>
             <p
-              class="mt-4 text-base leading-relaxed text-pretty text-muted-foreground"
+              class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
             >
-              Zamiast budować wielkie projekty w ciemno, skupiam się na jednym:
-              dowiezieniu działającego produktu w ręce pierwszych odbiorców.
+              Gdy masz pomysł na aplikację lub narzędzie internetowe, tradycyjna
+              ścieżka najczęściej prowadzi w jedną z dwóch ślepych uliczek:
             </p>
-          </div>
 
-          <ul class="lg:col-span-7">
-            {
-              benefits.map(({ icon: Icon, title, description }) => (
-                <li class="flex gap-4 border-t py-6 first:border-t-0 first:pt-0">
-                  <div class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-muted text-foreground">
-                    <Icon className="size-5" />
-                  </div>
-                  <div>
-                    <h3 class="font-medium">{title}</h3>
-                    <p class="mt-1 text-sm leading-relaxed text-pretty text-muted-foreground">
-                      {description}
-                    </p>
-                  </div>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="proces" class="border-t px-4 py-20 sm:px-6 sm:py-28">
-      <div class="mx-auto max-w-6xl">
-        <div class="max-w-2xl">
-          <p
-            class="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
-          >
-            Przebieg współpracy
-          </p>
-          <h2
-            class="mt-3 text-2xl font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl"
-          >
-            Jak wygląda 30 dni – krok po kroku do Twojego działającego projektu
-          </h2>
-          <p
-            class="mt-4 text-base leading-relaxed text-pretty text-muted-foreground"
-          >
-            Dokładnie wiesz, co dzieje się na każdym etapie – bez niedomówień i
-            bez czekania w niepewności.
-          </p>
-        </div>
-
-        <ol class="mt-10 max-w-3xl">
-          {
-            process.map(({ badge, title, description }) => (
-              <li class="relative border-l border-border pb-10 pl-6 last:pb-0 sm:pl-8">
-                <span
-                  aria-hidden="true"
-                  class="absolute top-1.5 -left-[7px] size-3.5 rounded-full border-2 border-background bg-foreground"
-                />
-                <Badge variant="outline">{badge}</Badge>
-                <h3 class="mt-3 text-lg font-medium text-balance">{title}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-pretty text-muted-foreground sm:text-base">
-                  {description}
-                </p>
-              </li>
-            ))
-          }
-        </ol>
-
-        <p
-          class="mt-8 max-w-2xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg"
-        >
-          <strong class="font-semibold text-foreground"
-            >Ile pracy jest po Twojej stronie?</strong
-          >{" "}
-          Dokładnie tyle, ile trzeba, żeby dobrze zrozumieć Twój pomysł: kilka wspólnych,
-          rzeczowych rozmów, na których ustalimy zasady i wybierzemy wygląd, a na
-          koniec odbiór gotowego projektu. Nie musisz znać się na technologii, pilnować
-          ludzi ani zajmować się technicznymi detalami – całą realizację i dowiezienie
-          tematu w 30 dni biorę na siebie.
-        </p>
-      </div>
-    </section>
-
-    <section id="porownanie" class="border-t px-4 py-20 sm:px-6 sm:py-28">
-      <div class="mx-auto max-w-6xl">
-        <div class="max-w-2xl">
-          <p
-            class="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
-          >
-            Porównanie korzyści
-          </p>
-          <h2
-            class="mt-3 text-2xl font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl"
-          >
-            Na czym Ci zależy?
-          </h2>
-        </div>
-
-        <div class="mt-10 grid grid-cols-1 gap-4 md:hidden">
-          {
-            comparisonColumns.map((column, columnIndex) => (
-              <Card className={cn(column.ours && "bg-muted/40")}>
-                <CardHeader>
-                  <CardTitle>{column.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <dl>
-                    {comparisonRows.map((row) => (
-                      <div class="border-t py-3 first:border-t-0 first:pt-0">
-                        <dt class="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-                          {row.label}
-                        </dt>
-                        <dd
-                          class={cn(
-                            "mt-1 text-sm leading-relaxed",
-                            column.ours
-                              ? "font-medium text-foreground"
-                              : "text-muted-foreground"
-                          )}
-                        >
-                          {row.values[columnIndex]}
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                </CardContent>
-              </Card>
-            ))
-          }
-        </div>
-
-        <div class="mt-10 hidden md:block">
-          <Table>
-            <TableCaption className="sr-only">
-              Porównanie ścieżek budowy produktu cyfrowego
-            </TableCaption>
-            <TableHeader>
-              <TableRow className="hover:bg-transparent">
-                <TableHead
-                  className="w-[15rem] border-r px-3 py-3 align-bottom whitespace-normal text-muted-foreground sm:py-4"
-                >
-                  Cecha
-                </TableHead>
-                {
-                  comparisonColumns.map((column) => (
-                    <TableHead
-                      className={cn(
-                        "px-3 py-3 align-bottom whitespace-normal sm:py-4",
-                        column.ours && "rounded-t-lg bg-muted/50"
-                      )}
-                    >
-                      <span class="block text-sm font-medium text-foreground">
-                        {column.title}
-                      </span>
-                    </TableHead>
-                  ))
-                }
-              </TableRow>
-            </TableHeader>
-            <TableBody>
+            <p
+              class="mt-12 font-mono text-xs tracking-[0.18em] text-ink-soft uppercase"
+            >
+              Dwie ślepe uliczki
+            </p>
+            <ol class="mt-4 border-t border-line">
               {
-                comparisonRows.map((row) => (
-                  <TableRow className="hover:bg-transparent">
-                    <TableCell className="border-r px-3 py-3 align-top text-sm font-medium whitespace-normal text-foreground sm:py-4">
-                      {row.label}
-                    </TableCell>
-                    {row.values.map((value, index) => (
-                      <TableCell
-                        className={cn(
-                          "px-3 py-3 align-top text-sm whitespace-normal text-muted-foreground sm:py-4",
-                          index === 2 &&
-                            "bg-muted/30 font-medium text-foreground"
-                        )}
-                      >
-                        {value}
-                      </TableCell>
-                    ))}
-                  </TableRow>
+                problems.map(({ title, description }, index) => (
+                  <li class="grid grid-cols-1 gap-3 border-b border-line py-8 sm:grid-cols-12 sm:gap-8">
+                    <span class="font-mono text-sm text-signal-ink sm:col-span-1">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div class="sm:col-span-11">
+                      <h3 class="font-heading text-xl font-semibold text-balance sm:text-2xl">
+                        {title}
+                      </h3>
+                      <p class="mt-3 max-w-2xl leading-relaxed text-pretty text-ink-soft">
+                        {description}
+                      </p>
+                    </div>
+                  </li>
                 ))
               }
-            </TableBody>
-          </Table>
+            </ol>
+
+            <p
+              class="mt-10 max-w-2xl text-lg leading-relaxed text-balance text-pretty text-ink sm:text-xl"
+            >
+              <span class="font-semibold text-signal-ink"
+                >Najgorszy scenariusz?</span
+              >{" "}
+              Po 6 miesiącach czekania i wydaniu 100 000 zł dowiadujesz się, że nikt
+              tego nie potrzebuje – a agencja rozkłada ręce i wystawia kolejną fakturę
+              za poprawki.
+            </p>
+
+            <blockquote class="mt-14 max-w-3xl border-l-2 border-signal pl-6">
+              <p
+                class="font-heading text-2xl leading-snug text-balance sm:text-3xl"
+              >
+                {businessGoal.title}.
+              </p>
+              <p
+                class="mt-3 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
+              >
+                {businessGoal.description}
+              </p>
+            </blockquote>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="otrzymujesz" class="border-t px-4 py-20 sm:px-6 sm:py-28">
+    <section
+      id="model"
+      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+    >
       <div class="mx-auto max-w-6xl">
-        <div class="max-w-2xl">
-          <p
-            class="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
-          >
-            Co dokładnie otrzymujesz?
-          </p>
-          <h2
-            class="mt-3 text-2xl font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl"
-          >
-            Kompletne narzędzie pod klucz, gotowe do sprawdzania rynku
-          </h2>
-        </div>
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p
+              class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
+            >
+              02 · Model
+            </p>
+          </div>
 
-        <div class="mt-10 max-w-3xl">
-          <ul class="space-y-8">
-            {
-              deliverables.map(({ icon: Icon, title, description, points }) => (
-                <li class="flex items-start gap-3 sm:gap-5">
-                  <div class="flex size-9 shrink-0 items-center justify-center rounded-xl bg-muted text-muted-foreground sm:size-10">
-                    <Icon className="size-5" />
-                  </div>
-                  <div>
-                    <h3 class="text-base font-medium text-balance sm:text-lg">
+          <div class="lg:col-span-9">
+            <h2
+              class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+            >
+              Nie musisz znać się na technologii. Prowadzę Cię krok po kroku od
+              A do Z
+            </h2>
+            <p
+              class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
+            >
+              Tradycyjne agencje wymagają od Ciebie gotowych specyfikacji, każą
+              wybierać bazy danych i zarzucają Cię pytaniami, na które nie znasz
+              odpowiedzi. U mnie ten proces wygląda zupełnie inaczej:
+            </p>
+
+            <div
+              class="mt-12 grid grid-cols-1 border-t border-line sm:grid-cols-3"
+            >
+              {
+                collaborationModel.map(({ title, description }, index) => (
+                  <div class="border-b border-line py-8 sm:border-b-0 sm:border-l sm:border-line sm:px-6 sm:first:border-l-0 sm:first:pl-0">
+                    <span class="font-mono text-xs text-signal-ink">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 class="mt-3 font-heading text-xl font-semibold text-balance">
                       {title}
                     </h3>
-                    <p class="mt-2 text-sm leading-relaxed text-pretty text-muted-foreground sm:text-base">
+                    <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
                       {description}
                     </p>
-                    {points.map((point) => (
-                      <p class="mt-3 flex gap-2 text-sm leading-relaxed text-muted-foreground">
-                        <Check className="mt-0.5 size-4 shrink-0 text-foreground" />
-                        <span>{point}</span>
-                      </p>
-                    ))}
                   </div>
-                </li>
-              ))
-            }
-          </ul>
-
-          <div class="mt-10 rounded-2xl border bg-muted/40 p-6 sm:p-8">
-            <div
-              class="flex size-10 items-center justify-center rounded-xl bg-background text-muted-foreground"
-            >
-              <Lock className="size-5" />
+                ))
+              }
             </div>
-            <h3 class="mt-4 text-lg font-medium text-balance">
-              100% własności i pełne bezpieczeństwo
-            </h3>
-            <p
-              class="mt-2 text-sm leading-relaxed text-pretty text-muted-foreground sm:text-base"
-            >
-              Zanim zaczniemy, podpisuję umowę o poufności – nikt nie wykorzysta
-              Twojego pomysłu.
-            </p>
-            <p
-              class="mt-3 flex gap-2 text-sm leading-relaxed text-muted-foreground"
-            >
-              <Check className="mt-0.5 size-4 shrink-0 text-foreground" />
-              <span>Wszystko, co stworzę, w 100% należy do Ciebie.</span>
-            </p>
+
+            <div class="mt-16 max-w-3xl border-t border-line pt-12">
+              <p
+                class="font-mono text-xs tracking-[0.18em] text-ink-soft uppercase"
+              >
+                Skupiamy się na jednej rzeczy
+              </p>
+              <h3
+                class="mt-4 font-heading text-2xl font-semibold tracking-tight text-balance sm:text-3xl"
+              >
+                Dlaczego większość aplikacji nigdy nie powstaje? Przez
+                dopisywanie kolejnych pomysłów w nieskończoność
+              </h3>
+              <p class="mt-5 text-lg leading-relaxed text-pretty text-ink-soft">
+                Zaczyna się od prostej idei, a po dwóch tygodniach dochodzi
+                logowanie na pięć sposobów, komunikatory, rozbudowane rankingi i
+                profile. Efekt? Budżet rośnie trzykrotnie, termin przesuwa się o
+                pół roku, a na koniec nikt z tego nie korzysta.
+              </p>
+              <p class="mt-4 leading-relaxed text-pretty text-ink-soft">
+                <strong class="font-semibold text-ink"
+                  >Moim zadaniem jest zadbać o to, żeby Twój projekt nie wpadł w
+                  tę pułapkę.</strong
+                >{" "}
+                Na samym początku wspólnie bierzemy Twój pomysł i odrzucamy wszystkie
+                poboczne dodatki. Zostawiamy jedno, kluczowe rozwiązanie – tę jedną
+                funkcję, dla której klient w ogóle chce wejść, zapłacić lub wrócić
+                jutro.
+              </p>
+              <p class="mt-4 leading-relaxed text-pretty text-ink-soft">
+                Wszystkie kolejne pomysły zapisujemy na później.
+              </p>
+
+              <blockquote class="mt-10 border-l-2 border-signal pl-6">
+                <p
+                  class="font-heading text-lg leading-snug text-balance sm:text-xl"
+                >
+                  Gdy w trakcie prac wpadnie Ci do głowy nowy pomysł, dbam o
+                  Twój termin i budżet. Mówię wtedy wprost: „Świetny pomysł,
+                  zapisuję go na kolejny etap. Uruchomimy go zaraz po tym, jak
+                  pierwsi użytkownicy przetestują wersję główną”.
+                </p>
+              </blockquote>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="bonusy" class="border-t px-4 py-20 sm:px-6 sm:py-28">
-      <div class="mx-auto max-w-5xl">
-        <div class="max-w-2xl">
-          <p
-            class="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
-          >
-            Bonusy w cenie
-          </p>
-          <h2
-            class="mt-3 text-2xl font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl"
-          >
-            Co otrzymujesz w ramach współpracy – bez dodatkowych opłat
-          </h2>
-          <p
-            class="mt-4 text-base leading-relaxed text-pretty text-muted-foreground"
-          >
-            Poza samym stworzeniem i uruchomieniem Twojego działającego
-            projektu, w cenie dostajesz pełen pakiet wsparcia, za który w innych
-            firmach musisz płacić osobno:
-          </p>
-        </div>
+    <section
+      id="proces"
+      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+    >
+      <div class="mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p
+              class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
+            >
+              03 · Proces
+            </p>
+          </div>
 
-        <ul class="mt-10 max-w-3xl divide-y border-y">
-          {
-            bonuses.map(({ value, title, description }) => (
-              <li class="flex flex-col gap-3 py-6 sm:flex-row sm:gap-8 sm:py-8">
-                <div class="sm:w-44 sm:shrink-0">
-                  <Badge variant="secondary" className="whitespace-normal">
-                    {value}
-                  </Badge>
-                </div>
-                <div class="space-y-2">
-                  <h3 class="text-lg font-medium text-balance">{title}</h3>
-                  <p class="text-sm leading-relaxed text-pretty text-muted-foreground sm:text-base">
-                    {description}
+          <div class="lg:col-span-9">
+            <h2
+              class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+            >
+              Jak wygląda współpraca i ile Twojego czasu wymaga
+            </h2>
+            <p
+              class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
+            >
+              Na starcie kilka godzin na omówienie pomysłu, w trakcie ok. 1
+              godziny w tygodniu na decyzje, a na koniec spokojny czas na Twoje
+              testy. Dokładnie wiesz, co dzieje się na każdym etapie:
+            </p>
+
+            <ol class="mt-14 border-t border-line">
+              {
+                process.map(
+                  ({ badge, title, description, yourPart }, index) => (
+                    <li class="grid grid-cols-1 gap-4 border-b border-line py-8 sm:grid-cols-12 sm:gap-8">
+                      <div class="sm:col-span-3">
+                        <span class="font-mono text-xs tracking-[0.16em] text-signal-ink uppercase">
+                          {badge}
+                        </span>
+                        <p class="mt-1 font-mono text-xs text-ink-soft">
+                          {String(index + 1).padStart(2, "0")}
+                        </p>
+                      </div>
+                      <div class="sm:col-span-9">
+                        <h3 class="font-heading text-xl font-semibold text-balance sm:text-2xl">
+                          {title}
+                        </h3>
+                        <p class="mt-3 max-w-2xl leading-relaxed text-pretty text-ink-soft">
+                          {description}
+                        </p>
+                        <p class="mt-4 text-sm leading-relaxed text-pretty">
+                          <span class="font-mono text-xs tracking-[0.14em] text-ink-soft uppercase">
+                            Twój udział:
+                          </span>{" "}
+                          <span class="text-ink">{yourPart}</span>
+                        </p>
+                      </div>
+                    </li>
+                  )
+                )
+              }
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="porownanie"
+      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+    >
+      <div class="mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p
+              class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
+            >
+              04 · Porównanie
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2
+              class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+            >
+              Na czym Ci zależy?
+            </h2>
+
+            <div class="mt-12 space-y-10 md:hidden">
+              {
+                comparisonColumns.map((column, columnIndex) => (
+                  <div>
+                    <h3 class="flex items-center gap-3 font-heading text-lg font-semibold">
+                      {column.ours && <span class="h-px w-6 bg-signal" />}
+                      {column.title}
+                    </h3>
+                    <dl class="mt-4 border-t border-line">
+                      {comparisonRows.map((row) => (
+                        <div class="border-b border-line py-3">
+                          <dt class="font-mono text-xs tracking-[0.14em] text-ink-soft uppercase">
+                            {row.label}
+                          </dt>
+                          <dd
+                            class={cn(
+                              "mt-1 leading-relaxed",
+                              column.ours
+                                ? "font-medium text-ink"
+                                : "text-ink-soft"
+                            )}
+                          >
+                            {row.values[columnIndex]}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+                ))
+              }
+            </div>
+
+            <div class="mt-12 hidden md:block">
+              <Table>
+                <TableCaption className="sr-only">
+                  Porównanie ścieżek budowy produktu cyfrowego
+                </TableCaption>
+                <TableHeader>
+                  <TableRow className="border-line hover:bg-transparent">
+                    <TableHead
+                      className="w-[14rem] border-r border-line px-3 py-3 align-bottom text-xs font-medium tracking-[0.14em] whitespace-normal text-ink-soft uppercase sm:py-4"
+                    >
+                      Cecha
+                    </TableHead>
+                    {
+                      comparisonColumns.map((column) => (
+                        <TableHead
+                          className={cn(
+                            "px-3 py-3 align-bottom whitespace-normal sm:py-4",
+                            column.ours && "bg-signal/5"
+                          )}
+                        >
+                          <span class="block font-heading text-base font-semibold text-ink">
+                            {column.title}
+                          </span>
+                        </TableHead>
+                      ))
+                    }
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {
+                    comparisonRows.map((row) => (
+                      <TableRow className="border-line hover:bg-transparent">
+                        <TableCell className="border-r border-line px-3 py-4 align-top text-sm font-medium whitespace-normal text-ink sm:py-4">
+                          {row.label}
+                        </TableCell>
+                        {row.values.map((value, index) => (
+                          <TableCell
+                            className={cn(
+                              "px-3 py-4 align-top text-sm whitespace-normal sm:py-4",
+                              index === 2
+                                ? "bg-signal/5 font-medium text-ink"
+                                : "text-ink-soft"
+                            )}
+                          >
+                            {value}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                    ))
+                  }
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="otrzymujesz"
+      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+    >
+      <div class="mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p
+              class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
+            >
+              05 · Stos wartości
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2
+              class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+            >
+              Kompletny start Twojego projektu w 4 tygodnie
+            </h2>
+            <p
+              class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
+            >
+              Gdybyś chciał zlecić te elementy osobno różnym firmom,
+              programistom i prawnikom, zapłacisz za każdy krok z osobna, a
+              rachunki w agencji IT szybko przekroczą 100 000 zł. U mnie
+              dostajesz to jako jeden, gotowy zestaw w stałej cenie:
+            </p>
+
+            <ul class="mt-12 border-t border-line">
+              {
+                offerStack.map(
+                  ({ value, note, title, description, points }, index) => (
+                    <li class="grid grid-cols-1 gap-3 border-b border-line py-7 sm:grid-cols-12 sm:gap-8">
+                      <span class="font-mono text-xs text-ink-soft sm:col-span-1">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <div class="sm:col-span-8">
+                        <h3 class="font-heading text-lg font-semibold text-balance sm:text-xl">
+                          {title}
+                        </h3>
+                        <p class="mt-1 font-mono text-xs tracking-[0.14em] text-ink-soft uppercase">
+                          {note}
+                        </p>
+                        <p class="mt-3 leading-relaxed text-pretty text-ink-soft">
+                          {description}
+                        </p>
+                        {points.map((point) => (
+                          <p class="mt-3 flex gap-2 text-sm leading-relaxed text-ink-soft">
+                            <Check className="mt-0.5 size-4 shrink-0 text-ink" />
+                            <span>{point}</span>
+                          </p>
+                        ))}
+                      </div>
+                      <div class="sm:col-span-3 sm:text-right">
+                        <span class="font-mono text-sm font-medium text-ink">
+                          {value}
+                        </span>
+                      </div>
+                    </li>
+                  )
+                )
+              }
+            </ul>
+
+            <div class="mt-12 border-t border-line pt-10">
+              <div
+                class="flex flex-col gap-6 sm:flex-row sm:items-baseline sm:gap-8"
+              >
+                <div class="sm:flex-1">
+                  <p
+                    class="font-mono text-xs tracking-[0.16em] text-ink-soft uppercase"
+                  >
+                    Łączna wartość rynkowa
+                  </p>
+                  <p
+                    class="mt-2 font-heading text-4xl font-semibold sm:text-5xl"
+                    data-count="125000"
+                    data-suffix=" zł"
+                  >
+                    125 000 zł
                   </p>
                 </div>
-              </li>
-            ))
-          }
-        </ul>
+                <div class="hidden shrink-0 self-center text-ink-soft sm:block">
+                  <ArrowRight className="size-6" />
+                </div>
+                <div class="sm:flex-1">
+                  <p
+                    class="font-mono text-xs tracking-[0.16em] text-ink-soft uppercase"
+                  >
+                    Twoja inwestycja
+                  </p>
+                  <p
+                    class="mt-2 font-heading text-4xl font-semibold text-signal-ink sm:text-5xl"
+                    data-count="29500"
+                    data-suffix=" zł"
+                  >
+                    29 500 zł
+                  </p>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-ink-soft">
+                brutto · stała kwota · płatność w{" "}
+                <a
+                  href="#rozliczenie"
+                  class="font-medium text-ink underline underline-offset-4 hover:no-underline"
+                  >3 częściach</a
+                >
+              </p>
+            </div>
 
-        <p
-          class="mt-8 max-w-2xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg"
-        >
-          Łączna wartość dodatków to{" "}
-          <strong class="font-semibold text-foreground">11 000 zł</strong> – w pakiecie
-          bez dodatkowych opłat.
-        </p>
-      </div>
-    </section>
-
-    <section id="gwarancja" class="border-t px-4 py-20 sm:px-6 sm:py-28">
-      <div class="mx-auto max-w-5xl">
-        <div class="max-w-2xl">
-          <p
-            class="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
-          >
-            Bezwzględna gwarancja
-          </p>
-          <h2
-            class="mt-3 text-2xl font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl"
-          >
-            Gram w otwarte karty: biorę pełną odpowiedzialność za termin i
-            gotowy produkt
-          </h2>
-          <p
-            class="mt-4 text-base leading-relaxed text-pretty text-muted-foreground"
-          >
-            W tradycyjnych agencjach projekty często przeciągają się o kolejne
-            miesiące, a klient płaci za przedłużające się dyskusje. U mnie
-            zasady są proste i partnerskie:
-          </p>
-        </div>
-
-        <div class="mt-10 rounded-2xl border bg-muted/30 p-6 sm:p-8">
-          <p class="max-w-3xl text-base leading-relaxed text-pretty sm:text-lg">
-            Gdy wspólnie zamkniemy zakres projektu, a Ty przekażesz mi materiały
-            oraz niezbędne dostępy i hasła (np. do adresu Twojej strony), zegar
-            rusza: mamy równe{" "}
-            <strong class="font-semibold">30 dni</strong>. Jeśli z mojej winy
-            spóźnię się choćby o jeden dzień – oddaję Ci{" "}
-            <strong class="font-semibold">50% pieniędzy</strong>, a gotowy
-            produkt i tak przekazuję w Twoje ręce bez żadnych dodatkowych opłat.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="o-mnie" class="border-t px-4 py-20 sm:px-6 sm:py-28">
-      <div class="mx-auto max-w-6xl">
-        <div
-          class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center lg:gap-16"
-        >
-          <div class="lg:col-span-7">
-            <p
-              class="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
-            >
-              Kto za tym stoi
-            </p>
-            <h2
-              class="mt-3 text-2xl font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl"
-            >
-              Kto odpowiada za Twój projekt?
-            </h2>
-            <div class="mt-6 flex items-center gap-3">
-              <ProfileAvatar client:visible />
-              <p
-                class="text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg"
+            <div class="mt-10">
+              <a
+                href="https://calendly.com/kontakt-karolmodelski/konsultacja"
+                target="_blank"
+                rel="noopener noreferrer"
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[4px] px-7 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
+                )}
               >
-                Cześć, nazywam się{" "}
-                <strong class="font-semibold text-foreground"
-                  >Karol Modelski</strong
-                >.
-              </p>
+                Porozmawiajmy o projekcie – zarezerwuj 20 minut
+                <ArrowRight />
+              </a>
             </div>
-            <div
-              class="mt-5 space-y-5 text-base leading-relaxed text-pretty text-muted-foreground"
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="rozliczenie"
+      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+    >
+      <div class="mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p
+              class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
             >
-              <p>
-                Przez ponad 7 lat tworzyłem systemy w bankowości i dużych
-                instytucjach finansowych. W tym środowisku nie ma miejsca na
-                błędy, awarie czy opóźnienia – wszystko musi działać precyzyjnie
-                i bezawaryjnie.
+              06 · Rozliczenie
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2
+              class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+            >
+              Proste zasady: płacisz etapami, gdy widzisz efekty
+            </h2>
+            <p
+              class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
+            >
+              Nie kupujesz „godzin programistów w ciemno” ani nie ryzykujesz
+              wpłaty całości z góry. Koszt jest ustalony z góry, a płatność
+              dzielimy na 3 bezpieczne części:
+            </p>
+
+            <div
+              class="mt-12 flex h-2 w-full overflow-hidden rounded-full bg-line"
+              aria-hidden="true"
+            >
+              <span class="h-full w-[40%] bg-ink"></span>
+              <span class="h-full w-[40%] bg-signal"></span>
+              <span class="h-full w-[20%] bg-ink/30"></span>
+            </div>
+
+            <ol class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
+              {
+                paymentStages.map(({ share, amount, title, description }) => (
+                  <li class="border-t border-line pt-6">
+                    <p class="font-heading text-5xl font-semibold">{share}</p>
+                    <p class="mt-1 font-mono text-sm text-signal-ink">
+                      {amount}
+                    </p>
+                    <h3 class="mt-4 font-heading text-lg font-semibold text-balance">
+                      {title}
+                    </h3>
+                    <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                      {description}
+                    </p>
+                  </li>
+                ))
+              }
+            </ol>
+
+            <p
+              class="mt-12 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
+            >
+              Dzięki temu 60% kwoty zostaje w Twojej kieszeni do momentu, aż
+              zobaczysz działające narzędzie i sam skończysz testy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="gwarancja"
+      class="bg-ink px-4 py-24 text-paper sm:px-6 sm:py-32"
+    >
+      <div class="mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p
+              class="font-mono text-xs tracking-[0.2em] text-paper/60 uppercase lg:sticky lg:top-24"
+            >
+              07 · Gwarancja
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2
+              class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance text-paper sm:text-4xl lg:text-5xl"
+            >
+              Biorę pełną odpowiedzialność za termin i sprawny produkt
+            </h2>
+            <p
+              class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-paper/70"
+            >
+              W tradycyjnych agencjach projekty często przeciągają się o kolejne
+              miesiące, a klient płaci za przedłużające się dyskusje. U mnie
+              zasady są proste i czarno na białym zapisane w umowie:
+            </p>
+
+            <ol class="mt-12 border-t border-paper/15">
+              {
+                guarantees.map(({ title, description }, index) => (
+                  <li class="grid grid-cols-1 gap-3 border-b border-paper/15 py-8 sm:grid-cols-12 sm:gap-8">
+                    <span class="font-mono text-sm text-signal-bright sm:col-span-1">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div class="sm:col-span-11">
+                      <h3 class="font-heading text-xl font-semibold text-balance text-paper sm:text-2xl">
+                        {title}
+                      </h3>
+                      <p class="mt-3 max-w-2xl leading-relaxed text-pretty text-paper/70">
+                        {description}
+                      </p>
+                    </div>
+                  </li>
+                ))
+              }
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="o-mnie"
+      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+    >
+      <div class="mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p
+              class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
+            >
+              08 · O mnie
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+              <div class="lg:col-span-7">
+                <h2
+                  class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+                >
+                  Kto odpowiada za Twój projekt?
+                </h2>
+                <div class="mt-6 flex items-center gap-3">
+                  <ProfileAvatar client:visible />
+                  <p class="text-lg leading-relaxed text-pretty text-ink-soft">
+                    Cześć, nazywam się{" "}
+                    <strong class="font-semibold text-ink"
+                      >Karol Modelski</strong
+                    >.
+                  </p>
+                </div>
+                <div
+                  class="mt-6 space-y-5 text-lg leading-relaxed text-pretty text-ink-soft"
+                >
+                  <p
+                    class="first-letter:float-left first-letter:mr-3 first-letter:font-heading first-letter:text-6xl first-letter:leading-[0.8] first-letter:font-semibold first-letter:text-ink"
+                  >
+                    Przez ponad 7 lat tworzyłem systemy w bankowości i dużych
+                    instytucjach finansowych. W tym środowisku nie ma miejsca na
+                    błędy, awarie czy niedopatrzenia – wszystko musi działać
+                    precyzyjnie, bezpiecznie i stabilnie.
+                  </p>
+                  <p>
+                    Tę samą bankową solidność i dbałość o bezpieczeństwo
+                    przenoszę do współpracy z pomysłodawcami – bez korporacyjnej
+                    biurokracji, bez przepalania budżetu i z jednym punktem
+                    kontaktu.
+                  </p>
+                  <p>
+                    Masz jeden punkt kontaktu – mnie. Pracuję ze sprawdzonym,
+                    zaufanym zespołem specjalistów (deweloper, grafik, tester),
+                    ale to ja projektuję architekturę, pilnuję jakości i biorę
+                    pełną odpowiedzialność za całość. W 4 tygodnie zamieniam
+                    Twoją wizję w działającą aplikację webową, na której
+                    bezpiecznie sprawdzisz rynek.
+                  </p>
+                </div>
+              </div>
+
+              <div class="lg:col-span-5">
+                <Image
+                  src={wystapienie}
+                  alt="Karol Modelski podczas szkolenia z automatyzacji testów (Playwright)"
+                  widths={[320, 480, 640, 768]}
+                  sizes="(min-width: 1024px) 480px, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="aspect-[4/5] w-full object-cover object-top"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="faq"
+      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+    >
+      <div class="mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p
+              class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
+            >
+              09 · FAQ
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2
+              class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+            >
+              Konkretne odpowiedzi, zanim zaczniemy rozmowę
+            </h2>
+
+            <FaqAccordion client:visible />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="kontakt"
+      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+    >
+      <div class="mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p
+              class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
+            >
+              10 · Kontakt
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2
+              class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+            >
+              Zobacz, ile Twój pomysł może osiągnąć na rynku
+            </h2>
+            <p
+              class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
+            >
+              Zamiast tracić kolejne miesiące na zastanawianie się „co by było,
+              gdyby”, poświęćmy 20 minut na luźną, konkretną rozmowę:
+            </p>
+
+            <ol class="mt-12 border-t border-line">
+              {
+                [
+                  "Opowiesz mi o swoim pomyśle własnymi słowami.",
+                  "Pomogę dobrać najważniejsze elementy na start, żeby bezpiecznie sprawdzić rynek i nie zmarnować budżetu.",
+                  "Wyjdziesz z jasnym planem, jak w 4 tygodnie uruchomić pierwszą działającą wersję.",
+                ].map((point, index) => (
+                  <li class="grid grid-cols-1 gap-3 border-b border-line py-6 sm:grid-cols-12 sm:gap-8">
+                    <span class="font-mono text-xs text-ink-soft sm:col-span-1">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <p class="leading-relaxed text-pretty text-ink-soft sm:col-span-11">
+                      {point}
+                    </p>
+                  </li>
+                ))
+              }
+            </ol>
+
+            <p
+              class="mt-8 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft"
+            >
+              Masz wątpliwości? Zobacz{" "}
+              <a
+                href="#faq"
+                class="font-medium text-ink underline underline-offset-4 hover:no-underline"
+                >najczęstsze pytania</a
+              >{" "}
+              albo od razu zarezerwuj rozmowę.
+            </p>
+
+            <div class="mt-10 flex flex-col items-start gap-5">
+              <a
+                href="https://calendly.com/kontakt-karolmodelski/konsultacja"
+                target="_blank"
+                rel="noopener noreferrer"
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[4px] px-7 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
+                )}
+              >
+                Porozmawiajmy o projekcie – zarezerwuj 20 minut
+                <ArrowRight />
+              </a>
+              <p
+                class="max-w-xl text-sm leading-relaxed text-pretty text-ink-soft"
+              >
+                Bez sprzedaży i bez technicznego żargonu. Rozmawiamy wyłącznie o
+                Twoim pomyśle i o tym, jak najszybciej pokazać go światu.
               </p>
-              <p>
-                Tę samą bankową solidność i dbałość o bezpieczeństwo przenoszę
-                do bezpośredniej współpracy z pomysłodawcami. Bez korporacyjnej
-                biurokracji, bez armii pośredników i bez przepalania budżetu.
-              </p>
-              <p>
-                Rozmawiasz wyłącznie ze mną. Biorę pełną odpowiedzialność za to,
-                by w 30 dni zamienić Twoją wizję w działającą aplikację, na
-                której bezpiecznie sprawdzisz rynek.
+              <p
+                class="flex max-w-xl items-start gap-3 text-sm leading-relaxed text-pretty text-ink-soft"
+              >
+                <span class="mt-2 h-px w-6 shrink-0 bg-signal"></span>
+                <span>
+                  Ze względu na model partnerski realizuję maksymalnie jeden
+                  projekt w miesiącu. Najbliższy wolny termin startu:{" "}
+                  <strong class="font-mono font-medium text-ink"
+                    >{nextStartMonth}</strong
+                  >.
+                </span>
               </p>
             </div>
           </div>
-
-          <div class="lg:order-first lg:col-span-5">
-            <Image
-              src={wystapienie}
-              alt="Karol Modelski podczas szkolenia z automatyzacji testów (Playwright)"
-              widths={[320, 480, 640, 768]}
-              sizes="(min-width: 1024px) 480px, 100vw"
-              loading="lazy"
-              decoding="async"
-              class="aspect-[4/5] w-full rounded-2xl object-cover object-top"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="border-t px-4 py-20 sm:px-6 sm:py-28">
-      <div class="mx-auto max-w-5xl">
-        <div class="max-w-2xl">
-          <p
-            class="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
-          >
-            Najczęstsze pytania
-          </p>
-          <h2
-            class="mt-3 text-2xl font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl"
-          >
-            Konkretne odpowiedzi, zanim zaczniemy rozmowę
-          </h2>
-        </div>
-
-        <FaqAccordion client:visible />
-      </div>
-    </section>
-
-    <section id="kontakt" class="border-t px-4 py-20 sm:px-6 sm:py-28">
-      <div class="mx-auto max-w-5xl">
-        <div class="max-w-2xl">
-          <p
-            class="text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase"
-          >
-            Zacznijmy działać
-          </p>
-          <h2
-            class="mt-3 text-2xl font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl"
-          >
-            Zobacz, ile Twój pomysł może osiągnąć na rynku
-          </h2>
-          <p
-            class="mt-4 text-base leading-relaxed text-pretty text-muted-foreground"
-          >
-            Zamiast tracić kolejne miesiące na zastanawianie się „co by było,
-            gdyby”, poświęćmy 20 minut na luźną, konkretną rozmowę:
-          </p>
-        </div>
-
-        <ul class="mt-10 max-w-2xl space-y-4">
-          {
-            [
-              "Opowiesz mi o swoim pomyśle własnymi słowami.",
-              "Pomogę dobrać najważniejsze elementy na start, żeby bezpiecznie sprawdzić rynek i nie zmarnować budżetu.",
-              "Wyjdziesz z jasnym planem, jak w 30 dni zamienić pomysł w działający biznes.",
-            ].map((point) => (
-              <li class="flex gap-3">
-                <Check className="mt-0.5 size-4 shrink-0 text-foreground" />
-                <p class="text-sm leading-relaxed text-pretty text-muted-foreground sm:text-base">
-                  {point}
-                </p>
-              </li>
-            ))
-          }
-        </ul>
-
-        <div class="mt-10 flex w-full flex-col items-start gap-4">
-          <a
-            href="https://calendly.com/kontakt-karolmodelski/konsultacja"
-            target="_blank"
-            rel="noopener noreferrer"
-            class={cn(
-              buttonVariants({ size: "lg" }),
-              "h-auto min-h-12 w-full gap-2 rounded-full px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
-            )}
-          >
-            Umów 20-minutową rozmowę o swoim pomyśle
-            <ArrowRight />
-          </a>
-          <p
-            class="max-w-xl text-sm leading-relaxed text-pretty text-muted-foreground"
-          >
-            Bez sprzedaży i bez technicznego żargonu. Rozmawiam wyłącznie o
-            Twoim pomyśle i o tym, jak najszybciej pokazać go światu.
-          </p>
-          <p
-            class="flex max-w-xl items-start gap-2.5 text-left text-sm leading-relaxed text-pretty text-muted-foreground"
-          >
-            <span class="relative mt-1.5 flex size-2 shrink-0">
-              <span
-                class="absolute inline-flex size-full animate-ping rounded-full bg-foreground/40"
-              ></span>
-              <span
-                class="relative inline-flex size-2 rounded-full bg-foreground/70"
-              ></span>
-            </span>
-            <span>
-              Ze względu na model partnerski realizuję maksymalnie jeden projekt
-              w miesiącu. Najbliższy wolny termin startu:{" "}
-              <strong class="font-medium text-foreground"
-                >{nextStartMonth}</strong
-              >.
-            </span>
-          </p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t px-4 py-16 sm:px-6 sm:py-20">
+  <button
+    id="theme-toggle"
+    type="button"
+    aria-label="Przełącz tryb ciemny"
+    class="fixed right-4 bottom-4 z-50 flex size-11 items-center justify-center rounded-full border border-line bg-paper text-ink shadow-sm transition-colors hover:bg-secondary sm:right-6 sm:bottom-6"
+  >
+    <svg
+      class="theme-sun size-5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="4"></circle>
+      <path
+        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+      ></path>
+    </svg>
+    <svg
+      class="theme-moon size-5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+
+  <footer class="bg-ink px-4 py-16 text-paper sm:px-6 sm:py-20">
     <div class="mx-auto max-w-6xl">
       <div class="grid grid-cols-1 gap-10 md:grid-cols-3 lg:gap-16">
         <div>
-          <p class="font-heading text-lg font-semibold">Karol Modelski</p>
-          <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
+          <p class="font-heading text-2xl font-semibold">Karol Modelski</p>
+          <p class="mt-3 text-sm leading-relaxed text-paper/70">
             Twój techniczny partner w tworzeniu aplikacji i produktów cyfrowych.
           </p>
-          <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
-            Pomagam pomysłodawcom i inwestorom zamieniać pomysły w działający
-            biznes w 30 dni – bezpiecznie i bez przepalania budżetu.
+          <p class="mt-3 text-sm leading-relaxed text-paper/70">
+            Pomagam pomysłodawcom i inwestorom uruchamiać pierwszą działającą
+            wersję w 4 tygodnie – bezpiecznie i bez przepalania budżetu.
           </p>
         </div>
 
         <div>
-          <h2 class="text-sm font-medium">Szybki kontakt</h2>
-          <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
+          <h2
+            class="font-mono text-xs tracking-[0.18em] text-paper/60 uppercase"
+          >
+            Szybki kontakt
+          </h2>
+          <p class="mt-3 text-sm leading-relaxed text-paper/70">
             Masz pytania przed rozmową? Napisz bezpośrednio:
           </p>
           <ul class="mt-4 space-y-3 text-sm">
             <li class="flex items-center gap-2">
-              <Mail className="size-4 shrink-0 text-muted-foreground" />
+              <Mail className="size-4 shrink-0 text-paper/50" />
               <a
-                class="underline-offset-4 hover:underline"
+                class="underline-offset-4 hover:text-signal-bright hover:underline"
                 href="mailto:kontakt@karolmodelski.pl"
                 >kontakt@karolmodelski.pl</a
               >
             </li>
             <li class="flex items-start gap-2">
-              <MessageCircle
-                className="mt-0.5 size-4 shrink-0 text-muted-foreground"
-              />
+              <MessageCircle className="mt-0.5 size-4 shrink-0 text-paper/50" />
               <span class="flex flex-wrap items-baseline gap-x-1.5">
                 <a
-                  class="underline-offset-4 hover:underline"
+                  class="underline-offset-4 hover:text-signal-bright hover:underline"
                   href="https://wa.me/48664598563">+48 664 598 563</a
                 >
-                <span class="text-muted-foreground">(najszybsza odpowiedź)</span
-                >
+                <span class="text-paper/60">(najszybsza odpowiedź)</span>
               </span>
             </li>
             <li class="flex items-center gap-2">
@@ -924,63 +1276,67 @@ const bonuses = [
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 aria-hidden="true"
-                class="size-4 shrink-0 text-muted-foreground"
+                class="size-4 shrink-0 text-paper/50"
               >
                 <path
                   d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
                 ></path>
               </svg>
               <a
-                class="underline-offset-4 hover:underline"
+                class="underline-offset-4 hover:text-signal-bright hover:underline"
                 href="https://www.linkedin.com/in/karol-modelski/"
                 rel="me noopener"
                 target="_blank">Karol Modelski na LinkedIn</a
               >
             </li>
             <li class="flex items-center gap-2">
-              <MapPin className="size-4 shrink-0 text-muted-foreground" />
+              <MapPin className="size-4 shrink-0 text-paper/50" />
               <a
-                class="underline-offset-4 hover:underline"
+                class="underline-offset-4 hover:text-signal-bright hover:underline"
                 href="https://g.page/r/CZSVfAGtTiIzEBM"
                 rel="me noopener"
                 target="_blank">Wizytówka w Google</a
               >
             </li>
           </ul>
-          <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
+          <p class="mt-4 text-sm leading-relaxed text-paper/70">
             Pracuję w 100% zdalnie i elastycznie.
           </p>
         </div>
 
         <div>
-          <h2 class="text-sm font-medium">Bezpieczeństwo i zasady</h2>
-          <ul
-            class="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground"
+          <h2
+            class="font-mono text-xs tracking-[0.18em] text-paper/60 uppercase"
           >
+            Bezpieczeństwo i zasady
+          </h2>
+          <ul class="mt-4 space-y-3 text-sm leading-relaxed text-paper/70">
             <li>
-              <span class="font-medium text-foreground">100% Poufności:</span>{
-                " "
-              }
-              Przed omówieniem szczegółów Twojego projektu zawsze podpisuję umowę
-              o zachowaniu poufności.
+              <span class="font-medium text-paper">100% Poufności:</span>{" "}
+              Zanim powiesz mi o pomyśle, podpisujemy umowę o zachowaniu poufności.
             </li>
             <li>
-              <span class="font-medium text-foreground">Prawa autorskie:</span>{
-                " "
-              }
-              Całość stworzonego produktu i praw majątkowych przechodzi na Ciebie.
+              <span class="font-medium text-paper">Prawa autorskie:</span> Cały kod
+              i 100% praw autorskich przechodzi na Ciebie.
             </li>
             <li>
-              <span class="font-medium text-foreground">Gwarancja terminu:</span
-              >{" "}
-              Równe 30 dni na działającą aplikację gotową do testów.
+              <span class="font-medium text-paper"
+                >Bezpieczeństwo finansowe:</span
+              >
+              Płatność w 3 częściach (40/40/20) · Gwarancja stałej ceny ryczałtowej
+              bez ukrytych kosztów · Faktury VAT.
+            </li>
+            <li>
+              <span class="font-medium text-paper">Gwarancja techniczna:</span>
+              3 miesiące bezpłatnej opieki powdrożeniowej i usuwania błędów z reakcją
+              do 24–48 h.
             </li>
           </ul>
         </div>
       </div>
 
-      <div class="mt-12 border-t pt-6">
-        <p class="text-xs text-muted-foreground">
+      <div class="mt-12 border-t border-paper/15 pt-6">
+        <p class="font-mono text-xs text-paper/60">
           © 2026 Karol Modelski · NIP 6112800950. Wszelkie prawa zastrzeżone.
         </p>
       </div>
