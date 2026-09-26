@@ -1,7 +1,20 @@
 ---
 import "@/styles/global.css"
+import { execSync } from "node:child_process"
 import { Font } from "astro:assets"
 import { faq } from "@/data/faq"
+
+function getLastModified() {
+  try {
+    const committedAt = execSync("git log -1 --format=%cI", {
+      encoding: "utf8",
+    }).trim()
+    if (committedAt) return new Date(committedAt).toISOString()
+  } catch {}
+  return new Date().toISOString()
+}
+
+const lastModified = getLastModified()
 
 interface Props {
   title?: string
@@ -10,8 +23,8 @@ interface Props {
 }
 
 const {
-  title = "Od pomysłu do własnej aplikacji w 30 dni | Karol Modelski",
-  description = "Masz pomysł na narzędzie lub aplikację? W 30 dni zamieniam Twoją wizję w gotowy produkt dla pierwszych klientów. Bezpiecznie sprawdzasz rynek. Porozmawiajmy.",
+  title = "Sprawdź pomysł na aplikację w 4 tygodnie | Karol Modelski",
+  description = "Masz pomysł na aplikację? W 4 tygodnie sprawdzisz, czy ludzie chcą z niej korzystać – bez agencji IT i przepalania budżetu.",
   noindex = false,
 } = Astro.props
 
@@ -21,6 +34,17 @@ const ogImage = new URL("/og-image.png", Astro.site)
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://karolmodelski.pl/#webpage",
+      url: "https://karolmodelski.pl/",
+      name: title,
+      description,
+      inLanguage: "pl-PL",
+      isPartOf: { "@id": "https://karolmodelski.pl/#website" },
+      about: { "@id": "https://karolmodelski.pl/#organization" },
+      dateModified: lastModified,
+    },
     {
       "@type": "Organization",
       "@id": "https://karolmodelski.pl/#organization",
@@ -32,7 +56,7 @@ const structuredData = {
       telephone: "+48664598563",
       taxID: "6112800950",
       description:
-        "Twój techniczny partner w tworzeniu aplikacji i produktów cyfrowych. Zamieniam pomysły w działający biznes w 30 dni.",
+        "Twój techniczny partner w tworzeniu aplikacji i produktów cyfrowych. Prowadzę projekt i zespół specjalistów, uruchamiając pierwszą działającą wersję w 4 tygodnie.",
       areaServed: "PL",
       knowsLanguage: "pl",
       sameAs: [
@@ -56,10 +80,10 @@ const structuredData = {
       image: "https://karolmodelski.pl/karol-modelski.webp",
       jobTitle: "Twórca aplikacji i produktów cyfrowych",
       description:
-        "Techniczny partner pomysłodawców i inwestorów: zamienia pomysły w działające aplikacje i produkty cyfrowe w 30 dni, z gwarancją terminu i pełnym prawem własności po stronie klienta.",
+        "Techniczny partner pomysłodawców i inwestorów: prowadzi projekt i koordynuje zespół specjalistów, zamieniając pomysły w działające aplikacje webowe w 4 tygodnie, z gwarancją terminu i pełnym prawem własności po stronie klienta.",
       knowsAbout: [
         "tworzenie aplikacji",
-        "MVP w 30 dni",
+        "Pierwsza działająca wersja aplikacji w 4 tygodnie",
         "produkty cyfrowe",
         "walidacja pomysłów na rynku",
         "React",
@@ -81,20 +105,21 @@ const structuredData = {
     },
     {
       "@type": "Service",
-      "@id": "https://karolmodelski.pl/#sprint",
-      name: "30-dniowy proces – od pomysłu do działającej aplikacji",
+      "@id": "https://karolmodelski.pl/#proces",
+      name: "Proces w 4 tygodnie – od pomysłu do działającej aplikacji webowej",
       provider: { "@id": "https://karolmodelski.pl/#organization" },
       serviceType: "Tworzenie aplikacji i produktów cyfrowych",
       areaServed: "PL",
       url: "https://karolmodelski.pl/#konsultacja",
       description:
-        "Tworzenie działającej aplikacji, własnej strony i systemu analityki w 30 dni kalendarzowych – z gwarancją terminu i pełnym prawem własności po stronie klienta.",
+        "Tworzenie działającej aplikacji webowej, własnej strony i podglądu zachowań użytkowników w 4 tygodnie – z gwarancją terminu i pełnym prawem własności po stronie klienta.",
       offers: {
         "@type": "Offer",
         url: "https://karolmodelski.pl/#konsultacja",
         description:
-          "30 dni na działającą aplikację gotową do testów. Przy opóźnieniu z mojej winy zwracam 50% wynagrodzenia, a produkt przekazuję bez dodatkowych opłat.",
+          "Pierwsza działająca wersja w 4 tygodnie, pełny odbiór z poprawkami zwykle 6–8 tygodni. Przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne klient potrąca z kolejnej faktury; 3 miesiące gwarancji technicznej po wdrożeniu.",
         priceCurrency: "PLN",
+        price: "29500",
       },
     },
     {
@@ -116,13 +141,15 @@ const structuredData = {
 <html lang="pl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="theme-color" content="#ffffff" />
-    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-fraunces" preload />
+    <Font cssVariable="--font-plex-sans" preload />
+    <Font cssVariable="--font-plex-mono" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -136,22 +163,116 @@ const structuredData = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Karol Modelski – zamieniam Twój pomysł w działającą aplikację w 30 dni"
+      content="Karol Modelski – pierwsza działająca wersja Twojego pomysłu w 4 tygodnie"
     />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta
+      name="twitter:image:alt"
+      content="Karol Modelski – pierwsza działająca wersja Twojego pomysłu w 4 tygodnie"
+    />
 
     <script
       type="application/ld+json"
       set:html={JSON.stringify(structuredData)}
     />
+
+    <script is:inline>
+      ;(function () {
+        var root = document.documentElement
+        try {
+          var saved = localStorage.getItem("theme")
+          if (
+            saved === "dark" ||
+            (!saved && matchMedia("(prefers-color-scheme: dark)").matches)
+          )
+            root.classList.add("dark")
+        } catch (e) {}
+
+        document.addEventListener("click", function (ev) {
+          var t = ev.target
+          if (t && t.closest && t.closest("#theme-toggle")) {
+            var dark = root.classList.toggle("dark")
+            try {
+              localStorage.setItem("theme", dark ? "dark" : "light")
+            } catch (e) {}
+          }
+        })
+
+        function ready(fn) {
+          if (document.readyState !== "loading") fn()
+          else document.addEventListener("DOMContentLoaded", fn)
+        }
+
+        ready(function () {
+          var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches
+
+          var sections = document.querySelectorAll("main > section[id]")
+          if (!reduce && "IntersectionObserver" in window && sections.length) {
+            sections.forEach(function (s) {
+              s.classList.add("will-reveal")
+            })
+            var io = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (e) {
+                  if (e.isIntersecting) {
+                    e.target.classList.add("is-visible")
+                    io.unobserve(e.target)
+                  }
+                })
+              },
+              { rootMargin: "0px 0px -8% 0px", threshold: 0.06 }
+            )
+            sections.forEach(function (s) {
+              io.observe(s)
+            })
+          }
+
+          var counters = document.querySelectorAll("[data-count]")
+          if (reduce || !counters.length || !("IntersectionObserver" in window))
+            return
+          var fmt = function (n) {
+            return String(Math.round(n)).replace(
+              /\B(?=(\d{3})+(?!\d))/g,
+              "\u00a0"
+            )
+          }
+          var cio = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (!e.isIntersecting) return
+                var el = e.target
+                cio.unobserve(el)
+                var target = parseFloat(el.getAttribute("data-count"))
+                var suffix = el.getAttribute("data-suffix") || ""
+                var start = performance.now()
+                var dur = 1100
+                function tick(now) {
+                  var p = Math.min((now - start) / dur, 1)
+                  var eased = 1 - Math.pow(1 - p, 3)
+                  el.textContent = fmt(target * eased) + suffix
+                  if (p < 1) requestAnimationFrame(tick)
+                  else el.textContent = fmt(target) + suffix
+                }
+                requestAnimationFrame(tick)
+              })
+            },
+            { threshold: 0.4 }
+          )
+          counters.forEach(function (c) {
+            cio.observe(c)
+          })
+        })
+      })()
+    </script>
   </head>
   <body>
     <slot />

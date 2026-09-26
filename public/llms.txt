@@ -1,8 +1,8 @@
 # Karol Modelski
 
-> Zamieniam Twój pomysł na aplikację lub narzędzie w działający produkt w 30 dni – bez agencji IT, bez przepalania budżetu i bez znajomości technologii.
+> Przeprowadzę Cię od pomysłu do działającej aplikacji webowej w 4 tygodnie. Bez agencji IT, bez przepalania budżetu i bez konieczności znajomości technologii.
 
-Karol Modelski to techniczny partner, który zamienia pomysły pomysłodawców i inwestorów w działające aplikacje, narzędzia i produkty cyfrowe w 30 dni kalendarzowych. Celem współpracy jest szybkie dowiezienie działającego produktu, własnej strony i realnych danych od pierwszych użytkowników, aby sprawdzić, czy pomysł ma wzięcie na rynku.
+Karol Modelski to techniczny partner, który prowadzi projekt i koordynuje zespół specjalistów, zamieniając pomysły pomysłodawców i inwestorów w działające aplikacje webowe (bez instalacji), narzędzia i produkty cyfrowe. Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie, a pełny odbiór z poprawkami zwykle 6–8 tygodni. Celem współpracy jest szybkie dowiezienie działającej wersji, własnej strony i realnych danych od pierwszych użytkowników, aby sprawdzić, czy pomysł ma wzięcie na rynku.
 
 Strona: https://karolmodelski.pl
 Język: polski
@@ -16,16 +16,16 @@ NIP: 6112800950
 
 ## O mnie
 
-- [Kto odpowiada za Twój projekt?](https://karolmodelski.pl/#o-mnie): Ponad 7 lat pracy nad oprogramowaniem w bankowości i instytucjach finansowych; bezpośrednia współpraca bez pośredników, z odpowiedzialnością za efekt.
+- [Kto odpowiada za Twój projekt?](https://karolmodelski.pl/#o-mnie): Ponad 7 lat pracy nad oprogramowaniem w bankowości i instytucjach finansowych; jeden punkt kontaktu, projekt prowadzi Karol Modelski z zespołem specjalistów.
 
 ## Usługa
 
-- [30-dniowy proces](https://karolmodelski.pl/#droga): Zamiast 100 000 zł i 5 miesięcy w agencji IT – działający produkt w 30 dni, własna strona i prawdziwi użytkownicy.
-- [Przebieg współpracy](https://karolmodelski.pl/#proces): Dni 1–7 (wygląd i pierwsze wrażenie), dni 8–21 (uruchomienie), dni 22–30 (własna strona i dane o reakcjach rynku).
-- [Co otrzymujesz](https://karolmodelski.pl/#otrzymujesz): Kompletne narzędzie pod klucz: atrakcyjny wygląd, działająca kluczowa funkcja, pełna własność i umowa o zachowaniu poufności.
-- [Porównanie](https://karolmodelski.pl/#porownanie): Tradycyjna agencja IT vs. agencja graficzna vs. mój 30-dniowy proces.
-- [Bonusy w cenie](https://karolmodelski.pl/#bonusy): Strona z nazwą (4 500 zł), narzędzie analityczne (3 000 zł), budowanie rozgłosu (3 500 zł) – łącznie 11 000 zł w pakiecie bez dodatkowych opłat.
-- [Gwarancja](https://karolmodelski.pl/#gwarancja): Równe 30 dni na działającą aplikację; przy opóźnieniu z mojej winy zwracam 50% pieniędzy, a produkt i tak przekazuję.
+- [Model współpracy i skupienie na jednej rzeczy](https://karolmodelski.pl/#model): Ty przynosisz pomysł i wiedzę o Twoich klientach, ja prowadzę projekt i zespół specjalistów – bez żargonu i bez zarządzania ludźmi po Twojej stronie. Wycinamy zbędne funkcje: jedno zadanie, jeden odbiorca, jeden konkretny efekt, a dodatkowe pomysły odkładamy na kolejny etap.
+- [Proces, Twój czas i efekty](https://karolmodelski.pl/#proces): Tygodnie 1–2 (wygląd i serce mechanizmu), tygodnie 3–4 (pełna funkcja, strona i badanie rynku), tygodnie 5–8 (testy, poprawki i przekazanie praw) – z Twoim udziałem: 4–6 godzin na starcie, ok. 1 godzina na wybór wyglądu, ok. 1 godzina na Twoją opinię i 10 dni roboczych na testy.
+- [Co otrzymujesz](https://karolmodelski.pl/#otrzymujesz): Kompletny start Twojego projektu w 4 tygodnie – działające serce pomysłu w przeglądarce (55 000 zł), fundament pod aplikację mobilną (25 000 zł oszczędności), dwa języki PL/EN (6 000 zł), oficjalna strona (7 500 zł), podgląd zachowań i szczere opinie (5 000 zł), zestaw materiałów dla partnerów i inwestorów (8 000 zł), zero opłat za serwery w testach (2 500 zł), czysty kod i pełna swoboda biznesowa (5 000 zł), plan na Wersję 2.0 (5 000 zł) oraz umowa o zachowaniu poufności i 100% praw autorskich (6 000 zł). Łączna wartość rynkowa: 125 000 zł. Twoja inwestycja: 29 500 zł brutto, płatna w 3 częściach.
+- [Porównanie](https://karolmodelski.pl/#porownanie): Tradycyjna agencja IT vs. agencja graficzna vs. mój 4-tygodniowy proces.
+- [Płatność w 3 częściach](https://karolmodelski.pl/#rozliczenie): Inwestycja 29 500 zł brutto płatna etapami – 40% (11 800 zł) na start prac przy podpisaniu umowy i formalnego zobowiązania do poufności, 40% (11 800 zł) gdy produkt jest gotowy do testów, 20% (5 900 zł) na koniec po Twoich testach i przekazaniu praw; faktura VAT na każdym etapie.
+- [Gwarancja i zasady](https://karolmodelski.pl/#gwarancja): Pierwsza działająca wersja w 4 tygodnie; przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne potrącasz z kolejnej faktury. 3 miesiące gwarancji technicznej po wdrożeniu (reakcja 24–48 h), sprawny kontakt po stronie klienta i stały wgląd na żywo w postępy prac.
 - [Konsultacja](https://karolmodelski.pl/#konsultacja): Bezpłatna, 20-minutowa rozmowa o pomyśle – bez sprzedaży i bez technicznego żargonu.
 
 ## Dwie ślepe uliczki
@@ -34,15 +34,16 @@ NIP: 6112800950
 
 ## Cennik
 
-- [Cennik dla agentów AI](https://karolmodelski.pl/pricing.md): Model rozliczenia, zakres pakietu, bonusy o łącznej wartości 11 000 zł, gwarancja terminu.
+- [Cennik dla agentów AI](https://karolmodelski.pl/pricing.md): Cena 29 500 zł brutto, zakres pakietu (wartość rynkowa i oszczędności 125 000 zł), płatność w 3 częściach 40/40/20, gwarancja terminu i 3-miesięczna gwarancja techniczna.
 
 ## FAQ
 
-- [Najczęstsze pytania](https://karolmodelski.pl/#faq): Czas realizacji, zakres współpracy, poufność i gwarancja terminu.
+- [Najczęstsze pytania](https://karolmodelski.pl/#faq): Czas realizacji, gotowość pod aplikację mobilną, model płatności (40% / 40% / 20%), koszty serwerów, materiały dla inwestorów, poufność i co się dzieje, gdy po 4 tygodniach rynek nie zareaguje.
 
 ## Zasady i bezpieczeństwo
 
-- 100% poufności – przed omówieniem szczegółów zawsze podpisywana jest umowa o zachowaniu poufności.
-- Prawa autorskie – całość stworzonego produktu i praw majątkowych przechodzi na klienta.
-- Gwarancja terminu – równe 30 dni na działającą aplikację gotową do testów.
+- 100% poufności – przed omówieniem szczegółów podpisywana jest pisemna umowa o zachowaniu poufności z karami finansowymi.
+- Prawa autorskie – cały kod i 100% praw autorskich przechodzi na klienta; czysty kod i pełna swoboda biznesowa – nikt nie zażąda darmowego udostępniania kodu ani opłat licencyjnych.
+- Gwarancja terminu – pierwsza działająca wersja w 4 tygodnie; przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne klient potrąca z kolejnej faktury.
+- Gwarancja techniczna – 3 miesiące bezpłatnego usuwania błędów po wdrożeniu, czas reakcji do 24–48 godzin.
 - Model partnerski – realizowany jest maksymalnie jeden projekt miesięcznie.

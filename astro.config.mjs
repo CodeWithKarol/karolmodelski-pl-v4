@@ -27,9 +27,25 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.fontsource(),
-      name: "Inter",
-      cssVariable: "--font-inter",
-      weights: ["100 900"],
+      name: "Fraunces",
+      cssVariable: "--font-fraunces",
+      weights: ["400 700"],
+      styles: ["normal"],
+      subsets: ["latin", "latin-ext"],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: "IBM Plex Sans",
+      cssVariable: "--font-plex-sans",
+      weights: ["400 700"],
+      styles: ["normal"],
+      subsets: ["latin", "latin-ext"],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: "IBM Plex Mono",
+      cssVariable: "--font-plex-mono",
+      weights: ["400 600"],
       styles: ["normal"],
       subsets: ["latin", "latin-ext"],
     },
