@@ -8,7 +8,7 @@ export const faq = [
     question:
       "Czy to, co zbudujemy w 4 tygodnie, trzeba będzie wyrzucić, jeśli zechcę wejść do App Store i Google Play?",
     answer:
-      "Nie. Cały silnik, logika i wygląd powstają w technologii, którą w kolejnym kroku bez problemu przenosimy do sklepów z aplikacjami. Żadna praca nie ląduje w koszu i nie płacisz za to samo drugi raz.",
+      "Nie. Cały silnik, logika i wygląd powstają w technologii, którą w kolejnym kroku bez problemu przenosimy do App Store i Google Play. Żadna praca nie ląduje w koszu i nie płacisz za to samo drugi raz.",
   },
   {
     question: "Czy muszę płacić całą kwotę z góry?",
