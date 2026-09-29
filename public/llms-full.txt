@@ -30,7 +30,7 @@ Wspólnie wybierzemy kluczowy mechanizm na start, aby bezpiecznie sprawdzić ryn
 | Parametr | Wartość |
 | --- | --- |
 | Format | 4 tygodnie |
-| Wartość rynkowa | 125 000 zł |
+| Wartość rynkowa | 120 000 zł |
 | Inwestycja | 29 500 zł |
 | Dostępność | 1 projekt / miesiąc |
 
@@ -81,11 +81,18 @@ Wszystkie kolejne pomysły zapisujemy na później.
 
 ### Jak wygląda współpraca i ile Twojego czasu wymaga
 
-Na starcie kilka godzin na omówienie pomysłu, w trakcie ok. 1 godziny w tygodniu na decyzje, a na koniec spokojny czas na Twoje testy. Dokładnie wiesz, co dzieje się na każdym etapie:
+Na starcie kilka godzin na omówienie pomysłu, w trakcie ok. 1 godziny w tygodniu na decyzje, a na koniec spokojny czas na odbiór techniczny i testy rynkowe. Dokładnie wiesz, co dzieje się na każdym etapie:
 
 1. **Tygodnie 1–2** — **Wygląd i silnik produktu.** Równolegle projektujemy wygląd (dwa różne kierunki wizualne do wyboru) i budujemy kluczowy silnik Twojego produktu. Dzięki temu grafika nie blokuje prac programistycznych. *Twój udział:* 4–6 godzin na starcie (2–4 spotkania na omówienie zasad i zakresu) + ok. 1 godzina na wybór stylu wizualnego.
 2. **Tygodnie 3–4** — **Pełna funkcja, strona i badanie rynku.** Rozbudowujemy kluczową funkcję, uruchamiamy Twoją stronę internetową oraz włączamy podgląd reakcji ludzi: widzisz, ile osób wchodzi, jak długo klikają i czy wracają kolejnego dnia. *Twój udział:* ok. 1 godzina – klikasz w wersję testową na telefonie lub komputerze i przekazujesz nam swoją opinię.
-3. **Tygodnie 5–8** — **Spokojne testy, poprawki i przekazanie praw.** Masz pełne 10 dni roboczych na przetestowanie narzędzia i spisanie ewentualnych uwag. My mamy do 7 dni roboczych na bezpłatne usunięcie zgłoszonych błędów. Na koniec przekazuję Ci produkt, stronę, kody źródłowe i 100% praw autorskich. *Twój udział:* testujesz działanie produktu według prostej instrukcji i zgłaszasz uwagi.
+3. **Tygodnie 5–8** — **Odbiór techniczny, pierwsze testy rynkowe i przekazanie praw.** Dostajesz gotowe, działające narzędzie i bezpieczny czas na dwa równoległe kroki:
+
+   1. **Twój odbiór techniczny:** Masz 10 dni roboczych, by na spokojnie samemu wszystko przeklikać; my usuwamy ewentualne uwagi do 7 dni roboczych w ramach ustalonej kwoty.
+   2. **Pierwsze testy rynkowe:** Od razu wysyłasz link do pierwszych 50–100 osób z Twojej grupy odbiorców. Obserwujesz na żywo, czy mechanizm ich wciąga, jak długo klikają i czy wracają kolejnego dnia.
+
+   Na koniec zamykamy formalności: przekazuję Ci kompletny kod źródłowy, dostęp do strony oraz 100% majątkowych praw autorskich.
+
+   *Twój udział:* Przeklikujesz aplikację, rozsyłasz link do pierwszych testerów i sprawdzasz zebrane dane.
 
 ---
 
@@ -116,11 +123,10 @@ Gdybyś chciał zlecić te elementy osobno różnym firmom, programistom i prawn
 5. **Podgląd zachowań użytkowników i szczere opinie** (5 000 zł) — Widzisz czarno na białym, jak ludzie reagują: ile osób weszło, ile czasu spędzili w środku i czy wracają kolejnego dnia. Przy próbie wyjścia zadajemy jedno krótkie pytanie, dzięki czemu od razu znasz ich zdanie.
 6. **Zestaw materiałów do rozmów z partnerami i inwestorami** (8 000 zł) — Krótkie wideo pokazujące działający produkt w akcji, czytelne zrzuty ekranu oraz jednostronicowe podsumowanie techniczne, które buduje wiarygodność na spotkaniach o finansowanie. Zamiast opowiadać o marzeniach z prezentacji, kładziesz na stole dowód, że produkt już działa.
 7. **Zero opłat za serwery podczas testów** (ok. 2 500 zł oszczędności) — Wszystko uruchamiam w chmurze tak, że obsługa pierwszych tysięcy użytkowników kosztuje Cię równe 0 zł miesięcznie. Żadnych ukrytych rachunków w tle.
-8. **Czysty kod i pełna swoboda biznesowa** (5 000 zł) — Masz w umowie gwarancję, że nikt nie zażąda od Ciebie darmowego udostępniania kodu ani opłat licencyjnych. Możesz na tym w 100% legalnie i bezpiecznie zarabiać.
-9. **Konkretny plan na kolejny krok (Wersja 2.0)** (5 000 zł) — Gdy zbierzemy pierwsze reakcje rynku, siadamy razem do wyników. Dostajesz jasne podsumowanie: które funkcje warto wdrożyć w następnej kolejności, w jakim czasie i ile to będzie kosztować.
-10. **Pełne bezpieczeństwo: umowa o zachowaniu poufności i 100% praw autorskich** (6 000 zł) — Zanim powiesz mi o szczegółach, podpisujemy umowę o zachowaniu poufności. Cały kod i 100% praw autorskich przechodzi na Ciebie – możesz z tym zrobić, co chcesz: rozwijać, sprzedać firmę albo wziąć inwestora.
+8. **Konkretny plan na kolejny krok (Wersja 2.0)** (5 000 zł) — Gdy zbierzemy pierwsze reakcje rynku, siadamy razem do wyników. Dostajesz jasne podsumowanie: które funkcje warto wdrożyć w następnej kolejności, w jakim czasie i ile to będzie kosztować.
+9. **Pełne bezpieczeństwo: umowa o zachowaniu poufności i 100% praw autorskich** (6 000 zł) — Zanim powiesz mi o szczegółach, podpisujemy umowę o zachowaniu poufności. Cały kod i 100% praw autorskich przechodzi na Ciebie – możesz z tym zrobić, co chcesz: rozwijać, sprzedać firmę albo wziąć inwestora.
 
-**Łączna wartość rynkowa: 125 000 zł → Twoja inwestycja: 29 500 zł brutto** (stała kwota, płatność w 3 częściach).
+**Łączna wartość rynkowa: 120 000 zł → Twoja inwestycja: 29 500 zł brutto** (stała kwota, płatność w 3 częściach).
 
 Wezwanie do działania: Porozmawiajmy o projekcie – zarezerwuj 20 minut → https://calendly.com/kontakt-karolmodelski/konsultacja
 
@@ -134,9 +140,9 @@ Nie kupujesz „godzin programistów w ciemno” ani nie ryzykujesz wpłaty cał
 
 1. **40% (11 800 zł) – 1. część, na start prac** — Wpłacasz w dniu podpisania umowy i formalnego zobowiązania do poufności. Dzięki temu rezerwuję czas swój i zespołu wyłącznie na Twój projekt, ustalamy szczegóły i od razu ruszamy z budową wyglądu oraz silnika produktu.
 2. **40% (11 800 zł) – 2. część, gdy produkt jest gotowy do testów** — Płacisz dopiero po 4 tygodniach, kiedy narzędzie działa w internecie, Twoja strona jest włączona, a pierwsi ludzie mogą już w to klikać i sprawdzać.
-3. **20% (5 900 zł) – 3. część, na sam koniec, po Twoich testach** — Dopiero po tym, jak sam wszystko na spokojnie sprawdzisz (masz na to komfortowe 10 dni roboczych), a my naniesiemy ewentualne poprawki, zamykamy formalności i przekazuję Ci pełne prawa własności oraz dostęp do wszystkiego.
+3. **20% (5 900 zł) – 3. część, na sam koniec, po odbiorze technicznym** — Dopiero po tym, jak sam wszystko na spokojnie sprawdzisz (masz na to komfortowe 10 dni roboczych), a my naniesiemy ewentualne poprawki, zamykamy formalności i przekazuję Ci pełne prawa własności oraz dostęp do wszystkiego.
 
-Dzięki temu 60% kwoty zostaje w Twojej kieszeni do momentu, aż zobaczysz działające narzędzie i sam skończysz testy.
+Dzięki temu 60% kwoty zostaje w Twojej kieszeni do momentu, aż zobaczysz działające narzędzie i sam skończysz odbiór techniczny.
 
 ---
 
@@ -147,9 +153,10 @@ Dzięki temu 60% kwoty zostaje w Twojej kieszeni do momentu, aż zobaczysz dzia�
 W tradycyjnych agencjach projekty często przeciągają się o kolejne miesiące, a klient płaci za przedłużające się dyskusje. U mnie zasady są proste i czarno na białym zapisane w umowie:
 
 1. **Gwarancja terminu** — Po wspólnym ustaleniu zakresu na pierwszej rozmowie pomagam Ci skompletować niezbędne materiały i skonfigurować adres strony. Gdy mamy komplet, zegar rusza: mamy równe 4 tygodnie na pierwszą działającą wersję. Jeśli z mojej winy nastąpi opóźnienie – pracuję wraz z zespołem bezpłatnie aż do skutku, a za każdy dzień opóźnienia potrącasz kary umowne bezpośrednio z kolejnej faktury.
-2. **3 miesiące gwarancji technicznej po wdrożeniu** — Nie zostajesz sam po oddaniu projektu. Otrzymujesz 3-miesięczną pisemną gwarancję na bezpłatne usuwanie ewentualnych błędów z szybkim czasem reakcji (do 24–48 godzin).
+2. **3 miesiące gwarancji technicznej po wdrożeniu** — Nie zostajesz sam po oddaniu projektu. Otrzymujesz 3 miesiące bezpłatnej gwarancji: jeśli w trakcie testów cokolwiek przestanie działać lub silnik zachowa się niezgodnie z ustaloną logiką, poprawiamy to bez żadnych dopłat.
 3. **Sprawny kontakt z Twojej strony** — Żeby domknąć prace w 4 tygodnie, potrzebuję Twoich decyzji (np. wybór wyglądu z dwóch propozycji) w ciągu 24 godzin. Jeśli na coś czekamy – czas realizacji po prostu wydłuża się o tyle samo.
 4. **Wgląd w postępy od pierwszego dnia** — Od startu prac masz stały podgląd na żywo, jak powstaje Twój projekt. Widzisz na bieżąco, że prace idą do przodu.
+5. **Bezpieczeństwo prawne kodu** — Kod tworzony od zera na licencjach komercyjnych – brak ryzyka prawnego, roszczeń o udostępnienie źródeł czy ukrytych opłat licencyjnych.
 
 ---
 
@@ -172,13 +179,13 @@ Masz jeden punkt kontaktu – mnie. Pracuję ze sprawdzonym, zaufanym zespołem 
 ### Konkretne odpowiedzi, zanim zaczniemy rozmowę
 
 **Ile dokładnie trwa zbudowanie działającej wersji?**
-Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie. Po jej zakończeniu masz 10 dni roboczych na własne testy i uwagi, a my do 7 dni roboczych na naniesienie poprawek. Cały proces – od pierwszego spotkania do finalnego przekazania praw – zamyka się zwykle w 6–8 tygodniach.
+Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie. Po jej zakończeniu masz 10 dni roboczych na odbiór techniczny (własne sprawdzenie i uwagi), a my do 7 dni roboczych na naniesienie poprawek. Cały proces – od pierwszego spotkania do finalnego przekazania praw – zamyka się zwykle w 6–8 tygodniach.
 
 **Czy to, co zbudujemy w 4 tygodnie, trzeba będzie wyrzucić, jeśli zechcę wejść do App Store i Google Play?**
 Nie. Cały silnik, logika i wygląd powstają w technologii, którą w kolejnym kroku bez problemu przenosimy do App Store i Google Play. Żadna praca nie ląduje w koszu i nie płacisz za to samo drugi raz.
 
 **Czy muszę płacić całą kwotę z góry?**
-Nie. Płatność dzielimy na 3 etapy: 40% na start prac, 40% dopiero po 4 tygodniach, gdy produkt działa w internecie, i ostatnie 20% na samym końcu – po Twoich testach i naniesieniu poprawek.
+Nie. Płatność dzielimy na 3 etapy: 40% na start prac, 40% dopiero po 4 tygodniach, gdy produkt działa w internecie, i ostatnie 20% na samym końcu – po odbiorze technicznym i naniesieniu poprawek.
 
 **Czy muszę płacić za serwery i utrzymanie narzędzia w trakcie testów?**
 Nie. Narzędzie uruchamiam w nowoczesnej chmurze z bezpłatnymi limitami startowymi. Pierwsze kilka tysięcy użytkowników obsłużysz przy koszcie serwerów wynoszącym równe 0 zł miesięcznie.
@@ -215,9 +222,9 @@ Ze względu na model partnerski realizuję maksymalnie jeden projekt w miesiącu
 ## Zasady i bezpieczeństwo
 
 - **100% poufności:** Zanim powiesz mi o pomyśle, podpisujemy umowę o zachowaniu poufności.
-- **Prawa autorskie:** Cały kod i 100% praw autorskich przechodzi na Ciebie.
+- **Prawa autorskie i licencje:** Cały kod i 100% praw autorskich przechodzi na Ciebie. Kod tworzony od zera na licencjach komercyjnych – brak ryzyka prawnego, roszczeń o udostępnienie źródeł czy ukrytych opłat licencyjnych.
 - **Bezpieczeństwo finansowe:** Płatność w 3 częściach (40/40/20) · Gwarancja stałej ceny ryczałtowej bez ukrytych kosztów · Faktury VAT.
-- **Gwarancja techniczna:** 3 miesiące bezpłatnej opieki powdrożeniowej i usuwania błędów z reakcją do 24–48 h.
+- **Gwarancja techniczna:** 3 miesiące bezpłatnej gwarancji – jeśli w trakcie testów cokolwiek przestanie działać lub silnik zachowa się niezgodnie z ustaloną logiką, poprawiamy to bez żadnych dopłat.
 - **Model partnerski:** realizowany jest maksymalnie jeden projekt miesięcznie.
 
 ## Kontakt i profile
@@ -234,6 +241,6 @@ Ze względu na model partnerski realizuję maksymalnie jeden projekt w miesiącu
 
 Pełny cennik dla agentów AI: https://karolmodelski.pl/pricing.md
 
-Cena pakietu: **29 500 zł brutto** (stała kwota, bez rozliczania za godziny, bez ukrytych kosztów), płatna w 3 częściach (40% / 40% / 20%). Zakres: pierwsza działająca wersja w 4 tygodnie, pełny odbiór z poprawkami zwykle 6–8 tygodni. Wartość rynkowa i oszczędności pakietu: 125 000 zł.
+Cena pakietu: **29 500 zł brutto** (stała kwota, bez rozliczania za godziny, bez ukrytych kosztów), płatna w 3 częściach (40% / 40% / 20%). Zakres: pierwsza działająca wersja w 4 tygodnie, pełny odbiór z poprawkami zwykle 6–8 tygodni. Wartość rynkowa i oszczędności pakietu: 120 000 zł.
 
 © 2026 Karol Modelski · wszelkie prawa zastrzeżone.
