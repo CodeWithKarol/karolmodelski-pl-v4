@@ -2,7 +2,7 @@ export const faq = [
   {
     question: "Ile dokładnie trwa zbudowanie działającej wersji?",
     answer:
-      "Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie. Po jej zakończeniu masz 10 dni roboczych na własne testy i uwagi, a my do 7 dni roboczych na naniesienie poprawek. Cały proces – od pierwszego spotkania do finalnego przekazania praw – zamyka się zwykle w 6–8 tygodniach.",
+      "Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie. Po jej zakończeniu masz 10 dni roboczych na odbiór techniczny (własne sprawdzenie i uwagi), a my do 7 dni roboczych na naniesienie poprawek. Cały proces – od pierwszego spotkania do finalnego przekazania praw – zamyka się zwykle w 6–8 tygodniach.",
   },
   {
     question:
@@ -13,7 +13,7 @@ export const faq = [
   {
     question: "Czy muszę płacić całą kwotę z góry?",
     answer:
-      "Nie. Płatność dzielimy na 3 etapy: 40% na start prac, 40% dopiero po 4 tygodniach, gdy produkt działa w internecie, i ostatnie 20% na samym końcu – po Twoich testach i naniesieniu poprawek.",
+      "Nie. Płatność dzielimy na 3 etapy: 40% na start prac, 40% dopiero po 4 tygodniach, gdy produkt działa w internecie, i ostatnie 20% na samym końcu – po odbiorze technicznym i naniesieniu poprawek.",
   },
   {
     question:

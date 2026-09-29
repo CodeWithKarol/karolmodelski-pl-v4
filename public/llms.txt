@@ -25,11 +25,11 @@ NIP: 6112800950
 ## Usługa
 
 - [Model współpracy i skupienie na jednej rzeczy](https://karolmodelski.pl/#model): Ty przynosisz pomysł i wiedzę o Twoich klientach, ja prowadzę projekt i zespół specjalistów – bez żargonu i bez zarządzania ludźmi po Twojej stronie. Wycinamy zbędne funkcje: jedno zadanie, jeden odbiorca, jeden konkretny efekt, a dodatkowe pomysły odkładamy na kolejny etap.
-- [Proces, Twój czas i efekty](https://karolmodelski.pl/#proces): Tygodnie 1–2 (wygląd i silnik produktu), tygodnie 3–4 (pełna funkcja, strona i badanie rynku), tygodnie 5–8 (testy, poprawki i przekazanie praw) – z Twoim udziałem: 4–6 godzin na starcie, ok. 1 godzina na wybór wyglądu, ok. 1 godzina na Twoją opinię i 10 dni roboczych na testy.
-- [Co otrzymujesz](https://karolmodelski.pl/#otrzymujesz): Kompletny start Twojego projektu w 4 tygodnie – działający silnik i kluczowa funkcja w przeglądarce (55 000 zł), fundament pod aplikację na telefon (25 000 zł oszczędności), dwa języki PL/EN (6 000 zł), oficjalna strona (7 500 zł), podgląd zachowań i szczere opinie (5 000 zł), zestaw materiałów dla partnerów i inwestorów (8 000 zł), zero opłat za serwery w testach (2 500 zł), czysty kod i pełna swoboda biznesowa (5 000 zł), plan na Wersję 2.0 (5 000 zł) oraz umowa o zachowaniu poufności i 100% praw autorskich (6 000 zł). Łączna wartość rynkowa: 125 000 zł. Twoja inwestycja: 29 500 zł brutto, płatna w 3 częściach.
+- [Proces, Twój czas i efekty](https://karolmodelski.pl/#proces): Tygodnie 1–2 (wygląd i silnik produktu), tygodnie 3–4 (pełna funkcja, strona i badanie rynku), tygodnie 5–8 (odbiór techniczny, pierwsze testy rynkowe i przekazanie praw) – z Twoim udziałem: 4–6 godzin na starcie, ok. 1 godzina na wybór wyglądu, ok. 1 godzina na Twoją opinię i 10 dni roboczych na odbiór techniczny.
+- [Co otrzymujesz](https://karolmodelski.pl/#otrzymujesz): Kompletny start Twojego projektu w 4 tygodnie – działający silnik i kluczowa funkcja w przeglądarce (55 000 zł), fundament pod aplikację na telefon (25 000 zł oszczędności), dwa języki PL/EN (6 000 zł), oficjalna strona (7 500 zł), podgląd zachowań i szczere opinie (5 000 zł), zestaw materiałów dla partnerów i inwestorów (8 000 zł), zero opłat za serwery w testach (2 500 zł), plan na Wersję 2.0 (5 000 zł) oraz umowa o zachowaniu poufności i 100% praw autorskich (6 000 zł). Łączna wartość rynkowa: 120 000 zł. Twoja inwestycja: 29 500 zł brutto, płatna w 3 częściach.
 - [Porównanie](https://karolmodelski.pl/#porownanie): Tradycyjna agencja IT vs. agencja graficzna vs. mój 4-tygodniowy proces.
-- [Płatność w 3 częściach](https://karolmodelski.pl/#rozliczenie): Inwestycja 29 500 zł brutto płatna etapami – 40% (11 800 zł) na start prac przy podpisaniu umowy i formalnego zobowiązania do poufności, 40% (11 800 zł) gdy produkt jest gotowy do testów, 20% (5 900 zł) na koniec po Twoich testach i przekazaniu praw; faktura VAT na każdym etapie.
-- [Gwarancja i zasady](https://karolmodelski.pl/#gwarancja): Pierwsza działająca wersja w 4 tygodnie; przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne potrącasz z kolejnej faktury. 3 miesiące gwarancji technicznej po wdrożeniu (reakcja 24–48 h), sprawny kontakt po stronie klienta i stały wgląd na żywo w postępy prac.
+- [Płatność w 3 częściach](https://karolmodelski.pl/#rozliczenie): Inwestycja 29 500 zł brutto płatna etapami – 40% (11 800 zł) na start prac przy podpisaniu umowy i formalnego zobowiązania do poufności, 40% (11 800 zł) gdy produkt jest gotowy do testów, 20% (5 900 zł) na koniec po odbiorze technicznym i przekazaniu praw; faktura VAT na każdym etapie.
+- [Gwarancja i zasady](https://karolmodelski.pl/#gwarancja): Pierwsza działająca wersja w 4 tygodnie; przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne potrącasz z kolejnej faktury. 3 miesiące bezpłatnej gwarancji (poprawki bez dopłat), sprawny kontakt po stronie klienta i stały wgląd na żywo w postępy prac.
 - [Konsultacja](https://karolmodelski.pl/#konsultacja): Bezpłatna, 20-minutowa rozmowa o pomyśle – bez sprzedaży i bez technicznego żargonu.
 
 ## Dwie ślepe uliczki
@@ -38,7 +38,7 @@ NIP: 6112800950
 
 ## Cennik
 
-- [Cennik dla agentów AI](https://karolmodelski.pl/pricing.md): Cena 29 500 zł brutto, zakres pakietu (wartość rynkowa i oszczędności 125 000 zł), płatność w 3 częściach 40/40/20, gwarancja terminu i 3-miesięczna gwarancja techniczna.
+- [Cennik dla agentów AI](https://karolmodelski.pl/pricing.md): Cena 29 500 zł brutto, zakres pakietu (wartość rynkowa i oszczędności 120 000 zł), płatność w 3 częściach 40/40/20, gwarancja terminu i 3-miesięczna gwarancja techniczna.
 
 ## FAQ
 
@@ -47,7 +47,7 @@ NIP: 6112800950
 ## Zasady i bezpieczeństwo
 
 - 100% poufności – przed omówieniem szczegółów podpisywana jest pisemna umowa o zachowaniu poufności z karami finansowymi.
-- Prawa autorskie – cały kod i 100% praw autorskich przechodzi na klienta; czysty kod i pełna swoboda biznesowa – nikt nie zażąda darmowego udostępniania kodu ani opłat licencyjnych.
+- Prawa autorskie i licencje – cały kod i 100% praw autorskich przechodzi na klienta; kod tworzony od zera na licencjach komercyjnych – brak ryzyka prawnego, roszczeń o udostępnienie źródeł czy ukrytych opłat licencyjnych.
 - Gwarancja terminu – pierwsza działająca wersja w 4 tygodnie; przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne klient potrąca z kolejnej faktury.
-- Gwarancja techniczna – 3 miesiące bezpłatnego usuwania błędów po wdrożeniu, czas reakcji do 24–48 godzin.
+- Gwarancja techniczna – 3 miesiące bezpłatnej gwarancji: jeśli w trakcie testów cokolwiek przestanie działać lub silnik zachowa się niezgodnie z ustaloną logiką, poprawiamy to bez żadnych dopłat.
 - Model partnerski – realizowany jest maksymalnie jeden projekt miesięcznie.
