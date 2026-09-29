@@ -1,0 +1,239 @@
+# Karol Modelski — pełna treść strony
+
+> Tekstowy odpowiednik strony głównej https://karolmodelski.pl/ dla systemów AI, wyszukiwarek i asystentów. Wersja skrócona i najważniejsze linki: https://karolmodelski.pl/llms.txt · Cennik dla agentów AI: https://karolmodelski.pl/pricing.md
+
+## Kim jestem
+
+Twój techniczny partner w tworzeniu aplikacji i produktów cyfrowych. Prowadzę projekt i zespół specjalistów, zamieniając pomysły pomysłodawców i inwestorów w działające aplikacje webowe. Pomagam uruchomić pierwszą działającą wersję w 4 tygodnie – bezpiecznie i bez przepalania budżetu.
+
+- Strona: https://karolmodelski.pl
+- E-mail: kontakt@karolmodelski.pl
+- Telefon / WhatsApp: +48 664 598 563 (najszybsza odpowiedź)
+- LinkedIn: https://www.linkedin.com/in/karol-modelski/
+- Wizytówka Google: https://g.page/r/CZSVfAGtTiIzEBM
+- NIP: 6112800950
+
+Model partnerski: realizuję maksymalnie jeden projekt w miesiącu.
+
+---
+
+## 00 · Wstęp
+
+### W 4 tygodnie sprawdź, czy Twój pomysł na aplikację ma wzięcie.
+
+Odbierasz działającą aplikację w przeglądarce – bez instalowania i bez czekania na akceptację przez App Store czy Google Play. Od razu widzisz, czy ludzie chcą z niej korzystać. Pierwsza wersja do testów powstaje w 4 tygodnie, a pełny odbiór z naniesieniem Twoich poprawek zamyka się zwykle w 6–8 tygodniach.
+
+**Wezwanie do działania:** Porozmawiajmy o projekcie – zarezerwuj 20 minut → https://calendly.com/kontakt-karolmodelski/konsultacja
+
+Wspólnie wybierzemy kluczowy mechanizm na start, aby bezpiecznie sprawdzić rynek i nie zmarnować budżetu.
+
+| Parametr | Wartość |
+| --- | --- |
+| Format | 4 tygodnie |
+| Wartość rynkowa | 125 000 zł |
+| Inwestycja | 29 500 zł |
+| Dostępność | 1 projekt / miesiąc |
+
+---
+
+## 01 · Problem (#problemy)
+
+### Dlaczego start z agencją to najczęściej bolesna lekcja?
+
+Gdy masz pomysł na aplikację lub narzędzie internetowe, tradycyjna ścieżka najczęściej prowadzi w jedną z dwóch ślepych uliczek:
+
+**Dwie ślepe uliczki**
+
+1. **Kupujesz same rysunki i obietnice** — Płacisz kilkanaście tysięcy złotych, czekasz 3 miesiące i dostajesz ładną prezentację w pliku graficznym. Problem w tym, że w nic nie da się kliknąć na żywo, nic w środku nie działa i nikt nie może tego faktycznie sprawdzić. Mija czas, a Ty nadal nie masz w ręku niczego, co mogłoby przynieść zysk.
+2. **Wydajesz 100 000 zł, zanim ktokolwiek to zobaczy** — Agencja przez pół roku buduje skomplikowane formularze, panele administracyjne i konta, zamiast po prostu dać ludziom sprawdzić to, co w Twoim pomyśle najważniejsze. Najgorszy moment to ten, w którym po wydaniu wszystkich oszczędności okazuje się, że odbiorcy oczekiwali czegoś zupełnie innego.
+
+**Najgorszy scenariusz?** Po 6 miesiącach czekania i wydaniu 100 000 zł dowiadujesz się, że nikt tego nie potrzebuje – a agencja rozkłada ręce i wystawia kolejną fakturę za poprawki.
+
+> **Cel biznesu jest prosty.** Nie chodzi o to, żeby miesiącami dyskutować i planować, tylko żeby jak najszybciej zobaczyć, czy ludzie z tego korzystają, wracają i chcą za to płacić.
+
+---
+
+## 02 · Model (#model)
+
+### Nie musisz znać się na technologii. Prowadzę Cię krok po kroku od A do Z
+
+Tradycyjne agencje wymagają od Ciebie gotowych specyfikacji, każą wybierać bazy danych i zarzucają Cię pytaniami, na które nie znasz odpowiedzi. U mnie ten proces wygląda zupełnie inaczej:
+
+1. **Ty robisz to, w czym jesteś najlepszy** — Opowiadasz mi o swoim pomyśle, dzielisz się wiedzą o swoich klientach i mówisz, co Ci się podoba, a co nie.
+2. **Ja prowadzę cały projekt od strony technicznej** — Projektuję architekturę, piszę specyfikację, dobieram i koordynuję sprawdzony zespół specjalistów (grafik, deweloper, tester). Odpowiadam za jakość i termin, a Ty masz jeden punkt kontaktu.
+3. **Święty spokój** — Nie zarządzasz ludźmi, nie tłumaczysz się programistom i nie pilnujesz grafików. Przychodzisz na krótkie, konkretne spotkania, gdzie pokazuję Ci postępy i pytam: „Idziemy w prawo czy w lewo?”. Ty wybierasz kierunek, my dowozimy efekt.
+
+**Skupiamy się na jednej rzeczy**
+
+### Dlaczego większość aplikacji nigdy nie powstaje? Przez dopisywanie kolejnych pomysłów w nieskończoność
+
+Zaczyna się od prostej idei, a po dwóch tygodniach dochodzi logowanie na pięć sposobów, komunikatory, rozbudowane rankingi i profile. Efekt? Budżet rośnie trzykrotnie, termin przesuwa się o pół roku, a na koniec nikt z tego nie korzysta.
+
+**Moim zadaniem jest zadbać o to, żeby Twój projekt nie wpadł w tę pułapkę.** Na samym początku wspólnie bierzemy Twój pomysł i odrzucamy wszystkie poboczne dodatki. Zostawiamy jedno, kluczowe rozwiązanie – tę jedną funkcję, dla której klient w ogóle chce wejść, zapłacić lub wrócić jutro.
+
+Wszystkie kolejne pomysły zapisujemy na później.
+
+> Gdy w trakcie prac wpadnie Ci do głowy nowy pomysł, dbam o Twój termin i budżet. Mówię wtedy wprost: „Świetny pomysł, zapisuję go na kolejny etap. Uruchomimy go zaraz po tym, jak pierwsi użytkownicy przetestują wersję główną”.
+
+---
+
+## 03 · Proces (#proces)
+
+### Jak wygląda współpraca i ile Twojego czasu wymaga
+
+Na starcie kilka godzin na omówienie pomysłu, w trakcie ok. 1 godziny w tygodniu na decyzje, a na koniec spokojny czas na Twoje testy. Dokładnie wiesz, co dzieje się na każdym etapie:
+
+1. **Tygodnie 1–2** — **Wygląd i silnik produktu.** Równolegle projektujemy wygląd (dwa różne kierunki wizualne do wyboru) i budujemy kluczowy silnik Twojego produktu. Dzięki temu grafika nie blokuje prac programistycznych. *Twój udział:* 4–6 godzin na starcie (2–4 spotkania na omówienie zasad i zakresu) + ok. 1 godzina na wybór stylu wizualnego.
+2. **Tygodnie 3–4** — **Pełna funkcja, strona i badanie rynku.** Rozbudowujemy kluczową funkcję, uruchamiamy Twoją stronę internetową oraz włączamy podgląd reakcji ludzi: widzisz, ile osób wchodzi, jak długo klikają i czy wracają kolejnego dnia. *Twój udział:* ok. 1 godzina – klikasz w wersję testową na telefonie lub komputerze i przekazujesz nam swoją opinię.
+3. **Tygodnie 5–8** — **Spokojne testy, poprawki i przekazanie praw.** Masz pełne 10 dni roboczych na przetestowanie narzędzia i spisanie ewentualnych uwag. My mamy do 7 dni roboczych na bezpłatne usunięcie zgłoszonych błędów. Na koniec przekazuję Ci produkt, stronę, kody źródłowe i 100% praw autorskich. *Twój udział:* testujesz działanie produktu według prostej instrukcji i zgłaszasz uwagi.
+
+---
+
+## 04 · Porównanie (#porownanie)
+
+### Na czym Ci zależy?
+
+| Cecha | Tradycyjna agencja IT | Agencja od samych grafik | Współpraca ze mną (4 tygodnie) |
+| --- | --- | --- | --- |
+| Kiedy widzisz realny efekt? | Za 4–6 miesięcy (albo wcale) | Po 2–3 miesiącach rysowania | Pierwsza działająca wersja po 4 tygodniach |
+| Co realnie dostajesz? | Rachunki za godziny i stertę dokumentów | Rysunki, w które nie da się kliknąć na żywo | Działające narzędzie w sieci, stronę i prawdziwe dane |
+| Rozmowy z inwestorami | Prezentacje nie robią już wrażenia – inwestor chce działającego narzędzia i liczb. | Pokazujesz nieruchomy szkic | Kładziesz na stole działający produkt i wyniki testów |
+| Koszty i płatności | Budżet bez dna; zaliczki przepadają przy opóźnieniach | Płacisz za same szkice, a programistom płacisz od nowa | Jedna ustalona kwota w 3 częściach wraz z postępem prac (40/40/20) |
+| Co z tym robisz dalej? | Często trzeba zaczynać od początku | Trzeba budować od zera | Sprawdzony fundament, który 1:1 przenosisz do aplikacji mobilnej |
+
+---
+
+## 05 · Stos wartości (#otrzymujesz)
+
+### Kompletny start Twojego projektu w 4 tygodnie
+
+Gdybyś chciał zlecić te elementy osobno różnym firmom, programistom i prawnikom, zapłacisz za każdy krok z osobna, a rachunki w agencji IT szybko przekroczą 100 000 zł. U mnie dostajesz to jako jeden, gotowy zestaw w stałej cenie:
+
+1. **Działający silnik i kluczowa funkcja w przeglądarce** (koszt budowy w agencji IT: 55 000 zł) — Uruchamiamy tę jedną, kluczową funkcję, dla której ludzie w ogóle chcą z tego korzystać. Twoi odbiorcy wchodzą bezpośrednio przez link na telefonie lub komputerze – od razu sprawdzasz zainteresowanie, bez instalowania i bez czekania na akceptację przez App Store czy Google Play.
+2. **Fundament gotowy pod aplikację na telefon** (min. 25 000 zł oszczędności) — Wszystko budujemy w technologii, którą w kolejnym kroku przenosimy wprost do App Store i Google Play. Żadna praca nie ląduje w koszu, a Ty nie płacisz drugi raz za ten sam fundament.
+3. **Dwa języki od pierwszego dnia (polski i angielski)** (6 000 zł) — Od pierwszego dnia przygotowujemy narzędzie tak, by działało po polsku i po angielsku pod wspólnym adresem. Nie musisz później płacić programistom za przepisywanie kodu od nowa, żeby wyjść w świat – od razu możesz pokazać działającą aplikację znajomym lub partnerom z zagranicy.
+4. **Oficjalna strona z Twoją nazwą** (7 500 zł) — Prosta, czytelna wizytówka w sieci pod Twoim adresem. W 2 minuty wyjaśnia ludziom, na czym polega Twój pomysł, budzi zaufanie i zachęca do wypróbowania.
+5. **Podgląd zachowań użytkowników i szczere opinie** (5 000 zł) — Widzisz czarno na białym, jak ludzie reagują: ile osób weszło, ile czasu spędzili w środku i czy wracają kolejnego dnia. Przy próbie wyjścia zadajemy jedno krótkie pytanie, dzięki czemu od razu znasz ich zdanie.
+6. **Zestaw materiałów do rozmów z partnerami i inwestorami** (8 000 zł) — Krótkie wideo pokazujące działający produkt w akcji, czytelne zrzuty ekranu oraz jednostronicowe podsumowanie techniczne, które buduje wiarygodność na spotkaniach o finansowanie. Zamiast opowiadać o marzeniach z prezentacji, kładziesz na stole dowód, że produkt już działa.
+7. **Zero opłat za serwery podczas testów** (ok. 2 500 zł oszczędności) — Wszystko uruchamiam w chmurze tak, że obsługa pierwszych tysięcy użytkowników kosztuje Cię równe 0 zł miesięcznie. Żadnych ukrytych rachunków w tle.
+8. **Czysty kod i pełna swoboda biznesowa** (5 000 zł) — Masz w umowie gwarancję, że nikt nie zażąda od Ciebie darmowego udostępniania kodu ani opłat licencyjnych. Możesz na tym w 100% legalnie i bezpiecznie zarabiać.
+9. **Konkretny plan na kolejny krok (Wersja 2.0)** (5 000 zł) — Gdy zbierzemy pierwsze reakcje rynku, siadamy razem do wyników. Dostajesz jasne podsumowanie: które funkcje warto wdrożyć w następnej kolejności, w jakim czasie i ile to będzie kosztować.
+10. **Pełne bezpieczeństwo: umowa o zachowaniu poufności i 100% praw autorskich** (6 000 zł) — Zanim powiesz mi o szczegółach, podpisujemy umowę o zachowaniu poufności. Cały kod i 100% praw autorskich przechodzi na Ciebie – możesz z tym zrobić, co chcesz: rozwijać, sprzedać firmę albo wziąć inwestora.
+
+**Łączna wartość rynkowa: 125 000 zł → Twoja inwestycja: 29 500 zł brutto** (stała kwota, płatność w 3 częściach).
+
+Wezwanie do działania: Porozmawiajmy o projekcie – zarezerwuj 20 minut → https://calendly.com/kontakt-karolmodelski/konsultacja
+
+---
+
+## 06 · Rozliczenie (#rozliczenie)
+
+### Proste zasady: płacisz etapami, gdy widzisz efekty
+
+Nie kupujesz „godzin programistów w ciemno” ani nie ryzykujesz wpłaty całości z góry. Koszt jest ustalony z góry, a płatność dzielimy na 3 bezpieczne części:
+
+1. **40% (11 800 zł) – 1. część, na start prac** — Wpłacasz w dniu podpisania umowy i formalnego zobowiązania do poufności. Dzięki temu rezerwuję czas swój i zespołu wyłącznie na Twój projekt, ustalamy szczegóły i od razu ruszamy z budową wyglądu oraz silnika produktu.
+2. **40% (11 800 zł) – 2. część, gdy produkt jest gotowy do testów** — Płacisz dopiero po 4 tygodniach, kiedy narzędzie działa w internecie, Twoja strona jest włączona, a pierwsi ludzie mogą już w to klikać i sprawdzać.
+3. **20% (5 900 zł) – 3. część, na sam koniec, po Twoich testach** — Dopiero po tym, jak sam wszystko na spokojnie sprawdzisz (masz na to komfortowe 10 dni roboczych), a my naniesiemy ewentualne poprawki, zamykamy formalności i przekazuję Ci pełne prawa własności oraz dostęp do wszystkiego.
+
+Dzięki temu 60% kwoty zostaje w Twojej kieszeni do momentu, aż zobaczysz działające narzędzie i sam skończysz testy.
+
+---
+
+## 07 · Gwarancja (#gwarancja)
+
+### Biorę pełną odpowiedzialność za termin i sprawny produkt
+
+W tradycyjnych agencjach projekty często przeciągają się o kolejne miesiące, a klient płaci za przedłużające się dyskusje. U mnie zasady są proste i czarno na białym zapisane w umowie:
+
+1. **Gwarancja terminu** — Po wspólnym ustaleniu zakresu na pierwszej rozmowie pomagam Ci skompletować niezbędne materiały i skonfigurować adres strony. Gdy mamy komplet, zegar rusza: mamy równe 4 tygodnie na pierwszą działającą wersję. Jeśli z mojej winy nastąpi opóźnienie – pracuję wraz z zespołem bezpłatnie aż do skutku, a za każdy dzień opóźnienia potrącasz kary umowne bezpośrednio z kolejnej faktury.
+2. **3 miesiące gwarancji technicznej po wdrożeniu** — Nie zostajesz sam po oddaniu projektu. Otrzymujesz 3-miesięczną pisemną gwarancję na bezpłatne usuwanie ewentualnych błędów z szybkim czasem reakcji (do 24–48 godzin).
+3. **Sprawny kontakt z Twojej strony** — Żeby domknąć prace w 4 tygodnie, potrzebuję Twoich decyzji (np. wybór wyglądu z dwóch propozycji) w ciągu 24 godzin. Jeśli na coś czekamy – czas realizacji po prostu wydłuża się o tyle samo.
+4. **Wgląd w postępy od pierwszego dnia** — Od startu prac masz stały podgląd na żywo, jak powstaje Twój projekt. Widzisz na bieżąco, że prace idą do przodu.
+
+---
+
+## 08 · O mnie (#o-mnie)
+
+### Kto odpowiada za Twój projekt?
+
+Cześć, nazywam się **Karol Modelski**.
+
+Przez ponad 7 lat tworzyłem systemy w bankowości i dużych instytucjach finansowych. W tym środowisku nie ma miejsca na błędy, awarie czy niedopatrzenia – wszystko musi działać precyzyjnie, bezpiecznie i stabilnie.
+
+Tę samą bankową solidność i dbałość o bezpieczeństwo przenoszę do współpracy z pomysłodawcami – bez korporacyjnej biurokracji, bez przepalania budżetu i z jednym punktem kontaktu.
+
+Masz jeden punkt kontaktu – mnie. Pracuję ze sprawdzonym, zaufanym zespołem specjalistów (deweloper, grafik, tester), ale to ja projektuję architekturę, pilnuję jakości i biorę pełną odpowiedzialność za całość. W 4 tygodnie zamieniam Twoją wizję w działającą aplikację webową, na której bezpiecznie sprawdzisz rynek.
+
+---
+
+## 09 · FAQ (#faq)
+
+### Konkretne odpowiedzi, zanim zaczniemy rozmowę
+
+**Ile dokładnie trwa zbudowanie działającej wersji?**
+Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie. Po jej zakończeniu masz 10 dni roboczych na własne testy i uwagi, a my do 7 dni roboczych na naniesienie poprawek. Cały proces – od pierwszego spotkania do finalnego przekazania praw – zamyka się zwykle w 6–8 tygodniach.
+
+**Czy to, co zbudujemy w 4 tygodnie, trzeba będzie wyrzucić, jeśli zechcę wejść do App Store i Google Play?**
+Nie. Cały silnik, logika i wygląd powstają w technologii, którą w kolejnym kroku bez problemu przenosimy do App Store i Google Play. Żadna praca nie ląduje w koszu i nie płacisz za to samo drugi raz.
+
+**Czy muszę płacić całą kwotę z góry?**
+Nie. Płatność dzielimy na 3 etapy: 40% na start prac, 40% dopiero po 4 tygodniach, gdy produkt działa w internecie, i ostatnie 20% na samym końcu – po Twoich testach i naniesieniu poprawek.
+
+**Czy muszę płacić za serwery i utrzymanie narzędzia w trakcie testów?**
+Nie. Narzędzie uruchamiam w nowoczesnej chmurze z bezpłatnymi limitami startowymi. Pierwsze kilka tysięcy użytkowników obsłużysz przy koszcie serwerów wynoszącym równe 0 zł miesięcznie.
+
+**Czy dostanę materiały, żeby pokazać projekt inwestorom lub wspólnikom?**
+Tak. Otrzymujesz ode mnie wideo z działania narzędzia, zrzuty ekranu oraz jednostronicowe podsumowanie techniczne. Zamiast opowiadać o pomyśle ze slajdów, pokazujesz gotowy dowód, że produkt działa.
+
+**Czy mój pomysł jest w 100% bezpieczny?**
+Tak. Zanim zdradzisz mi jakiekolwiek szczegóły, podpisujemy umowę o zachowaniu poufności z wpisanymi konkretnymi karami finansowymi. Po zakończeniu prac całość kodu i 100% praw autorskich przechodzi na Ciebie.
+
+**Co, jeśli po 4 tygodniach okaże się, że rynek nie jest zainteresowany?**
+Właśnie po to to robimy. W najlepszym wypadku od razu masz działający biznes i pierwszych klientów. W najgorszym – w 4 tygodnie wiesz to na 100%, oszczędzając ponad 70 000 zł i pół roku frustracji w tradycyjnej agencji. W obu wypadkach wygrywasz twarde fakty zamiast zgadywania.
+
+---
+
+## 10 · Kontakt (#kontakt)
+
+### Zobacz, ile Twój pomysł może osiągnąć na rynku
+
+Zamiast tracić kolejne miesiące na zastanawianie się „co by było, gdyby”, poświęćmy 20 minut na luźną, konkretną rozmowę:
+
+1. Opowiesz mi o swoim pomyśle własnymi słowami.
+2. Pomogę dobrać najważniejsze elementy na start, żeby bezpiecznie sprawdzić rynek i nie zmarnować budżetu.
+3. Wyjdziesz z jasnym planem, jak w 4 tygodnie uruchomić pierwszą działającą wersję.
+
+**Bezpłatna konsultacja (20 minut):** https://calendly.com/kontakt-karolmodelski/konsultacja
+
+Bez sprzedaży i bez technicznego żargonu. Rozmawiamy wyłącznie o Twoim pomyśle i o tym, jak najszybciej pokazać go światu.
+
+Ze względu na model partnerski realizuję maksymalnie jeden projekt w miesiącu.
+
+---
+
+## Zasady i bezpieczeństwo
+
+- **100% poufności:** Zanim powiesz mi o pomyśle, podpisujemy umowę o zachowaniu poufności.
+- **Prawa autorskie:** Cały kod i 100% praw autorskich przechodzi na Ciebie.
+- **Bezpieczeństwo finansowe:** Płatność w 3 częściach (40/40/20) · Gwarancja stałej ceny ryczałtowej bez ukrytych kosztów · Faktury VAT.
+- **Gwarancja techniczna:** 3 miesiące bezpłatnej opieki powdrożeniowej i usuwania błędów z reakcją do 24–48 h.
+- **Model partnerski:** realizowany jest maksymalnie jeden projekt miesięcznie.
+
+## Kontakt i profile
+
+- Strona: https://karolmodelski.pl
+- E-mail: kontakt@karolmodelski.pl
+- Telefon / WhatsApp: +48 664 598 563
+- LinkedIn: https://www.linkedin.com/in/karol-modelski/
+- Wizytówka Google: https://g.page/r/CZSVfAGtTiIzEBM
+- NIP: 6112800950
+- Pracuję w 100% zdalnie i elastycznie.
+
+## Cennik
+
+Pełny cennik dla agentów AI: https://karolmodelski.pl/pricing.md
+
+Cena pakietu: **29 500 zł brutto** (stała kwota, bez rozliczania za godziny, bez ukrytych kosztów), płatna w 3 częściach (40% / 40% / 20%). Zakres: pierwsza działająca wersja w 4 tygodnie, pełny odbiór z poprawkami zwykle 6–8 tygodni. Wartość rynkowa i oszczędności pakietu: 125 000 zł.
+
+© 2026 Karol Modelski · wszelkie prawa zastrzeżone.

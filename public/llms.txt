@@ -9,6 +9,10 @@ Język: polski
 Kontakt: kontakt@karolmodelski.pl · +48 664 598 563 (WhatsApp, najszybsza odpowiedź)
 NIP: 6112800950
 
+## Zasoby dla agentów AI
+
+- [Pełna treść strony](https://karolmodelski.pl/llms-full.txt): Rozwinięty, tekstowy odpowiednik strony głównej – wszystkie sekcje, tabela porównawcza, stos wartości, cennik, FAQ i kontakt.
+
 ## Profile oficjalne
 
 - [LinkedIn](https://www.linkedin.com/in/karol-modelski/): Profil zawodowy Karola Modelskiego.
@@ -21,8 +25,8 @@ NIP: 6112800950
 ## Usługa
 
 - [Model współpracy i skupienie na jednej rzeczy](https://karolmodelski.pl/#model): Ty przynosisz pomysł i wiedzę o Twoich klientach, ja prowadzę projekt i zespół specjalistów – bez żargonu i bez zarządzania ludźmi po Twojej stronie. Wycinamy zbędne funkcje: jedno zadanie, jeden odbiorca, jeden konkretny efekt, a dodatkowe pomysły odkładamy na kolejny etap.
-- [Proces, Twój czas i efekty](https://karolmodelski.pl/#proces): Tygodnie 1–2 (wygląd i serce mechanizmu), tygodnie 3–4 (pełna funkcja, strona i badanie rynku), tygodnie 5–8 (testy, poprawki i przekazanie praw) – z Twoim udziałem: 4–6 godzin na starcie, ok. 1 godzina na wybór wyglądu, ok. 1 godzina na Twoją opinię i 10 dni roboczych na testy.
-- [Co otrzymujesz](https://karolmodelski.pl/#otrzymujesz): Kompletny start Twojego projektu w 4 tygodnie – działające serce pomysłu w przeglądarce (55 000 zł), fundament pod aplikację mobilną (25 000 zł oszczędności), dwa języki PL/EN (6 000 zł), oficjalna strona (7 500 zł), podgląd zachowań i szczere opinie (5 000 zł), zestaw materiałów dla partnerów i inwestorów (8 000 zł), zero opłat za serwery w testach (2 500 zł), czysty kod i pełna swoboda biznesowa (5 000 zł), plan na Wersję 2.0 (5 000 zł) oraz umowa o zachowaniu poufności i 100% praw autorskich (6 000 zł). Łączna wartość rynkowa: 125 000 zł. Twoja inwestycja: 29 500 zł brutto, płatna w 3 częściach.
+- [Proces, Twój czas i efekty](https://karolmodelski.pl/#proces): Tygodnie 1–2 (wygląd i silnik produktu), tygodnie 3–4 (pełna funkcja, strona i badanie rynku), tygodnie 5–8 (testy, poprawki i przekazanie praw) – z Twoim udziałem: 4–6 godzin na starcie, ok. 1 godzina na wybór wyglądu, ok. 1 godzina na Twoją opinię i 10 dni roboczych na testy.
+- [Co otrzymujesz](https://karolmodelski.pl/#otrzymujesz): Kompletny start Twojego projektu w 4 tygodnie – działający silnik i kluczowa funkcja w przeglądarce (55 000 zł), fundament pod aplikację na telefon (25 000 zł oszczędności), dwa języki PL/EN (6 000 zł), oficjalna strona (7 500 zł), podgląd zachowań i szczere opinie (5 000 zł), zestaw materiałów dla partnerów i inwestorów (8 000 zł), zero opłat za serwery w testach (2 500 zł), czysty kod i pełna swoboda biznesowa (5 000 zł), plan na Wersję 2.0 (5 000 zł) oraz umowa o zachowaniu poufności i 100% praw autorskich (6 000 zł). Łączna wartość rynkowa: 125 000 zł. Twoja inwestycja: 29 500 zł brutto, płatna w 3 częściach.
 - [Porównanie](https://karolmodelski.pl/#porownanie): Tradycyjna agencja IT vs. agencja graficzna vs. mój 4-tygodniowy proces.
 - [Płatność w 3 częściach](https://karolmodelski.pl/#rozliczenie): Inwestycja 29 500 zł brutto płatna etapami – 40% (11 800 zł) na start prac przy podpisaniu umowy i formalnego zobowiązania do poufności, 40% (11 800 zł) gdy produkt jest gotowy do testów, 20% (5 900 zł) na koniec po Twoich testach i przekazaniu praw; faktura VAT na każdym etapie.
 - [Gwarancja i zasady](https://karolmodelski.pl/#gwarancja): Pierwsza działająca wersja w 4 tygodnie; przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne potrącasz z kolejnej faktury. 3 miesiące gwarancji technicznej po wdrożeniu (reakcja 24–48 h), sprawny kontakt po stronie klienta i stały wgląd na żywo w postępy prac.
@@ -38,7 +42,7 @@ NIP: 6112800950
 
 ## FAQ
 
-- [Najczęstsze pytania](https://karolmodelski.pl/#faq): Czas realizacji, gotowość pod aplikację mobilną, model płatności (40% / 40% / 20%), koszty serwerów, materiały dla inwestorów, poufność i co się dzieje, gdy po 4 tygodniach rynek nie zareaguje.
+- [Najczęstsze pytania](https://karolmodelski.pl/#faq): Czas realizacji, gotowość pod aplikację na telefon, model płatności (40% / 40% / 20%), koszty serwerów, materiały dla inwestorów, poufność i co się dzieje, gdy po 4 tygodniach rynek nie zareaguje.
 
 ## Zasady i bezpieczeństwo
 
