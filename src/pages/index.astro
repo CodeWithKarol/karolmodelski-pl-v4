@@ -17,7 +17,7 @@ import FaqAccordion from "@/components/faq-accordion"
 import ProfileAvatar from "@/components/profile-avatar"
 import { ArrowRight, Check, Mail, MapPin, MessageCircle } from "lucide-react"
 
-const eyebrow = "Zamiast 100 000 zł i 5 miesięcy w agencji IT"
+const eyebrow = "Zamiast 100 000 zł i 5 miesięcy w firmie programistycznej"
 
 const nextStartMonth = new Intl.DateTimeFormat("pl-PL", {
   month: "long",
@@ -45,7 +45,7 @@ const businessGoal = {
 
 const comparisonColumns = [
   {
-    title: "Tradycyjna agencja IT",
+    title: "Tradycyjna firma programistyczna",
     ours: false,
   },
   {
@@ -127,6 +127,11 @@ const paymentStages = [
 
 const guarantees = [
   {
+    title: "Gwarancja stałej ceny ryczałtowej (0 zł nieprzewidzianych dopłat)",
+    description:
+      "W agencjach programistycznych rachunki rosną wraz z każdą dodatkową godziną i poprawką. U mnie cena 29 500 zł brutto jest stała, zamknięta i wpisana wprost do umowy. Płacisz ryczałtem za konkretny, ustalony na starcie rezultat: jeśli w trakcie prac lub odbioru technicznego cokolwiek wymaga dopracowania, robimy to bez żadnych ukrytych faktur i bez dopłacania choćby złotówki.",
+  },
+  {
     title: "Gwarancja terminu",
     description:
       "Po wspólnym ustaleniu zakresu na pierwszej rozmowie pomagam Ci skompletować niezbędne materiały i skonfigurować adres strony. Gdy mamy komplet, zegar rusza: mamy równe 4 tygodnie na pierwszą działającą wersję. Jeśli z mojej winy nastąpi opóźnienie – pracuję wraz z zespołem bezpłatnie aż do skutku, a za każdy dzień opóźnienia potrącasz kary umowne bezpośrednio z kolejnej faktury.",
@@ -155,23 +160,23 @@ const guarantees = [
 
 const offerStack = [
   {
-    value: "55 000 zł",
-    note: "Koszt budowy w agencji IT",
-    title: "Działający silnik i kluczowa funkcja w przeglądarce",
+    value: "54 000 zł",
+    note: "Koszt stworzenia w firmie programistycznej",
+    title: "Działający produkt w sieci z kodem gotowym na telefony",
     description:
-      "Uruchamiamy tę jedną, kluczową funkcję, dla której ludzie w ogóle chcą z tego korzystać. Twoi odbiorcy wchodzą bezpośrednio przez link na telefonie lub komputerze – od razu sprawdzasz zainteresowanie, bez instalowania i bez czekania na akceptację przez App Store czy Google Play.",
+      "Budujemy w pełni działające narzędzie w wersji internetowej. Twoi pierwsi odbiorcy wchodzą bezpośrednio przez link na telefonie lub komputerze – od razu sprawdzasz ich reakcje i zbierasz opinie, bez czekania na weryfikację przez sklepy z aplikacjami. Wszystko tworzymy od razu w technologii, którą w kolejnym kroku bez problemu przenosimy do App Store i Google Play. Żadna praca nie ląduje w koszu, a Ty nie płacisz drugi raz za pisanie kodu od nowa.",
     points: [],
   },
   {
-    value: "min. 25 000 zł",
-    note: "Oszczędność na pisaniu kodu od nowa",
-    title: "Fundament gotowy pod aplikację na telefon",
+    value: "3 500 zł",
+    note: "Rynkowy koszt przygotowania",
+    title: "Dwa różne style wizualne do wyboru",
     description:
-      "Wszystko budujemy w technologii, którą w kolejnym kroku przenosimy wprost do App Store i Google Play. Żadna praca nie ląduje w koszu, a Ty nie płacisz drugi raz za ten sam fundament.",
+      "Nie narzucamy jednego wyglądu w ciemno. Zanim napiszemy kod, przygotowujemy dla Ciebie 2 zupełnie różne koncepcje graficzne (kolory, układ ekranu, charakter całości). Ty decydujesz, w którą stronę idziemy, mając pewność, że produkt będzie podobał się Tobie i Twoim odbiorcom.",
     points: [],
   },
   {
-    value: "6 000 zł",
+    value: "3 500 zł",
     note: "Rynkowa wartość wdrożenia",
     title: "Dwa języki od pierwszego dnia (polski i angielski)",
     description:
@@ -179,15 +184,15 @@ const offerStack = [
     points: [],
   },
   {
-    value: "7 500 zł",
-    note: "Rynkowy koszt stworzenia",
-    title: "Oficjalna strona z Twoją nazwą",
+    value: "5 000 zł",
+    note: "Rynkowy koszt stworzenia i opracowania treści",
+    title: "Strona Twojego produktu z gotową treścią zamieniającą odwiedzających w użytkowników",
     description:
-      "Prosta, czytelna wizytówka w sieci pod Twoim adresem. W 2 minuty wyjaśnia ludziom, na czym polega Twój pomysł, budzi zaufanie i zachęca do wypróbowania.",
+      "Zdejmuję z Ciebie konieczność wymyślania haseł marketingowych i układania oferty. Przygotowuję kompletną stronę pod Twoim adresem z gotowymi, perswazyjnymi tekstami, które tłumaczą wartość produktu w prosty sposób. Każdy, kto wchodzi z zewnątrz, w 2 minuty rozumie Twój pomysł i od razu klika przycisk wypróbowania narzędzia.",
     points: [],
   },
   {
-    value: "5 000 zł",
+    value: "2 000 zł",
     note: "Rynkowy koszt konfiguracji",
     title: "Podgląd zachowań użytkowników i szczere opinie",
     description:
@@ -195,36 +200,31 @@ const offerStack = [
     points: [],
   },
   {
-    value: "8 000 zł",
-    note: "Rynkowa wartość przygotowania",
-    title: "Zestaw materiałów do rozmów z partnerami i inwestorami",
+    value: "3 000 zł",
+    note: "Rynkowy koszt przygotowania",
+    title: "Zestaw do rozmów z partnerami i inwestorami",
     description:
-      "Krótkie wideo pokazujące działający produkt w akcji, czytelne zrzuty ekranu oraz jednostronicowe podsumowanie techniczne, które buduje wiarygodność na spotkaniach o finansowanie. Zamiast opowiadać o marzeniach z prezentacji, kładziesz na stole dowód, że produkt już działa.",
-    points: [],
+      "Kładziesz na stole gotowy pakiet zamiast surowego pomysłu:",
+    points: [
+      "Wygląd Twojego produktu na telefonach i komputerach — dopracowane grafiki ekranów, gotowe do pokazania wspólnikom, wrzucenia na stronę czy do mediów społecznościowych.",
+      "Jednostronicowe podsumowanie dla inwestora: Prosty dokument wyjaśniający, dlaczego produkt jest bezpieczny, serwery kosztują 0 zł i dlaczego całość można od razu przenieść na telefony bez pisania od nowa.",
+      "Prezentacja pomysłu w 2 minuty: Krótkie slajdy tłumaczące, jak działa narzędzie, w czym pomaga ludziom i jak na tym zarabiasz — tak, by każdy od razu to zrozumiał.",
+    ],
   },
   {
-    value: "ok. 2 500 zł",
-    note: "Realna oszczędność",
-    title: "Zero opłat za serwery podczas testów",
-    description:
-      "Wszystko uruchamiam w chmurze tak, że obsługa pierwszych tysięcy użytkowników kosztuje Cię równe 0 zł miesięcznie. Żadnych ukrytych rachunków w tle.",
-    points: [],
-  },
-  {
-    value: "5 000 zł",
-    note: "Rynkowa wartość konsultacji i analizy",
+    value: "3 500 zł",
+    note: "Rynkowa wartość",
     title: "Konkretny plan na kolejny krok (Wersja 2.0)",
     description:
-      "Gdy zbierzemy pierwsze reakcje rynku, siadamy razem do wyników. Dostajesz jasne podsumowanie: które funkcje warto wdrożyć w następnej kolejności, w jakim czasie i ile to będzie kosztować.",
+      "Gdy zbierzemy pierwsze reakcje ludzi, siadamy razem do podsumowania. Wyciągamy wnioski z tego, co mówią użytkownicy i wspólnie ustalamy plan działania: które pomysły warto dopisać do produktu w następnej kolejności, ile to zajmie i ile będzie kosztować, żeby nie przepalać Twoich pieniędzy w ciemno.",
     points: [],
   },
   {
-    value: "6 000 zł",
-    note: "Rynkowy koszt przygotowania umów IT",
-    title:
-      "Pełne bezpieczeństwo: umowa o zachowaniu poufności i 100% praw autorskich",
+    value: "7 500 zł",
+    note: "Rynkowa wartość koordynacji prac i umów prawnych",
+    title: "Jeden punkt kontaktu i 100% praw autorskich",
     description:
-      "Zanim powiesz mi o szczegółach, podpisujemy umowę o zachowaniu poufności. Cały kod i 100% praw autorskich przechodzi na Ciebie – możesz z tym zrobić, co chcesz: rozwijać, sprzedać firmę albo wziąć inwestora.",
+      "Zdejmuję z Ciebie cały ciężar prowadzenia projektu – zamiast szukać programistów, grafików i testerów, rozmawiasz tylko ze mną. Od pierwszego dnia Twój pomysł chroni umowa o poufności, a po zakończeniu prac cały kod i prawa autorskie przechodzą na Ciebie.",
     points: [],
   },
 ]
@@ -320,23 +320,22 @@ const collaborationModel = [
               class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase"
             >
               <span class="h-px w-8 bg-signal"></span>
-              00 · Wstęp
+              Dla pomysłodawców i przyszłych twórców aplikacji
             </p>
 
             <h1
-              class="mt-6 font-heading text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl xl:text-7xl"
+              class="mt-6 font-heading text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl xl:text-7xl"
             >
-              W 4 tygodnie sprawdź, czy Twój pomysł na aplikację ma wzięcie.
+              Nie budujemy samej aplikacji.<br class="sm:hidden" />
+              Budujemy dowód, że Twój pomysł naprawdę się opłaca.
             </h1>
 
             <p
               class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink-soft"
             >
-              Odbierasz działającą aplikację w przeglądarce – bez instalowania i
-              bez czekania na akceptację przez App Store czy Google Play. Od
-              razu widzisz, czy ludzie chcą z niej korzystać. Pierwsza wersja do
-              testów powstaje w 4 tygodnie, a pełny odbiór z naniesieniem Twoich
-              poprawek zamyka się zwykle w 6–8 tygodniach.
+              W 4 tygodnie dostajesz działający produkt, stronę z podpiętą analityką zachowań użytkowników oraz zestaw materiałów technicznych dla inwestorów.
+              
+              Zamiast ryzykować 100 000 zł w klasycznej firmie programistycznej — kładziesz na stolę działające narzędzie i sprawdzasz rynek na własnych zasadach.
             </p>
 
             <div class="mt-10 flex flex-col items-start gap-4">
@@ -350,14 +349,13 @@ const collaborationModel = [
                   "h-auto min-h-12 w-full gap-2 rounded-[4px] px-7 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
                 )}
               >
-                Porozmawiajmy o projekcie – zarezerwuj 20 minut
+                Sprawdźmy plan na Twój produkt (20 min)
                 <ArrowRight />
               </a>
               <p
                 class="max-w-md text-sm leading-relaxed text-pretty text-ink-soft"
               >
-                Wspólnie wybierzemy kluczowy mechanizm na start, aby
-                bezpiecznie sprawdzić rynek i nie zmarnować budżetu.
+                Bez sprzedaży i trudnego technicznego żargonu. Twój pomysł jest bezpieczny — przed rozmową podpisujemy umowę o zachowaniu poufności.
               </p>
             </div>
           </div>
@@ -385,7 +383,7 @@ const collaborationModel = [
                 >
                   Wartość rynkowa
                 </dt>
-                <dd class="font-heading text-2xl font-semibold">120 000 zł</dd>
+                <dd class="font-heading text-2xl font-semibold">82 000 zł</dd>
               </div>
               <div
                 class="flex items-baseline justify-between gap-6 border-b border-line py-5"
@@ -434,7 +432,7 @@ const collaborationModel = [
             <h2
               class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
             >
-              Dlaczego start z agencją to najczęściej bolesna lekcja?
+              Dlaczego start z firmą programistyczną to najczęściej bolesna lekcja?
             </h2>
             <p
               class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
@@ -475,7 +473,7 @@ const collaborationModel = [
                 >Najgorszy scenariusz?</span
               >{" "}
               Po 6 miesiącach czekania i wydaniu 100 000 zł dowiadujesz się, że nikt
-              tego nie potrzebuje – a agencja rozkłada ręce i wystawia kolejną fakturę
+              tego nie potrzebuje – a firma programistyczna rozkłada ręce i wystawia kolejną fakturę
               za poprawki.
             </p>
 
@@ -520,7 +518,7 @@ const collaborationModel = [
             <p
               class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
             >
-              Tradycyjne agencje wymagają od Ciebie gotowych specyfikacji, każą
+              Tradycyjne firmy programistyczne wymagają od Ciebie gotowych specyfikacji, każą
               wybierać bazy danych i zarzucają Cię pytaniami, na które nie znasz
               odpowiedzi. U mnie ten proces wygląda zupełnie inaczej:
             </p>
@@ -812,7 +810,7 @@ const collaborationModel = [
             >
               Gdybyś chciał zlecić te elementy osobno różnym firmom,
               programistom i prawnikom, zapłacisz za każdy krok z osobna, a
-              rachunki w agencji IT szybko przekroczą 100 000 zł. U mnie
+               rachunki w firmie programistycznej szybko przekroczą 100 000 zł. U mnie
               dostajesz to jako jeden, gotowy zestaw w stałej cenie:
             </p>
 
@@ -864,10 +862,10 @@ const collaborationModel = [
                   </p>
                   <p
                     class="mt-2 font-heading text-4xl font-semibold sm:text-5xl"
-                    data-count="120000"
+                    data-count="82000"
                     data-suffix=" zł"
                   >
-                    120 000 zł
+                    82 000 zł
                   </p>
                 </div>
                 <div class="hidden shrink-0 self-center text-ink-soft sm:block">
@@ -889,11 +887,11 @@ const collaborationModel = [
                 </div>
               </div>
               <p class="mt-4 text-sm text-ink-soft">
-                brutto · stała kwota · płatność w{" "}
+                29 500 zł brutto · stała cena ryczałtowa · 0 zł ukrytych dopłat ·{" "}
                 <a
                   href="#rozliczenie"
                   class="font-medium text-ink underline underline-offset-4 hover:no-underline"
-                  >3 częściach</a
+                  >3 bezpieczne transze</a
                 >
               </p>
             </div>
@@ -908,7 +906,7 @@ const collaborationModel = [
                   "h-auto min-h-12 w-full gap-2 rounded-[4px] px-7 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
                 )}
               >
-                Porozmawiajmy o projekcie – zarezerwuj 20 minut
+                Sprawdźmy plan na Twój produkt (20 min)
                 <ArrowRight />
               </a>
             </div>
@@ -979,6 +977,30 @@ const collaborationModel = [
               Dzięki temu 60% kwoty zostaje w Twojej kieszeni do momentu, aż
               zobaczysz działające narzędzie i sam skończysz odbiór techniczny.
             </p>
+
+            <div
+              class="mt-16 rounded-xl border border-line bg-paper/80 px-6 py-8 sm:px-8 sm:py-10"
+            >
+              <h3
+                class="font-heading text-xl font-semibold tracking-tight sm:text-2xl"
+              >
+                Pełna kontrola nad budżetem od dnia 1
+              </h3>
+              <ul class="mt-5 space-y-4 text-sm leading-relaxed text-ink-soft sm:text-base">
+                <li class="flex gap-3">
+                  <Check className="mt-0.5 size-5 shrink-0 text-ink" />
+                  <span><strong>Stała kwota ryczałtowa:</strong> Żadnego naliczania roboczogodzin w tle.</span>
+                </li>
+                <li class="flex gap-3">
+                  <Check className="mt-0.5 size-5 shrink-0 text-ink" />
+                  <span><strong>0 zł dopłat za poprawki:</strong> Poprawki w ramach ustalonego zakresu są w cenie.</span>
+                </li>
+                <li class="flex gap-3">
+                  <Check className="mt-0.5 size-5 shrink-0 text-ink" />
+                  <span><strong>Płacisz za dowieziony efekt:</strong> 60% kwoty zostaje na Twoim koncie do momentu, aż narzędzie działa w sieci i sam je zaakceptujesz.</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -1007,7 +1029,7 @@ const collaborationModel = [
             <p
               class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-paper/70"
             >
-              W tradycyjnych agencjach projekty często przeciągają się o kolejne
+              W tradycyjnych firmach programistycznych projekty często przeciągają się o kolejne
               miesiące, a klient płaci za przedłużające się dyskusje. U mnie
               zasady są proste i czarno na białym zapisane w umowie:
             </p>
@@ -1207,14 +1229,11 @@ const collaborationModel = [
                   "h-auto min-h-12 w-full gap-2 rounded-[4px] px-7 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
                 )}
               >
-                Porozmawiajmy o projekcie – zarezerwuj 20 minut
+                Sprawdźmy plan na Twój produkt (20 min)
                 <ArrowRight />
               </a>
-              <p
-                class="max-w-xl text-sm leading-relaxed text-pretty text-ink-soft"
-              >
-                Bez sprzedaży i bez technicznego żargonu. Rozmawiamy wyłącznie o
-                Twoim pomyśle i o tym, jak najszybciej pokazać go światu.
+              <p class="max-w-xl text-sm leading-relaxed text-pretty text-ink-soft">
+                Luźna, konkretna rozmowa. Zero sprzedaży — opowiadasz o pomyśle własnymi słowami, a ja mówię Ci, jak zamknąć pierwszą wersję w 4 tygodniach i co warto od razu odrzucić.
               </p>
               <p
                 class="flex max-w-xl items-start gap-3 text-sm leading-relaxed text-pretty text-ink-soft"
