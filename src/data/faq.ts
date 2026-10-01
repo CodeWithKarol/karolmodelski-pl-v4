@@ -6,36 +6,47 @@ export const faq = [
   },
   {
     question:
-      "Czy to, co zbudujemy w 4 tygodnie, trzeba będzie wyrzucić, jeśli zechcę wejść do App Store i Google Play?",
+      "Czy to, co zbudujemy w 4 tygodnie, trzeba będzie wyrzucić przy wejściu do App Store i Google Play?",
     answer:
-      "Nie. Cały silnik, logika i wygląd powstają w technologii, którą w kolejnym kroku bez problemu przenosimy do App Store i Google Play. Żadna praca nie ląduje w koszu i nie płacisz za to samo drugi raz.",
+      "Nie. Cały produkt, jego logika i wygląd powstają w technologii, którą w kolejnym kroku bez problemu przenosimy do sklepów z aplikacjami na telefony. Żadna praca nie ląduje w koszu i nie płacisz drugi raz za ten sam kod.",
+  },
+  {
+    question: "Czy muszę znać się na technologii i ile mojego czasu to wymaga?",
+    answer:
+      "Zupełnie nie. Przejmuję cały nadzór techniczny i koordynację prac, więc nie musisz zarządzać programistami ani znać branżowych pojęć. Po Twojej stronie to łącznie 4–6 godzin na starcie na omówienie pomysłu, a w trakcie prac około 1 godziny tygodniowo na krótkie decyzje: „idziemy w prawo czy w lewo?”.",
   },
   {
     question: "Czy muszę płacić całą kwotę z góry?",
     answer:
-      "Nie. Płatność dzielimy na 3 etapy: 40% na start prac, 40% dopiero po 4 tygodniach, gdy produkt działa w internecie, i ostatnie 20% na samym końcu – po odbiorze technicznym i naniesieniu poprawek.",
+      "Nie. Płatność dzielimy na 3 bezpieczne etapy powiązane z postępem prac: 40% na start i rezerwację zespołu, 40% po 4 tygodniach, gdy produkt i Twoja strona działają już w sieci, oraz 20% na samym końcu – dopiero po Twoim odbiorze technicznym i naniesieniu poprawek.",
   },
   {
     question:
       "Czy muszę płacić za serwery i utrzymanie narzędzia w trakcie testów?",
     answer:
-      "Nie. Narzędzie uruchamiam w nowoczesnej chmurze z bezpłatnymi limitami startowymi. Pierwsze kilka tysięcy użytkowników obsłużysz przy koszcie serwerów wynoszącym równe 0 zł miesięcznie.",
+      "Nie. Wszystko konfiguruję w chmurze z bezpłatnymi limitami startowymi. Obsługa pierwszych kilku tysięcy użytkowników kosztuje Cię równe 0 zł miesięcznie – bez żadnych ukrytych rachunków w tle.",
   },
   {
     question:
-      "Czy dostanę materiały, żeby pokazać projekt inwestorom lub wspólnikom?",
+      "Jak sprawdzimy rynek i zbierzemy opinie, jeśli nie mam budżetu na reklamę?",
     answer:
-      "Tak. Otrzymujesz ode mnie wideo z działania narzędzia, zrzuty ekranu oraz jednostronicowe podsumowanie techniczne. Zamiast opowiadać o pomyśle ze slajdów, pokazujesz gotowy dowód, że produkt działa.",
+      "Dostajesz działający produkt dostępny pod prostym linkiem oraz gotową stronę internetową z perswazyjnymi tekstami. Od pierwszego dnia włączamy podgląd reakcji: widzisz, ile osób weszło, jak długo korzystają i czy wracają. Przy próbie wyjścia zadajemy krótkie pytanie zwrotne, dzięki czemu zbierasz szczere opinie od pierwszych 50–100 osób bez wydawania fortuny na marketing.",
   },
   {
-    question: "Czy mój pomysł jest w 100% bezpieczny?",
+    question:
+      "Czy dostanę materiały, żeby pokazać projekt partnerom lub inwestorom?",
     answer:
-      "Tak. Zanim zdradzisz mi jakiekolwiek szczegóły, podpisujemy umowę o zachowaniu poufności z wpisanymi konkretnymi karami finansowymi. Po zakończeniu prac całość kodu i 100% praw autorskich przechodzi na Ciebie.",
+      "Tak. Otrzymujesz gotowy pakiet: profesjonalne wizualizacje produktu na ekranach telefonów i komputerów, jednostronicowe podsumowanie techniczne architektury oraz 2-minutową prezentację tłumaczącą działanie, logikę i model Twojego narzędzia. Kładzesz na stole dowód, zamiast opowiadać o pomysłach na sucho.",
+  },
+  {
+    question: "Czy mój pomysł jest w 100% bezpieczny prawnie?",
+    answer:
+      "Tak. Zanim zdradzisz mi jakiekolwiek szczegóły, podpisujemy umowę o zachowaniu poufności. Po zakończeniu prac i odbiorze przekazuję Ci pełen kod źródłowy oraz 100% majątkowych praw autorskich – masz pełną swobodę dalszego rozwoju, sprzedaży czy pozyskiwania wspólników.",
   },
   {
     question:
       "Co, jeśli po 4 tygodniach okaże się, że rynek nie jest zainteresowany?",
     answer:
-      "Właśnie po to to robimy. W najlepszym wypadku od razu masz działający biznes i pierwszych klientów. W najgorszym – w 4 tygodnie wiesz to na 100%, oszczędzając ponad 70 000 zł i pół roku frustracji w tradycyjnej agencji. W obu wypadkach wygrywasz twarde fakty zamiast zgadywania.",
+      "Właśnie po to to robimy. W najlepszym wypadku masz działający produkt, zweryfikowaną bazę i zielone światło na wersję mobilną. W najgorszym – w 4 tygodnie wiesz to na 100% na bazie twardych liczb, oszczędzając ponad 70 000 zł i pół roku frustracji na budowanie czegoś w ciemno. W obu scenariuszach wygrywasz fakty zamiast domysłów.",
   },
 ]
