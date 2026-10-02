@@ -2,6 +2,12 @@
 import Layout from "@/layouts/main.astro"
 import { Image } from "astro:assets"
 import wystapienie from "@/assets/images/karol-modelski-wystapienie.webp"
+import proces from "@/assets/images/od-pomyslu-do-produktu.png"
+import wspolaca from "@/assets/images/jak-wyglada-wspolaca.png"
+import scope from "@/assets/images/nie-budujemy-wszystkiego-naraz.png"
+import stack from "@/assets/images/kompletny-start-projektu.png"
+import placisz from "@/assets/images/placisz-etapami.png"
+import jasne from "@/assets/images/jasne-zasady.png"
 import { buttonVariants } from "@/components/ui/button"
 import {
   Table,
@@ -14,10 +20,26 @@ import {
 } from "@/components/ui/table"
 import { cn } from "@/lib/utils"
 import FaqAccordion from "@/components/faq-accordion"
+import OfferStack from "@/components/offer-stack"
+import AccordionList from "@/components/accordion-list"
 import ProfileAvatar from "@/components/profile-avatar"
-import { ArrowRight, Check, Mail, MapPin, MessageCircle } from "lucide-react"
+import {
+  ArrowRight,
+  BadgeCheck,
+  CalendarClock,
+  Check,
+  FileCheck2,
+  Lock,
+  Mail,
+  MapPin,
+  Menu,
+  MessageCircle,
+  ShieldCheck,
+} from "lucide-react"
 
 const eyebrow = "Zamiast 100 000 zł i 5 miesięcy w firmie programistycznej"
+
+const chartBars = [34, 46, 40, 58, 52, 70, 64, 82, 76, 92]
 
 const nextStartMonth = new Intl.DateTimeFormat("pl-PL", {
   month: "long",
@@ -28,12 +50,12 @@ const problems = [
   {
     title: "Kupujesz same rysunki i obietnice",
     description:
-      "Płacisz kilkanaście tysięcy złotych, czekasz 3 miesiące i dostajesz ładną prezentację w pliku graficznym. Problem w tym, że w nic nie da się kliknąć na żywo, nic w środku nie działa i nikt nie może tego faktycznie sprawdzić. Mija czas, a Ty nadal nie masz w ręku niczego, co mogłoby przynieść zysk.",
+      "Płacisz kilkanaście tysięcy złotych, czekasz 3 miesiące i dostajesz ładną prezentację w pliku graficznym. Nic nie da się kliknąć na żywo, nikt tego nie sprawdzi, a Ty nadal nie masz niczego, co mogłoby zarabiać.",
   },
   {
     title: "Wydajesz 100 000 zł, zanim ktokolwiek to zobaczy",
     description:
-      "Agencja przez pół roku buduje skomplikowane formularze, panele administracyjne i konta, zamiast po prostu dać ludziom sprawdzić to, co w Twoim pomyśle najważniejsze. Najgorszy moment to ten, w którym po wydaniu wszystkich oszczędności okazuje się, że odbiorcy oczekiwali czegoś zupełnie innego.",
+      "Agencja przez pół roku buduje formularze, panele i konta, zamiast dać ludziom sprawdzić to, co najważniejsze. Po wydaniu oszczędności okazuje się, że odbiorcy oczekiwali czegoś zupełnie innego.",
   },
 ]
 
@@ -107,21 +129,21 @@ const paymentStages = [
     amount: "11 800 zł",
     title: "1. część – Na start prac",
     description:
-      "Wpłacasz w dniu podpisania umowy i formalnego zobowiązania do poufności. Dzięki temu rezerwuję czas swój i zespołu wyłącznie na Twój projekt, ustalamy szczegóły i od razu ruszamy z budową wyglądu oraz silnika produktu.",
+      "Wpłacasz w dniu podpisania umowy i zobowiązania do poufności. Dzięki temu rezerwuję czas mój i zespołu wyłącznie na Twój projekt i od razu ruszamy z budową wyglądu oraz silnika produktu.",
   },
   {
     share: "40%",
     amount: "11 800 zł",
     title: "2. część – Gdy produkt jest gotowy do testów",
     description:
-      "Płacisz dopiero po 4 tygodniach, kiedy narzędzie działa w internecie, Twoja strona jest włączona, a pierwsi ludzie mogą już w to klikać i sprawdzać.",
+      "Płacisz po 4 tygodniach, gdy narzędzie działa w sieci, Twoja strona jest włączona, a pierwsi ludzie już w to klikają.",
   },
   {
     share: "20%",
     amount: "5 900 zł",
     title: "3. część – Na sam koniec, po odbiorze technicznym",
     description:
-      "Dopiero po tym, jak sam wszystko na spokojnie sprawdzisz (masz na to komfortowe 10 dni roboczych), a my naniesiemy ewentualne poprawki, zamykamy formalności i przekazuję Ci pełne prawa własności oraz dostęp do wszystkiego.",
+      "Dopiero po Twoim odbiorze technicznym (masz na to 10 dni roboczych) i naniesieniu poprawek przekazuję Ci pełne prawa własności oraz dostęp do wszystkiego.",
   },
 ]
 
@@ -186,7 +208,8 @@ const offerStack = [
   {
     value: "5 000 zł",
     note: "Rynkowy koszt stworzenia i opracowania treści",
-    title: "Strona Twojego produktu z gotową treścią zamieniającą odwiedzających w użytkowników",
+    title:
+      "Strona Twojego produktu z gotową treścią zamieniającą odwiedzających w użytkowników",
     description:
       "Zdejmuję z Ciebie konieczność wymyślania haseł marketingowych i układania oferty. Przygotowuję kompletną stronę pod Twoim adresem z gotowymi, perswazyjnymi tekstami, które tłumaczą wartość produktu w prosty sposób. Każdy, kto wchodzi z zewnątrz, w 2 minuty rozumie Twój pomysł i od razu klika przycisk wypróbowania narzędzia.",
     points: [],
@@ -203,8 +226,7 @@ const offerStack = [
     value: "3 000 zł",
     note: "Rynkowy koszt przygotowania",
     title: "Zestaw do rozmów z partnerami i inwestorami",
-    description:
-      "Kładziesz na stole gotowy pakiet zamiast surowego pomysłu:",
+    description: "Kładziesz na stole gotowy pakiet zamiast surowego pomysłu:",
     points: [
       "Wygląd Twojego produktu na telefonach i komputerach — dopracowane grafiki ekranów, gotowe do pokazania wspólnikom, wrzucenia na stronę czy do mediów społecznościowych.",
       "Jednostronicowe podsumowanie dla inwestora: Prosty dokument wyjaśniający, dlaczego produkt jest bezpieczny, serwery kosztują 0 zł i dlaczego całość można od razu przenieść na telefony bez pisania od nowa.",
@@ -303,9 +325,141 @@ const collaborationModel = [
 ---
 
 <Layout>
+  <header
+    id="site-header"
+    class="relative sticky top-0 z-40 border-b border-transparent bg-paper/85 backdrop-blur"
+  >
+    <div
+      class="mx-auto flex h-16 max-w-[75rem] items-center justify-between gap-4 px-4 sm:px-6"
+    >
+      <div class="flex items-baseline gap-3">
+        <a
+          href="#"
+          class="font-heading text-lg font-semibold tracking-tight text-ink"
+        >
+          Karol&nbsp;Modelski
+        </a>
+        <span
+          id="section-indicator"
+          class="hidden font-mono text-[11px] tracking-[0.16em] text-ink-soft tabular-nums sm:inline"
+          >01 / 11</span
+        >
+      </div>
+
+      <nav class="hidden items-center gap-8 text-sm text-ink-soft md:flex">
+        <a class="transition-colors hover:text-ink" href="#proces">Proces</a>
+        <a class="transition-colors hover:text-ink" href="#rozliczenie"
+          >Rozliczenie</a
+        >
+        <a class="transition-colors hover:text-ink" href="#o-mnie">O mnie</a>
+        <a class="transition-colors hover:text-ink" href="#faq">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button
+          id="theme-toggle"
+          type="button"
+          aria-label="Przełącz tryb ciemny"
+          class="flex size-9 items-center justify-center rounded-lg border border-line bg-transparent text-ink transition-colors hover:bg-secondary"
+        >
+          <svg
+            class="theme-sun size-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+            ></path>
+          </svg>
+          <svg
+            class="theme-moon size-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a
+          href="https://calendly.com/kontakt-karolmodelski/konsultacja"
+          target="_blank"
+          rel="noopener noreferrer"
+          class={cn(
+            buttonVariants({ size: "sm" }),
+            "hidden h-9 rounded-[6px] px-4 text-sm sm:inline-flex"
+          )}
+        >
+          Porozmawiajmy (20 min)
+        </a>
+
+        <details class="relative md:hidden">
+          <summary
+            class="flex size-9 cursor-pointer list-none items-center justify-center rounded-lg border border-line text-ink [&::-webkit-details-marker]:hidden"
+            aria-label="Menu"
+          >
+            <Menu className="size-5" />
+          </summary>
+          <div
+            class="absolute top-full right-0 mt-2 w-60 rounded-xl border border-line bg-paper p-2 shadow-lg"
+          >
+            <nav class="flex flex-col">
+              <a
+                class="rounded-lg px-3 py-2.5 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
+                href="#problemy">Problem</a
+              >
+              <a
+                class="rounded-lg px-3 py-2.5 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
+                href="#proces">Proces</a
+              >
+              <a
+                class="rounded-lg px-3 py-2.5 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
+                href="#rozliczenie">Rozliczenie</a
+              >
+              <a
+                class="rounded-lg px-3 py-2.5 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
+                href="#o-mnie">O mnie</a
+              >
+              <a
+                class="rounded-lg px-3 py-2.5 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
+                href="#faq">FAQ</a
+              >
+            </nav>
+            <a
+              href="https://calendly.com/kontakt-karolmodelski/konsultacja"
+              target="_blank"
+              rel="noopener noreferrer"
+              class={cn(
+                buttonVariants({ size: "sm" }),
+                "mt-1 h-10 w-full rounded-[6px] text-sm"
+              )}
+            >
+              Porozmawiajmy (20 min)
+            </a>
+          </div>
+        </details>
+      </div>
+    </div>
+    <span
+      id="scroll-progress"
+      aria-hidden="true"
+      class="absolute inset-x-0 -bottom-px h-[2px] origin-left scale-x-0 bg-signal"
+    ></span>
+  </header>
+
   <main>
     <section
-      class="relative overflow-hidden bg-paper px-4 pt-32 pb-24 sm:px-6 sm:pt-40 sm:pb-32"
+      class="relative overflow-hidden bg-paper px-4 pt-20 pb-16 sm:px-6 sm:pt-24 sm:pb-20"
     >
       <div
         aria-hidden="true"
@@ -313,9 +467,11 @@ const collaborationModel = [
       >
       </div>
 
-      <div class="mx-auto max-w-6xl">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
-          <div class="rise lg:col-span-7">
+      <div class="mx-auto max-w-[75rem]">
+        <div
+          class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10"
+        >
+          <div class="rise lg:col-span-5">
             <p
               class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase"
             >
@@ -324,21 +480,20 @@ const collaborationModel = [
             </p>
 
             <h1
-              class="mt-6 font-heading text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl xl:text-7xl"
+              class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl"
             >
-              Nie budujemy samej aplikacji.<br class="sm:hidden" />
-              Budujemy dowód, że Twój pomysł naprawdę się opłaca.
+              Nie budujemy samej aplikacji. Budujemy dowód, że Twój pomysł
+              naprawdę się opłaca.
             </h1>
 
             <p
               class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink-soft"
             >
-              W 4 tygodnie dostajesz działający produkt, stronę z podpiętą analityką zachowań użytkowników oraz zestaw materiałów technicznych dla inwestorów.
-              
-              Zamiast ryzykować 100 000 zł w klasycznej firmie programistycznej — kładziesz na stolę działające narzędzie i sprawdzasz rynek na własnych zasadach.
+              W 4 tygodnie dostajesz działający produkt, stronę z analityką
+              zachowań użytkowników oraz materiały do rozmów z inwestorami.
             </p>
 
-            <div class="mt-10 flex flex-col items-start gap-4">
+            <div class="mt-9 flex flex-col items-start gap-4">
               <a
                 id="konsultacja"
                 href="https://calendly.com/kontakt-karolmodelski/konsultacja"
@@ -346,71 +501,259 @@ const collaborationModel = [
                 rel="noopener noreferrer"
                 class={cn(
                   buttonVariants({ size: "lg" }),
-                  "h-auto min-h-12 w-full gap-2 rounded-[4px] px-7 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-7 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
                 )}
               >
                 Sprawdźmy plan na Twój produkt (20 min)
                 <ArrowRight />
               </a>
               <p
-                class="max-w-md text-sm leading-relaxed text-pretty text-ink-soft"
+                class="flex max-w-md items-start gap-2 text-sm leading-relaxed text-pretty text-ink-soft"
               >
-                Bez sprzedaży i trudnego technicznego żargonu. Twój pomysł jest bezpieczny — przed rozmową podpisujemy umowę o zachowaniu poufności.
+                <Lock className="mt-0.5 size-4 shrink-0 text-signal-ink" />
+                <span>
+                  Bez sprzedaży i technicznego żargonu. Przed rozmową
+                  podpisujemy umowę o zachowaniu poufności.
+                </span>
               </p>
             </div>
           </div>
 
-          <aside
-            class="rise lg:col-span-5 lg:border-l lg:border-line lg:pl-10"
-            style="animation-delay:.12s"
-          >
-            <dl class="border-y border-line">
+          <div class="rise lg:col-span-7" style="animation-delay:.12s">
+            <div
+              class="force-light relative lg:-mr-4 xl:-mr-20"
+              aria-hidden="true"
+            >
               <div
-                class="flex items-baseline justify-between gap-6 border-b border-line py-5"
+                class="overflow-hidden rounded-2xl border border-line bg-white shadow-[0_40px_90px_-55px_rgba(35,32,27,0.55)]"
               >
-                <dt
-                  class="font-mono text-xs tracking-[0.16em] text-ink-soft uppercase"
+                <div
+                  class="flex items-center gap-2 border-b border-line bg-surface-muted px-4 py-3"
                 >
-                  Format
-                </dt>
-                <dd class="font-heading text-2xl font-semibold">4 tygodnie</dd>
+                  <span class="size-2.5 rounded-full bg-line"></span>
+                  <span class="size-2.5 rounded-full bg-line"></span>
+                  <span class="size-2.5 rounded-full bg-line"></span>
+                  <span
+                    class="ml-3 hidden rounded-md border border-line bg-paper px-3 py-0.5 font-mono text-[11px] text-ink-soft sm:inline-block"
+                  >
+                    twojprodukt.pl
+                  </span>
+                </div>
+
+                <div class="grid grid-cols-12">
+                  <aside
+                    class="col-span-4 hidden border-r border-line bg-surface-muted p-3 sm:block"
+                  >
+                    <ul class="space-y-1">
+                      <li
+                        class="flex items-center gap-2 rounded-md bg-paper px-2 py-1.5 text-xs font-medium text-ink"
+                      >
+                        <span class="size-1.5 rounded-full bg-signal"></span>
+                        Strona główna
+                      </li>
+                      <li
+                        class="flex items-center gap-2 rounded-md px-2 py-1.5 text-xs text-ink-soft"
+                      >
+                        <span class="size-1.5 rounded-full bg-line"></span>
+                        Użytkownicy
+                      </li>
+                      <li
+                        class="flex items-center gap-2 rounded-md px-2 py-1.5 text-xs text-ink-soft"
+                      >
+                        <span class="size-1.5 rounded-full bg-line"></span>
+                        Produkty
+                      </li>
+                      <li
+                        class="flex items-center gap-2 rounded-md px-2 py-1.5 text-xs text-ink-soft"
+                      >
+                        <span class="size-1.5 rounded-full bg-line"></span>
+                        Analityka
+                      </li>
+                    </ul>
+                  </aside>
+
+                  <div class="col-span-12 p-4 sm:col-span-8 sm:p-5">
+                    <div class="flex items-center justify-between">
+                      <p class="font-heading text-sm font-semibold">Przegląd</p>
+                      <span class="font-mono text-[11px] text-ink-soft"
+                        >ostatnie 30 dni</span
+                      >
+                    </div>
+
+                    <div class="mt-3 grid grid-cols-3 gap-2.5">
+                      <div class="rounded-lg border border-line p-2.5">
+                        <p
+                          class="font-mono text-[10px] tracking-[0.1em] text-ink-soft uppercase"
+                        >
+                          Przychód
+                        </p>
+                        <p class="mt-1 font-heading text-sm font-semibold">
+                          28 420 zł
+                        </p>
+                        <p class="mt-0.5 text-[11px] font-medium text-positive">
+                          ↑ 12%
+                        </p>
+                      </div>
+                      <div class="rounded-lg border border-line p-2.5">
+                        <p
+                          class="font-mono text-[10px] tracking-[0.1em] text-ink-soft uppercase"
+                        >
+                          Aktywni
+                        </p>
+                        <p class="mt-1 font-heading text-sm font-semibold">
+                          1 204
+                        </p>
+                        <p class="mt-0.5 text-[11px] font-medium text-positive">
+                          ↑ 18%
+                        </p>
+                      </div>
+                      <div class="rounded-lg border border-line p-2.5">
+                        <p
+                          class="font-mono text-[10px] tracking-[0.1em] text-ink-soft uppercase"
+                        >
+                          Konwersja
+                        </p>
+                        <p class="mt-1 font-heading text-sm font-semibold">
+                          4,8%
+                        </p>
+                        <p class="mt-0.5 text-[11px] font-medium text-positive">
+                          ↑ 1,2%
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="mt-3 rounded-lg border border-line p-3">
+                      <div class="flex items-center justify-between">
+                        <p
+                          class="font-mono text-[10px] tracking-[0.1em] text-ink-soft uppercase"
+                        >
+                          Wzrost użytkowników
+                        </p>
+                        <span
+                          class="font-mono text-[11px] font-medium text-positive"
+                          >+129%</span
+                        >
+                      </div>
+                      <div
+                        class="mt-3 flex h-16 items-end gap-1.5"
+                        aria-hidden="true"
+                      >
+                        {
+                          chartBars.map((height, index) => (
+                            <span
+                              class={cn(
+                                "flex-1 rounded-sm",
+                                index === chartBars.length - 1
+                                  ? "bg-signal"
+                                  : "bg-signal/35"
+                              )}
+                              style={`height:${height}%`}
+                            />
+                          ))
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+
               <div
-                class="flex items-baseline justify-between gap-6 border-b border-line py-5"
+                class="absolute -bottom-5 -left-5 hidden w-40 rounded-xl border border-line bg-white p-3 shadow-[0_28px_60px_-35px_rgba(35,32,27,0.6)] lg:block"
               >
-                <dt
-                  class="font-mono text-xs tracking-[0.16em] text-ink-soft uppercase"
+                <p
+                  class="font-mono text-[10px] tracking-[0.1em] text-ink-soft uppercase"
                 >
-                  Wartość rynkowa
-                </dt>
-                <dd class="font-heading text-2xl font-semibold">82 000 zł</dd>
-              </div>
-              <div
-                class="flex items-baseline justify-between gap-6 border-b border-line py-5"
-              >
-                <dt
-                  class="font-mono text-xs tracking-[0.16em] text-ink-soft uppercase"
+                  Nowi użytkownicy
+                </p>
+                <p
+                  class="mt-1 font-heading text-xl font-semibold text-signal-ink"
                 >
-                  Inwestycja
-                </dt>
-                <dd class="font-heading text-2xl font-semibold text-signal-ink">
-                  29 500 zł
-                </dd>
+                  +129%
+                </p>
+                <p class="text-[11px] text-ink-soft">w tym tygodniu</p>
               </div>
-              <div class="flex items-baseline justify-between gap-6 py-5">
-                <dt
-                  class="font-mono text-xs tracking-[0.16em] text-ink-soft uppercase"
-                >
-                  Dostępność
-                </dt>
-                <dd class="font-heading text-2xl font-semibold">1 / mies.</dd>
-              </div>
-            </dl>
-            <p class="mt-5 font-mono text-xs tracking-wide text-ink-soft">
-              {eyebrow}
-            </p>
-          </aside>
+            </div>
+          </div>
         </div>
+
+        <dl
+          class="mt-16 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-8 sm:grid-cols-4"
+        >
+          <div>
+            <dt
+              class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase"
+            >
+              Format
+            </dt>
+            <dd class="mt-2 font-heading text-2xl font-semibold sm:text-3xl">
+              4 tygodnie
+            </dd>
+          </div>
+          <div>
+            <dt
+              class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase"
+            >
+              Wartość rynkowa
+            </dt>
+            <dd class="mt-2 font-heading text-2xl font-semibold sm:text-3xl">
+              82 000 zł
+            </dd>
+          </div>
+          <div>
+            <dt
+              class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase"
+            >
+              Inwestycja
+            </dt>
+            <dd
+              class="mt-2 font-heading text-2xl font-semibold text-signal-ink sm:text-3xl"
+            >
+              29 500 zł
+            </dd>
+          </div>
+          <div>
+            <dt
+              class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase"
+            >
+              Dostępność
+            </dt>
+            <dd class="mt-2 font-heading text-2xl font-semibold sm:text-3xl">
+              1 / mies.
+            </dd>
+          </div>
+        </dl>
+        <p class="mt-6 font-mono text-xs tracking-wide text-ink-soft">
+          {eyebrow}
+        </p>
+      </div>
+    </section>
+
+    <section class="border-y border-line bg-surface-muted">
+      <div class="mx-auto max-w-[75rem] px-4 py-6 sm:px-6">
+        <ul
+          class="grid grid-cols-2 gap-x-6 gap-y-4 text-sm text-ink-soft sm:grid-cols-3 lg:flex lg:items-center lg:justify-between lg:gap-4"
+        >
+          <li class="flex items-center gap-2">
+            <Lock className="size-4 shrink-0 text-signal" />
+            Umowa o poufności przed rozmową
+          </li>
+          <li class="flex items-center gap-2">
+            <FileCheck2 className="size-4 shrink-0 text-signal" />
+            100% praw autorskich
+          </li>
+          <li class="flex items-center gap-2">
+            <BadgeCheck className="size-4 shrink-0 text-signal" />
+            Stała cena ryczałtowa
+          </li>
+          <li class="flex items-center gap-2">
+            <ShieldCheck className="size-4 shrink-0 text-signal" />
+            3 miesiące gwarancji
+          </li>
+          <li class="flex items-center gap-2">
+            <CalendarClock className="size-4 shrink-0 text-signal" />
+            1 projekt w miesiącu
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -418,7 +761,7 @@ const collaborationModel = [
       id="problemy"
       class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
     >
-      <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p
@@ -432,7 +775,8 @@ const collaborationModel = [
             <h2
               class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
             >
-              Dlaczego start z firmą programistyczną to najczęściej bolesna lekcja?
+              Dlaczego start z firmą programistyczną to najczęściej bolesna
+              lekcja?
             </h2>
             <p
               class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
@@ -440,13 +784,26 @@ const collaborationModel = [
               Gdy masz pomysł na aplikację lub narzędzie internetowe, tradycyjna
               ścieżka najczęściej prowadzi w jedną z dwóch ślepych uliczek:
             </p>
+          </div>
+        </div>
+      </div>
 
-            <p
-              class="mt-12 font-mono text-xs tracking-[0.18em] text-ink-soft uppercase"
-            >
-              Dwie ślepe uliczki
-            </p>
-            <ol class="mt-4 border-t border-line">
+      <figure class="-mx-4 mt-14 sm:-mx-6">
+        <Image
+          src={proces}
+          alt="Porównanie tradycyjnej ścieżki programistycznej i modelu 4-tygodniowego"
+          widths={[640, 960, 1280, 1600, 1920]}
+          sizes="100vw"
+          loading="eager"
+          decoding="async"
+          class="w-full object-contain"
+        />
+      </figure>
+
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-9 lg:col-start-4">
+            <ol class="mt-14 border-t border-line">
               {
                 problems.map(({ title, description }, index) => (
                   <li class="grid grid-cols-1 gap-3 border-b border-line py-8 sm:grid-cols-12 sm:gap-8">
@@ -473,8 +830,8 @@ const collaborationModel = [
                 >Najgorszy scenariusz?</span
               >{" "}
               Po 6 miesiącach czekania i wydaniu 100 000 zł dowiadujesz się, że nikt
-              tego nie potrzebuje – a firma programistyczna rozkłada ręce i wystawia kolejną fakturę
-              za poprawki.
+              tego nie potrzebuje – a firma programistyczna rozkłada ręce i wystawia
+              kolejną fakturę za poprawki.
             </p>
 
             <blockquote class="mt-14 max-w-3xl border-l-2 border-signal pl-6">
@@ -496,9 +853,9 @@ const collaborationModel = [
 
     <section
       id="model"
-      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+      class="border-t border-line bg-surface-muted px-4 py-24 sm:px-6 sm:py-32"
     >
-      <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p
@@ -518,9 +875,10 @@ const collaborationModel = [
             <p
               class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
             >
-              Tradycyjne firmy programistyczne wymagają od Ciebie gotowych specyfikacji, każą
-              wybierać bazy danych i zarzucają Cię pytaniami, na które nie znasz
-              odpowiedzi. U mnie ten proces wygląda zupełnie inaczej:
+              Tradycyjne firmy programistyczne wymagają od Ciebie gotowych
+              specyfikacji, każą wybierać bazy danych i zarzucają Cię pytaniami,
+              na które nie znasz odpowiedzi. U mnie ten proces wygląda zupełnie
+              inaczej:
             </p>
 
             <div
@@ -542,26 +900,67 @@ const collaborationModel = [
                 ))
               }
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="mt-16 max-w-3xl border-t border-line pt-12">
-              <p
-                class="font-mono text-xs tracking-[0.18em] text-ink-soft uppercase"
-              >
-                Skupiamy się na jednej rzeczy
-              </p>
-              <h3
-                class="mt-4 font-heading text-2xl font-semibold tracking-tight text-balance sm:text-3xl"
-              >
-                Dlaczego większość aplikacji nigdy nie powstaje? Przez
-                dopisywanie kolejnych pomysłów w nieskończoność
-              </h3>
-              <p class="mt-5 text-lg leading-relaxed text-pretty text-ink-soft">
-                Zaczyna się od prostej idei, a po dwóch tygodniach dochodzi
-                logowanie na pięć sposobów, komunikatory, rozbudowane rankingi i
-                profile. Efekt? Budżet rośnie trzykrotnie, termin przesuwa się o
-                pół roku, a na koniec nikt z tego nie korzysta.
-              </p>
-              <p class="mt-4 leading-relaxed text-pretty text-ink-soft">
+    <section
+      id="zakres"
+      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p
+              class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
+            >
+              03 · Zakres
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <p
+              class="font-mono text-xs tracking-[0.18em] text-ink-soft uppercase"
+            >
+              Skupiamy się na jednej rzeczy
+            </p>
+            <h2
+              class="mt-4 font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+            >
+              Dlaczego większość aplikacji nigdy nie powstaje? Przez dopisywanie
+              kolejnych pomysłów w nieskończoność
+            </h2>
+            <p
+              class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
+            >
+              Zaczyna się od prostej idei, a po dwóch tygodniach dochodzi
+              logowanie na pięć sposobów, komunikatory, rozbudowane rankingi i
+              profile. Efekt? Budżet rośnie trzykrotnie, termin przesuwa się o
+              pół roku, a na koniec nikt z tego nie korzysta.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <figure class="-mx-4 mt-14 sm:-mx-6">
+        <Image
+          src={scope}
+          alt="Nie budujemy wszystkiego naraz – jedna kluczowa funkcja na start, gotowa w 4 tygodnie"
+          widths={[640, 960, 1280, 1600, 1920]}
+          sizes="100vw"
+          loading="lazy"
+          decoding="async"
+          class="w-full object-contain"
+        />
+      </figure>
+
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="hidden lg:col-span-3 lg:block"></div>
+          <div class="lg:col-span-9">
+            <div class="mt-14 max-w-3xl">
+              <p class="leading-relaxed text-pretty text-ink-soft">
                 <strong class="font-semibold text-ink"
                   >Moim zadaniem jest zadbać o to, żeby Twój projekt nie wpadł w
                   tę pułapkę.</strong
@@ -595,13 +994,13 @@ const collaborationModel = [
       id="proces"
       class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
     >
-      <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p
               class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
             >
-              03 · Proces
+              04 · Proces
             </p>
           </div>
 
@@ -619,56 +1018,86 @@ const collaborationModel = [
               techniczny i testy rynkowe. Dokładnie wiesz, co dzieje się na
               każdym etapie:
             </p>
+          </div>
+        </div>
+      </div>
 
-            <ol class="mt-14 border-t border-line">
+      <figure class="-mx-4 mt-14 sm:-mx-6">
+        <Image
+          src={wspolaca}
+          alt="Jak wygląda współpraca z Karolem Modelskim"
+          widths={[640, 960, 1280, 1600, 1920]}
+          sizes="100vw"
+          loading="lazy"
+          decoding="async"
+          class="w-full object-contain"
+        />
+      </figure>
+
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-9 lg:col-start-4">
+            <ol class="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8">
               {
                 process.map(
-                  ({ badge, title, description, steps, outro, yourPart }, index) => (
-                    <li class="grid grid-cols-1 gap-4 border-b border-line py-8 sm:grid-cols-12 sm:gap-8">
-                      <div class="sm:col-span-3">
+                  (
+                    { badge, title, description, steps, outro, yourPart },
+                    index
+                  ) => (
+                    <li class="border-t border-line pt-6">
+                      <div class="flex items-baseline justify-between gap-4">
                         <span class="font-mono text-xs tracking-[0.16em] text-signal-ink uppercase">
                           {badge}
                         </span>
-                        <p class="mt-1 font-mono text-xs text-ink-soft">
+                        <span class="font-mono text-xs text-ink-soft">
                           {String(index + 1).padStart(2, "0")}
-                        </p>
+                        </span>
                       </div>
-                      <div class="sm:col-span-9">
-                        <h3 class="font-heading text-xl font-semibold text-balance sm:text-2xl">
-                          {title}
-                        </h3>
-                        <p class="mt-3 max-w-2xl leading-relaxed text-pretty text-ink-soft">
-                          {description}
+                      <h3 class="mt-3 font-heading text-xl font-semibold text-balance">
+                        {title}
+                      </h3>
+                      <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                        {description}
+                      </p>
+                      {steps.length > 0 && (
+                        <AccordionList
+                          client:visible
+                          compact
+                          theme="light"
+                          className="mt-2 border-t border-line"
+                          items={steps.map((step) => ({
+                            title: step.title,
+                            content: step.description,
+                          }))}
+                        />
+                      )}
+                      {outro && (
+                        <p class="mt-4 text-sm leading-relaxed text-pretty text-ink-soft">
+                          {outro}
                         </p>
-                        {steps.length > 0 && (
-                          <ol class="mt-4 max-w-2xl list-decimal space-y-2 pl-5 leading-relaxed text-pretty text-ink-soft marker:text-signal-ink">
-                            {steps.map((step) => (
-                              <li>
-                                <span class="font-semibold text-ink">
-                                  {step.title}
-                                </span>{" "}
-                                {step.description}
-                              </li>
-                            ))}
-                          </ol>
-                        )}
-                        {outro && (
-                          <p class="mt-4 max-w-2xl leading-relaxed text-pretty text-ink-soft">
-                            {outro}
-                          </p>
-                        )}
-                        <p class="mt-4 text-sm leading-relaxed text-pretty">
-                          <span class="font-mono text-xs tracking-[0.14em] text-ink-soft uppercase">
-                            Twój udział:
-                          </span>{" "}
-                          <span class="text-ink">{yourPart}</span>
-                        </p>
-                      </div>
+                      )}
+                      <p class="mt-5 text-sm leading-relaxed text-pretty">
+                        <span class="font-mono text-xs tracking-[0.14em] text-ink-soft uppercase">
+                          Twój udział:
+                        </span>{" "}
+                        <span class="text-ink">{yourPart}</span>
+                      </p>
                     </li>
                   )
                 )
               }
             </ol>
+
+            <p class="mt-10 text-sm leading-relaxed text-pretty text-ink-soft">
+              Nie wiesz jeszcze, co zmieści się w 4 tygodniach?{" "}
+              <a
+                href="https://calendly.com/kontakt-karolmodelski/konsultacja"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-medium text-ink underline underline-offset-4 hover:no-underline"
+                >Sprawdźmy to w 20 minut</a
+              >
+            </p>
           </div>
         </div>
       </div>
@@ -676,15 +1105,15 @@ const collaborationModel = [
 
     <section
       id="porownanie"
-      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+      class="border-t border-line bg-surface-muted px-4 py-24 sm:px-6 sm:py-32"
     >
-      <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p
               class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
             >
-              04 · Porównanie
+              05 · Porównanie
             </p>
           </div>
 
@@ -727,7 +1156,9 @@ const collaborationModel = [
               }
             </div>
 
-            <div class="mt-12 hidden md:block">
+            <div
+              class="mt-10 hidden rounded-xl border border-line bg-paper p-4 sm:p-6 md:block"
+            >
               <Table>
                 <TableCaption className="sr-only">
                   Porównanie ścieżek budowy produktu cyfrowego
@@ -780,6 +1211,17 @@ const collaborationModel = [
                 </TableBody>
               </Table>
             </div>
+
+            <p class="mt-8 text-sm leading-relaxed text-pretty text-ink-soft">
+              Brzmi jak droga dla Ciebie?{" "}
+              <a
+                href="https://calendly.com/kontakt-karolmodelski/konsultacja"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-medium text-ink underline underline-offset-4 hover:no-underline"
+                >Sprawdźmy plan na Twój produkt</a
+              >
+            </p>
           </div>
         </div>
       </div>
@@ -789,13 +1231,13 @@ const collaborationModel = [
       id="otrzymujesz"
       class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
     >
-      <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p
               class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
             >
-              05 · Stos wartości
+              06 · Stos wartości
             </p>
           </div>
 
@@ -810,47 +1252,23 @@ const collaborationModel = [
             >
               Gdybyś chciał zlecić te elementy osobno różnym firmom,
               programistom i prawnikom, zapłacisz za każdy krok z osobna, a
-               rachunki w firmie programistycznej szybko przekroczą 100 000 zł. U mnie
-              dostajesz to jako jeden, gotowy zestaw w stałej cenie:
+              rachunki w firmie programistycznej szybko przekroczą 100 000 zł. U
+              mnie dostajesz to jako jeden, gotowy zestaw w stałej cenie:
             </p>
 
-            <ul class="mt-12 border-t border-line">
-              {
-                offerStack.map(
-                  ({ value, note, title, description, points }, index) => (
-                    <li class="grid grid-cols-1 gap-3 border-b border-line py-7 sm:grid-cols-12 sm:gap-8">
-                      <span class="font-mono text-xs text-ink-soft sm:col-span-1">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <div class="sm:col-span-8">
-                        <h3 class="font-heading text-lg font-semibold text-balance sm:text-xl">
-                          {title}
-                        </h3>
-                        <p class="mt-1 font-mono text-xs tracking-[0.14em] text-ink-soft uppercase">
-                          {note}
-                        </p>
-                        <p class="mt-3 leading-relaxed text-pretty text-ink-soft">
-                          {description}
-                        </p>
-                        {points.map((point) => (
-                          <p class="mt-3 flex gap-2 text-sm leading-relaxed text-ink-soft">
-                            <Check className="mt-0.5 size-4 shrink-0 text-ink" />
-                            <span>{point}</span>
-                          </p>
-                        ))}
-                      </div>
-                      <div class="sm:col-span-3 sm:text-right">
-                        <span class="font-mono text-sm font-medium text-ink">
-                          {value}
-                        </span>
-                      </div>
-                    </li>
-                  )
-                )
-              }
-            </ul>
+            <div class="mt-14 overflow-hidden rounded-xl border border-line">
+              <Image
+                src={stack}
+                alt="Kompletny start projektu w 4 tygodnie — co zawiera oferta"
+                widths={[640, 960, 1280, 1600]}
+                sizes="(min-width: 768px) 960px, 95vw"
+                loading="lazy"
+                decoding="async"
+                class="w-full object-contain"
+              />
+            </div>
 
-            <div class="mt-12 border-t border-line pt-10">
+            <div class="mt-14 border-t border-line pt-10">
               <div
                 class="flex flex-col gap-6 sm:flex-row sm:items-baseline sm:gap-8"
               >
@@ -887,7 +1305,8 @@ const collaborationModel = [
                 </div>
               </div>
               <p class="mt-4 text-sm text-ink-soft">
-                29 500 zł brutto · stała cena ryczałtowa · 0 zł ukrytych dopłat ·{" "}
+                29 500 zł brutto · stała cena ryczałtowa · 0 zł ukrytych dopłat
+                ·{" "}
                 <a
                   href="#rozliczenie"
                   class="font-medium text-ink underline underline-offset-4 hover:no-underline"
@@ -896,6 +1315,13 @@ const collaborationModel = [
               </p>
             </div>
 
+            <p
+              class="mt-14 font-mono text-xs tracking-[0.18em] text-ink-soft uppercase"
+            >
+              Co dokładnie dostajesz
+            </p>
+            <OfferStack client:visible items={offerStack} />
+
             <div class="mt-10">
               <a
                 href="https://calendly.com/kontakt-karolmodelski/konsultacja"
@@ -903,7 +1329,7 @@ const collaborationModel = [
                 rel="noopener noreferrer"
                 class={cn(
                   buttonVariants({ size: "lg" }),
-                  "h-auto min-h-12 w-full gap-2 rounded-[4px] px-7 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-7 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
                 )}
               >
                 Sprawdźmy plan na Twój produkt (20 min)
@@ -917,15 +1343,15 @@ const collaborationModel = [
 
     <section
       id="rozliczenie"
-      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+      class="border-t border-line bg-surface-muted px-4 py-24 sm:px-6 sm:py-32"
     >
-      <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p
               class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
             >
-              06 · Rozliczenie
+              07 · Rozliczenie
             </p>
           </div>
 
@@ -942,14 +1368,41 @@ const collaborationModel = [
               wpłaty całości z góry. Koszt jest ustalony z góry, a płatność
               dzielimy na 3 bezpieczne części:
             </p>
+          </div>
+        </div>
+      </div>
 
-            <div
-              class="mt-12 flex h-2 w-full overflow-hidden rounded-full bg-line"
-              aria-hidden="true"
-            >
-              <span class="h-full w-[40%] bg-ink"></span>
-              <span class="h-full w-[40%] bg-signal"></span>
-              <span class="h-full w-[20%] bg-ink/30"></span>
+      <figure class="-mx-4 mt-14 sm:-mx-6">
+        <Image
+          src={placisz}
+          alt="Płacisz etapami, widzisz efekty"
+          widths={[640, 960, 1280, 1600, 1920]}
+          sizes="100vw"
+          loading="lazy"
+          decoding="async"
+          class="w-full object-contain"
+        />
+      </figure>
+
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-9 lg:col-start-4">
+            <div class="mt-14">
+              <div
+                class="flex h-3 w-full overflow-hidden rounded-full bg-line"
+                aria-hidden="true"
+              >
+                <span class="h-full w-[40%] bg-ink"></span>
+                <span class="h-full w-[40%] bg-signal"></span>
+                <span class="h-full w-[20%] bg-ink/30"></span>
+              </div>
+              <div
+                class="mt-2 grid grid-cols-[40fr_40fr_20fr] gap-3 font-mono text-[10px] tracking-[0.1em] text-ink-soft uppercase sm:text-[11px]"
+              >
+                <span>40% · start</span>
+                <span>40% · po 4 tyg.</span>
+                <span class="text-right">20% · odbiór</span>
+              </div>
             </div>
 
             <ol class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
@@ -986,18 +1439,30 @@ const collaborationModel = [
               >
                 Pełna kontrola nad budżetem od dnia 1
               </h3>
-              <ul class="mt-5 space-y-4 text-sm leading-relaxed text-ink-soft sm:text-base">
+              <ul
+                class="mt-5 space-y-4 text-sm leading-relaxed text-ink-soft sm:text-base"
+              >
                 <li class="flex gap-3">
                   <Check className="mt-0.5 size-5 shrink-0 text-ink" />
-                  <span><strong>Stała kwota ryczałtowa:</strong> Żadnego naliczania roboczogodzin w tle.</span>
+                  <span
+                    ><strong>Stała kwota ryczałtowa:</strong> Żadnego naliczania roboczogodzin
+                    w tle.</span
+                  >
                 </li>
                 <li class="flex gap-3">
                   <Check className="mt-0.5 size-5 shrink-0 text-ink" />
-                  <span><strong>0 zł dopłat za poprawki:</strong> Poprawki w ramach ustalonego zakresu są w cenie.</span>
+                  <span
+                    ><strong>0 zł dopłat za poprawki:</strong> Poprawki w ramach ustalonego
+                    zakresu są w cenie.</span
+                  >
                 </li>
                 <li class="flex gap-3">
                   <Check className="mt-0.5 size-5 shrink-0 text-ink" />
-                  <span><strong>Płacisz za dowieziony efekt:</strong> 60% kwoty zostaje na Twoim koncie do momentu, aż narzędzie działa w sieci i sam je zaakceptujesz.</span>
+                  <span
+                    ><strong>Płacisz za dowieziony efekt:</strong> 60% kwoty zostaje
+                    na Twoim koncie do momentu, aż narzędzie działa w sieci i sam
+                    je zaakceptujesz.</span
+                  >
                 </li>
               </ul>
             </div>
@@ -1008,15 +1473,15 @@ const collaborationModel = [
 
     <section
       id="gwarancja"
-      class="bg-ink px-4 py-24 text-paper sm:px-6 sm:py-32"
+      class="on-ink bg-ink px-4 py-24 text-paper sm:px-6 sm:py-32"
     >
-      <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p
               class="font-mono text-xs tracking-[0.2em] text-paper/60 uppercase lg:sticky lg:top-24"
             >
-              07 · Gwarancja
+              08 · Gwarancja
             </p>
           </div>
 
@@ -1029,30 +1494,60 @@ const collaborationModel = [
             <p
               class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-paper/70"
             >
-              W tradycyjnych firmach programistycznych projekty często przeciągają się o kolejne
-              miesiące, a klient płaci za przedłużające się dyskusje. U mnie
-              zasady są proste i czarno na białym zapisane w umowie:
+              W tradycyjnych firmach programistycznych projekty często
+              przeciągają się o kolejne miesiące, a klient płaci za
+              przedłużające się dyskusje. U mnie zasady są proste i czarno na
+              białym zapisane w umowie:
             </p>
 
-            <ol class="mt-12 border-t border-paper/15">
+            <div
+              class="mt-14 overflow-hidden rounded-xl border border-paper/15"
+            >
+              <Image
+                src={jasne}
+                alt="Jasne zasady, sprawny produkt"
+                widths={[640, 960, 1280, 1600]}
+                sizes="(min-width: 768px) 960px, 95vw"
+                loading="lazy"
+                decoding="async"
+                class="w-full object-contain"
+              />
+            </div>
+
+            <ol
+              class="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-paper/15 bg-paper/10 sm:grid-cols-3"
+            >
               {
-                guarantees.map(({ title, description }, index) => (
-                  <li class="grid grid-cols-1 gap-3 border-b border-paper/15 py-8 sm:grid-cols-12 sm:gap-8">
-                    <span class="font-mono text-sm text-signal-bright sm:col-span-1">
+                guarantees.slice(0, 3).map(({ title, description }, index) => (
+                  <li class="bg-ink p-6 lg:p-8">
+                    <span class="font-mono text-xs text-signal-bright">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <div class="sm:col-span-11">
-                      <h3 class="font-heading text-xl font-semibold text-balance text-paper sm:text-2xl">
-                        {title}
-                      </h3>
-                      <p class="mt-3 max-w-2xl leading-relaxed text-pretty text-paper/70">
-                        {description}
-                      </p>
-                    </div>
+                    <h3 class="mt-4 font-heading text-xl font-semibold text-balance text-paper">
+                      {title}
+                    </h3>
+                    <p class="mt-3 text-sm leading-relaxed text-pretty text-paper/70">
+                      {description}
+                    </p>
                   </li>
                 ))
               }
             </ol>
+
+            <p
+              class="mt-14 font-mono text-xs tracking-[0.18em] text-paper/60 uppercase"
+            >
+              Pozostałe gwarancje
+            </p>
+            <AccordionList
+              client:visible
+              startIndex={4}
+              className="mt-2 border-t border-paper/15"
+              items={guarantees.slice(3).map(({ title, description }) => ({
+                title,
+                content: description,
+              }))}
+            />
           </div>
         </div>
       </div>
@@ -1060,15 +1555,15 @@ const collaborationModel = [
 
     <section
       id="o-mnie"
-      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
+      class="border-t border-line bg-surface-muted px-4 py-24 sm:px-6 sm:py-32"
     >
-      <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p
               class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
             >
-              08 · O mnie
+              09 · O mnie
             </p>
           </div>
 
@@ -1117,7 +1612,9 @@ const collaborationModel = [
                 </div>
               </div>
 
-              <div class="lg:col-span-5">
+              <div
+                class="order-first overflow-hidden rounded-2xl lg:order-none lg:col-span-5"
+              >
                 <Image
                   src={wystapienie}
                   alt="Karol Modelski podczas szkolenia z automatyzacji testów (Playwright)"
@@ -1138,13 +1635,13 @@ const collaborationModel = [
       id="faq"
       class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
     >
-      <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p
               class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
             >
-              09 · FAQ
+              10 · FAQ
             </p>
           </div>
 
@@ -1161,45 +1658,44 @@ const collaborationModel = [
       </div>
     </section>
 
-    <section
-      id="kontakt"
-      class="border-t border-line bg-paper px-4 py-24 sm:px-6 sm:py-32"
-    >
-      <div class="mx-auto max-w-6xl">
+    <section id="kontakt" class="bg-ink px-4 py-24 text-paper sm:px-6 sm:py-32">
+      <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p
-              class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24"
+              class="font-mono text-xs tracking-[0.2em] text-paper/60 uppercase lg:sticky lg:top-24"
             >
-              10 · Kontakt
+              11 · Kontakt
             </p>
           </div>
 
           <div class="lg:col-span-9">
             <h2
-              class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+              class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance text-paper sm:text-4xl lg:text-5xl"
             >
               Zobacz, ile Twój pomysł może osiągnąć na rynku
             </h2>
             <p
-              class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft"
+              class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-paper/70"
             >
               Zamiast tracić kolejne miesiące na zastanawianie się „co by było,
               gdyby”, poświęćmy 20 minut na luźną, konkretną rozmowę:
             </p>
 
-            <ol class="mt-12 border-t border-line">
+            <ol
+              class="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-paper/15 bg-paper/10 sm:grid-cols-3"
+            >
               {
                 [
                   "Opowiesz mi o swoim pomyśle własnymi słowami.",
                   "Pomogę dobrać najważniejsze elementy na start, żeby bezpiecznie sprawdzić rynek i nie zmarnować budżetu.",
                   "Wyjdziesz z jasnym planem, jak w 4 tygodnie uruchomić pierwszą działającą wersję.",
                 ].map((point, index) => (
-                  <li class="grid grid-cols-1 gap-3 border-b border-line py-6 sm:grid-cols-12 sm:gap-8">
-                    <span class="font-mono text-xs text-ink-soft sm:col-span-1">
+                  <li class="bg-ink p-6">
+                    <span class="font-mono text-xs text-signal-bright">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <p class="leading-relaxed text-pretty text-ink-soft sm:col-span-11">
+                    <p class="mt-3 leading-relaxed text-pretty text-paper/70">
                       {point}
                     </p>
                   </li>
@@ -1208,12 +1704,12 @@ const collaborationModel = [
             </ol>
 
             <p
-              class="mt-8 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft"
+              class="mt-8 max-w-2xl text-sm leading-relaxed text-pretty text-paper/70"
             >
               Masz wątpliwości? Zobacz{" "}
               <a
                 href="#faq"
-                class="font-medium text-ink underline underline-offset-4 hover:no-underline"
+                class="font-medium text-paper underline underline-offset-4 hover:no-underline"
                 >najczęstsze pytania</a
               >{" "}
               albo od razu zarezerwuj rozmowę.
@@ -1226,23 +1722,27 @@ const collaborationModel = [
                 rel="noopener noreferrer"
                 class={cn(
                   buttonVariants({ size: "lg" }),
-                  "h-auto min-h-12 w-full gap-2 rounded-[4px] px-7 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-7 py-3 text-center text-base text-balance whitespace-normal text-ink hover:bg-paper/85 sm:w-auto sm:py-0 sm:whitespace-nowrap"
                 )}
               >
                 Sprawdźmy plan na Twój produkt (20 min)
                 <ArrowRight />
               </a>
-              <p class="max-w-xl text-sm leading-relaxed text-pretty text-ink-soft">
-                Luźna, konkretna rozmowa. Zero sprzedaży — opowiadasz o pomyśle własnymi słowami, a ja mówię Ci, jak zamknąć pierwszą wersję w 4 tygodniach i co warto od razu odrzucić.
+              <p
+                class="max-w-xl text-sm leading-relaxed text-pretty text-paper/70"
+              >
+                Luźna, konkretna rozmowa. Zero sprzedaży — opowiadasz o pomyśle
+                własnymi słowami, a ja mówię Ci, jak zamknąć pierwszą wersję w 4
+                tygodniach i co warto od razu odrzucić.
               </p>
               <p
-                class="flex max-w-xl items-start gap-3 text-sm leading-relaxed text-pretty text-ink-soft"
+                class="flex max-w-xl items-start gap-3 text-sm leading-relaxed text-pretty text-paper/70"
               >
                 <span class="mt-2 h-px w-6 shrink-0 bg-signal"></span>
                 <span>
                   Ze względu na model partnerski realizuję maksymalnie jeden
                   projekt w miesiącu. Najbliższy wolny termin startu:{" "}
-                  <strong class="font-mono font-medium text-ink"
+                  <strong class="font-mono font-medium text-paper"
                     >{nextStartMonth}</strong
                   >.
                 </span>
@@ -1254,43 +1754,28 @@ const collaborationModel = [
     </section>
   </main>
 
-  <button
-    id="theme-toggle"
-    type="button"
-    aria-label="Przełącz tryb ciemny"
-    class="fixed right-4 bottom-4 z-50 flex size-11 items-center justify-center rounded-full border border-line bg-paper text-ink shadow-sm transition-colors hover:bg-secondary sm:right-6 sm:bottom-6"
+  <div
+    id="mobile-cta"
+    class="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/95 px-4 py-3 backdrop-blur md:hidden"
   >
-    <svg
-      class="theme-sun size-5"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      aria-hidden="true"
+    <a
+      href="https://calendly.com/kontakt-karolmodelski/konsultacja"
+      target="_blank"
+      rel="noopener noreferrer"
+      class={cn(
+        buttonVariants({ size: "lg" }),
+        "h-11 w-full gap-2 rounded-[6px] px-4 text-base whitespace-nowrap"
+      )}
     >
-      <circle cx="12" cy="12" r="4"></circle>
-      <path
-        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
-      ></path>
-    </svg>
-    <svg
-      class="theme-moon size-5"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-    </svg>
-  </button>
+      Porozmawiajmy (20 min)
+      <ArrowRight />
+    </a>
+  </div>
 
-  <footer class="bg-ink px-4 py-16 text-paper sm:px-6 sm:py-20">
-    <div class="mx-auto max-w-6xl">
+  <footer
+    class="border-t border-paper/10 bg-ink px-4 py-16 text-paper sm:px-6 sm:py-20"
+  >
+    <div class="mx-auto max-w-[75rem]">
       <div class="grid grid-cols-1 gap-10 md:grid-cols-3 lg:gap-16">
         <div>
           <p class="font-heading text-2xl font-semibold">Karol Modelski</p>
@@ -1391,9 +1876,9 @@ const collaborationModel = [
               <span class="font-medium text-paper">Gwarancja techniczna:</span>{
                 " "
               }
-              3 miesiące bezpłatnej gwarancji: jeśli w trakcie testów cokolwiek
-              przestanie działać lub silnik zachowa się niezgodnie z ustaloną
-              logiką, poprawiamy to bez żadnych dopłat.
+              3 miesiące bezpłatnej gwarancji: jeśli w trakcie testów cokolwiek przestanie
+              działać lub silnik zachowa się niezgodnie z ustaloną logiką, poprawiamy
+              to bez żadnych dopłat.
             </li>
           </ul>
         </div>
