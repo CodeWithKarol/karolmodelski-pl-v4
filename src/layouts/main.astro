@@ -215,10 +215,32 @@ const structuredData = {
         ready(function () {
           var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches
 
-          var sections = document.querySelectorAll("main > section[id]")
-          if (!reduce && "IntersectionObserver" in window && sections.length) {
-            sections.forEach(function (s) {
-              s.classList.add("will-reveal")
+          var revealNodes = Array.prototype.filter.call(
+            document.querySelectorAll(
+              "main section[id] :is(h2,h3,figure,blockquote,dl,[data-reveal]), main section[id] :is(ol,ul) > li"
+            ),
+            function (el) {
+              return !el.closest("astro-island")
+            }
+          )
+          if (
+            !reduce &&
+            "IntersectionObserver" in window &&
+            revealNodes.length
+          ) {
+            revealNodes.forEach(function (el) {
+              el.classList.add("will-reveal")
+              var parent = el.parentElement
+              if (parent) {
+                var sibs = Array.prototype.filter.call(
+                  parent.children,
+                  function (c) {
+                    return c.classList.contains("will-reveal")
+                  }
+                )
+                var idx = sibs.indexOf(el)
+                if (idx > 0) el.style.transitionDelay = idx * 70 + "ms"
+              }
             })
             var io = new IntersectionObserver(
               function (entries) {
@@ -229,47 +251,136 @@ const structuredData = {
                   }
                 })
               },
-              { rootMargin: "0px 0px -8% 0px", threshold: 0.06 }
+              { rootMargin: "0px 0px -6% 0px", threshold: 0.08 }
             )
-            sections.forEach(function (s) {
-              io.observe(s)
+            revealNodes.forEach(function (el) {
+              io.observe(el)
             })
           }
 
           var counters = document.querySelectorAll("[data-count]")
-          if (reduce || !counters.length || !("IntersectionObserver" in window))
-            return
-          var fmt = function (n) {
-            return String(Math.round(n)).replace(
-              /\B(?=(\d{3})+(?!\d))/g,
-              "\u00a0"
+          if (!reduce && counters.length && "IntersectionObserver" in window) {
+            var fmt = function (n) {
+              return String(Math.round(n)).replace(
+                /\B(?=(\d{3})+(?!\d))/g,
+                "\u00a0"
+              )
+            }
+            var cio = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (e) {
+                  if (!e.isIntersecting) return
+                  var el = e.target
+                  cio.unobserve(el)
+                  var target = parseFloat(el.getAttribute("data-count"))
+                  var suffix = el.getAttribute("data-suffix") || ""
+                  var start = performance.now()
+                  var dur = 1100
+                  function tick(now) {
+                    var p = Math.min((now - start) / dur, 1)
+                    var eased = 1 - Math.pow(1 - p, 3)
+                    el.textContent = fmt(target * eased) + suffix
+                    if (p < 1) requestAnimationFrame(tick)
+                    else el.textContent = fmt(target) + suffix
+                  }
+                  requestAnimationFrame(tick)
+                })
+              },
+              { threshold: 0.4 }
             )
+            counters.forEach(function (c) {
+              cio.observe(c)
+            })
           }
-          var cio = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (e) {
-                if (!e.isIntersecting) return
-                var el = e.target
-                cio.unobserve(el)
-                var target = parseFloat(el.getAttribute("data-count"))
-                var suffix = el.getAttribute("data-suffix") || ""
-                var start = performance.now()
-                var dur = 1100
-                function tick(now) {
-                  var p = Math.min((now - start) / dur, 1)
-                  var eased = 1 - Math.pow(1 - p, 3)
-                  el.textContent = fmt(target * eased) + suffix
-                  if (p < 1) requestAnimationFrame(tick)
-                  else el.textContent = fmt(target) + suffix
-                }
-                requestAnimationFrame(tick)
-              })
-            },
-            { threshold: 0.4 }
+
+          var header = document.getElementById("site-header")
+          if (header) {
+            var onScroll = function () {
+              header.classList.toggle("is-scrolled", window.scrollY > 8)
+            }
+            onScroll()
+            window.addEventListener("scroll", onScroll, { passive: true })
+          }
+
+          var progress = document.getElementById("scroll-progress")
+          if (progress) {
+            var updateProgress = function () {
+              var h = document.documentElement
+              var max = h.scrollHeight - h.clientHeight
+              var p = max > 0 ? h.scrollTop / max : 0
+              progress.style.transform = "scaleX(" + p + ")"
+            }
+            updateProgress()
+            window.addEventListener("scroll", updateProgress, { passive: true })
+            window.addEventListener("resize", updateProgress)
+          }
+
+          var numberedSections = Array.prototype.slice.call(
+            document.querySelectorAll("main > section[id]")
           )
-          counters.forEach(function (c) {
-            cio.observe(c)
-          })
+          var indicator = document.getElementById("section-indicator")
+          var navLinks = Array.prototype.slice.call(
+            document.querySelectorAll("#site-header nav a[href^='#']")
+          )
+          if (numberedSections.length && "IntersectionObserver" in window) {
+            var pad = function (n) {
+              return n < 10 ? "0" + n : String(n)
+            }
+            var setActive = function (id) {
+              var current = document.getElementById(id)
+              if (indicator && current)
+                indicator.textContent =
+                  pad(numberedSections.indexOf(current) + 1) +
+                  " / " +
+                  pad(numberedSections.length)
+              navLinks.forEach(function (a) {
+                a.classList.toggle(
+                  "is-active",
+                  a.getAttribute("href") === "#" + id
+                )
+              })
+            }
+            var sio = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (e) {
+                  if (e.isIntersecting) setActive(e.target.id)
+                })
+              },
+              { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+            )
+            numberedSections.forEach(function (s) {
+              sio.observe(s)
+            })
+          }
+
+          document
+            .querySelectorAll("#site-header a[href^='#']")
+            .forEach(function (a) {
+              a.addEventListener("click", function () {
+                var d = a.closest("details")
+                if (d) d.open = false
+              })
+            })
+
+          var mcta = document.getElementById("mobile-cta")
+          if (mcta) {
+            var mctaShown = false
+            var contact = document.getElementById("kontakt")
+            var updateMcta = function () {
+              var past = window.scrollY > 560
+              var nearContact =
+                contact &&
+                contact.getBoundingClientRect().top < window.innerHeight * 0.9
+              var shouldShow = past && !nearContact
+              if (shouldShow !== mctaShown) {
+                mctaShown = shouldShow
+                mcta.classList.toggle("is-visible", shouldShow)
+              }
+            }
+            updateMcta()
+            window.addEventListener("scroll", updateMcta, { passive: true })
+            window.addEventListener("resize", updateMcta)
+          }
         })
       })()
     </script>
