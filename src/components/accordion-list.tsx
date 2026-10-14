@@ -17,17 +17,23 @@ export default function AccordionList({
   className,
   theme = "dark",
   compact = false,
+  defaultOpen = false,
 }: {
   items: AccordionListItem[]
   startIndex?: number
   className?: string
   theme?: "light" | "dark"
   compact?: boolean
+  defaultOpen?: boolean
 }) {
   const dark = theme === "dark"
 
   return (
-    <Accordion keepMounted className={className}>
+    <Accordion
+      keepMounted
+      defaultValue={defaultOpen ? ["item-1"] : undefined}
+      className={className}
+    >
       {items.map(({ title, content }, index) => (
         <AccordionItem
           key={title}

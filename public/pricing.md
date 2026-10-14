@@ -15,20 +15,19 @@ Wszystkie ceny w PLN. Cena pakietu jest stała i podana z góry — bez rozlicza
 - Czas realizacji: 4 tygodnie od ustalenia zakresu na pierwszej rozmowie i przekazania materiałów oraz dostępów; pełny odbiór z poprawkami zwykle 6–8 tygodni
 - Limit: maksymalnie jeden projekt w miesiącu
 - Realizacja: projekt prowadzi Karol Modelski, koordynując zespół specjalistów (grafik, deweloper, tester)
-- Zawiera (wartość rynkowa i oszczędności: 82 000 zł):
-  - Działający produkt w sieci z kodem gotowym na telefony — 54 000 zł
-  - Dwa różne style wizualne do wyboru — 3 500 zł
-  - Dwa języki od pierwszego dnia (PL / EN) — 3 500 zł
-  - Strona Twojego produktu z gotową treścią zamieniającą odwiedzających w użytkowników — 5 000 zł
-  - Podgląd zachowań użytkowników i szczere opinie — 2 000 zł
-  - Zestaw do rozmów z partnerami i inwestorami — 3 000 zł
-  - Konkretny plan na kolejny krok (Wersja 2.0) — 3 500 zł
-  - Jeden punkt kontaktu i 100% praw autorskich — 7 500 zł
+- Zawiera (cały pakiet w jednej, ustalonej cenie):
+  - Pierwszą działającą wersję produktu — aplikacja dostępna przez przeglądarkę, z dopracowaną najważniejszą funkcją
+  - Dwa kierunki wizualne do wyboru
+  - Wersję polską i angielską (w uzgodnionym zakresie)
+  - Stronę internetową produktu
+  - Podgląd zachowań użytkowników
+  - Materiały do rozmów z partnerami i inwestorami
+  - Plan dalszego rozwoju
+  - Jeden punkt kontaktu i pełne prawa do produktu (kod źródłowy oraz 100% majątkowych praw autorskich w uzgodnionym zakresie)
   - Zamknięty zakres ustalony wspólnie na pierwszej rozmowie (dodatkowe pomysły – na kolejny etap)
-- Wartość rynkowa pakietu: 82 000 zł
 
 ### Warunki
-- Własność: cały kod i 100% praw autorskich przechodzi na klienta
+- Własność: cały kod i 100% majątkowych praw autorskich w uzgodnionym zakresie przechodzi na klienta
 - Poufność: umowa o zachowaniu poufności podpisywana przed omówieniem szczegółów
 - Zakres: ustalany wspólnie na pierwszej rozmowie; zmiany i nowe funkcje w trakcie prac wymagają osobnego ustalenia terminu
 - Kontakt: decyzje i materiały po stronie klienta w ciągu 24 godzin; oczekiwanie wydłuża termin realizacji o tyle samo
@@ -38,8 +37,8 @@ Wszystkie ceny w PLN. Cena pakietu jest stała i podana z góry — bez rozlicza
 
 ## Płatność w 3 częściach (40% / 40% / 20%)
 - 40% (11 800 zł) – na start prac: wpłacasz w dniu podpisania umowy i formalnego zobowiązania do poufności. Rezerwuję czas swój i zespołu wyłącznie na Twój projekt, ustalamy szczegóły i od razu ruszamy z budową wyglądu oraz silnika produktu.
-- 40% (11 800 zł) – gdy produkt jest gotowy do testów: płacisz po 4 tygodniach, kiedy narzędzie działa w internecie, Twoja strona jest włączona, a pierwsi ludzie mogą już w to klikać i sprawdzać.
-- 20% (5 900 zł) – na sam koniec, po odbiorze technicznym: po komfortowych 10 dniach roboczych na spokojne sprawdzenie i naniesieniu ewentualnych poprawek zamykamy formalności i przekazuję Ci pełne prawa własności oraz dostęp do wszystkiego.
+- 40% (11 800 zł) – gdy produkt jest gotowy do testów: płacisz po udostępnieniu pierwszej działającej wersji produktu do testów, wraz ze stroną internetową i uruchomioną analityką. Możesz już samodzielnie korzystać z aplikacji i zaprosić pierwszych użytkowników, aby sprawdzić ich reakcje.
+- 20% (5 900 zł) – na sam koniec, po odbiorze technicznym: po komfortowych 10 dniach roboczych na spokojne sprawdzenie i naniesieniu ewentualnych poprawek zamykamy formalności i przekazuję Ci kompletny kod źródłowy, dostęp do wszystkiego oraz 100% majątkowych praw autorskich w uzgodnionym zakresie.
 - Łącznie: 29 500 zł brutto. Fakturowanie: faktura VAT na każdym etapie; stała kwota ustalona z góry, bez ukrytych kosztów.
 
 ## Kontakt
