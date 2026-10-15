@@ -20,7 +20,7 @@ const lastmod = getLastModified()
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://karolmodelski.pl",
+  site: "https://www.karolmodelski.pl",
   vite: {
     plugins: [tailwindcss()],
   },

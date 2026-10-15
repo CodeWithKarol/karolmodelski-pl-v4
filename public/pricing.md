@@ -45,6 +45,6 @@ Wszystkie ceny w PLN. Cena pakietu jest stała i podana z góry — bez rozlicza
 - E-mail: kontakt@karolmodelski.pl
 - Telefon / WhatsApp: +48 664 598 563
 - NIP: 6112800950
-- Strona: https://karolmodelski.pl
+- Strona: https://www.karolmodelski.pl
 - LinkedIn: https://www.linkedin.com/in/karol-modelski/
 - Wizytówka Google: https://g.page/r/CZSVfAGtTiIzEBM

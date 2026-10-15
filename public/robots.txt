@@ -33,6 +33,6 @@ User-agent: Applebot-Extended
 Allow: /
 
 # Kontekst strony dla systemów AI
-# https://karolmodelski.pl/llms.txt
+# https://www.karolmodelski.pl/llms.txt
 
-Sitemap: https://karolmodelski.pl/sitemap-index.xml
+Sitemap: https://www.karolmodelski.pl/sitemap-index.xml

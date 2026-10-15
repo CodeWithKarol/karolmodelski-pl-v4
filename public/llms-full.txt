@@ -1,12 +1,12 @@
 # Karol Modelski — pełna treść strony
 
-> Tekstowy odpowiednik strony głównej https://karolmodelski.pl/ dla systemów AI, wyszukiwarek i asystentów. Wersja skrócona i najważniejsze linki: https://karolmodelski.pl/llms.txt · Cennik dla agentów AI: https://karolmodelski.pl/pricing.md
+> Tekstowy odpowiednik strony głównej https://www.karolmodelski.pl/ dla systemów AI, wyszukiwarek i asystentów. Wersja skrócona i najważniejsze linki: https://www.karolmodelski.pl/llms.txt · Cennik dla agentów AI: https://www.karolmodelski.pl/pricing.md
 
 ## Kim jestem
 
 Twój techniczny partner w tworzeniu aplikacji i produktów cyfrowych. Prowadzę projekt i zespół specjalistów, zamieniając pomysły pomysłodawców i inwestorów w działające aplikacje webowe. Pomagam uruchomić pierwszą działającą wersję w 4 tygodnie – bezpiecznie i bez przepalania budżetu.
 
-- Strona: https://karolmodelski.pl
+- Strona: https://www.karolmodelski.pl
 - E-mail: kontakt@karolmodelski.pl
 - Telefon / WhatsApp: +48 664 598 563 (najszybsza odpowiedź)
 - LinkedIn: https://www.linkedin.com/in/karol-modelski/
@@ -280,7 +280,7 @@ Ze względu na model partnerski realizuję maksymalnie jeden projekt w miesiącu
 
 ## Kontakt i profile
 
-- Strona: https://karolmodelski.pl
+- Strona: https://www.karolmodelski.pl
 - E-mail: kontakt@karolmodelski.pl
 - Telefon / WhatsApp: +48 664 598 563
 - LinkedIn: https://www.linkedin.com/in/karol-modelski/
@@ -298,7 +298,7 @@ Ze względu na model partnerski realizuję maksymalnie jeden projekt w miesiącu
 
 ## Cennik
 
-Pełny cennik dla agentów AI: https://karolmodelski.pl/pricing.md
+Pełny cennik dla agentów AI: https://www.karolmodelski.pl/pricing.md
 
 Cena pakietu: **29 500 zł brutto** (stała kwota, bez rozliczania za godziny, bez ukrytych kosztów), płatna w 3 częściach (40% / 40% / 20%). Zakres: pierwsza działająca wersja w 4 tygodnie, pełny odbiór z poprawkami zwykle 6–8 tygodni.
 

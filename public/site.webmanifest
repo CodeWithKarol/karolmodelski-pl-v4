@@ -1,0 +1,38 @@
+{
+  "name": "Karol Modelski — Twój techniczny partner",
+  "short_name": "Karol Modelski",
+  "description": "Sprawdź pomysł na aplikację w 4 tygodnie. Pierwsza działająca wersja, strona i analityka zachowań użytkowników.",
+  "lang": "pl",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f5f2",
+  "theme_color": "#f7f5f2",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

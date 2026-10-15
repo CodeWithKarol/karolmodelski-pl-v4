@@ -4,14 +4,14 @@
 
 Karol Modelski to techniczny partner, który prowadzi projekt i koordynuje zespół specjalistów, zamieniając pomysły pomysłodawców i inwestorów w działające aplikacje webowe (działają w przeglądarce – bez instalowania i bez czekania na akceptację przez App Store czy Google Play), narzędzia i produkty cyfrowe. Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie, a pełny odbiór z poprawkami zwykle 6–8 tygodni. Celem współpracy jest szybkie dowiezienie działającej wersji, własnej strony i realnych danych od pierwszych użytkowników, aby sprawdzić, czy pomysł ma wzięcie na rynku.
 
-Strona: https://karolmodelski.pl
+Strona: https://www.karolmodelski.pl
 Język: polski
 Kontakt: kontakt@karolmodelski.pl · +48 664 598 563 (WhatsApp, najszybsza odpowiedź)
 NIP: 6112800950
 
 ## Zasoby dla agentów AI
 
-- [Pełna treść strony](https://karolmodelski.pl/llms-full.txt): Rozwinięty, tekstowy odpowiednik strony głównej – wszystkie sekcje, tabela porównawcza, stos wartości, cennik, FAQ i kontakt.
+- [Pełna treść strony](https://www.karolmodelski.pl/llms-full.txt): Rozwinięty, tekstowy odpowiednik strony głównej – wszystkie sekcje, tabela porównawcza, stos wartości, cennik, FAQ i kontakt.
 
 ## Profile oficjalne
 
@@ -20,30 +20,30 @@ NIP: 6112800950
 
 ## O mnie
 
-- [Kto odpowiada za Twój projekt?](https://karolmodelski.pl/#o-mnie): Od produkcji dużych systemów dla banków i korporacji do budowania produktów, które mają sens – najpierw sprawdzam, co w pomyśle jest najważniejsze i jak szybko zweryfikować to z użytkownikami, a projekt prowadzi Karol Modelski z zespołem specjalistów.
+- [Kto odpowiada za Twój projekt?](https://www.karolmodelski.pl/#o-mnie): Od produkcji dużych systemów dla banków i korporacji do budowania produktów, które mają sens – najpierw sprawdzam, co w pomyśle jest najważniejsze i jak szybko zweryfikować to z użytkownikami, a projekt prowadzi Karol Modelski z zespołem specjalistów.
 
 ## Usługa
 
-- [Model współpracy](https://karolmodelski.pl/#model): Ty przynosisz pomysł i wiedzę o Twoich klientach, ja prowadzę projekt i zespół specjalistów – bez żargonu i bez zarządzania ludźmi po Twojej stronie.
-- [Zakres pierwszej wersji](https://karolmodelski.pl/#zakres): Najpierw dopracowujemy to, co najważniejsze – działający produkt wokół jednego kluczowego elementu pomysłu, z podstawową funkcją działającą zgodnie z ustalonymi zasadami. Kolejne pomysły oceniamy wspólnie i odkładamy na następny etap.
-- [Proces, Twój czas i efekty](https://karolmodelski.pl/#proces): Tygodnie 1–2 (wygląd i silnik produktu), tygodnie 3–4 (działający produkt, strona i pierwsze testy), tygodnie 5–8 (odbiór techniczny, pierwsze testy rynkowe i przekazanie praw) – z Twoim udziałem: 4–6 godzin na starcie, ok. 1 godzina na wybór wyglądu, ok. 1 godzina na Twoją opinię i 10 dni roboczych na odbiór techniczny.
-- [Co otrzymujesz](https://karolmodelski.pl/#otrzymujesz): Kompletny start Twojego projektu w 4 tygodnie – cały proces od uporządkowania pomysłu i zaplanowania zakresu, przez projektowanie i programowanie, po uruchomienie strony i analityki: pierwsza działająca wersja produktu, dwa kierunki wizualne do wyboru, wersja polska i angielska, strona produktu, podgląd zachowań użytkowników, materiały do rozmów z partnerami i inwestorami, plan dalszego rozwoju oraz jeden punkt kontaktu i pełne prawa do produktu. Cały pakiet: 29 500 zł brutto, płatna w 3 częściach.
-- [Porównanie](https://karolmodelski.pl/#porownanie): Trzy sposoby realizacji pomysłu – tradycyjny projekt programistyczny, prototyp graficzny i współpraca ze mną – oraz to, który ma sens, jeśli dopiero sprawdzasz pomysł.
-- [Płatność w 3 częściach](https://karolmodelski.pl/#rozliczenie): Inwestycja 29 500 zł brutto płatna etapami – 40% (11 800 zł) na start prac przy podpisaniu umowy i formalnego zobowiązania do poufności, 40% (11 800 zł) gdy produkt jest gotowy do testów, 20% (5 900 zł) na koniec po odbiorze technicznym i przekazaniu praw; faktura VAT na każdym etapie.
-- [Gwarancja i zasady](https://karolmodelski.pl/#gwarancja): Stała cena ryczałtowa 29 500 zł bez ukrytych dopłat; pierwsza działająca wersja w 4 tygodnie; przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne potrącasz z kolejnej faktury. 3 miesiące bezpłatnej gwarancji (poprawki bez dopłat), sprawny kontakt po stronie klienta i stały wgląd na żywo w postępy prac.
-- [Konsultacja](https://karolmodelski.pl/#konsultacja): Bezpłatna, 20-minutowa rozmowa o pomyśle – bez sprzedaży i bez technicznego żargonu.
+- [Model współpracy](https://www.karolmodelski.pl/#model): Ty przynosisz pomysł i wiedzę o Twoich klientach, ja prowadzę projekt i zespół specjalistów – bez żargonu i bez zarządzania ludźmi po Twojej stronie.
+- [Zakres pierwszej wersji](https://www.karolmodelski.pl/#zakres): Najpierw dopracowujemy to, co najważniejsze – działający produkt wokół jednego kluczowego elementu pomysłu, z podstawową funkcją działającą zgodnie z ustalonymi zasadami. Kolejne pomysły oceniamy wspólnie i odkładamy na następny etap.
+- [Proces, Twój czas i efekty](https://www.karolmodelski.pl/#proces): Tygodnie 1–2 (wygląd i silnik produktu), tygodnie 3–4 (działający produkt, strona i pierwsze testy), tygodnie 5–8 (odbiór techniczny, pierwsze testy rynkowe i przekazanie praw) – z Twoim udziałem: 4–6 godzin na starcie, ok. 1 godzina na wybór wyglądu, ok. 1 godzina na Twoją opinię i 10 dni roboczych na odbiór techniczny.
+- [Co otrzymujesz](https://www.karolmodelski.pl/#otrzymujesz): Kompletny start Twojego projektu w 4 tygodnie – cały proces od uporządkowania pomysłu i zaplanowania zakresu, przez projektowanie i programowanie, po uruchomienie strony i analityki: pierwsza działająca wersja produktu, dwa kierunki wizualne do wyboru, wersja polska i angielska, strona produktu, podgląd zachowań użytkowników, materiały do rozmów z partnerami i inwestorami, plan dalszego rozwoju oraz jeden punkt kontaktu i pełne prawa do produktu. Cały pakiet: 29 500 zł brutto, płatna w 3 częściach.
+- [Porównanie](https://www.karolmodelski.pl/#porownanie): Trzy sposoby realizacji pomysłu – tradycyjny projekt programistyczny, prototyp graficzny i współpraca ze mną – oraz to, który ma sens, jeśli dopiero sprawdzasz pomysł.
+- [Płatność w 3 częściach](https://www.karolmodelski.pl/#rozliczenie): Inwestycja 29 500 zł brutto płatna etapami – 40% (11 800 zł) na start prac przy podpisaniu umowy i formalnego zobowiązania do poufności, 40% (11 800 zł) gdy produkt jest gotowy do testów, 20% (5 900 zł) na koniec po odbiorze technicznym i przekazaniu praw; faktura VAT na każdym etapie.
+- [Gwarancja i zasady](https://www.karolmodelski.pl/#gwarancja): Stała cena ryczałtowa 29 500 zł bez ukrytych dopłat; pierwsza działająca wersja w 4 tygodnie; przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne potrącasz z kolejnej faktury. 3 miesiące bezpłatnej gwarancji (poprawki bez dopłat), sprawny kontakt po stronie klienta i stały wgląd na żywo w postępy prac.
+- [Konsultacja](https://www.karolmodelski.pl/#konsultacja): Bezpłatna, 20-minutowa rozmowa o pomyśle – bez sprzedaży i bez technicznego żargonu.
 
 ## Od czego zacząć
 
-- [Problem na starcie](https://karolmodelski.pl/#problemy): W głowie pomysł wydaje się jasny, ale pojawia się pytanie, co zbudować najpierw i ile to będzie kosztować. Dwie pułapki: dopisywanie kolejnych funkcji, zanim pierwsi ludzie wypróbują produkt, oraz inwestowanie miesięcy pracy, zanim sprawdzisz, czy pomysł działa. Cel jest prosty: jak najszybciej zobaczyć, czy ludzie korzystają, wracają i co warto rozwijać dalej.
+- [Problem na starcie](https://www.karolmodelski.pl/#problemy): W głowie pomysł wydaje się jasny, ale pojawia się pytanie, co zbudować najpierw i ile to będzie kosztować. Dwie pułapki: dopisywanie kolejnych funkcji, zanim pierwsi ludzie wypróbują produkt, oraz inwestowanie miesięcy pracy, zanim sprawdzisz, czy pomysł działa. Cel jest prosty: jak najszybciej zobaczyć, czy ludzie korzystają, wracają i co warto rozwijać dalej.
 
 ## Cennik
 
-- [Cennik dla agentów AI](https://karolmodelski.pl/pricing.md): Cena 29 500 zł brutto za cały pakiet (stała kwota, bez rozliczania za godziny i bez ukrytych kosztów), płatność w 3 częściach 40/40/20, gwarancja terminu i 3-miesięczna gwarancja techniczna.
+- [Cennik dla agentów AI](https://www.karolmodelski.pl/pricing.md): Cena 29 500 zł brutto za cały pakiet (stała kwota, bez rozliczania za godziny i bez ukrytych kosztów), płatność w 3 częściach 40/40/20, gwarancja terminu i 3-miesięczna gwarancja techniczna.
 
 ## FAQ
 
-- [Najczęstsze pytania](https://karolmodelski.pl/#faq): Czas realizacji, gotowość pod aplikację na telefon, model płatności (40% / 40% / 20%), koszty serwerów, materiały dla inwestorów, poufność i co się dzieje, gdy po 4 tygodniach rynek nie zareaguje.
+- [Najczęstsze pytania](https://www.karolmodelski.pl/#faq): Czas realizacji, gotowość pod aplikację na telefon, model płatności (40% / 40% / 20%), koszty serwerów, materiały dla inwestorów, poufność i co się dzieje, gdy po 4 tygodniach rynek nie zareaguje.
 
 ## Bezpieczeństwo i zasady
 
