@@ -19,37 +19,39 @@ Model partnerski: realizuję maksymalnie jeden projekt w miesiącu.
 
 ## 00 · Wstęp
 
-### Nie budujemy samej aplikacji. Budujemy dowód, że Twój pomysł naprawdę się opłaca.
+### Nie budujemy aplikacji w ciemno. Budujemy pierwszą wersję, która pozwoli sprawdzić Twój pomysł.
 
-W 4 tygodnie dostajesz działający produkt, stronę z analityką zachowań użytkowników oraz materiały do rozmów z inwestorami. Odbierasz działającą aplikację w przeglądarce – bez instalowania i bez czekania na akceptację przez App Store czy Google Play. Pierwsza wersja do testów powstaje w 4 tygodnie, a pełny odbiór z naniesieniem Twoich poprawek zamyka się zwykle w 6–8 tygodniach.
+W 4 tygodnie otrzymasz działający produkt, stronę internetową z analityką zachowań użytkowników oraz materiały do rozmów z potencjalnymi inwestorami.
+
+Nie musisz mieć gotowej specyfikacji ani znać się na programowaniu. Pomogę Ci uporządkować pomysł, wybrać zakres pierwszej wersji i przeprowadzę cały projekt od strony technicznej.
 
 **Wezwanie do działania:** Sprawdźmy plan na Twój produkt (20 min) → https://calendly.com/kontakt-karolmodelski/konsultacja
 
-Wspólnie wybierzemy kluczowy mechanizm na start, aby bezpiecznie sprawdzić rynek i nie zmarnować budżetu.
+Zanim wydasz duży budżet na pełną aplikację, sprawdź swój pomysł na pierwszej działającej wersji.
 
 | Parametr | Wartość |
 | --- | --- |
-| Format | 4 tygodnie |
-| Wartość rynkowa | 82 000 zł |
-| Inwestycja | 29 500 zł |
-| Dostępność | 1 projekt / miesiąc |
+| Pierwsza działająca wersja | 4 tygodnie |
+| Cena całego pakietu | 29 500 zł |
+| Liczba projektów | 1 miesięcznie |
+| Gwarancja techniczna | 3 miesiące |
 
 ---
 
 ## 01 · Problem (#problemy)
 
-### Dlaczego start z firmą programistyczną to najczęściej bolesna lekcja?
+### Masz pomysł na aplikację. Ale od czego właściwie zacząć?
 
-Gdy masz pomysł na aplikację lub narzędzie internetowe, tradycyjna ścieżka najczęściej prowadzi w jedną z dwóch ślepych uliczek:
+W głowie wszystko wydaje się jasne. Wiesz, jak Twój produkt powinien wyglądać, co ma robić i dlaczego ludzie mieliby z niego korzystać.
 
-**Dwie ślepe uliczki**
+Problem zaczyna się wtedy, gdy trzeba zdecydować, co zbudować najpierw, ile to będzie kosztować i czy pomysł rzeczywiście sprawdzi się w praktyce.
 
-1. **Kupujesz same rysunki i obietnice** — Płacisz kilkanaście tysięcy złotych, czekasz 3 miesiące i dostajesz ładną prezentację w pliku graficznym. Nic nie da się kliknąć na żywo, nikt tego nie sprawdzi, a Ty nadal nie masz niczego, co mogłoby zarabiać.
-2. **Wydajesz 100 000 zł, zanim ktokolwiek to zobaczy** — Agencja przez pół roku buduje formularze, panele i konta, zamiast dać ludziom sprawdzić to, co najważniejsze. Po wydaniu oszczędności okazuje się, że odbiorcy oczekiwali czegoś zupełnie innego.
+1. **Próbujesz przewidzieć wszystko na początku** — Zaczynasz od jednej funkcji, ale szybko pojawiają się kolejne pomysły. Konta użytkowników, rankingi, powiadomienia, płatności, dodatkowe możliwości… Każdy z tych pomysłów może być dobry. Tylko czy wszystkie są potrzebne, zanim pierwsi ludzie w ogóle wypróbują Twój produkt?
+2. **Inwestujesz, zanim sprawdzisz najważniejsze** — Możesz przez kilka miesięcy dopracowywać aplikację, która wygląda świetnie i ma mnóstwo funkcji. Ale dopóki nie pokażesz jej prawdziwym użytkownikom, nadal nie wiesz, czy będą chcieli z niej korzystać. A im więcej zbudujesz na początku, tym więcej pieniędzy ryzykujesz, zanim poznasz odpowiedź.
 
-**Najgorszy scenariusz?** Po 6 miesiącach czekania i wydaniu 100 000 zł dowiadujesz się, że nikt tego nie potrzebuje – a firma programistyczna rozkłada ręce i wystawia kolejną fakturę za poprawki.
+Dlatego najpierw warto zbudować to, co pozwoli sprawdzić sens całego pomysłu.
 
-> **Cel biznesu jest prosty.** Nie chodzi o to, żeby miesiącami dyskutować i planować, tylko żeby jak najszybciej zobaczyć, czy ludzie z tego korzystają, wracają i chcą za to płacić.
+**Nie chodzi o stworzenie jak największej aplikacji.** Chodzi o to, żeby możliwie szybko zobaczyć, czy ludzie z niej korzystają, czy wracają i co warto rozwijać dalej.
 
 ---
 
@@ -57,27 +59,39 @@ Gdy masz pomysł na aplikację lub narzędzie internetowe, tradycyjna ścieżka 
 
 ### Nie musisz znać się na technologii. Prowadzę Cię krok po kroku od A do Z
 
-Tradycyjne firmy programistyczne wymagają od Ciebie gotowych specyfikacji, każą wybierać bazy danych i zarzucają Cię pytaniami, na które nie znasz odpowiedzi. U mnie ten proces wygląda zupełnie inaczej:
+Wystarczy, że opowiesz mi o swoim pomyśle i o tym, co chcesz osiągnąć. Nie potrzebujesz gotowej dokumentacji ani wiedzy technicznej — wspólnie ustalimy, jak najlepiej przełożyć Twoją wizję na działający produkt.
+
+Zaplanuję pierwszą wersję, pomogę Ci wybrać najważniejsze funkcje i zajmę się całą realizacją od strony technicznej.
 
 1. **Ty robisz to, w czym jesteś najlepszy** — Opowiadasz mi o swoim pomyśle, dzielisz się wiedzą o swoich klientach i mówisz, co Ci się podoba, a co nie.
 2. **Ja prowadzę cały projekt od strony technicznej** — Projektuję architekturę, piszę specyfikację, dobieram i koordynuję sprawdzony zespół specjalistów (grafik, deweloper, tester). Odpowiadam za jakość i termin, a Ty masz jeden punkt kontaktu.
-3. **Święty spokój** — Nie zarządzasz ludźmi, nie tłumaczysz się programistom i nie pilnujesz grafików. Przychodzisz na krótkie, konkretne spotkania, gdzie pokazuję Ci postępy i pytam: „Idziemy w prawo czy w lewo?”. Ty wybierasz kierunek, my dowozimy efekt.
+3. **Święty spokój** — Nie musisz szukać programistów, pilnować terminów ani zastanawiać się, czy wszystko jest dobrze zrobione od strony technicznej. Tym zajmuję się ja. Twoja rola jest prosta: pomagasz mi dobrze zrozumieć swój pomysł, sprawdzasz kolejne efekty i podejmujesz decyzje dotyczące produktu. Na krótkich spotkaniach pokazuję Ci, co już działa, tłumaczę dostępne możliwości i pytam: „Idziemy w prawo czy w lewo?”. Ty decydujesz, jaki ma być Twój produkt. Ja odpowiadam za to, jak go zbudujemy.
 
 ---
 
 ## 03 · Zakres (#zakres)
 
-**Skupiamy się na jednej rzeczy**
+**Najpierw dopracujmy to, co najważniejsze**
 
-### Dlaczego większość aplikacji nigdy nie powstaje? Przez dopisywanie kolejnych pomysłów w nieskończoność
+### Dlaczego dobry pomysł nie potrzebuje od razu dziesiątek funkcji?
 
-Zaczyna się od prostej idei, a po dwóch tygodniach dochodzi logowanie na pięć sposobów, komunikatory, rozbudowane rankingi i profile. Efekt? Budżet rośnie trzykrotnie, termin przesuwa się o pół roku, a na koniec nikt z tego nie korzysta.
+Zaczynasz od konkretnego pomysłu. Ale szybko pojawiają się kolejne możliwości: konta użytkowników, rozbudowane rankingi, komunikatory, powiadomienia, dodatkowe tryby działania…
 
-**Moim zadaniem jest zadbać o to, żeby Twój projekt nie wpadł w tę pułapkę.** Na samym początku wspólnie bierzemy Twój pomysł i odrzucamy wszystkie poboczne dodatki. Zostawiamy jedno, kluczowe rozwiązanie – tę jedną funkcję, dla której klient w ogóle chce wejść, zapłacić lub wrócić jutro.
+Każda z tych rzeczy może się kiedyś przydać. Problem w tym, że im więcej próbujesz zrobić na początku, tym trudniej dopracować to, dla czego ludzie w ogóle będą chcieli korzystać z Twojej aplikacji.
 
-Wszystkie kolejne pomysły zapisujemy na później.
+> Nie budujemy wszystkiego. Budujemy porządnie to, co pozwoli Ci sprawdzić, czy warto iść dalej.
 
-> Gdy w trakcie prac wpadnie Ci do głowy nowy pomysł, dbam o Twój termin i budżet. Mówię wtedy wprost: „Świetny pomysł, zapisuję go na kolejny etap. Uruchomimy go zaraz po tym, jak pierwsi użytkownicy przetestują wersję główną”.
+Nie chodzi o to, żeby zrobić coś po kosztach i nazwać to gotową aplikacją.
+
+Wspólnie wybierzemy najważniejszy element Twojego pomysłu i zbudujemy wokół niego działający produkt. Taki, który można normalnie uruchomić, wygodnie obsługiwać i pokazać innym bez tłumaczenia, co dopiero ma kiedyś działać.
+
+Zadbam o to, żeby podstawowa funkcja działała zgodnie z ustalonymi zasadami i stanowiła solidny punkt wyjścia do dalszego rozwoju.
+
+**Reszty nie wyrzucamy. Odkładamy ją na później.**
+
+Gdy w trakcie prac pojawi się nowy pomysł, wspólnie ocenimy, czy jest potrzebny w pierwszej wersji. Jeśli nie, zapiszę go do kolejnego etapu.
+
+Dzięki temu nie rozpraszamy się dodatkami, pilnujemy terminu i budżetu, a całą uwagę skupiamy na tym, co naprawdę ma znaczenie dla pierwszych użytkowników.
 
 ---
 
@@ -85,16 +99,22 @@ Wszystkie kolejne pomysły zapisujemy na później.
 
 ### Jak wygląda współpraca i ile Twojego czasu wymaga
 
-Na starcie kilka godzin na omówienie pomysłu, w trakcie ok. 1 godziny w tygodniu na decyzje, a na koniec spokojny czas na odbiór techniczny i testy rynkowe. Dokładnie wiesz, co dzieje się na każdym etapie:
+Na początku poświęcimy kilka godzin, żeby dobrze zrozumieć Twój pomysł, ustalić zasady działania i wybrać najważniejsze funkcje.
+
+W trakcie prac potrzebuję od Ciebie zwykle około godziny tygodniowo na obejrzenie postępów, odpowiedzi na pytania i podjęcie decyzji. Przy bardziej złożonych pomysłach może być potrzebne dodatkowe doprecyzowanie szczegółów.
+
+Nie musisz zajmować się technologią ani zarządzać zespołem. Ale to Ty najlepiej znasz swój pomysł, dlatego na każdym etapie masz wpływ na to, co powstaje.
+
+Dokładnie wiesz, co dzieje się w kolejnych tygodniach:
 
 1. **Tygodnie 1–2** — **Wygląd i silnik produktu.** Równolegle projektujemy wygląd (dwa różne kierunki wizualne do wyboru) i budujemy kluczowy silnik Twojego produktu. Dzięki temu grafika nie blokuje prac programistycznych. *Twój udział:* 4–6 godzin na starcie (2–4 spotkania na omówienie zasad i zakresu) + ok. 1 godzina na wybór stylu wizualnego.
-2. **Tygodnie 3–4** — **Pełna funkcja, strona i badanie rynku.** Rozbudowujemy kluczową funkcję, uruchamiamy Twoją stronę internetową oraz włączamy podgląd reakcji ludzi: widzisz, ile osób wchodzi, jak długo klikają i czy wracają kolejnego dnia. *Twój udział:* ok. 1 godzina – klikasz w wersję testową na telefonie lub komputerze i przekazujesz nam swoją opinię.
+2. **Tygodnie 3–4** — **Działający produkt, strona i pierwsze testy.** Dopracowujemy najważniejszą funkcję, uruchamiamy stronę internetową i włączamy analitykę. Możesz już korzystać z produktu, pokazać go pierwszym osobom i sprawdzić, jak reagują na Twoje rozwiązanie. *Twój udział:* ok. 1 godzina – klikasz w wersję testową na telefonie lub komputerze i przekazujesz nam swoją opinię.
 3. **Tygodnie 5–8** — **Odbiór techniczny, pierwsze testy rynkowe i przekazanie praw.** Dostajesz gotowe, działające narzędzie i bezpieczny czas na dwa równoległe kroki:
 
-   1. **Twój odbiór techniczny:** Masz 10 dni roboczych, by na spokojnie samemu wszystko przeklikać; my usuwamy ewentualne uwagi do 7 dni roboczych w ramach ustalonej kwoty.
-   2. **Pierwsze testy rynkowe:** Od razu wysyłasz link do pierwszych 50–100 osób z Twojej grupy odbiorców. Obserwujesz na żywo, czy mechanizm ich wciąga, jak długo klikają i czy wracają kolejnego dnia.
+   1. **Twój odbiór techniczny:** Masz 10 dni roboczych na spokojne sprawdzenie, czy aplikacja działa zgodnie z naszymi ustaleniami. Zgłaszasz uwagi, a my poprawiamy niezgodności w ramach uzgodnionego zakresu.
+   2. **Pierwsze testy rynkowe:** Udostępniasz produkt pierwszym użytkownikom i zbierasz ich opinie. Dzięki uruchomionej analityce widzisz, jak korzystają z aplikacji, co ich interesuje i czy wracają.
 
-   Na koniec zamykamy formalności: przekazuję Ci kompletny kod źródłowy, dostęp do strony oraz 100% majątkowych praw autorskich.
+   Na koniec zamykamy formalności: przekazuję Ci kompletny kod źródłowy, dostęp do strony oraz 100% majątkowych praw autorskich w uzgodnionym zakresie.
 
    *Twój udział:* Przeklikujesz aplikację, rozsyłasz link do pierwszych testerów i sprawdzasz zebrane dane.
 
@@ -102,15 +122,22 @@ Na starcie kilka godzin na omówienie pomysłu, w trakcie ok. 1 godziny w tygodn
 
 ## 05 · Porównanie (#porownanie)
 
-### Na czym Ci zależy?
+### Trzy sposoby na realizację pomysłu. Który ma sens na początku?
 
-| Cecha | Tradycyjna firma programistyczna | Agencja od samych grafik | Współpraca ze mną (4 tygodnie) |
+Nie każda aplikacja wymaga od razu pełnego zespołu programistów, wielomiesięcznego projektu i dużego budżetu. Wszystko zależy od tego, na jakim etapie jesteś i co chcesz osiągnąć.
+
+Jeśli dopiero sprawdzasz swój pomysł, najważniejsze może być szybkie uruchomienie działającej wersji, zebranie pierwszych opinii i podjęcie decyzji, co robić dalej.
+
+| Cecha | Tradycyjny projekt programistyczny | Prototyp graficzny | Współpraca ze mną |
 | --- | --- | --- | --- |
-| Kiedy widzisz realny efekt? | Za 4–6 miesięcy (albo wcale) | Po 2–3 miesiącach rysowania | Pierwsza działająca wersja po 4 tygodniach |
-| Co realnie dostajesz? | Rachunki za godziny i stertę dokumentów | Rysunki, w które nie da się kliknąć na żywo | Działające narzędzie w sieci, stronę i prawdziwe dane |
-| Rozmowy z inwestorami | Prezentacje nie robią już wrażenia – inwestor chce działającego narzędzia i liczb. | Pokazujesz nieruchomy szkic | Kładziesz na stole działający produkt i wyniki testów |
-| Koszty i płatności | Budżet bez dna; zaliczki przepadają przy opóźnieniach | Płacisz za same szkice, a programistom płacisz od nowa | Jedna ustalona kwota w 3 częściach wraz z postępem prac (40/40/20) |
-| Co z tym robisz dalej? | Często trzeba zaczynać od początku | Trzeba budować od zera | Sprawdzony fundament, który 1:1 przenosisz do aplikacji mobilnej |
+| Główny cel | Budowa rozwiązania o szerszym zakresie | Pokazanie wyglądu i sposobu obsługi | Sprawdzenie najważniejszej funkcji na działającym produkcie |
+| Co otrzymujesz? | Aplikację z uzgodnionymi funkcjami | Makiety i klikalną prezentację | Działającą wersję w sieci, stronę i analitykę użytkowników |
+| Kiedy możesz testować? | Zależnie od planu i etapów projektu | Makietę można sprawdzać przed programowaniem | Pierwsza działająca wersja po 4 tygodniach |
+| Co z inwestorami? | Możesz pokazać produkt w trakcie rozwoju lub po wdrożeniu | Pokazujesz wizualizację pomysłu | Możesz pokazać działający produkt i zebrane wyniki testów |
+| Koszt | Zależny od zakresu i wyceny | Zależny od liczby ekranów i interakcji | 29 500 zł brutto za ustalony pakiet |
+| Dalszy rozwój | Zależny od przyjętej architektury | Wymaga wykonania aplikacji | Rozwijasz istniejącą wersję o kolejne funkcje |
+
+**Wezwanie do działania:** Brzmi jak droga dla Ciebie? Sprawdźmy plan na Twój produkt → https://calendly.com/kontakt-karolmodelski/konsultacja
 
 ---
 
@@ -118,19 +145,26 @@ Na starcie kilka godzin na omówienie pomysłu, w trakcie ok. 1 godziny w tygodn
 
 ### Kompletny start Twojego projektu w 4 tygodnie
 
-Gdybyś chciał zlecić te elementy osobno różnym firmom, programistom i prawnikom, zapłacisz za każdy krok z osobna, a rachunki w firmie programistycznej szybko przekroczą 100 000 zł. U mnie dostajesz to jako jeden, gotowy zestaw w stałej cenie:
+Nie płacisz tylko za napisanie kodu. Otrzymujesz cały proces potrzebny do uruchomienia pierwszej działającej wersji.
 
-1. **Działający produkt w sieci z kodem gotowym na telefony** (54 000 zł) — Budujemy w pełni działające narzędzie w wersji internetowej. Twoi pierwsi odbiorcy wchodzą bezpośrednio przez link na telefonie lub komputerze – od razu sprawdzasz ich reakcje i zbierasz opinie, bez czekania na weryfikację przez sklepy z aplikacjami. Wszystko tworzymy od razu w technologii, którą w kolejnym kroku bez problemu przenosimy do App Store i Google Play. Żadna praca nie ląduje w koszu, a Ty nie płacisz drugi raz za pisanie kodu od nowa.
-2. **Dwa różne style wizualne do wyboru** (3 500 zł) — Nie narzucamy jednego wyglądu w ciemno. Zanim napiszemy kod, przygotowujemy dla Ciebie 2 zupełnie różne koncepcje graficzne (kolory, układ ekranu, charakter całości). Ty decydujesz, w którą stronę idziemy, mając pewność, że produkt będzie podobał się Tobie i Twoim odbiorcom.
-3. **Dwa języki od pierwszego dnia (polski i angielski)** (3 500 zł) — Od pierwszego dnia przygotowujemy narzędzie tak, by działało po polsku i po angielsku pod wspólnym adresem. Nie musisz później płacić programistom za przepisywanie kodu od nowa, żeby wyjść w świat – od razu możesz pokazać działającą aplikację znajomym lub partnerom z zagranicy.
-4. **Strona Twojego produktu z gotową treścią zamieniającą odwiedzających w użytkowników** (5 000 zł) — Zdejmuję z Ciebie konieczność wymyślania haseł marketingowych i układania oferty. Przygotowuję kompletną stronę pod Twoim adresem z gotowymi, perswazyjnymi tekstami, które tłumaczą wartość produktu w prosty sposób. Każdy, kto wchodzi z zewnątrz, w 2 minuty rozumie Twój pomysł i od razu klika przycisk wypróbowania narzędzia.
-5. **Podgląd zachowań użytkowników i szczere opinie** (2 000 zł) — Widzisz czarno na białym, jak ludzie reagują: ile osób weszło, ile czasu spędzili w środku i czy wracają kolejnego dnia. Przy próbie wyjścia zadajemy jedno krótkie pytanie, dzięki czemu od razu znasz ich zdanie.
-6. **Zestaw do rozmów z partnerami i inwestorami** (3 000 zł) — Kładziesz na stole gotowy pakiet zamiast surowego pomysłu: wygląd Twojego produktu na telefonach i komputerach (dopracowane grafiki ekranów, gotowe do pokazania wspólnikom, wrzucenia na stronę czy do mediów społecznościowych), jednostronicowe podsumowanie dla inwestora: prosty dokument wyjaśniający, dlaczego produkt jest bezpieczny, serwery kosztują 0 zł i dlaczego całość można od razu przenieść na telefony bez pisania od nowa oraz prezentacja pomysłu w 2 minuty: krótkie slajdy tłumaczące, jak działa narzędzie, w czym pomaga ludziom i jak na tym zarabiasz — tak, by każdy od razu to zrozumiał.
+Od uporządkowania pomysłu i zaplanowania zakresu, przez projektowanie i programowanie, aż po uruchomienie strony, przygotowanie analityki i przekazanie gotowego rozwiązania.
 
-7. **Konkretny plan na kolejny krok (Wersja 2.0)** (3 500 zł) — Gdy zbierzemy pierwsze reakcje ludzi, siadamy razem do podsumowania. Wyciągamy wnioski z tego, co mówią użytkownicy i wspólnie ustalamy plan działania: które pomysły warto dopisać do produktu w następnej kolejności, ile to zajmie i ile będzie kosztować, żeby nie przepalać Twoich pieniędzy w ciemno.
-8. **Jeden punkt kontaktu i 100% praw autorskich** (7 500 zł) — Zdejmuję z Ciebie cały ciężar prowadzenia projektu – zamiast szukać programistów, grafików i testerów, rozmawiasz tylko ze mną. Od pierwszego dnia Twój pomysł chroni umowa o poufności, a po zakończeniu prac cały kod i prawa autorskie przechodzą na Ciebie.
+Nie musisz szukać osobno grafika, programisty, testera ani osoby do zarządzania projektem. Koordynuję całość i odpowiadam za efekt.
 
-**Łączna wartość rynkowa: 82 000 zł → Twoja inwestycja: 29 500 zł brutto** (stała kwota, płatność w 3 częściach).
+Cały pakiet: 29 500 zł brutto. Stała cena, ustalony zakres, płatność w trzech etapach.
+
+**Co dokładnie otrzymujesz?**
+
+1. **Pierwszą działającą wersję produktu** — Aplikację dostępną przez przeglądarkę, z dopracowaną najważniejszą funkcją. Taką, którą możesz uruchomić, przetestować i pokazać użytkownikom.
+2. **Dwa kierunki wizualne do wyboru** — Nie musisz sam projektować wyglądu. Przygotujemy dwie propozycje, a Ty wybierzesz kierunek, który najlepiej pasuje do Twojego pomysłu.
+3. **Wersję polską i angielską** — Od początku przygotujemy produkt do działania w dwóch językach, w uzgodnionym zakresie.
+4. **Stronę internetową Twojego produktu** — Miejsce, w którym przedstawisz swój pomysł, wyjaśnisz korzyści i zaprosisz pierwszych użytkowników do wypróbowania aplikacji.
+5. **Podgląd zachowań użytkowników** — Zobaczysz, ile osób korzysta z produktu, co robią i czy wracają. Dzięki temu kolejne decyzje oprzesz na danych, a nie wyłącznie na przypuszczeniach.
+6. **Materiały do rozmów z partnerami i inwestorami** — Otrzymasz zestaw pokazujący, co zostało zbudowane, jak działa produkt i jakie informacje udało się zebrać podczas pierwszych testów.
+7. **Plan dalszego rozwoju** — Wspólnie ustalimy, które funkcje warto dodać w następnym etapie, co wymaga poprawy i w jakim kierunku najlepiej rozwijać projekt.
+8. **Jeden punkt kontaktu i pełne prawa do produktu** — Nie zarządzasz zespołem specjalistów. Całą realizację koordynuję ja. Po zakończeniu i odbiorze otrzymujesz kod źródłowy i 100% majątkowych praw autorskich w uzgodnionym zakresie.
+
+29 500 zł brutto za cały pakiet. Bez ukrytych kosztów i bez dopłat za poprawki w ramach ustalonego zakresu.
 
 Wezwanie do działania: Sprawdźmy plan na Twój produkt (20 min) → https://calendly.com/kontakt-karolmodelski/konsultacja
 
@@ -143,10 +177,8 @@ Wezwanie do działania: Sprawdźmy plan na Twój produkt (20 min) → https://ca
 Nie kupujesz „godzin programistów w ciemno” ani nie ryzykujesz wpłaty całości z góry. Koszt jest ustalony z góry, a płatność dzielimy na 3 bezpieczne części:
 
 1. **40% (11 800 zł) – 1. część, na start prac** — Wpłacasz w dniu podpisania umowy i zobowiązania do poufności. Dzięki temu rezerwuję czas mój i zespołu wyłącznie na Twój projekt i od razu ruszamy z budową wyglądu oraz silnika produktu.
-2. **40% (11 800 zł) – 2. część, gdy produkt jest gotowy do testów** — Płacisz po 4 tygodniach, gdy narzędzie działa w sieci, Twoja strona jest włączona, a pierwsi ludzie już w to klikają.
-3. **20% (5 900 zł) – 3. część, na sam koniec, po odbiorze technicznym** — Dopiero po Twoim odbiorze technicznym (masz na to 10 dni roboczych) i naniesieniu poprawek przekazuję Ci pełne prawa własności oraz dostęp do wszystkiego.
-
-Dzięki temu 60% kwoty zostaje w Twojej kieszeni do momentu, aż zobaczysz działające narzędzie i sam skończysz odbiór techniczny.
+2. **40% (11 800 zł) – 2. część, gdy produkt jest gotowy do testów** — Płacisz po udostępnieniu pierwszej działającej wersji produktu do testów, wraz ze stroną internetową i uruchomioną analityką. Możesz już samodzielnie korzystać z aplikacji i zaprosić pierwszych użytkowników, aby sprawdzić ich reakcje.
+3. **20% (5 900 zł) – 3. część, na sam koniec, po odbiorze technicznym** — Dopiero po Twoim odbiorze technicznym (masz na to 10 dni roboczych) i naniesieniu poprawek przekazuję Ci kompletny kod źródłowy, dostęp do wszystkiego oraz 100% majątkowych praw autorskich w uzgodnionym zakresie.
 
 ---
 
@@ -154,9 +186,11 @@ Dzięki temu 60% kwoty zostaje w Twojej kieszeni do momentu, aż zobaczysz dzia�
 
 ### Biorę pełną odpowiedzialność za termin i sprawny produkt
 
-W tradycyjnych firmach programistycznych projekty często przeciągają się o kolejne miesiące, a klient płaci za przedłużające się dyskusje. U mnie zasady są proste i czarno na białym zapisane w umowie:
+Powierzasz mi swój pomysł i inwestujesz własne pieniądze, dlatego masz prawo wiedzieć, czego dokładnie oczekiwać.
 
-1. **Gwarancja stałej ceny ryczałtowej (0 zł nieprzewidzianych dopłat)** — W agencjach programistycznych rachunki rosną wraz z każdą dodatkową godziną i poprawką. U mnie cena 29 500 zł brutto jest stała, zamknięta i wpisana wprost do umowy. Jeśli w trakcie prac lub odbioru technicznego cokolwiek wymaga dopracowania, robimy to bez żadnych ukrytych faktur i bez dopłacania choćby złotówki.
+Od początku ustalamy, co zbudujemy, ile za to zapłacisz i kiedy zobaczysz działającą wersję. Zasady współpracy, odbioru i gwarancji zapisujemy w umowie, żebyś nie musiał zastanawiać się, co się stanie, jeśli coś pójdzie niezgodnie z planem.
+
+1. **Gwarancja stałej ceny ryczałtowej (0 zł nieprzewidzianych dopłat)** — Jeszcze przed rozpoczęciem prac wspólnie ustalamy dokładny zakres pierwszej wersji aplikacji. Wiesz, co otrzymasz i ile za to zapłacisz. Cena 29 500 zł brutto jest stała i zapisana w umowie. Jeśli podczas realizacji lub odbioru coś nie działa zgodnie z naszymi ustaleniami, poprawiamy to bez dodatkowych opłat. A jeśli wpadniesz na pomysł nowej funkcji? Zapiszemy ją do kolejnego etapu, zamiast po cichu zwiększać koszt obecnego projektu.
 2. **Gwarancja terminu** — Po wspólnym ustaleniu zakresu na pierwszej rozmowie pomagam Ci skompletować niezbędne materiały i skonfigurować adres strony. Gdy mamy komplet, zegar rusza: mamy równe 4 tygodnie na pierwszą działającą wersję. Jeśli z mojej winy nastąpi opóźnienie – pracuję wraz z zespołem bezpłatnie aż do skutku, a za każdy dzień opóźnienia potrącasz kary umowne bezpośrednio z kolejnej faktury.
 3. **3 miesiące gwarancji technicznej po wdrożeniu** — Nie zostajesz sam po oddaniu projektu. Otrzymujesz 3 miesiące bezpłatnej gwarancji: jeśli w trakcie testów cokolwiek przestanie działać lub silnik zachowa się niezgodnie z ustaloną logiką, poprawiamy to bez żadnych dopłat.
 4. **Sprawny kontakt z Twojej strony** — Żeby domknąć prace w 4 tygodnie, potrzebuję Twoich decyzji (np. wybór wyglądu z dwóch propozycji) w ciągu 24 godzin. Jeśli na coś czekamy – czas realizacji po prostu wydłuża się o tyle samo.
@@ -171,11 +205,25 @@ W tradycyjnych firmach programistycznych projekty często przeciągają się o k
 
 Cześć, nazywam się **Karol Modelski**.
 
-Przez ponad 7 lat tworzyłem systemy w bankowości i dużych instytucjach finansowych. W tym środowisku nie ma miejsca na błędy, awarie czy niedopatrzenia – wszystko musi działać precyzyjnie, bezpiecznie i stabilnie.
+Przez lata pracowałem jako programista przy dużych systemach dla banków i korporacji. Tam nauczyłem się, jak ważna jest dobra architektura, wydajność i podejmowanie rozsądnych decyzji technicznych.
 
-Tę samą bankową solidność i dbałość o bezpieczeństwo przenoszę do współpracy z pomysłodawcami – bez korporacyjnej biurokracji, bez przepalania budżetu i z jednym punktem kontaktu.
+Ale z czasem zacząłem coraz bardziej interesować się nie tylko tym, **jak coś zbudować, ale przede wszystkim — co właściwie warto zbudować**.
 
-Masz jeden punkt kontaktu – mnie. Pracuję ze sprawdzonym, zaufanym zespołem specjalistów (deweloper, grafik, tester), ale to ja projektuję architekturę, pilnuję jakości i biorę pełną odpowiedzialność za całość. W 4 tygodnie zamieniam Twoją wizję w działającą aplikację webową, na której bezpiecznie sprawdzisz rynek.
+Bo z aplikacjami jest taki problem, że pomysłów zwykle nie brakuje.
+
+Ktoś przychodzi ze świetną koncepcją. Zaczynamy rozmawiać i nagle okazuje się, że oprócz podstawowej funkcjonalności przydałyby się jeszcze konta użytkowników, rankingi, powiadomienia, rozgrywki online i kilkanaście innych rzeczy.
+
+I jasne, często są to naprawdę dobre pomysły. Tylko czy wszystkie musimy realizować od razu? Moim zdaniem nie.
+
+Dlatego dziś podchodzę do tworzenia aplikacji trochę inaczej. **Najpierw próbuję zrozumieć, co jest najważniejsze w pomyśle i jak możemy to sprawdzić możliwie szybko, bez angażowania od razu ogromnego budżetu.**
+
+Dobrym przykładem jest projekt gry matematycznej, nad którym pracujemy. Pomysł powstał prawie 30 lat temu, a dziś przekładamy go na działającą wersję przeglądarkową. Zamiast od razu budować pełną aplikację mobilną ze wszystkimi dodatkami, zaczęliśmy od podstawowej rozgrywki z komputerem. Dzięki temu możemy pokazać grę pierwszym użytkownikom, zebrać ich opinie i sprawdzić, czy chcą do niej wracać. Dopiero na podstawie tych informacji zdecydujemy, które funkcje warto rozwijać dalej.
+
+Dla mnie właśnie o to chodzi w rozsądnym budowaniu produktów. Nie o to, żeby napisać jak najwięcej kodu. **Chodzi o to, żeby możliwie szybko stworzyć coś wartościowego, pokazać to użytkownikom i na podstawie ich reakcji zdecydować, co dalej.**
+
+Klient nie musi znać się na frameworkach, architekturze czy technicznych szczegółach. Od tego jestem ja i zespół. Moim zadaniem jest zrozumieć jego wizję, przełożyć ją na konkretny plan i czasem powiedzieć: „To świetny pomysł, ale zostawmy go na następny etap, bo inaczej zaraz w tym utoniemy”.
+
+I właśnie w taki sposób chcę pomagać przedsiębiorcom budować ich własne produkty. Krok po kroku. Z głową. Bez niepotrzebnego komplikowania.
 
 ---
 
@@ -193,7 +241,7 @@ Nie. Cały produkt, jego logika i wygląd powstają w technologii, którą w kol
 Zupełnie nie. Przejmuję cały nadzór techniczny i koordynację prac, więc nie musisz zarządzać programistami ani znać branżowych pojęć. Po Twojej stronie to łącznie 4–6 godzin na starcie na omówienie pomysłu, a w trakcie prac około 1 godziny tygodniowo na krótkie decyzje: „idziemy w prawo czy w lewo?”.
 
 **Czy muszę płacić całą kwotę z góry?**
-Nie. Płatność dzielimy na 3 bezpieczne etapy powiązane z postępem prac: 40% na start i rezerwację zespołu, 40% po 4 tygodniach, gdy produkt i Twoja strona działają już w sieci, oraz 20% na samym końcu – dopiero po Twoim odbiorze technicznym i naniesieniu poprawek.
+Nie. Płatność dzielimy na 3 etapy powiązane z postępem prac: 40% na start i rezerwację zespołu, 40% po udostępnieniu pierwszej działającej wersji do testów – wraz ze stroną internetową i uruchomioną analityką – oraz 20% na samym końcu, dopiero po Twoim odbiorze technicznym i naniesieniu uzgodnionych poprawek.
 
 **Czy muszę płacić za serwery i utrzymanie narzędzia w trakcie testów?**
 Nie. Wszystko konfiguruję w chmurze z bezpłatnymi limitami startowymi. Obsługa pierwszych kilku tysięcy użytkowników kosztuje Cię równe 0 zł miesięcznie – bez żadnych ukrytych rachunków w tle.
@@ -205,38 +253,30 @@ Dostajesz działający produkt dostępny pod prostym linkiem oraz gotową stron�
 Tak. Otrzymujesz gotowy pakiet: profesjonalne wizualizacje produktu na ekranach telefonów i komputerów, jednostronicowe podsumowanie techniczne architektury oraz 2-minutową prezentację tłumaczącą działanie, logikę i model Twojego narzędzia. Kładziesz na stole dowód, zamiast opowiadać o pomysłach na sucho.
 
 **Czy mój pomysł jest w 100% bezpieczny prawnie?**
-Tak. Zanim zdradzisz mi jakiekolwiek szczegóły, podpisujemy umowę o zachowaniu poufności. Po zakończeniu prac i odbiorze przekazuję Ci pełen kod źródłowy oraz 100% majątkowych praw autorskich – masz pełną swobodę dalszego rozwoju, sprzedaży czy pozyskiwania wspólników.
+Tak. Zanim zdradzisz mi jakiekolwiek szczegóły, podpisujemy umowę o zachowaniu poufności. Po zakończeniu prac i odbiorze przekazuję Ci pełen kod źródłowy oraz 100% majątkowych praw autorskich w uzgodnionym zakresie – masz swobodę dalszego rozwoju, sprzedaży czy pozyskiwania wspólników.
 
 **Co, jeśli po 4 tygodniach okaże się, że rynek nie jest zainteresowany?**
-Właśnie po to to robimy. W najlepszym wypadku masz działający produkt, zweryfikowaną bazę i zielone światło na wersję mobilną. W najgorszym – w 4 tygodnie wiesz to na 100% na bazie twardych liczb, oszczędzając ponad 70 000 zł i pół roku frustracji na budowanie czegoś w ciemno. W obu scenariuszach wygrywasz fakty zamiast domysłów.
+Właśnie po to to robimy. W najlepszym wypadku masz działający produkt, zweryfikowaną bazę i zielone światło na wersję mobilną. W najgorszym – w 4 tygodnie wiesz to na 100% na bazie twardych liczb, płacąc 29 500 zł za ustalony pakiet i oszczędzając pół roku budowania czegoś w ciemno. W obu scenariuszach wygrywasz fakty zamiast domysłów.
 
 ---
 
 ## 11 · Kontakt (#kontakt)
 
-### Zobacz, ile Twój pomysł może osiągnąć na rynku
+### Masz pomysł na aplikację? Porozmawiajmy, jak go zrealizować.
 
-Zamiast tracić kolejne miesiące na zastanawianie się „co by było, gdyby”, poświęćmy 20 minut na luźną, konkretną rozmowę:
+Wystarczy 20 minut, żeby opowiedzieć mi, co chcesz stworzyć. Pomogę Ci ustalić, od czego warto zacząć, co może być największym wyzwaniem i czy Twój pomysł da się zamknąć w pierwszej działającej wersji za 29 500 zł.
 
 1. Opowiesz mi o swoim pomyśle własnymi słowami.
-2. Pomogę dobrać najważniejsze elementy na start, żeby bezpiecznie sprawdzić rynek i nie zmarnować budżetu.
-3. Wyjdziesz z jasnym planem, jak w 4 tygodnie uruchomić pierwszą działającą wersję.
+2. Wspólnie wybierzemy najważniejszy element na start, żeby bezpiecznie sprawdzić rynek.
+3. Dowiesz się, jakie są możliwości przygotowania pierwszej działającej wersji w 4 tygodnie — a jeśli Twój pomysł wymaga innego zakresu, powiem Ci to wprost.
 
 **Bezpłatna konsultacja (20 minut):** https://calendly.com/kontakt-karolmodelski/konsultacja
 
-Bez sprzedaży i bez technicznego żargonu. Rozmawiamy wyłącznie o Twoim pomyśle i o tym, jak najszybciej pokazać go światu.
+Luźna, konkretna rozmowa bez presji i technicznego żargonu. Opowiadasz o swoim pomyśle, a ja pomagam Ci ocenić możliwości realizacji, wskazuję najważniejsze elementy na start i mówię wprost, co na razie warto odłożyć.
 
 Ze względu na model partnerski realizuję maksymalnie jeden projekt w miesiącu.
 
 ---
-
-## Zasady i bezpieczeństwo
-
-- **100% poufności:** Zanim powiesz mi o pomyśle, podpisujemy umowę o zachowaniu poufności.
-- **Prawa autorskie i licencje:** Cały kod i 100% praw autorskich przechodzi na Ciebie. Kod tworzony od zera na licencjach komercyjnych – brak ryzyka prawnego, roszczeń o udostępnienie źródeł czy ukrytych opłat licencyjnych.
-- **Bezpieczeństwo finansowe:** Płatność w 3 częściach (40/40/20) · Gwarancja stałej ceny ryczałtowej bez ukrytych kosztów · Faktury VAT.
-- **Gwarancja techniczna:** 3 miesiące bezpłatnej gwarancji – jeśli w trakcie testów cokolwiek przestanie działać lub silnik zachowa się niezgodnie z ustaloną logiką, poprawiamy to bez żadnych dopłat.
-- **Model partnerski:** realizowany jest maksymalnie jeden projekt miesięcznie.
 
 ## Kontakt i profile
 
@@ -248,10 +288,18 @@ Ze względu na model partnerski realizuję maksymalnie jeden projekt w miesiącu
 - NIP: 6112800950
 - Pracuję w 100% zdalnie i elastycznie.
 
+## Bezpieczeństwo i zasady
+
+- **100% poufności:** Zanim powiesz mi o pomyśle, podpisujemy umowę o zachowaniu poufności.
+- **Prawa autorskie i licencje:** Cały kod i 100% majątkowych praw autorskich w uzgodnionym zakresie przechodzi na Ciebie. Kod tworzony od zera na licencjach komercyjnych – brak ryzyka prawnego, roszczeń o udostępnienie źródeł czy ukrytych opłat licencyjnych.
+- **Bezpieczeństwo finansowe:** Płatność w 3 częściach (40/40/20) · Gwarancja stałej ceny ryczałtowej bez ukrytych kosztów · Faktury VAT.
+- **Gwarancja techniczna:** 3 miesiące bezpłatnej gwarancji – jeśli w trakcie testów cokolwiek przestanie działać lub silnik zachowa się niezgodnie z ustaloną logiką, poprawiamy to bez żadnych dopłat.
+- **Model partnerski:** realizowany jest maksymalnie jeden projekt miesięcznie.
+
 ## Cennik
 
 Pełny cennik dla agentów AI: https://karolmodelski.pl/pricing.md
 
-Cena pakietu: **29 500 zł brutto** (stała kwota, bez rozliczania za godziny, bez ukrytych kosztów), płatna w 3 częściach (40% / 40% / 20%). Zakres: pierwsza działająca wersja w 4 tygodnie, pełny odbiór z poprawkami zwykle 6–8 tygodni. Wartość rynkowa i oszczędności pakietu: 82 000 zł.
+Cena pakietu: **29 500 zł brutto** (stała kwota, bez rozliczania za godziny, bez ukrytych kosztów), płatna w 3 częściach (40% / 40% / 20%). Zakres: pierwsza działająca wersja w 4 tygodnie, pełny odbiór z poprawkami zwykle 6–8 tygodni.
 
 © 2026 Karol Modelski · wszelkie prawa zastrzeżone.

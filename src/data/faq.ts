@@ -18,7 +18,7 @@ export const faq = [
   {
     question: "Czy muszę płacić całą kwotę z góry?",
     answer:
-      "Nie. Płatność dzielimy na 3 bezpieczne etapy powiązane z postępem prac: 40% na start i rezerwację zespołu, 40% po 4 tygodniach, gdy produkt i Twoja strona działają już w sieci, oraz 20% na samym końcu – dopiero po Twoim odbiorze technicznym i naniesieniu poprawek.",
+      "Nie. Płatność dzielimy na 3 etapy powiązane z postępem prac: 40% na start i rezerwację zespołu, 40% po udostępnieniu pierwszej działającej wersji do testów – wraz ze stroną internetową i uruchomioną analityką – oraz 20% na samym końcu, dopiero po Twoim odbiorze technicznym i naniesieniu uzgodnionych poprawek.",
   },
   {
     question:
@@ -41,12 +41,12 @@ export const faq = [
   {
     question: "Czy mój pomysł jest w 100% bezpieczny prawnie?",
     answer:
-      "Tak. Zanim zdradzisz mi jakiekolwiek szczegóły, podpisujemy umowę o zachowaniu poufności. Po zakończeniu prac i odbiorze przekazuję Ci pełen kod źródłowy oraz 100% majątkowych praw autorskich – masz pełną swobodę dalszego rozwoju, sprzedaży czy pozyskiwania wspólników.",
+      "Tak. Zanim zdradzisz mi jakiekolwiek szczegóły, podpisujemy umowę o zachowaniu poufności. Po zakończeniu prac i odbiorze przekazuję Ci pełen kod źródłowy oraz 100% majątkowych praw autorskich w uzgodnionym zakresie – masz swobodę dalszego rozwoju, sprzedaży czy pozyskiwania wspólników.",
   },
   {
     question:
       "Co, jeśli po 4 tygodniach okaże się, że rynek nie jest zainteresowany?",
     answer:
-      "Właśnie po to to robimy. W najlepszym wypadku masz działający produkt, zweryfikowaną bazę i zielone światło na wersję mobilną. W najgorszym – w 4 tygodnie wiesz to na 100% na bazie twardych liczb, oszczędzając ponad 70 000 zł i pół roku frustracji na budowanie czegoś w ciemno. W obu scenariuszach wygrywasz fakty zamiast domysłów.",
+      "Właśnie po to to robimy. W najlepszym wypadku masz działający produkt, zweryfikowaną bazę i zielone światło na wersję mobilną. W najgorszym – w 4 tygodnie wiesz to na 100% na bazie twardych liczb, płacąc 29 500 zł za ustalony pakiet i oszczędzając pół roku budowania czegoś w ciemno. W obu scenariuszach wygrywasz fakty zamiast domysłów.",
   },
 ]
