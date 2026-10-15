@@ -16,19 +16,29 @@ function getLastModified() {
 
 const lastModified = getLastModified()
 
+const priceValidUntil = new Date(
+  Date.UTC(new Date().getUTCFullYear(), 11, 31)
+).toISOString()
+
 interface Props {
   title?: string
   description?: string
   noindex?: boolean
+  canonical?: string | false
 }
 
 const {
   title = "Sprawdź pomysł na aplikację w 4 tygodnie | Karol Modelski",
-  description = "Nie buduj aplikacji w ciemno. W 4 tygodnie stworzę pierwszą działającą wersję, która pozwoli sprawdzić Twój pomysł z realnymi użytkownikami – bez przepalania budżetu.",
+  description = "Nie buduj aplikacji w ciemno. W 4 tygodnie zbuduję pierwszą działającą wersję, która sprawdzi Twój pomysł z realnymi użytkownikami.",
   noindex = false,
+  canonical,
 } = Astro.props
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const canonicalURL =
+  canonical === false
+    ? null
+    : (canonical ?? new URL(Astro.url.pathname, Astro.site)).toString()
+const ogURL = canonicalURL ?? new URL("/", Astro.site).toString()
 const ogImage = new URL("/og-image.png", Astro.site)
 
 const structuredData = {
@@ -36,22 +46,22 @@ const structuredData = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://karolmodelski.pl/#webpage",
-      url: "https://karolmodelski.pl/",
+      "@id": "https://www.karolmodelski.pl/#webpage",
+      url: "https://www.karolmodelski.pl/",
       name: title,
       description,
       inLanguage: "pl-PL",
-      isPartOf: { "@id": "https://karolmodelski.pl/#website" },
-      about: { "@id": "https://karolmodelski.pl/#organization" },
+      isPartOf: { "@id": "https://www.karolmodelski.pl/#website" },
+      about: { "@id": "https://www.karolmodelski.pl/#organization" },
       dateModified: lastModified,
     },
     {
       "@type": "Organization",
-      "@id": "https://karolmodelski.pl/#organization",
+      "@id": "https://www.karolmodelski.pl/#organization",
       name: "Karol Modelski",
-      url: "https://karolmodelski.pl/",
-      logo: "https://karolmodelski.pl/logo.png",
-      image: "https://karolmodelski.pl/og-image.png",
+      url: "https://www.karolmodelski.pl/",
+      logo: "https://www.karolmodelski.pl/logo.png",
+      image: "https://www.karolmodelski.pl/og-image.png",
       email: "kontakt@karolmodelski.pl",
       telephone: "+48664598563",
       taxID: "6112800950",
@@ -59,9 +69,17 @@ const structuredData = {
         "Twój techniczny partner w tworzeniu aplikacji i produktów cyfrowych. Prowadzę projekt i zespół specjalistów, uruchamiając pierwszą działającą wersję w 4 tygodnie.",
       areaServed: "PL",
       knowsLanguage: "pl",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "PL",
+      },
       sameAs: [
         "https://www.linkedin.com/in/karol-modelski/",
         "https://g.page/r/CZSVfAGtTiIzEBM",
+        "https://github.com/CodeWithKarol",
+        "https://x.com/modelski_karol",
+        "https://karol-modelski.medium.com/",
+        "https://karol-modelski.hashnode.dev/",
       ],
       contactPoint: {
         "@type": "ContactPoint",
@@ -70,14 +88,14 @@ const structuredData = {
         telephone: "+48664598563",
         availableLanguage: ["pl"],
       },
-      founder: { "@id": "https://karolmodelski.pl/#person" },
+      founder: { "@id": "https://www.karolmodelski.pl/#person" },
     },
     {
       "@type": "Person",
-      "@id": "https://karolmodelski.pl/#person",
+      "@id": "https://www.karolmodelski.pl/#person",
       name: "Karol Modelski",
-      url: "https://karolmodelski.pl/",
-      image: "https://karolmodelski.pl/karol-modelski.webp",
+      url: "https://www.karolmodelski.pl/",
+      image: "https://www.karolmodelski.pl/karol-modelski.webp",
       jobTitle: "Twórca aplikacji i produktów cyfrowych",
       description:
         "Techniczny partner pomysłodawców i inwestorów: po latach pracy przy dużych systemach dla banków i korporacji pomaga budować produkty, które mają sens – najpierw ustala, co w pomyśle jest najważniejsze, a potem zamienia to w działającą aplikację webową w 4 tygodnie, z gwarancją terminu i przeniesieniem 100% majątkowych praw autorskich w uzgodnionym zakresie na klienta.",
@@ -94,39 +112,45 @@ const structuredData = {
       sameAs: [
         "https://www.linkedin.com/in/karol-modelski/",
         "https://g.page/r/CZSVfAGtTiIzEBM",
+        "https://github.com/CodeWithKarol",
+        "https://x.com/modelski_karol",
+        "https://karol-modelski.medium.com/",
+        "https://karol-modelski.hashnode.dev/",
       ],
-      worksFor: { "@id": "https://karolmodelski.pl/#organization" },
+      worksFor: { "@id": "https://www.karolmodelski.pl/#organization" },
     },
     {
       "@type": "WebSite",
-      "@id": "https://karolmodelski.pl/#website",
-      url: "https://karolmodelski.pl/",
+      "@id": "https://www.karolmodelski.pl/#website",
+      url: "https://www.karolmodelski.pl/",
       name: "Karol Modelski",
       inLanguage: "pl-PL",
-      publisher: { "@id": "https://karolmodelski.pl/#organization" },
+      publisher: { "@id": "https://www.karolmodelski.pl/#organization" },
     },
     {
       "@type": "Service",
-      "@id": "https://karolmodelski.pl/#proces",
+      "@id": "https://www.karolmodelski.pl/#proces",
       name: "Proces w 4 tygodnie – od pomysłu do działającej aplikacji webowej",
-      provider: { "@id": "https://karolmodelski.pl/#organization" },
+      provider: { "@id": "https://www.karolmodelski.pl/#organization" },
       serviceType: "Tworzenie aplikacji i produktów cyfrowych",
       areaServed: "PL",
-      url: "https://karolmodelski.pl/#proces",
+      url: "https://www.karolmodelski.pl/#proces",
       description:
         "Tworzenie działającej aplikacji webowej, własnej strony i podglądu zachowań użytkowników w 4 tygodnie – z gwarancją terminu i przeniesieniem 100% majątkowych praw autorskich w uzgodnionym zakresie na klienta.",
       offers: {
         "@type": "Offer",
-        url: "https://karolmodelski.pl/#konsultacja",
+        url: "https://www.karolmodelski.pl/#konsultacja",
         description:
           "Pierwsza działająca wersja w 4 tygodnie, pełny odbiór z poprawkami zwykle 6–8 tygodni. Przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne klient potrąca z kolejnej faktury; 3 miesiące bezpłatnej gwarancji technicznej po wdrożeniu – jeśli w trakcie testów cokolwiek przestanie działać, poprawiamy to bez dopłat.",
         priceCurrency: "PLN",
         price: "29500",
+        priceValidUntil,
+        availability: "https://schema.org/InStock",
       },
     },
     {
       "@type": "FAQPage",
-      "@id": "https://karolmodelski.pl/#faq",
+      "@id": "https://www.karolmodelski.pl/#faq",
       mainEntity: faq.map(({ question, answer }) => ({
         "@type": "Question",
         name: question,
@@ -149,7 +173,8 @@ const structuredData = {
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="canonical" href={canonicalURL} />
+    <link rel="manifest" href="/site.webmanifest" />
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="theme-color" content="#f7f5f2" />
     <Font cssVariable="--font-inter" preload />
@@ -157,12 +182,19 @@ const structuredData = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Karol Modelski" />
-    {noindex && <meta name="robots" content="noindex, follow" />}
+    {noindex ? (
+      <meta name="robots" content="noindex, follow" />
+    ) : (
+      <meta
+        name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      />
+    )}
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Karol Modelski" />
     <meta property="og:locale" content="pl_PL" />
-    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:url" content={ogURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
@@ -175,6 +207,8 @@ const structuredData = {
     />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@modelski_karol" />
+    <meta name="twitter:creator" content="@modelski_karol" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
