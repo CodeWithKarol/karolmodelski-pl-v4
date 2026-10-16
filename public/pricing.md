@@ -31,8 +31,8 @@ Wszystkie ceny w PLN. Cena pakietu jest stała i podana z góry — bez rozlicza
 - Poufność: umowa o zachowaniu poufności podpisywana przed omówieniem szczegółów
 - Zakres: ustalany wspólnie na pierwszej rozmowie; zmiany i nowe funkcje w trakcie prac wymagają osobnego ustalenia terminu
 - Kontakt: decyzje i materiały po stronie klienta w ciągu 24 godzin; oczekiwanie wydłuża termin realizacji o tyle samo
-- Gwarancja terminu: przy opóźnieniu z mojej winy pracuję z zespołem bezpłatnie aż do skutku, a klient potrąca kary umowne z kolejnej faktury
-- Gwarancja techniczna: 3 miesiące bezpłatnej gwarancji – jeśli w trakcie testów cokolwiek przestanie działać lub silnik zachowa się niezgodnie z ustaloną logiką, poprawiamy to bez żadnych dopłat
+- Gwarancja terminu: 4 tygodnie na pierwszą działającą wersję od uzgodnienia zakresu i spełnienia warunków rozpoczęcia prac; kary umowne za zawinione opóźnienie na zasadach określonych w umowie
+- Gwarancja techniczna: 3 miesiące gwarancji – błędy i usterki w uzgodnionym zakresie usuwamy bez dodatkowych opłat, na zasadach określonych w umowie
 - Wgląd w postępy: stały podgląd na żywo, jak powstaje projekt, od startu prac
 
 ## Płatność w 3 częściach (40% / 40% / 20%)

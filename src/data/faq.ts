@@ -2,7 +2,7 @@ export const faq = [
   {
     question: "Ile dokładnie trwa zbudowanie działającej wersji?",
     answer:
-      "Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie. Po jej zakończeniu masz 10 dni roboczych na odbiór techniczny (własne sprawdzenie i uwagi), a my do 7 dni roboczych na naniesienie poprawek. Cały proces – od pierwszego spotkania do finalnego przekazania praw – zamyka się zwykle w 6–8 tygodniach.",
+      "Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie. Zegar rusza, gdy wspólnie ustalimy zakres pierwszej wersji i otrzymam komplet materiałów oraz dostępów (m.in. skonfigurowany adres strony) – dopiero wtedy zaczynamy prace. Po oddaniu pierwszej wersji masz 10 dni roboczych na odbiór techniczny (sprawdzenie i uwagi), a ja do 7 dni roboczych na naniesienie poprawek. To, kiedy zamknie się cały proces, zależy więc od tempa Twoich decyzji w trakcie prac i przy odbiorze – zwykle jest to 6–8 tygodni od startu prac.",
   },
   {
     question:
