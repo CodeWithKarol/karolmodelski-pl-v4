@@ -2,7 +2,7 @@
 
 > Przeprowadzę Cię od pomysłu do działającej aplikacji webowej w 4 tygodnie. Bez firmy programistycznej, bez przepalania budżetu i bez konieczności znajomości technologii.
 
-Karol Modelski to techniczny partner, który prowadzi projekt i koordynuje zespół specjalistów, zamieniając pomysły pomysłodawców i inwestorów w działające aplikacje webowe (działają w przeglądarce – bez instalowania i bez czekania na akceptację przez App Store czy Google Play), narzędzia i produkty cyfrowe. Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie, a pełny odbiór z poprawkami zwykle 6–8 tygodni. Celem współpracy jest szybkie dowiezienie działającej wersji, własnej strony i realnych danych od pierwszych użytkowników, aby sprawdzić, czy pomysł ma wzięcie na rynku.
+Karol Modelski to techniczny partner, który prowadzi projekt i koordynuje zespół specjalistów, zamieniając pomysły pomysłodawców i inwestorów w działające aplikacje webowe (działają w przeglądarce – bez instalowania i bez czekania na akceptację przez App Store czy Google Play), narzędzia i produkty cyfrowe. Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie od wspólnego ustalenia zakresu i skompletowania materiałów oraz dostępów, a pełny odbiór z poprawkami zwykle 6–8 tygodni. Celem współpracy jest szybkie dowiezienie działającej wersji, własnej strony i realnych danych od pierwszych użytkowników, aby sprawdzić, czy pomysł ma wzięcie na rynku.
 
 Strona: https://www.karolmodelski.pl
 Język: polski
@@ -20,17 +20,18 @@ NIP: 6112800950
 
 ## O mnie
 
-- [Kto odpowiada za Twój projekt?](https://www.karolmodelski.pl/#o-mnie): Od produkcji dużych systemów dla banków i korporacji do budowania produktów, które mają sens – najpierw sprawdzam, co w pomyśle jest najważniejsze i jak szybko zweryfikować to z użytkownikami, a projekt prowadzi Karol Modelski z zespołem specjalistów.
+- [Kto odpowiada za Twój projekt?](https://www.karolmodelski.pl/#o-mnie): Od zaawansowanych systemów dla banków i korporacji do budowania produktów, które mają sens – najpierw sprawdzam, co w pomyśle jest najważniejsze i jak szybko zweryfikować to z użytkownikami, a projekt prowadzi Karol Modelski z zespołem specjalistów.
 
 ## Usługa
 
 - [Model współpracy](https://www.karolmodelski.pl/#model): Ty przynosisz pomysł i wiedzę o Twoich klientach, ja prowadzę projekt i zespół specjalistów – bez żargonu i bez zarządzania ludźmi po Twojej stronie.
-- [Zakres pierwszej wersji](https://www.karolmodelski.pl/#zakres): Najpierw dopracowujemy to, co najważniejsze – działający produkt wokół jednego kluczowego elementu pomysłu, z podstawową funkcją działającą zgodnie z ustalonymi zasadami. Kolejne pomysły oceniamy wspólnie i odkładamy na następny etap.
+- [Zakres pierwszej wersji](https://www.karolmodelski.pl/#zakres): Najpierw dopracowujemy to, co najważniejsze – działający produkt wokół jednego kluczowego elementu pomysłu, z podstawową funkcją działającą zgodnie z ustalonymi zasadami. Kolejne pomysły oceniamy wspólnie i odkładamy na następny etap. Pakiet za 29 500 zł dotyczy aplikacji, których najważniejszą funkcję można zbudować i uruchomić w ciągu 4 tygodni; dopasowanie zakresu sprawdzamy na pierwszej rozmowie.
+- [Przykład realizacji](https://www.karolmodelski.pl/#przyklad): Projekt w toku – gra matematyczna z pomysłem sprzed prawie 30 lat. Zamiast budować wszystko naraz (gra z komputerem, rozgrywki online, turnieje, rankingi), wspólnie ustalono zakres pierwszej wersji: podstawową, grywalną rozgrywkę w przeglądarce, którą można uruchamiać, testować i poprawiać. Produkt jest przygotowywany do testów z pierwszymi użytkownikami.
 - [Proces, Twój czas i efekty](https://www.karolmodelski.pl/#proces): Tygodnie 1–2 (wygląd i silnik produktu), tygodnie 3–4 (działający produkt, strona i pierwsze testy), tygodnie 5–8 (odbiór techniczny, pierwsze testy rynkowe i przekazanie praw) – z Twoim udziałem: 4–6 godzin na starcie, ok. 1 godzina na wybór wyglądu, ok. 1 godzina na Twoją opinię i 10 dni roboczych na odbiór techniczny.
 - [Co otrzymujesz](https://www.karolmodelski.pl/#otrzymujesz): Kompletny start Twojego projektu w 4 tygodnie – cały proces od uporządkowania pomysłu i zaplanowania zakresu, przez projektowanie i programowanie, po uruchomienie strony i analityki: pierwsza działająca wersja produktu, dwa kierunki wizualne do wyboru, wersja polska i angielska, strona produktu, podgląd zachowań użytkowników, materiały do rozmów z partnerami i inwestorami, plan dalszego rozwoju oraz jeden punkt kontaktu i pełne prawa do produktu. Cały pakiet: 29 500 zł brutto, płatna w 3 częściach.
 - [Porównanie](https://www.karolmodelski.pl/#porownanie): Trzy sposoby realizacji pomysłu – tradycyjny projekt programistyczny, prototyp graficzny i współpraca ze mną – oraz to, który ma sens, jeśli dopiero sprawdzasz pomysł.
 - [Płatność w 3 częściach](https://www.karolmodelski.pl/#rozliczenie): Inwestycja 29 500 zł brutto płatna etapami – 40% (11 800 zł) na start prac przy podpisaniu umowy i formalnego zobowiązania do poufności, 40% (11 800 zł) gdy produkt jest gotowy do testów, 20% (5 900 zł) na koniec po odbiorze technicznym i przekazaniu praw; faktura VAT na każdym etapie.
-- [Gwarancja i zasady](https://www.karolmodelski.pl/#gwarancja): Stała cena ryczałtowa 29 500 zł bez ukrytych dopłat; pierwsza działająca wersja w 4 tygodnie; przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne potrącasz z kolejnej faktury. 3 miesiące bezpłatnej gwarancji (poprawki bez dopłat), sprawny kontakt po stronie klienta i stały wgląd na żywo w postępy prac.
+- [Gwarancja i zasady](https://www.karolmodelski.pl/#gwarancja): Stała cena za uzgodniony zakres – bez dopłat za poprawki niezgodności z ustaleniami; pierwsza działająca wersja w 4 tygodnie. Kary umowne za zawinione opóźnienie na zasadach określonych w umowie. 3 miesiące gwarancji technicznej (błędy i usterki w uzgodnionym zakresie bez dodatkowych opłat), sprawny kontakt po stronie klienta i stały wgląd na żywo w postępy prac.
 - [Konsultacja](https://www.karolmodelski.pl/#konsultacja): Bezpłatna, 20-minutowa rozmowa o pomyśle – bez sprzedaży i bez technicznego żargonu.
 
 ## Od czego zacząć
@@ -49,6 +50,6 @@ NIP: 6112800950
 
 - 100% poufności – przed omówieniem szczegółów podpisywana jest pisemna umowa o zachowaniu poufności z karami finansowymi.
 - Prawa autorskie i licencje – cały kod i 100% majątkowych praw autorskich w uzgodnionym zakresie przechodzi na klienta; kod tworzony od zera na licencjach komercyjnych – brak ryzyka prawnego, roszczeń o udostępnienie źródeł czy ukrytych opłat licencyjnych.
-- Gwarancja terminu – pierwsza działająca wersja w 4 tygodnie; przy opóźnieniu z mojej winy pracuję bezpłatnie aż do skutku, a kary umowne klient potrąca z kolejnej faktury.
-- Gwarancja techniczna – 3 miesiące bezpłatnej gwarancji: jeśli w trakcie testów cokolwiek przestanie działać lub silnik zachowa się niezgodnie z ustaloną logiką, poprawiamy to bez żadnych dopłat.
+- Gwarancja terminu – pierwsza działająca wersja w 4 tygodnie od uzgodnienia zakresu i spełnienia warunków rozpoczęcia prac; kary umowne za zawinione opóźnienie na zasadach określonych w umowie.
+- Gwarancja techniczna – 3 miesiące gwarancji: błędy i usterki w uzgodnionym zakresie usuwamy bez dodatkowych opłat, na zasadach określonych w umowie.
 - Model partnerski – realizowany jest maksymalnie jeden projekt miesięcznie.
