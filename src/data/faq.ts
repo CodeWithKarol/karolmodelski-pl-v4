@@ -36,7 +36,7 @@ export const faq = [
     question:
       "Czy dostanę materiały, żeby pokazać projekt partnerom lub inwestorom?",
     answer:
-      "Tak. Otrzymujesz gotowy pakiet: profesjonalne wizualizacje produktu na ekranach telefonów i komputerów, jednostronicowe podsumowanie techniczne architektury oraz 2-minutową prezentację tłumaczącą działanie, logikę i model Twojego narzędzia. Kładzesz na stole dowód, zamiast opowiadać o pomysłach na sucho.",
+      "Tak. Otrzymujesz gotowy pakiet: profesjonalne wizualizacje produktu na ekranach telefonów i komputerów, jednostronicowe podsumowanie techniczne architektury oraz 2-minutową prezentację tłumaczącą działanie, logikę i model Twojego narzędzia. Kładziesz na stole dowód, zamiast opowiadać o pomysłach na sucho.",
   },
   {
     question: "Czy mój pomysł jest w 100% bezpieczny prawnie?",

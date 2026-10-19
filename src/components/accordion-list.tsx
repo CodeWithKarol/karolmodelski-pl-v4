@@ -49,6 +49,7 @@ export default function AccordionList({
           >
             <span className="flex items-baseline gap-4">
               <span
+                aria-hidden="true"
                 className={cn(
                   "font-mono text-xs font-normal",
                   dark ? "text-signal-bright" : "text-signal-ink"

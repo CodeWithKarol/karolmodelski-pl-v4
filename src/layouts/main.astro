@@ -144,6 +144,12 @@ const structuredData = {
           "Pierwsza działająca wersja w 4 tygodnie, pełny odbiór z poprawkami zwykle 6–8 tygodni. Stała cena za uzgodniony zakres, bez dopłat za poprawki niezgodności z ustaleniami. Kary umowne za zawinione opóźnienie na zasadach określonych w umowie; 3 miesiące gwarancji technicznej – błędy i usterki w uzgodnionym zakresie usuwamy bez dodatkowych opłat.",
         priceCurrency: "PLN",
         price: "29500",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          price: "29500",
+          priceCurrency: "PLN",
+          valueAddedTaxIncluded: true,
+        },
         priceValidUntil,
         availability: "https://schema.org/InStock",
       },
@@ -233,6 +239,15 @@ const structuredData = {
             root.classList.add("dark")
         } catch (e) {}
 
+        function syncThemeToggle() {
+          var btn = document.getElementById("theme-toggle")
+          if (btn)
+            btn.setAttribute(
+              "aria-pressed",
+              root.classList.contains("dark") ? "true" : "false"
+            )
+        }
+
         document.addEventListener("click", function (ev) {
           var t = ev.target
           if (t && t.closest && t.closest("#theme-toggle")) {
@@ -240,6 +255,7 @@ const structuredData = {
             try {
               localStorage.setItem("theme", dark ? "dark" : "light")
             } catch (e) {}
+            syncThemeToggle()
           }
         })
 
@@ -249,6 +265,7 @@ const structuredData = {
         }
 
         ready(function () {
+          syncThemeToggle()
           var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches
 
           var revealNodes = Array.prototype.filter.call(
@@ -354,26 +371,16 @@ const structuredData = {
           var numberedSections = Array.prototype.slice.call(
             document.querySelectorAll("main > section[id]")
           )
-          var indicator = document.getElementById("section-indicator")
           var navLinks = Array.prototype.slice.call(
             document.querySelectorAll("#site-header nav a[href^='#']")
           )
           if (numberedSections.length && "IntersectionObserver" in window) {
-            var pad = function (n) {
-              return n < 10 ? "0" + n : String(n)
-            }
             var setActive = function (id) {
-              var current = document.getElementById(id)
-              if (indicator && current)
-                indicator.textContent =
-                  pad(numberedSections.indexOf(current) + 1) +
-                  " / " +
-                  pad(numberedSections.length)
               navLinks.forEach(function (a) {
-                a.classList.toggle(
-                  "is-active",
-                  a.getAttribute("href") === "#" + id
-                )
+                var active = a.getAttribute("href") === "#" + id
+                a.classList.toggle("is-active", active)
+                if (active) a.setAttribute("aria-current", "location")
+                else a.removeAttribute("aria-current")
               })
             }
             var sio = new IntersectionObserver(
