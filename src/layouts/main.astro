@@ -16,12 +16,8 @@ function getLastModified() {
 
 const lastModified = getLastModified()
 
-// Meta Pixel – tylko produkcja (dev/preview nie zaśmiecają statystyk).
-// ID można nadpisać przez PUBLIC_META_PIXEL_ID w .env / Vercel.
-const metaPixelId = import.meta.env.PROD
-  ? ((import.meta.env.PUBLIC_META_PIXEL_ID as string | undefined) ??
-    "1536323148175556")
-  : null
+// Meta Pixel – tylko produkcja (dev/preview nie zaśmiecają statystyk)
+const enableMetaPixel = import.meta.env.PROD
 
 const priceValidUntil = new Date(
   Date.UTC(new Date().getUTCFullYear(), 11, 31)
@@ -434,9 +430,9 @@ const structuredData = {
         })
       })()
     </script>
-    {metaPixelId && (
+    {enableMetaPixel && (
       <>
-        <script is:inline define:vars={{ metaPixelId }}>
+        <script is:inline>
           !(function (f, b, e, v, n, t, s) {
             if (f.fbq) return
             n = f.fbq = function () {
@@ -460,7 +456,7 @@ const structuredData = {
             "script",
             "https://connect.facebook.net/en_US/fbevents.js"
           )
-          fbq("init", metaPixelId)
+          fbq("init", "1536323148175556")
           fbq("track", "PageView")
         </script>
         <noscript>
@@ -468,7 +464,7 @@ const structuredData = {
             height="1"
             width="1"
             style="display:none"
-            src={`https://www.facebook.com/tr?id=${metaPixelId}&ev=PageView&noscript=1`}
+            src="https://www.facebook.com/tr?id=1536323148175556&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>
