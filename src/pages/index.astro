@@ -73,6 +73,8 @@ const comparisonColumns = [
   },
 ]
 
+const recommendedIndex = comparisonColumns.findIndex((column) => column.ours)
+
 const comparisonRows = [
   {
     label: "Główny cel",
@@ -1273,127 +1275,136 @@ const peaceOfMindParagraphs = peaceOfMind.description.split("\n\n")
               zebranie pierwszych opinii i podjęcie decyzji, co robić dalej.
             </p>
 
-            <div class="mt-12 flex flex-col gap-6 md:hidden">
-              {comparisonColumns.map((column, columnIndex) => {
-                if (column.ours) {
+            <div class="mt-12 rounded-2xl border border-line bg-paper p-6 sm:p-8">
+              <div class="flex items-center gap-3 font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+                <span class="h-px w-6 bg-signal" aria-hidden="true" />
+                Rekomendacja
+              </div>
+              <h3 class="mt-2 font-heading text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
+                {comparisonColumns[recommendedIndex].title}
+              </h3>
+              <dl class="mt-6 grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-2">
+                {comparisonRows.map((row) => (
+                  <div class="border-t border-line pt-3">
+                    <dt class="font-mono text-xs tracking-[0.14em] text-ink-soft uppercase">
+                      {row.label}
+                    </dt>
+                    <dd class="mt-1 leading-relaxed text-pretty font-medium text-ink">
+                      {row.values[recommendedIndex]}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+              <div class="mt-8 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <p class="text-sm leading-relaxed text-pretty text-ink-soft">
+                  Brzmi jak droga dla Ciebie?
+                </p>
+                <a
+                  href="https://calendly.com/kontakt-karolmodelski/konsultacja"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class={cn(
+                    buttonVariants({ size: "lg" }),
+                    "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
+                  )}
+                >
+                  Umów bezpłatną rozmowę
+                  <ArrowRight />
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-col gap-4 md:hidden">
+              {comparisonColumns
+                .filter((column) => !column.ours)
+                .map((column) => {
+                  const columnIndex = comparisonColumns.indexOf(column)
                   return (
-                    <div class="order-first">
-                      <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
-                        Rekomendacja
-                      </p>
-                      <h3 class="mt-2 flex items-center gap-3 font-heading text-lg font-semibold">
-                        <span class="h-px w-6 bg-signal" aria-hidden="true" />
-                        {column.title}
-                      </h3>
+                    <details class="group border-t border-line pt-4">
+                      <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+                        <span class="font-heading text-lg font-semibold">
+                          {column.title}
+                        </span>
+                        <ChevronDown
+                          className="details-chevron size-4 shrink-0 text-ink-soft transition-transform"
+                          aria-hidden="true"
+                        />
+                      </summary>
                       <dl class="mt-4 border-t border-line">
                         {comparisonRows.map((row) => (
                           <div class="border-b border-line py-3">
                             <dt class="font-mono text-xs tracking-[0.14em] text-ink-soft uppercase">
                               {row.label}
                             </dt>
-                            <dd class="mt-1 leading-relaxed font-medium text-ink">
+                            <dd class="mt-1 leading-relaxed text-ink-soft">
                               {row.values[columnIndex]}
                             </dd>
                           </div>
                         ))}
                       </dl>
-                    </div>
+                    </details>
                   )
-                }
-
-                return (
-                  <details class="group border-t border-line pt-4">
-                    <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
-                      <span class="font-heading text-lg font-semibold">
-                        {column.title}
-                      </span>
-                      <ChevronDown
-                        className="details-chevron size-4 shrink-0 text-ink-soft transition-transform"
-                        aria-hidden="true"
-                      />
-                    </summary>
-                    <dl class="mt-4 border-t border-line">
-                      {comparisonRows.map((row) => (
-                        <div class="border-b border-line py-3">
-                          <dt class="font-mono text-xs tracking-[0.14em] text-ink-soft uppercase">
-                            {row.label}
-                          </dt>
-                          <dd class="mt-1 leading-relaxed text-ink-soft">
-                            {row.values[columnIndex]}
-                          </dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </details>
-                )
-              })}
+                })}
             </div>
 
-            <div class="mt-10 hidden rounded-xl border border-line bg-paper p-4 sm:p-6 md:block">
-              <Table>
-                <TableCaption className="sr-only">
-                  Porównanie ścieżek budowy produktu cyfrowego
-                </TableCaption>
-                <TableHeader>
-                  <TableRow className="border-line hover:bg-transparent">
-                    <TableHead className="w-[14rem] border-r border-line px-3 py-3 align-bottom text-xs font-medium tracking-[0.14em] whitespace-normal text-ink-soft uppercase sm:py-4">
-                      Cecha
-                    </TableHead>
-                    {comparisonColumns.map((column) => (
-                      <TableHead
-                        className={cn(
-                          "px-3 py-3 align-bottom whitespace-normal sm:py-4",
-                          column.ours && "bg-signal/5"
-                        )}
-                      >
-                        <span class="block font-heading text-base font-semibold text-ink">
-                          {column.title}
-                        </span>
-                      </TableHead>
-                    ))}
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {comparisonRows.map((row) => (
+            <details class="group mt-8 hidden md:block">
+              <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 border-t border-line pt-4 [&::-webkit-details-marker]:hidden">
+                <span class="font-heading text-lg font-semibold">
+                  Porównaj z tradycyjnym projektem i prototypem
+                </span>
+                <ChevronDown
+                  className="details-chevron size-4 shrink-0 text-ink-soft transition-transform"
+                  aria-hidden="true"
+                />
+              </summary>
+              <div class="mt-6 rounded-xl border border-line bg-paper p-4 sm:p-6">
+                <Table>
+                  <TableCaption className="sr-only">
+                    Porównanie ścieżek budowy produktu cyfrowego
+                  </TableCaption>
+                  <TableHeader>
                     <TableRow className="border-line hover:bg-transparent">
-                      <TableCell className="border-r border-line px-3 py-4 align-top text-sm font-medium whitespace-normal text-ink sm:py-4">
-                        {row.label}
-                      </TableCell>
-                      {row.values.map((value, index) => (
-                        <TableCell
+                      <TableHead className="w-[14rem] border-r border-line px-3 py-3 align-bottom text-xs font-medium tracking-[0.14em] whitespace-normal text-ink-soft uppercase sm:py-4">
+                        Cecha
+                      </TableHead>
+                      {comparisonColumns.map((column) => (
+                        <TableHead
                           className={cn(
-                            "px-3 py-4 align-top text-sm whitespace-normal sm:py-4",
-                            index === 2
-                              ? "bg-signal/5 font-medium text-ink"
-                              : "text-ink-soft"
+                            "px-3 py-3 align-bottom whitespace-normal sm:py-4",
+                            column.ours && "bg-signal/5"
                           )}
                         >
-                          {value}
-                        </TableCell>
+                          <span class="block font-heading text-base font-semibold text-ink">
+                            {column.title}
+                          </span>
+                        </TableHead>
                       ))}
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-
-            <div class="mt-10 flex flex-col items-start gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
-              <p class="text-sm leading-relaxed text-pretty text-ink-soft">
-                Brzmi jak droga dla Ciebie?
-              </p>
-              <a
-                href="https://calendly.com/kontakt-karolmodelski/konsultacja"
-                target="_blank"
-                rel="noopener noreferrer"
-                class={cn(
-                  buttonVariants({ size: "lg" }),
-                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto sm:py-0 sm:whitespace-nowrap"
-                )}
-              >
-                Umów bezpłatną rozmowę
-                <ArrowRight />
-              </a>
-            </div>
+                  </TableHeader>
+                  <TableBody>
+                    {comparisonRows.map((row) => (
+                      <TableRow className="border-line hover:bg-transparent">
+                        <TableCell className="border-r border-line px-3 py-4 align-top text-sm font-medium whitespace-normal text-ink sm:py-4">
+                          {row.label}
+                        </TableCell>
+                        {row.values.map((value, index) => (
+                          <TableCell
+                            className={cn(
+                              "px-3 py-4 align-top text-sm whitespace-normal sm:py-4",
+                              index === recommendedIndex
+                                ? "bg-signal/5 font-medium text-ink"
+                                : "text-ink-soft"
+                            )}
+                          >
+                            {value}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+            </details>
           </div>
         </div>
       </div>
