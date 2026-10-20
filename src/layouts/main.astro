@@ -16,8 +16,8 @@ function getLastModified() {
 
 const lastModified = getLastModified()
 
-// Analityka i reklama – tylko produkcja (dev/preview nie zaśmiecają statystyk)
-const enableGoogleAnalytics = import.meta.env.PROD
+// Zgody cookies, GTM i Meta Pixel – tylko produkcja (dev nie zaśmieca statystyk)
+const enableGoogleTagManager = import.meta.env.PROD
 const enableMetaPixel = import.meta.env.PROD
 
 const priceValidUntil = new Date(
@@ -178,6 +178,22 @@ const structuredData = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {enableGoogleTagManager && (
+      <script is:inline>
+        ;(function (w, d, s, l, i) {
+          w[l] = w[l] || []
+          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" })
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : ""
+          j.async = true
+          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl
+          f.parentNode.insertBefore(j, f)
+        })(window, document, "script", "dataLayer", "GTM-N3QL4956")
+      </script>
+    )}
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -431,23 +447,6 @@ const structuredData = {
         })
       })()
     </script>
-    {enableGoogleAnalytics && (
-      <>
-        <script
-          is:inline
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-J4N1CEGGRZ"
-        ></script>
-        <script is:inline>
-          window.dataLayer = window.dataLayer || []
-          function gtag() {
-            dataLayer.push(arguments)
-          }
-          gtag("js", new Date())
-          gtag("config", "G-J4N1CEGGRZ")
-        </script>
-      </>
-    )}
     {enableMetaPixel && (
       <>
         <script is:inline>
@@ -474,24 +473,54 @@ const structuredData = {
             "script",
             "https://connect.facebook.net/en_US/fbevents.js"
           )
+          fbq("consent", "revoke")
           fbq("init", "1536323148175556")
           fbq("track", "PageView")
+
+          // Meta Consent Mode – pixel dostaje zgodę dopiero z CookieYes (GTM).
+          ;(function () {
+            function applyConsent(categories) {
+              var granted = !!(categories && categories.advertisement)
+              window.__metaConsent = granted
+              if (typeof window.fbq === "function")
+                window.fbq("consent", granted ? "grant" : "revoke")
+            }
+
+            document.addEventListener("cookieyes_banner_load", function (event) {
+              applyConsent(event.detail && event.detail.categories)
+            })
+
+            document.addEventListener(
+              "cookieyes_consent_update",
+              function (event) {
+                var detail = (event && event.detail) || {}
+                applyConsent(
+                  detail.categories || {
+                    advertisement:
+                      (detail.accepted || []).indexOf("advertisement") !== -1,
+                  }
+                )
+              }
+            )
+
+            function readConsent() {
+              if (typeof window.getCkyConsent !== "function") return
+              try {
+                applyConsent(window.getCkyConsent().categories)
+              } catch (e) {}
+            }
+
+            readConsent()
+            if (document.readyState === "loading")
+              document.addEventListener("DOMContentLoaded", readConsent)
+          })()
         </script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style="display:none"
-            src="https://www.facebook.com/tr?id=1536323148175556&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
 
         {/*
-          Zdarzenia konwersji (Meta Pixel, tylko produkcja):
+          Zdarzenia konwersji (Meta Pixel, tylko po zgodzie na „advertisement”):
           - Lead    – kliknięcie CTA prowadzącego do Calendly,
           - Contact – kliknięcie e-maila, WhatsAppa lub numeru telefonu.
-          Parametr content_name wskazuje miejsce CTA (np. konsultacja, proces,
+          content_name wskazuje miejsce CTA (np. konsultacja, proces,
           kontakt), a content_category źródło akcji.
         */}
         <script is:inline>
@@ -521,7 +550,8 @@ const structuredData = {
             }
 
             document.addEventListener("click", function (ev) {
-              if (typeof window.fbq !== "function") return
+              if (!window.__metaConsent || typeof window.fbq !== "function")
+                return
               var target = ev.target
               var link =
                 target && target.closest ? target.closest("a[href]") : null
@@ -543,6 +573,16 @@ const structuredData = {
     )}
   </head>
   <body>
+    {enableGoogleTagManager && (
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-N3QL4956"
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        ></iframe>
+      </noscript>
+    )}
     <slot />
   </body>
 </html>
