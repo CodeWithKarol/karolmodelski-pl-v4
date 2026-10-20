@@ -468,6 +468,59 @@ const structuredData = {
             alt=""
           />
         </noscript>
+
+        {/*
+          Zdarzenia konwersji (Meta Pixel, tylko produkcja):
+          - Lead    – kliknięcie CTA prowadzącego do Calendly,
+          - Contact – kliknięcie e-maila, WhatsAppa lub numeru telefonu.
+          Parametr content_name wskazuje miejsce CTA (np. konsultacja, proces,
+          kontakt), a content_category źródło akcji.
+        */}
+        <script is:inline>
+          ;(function () {
+            function ctaLocation(link) {
+              if (link.id) return link.id
+              var scope =
+                link.closest && link.closest("section[id], #mobile-cta, header")
+              if (!scope) return "page"
+              if (scope.tagName === "HEADER") return "header"
+              return scope.id || "page"
+            }
+
+            function conversionFor(href) {
+              if (href.indexOf("calendly.com") !== -1)
+                return { event: "Lead", category: "calendly" }
+              if (
+                href.indexOf("wa.me") !== -1 ||
+                href.indexOf("api.whatsapp.com") !== -1
+              )
+                return { event: "Contact", category: "whatsapp" }
+              if (href.indexOf("mailto:") === 0)
+                return { event: "Contact", category: "email" }
+              if (href.indexOf("tel:") === 0)
+                return { event: "Contact", category: "phone" }
+              return null
+            }
+
+            document.addEventListener("click", function (ev) {
+              if (typeof window.fbq !== "function") return
+              var target = ev.target
+              var link =
+                target && target.closest ? target.closest("a[href]") : null
+              if (!link) return
+
+              var conversion = conversionFor(
+                link.getAttribute("href") || ""
+              )
+              if (!conversion) return
+
+              window.fbq("track", conversion.event, {
+                content_name: ctaLocation(link),
+                content_category: conversion.category,
+              })
+            })
+          })()
+        </script>
       </>
     )}
   </head>
