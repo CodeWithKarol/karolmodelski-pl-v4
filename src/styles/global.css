@@ -231,6 +231,12 @@ details[open] > summary .details-chevron {
   transform: rotate(180deg);
 }
 
+details[open] .will-reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 details > summary:focus-visible {
   outline: 2px solid var(--signal);
   outline-offset: 2px;
