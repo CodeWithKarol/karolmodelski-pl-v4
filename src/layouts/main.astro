@@ -16,7 +16,8 @@ function getLastModified() {
 
 const lastModified = getLastModified()
 
-// Meta Pixel – tylko produkcja (dev/preview nie zaśmiecają statystyk)
+// Analityka i reklama – tylko produkcja (dev/preview nie zaśmiecają statystyk)
+const enableGoogleAnalytics = import.meta.env.PROD
 const enableMetaPixel = import.meta.env.PROD
 
 const priceValidUntil = new Date(
@@ -430,6 +431,23 @@ const structuredData = {
         })
       })()
     </script>
+    {enableGoogleAnalytics && (
+      <>
+        <script
+          is:inline
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-J4N1CEGGRZ"
+        ></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || []
+          function gtag() {
+            dataLayer.push(arguments)
+          }
+          gtag("js", new Date())
+          gtag("config", "G-J4N1CEGGRZ")
+        </script>
+      </>
+    )}
     {enableMetaPixel && (
       <>
         <script is:inline>
