@@ -1,52 +1,75 @@
 export const faq = [
   {
-    question: "Ile dokładnie trwa zbudowanie działającej wersji?",
+    question:
+      "Mam pomysł, ale nie wiem, od czego zacząć. Czy mogę się do Ciebie zgłosić?",
     answer:
-      "Budowa pierwszej działającej wersji zajmuje równe 4 tygodnie. Zegar rusza, gdy wspólnie ustalimy zakres pierwszej wersji i otrzymam komplet materiałów oraz dostępów (m.in. skonfigurowany adres strony) – dopiero wtedy zaczynamy prace. Po oddaniu pierwszej wersji masz 10 dni roboczych na odbiór techniczny (sprawdzenie i uwagi), a ja do 7 dni roboczych na naniesienie poprawek. To, kiedy zamknie się cały proces, zależy więc od tempa Twoich decyzji w trakcie prac i przy odbiorze – zwykle jest to 6–8 tygodni od startu prac.",
+      "Tak. Właśnie z takimi projektami pracuję.\n\nNie musisz mieć gotowej dokumentacji, projektu graficznego ani szczegółowego planu technicznego.\n\nWystarczy, że opowiesz mi, co chcesz stworzyć, jak wyobrażasz sobie działanie aplikacji i komu mogłaby się przydać.\n\nPomogę Ci to uporządkować i sprawdzić, od czego najlepiej zacząć.",
+  },
+  {
+    question: "Skąd mam wiedzieć, czy potraficie zbudować mój pomysł?",
+    answer:
+      "Najpierw muszę go dobrze zrozumieć.\n\nPodczas rozmowy omówimy najważniejsze funkcje i sprawdzimy, co może być technicznie trudne.\n\nJeśli projekt wymaga dodatkowej analizy albo wykracza poza zakres czterotygodniowego pakietu, powiem Ci o tym przed rozpoczęciem współpracy.\n\nNie chcę obiecywać realizacji czegoś, czego nie da się rzetelnie zaplanować.",
+  },
+  {
+    question: "A jeśli ktoś wykorzysta albo skopiuje mój pomysł?",
+    answer:
+      "Rozumiem taką obawę, szczególnie gdy pracujesz nad pomysłem od dłuższego czasu.\n\nMożemy podpisać umowę o poufności, zanim opowiesz mi o szczegółach swojego rozwiązania.\n\nW umowie określamy też zasady dotyczące praw do tworzonego produktu.\n\nJeśli potrzebujesz dodatkowej ochrony znaku towarowego, patentu lub innej formy ochrony prawnej, warto omówić to z odpowiednim prawnikiem lub rzecznikiem patentowym.",
   },
   {
     question:
-      "Czy to, co zbudujemy w 4 tygodnie, trzeba będzie wyrzucić przy wejściu do App Store i Google Play?",
+      "Czy po 4 tygodniach dostanę prawdziwą aplikację, czy tylko projekt do pokazania?",
     answer:
-      "Nie. Cały produkt, jego logika i wygląd powstają w technologii, którą w kolejnym kroku bez problemu przenosimy do sklepów z aplikacjami na telefony. Żadna praca nie ląduje w koszu i nie płacisz drugi raz za ten sam kod.",
-  },
-  {
-    question: "Czy muszę znać się na technologii i ile mojego czasu to wymaga?",
-    answer:
-      "Zupełnie nie. Przejmuję cały nadzór techniczny i koordynację prac, więc nie musisz zarządzać programistami ani znać branżowych pojęć. Po Twojej stronie to łącznie 4–6 godzin na starcie na omówienie pomysłu, a w trakcie prac około 1 godziny tygodniowo na krótkie decyzje: „idziemy w prawo czy w lewo?”.",
-  },
-  {
-    question: "Czy muszę płacić całą kwotę z góry?",
-    answer:
-      "Nie. Płatność dzielimy na 3 etapy powiązane z postępem prac: 40% na start i rezerwację zespołu, 40% po udostępnieniu pierwszej działającej wersji do testów – wraz ze stroną internetową i uruchomioną analityką – oraz 20% na samym końcu, dopiero po Twoim odbiorze technicznym i naniesieniu uzgodnionych poprawek.",
+      "Otrzymasz pierwszą działającą wersję aplikacji w ustalonym zakresie.\n\nBędzie można uruchomić ją w przeglądarce i samodzielnie wypróbować najważniejszą funkcję.\n\nTo nie jest wyłącznie makieta ani prezentacja pokazująca, jak produkt kiedyś mógłby wyglądać.",
   },
   {
     question:
-      "Czy muszę płacić za serwery i utrzymanie narzędzia w trakcie testów?",
+      "Mam pomysł na bardzo rozbudowaną aplikację. Czy też zmieści się w 4 tygodniach?",
     answer:
-      "Nie. Wszystko konfiguruję w chmurze z bezpłatnymi limitami startowymi. Obsługa pierwszych kilku tysięcy użytkowników kosztuje Cię równe 0 zł miesięcznie – bez żadnych ukrytych rachunków w tle.",
+      "Cała aplikacja prawdopodobnie nie, ale być może możemy zacząć od jej najważniejszej części.\n\nPodczas rozmowy sprawdzimy, czy da się wyodrębnić funkcję, która ma sens jako pierwszy etap.\n\nJeśli tak, przygotujemy odpowiedni zakres. Pozostałe pomysły zapiszemy do dalszego rozwoju.\n\nJeśli projekt nie nadaje się do tego modelu, powiem Ci o tym wprost.",
   },
   {
-    question:
-      "Jak sprawdzimy rynek i zbierzemy opinie, jeśli nie mam budżetu na reklamę?",
+    question: "Co, jeśli w trakcie budowy wpadnę na kolejne pomysły?",
     answer:
-      "Dostajesz działający produkt dostępny pod prostym linkiem oraz gotową stronę internetową z perswazyjnymi tekstami. Od pierwszego dnia włączamy podgląd reakcji: widzisz, ile osób weszło, jak długo korzystają i czy wracają. Przy próbie wyjścia zadajemy krótkie pytanie zwrotne, dzięki czemu zbierasz szczere opinie od pierwszych 50–100 osób bez wydawania fortuny na marketing.",
+      "To bardzo częsta sytuacja.\n\nKiedy zaczynasz oglądać działającą wersję, łatwiej zauważyć dodatkowe możliwości i rzeczy, które warto poprawić.\n\nWszystkie pomysły możemy zapisywać. Wspólnie zdecydujemy, które należą do uzgodnionego zakresu, a które warto przenieść do następnego etapu.\n\nDzięki temu nie tracimy kontroli nad terminem i budżetem.",
   },
   {
-    question:
-      "Czy dostanę materiały, żeby pokazać projekt partnerom lub inwestorom?",
+    question: "Czy to, co zbudujemy, będzie później można rozwijać?",
     answer:
-      "Tak. Otrzymujesz gotowy pakiet: profesjonalne wizualizacje produktu na ekranach telefonów i komputerów, jednostronicowe podsumowanie techniczne architektury oraz 2-minutową prezentację tłumaczącą działanie, logikę i model Twojego narzędzia. Kładziesz na stole dowód, zamiast opowiadać o pomysłach na sucho.",
+      "Tak, celem jest stworzenie działającej podstawy, którą można rozbudowywać.\n\nNie oznacza to jednak, że każdą przyszłą funkcję lub wersję na inne urządzenia da się dodać bez zmian technicznych.\n\nDlatego od początku planujemy projekt z myślą o jego możliwych kolejnych etapach.",
   },
   {
-    question: "Czy mój pomysł jest w 100% bezpieczny prawnie?",
+    question: "Czy od razu dostanę aplikację na Androida i iPhone'a?",
     answer:
-      "Tak. Zanim zdradzisz mi jakiekolwiek szczegóły, podpisujemy umowę o zachowaniu poufności. Po zakończeniu prac i odbiorze przekazuję Ci pełen kod źródłowy oraz 100% majątkowych praw autorskich w uzgodnionym zakresie – masz swobodę dalszego rozwoju, sprzedaży czy pozyskiwania wspólników.",
+      "Pakiet obejmuje pierwszą wersję przeglądarkową w uzgodnionym zakresie.\n\nOsobne aplikacje mobilne oraz publikacja w App Store i Google Play mogą być przedmiotem kolejnego etapu.\n\nZanim zaczniemy, omówimy, jak ten wybór wpływa na dalszy rozwój produktu.",
   },
   {
-    question:
-      "Co, jeśli po 4 tygodniach okaże się, że rynek nie jest zainteresowany?",
+    question: "Czy potrzebuję własnego programisty albo całego zespołu?",
     answer:
-      "Właśnie po to to robimy. W najlepszym wypadku masz działający produkt, zweryfikowaną bazę i zielone światło na wersję mobilną. W najgorszym – w 4 tygodnie wiesz to na 100% na bazie twardych liczb, płacąc 29 500 zł za ustalony pakiet i oszczędzając pół roku budowania czegoś w ciemno. W obu scenariuszach wygrywasz fakty zamiast domysłów.",
+      "Nie.\n\nDoborem i koordynacją specjalistów zajmuję się ja.\n\nTy pozostajesz osobą podejmującą decyzje dotyczące produktu, ale nie musisz samodzielnie prowadzić prac technicznych.",
+  },
+  {
+    question: "Czy po zbudowaniu aplikacji będą jeszcze jakieś koszty?",
+    answer:
+      "W zależności od rodzaju aplikacji mogą pojawić się koszty domeny, serwerów, zewnętrznych usług, utrzymania czy dalszego rozwoju.\n\nPrzed rozpoczęciem prac omówimy przewidywane koszty dotyczące Twojego projektu oraz ustalimy, co jest objęte pakietem.\n\nNie musisz zamawiać kolejnych funkcji ani dalszej współpracy ze mną, jeśli nie chcesz.",
+  },
+  {
+    question: "Ile czasu będę musiał poświęcić na współpracę?",
+    answer:
+      "Na początku zwykle kilka godzin na omówienie pomysłu i ustalenie szczegółów.\n\nPóźniej zazwyczaj około godziny tygodniowo na obejrzenie postępów i podjęcie decyzji.\n\nJeśli projekt jest bardziej złożony albo wymaga wielu szczegółowych uzgodnień, Twój udział może być większy.",
+  },
+  {
+    question: "A jeśli aplikacja nie spodoba się pierwszym użytkownikom?",
+    answer:
+      "Właśnie dlatego warto zacząć od mniejszej wersji zamiast od razu inwestować w cały produkt.\n\nMożesz zebrać opinie, sprawdzić zachowania użytkowników i przekonać się, co wymaga poprawy.\n\nNawet jeśli reakcje będą inne, niż oczekiwałeś, zdobędziesz informacje pomocne przy podejmowaniu kolejnych decyzji.\n\nNie gwarantuję sukcesu rynkowego, ale przygotuję produkt i narzędzia potrzebne do rozpoczęcia testów.",
+  },
+  {
+    question: "Skąd wezmę osoby do testowania aplikacji?",
+    answer:
+      "Na początek możesz zaprosić wybrane osoby z grupy, do której ma być skierowany produkt.\n\nW pakiecie otrzymujesz działającą wersję, stronę internetową i analitykę.\n\nNie oznacza to jednak automatycznego pozyskania testerów lub prowadzenia kampanii reklamowej. Jeśli nie masz jeszcze dostępu do odpowiednich użytkowników, omówimy możliwości zorganizowania testów i ewentualną potrzebę dodatkowego wsparcia marketingowego.",
+  },
+  {
+    question: "Czy mogę najpierw po prostu porozmawiać?",
+    answer:
+      "Oczywiście.\n\nPierwsza rozmowa trwa około 20 minut, jest bezpłatna i do niczego Cię nie zobowiązuje.\n\nOpowiesz mi o pomyśle, a ja pomogę Ci wstępnie ocenić, czy da się zrealizować jego pierwszą wersję w tym modelu.\n\nNie musisz znać technicznych pojęć ani mieć wszystkiego dokładnie przemyślanego.",
   },
 ]

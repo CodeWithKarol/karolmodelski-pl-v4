@@ -16,23 +16,26 @@ Wszystkie ceny w PLN. Cena pakietu jest stała i podana z góry — bez rozlicza
 - Limit: maksymalnie jeden projekt w miesiącu
 - Realizacja: projekt prowadzi Karol Modelski, koordynując zespół specjalistów (grafik, deweloper, tester)
 - Zawiera (cały pakiet w jednej, ustalonej cenie):
-  - Pierwszą działającą wersję produktu — aplikacja dostępna przez przeglądarkę, z dopracowaną najważniejszą funkcją
-  - Dwa kierunki wizualne do wyboru
-  - Wersję polską i angielską (w uzgodnionym zakresie)
+  - Aplikację, którą naprawdę można uruchomić — pierwsza działająca wersja z najważniejszą funkcją pomysłu, do otwarcia w przeglądarce i pokazania wybranym użytkownikom
+  - Wygląd aplikacji dopasowany do pomysłu — dwa kierunki wizualne do wyboru i dopracowanie wybranego
+  - Wersję polską i angielską (w zakresie ustalonym przed rozpoczęciem prac)
   - Stronę internetową produktu
-  - Podgląd zachowań użytkowników
+  - Możliwość sprawdzenia zachowań użytkowników — analityka pokazująca, ile osób wypróbowało produkt, co robią w aplikacji i czy wracają
   - Materiały do rozmów z partnerami i inwestorami
   - Plan dalszego rozwoju
-  - Jeden punkt kontaktu i pełne prawa do produktu (kod źródłowy oraz 100% majątkowych praw autorskich w uzgodnionym zakresie)
+  - Kompleksową realizację i przekazanie praw — organizacja pracy specjalistów, realizacja techniczna, kompletny kod źródłowy oraz 100% majątkowych praw autorskich w zakresie określonym w umowie
   - Zamknięty zakres ustalony wspólnie na pierwszej rozmowie (dodatkowe pomysły – na kolejny etap)
 
 ### Warunki
 - Własność: cały kod i 100% majątkowych praw autorskich w uzgodnionym zakresie przechodzi na klienta
+- Licencje: przed przekazaniem produktu określamy prawa do stworzonego kodu i zasady korzystania z wykorzystywanych komponentów zewnętrznych; informacje o istotnych licencjach i warunkach używania rozwiązania przekazuję zgodnie z umową
 - Poufność: umowa o zachowaniu poufności podpisywana przed omówieniem szczegółów
 - Zakres: ustalany wspólnie na pierwszej rozmowie; zmiany i nowe funkcje w trakcie prac wymagają osobnego ustalenia terminu
 - Kontakt: decyzje i materiały po stronie klienta w ciągu 24 godzin; oczekiwanie wydłuża termin realizacji o tyle samo
 - Gwarancja terminu: 4 tygodnie na pierwszą działającą wersję od uzgodnienia zakresu i spełnienia warunków rozpoczęcia prac; kary umowne za zawinione opóźnienie na zasadach określonych w umowie
 - Gwarancja techniczna: 3 miesiące gwarancji – błędy i usterki w uzgodnionym zakresie usuwamy bez dodatkowych opłat, na zasadach określonych w umowie
+- Dalszy rozwój: nowe funkcje po pierwszym etapie wyceniane osobno; zakres i koszt ustalamy dopiero po Twojej decyzji o kolejnym etapie
+- Koszty zewnętrzne: domena, serwery i usługi zewnętrzne nie są częścią pakietu; przewidywane koszty omawiamy przed rozpoczęciem prac
 - Wgląd w postępy: stały podgląd na żywo, jak powstaje projekt, od startu prac
 
 ## Płatność w 3 częściach (40% / 40% / 20%)

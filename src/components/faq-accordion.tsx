@@ -7,10 +7,14 @@ import {
 import { faq } from "@/data/faq"
 
 const groups = [
-  { label: "Czas i technologia", start: 1, items: faq.slice(0, 3) },
-  { label: "Płatności i koszty", start: 4, items: faq.slice(3, 5) },
-  { label: "Walidacja i materiały", start: 6, items: faq.slice(5, 7) },
-  { label: "Bezpieczeństwo i ryzyko", start: 8, items: faq.slice(7, 9) },
+  { label: "Pomysł i bezpieczeństwo", start: 1, items: faq.slice(0, 3) },
+  { label: "Produkt i realizacja", start: 4, items: faq.slice(3, 8) },
+  { label: "Koszty i współpraca", start: 9, items: faq.slice(8, 11) },
+  {
+    label: "Testowanie i kolejne kroki",
+    start: 12,
+    items: faq.slice(11, 14),
+  },
 ]
 
 export default function FaqAccordion() {
@@ -46,7 +50,11 @@ export default function FaqAccordion() {
                     </span>
                   </AccordionTrigger>
                   <AccordionContent className="max-w-2xl pl-8 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                    {answer}
+                    {answer.split("\n\n").map((paragraph, index) => (
+                      <p key={index} className={index > 0 ? "mt-3" : undefined}>
+                        {paragraph}
+                      </p>
+                    ))}
                   </AccordionContent>
                 </AccordionItem>
               )
