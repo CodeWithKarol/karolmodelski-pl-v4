@@ -54,7 +54,7 @@ const conversationSteps = [
   {
     title: "Dowiesz się, jakie są możliwości",
     description:
-      "Powiem Ci, czy widzę możliwość realizacji pierwszego etapu w ramach pakietu za 29 500 zł brutto, czy potrzebna będzie dokładniejsza analiza lub inny zakres.",
+      "Powiem Ci, czy widzę możliwość zbudowania pierwszej działającej wersji i poprowadzenia całej realizacji za 29 500 zł brutto, czy potrzebna będzie dokładniejsza analiza lub inny zakres.",
   },
 ]
 
@@ -110,6 +110,33 @@ const outcomes = [
     paragraphs: [
       "Nie musisz podejmować decyzji o budowie całej aplikacji już teraz.",
       "Po pierwszym etapie wspólnie omówimy rezultaty, dostępne dane i możliwości dalszego rozwoju.",
+    ],
+  },
+]
+
+const developmentSteps = [
+  {
+    title: "Sprawdzamy, co pokazały pierwsze testy",
+    paragraphs: [
+      "Kiedy z aplikacji zaczną korzystać pierwsi użytkownicy, możemy wrócić do zebranych danych i opinii.",
+      "Sprawdzimy, z czego ludzie korzystają, co sprawia im trudność i czy wracają do produktu.",
+      "Na tej podstawie przygotuję rekomendacje: co warto poprawić, jakie funkcje dodać i od czego najlepiej zacząć kolejny etap.",
+    ],
+  },
+  {
+    title: "Rozwijamy kolejne funkcje",
+    paragraphs: [
+      "Jeśli pierwsza wersja spełni swoją rolę i zdecydujesz się iść dalej, nie musisz od nowa szukać wykonawców.",
+      "Znam już Twój produkt, jego działanie i historię podejmowanych decyzji.",
+      "Wspólnie ustalimy, co zbudować w następnym etapie. Przygotuję zakres, termin i wycenę, a następnie zajmę się realizacją.",
+    ],
+  },
+  {
+    title: "Dbam o techniczne działanie aplikacji",
+    paragraphs: [
+      "Jeśli aplikacja zacznie być regularnie używana, może potrzebować monitorowania, aktualizacji i bieżącej obsługi.",
+      "Możemy umówić się na stałą opiekę techniczną, dzięki której nie będziesz musiał sam szukać pomocy za każdym razem, kiedy pojawi się problem.",
+      "Zakres i koszt takiej opieki ustalimy osobno. Naprawa niezgodności objętych gwarancją pozostaje bezpłatna na zasadach umowy.",
     ],
   },
 ]
@@ -184,7 +211,7 @@ const comparisonRows = [
     label: "Zakres i budżet",
     values: [
       "Zależne od wyceny",
-      "29 500 zł brutto, ustalony pakiet",
+      "Pierwsza wersja i realizacja — 29 500 zł brutto",
       "Zależne od wymagań",
     ],
   },
@@ -204,8 +231,9 @@ const paymentStages = [
     amount: "11 800 zł",
     title: "Na rozpoczęcie prac",
     paragraphs: [
-      "Po podpisaniu umowy wpłacasz pierwszą część.",
-      "Ustalamy ostateczny zakres i rozpoczynamy realizację projektu zgodnie z uzgodnionym harmonogramem.",
+      "Najpierw wspólnie ustalamy i zatwierdzamy zakres pierwszej wersji aplikacji.",
+      "Następnie podpisujemy umowę, w której zapisujemy zakres, cenę i warunki realizacji.",
+      "Po wpłacie pierwszej części oraz skompletowaniu niezbędnych materiałów i dostępów rozpoczynamy prace.",
     ],
   },
   {
@@ -238,7 +266,7 @@ const guarantees = [
   {
     title: "Wiesz, co budujemy i ile to kosztuje",
     description:
-      "Przed rozpoczęciem ustalamy zakres pierwszej wersji.\n\nCena 29 500 zł brutto jest stała dla uzgodnionego pakietu.\n\nJeśli podczas realizacji pojawią się pomysły na dodatkowe funkcje, omówimy je osobno — bez automatycznego zwiększania budżetu.",
+      "Przed rozpoczęciem ustalamy zakres pierwszej wersji.\n\nCena 29 500 zł brutto za pierwszą działającą wersję i kompleksową realizację jest stała dla uzgodnionego pakietu.\n\nJeśli podczas realizacji pojawią się pomysły na dodatkowe funkcje, omówimy je osobno — bez automatycznego zwiększania budżetu.",
   },
   {
     title: "Ustalamy konkretny termin",
@@ -340,7 +368,7 @@ const process: ProcessStep[] = [
     paragraphs: [
       "Opowiesz mi o swoim pomyśle. Wspólnie wybierzemy najważniejsze funkcje i spisujemy uzgodniony zakres.",
       "Dzięki temu obaj będziemy wiedzieć, co ma powstać w pierwszym etapie, jakie są ograniczenia i co zostawiamy na później.",
-      "Po zatwierdzeniu zakresu i skompletowaniu potrzebnych materiałów rozpoczynamy realizację.",
+      "Po zatwierdzeniu zakresu podpisujemy umowę, a po wpłacie pierwszej części i skompletowaniu materiałów oraz dostępów rozpoczynamy realizację.",
     ],
     yourPart:
       "Opowiadasz mi o pomyśle, wspólnie ustalamy zakres i kompletujesz potrzebne materiały oraz dostępy.",
@@ -414,8 +442,8 @@ const collaborationModel: CollaborationStep[] = [
       "Jeśli pojawi się pomysł na dodatkową funkcję, wspólnie ustalimy, czy jest potrzebna już teraz, czy lepiej zostawić ją na kolejny etap.",
     ],
     closing:
-      "Ty decydujesz, jaki ma być Twój produkt. Ja odpowiadam za to, jak go zbudujemy.",
-    note: "Masz wpływ na swój produkt, ale nie musisz samodzielnie prowadzić projektu od strony technicznej.",
+      "Ty decydujesz, jaki ma być Twój produkt. Ja odpowiadam za jego techniczną realizację.",
+    note: "W efekcie otrzymujesz działającą aplikację, którą możesz pokazać innym i sprawdzić w praktyce — bez konieczności samodzielnego zarządzania zespołem.",
   },
 ]
 
@@ -760,7 +788,7 @@ const [yourRole, myRole, outcome] = collaborationModel
           </div>
           <div>
             <dt class="font-mono text-[11px] leading-4 tracking-[0.16em] text-ink-soft uppercase sm:min-h-8">
-              Stała cena uzgodnionego pakietu
+              Pierwsza wersja i kompleksowa realizacja
             </dt>
             <dd class="mt-2 font-heading text-2xl font-semibold text-signal-ink sm:text-3xl">
               29 500 zł{" "}
@@ -1044,9 +1072,11 @@ const [yourRole, myRole, outcome] = collaborationModel
                       <span>{outcome.closing}</span>
                     </p>
                   )}
-                  <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-paper/60">
-                    {outcome.note}
-                  </p>
+                  <div class="mt-4 max-w-2xl space-y-2 text-sm leading-relaxed text-pretty text-paper/60">
+                    {outcome.note.split("\n\n").map((paragraph) => (
+                      <p>{paragraph}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -1514,13 +1544,22 @@ const [yourRole, myRole, outcome] = collaborationModel
               </div>
             </div>
 
-            <p class="mt-8 flex items-start gap-3 text-base font-medium text-ink">
+            <div class="mt-8 flex items-start gap-3">
               <span
                 class="mt-2.5 h-px w-6 shrink-0 bg-signal"
                 aria-hidden="true"
               />
-              Właśnie na tym skupia się mój pakiet za 29 500 zł brutto.
-            </p>
+              <div class="max-w-2xl">
+                <p class="font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
+                  Nie musisz od razu inwestować w budowę całej aplikacji.
+                </p>
+                <p class="mt-2 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                  Za 29 500 zł brutto możesz zacząć od jej najważniejszej części
+                  — działającego produktu, który pozwoli Ci sprawdzić pierwsze
+                  założenia, zanim zdecydujesz o kolejnych wydatkach.
+                </p>
+              </div>
+            </div>
 
             <div class="mt-12 rounded-2xl border border-line bg-paper p-6 sm:p-8">
               <div class="flex items-center gap-3 font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
@@ -1676,16 +1715,46 @@ const [yourRole, myRole, outcome] = collaborationModel
             <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
               Nie płacisz tylko za napisanie kodu.
             </p>
-            <div class="mt-6 grid max-w-3xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-              <p class="text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Otrzymujesz cały proces potrzebny do stworzenia i uruchomienia
-                pierwszej wersji swojego produktu — od uporządkowania pomysłu po
-                przekazanie działającej aplikacji.
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Otrzymujesz cały proces potrzebny do stworzenia i uruchomienia
+              pierwszej wersji swojego produktu — od uporządkowania pomysłu po
+              przekazanie działającej aplikacji.
+            </p>
+
+            <div class="mt-10 border-l-2 border-signal pl-5 sm:pl-6">
+              <p class="max-w-2xl font-heading text-xl font-semibold text-balance text-ink sm:text-2xl">
+                A gdybyś chciał zorganizować to wszystko sam?
               </p>
-              <p class="text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Nie musisz osobno szukać grafika, programisty, testera ani
-                osoby, która będzie pilnowała całości.
-              </p>
+              <div class="mt-3 max-w-2xl space-y-3 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                <p>
+                  Musiałbyś znaleźć odpowiednich programistów, grafika i
+                  testera. Wytłumaczyć im swój pomysł, ustalić zakres prac,
+                  pilnować terminów i sprawdzać, czy wszystko działa tak, jak
+                  powinno.
+                </p>
+                <p>
+                  A jeśli nie znasz się na technologii, trudno nawet ocenić, czy
+                  ktoś dobrze wykonuje swoją pracę.
+                </p>
+                <p class="font-medium text-ink">
+                  U mnie nie musisz zajmować się tym wszystkim.
+                </p>
+                <p>
+                  Za 29 500 zł brutto otrzymujesz nie tylko pierwszą działającą
+                  wersję aplikacji, ale również zaplanowanie i koordynację całej
+                  realizacji technicznej.
+                </p>
+                <p>
+                  Nie tylko organizuję ludzi, którzy zbudują aplikację. Pomagam
+                  Ci również zdecydować, czego na początku nie warto jeszcze
+                  budować.
+                </p>
+                <p>
+                  Dzięki temu nie wydajesz pieniędzy na wszystkie pomysły naraz,
+                  a pierwsza wersja skupia się na tym, co naprawdę chcesz
+                  sprawdzić.
+                </p>
+              </div>
             </div>
 
             <ol class="mt-10 grid grid-cols-1 gap-x-10 md:grid-cols-2">
@@ -1784,7 +1853,7 @@ const [yourRole, myRole, outcome] = collaborationModel
               <div class="grid grid-cols-1 gap-8 xl:grid-cols-12 xl:gap-10">
                 <div class="xl:col-span-5">
                   <p class="font-mono text-xs tracking-[0.16em] text-ink-soft uppercase">
-                    Cały uzgodniony pakiet
+                    Pierwsza wersja i kompleksowa realizacja
                   </p>
                   <p
                     class="mt-2 font-heading text-4xl font-semibold text-signal-ink"
@@ -1876,7 +1945,8 @@ const [yourRole, myRole, outcome] = collaborationModel
               Wiesz od początku, ile zapłacisz i za co.
             </h2>
             <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Cena uzgodnionego pakietu wynosi 29 500 zł brutto.
+              Pierwsza działająca wersja i kompleksowa realizacja — 29 500 zł
+              brutto.
             </p>
             <div class="mt-6 grid max-w-3xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
               <p class="text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
@@ -1989,6 +2059,89 @@ const [yourRole, myRole, outcome] = collaborationModel
     </section>
 
     <section
+      id="rozwoj"
+      class="border-t border-line bg-paper px-4 py-20 sm:px-6 sm:py-32"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              10 · Dalszy rozwój
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl">
+              Pierwsza wersja to dopiero początek. Co dalej z Twoją aplikacją?
+            </h2>
+            <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft sm:text-xl">
+              Masz już działający produkt. Możesz go pokazać użytkownikom,
+              zebrać pierwsze opinie i sprawdzić, co działa, a co wymaga
+              poprawy.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              I wtedy pojawia się kolejne pytanie:
+            </p>
+            <p class="mt-4 max-w-2xl font-heading text-xl leading-snug font-medium text-balance text-ink sm:text-2xl">
+              Co teraz warto zrobić, żeby rozwijać aplikację w dobrym kierunku?
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nie musisz sam szukać odpowiedzi ani od razu inwestować w kolejne
+              funkcje.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Plan dalszego rozwoju przekazuję już w ramach pierwszego etapu.
+              Poniższe formy współpracy zaczynają się później — gdy masz
+              pierwsze dane od użytkowników.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Możemy kontynuować współpracę na trzy sposoby.
+            </p>
+
+            <ol class="mt-12 grid grid-cols-1 gap-x-10 md:grid-cols-3">
+              {developmentSteps.map(({ title, paragraphs }, index) => (
+                <li class="border-t border-line py-6 md:py-8">
+                  <span class="font-mono text-xs tracking-[0.16em] text-signal-ink">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 class="mt-3 font-heading text-lg font-semibold text-balance sm:text-xl">
+                    {title}
+                  </h3>
+                  <div class="mt-3 space-y-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                    {paragraphs.map((paragraph) => (
+                      <p>{paragraph}</p>
+                    ))}
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <div class="mt-12 rounded-2xl border border-line bg-surface-muted p-6 sm:p-8">
+              <p class="max-w-2xl font-heading text-xl font-semibold text-balance text-ink sm:text-2xl">
+                Ty decydujesz, co dalej.
+              </p>
+              <div class="mt-4 max-w-2xl space-y-3 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                <p>
+                  Po zakończeniu pierwszego etapu otrzymujesz kod źródłowy i
+                  uzgodnione prawa do produktu.
+                </p>
+                <p>
+                  Możesz rozwijać go samodzielnie, z innym zespołem albo
+                  kontynuować współpracę ze mną.
+                </p>
+                <p>Nie musisz podejmować tej decyzji dzisiaj.</p>
+              </div>
+              <p class="mt-5 max-w-2xl border-t border-line pt-5 font-heading text-lg leading-snug text-balance text-ink sm:text-xl">
+                Najpierw zbudujmy solidną podstawę. Potem zdecydujesz, co warto
+                rozwijać dalej.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
       id="gwarancja"
       class="on-ink bg-ink px-4 py-20 text-paper sm:px-6 sm:py-32"
     >
@@ -1996,7 +2149,7 @@ const [yourRole, myRole, outcome] = collaborationModel
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-paper/60 uppercase lg:sticky lg:top-24">
-              10 · Bezpieczeństwo współpracy
+              11 · Bezpieczeństwo współpracy
             </p>
           </div>
 
@@ -2077,7 +2230,7 @@ const [yourRole, myRole, outcome] = collaborationModel
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              11 · Najczęstsze pytania
+              12 · Najczęstsze pytania
             </p>
           </div>
 
@@ -2108,7 +2261,7 @@ const [yourRole, myRole, outcome] = collaborationModel
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-paper/60 uppercase lg:sticky lg:top-24">
-              12 · Kontakt
+              13 · Kontakt
             </p>
           </div>
 
