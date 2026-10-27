@@ -33,7 +33,7 @@ interface Props {
 
 const {
   title = "Sprawdź pomysł na aplikację w 4 tygodnie | Karol Modelski",
-  description = "Masz pomysł na aplikację? Zbuduję pierwszą działającą wersję w 4 tygodnie. Pomogę Ci wybrać najważniejsze funkcje i zajmę się całą realizacją techniczną.",
+  description = "Masz pomysł na aplikację? Zbuduję jej pierwszą wersję w 4 tygodnie. Bez szukania programistów i znajomości technologii – od pomysłu do działającego produktu.",
   noindex = false,
   canonical,
 } = Astro.props
@@ -70,7 +70,7 @@ const structuredData = {
       telephone: "+48664598563",
       taxID: "6112800950",
       description:
-        "Twój techniczny partner w tworzeniu aplikacji i produktów cyfrowych. Prowadzę projekt i zespół specjalistów, uruchamiając pierwszą działającą wersję w 4 tygodnie.",
+        "Pomagam osobom z pomysłem na aplikację zamienić go w pierwszy działający produkt – od uporządkowania pomysłu, przez projektowanie i programowanie, po uruchomienie aplikacji i przygotowanie jej do pierwszych testów. Prowadzę projekt i zespół specjalistów, a pierwsza działająca wersja powstaje w 4 tygodnie.",
       areaServed: "PL",
       knowsLanguage: "pl",
       address: {
@@ -166,7 +166,7 @@ const structuredData = {
         name: question,
         acceptedAnswer: {
           "@type": "Answer",
-          text: answer,
+          text: answer.replace(/\n\n/g, " "),
         },
       })),
     },
