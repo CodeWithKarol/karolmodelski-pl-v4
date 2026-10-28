@@ -342,6 +342,12 @@ footer a:focus-visible {
   display: block;
 }
 
+/* Przełącznik nagrań w sekcji „Przykład z mojej pracy” */
+[data-clip-toggle][data-state="paused"] [data-clip-icon-pause],
+[data-clip-toggle][data-state="playing"] [data-clip-icon-play] {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .rise {
     animation: none;
