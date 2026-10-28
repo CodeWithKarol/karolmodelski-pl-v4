@@ -111,7 +111,19 @@ Gra z komputerem, rozgrywki między ludźmi, rankingi, turnieje, różne poziomy
 
 **I właśnie o taki pierwszy krok chodzi.**
 
-Nie o stworzenie największej możliwej aplikacji od razu, ale o zamianę pomysłu w coś, co naprawdę działa.
+Jeszcze niedawno był to pomysł rozwijany przez wiele lat. Dziś można już zobaczyć, jak działa w praktyce.
+
+Poniżej pokazuję nagrania z pierwszej grywalnej wersji, którą wspólnie zbudowaliśmy.
+
+Trzy krótkie nagrania pokazują stronę produktu na telefonie, rozgrywkę (planszę, żetony gracza i zestaw komputera) oraz losowanie, kto zaczyna partię.
+
+**Przykład podejścia do budżetu**
+
+**Pierwotna wizja:** Gra z komputerem, rozgrywki online, rankingi, turnieje i kolejne tryby.
+
+**Pierwszy etap:** Podstawowa rozgrywka z komputerem w wersji przeglądarkowej.
+
+**Efekt decyzji:** Można pracować nad działającą podstawą produktu, bez konieczności realizowania wszystkich planowanych funkcji jednocześnie.
 
 ---
 
@@ -318,9 +330,11 @@ I wtedy pojawia się kolejne pytanie:
 
 Nie musisz sam szukać odpowiedzi ani od razu inwestować w kolejne funkcje.
 
-Plan dalszego rozwoju przekazuję już w ramach pierwszego etapu. Poniższe formy współpracy zaczynają się później — gdy masz pierwsze dane od użytkowników.
+Plan dalszego rozwoju otrzymujesz już w ramach pierwszego etapu.
 
-Możemy kontynuować współpracę na trzy sposoby.
+A kiedy aplikacja zacznie działać, możemy dalej współpracować — przeanalizować pierwsze wyniki testów, zbudować kolejne funkcje albo zadbać o jej utrzymanie.
+
+Zakres dalszych prac ustalamy osobno, zależnie od tego, czego naprawdę potrzebuje Twój produkt.
 
 1. **Sprawdzamy, co pokazały pierwsze testy** — Kiedy z aplikacji zaczną korzystać pierwsi użytkownicy, możemy wrócić do zebranych danych i opinii. Sprawdzimy, z czego ludzie korzystają, co sprawia im trudność i czy wracają do produktu. Na tej podstawie przygotuję rekomendacje: co warto poprawić, jakie funkcje dodać i od czego najlepiej zacząć kolejny etap.
 2. **Rozwijamy kolejne funkcje** — Jeśli pierwsza wersja spełni swoją rolę i zdecydujesz się iść dalej, nie musisz od nowa szukać wykonawców. Znam już Twój produkt, jego działanie i historię podejmowanych decyzji. Wspólnie ustalimy, co zbudować w następnym etapie. Przygotuję zakres, termin i wycenę, a następnie zajmę się realizacją.
