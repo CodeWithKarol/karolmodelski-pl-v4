@@ -1,0 +1,174 @@
+---
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { Menu } from "lucide-react"
+
+interface Props {
+  /** "home" keeps in-page anchors, "page" prefixes them with "/" */
+  variant?: "home" | "page"
+  current?: "wiedza"
+}
+
+const { variant = "page", current } = Astro.props
+
+const sections = [
+  { label: "Problem", hash: "#problemy" },
+  { label: "Przykład", hash: "#przyklad" },
+  { label: "O mnie", hash: "#o-mnie" },
+  { label: "Proces", hash: "#proces" },
+  { label: "Cena", hash: "#rozliczenie" },
+  { label: "FAQ", hash: "#faq" },
+]
+
+const hrefFor = (hash: string) => (variant === "home" ? hash : `/${hash}`)
+const homeHref = variant === "home" ? "#" : "/"
+const consultationUrl = "https://calendly.com/kontakt-karolmodelski/konsultacja"
+---
+
+<header
+  id="site-header"
+  class="sticky top-0 z-40 border-b border-transparent bg-paper/85 backdrop-blur"
+>
+  <div class="mx-auto flex h-16 max-w-[75rem] items-center justify-between gap-4 px-4 sm:px-6">
+    <a
+      href={homeHref}
+      class="flex min-h-11 items-center"
+      aria-label="Karol Modelski — strona główna"
+    >
+      <img
+        src="/logo-compact.svg"
+        alt="Karol Modelski"
+        width="865"
+        height="152"
+        class="h-8 w-auto sm:h-9 dark:hidden"
+      />
+      <img
+        src="/logo-compact-on-dark.svg"
+        alt=""
+        aria-hidden="true"
+        width="865"
+        height="152"
+        class="hidden h-8 w-auto sm:h-9 dark:block"
+      />
+    </a>
+
+    <nav
+      aria-label="Nawigacja główna"
+      class="hidden items-center gap-6 text-sm text-ink-soft lg:flex"
+    >
+      {sections.map((section) => (
+        <a
+          class="inline-flex min-h-11 items-center transition-colors hover:text-ink"
+          href={hrefFor(section.hash)}
+        >
+          {section.label}
+        </a>
+      ))}
+      <a
+        href="/wiedza/"
+        aria-current={current === "wiedza" ? "page" : undefined}
+        class:list={[
+          "inline-flex min-h-11 items-center transition-colors hover:text-ink",
+          { "is-active": current === "wiedza" },
+        ]}
+      >
+        Wiedza
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Przełącz motyw"
+        aria-pressed="false"
+        class="flex size-11 items-center justify-center rounded-lg border border-line bg-transparent text-ink transition-colors hover:bg-secondary"
+      >
+        <svg
+          class="theme-sun size-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg
+          class="theme-moon size-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <a
+        href={consultationUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={cn(
+          buttonVariants({ size: "sm" }),
+          "hidden h-11 rounded-[6px] px-4 text-sm sm:inline-flex"
+        )}
+      >
+        Umów bezpłatną rozmowę
+      </a>
+
+      <details class="relative lg:hidden">
+        <summary
+          class="flex size-11 cursor-pointer list-none items-center justify-center rounded-lg border border-line text-ink [&::-webkit-details-marker]:hidden"
+          aria-label="Menu"
+        >
+          <Menu className="size-5" />
+        </summary>
+        <div class="absolute top-full right-0 mt-2 w-72 rounded-xl border border-line bg-paper p-2 shadow-lg">
+          <nav aria-label="Nawigacja mobilna" class="flex flex-col">
+            {sections.map((section) => (
+              <a
+                class="rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
+                href={hrefFor(section.hash)}
+              >
+                {section.label}
+              </a>
+            ))}
+            <a
+              href="/wiedza/"
+              aria-current={current === "wiedza" ? "page" : undefined}
+              class:list={[
+                "rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink",
+                { "is-active": current === "wiedza" },
+              ]}
+            >
+              Wiedza
+            </a>
+          </nav>
+          <a
+            href={consultationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={cn(
+              buttonVariants({ size: "sm" }),
+              "mt-1 h-11 w-full rounded-[6px] text-sm"
+            )}
+          >
+            Umów bezpłatną rozmowę
+          </a>
+        </div>
+      </details>
+    </div>
+  </div>
+  <span
+    id="scroll-progress"
+    aria-hidden="true"
+    class="absolute inset-x-0 -bottom-px h-[2px] origin-left scale-x-0 bg-signal"
+  ></span>
+</header>

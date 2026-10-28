@@ -29,6 +29,11 @@ interface Props {
   description?: string
   noindex?: boolean
   canonical?: string | false
+  ogType?: "website" | "article"
+  /** Extra JSON-LD nodes appended to the site graph (e.g. Article, BreadcrumbList). */
+  jsonLd?: Record<string, unknown>[]
+  /** Enable only on pages that actually render the homepage FAQ. */
+  includeFaqSchema?: boolean
 }
 
 const {
@@ -36,6 +41,9 @@ const {
   description = "Masz pomysł na aplikację? Zbuduję jej pierwszą wersję w 4 tygodnie. Bez szukania programistów i znajomości technologii – od pomysłu do działającego produktu.",
   noindex = false,
   canonical,
+  ogType = "website",
+  jsonLd = [],
+  includeFaqSchema = false,
 } = Astro.props
 
 const canonicalURL =
@@ -45,133 +53,143 @@ const canonicalURL =
 const ogURL = canonicalURL ?? new URL("/", Astro.site).toString()
 const ogImage = new URL("/og-image.png", Astro.site)
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://www.karolmodelski.pl/#webpage",
-      url: "https://www.karolmodelski.pl/",
-      name: title,
-      description,
-      inLanguage: "pl-PL",
-      isPartOf: { "@id": "https://www.karolmodelski.pl/#website" },
-      about: { "@id": "https://www.karolmodelski.pl/#organization" },
-      dateModified: lastModified,
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.karolmodelski.pl/#organization",
-      name: "Karol Modelski",
-      url: "https://www.karolmodelski.pl/",
-      logo: "https://www.karolmodelski.pl/logo.png",
-      image: "https://www.karolmodelski.pl/og-image.png",
-      email: "kontakt@karolmodelski.pl",
-      telephone: "+48664598563",
-      taxID: "6112800950",
-      description:
-        "Pomagam osobom z pomysłem na aplikację zamienić go w pierwszy działający produkt – od uporządkowania pomysłu, przez projektowanie i programowanie, po uruchomienie aplikacji i przygotowanie jej do pierwszych testów. Prowadzę projekt i zespół specjalistów, a pierwsza działająca wersja powstaje w 4 tygodnie.",
-      areaServed: "PL",
-      knowsLanguage: "pl",
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "PL",
-      },
-      sameAs: [
-        "https://www.linkedin.com/in/karol-modelski/",
-        "https://g.page/r/CZSVfAGtTiIzEBM",
-        "https://github.com/CodeWithKarol",
-        "https://x.com/modelski_karol",
-        "https://karol-modelski.medium.com/",
-        "https://karol-modelski.hashnode.dev/",
-      ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "sales",
-        email: "kontakt@karolmodelski.pl",
-        telephone: "+48664598563",
-        availableLanguage: ["pl"],
-      },
-      founder: { "@id": "https://www.karolmodelski.pl/#person" },
-    },
-    {
-      "@type": "Person",
-      "@id": "https://www.karolmodelski.pl/#person",
-      name: "Karol Modelski",
-      url: "https://www.karolmodelski.pl/",
-      image: "https://www.karolmodelski.pl/karol-modelski.webp",
-      jobTitle: "Twórca aplikacji i produktów cyfrowych",
-      description:
-        "Techniczny partner pomysłodawców i inwestorów: po latach pracy przy zaawansowanych systemach dla banków i korporacji pomaga budować produkty, które mają sens – najpierw ustala, co w pomyśle jest najważniejsze, a potem zamienia to w działającą aplikację webową w 4 tygodnie, z gwarancją terminu i przeniesieniem 100% majątkowych praw autorskich w uzgodnionym zakresie na klienta.",
-      knowsAbout: [
-        "tworzenie aplikacji",
-        "Pierwsza działająca wersja aplikacji w 4 tygodnie",
-        "produkty cyfrowe",
-        "walidacja pomysłów na rynku",
-        "ograniczanie zakresu produktu (MVP)",
-        "programowanie systemów bankowych",
-        "React",
-        "Astro",
-      ],
-      sameAs: [
-        "https://www.linkedin.com/in/karol-modelski/",
-        "https://g.page/r/CZSVfAGtTiIzEBM",
-        "https://github.com/CodeWithKarol",
-        "https://x.com/modelski_karol",
-        "https://karol-modelski.medium.com/",
-        "https://karol-modelski.hashnode.dev/",
-      ],
-      worksFor: { "@id": "https://www.karolmodelski.pl/#organization" },
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.karolmodelski.pl/#website",
-      url: "https://www.karolmodelski.pl/",
-      name: "Karol Modelski",
-      inLanguage: "pl-PL",
-      publisher: { "@id": "https://www.karolmodelski.pl/#organization" },
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.karolmodelski.pl/#proces",
-      name: "Proces w 4 tygodnie – od pomysłu do działającej aplikacji webowej",
-      provider: { "@id": "https://www.karolmodelski.pl/#organization" },
-      serviceType: "Tworzenie aplikacji i produktów cyfrowych",
-      areaServed: "PL",
-      url: "https://www.karolmodelski.pl/#proces",
-      description:
-        "Tworzenie działającej aplikacji webowej, własnej strony i podglądu zachowań użytkowników w 4 tygodnie – z gwarancją terminu i przeniesieniem 100% majątkowych praw autorskich w uzgodnionym zakresie na klienta.",
-      offers: {
-        "@type": "Offer",
-        url: "https://www.karolmodelski.pl/#konsultacja",
-        description:
-          "Pierwsza działająca wersja w 4 tygodnie, pełny odbiór z poprawkami zwykle 6–8 tygodni. Stała cena za uzgodniony zakres, bez dopłat za poprawki niezgodności z ustaleniami. Kary umowne za zawinione opóźnienie na zasadach określonych w umowie; 3 miesiące gwarancji technicznej – błędy i usterki w uzgodnionym zakresie usuwamy bez dodatkowych opłat.",
-        priceCurrency: "PLN",
-        price: "29500",
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          price: "29500",
-          priceCurrency: "PLN",
-          valueAddedTaxIncluded: true,
+const pageURL =
+  canonicalURL ?? new URL(Astro.url.pathname, Astro.site).toString()
+
+const structuredData = noindex
+  ? null
+  : {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${pageURL}#webpage`,
+          url: pageURL,
+          name: title,
+          description,
+          inLanguage: "pl-PL",
+          isPartOf: { "@id": "https://www.karolmodelski.pl/#website" },
+          about: { "@id": "https://www.karolmodelski.pl/#organization" },
+          dateModified: lastModified,
         },
-        priceValidUntil,
-        availability: "https://schema.org/InStock",
-      },
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.karolmodelski.pl/#faq",
-      mainEntity: faq.map(({ question, answer }) => ({
-        "@type": "Question",
-        name: question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: answer.replace(/\n\n/g, " "),
+        {
+          "@type": "Organization",
+          "@id": "https://www.karolmodelski.pl/#organization",
+          name: "Karol Modelski",
+          url: "https://www.karolmodelski.pl/",
+          logo: "https://www.karolmodelski.pl/logo.png",
+          image: "https://www.karolmodelski.pl/og-image.png",
+          email: "kontakt@karolmodelski.pl",
+          telephone: "+48664598563",
+          taxID: "6112800950",
+          description:
+            "Pomagam osobom z pomysłem na aplikację zamienić go w pierwszy działający produkt – od uporządkowania pomysłu, przez projektowanie i programowanie, po uruchomienie aplikacji i przygotowanie jej do pierwszych testów. Prowadzę projekt i zespół specjalistów, a pierwsza działająca wersja powstaje w 4 tygodnie.",
+          areaServed: "PL",
+          knowsLanguage: "pl",
+          address: {
+            "@type": "PostalAddress",
+            addressCountry: "PL",
+          },
+          sameAs: [
+            "https://www.linkedin.com/in/karol-modelski/",
+            "https://g.page/r/CZSVfAGtTiIzEBM",
+            "https://github.com/CodeWithKarol",
+            "https://x.com/modelski_karol",
+            "https://karol-modelski.medium.com/",
+            "https://karol-modelski.hashnode.dev/",
+          ],
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "sales",
+            email: "kontakt@karolmodelski.pl",
+            telephone: "+48664598563",
+            availableLanguage: ["pl"],
+          },
+          founder: { "@id": "https://www.karolmodelski.pl/#person" },
         },
-      })),
-    },
-  ],
-}
+        {
+          "@type": "Person",
+          "@id": "https://www.karolmodelski.pl/#person",
+          name: "Karol Modelski",
+          url: "https://www.karolmodelski.pl/",
+          image: "https://www.karolmodelski.pl/karol-modelski.webp",
+          jobTitle: "Twórca aplikacji i produktów cyfrowych",
+          description:
+            "Techniczny partner pomysłodawców i inwestorów: po latach pracy przy zaawansowanych systemach dla banków i korporacji pomaga budować produkty, które mają sens – najpierw ustala, co w pomyśle jest najważniejsze, a potem zamienia to w działającą aplikację webową w 4 tygodnie, z gwarancją terminu i przeniesieniem 100% majątkowych praw autorskich w uzgodnionym zakresie na klienta.",
+          knowsAbout: [
+            "tworzenie aplikacji",
+            "Pierwsza działająca wersja aplikacji w 4 tygodnie",
+            "produkty cyfrowe",
+            "walidacja pomysłów na rynku",
+            "ograniczanie zakresu produktu (MVP)",
+            "programowanie systemów bankowych",
+            "React",
+            "Astro",
+          ],
+          sameAs: [
+            "https://www.linkedin.com/in/karol-modelski/",
+            "https://g.page/r/CZSVfAGtTiIzEBM",
+            "https://github.com/CodeWithKarol",
+            "https://x.com/modelski_karol",
+            "https://karol-modelski.medium.com/",
+            "https://karol-modelski.hashnode.dev/",
+          ],
+          worksFor: { "@id": "https://www.karolmodelski.pl/#organization" },
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.karolmodelski.pl/#website",
+          url: "https://www.karolmodelski.pl/",
+          name: "Karol Modelski",
+          inLanguage: "pl-PL",
+          publisher: { "@id": "https://www.karolmodelski.pl/#organization" },
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.karolmodelski.pl/#proces",
+          name: "Proces w 4 tygodnie – od pomysłu do działającej aplikacji webowej",
+          provider: { "@id": "https://www.karolmodelski.pl/#organization" },
+          serviceType: "Tworzenie aplikacji i produktów cyfrowych",
+          areaServed: "PL",
+          url: "https://www.karolmodelski.pl/#proces",
+          description:
+            "Tworzenie działającej aplikacji webowej, własnej strony i podglądu zachowań użytkowników w 4 tygodnie – z gwarancją terminu i przeniesieniem 100% majątkowych praw autorskich w uzgodnionym zakresie na klienta.",
+          offers: {
+            "@type": "Offer",
+            url: "https://www.karolmodelski.pl/#konsultacja",
+            description:
+              "Pierwsza działająca wersja w 4 tygodnie, pełny odbiór z poprawkami zwykle 6–8 tygodni. Stała cena za uzgodniony zakres, bez dopłat za poprawki niezgodności z ustaleniami. Kary umowne za zawinione opóźnienie na zasadach określonych w umowie; 3 miesiące gwarancji technicznej – błędy i usterki w uzgodnionym zakresie usuwamy bez dodatkowych opłat.",
+            priceCurrency: "PLN",
+            price: "29500",
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: "29500",
+              priceCurrency: "PLN",
+              valueAddedTaxIncluded: true,
+            },
+            priceValidUntil,
+            availability: "https://schema.org/InStock",
+          },
+        },
+        ...(includeFaqSchema
+          ? [
+              {
+                "@type": "FAQPage",
+                "@id": `${pageURL}#faq`,
+                mainEntity: faq.map(({ question, answer }) => ({
+                  "@type": "Question",
+                  name: question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: answer.replace(/\n\n/g, " "),
+                  },
+                })),
+              },
+            ]
+          : []),
+        ...jsonLd,
+      ],
+    }
 ---
 
 <html lang="pl">
@@ -179,20 +197,18 @@ const structuredData = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {enableGoogleTagManager && (
-      <script is:inline>
-        ;(function (w, d, s, l, i) {
-          w[l] = w[l] || []
-          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" })
-          var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s),
-            dl = l != "dataLayer" ? "&l=" + l : ""
-          j.async = true
-          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl
-          f.parentNode.insertBefore(j, f)
-        })(window, document, "script", "dataLayer", "GTM-N3QL4956")
-      </script>
-    )}
+    {enableGoogleTagManager && <script is:inline>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : ""
+        j.async = true
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, "script", "dataLayer", "GTM-N3QL4956")
+    </script>}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
@@ -217,7 +233,7 @@ const structuredData = {
       />
     )}
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="Karol Modelski" />
     <meta property="og:locale" content="pl_PL" />
     <meta property="og:url" content={ogURL} />
@@ -243,10 +259,12 @@ const structuredData = {
       content="Karol Modelski – pierwsza działająca wersja Twojego pomysłu w 4 tygodnie"
     />
 
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify(structuredData)}
-    />
+    {structuredData && (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(structuredData)}
+      />
+    )}
     <script is:inline>
       ;(function () {
         var root = document.documentElement
@@ -486,9 +504,12 @@ const structuredData = {
                 window.fbq("consent", granted ? "grant" : "revoke")
             }
 
-            document.addEventListener("cookieyes_banner_load", function (event) {
-              applyConsent(event.detail && event.detail.categories)
-            })
+            document.addEventListener(
+              "cookieyes_banner_load",
+              function (event) {
+                applyConsent(event.detail && event.detail.categories)
+              }
+            )
 
             document.addEventListener(
               "cookieyes_consent_update",
@@ -557,9 +578,7 @@ const structuredData = {
                 target && target.closest ? target.closest("a[href]") : null
               if (!link) return
 
-              var conversion = conversionFor(
-                link.getAttribute("href") || ""
-              )
+              var conversion = conversionFor(link.getAttribute("href") || "")
               if (!conversion) return
 
               window.fbq("track", conversion.event, {

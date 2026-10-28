@@ -510,6 +510,14 @@ Nie musisz znać technicznych pojęć ani mieć wszystkiego dokładnie przemyśl
 
 ---
 
+## Zanim zaczniesz budować aplikację (blok po FAQ)
+
+Po sekcji FAQ na stronie głównej znajduje się blok z wybranym poradnikiem. Baza wiedzy: https://www.karolmodelski.pl/wiedza/
+
+- [Masz pomysł na aplikację? Od czego zacząć?](https://www.karolmodelski.pl/wiedza/masz-pomysl-na-aplikacje-od-czego-zaczac/): Masz pomysł na aplikację? Potrzebujesz programisty czy całego zespołu? Ile to może kosztować? Jak podejść do pierwszej wersji bez zbędnych wydatków.
+
+---
+
 ## 13 · Kontakt (#kontakt)
 
 ### Opowiedz mi o swoim pomyśle. Wspólnie sprawdzimy, od czego najlepiej zacząć.

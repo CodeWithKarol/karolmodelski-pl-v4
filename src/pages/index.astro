@@ -1,5 +1,8 @@
 ---
 import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header.astro"
+import SiteFooter from "@/components/site-footer.astro"
+import { getCollection } from "astro:content"
 import { Image } from "astro:assets"
 import wystapienie from "@/assets/images/karol-modelski-wystapienie.webp"
 // Grafiki sekcji 01, 03 i 06 wyłączone do czasu nowych wersji (miały wypalone treści i wyceny, których już nie używamy).
@@ -17,6 +20,8 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { cn } from "@/lib/utils"
+import { wiedzaArticlePath, wiedzaCategoryLabel } from "@/data/wiedza"
+import { getReadingTime } from "@/lib/reading-time"
 import FaqAccordion from "@/components/faq-accordion"
 import ProfileAvatar from "@/components/profile-avatar"
 import {
@@ -26,10 +31,6 @@ import {
   ChevronDown,
   FileCheck2,
   Lock,
-  Mail,
-  MapPin,
-  Menu,
-  MessageCircle,
   Pause,
   Play,
   ShieldCheck,
@@ -450,9 +451,21 @@ const collaborationModel: CollaborationStep[] = [
 ]
 
 const [yourRole, myRole, outcome] = collaborationModel
+
+const wiedzaEntries = (await getCollection("wiedza")).sort(
+  (a, b) => a.data.order - b.data.order
+)
+const wiedzaHighlights = wiedzaEntries.slice(0, 3)
+const readingTimeFor = (entry: (typeof wiedzaEntries)[number]) =>
+  entry.data.readingTime ?? getReadingTime(entry.body)
+const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
+  (entry.data.cardDescription ?? entry.data.description)
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean)
 ---
 
-<Layout>
+<Layout includeFaqSchema>
   <a
     href="#main"
     class="fixed top-4 left-4 z-50 -translate-y-24 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform focus:translate-y-0 focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:outline-none motion-reduce:transition-none"
@@ -460,189 +473,7 @@ const [yourRole, myRole, outcome] = collaborationModel
     Przejdź do treści
   </a>
 
-  <header
-    id="site-header"
-    class="sticky top-0 z-40 border-b border-transparent bg-paper/85 backdrop-blur"
-  >
-    <div class="mx-auto flex h-16 max-w-[75rem] items-center justify-between gap-4 px-4 sm:px-6">
-      <a
-        href="#"
-        class="flex min-h-11 items-center"
-        aria-label="Karol Modelski — strona główna"
-      >
-        <img
-          src="/logo-compact.svg"
-          alt="Karol Modelski"
-          width="865"
-          height="152"
-          class="h-8 w-auto sm:h-9 dark:hidden"
-        />
-        <img
-          src="/logo-compact-on-dark.svg"
-          alt=""
-          aria-hidden="true"
-          width="865"
-          height="152"
-          class="hidden h-8 w-auto sm:h-9 dark:block"
-        />
-      </a>
-
-      <nav
-        aria-label="Nawigacja główna"
-        class="hidden items-center gap-6 text-sm text-ink-soft lg:flex"
-      >
-        <a
-          class="inline-flex min-h-11 items-center transition-colors hover:text-ink"
-          href="#problemy"
-        >
-          Problem
-        </a>
-        <a
-          class="inline-flex min-h-11 items-center transition-colors hover:text-ink"
-          href="#przyklad"
-        >
-          Przykład
-        </a>
-        <a
-          class="inline-flex min-h-11 items-center transition-colors hover:text-ink"
-          href="#o-mnie"
-        >
-          O mnie
-        </a>
-        <a
-          class="inline-flex min-h-11 items-center transition-colors hover:text-ink"
-          href="#proces"
-        >
-          Proces
-        </a>
-        <a
-          class="inline-flex min-h-11 items-center transition-colors hover:text-ink"
-          href="#rozliczenie"
-        >
-          Cena
-        </a>
-        <a
-          class="inline-flex min-h-11 items-center transition-colors hover:text-ink"
-          href="#faq"
-        >
-          FAQ
-        </a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <button
-          id="theme-toggle"
-          type="button"
-          aria-label="Przełącz motyw"
-          aria-pressed="false"
-          class="flex size-11 items-center justify-center rounded-lg border border-line bg-transparent text-ink transition-colors hover:bg-secondary"
-        >
-          <svg
-            class="theme-sun size-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-          </svg>
-          <svg
-            class="theme-moon size-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-
-        <a
-          href="https://calendly.com/kontakt-karolmodelski/konsultacja"
-          target="_blank"
-          rel="noopener noreferrer"
-          class={cn(
-            buttonVariants({ size: "sm" }),
-            "hidden h-11 rounded-[6px] px-4 text-sm sm:inline-flex"
-          )}
-        >
-          Umów bezpłatną rozmowę
-        </a>
-
-        <details class="relative lg:hidden">
-          <summary
-            class="flex size-11 cursor-pointer list-none items-center justify-center rounded-lg border border-line text-ink [&::-webkit-details-marker]:hidden"
-            aria-label="Menu"
-          >
-            <Menu className="size-5" />
-          </summary>
-          <div class="absolute top-full right-0 mt-2 w-72 rounded-xl border border-line bg-paper p-2 shadow-lg">
-            <nav aria-label="Nawigacja mobilna" class="flex flex-col">
-              <a
-                class="rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
-                href="#problemy"
-              >
-                Problem
-              </a>
-              <a
-                class="rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
-                href="#przyklad"
-              >
-                Przykład
-              </a>
-              <a
-                class="rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
-                href="#o-mnie"
-              >
-                O mnie
-              </a>
-              <a
-                class="rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
-                href="#proces"
-              >
-                Proces
-              </a>
-              <a
-                class="rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
-                href="#rozliczenie"
-              >
-                Cena
-              </a>
-              <a
-                class="rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
-                href="#faq"
-              >
-                FAQ
-              </a>
-            </nav>
-            <a
-              href="https://calendly.com/kontakt-karolmodelski/konsultacja"
-              target="_blank"
-              rel="noopener noreferrer"
-              class={cn(
-                buttonVariants({ size: "sm" }),
-                "mt-1 h-11 w-full rounded-[6px] text-sm"
-              )}
-            >
-              Umów bezpłatną rozmowę
-            </a>
-          </div>
-        </details>
-      </div>
-    </div>
-    <span
-      id="scroll-progress"
-      aria-hidden="true"
-      class="absolute inset-x-0 -bottom-px h-[2px] origin-left scale-x-0 bg-signal"
-    ></span>
-  </header>
+  <SiteHeader variant="home" />
 
   <main id="main">
     <section class="relative overflow-hidden bg-paper px-4 pt-20 pb-16 sm:px-6 sm:pt-24 sm:pb-20">
@@ -2412,6 +2243,76 @@ const [yourRole, myRole, outcome] = collaborationModel
       </div>
     </section>
 
+    {wiedzaHighlights.length > 0 && (
+      <section class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-20">
+        <div class="mx-auto max-w-[75rem]">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+            <div class="lg:col-span-3">
+              <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
+                Zanim zaczniesz
+              </p>
+            </div>
+
+            <div class="lg:col-span-9">
+              <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
+                <div>
+                  <h2 class="font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-3xl">
+                    Zanim zaczniesz budować aplikację
+                  </h2>
+                  <p class="mt-3 max-w-xl text-base leading-relaxed text-pretty text-ink-soft">
+                    {wiedzaHighlights.length === 1
+                      ? "Praktyczny poradnik, który pomaga uporządkować pomysł i przygotować się do rozmowy o realizacji."
+                      : "Praktyczne poradniki, które pomagają uporządkować pomysł i przygotować się do rozmowy o realizacji."}
+                  </p>
+                </div>
+                <a
+                  href="/wiedza/"
+                  class="inline-flex min-h-11 shrink-0 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                >
+                  {wiedzaHighlights.length === 1
+                    ? "Zobacz poradnik"
+                    : "Wszystkie artykuły"}
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </a>
+              </div>
+
+              <ul
+                class={cn(
+                  "mt-8 grid grid-cols-1 gap-x-8 gap-y-6",
+                  wiedzaHighlights.length === 2 && "md:grid-cols-2",
+                  wiedzaHighlights.length >= 3 && "md:grid-cols-3"
+                )}
+              >
+                {wiedzaHighlights.map((entry) => (
+                  <li class="border-t border-line pt-5">
+                    <p class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+                      {wiedzaCategoryLabel(entry.data.category)}
+                      {readingTimeFor(entry)
+                        ? ` · ${readingTimeFor(entry)} min`
+                        : ""}
+                    </p>
+                    <h3 class="mt-3 font-heading text-lg leading-snug font-semibold text-balance">
+                      <a
+                        href={wiedzaArticlePath(entry.id)}
+                        class="underline-offset-4 hover:underline"
+                      >
+                        {entry.data.title}
+                      </a>
+                    </h3>
+                    <div class="mt-2 space-y-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                      {cardParagraphsFor(entry).map((paragraph) => (
+                        <p>{paragraph}</p>
+                      ))}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
     <section
       id="kontakt"
       class="on-ink bg-ink px-4 py-20 text-paper sm:px-6 sm:py-32"
@@ -2572,186 +2473,7 @@ const [yourRole, myRole, outcome] = collaborationModel
     </a>
   </div>
 
-  <footer class="on-ink border-t border-paper/15 bg-footer px-4 py-16 text-paper sm:px-6 sm:py-20">
-    <div class="mx-auto max-w-[75rem]">
-      <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-        <div class="lg:col-span-5">
-          <img
-            src="/logo-compact-on-dark.svg"
-            alt="Karol Modelski — Consulting Technologiczny"
-            width="865"
-            height="152"
-            class="h-10 w-auto dark:hidden"
-          />
-          <img
-            src="/logo-compact.svg"
-            alt=""
-            aria-hidden="true"
-            width="865"
-            height="152"
-            class="hidden h-10 w-auto dark:block"
-          />
-          <p class="mt-4 max-w-sm text-sm leading-relaxed text-paper/70">
-            Pomagam osobom z pomysłem na aplikację zamienić go w pierwszy
-            działający produkt.
-          </p>
-          <p class="mt-3 max-w-sm text-sm leading-relaxed text-paper/70">
-            Od uporządkowania pomysłu, przez projektowanie i programowanie, po
-            uruchomienie aplikacji i przygotowanie jej do pierwszych testów.
-          </p>
-          <p class="mt-3 max-w-sm text-sm leading-relaxed font-medium text-paper">
-            Ty decydujesz, co chcesz stworzyć. Ja odpowiadam za organizację i
-            techniczną realizację projektu.
-          </p>
-          <p class="mt-6 flex items-start gap-3 font-mono text-[11px] leading-relaxed tracking-[0.14em] text-paper/70 uppercase">
-            <span class="mt-2 h-px w-6 shrink-0 bg-signal" aria-hidden="true" />
-            4 tygodnie do pierwszej wersji · Stała cena · Płatności etapami ·
-            Umowa o poufności
-          </p>
-        </div>
-
-        <div class="lg:col-span-7">
-          <h2 class="font-mono text-xs tracking-[0.18em] text-paper/60 uppercase">
-            Kontakt
-          </h2>
-          <p class="mt-3 max-w-md text-sm leading-relaxed text-paper/60">
-            Masz pytania przed rozmową? Napisz bezpośrednio:
-          </p>
-          <ul class="mt-5 grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
-            <li class="flex items-start gap-3">
-              <Mail className="mt-0.5 size-4 shrink-0 text-paper/60" />
-              <div>
-                <p class="font-mono text-[10px] tracking-[0.14em] text-paper/70 uppercase">
-                  E-mail
-                </p>
-                <a
-                  class="mt-1 inline-flex min-h-11 items-center text-sm underline-offset-4 hover:text-signal-bright hover:underline"
-                  href="mailto:kontakt@karolmodelski.pl"
-                >
-                  kontakt@karolmodelski.pl
-                </a>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <MessageCircle className="mt-0.5 size-4 shrink-0 text-paper/60" />
-              <div>
-                <p class="font-mono text-[10px] tracking-[0.14em] text-paper/70 uppercase">
-                  Telefon / WhatsApp
-                </p>
-                <a
-                  class="mt-1 inline-flex min-h-11 items-center text-sm underline-offset-4 hover:text-signal-bright hover:underline"
-                  href="https://wa.me/48664598563"
-                >
-                  +48 664 598 563
-                </a>
-                <p class="mt-0.5 text-xs text-paper/70">
-                  (najszybsza odpowiedź)
-                </p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-                class="mt-0.5 size-4 shrink-0 text-paper/60"
-              >
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path>
-              </svg>
-              <div>
-                <p class="font-mono text-[10px] tracking-[0.14em] text-paper/70 uppercase">
-                  LinkedIn
-                </p>
-                <a
-                  class="mt-1 inline-flex min-h-11 items-center text-sm underline-offset-4 hover:text-signal-bright hover:underline"
-                  href="https://www.linkedin.com/in/karol-modelski/"
-                  rel="me noopener"
-                  target="_blank"
-                >
-                  Karol Modelski
-                </a>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <MapPin className="mt-0.5 size-4 shrink-0 text-paper/60" />
-              <div>
-                <p class="font-mono text-[10px] tracking-[0.14em] text-paper/70 uppercase">
-                  Google
-                </p>
-                <a
-                  class="mt-1 inline-flex min-h-11 items-center text-sm underline-offset-4 hover:text-signal-bright hover:underline"
-                  href="https://g.page/r/CZSVfAGtTiIzEBM"
-                  rel="me noopener"
-                  target="_blank"
-                >
-                  Wizytówka w Google
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="mt-12 border-t border-paper/15 pt-8">
-        <h2 class="font-mono text-xs tracking-[0.18em] text-paper/60 uppercase">
-          Bezpieczeństwo i zasady
-        </h2>
-        <ul class="mt-6 grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
-          <li class="flex gap-3">
-            <Lock className="mt-0.5 size-4 shrink-0 text-signal-bright" />
-            <div>
-              <p class="text-sm font-medium text-paper">Poufność</p>
-              <p class="mt-1 text-sm leading-relaxed text-paper/60">
-                Umowę o zachowaniu poufności możemy podpisać jeszcze przed
-                szczegółową rozmową o pomyśle.
-              </p>
-            </div>
-          </li>
-          <li class="flex gap-3">
-            <FileCheck2 className="mt-0.5 size-4 shrink-0 text-signal-bright" />
-            <div>
-              <p class="text-sm font-medium text-paper">Prawa autorskie</p>
-              <p class="mt-1 text-sm leading-relaxed text-paper/60">
-                Cały kod i 100% majątkowych praw autorskich w uzgodnionym
-                zakresie przechodzi na Ciebie. Zasady korzystania z komponentów
-                zewnętrznych i informacje o istotnych licencjach określamy w
-                umowie.
-              </p>
-            </div>
-          </li>
-          <li class="flex gap-3">
-            <BadgeCheck className="mt-0.5 size-4 shrink-0 text-signal-bright" />
-            <div>
-              <p class="text-sm font-medium text-paper">
-                Bezpieczeństwo finansowe
-              </p>
-              <p class="mt-1 text-sm leading-relaxed text-paper/60">
-                Płatność w 3 częściach (40/40/20) · Stała cena za uzgodniony
-                zakres · Faktury VAT. Ewentualne koszty zewnętrzne (domena,
-                serwery, usługi) omawiamy przed startem.
-              </p>
-            </div>
-          </li>
-          <li class="flex gap-3">
-            <ShieldCheck className="mt-0.5 size-4 shrink-0 text-signal-bright" />
-            <div>
-              <p class="text-sm font-medium text-paper">Gwarancja techniczna</p>
-              <p class="mt-1 text-sm leading-relaxed text-paper/60">
-                3 miesiące gwarancji: usterki i błędy w uzgodnionym zakresie
-                usuwamy bez dodatkowych opłat, na zasadach określonych w umowie.
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="mt-12 flex flex-col gap-2 border-t border-paper/15 pt-6 font-mono text-xs text-paper/70 sm:flex-row sm:items-center sm:justify-between">
-        <p>© 2026 Karol Modelski · Wszelkie prawa zastrzeżone.</p>
-        <p>NIP 6112800950</p>
-      </div>
-    </div>
-  </footer>
+  <SiteFooter />
 
   <script is:inline>
     ;(() => {
