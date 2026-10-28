@@ -1,0 +1,437 @@
+---
+import type { CollectionEntry } from "astro:content"
+import { getCollection, render } from "astro:content"
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header.astro"
+import SiteFooter from "@/components/site-footer.astro"
+import WiedzaCta from "@/components/wiedza-cta.astro"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { wiedzaArticlePath, wiedzaCategoryLabel } from "@/data/wiedza"
+import { formatDate } from "@/lib/format"
+import { countWords, getReadingTime } from "@/lib/reading-time"
+import { ArrowRight, ChevronDown } from "lucide-react"
+
+export async function getStaticPaths() {
+  const entries = await getCollection("wiedza")
+
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }))
+}
+
+interface Props {
+  entry: CollectionEntry<"wiedza">
+}
+
+const { entry } = Astro.props
+const { Content, headings } = await render(entry)
+
+const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
+const pageURL = new URL(wiedzaArticlePath(entry.id), siteURL).toString()
+const siteRoot = new URL("/", siteURL).toString()
+
+const allEntries = await getCollection("wiedza")
+const relatedEntries = allEntries
+  .filter((item) => item.id !== entry.id)
+  .sort((a, b) => {
+    const aRelated = entry.data.related.includes(a.id) ? 0 : 1
+    const bRelated = entry.data.related.includes(b.id) ? 0 : 1
+    return aRelated - bRelated
+  })
+  .slice(0, 3)
+
+const toc = headings.filter((heading) => heading.depth === 2)
+const tocLabel = (text: string) => text.replace(/^\d+\.\s*/, "")
+const wordCount = countWords(entry.body)
+const readingTime = entry.data.readingTime ?? getReadingTime(entry.body)
+const isDraft = wordCount === 0
+const categoryLabel = wiedzaCategoryLabel(entry.data.category)
+
+const articleSchema = {
+  "@type": "Article",
+  "@id": `${pageURL}#article`,
+  headline: entry.data.title,
+  description: entry.data.description,
+  inLanguage: "pl-PL",
+  datePublished: entry.data.publishedAt?.toISOString(),
+  dateModified: entry.data.updatedAt?.toISOString(),
+  articleSection: categoryLabel,
+  wordCount: wordCount || undefined,
+  timeRequired: readingTime ? `PT${readingTime}M` : undefined,
+  author: {
+    "@type": "Person",
+    "@id": `${siteRoot}#person`,
+    name: "Karol Modelski",
+    url: siteRoot,
+  },
+  publisher: { "@id": `${siteRoot}#organization` },
+  mainEntityOfPage: { "@type": "WebPage", "@id": `${pageURL}#webpage` },
+  image: {
+    "@type": "ImageObject",
+    url: new URL("/og-image.png", siteURL).toString(),
+    width: 1200,
+    height: 630,
+  },
+}
+
+const faqSchema =
+  entry.data.faq.length > 0
+    ? [
+        {
+          "@type": "FAQPage",
+          "@id": `${pageURL}#faq`,
+          mainEntity: entry.data.faq.map(({ question, answer }) => ({
+            "@type": "Question",
+            name: question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: answer,
+            },
+          })),
+        },
+      ]
+    : []
+
+const breadcrumbSchema = {
+  "@type": "BreadcrumbList",
+  "@id": `${pageURL}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Strona główna",
+      item: siteRoot,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Wiedza",
+      item: new URL("/wiedza/", siteURL).toString(),
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: entry.data.title,
+      item: pageURL,
+    },
+  ],
+}
+
+const jsonLd = [articleSchema, ...faqSchema, breadcrumbSchema]
+---
+
+<Layout
+  title={entry.data.metaTitle ?? `${entry.data.title} | Karol Modelski`}
+  description={entry.data.description}
+  ogType="article"
+  noindex={isDraft}
+  jsonLd={jsonLd}
+>
+  <a
+    href="#main"
+    class="fixed top-4 left-4 z-50 -translate-y-24 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform focus:translate-y-0 focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:outline-none motion-reduce:transition-none"
+  >
+    Przejdź do treści
+  </a>
+
+  <SiteHeader variant="page" current="wiedza" />
+
+  <main id="main">
+    <div class="mx-auto max-w-[75rem] px-4 pt-8 pb-16 sm:px-6 sm:pt-10 sm:pb-20">
+      <nav aria-label="Ścieżka nawigacji">
+        <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+          <li>
+            <a class="transition-colors hover:text-ink" href="/">
+              Strona główna
+            </a>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li>
+            <a class="transition-colors hover:text-ink" href="/wiedza/">
+              Wiedza
+            </a>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">{categoryLabel}</li>
+        </ol>
+      </nav>
+
+      <header class="mt-8 max-w-4xl">
+        <p class="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+          <span>{categoryLabel}</span>
+          {readingTime && (
+            <>
+              <span class="h-px w-4 bg-line" aria-hidden="true"></span>
+              <span class="text-ink-soft">{readingTime} min czytania</span>
+            </>
+          )}
+        </p>
+
+        <h1 class="mt-5 font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl">
+          {entry.data.title}
+        </h1>
+
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft">
+          {entry.data.lead ?? entry.data.description}
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4 border-y border-line py-4">
+          <div class="flex items-center gap-3">
+            <img
+              src="/karol-modelski-avatar.webp"
+              alt="Karol Modelski"
+              width="72"
+              height="72"
+              class="size-9 rounded-full object-cover"
+            />
+            <div>
+              <p class="text-sm font-medium text-ink">Karol Modelski</p>
+              <p class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+                Autor
+              </p>
+            </div>
+          </div>
+
+          {(entry.data.publishedAt || entry.data.updatedAt) && (
+            <>
+              <div
+                class="hidden h-8 w-px bg-line sm:block"
+                aria-hidden="true"
+              ></div>
+              <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] tracking-[0.1em] text-ink-soft uppercase">
+                {entry.data.publishedAt && (
+                  <p>
+                    Opublikowano{" "}
+                    <time datetime={entry.data.publishedAt.toISOString()}>
+                      {formatDate(entry.data.publishedAt)}
+                    </time>
+                  </p>
+                )}
+                {entry.data.updatedAt && (
+                  <p>
+                    Aktualizacja{" "}
+                    <time datetime={entry.data.updatedAt.toISOString()}>
+                      {formatDate(entry.data.updatedAt)}
+                    </time>
+                  </p>
+                )}
+              </div>
+            </>
+          )}
+        </div>
+      </header>
+
+      {toc.length > 2 && (
+        <details class="mt-8 rounded-xl border border-line bg-surface-muted p-4 lg:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            <span class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase">
+              Spis treści
+            </span>
+            <ChevronDown
+              className="details-chevron size-4 shrink-0 text-ink-soft"
+              aria-hidden="true"
+            />
+          </summary>
+          <ol class="mt-2 space-y-2.5 border-t border-line pt-4 text-sm">
+            {toc.map((heading, index) => (
+              <li>
+                <a
+                  href={`#${heading.slug}`}
+                  class="flex gap-3 leading-snug text-ink-soft transition-colors hover:text-ink"
+                >
+                  <span class="font-mono text-[10px] text-signal-ink">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span>{tocLabel(heading.text)}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </details>
+      )}
+
+      <div class="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-8">
+          <div class="article-body">
+            <Content />
+          </div>
+
+          {entry.data.faq.length > 0 && (
+            <section
+              aria-labelledby="faq"
+              class="mt-14 border-t border-line pt-10"
+            >
+              <h2
+                id="faq"
+                class="font-heading text-2xl font-semibold tracking-tight sm:text-3xl"
+              >
+                Najczęstsze pytania
+              </h2>
+              <div class="mt-6 divide-y divide-line border-y border-line">
+                {entry.data.faq.map(({ question, answer }) => (
+                  <details class="group py-5">
+                    <summary class="flex cursor-pointer list-none items-start justify-between gap-6 [&::-webkit-details-marker]:hidden">
+                      <span class="font-heading text-base leading-snug font-semibold text-balance sm:text-lg">
+                        {question}
+                      </span>
+                      <ChevronDown
+                        className="details-chevron mt-0.5 size-5 shrink-0 text-ink-soft"
+                        aria-hidden="true"
+                      />
+                    </summary>
+                    <p class="mt-3 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                      {answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <div class="mt-14 rounded-2xl border border-line bg-surface-muted p-6 sm:p-8">
+            <p class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase">
+              Autor
+            </p>
+            <div class="mt-4 flex items-start gap-4">
+              <img
+                src="/karol-modelski-avatar.webp"
+                alt="Karol Modelski"
+                width="96"
+                height="96"
+                class="size-12 shrink-0 rounded-full object-cover"
+              />
+              <div>
+                <p class="font-heading text-lg font-semibold">Karol Modelski</p>
+                <div class="mt-2 max-w-xl space-y-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                  <p>
+                    Przez lata pracowałem przy systemach informatycznych dla
+                    banków i dużych firm. Dziś pomagam osobom z pomysłem na
+                    własną aplikację zamienić go w działający produkt.
+                  </p>
+                  <p>
+                    Pomagam ustalić, od czego zacząć, i zajmuję się całą
+                    realizacją techniczną.
+                  </p>
+                </div>
+                <a
+                  href="/#o-mnie"
+                  class="mt-3 inline-flex min-h-11 items-center text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                >
+                  Poznaj mnie
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="lg:col-span-4">
+          <div class="space-y-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-1">
+            {toc.length > 2 && (
+              <nav
+                aria-labelledby="spis-tresci"
+                class="hidden rounded-xl border border-line bg-surface-muted p-5 lg:block"
+              >
+                <h2
+                  id="spis-tresci"
+                  class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase"
+                >
+                  Spis treści
+                </h2>
+                <ol class="mt-4 space-y-2.5 text-sm">
+                  {toc.map((heading, index) => (
+                    <li>
+                      <a
+                        href={`#${heading.slug}`}
+                        class="flex gap-3 leading-snug text-ink-soft transition-colors hover:text-ink"
+                      >
+                        <span class="font-mono text-[10px] text-signal-ink">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span>{tocLabel(heading.text)}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            )}
+
+            <div class="rounded-xl border border-line bg-paper p-5">
+              <p class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase">
+                Pierwsza wersja
+              </p>
+              <p class="mt-2 font-heading text-lg font-semibold">
+                4 tygodnie · 29 500 zł brutto
+              </p>
+              <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                Sprawdźmy, czy Twój pomysł zmieści się w tym zakresie.
+              </p>
+              <a
+                href="https://calendly.com/kontakt-karolmodelski/konsultacja"
+                target="_blank"
+                rel="noopener noreferrer"
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "mt-5 h-auto min-h-11 w-full gap-2 rounded-[6px] px-4 py-2.5 text-center text-sm text-balance whitespace-normal"
+                )}
+              >
+                Umów bezpłatną rozmowę
+                <ArrowRight aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      {relatedEntries.length > 0 && (
+        <section class="mt-16 border-t border-line pt-10">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between">
+            <h2 class="font-heading text-2xl font-semibold tracking-tight">
+              Powiązane poradniki
+            </h2>
+            <a
+              href="/wiedza/"
+              class="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+            >
+              Wszystkie artykuły
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
+          </div>
+
+          <ul class="mt-6 grid grid-cols-1 gap-x-8 md:grid-cols-3">
+            {relatedEntries.map((item) => (
+              <li class="border-t border-line">
+                <a
+                  href={wiedzaArticlePath(item.id)}
+                  class="group flex h-full flex-col py-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
+                >
+                  <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+                    {wiedzaCategoryLabel(item.data.category)}
+                  </p>
+                  <h3 class="mt-3 font-heading text-base leading-snug font-semibold text-balance underline-offset-4 group-hover:underline">
+                    {item.data.title}
+                  </h3>
+                  <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft">
+                    {item.data.description}
+                  </p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </div>
+
+    <WiedzaCta
+      title="Masz już pomysł? Porozmawiajmy, od czego warto zacząć."
+      description={`Nie musisz mieć wszystkiego dokładnie zaplanowanego.
+
+Opowiedz mi, co chcesz stworzyć. Wspólnie przyjrzymy się najważniejszym funkcjom i sprawdzimy, czy możemy zacząć od działającej wersji w 4 tygodnie.
+
+Powiem Ci też wprost, czy Twój projekt pasuje do pakietu za 29 500 zł brutto, czy potrzebuje innego podejścia.`}
+    />
+  </main>
+
+  <SiteFooter />
+</Layout>

@@ -11,7 +11,8 @@ NIP: 6112800950
 
 ## Zasoby dla agentów AI
 
-- [Pełna treść strony](https://www.karolmodelski.pl/llms-full.txt): Rozwinięty, tekstowy odpowiednik strony głównej – wszystkie sekcje, tabela porównawcza, stos wartości, cennik, FAQ i kontakt.
+- [Pełna treść strony](https://www.karolmodelski.pl/llms-full.txt): Rozwinięty, tekstowy odpowiednik strony głównej – wszystkie sekcje, tabela porównawcza, stos wartości, cennik, FAQ, blok „Zanim zaczniesz budować aplikację” i kontakt.
+- [Wiedza](https://www.karolmodelski.pl/wiedza/): Poradniki o tworzeniu aplikacji – na start: jak przejść od pomysłu do pierwszej działającej wersji.
 
 ## Profile oficjalne
 
@@ -47,6 +48,10 @@ NIP: 6112800950
 ## FAQ
 
 - [Najczęstsze pytania](https://www.karolmodelski.pl/#faq): Cztery grupy: pomysł i bezpieczeństwo (zgłoszenie samego pomysłu, NDA, ocena wykonalności), produkt i realizacja (co dostajesz w 4 tygodnie, kolejne funkcje, Android/iPhone, dalszy rozwój), koszty i współpraca (koszty po zbudowaniu, zaangażowanie klienta, potrzeba własnego zespołu) oraz testowanie i kolejne kroki (pozyskanie testerów, reakcja rynku, bezpłatna rozmowa).
+
+## Wiedza
+
+- [Masz pomysł na aplikację? Od czego zacząć?](https://www.karolmodelski.pl/wiedza/masz-pomysl-na-aplikacje-od-czego-zaczac/): Masz pomysł na aplikację? Potrzebujesz programisty czy całego zespołu? Ile to może kosztować? Jak podejść do pierwszej wersji bez zbędnych wydatków.
 
 ## Bezpieczeństwo i zasady
 

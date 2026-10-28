@@ -1,0 +1,321 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header.astro"
+import SiteFooter from "@/components/site-footer.astro"
+import WiedzaCta from "@/components/wiedza-cta.astro"
+import { getCollection } from "astro:content"
+import {
+  WIEDZA_CATEGORIES,
+  wiedzaArticlePath,
+  wiedzaCategoryLabel,
+} from "@/data/wiedza"
+import { formatDate, plural } from "@/lib/format"
+import { getReadingTime } from "@/lib/reading-time"
+import { ArrowRight } from "lucide-react"
+
+const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
+const entries = (await getCollection("wiedza")).sort(
+  (a, b) => a.data.order - b.data.order
+)
+const readingTimeFor = (entry: (typeof entries)[number]) =>
+  entry.data.readingTime ?? getReadingTime(entry.body)
+const cardParagraphs = (entry: (typeof entries)[number]) =>
+  (entry.data.cardDescription ?? entry.data.description)
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean)
+const featured = entries.find((entry) => entry.data.featured) ?? entries[0]
+const featuredReadingTime = featured ? readingTimeFor(featured) : null
+const articles = entries.filter((entry) => entry.id !== featured?.id)
+
+const jsonLd = [
+  {
+    "@type": "ItemList",
+    "@id": `${new URL(Astro.url.pathname, siteURL)}#articles`,
+    name: "Wiedza o tworzeniu aplikacji",
+    numberOfItems: entries.length,
+    itemListElement: entries.map((entry, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: entry.data.title,
+      url: new URL(wiedzaArticlePath(entry.id), siteURL).toString(),
+    })),
+  },
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${new URL(Astro.url.pathname, siteURL)}#breadcrumb`,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Strona główna",
+        item: new URL("/", siteURL).toString(),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Wiedza",
+        item: new URL("/wiedza/", siteURL).toString(),
+      },
+    ],
+  },
+]
+---
+
+<Layout
+  title="Wiedza – poradniki o tworzeniu aplikacji | Karol Modelski"
+  description="Nie wiesz, od czego zacząć, ile to może kosztować i co przygotować? Wyjaśniam krok po kroku drogę od pomysłu do pierwszej wersji aplikacji. Bez żargonu."
+  jsonLd={jsonLd}
+>
+  <a
+    href="#main"
+    class="fixed top-4 left-4 z-50 -translate-y-24 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform focus:translate-y-0 focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:outline-none motion-reduce:transition-none"
+  >
+    Przejdź do treści
+  </a>
+
+  <SiteHeader variant="page" current="wiedza" />
+
+  <main id="main">
+    <section class="relative overflow-hidden bg-paper px-4 pt-16 pb-12 sm:px-6 sm:pt-24 sm:pb-16">
+      <div
+        aria-hidden="true"
+        class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
+      ></div>
+
+      <div class="mx-auto max-w-[75rem]">
+        <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
+          <span class="h-px w-8 bg-signal"></span>
+          Wiedza · Od pomysłu do aplikacji
+        </p>
+
+        <h1 class="mt-6 max-w-4xl font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl">
+          Masz pomysł na aplikację? Zacznij tutaj.
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
+          Nie wiesz, od czego zacząć, ile to może kosztować i co właściwie
+          trzeba przygotować?
+        </p>
+
+        <p class="mt-3 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+          Wyjaśniam krok po kroku, jak przejść od pomysłu do pierwszej
+          działającej wersji aplikacji. Bez technicznego żargonu.
+        </p>
+
+        <p class="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase">
+          <span>
+            {entries.length}{" "}
+            {plural(entries.length, "poradnik", "poradniki", "poradników")}
+          </span>
+          <span class="h-px w-4 bg-line" aria-hidden="true"></span>
+          <span>Konkretne odpowiedzi</span>
+          <span class="h-px w-4 bg-line" aria-hidden="true"></span>
+          <span>Praktyczne przykłady</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="border-t border-line bg-paper px-4 py-10 sm:px-6 sm:py-14">
+      <div class="mx-auto max-w-[75rem]">
+        {entries.length > 1 && (
+          <div
+            data-wiedza-filters
+            hidden
+            role="group"
+            aria-label="Filtruj artykuły według tematu"
+            class="flex flex-wrap items-center gap-2 border-b border-line pb-5"
+          >
+            <button
+              type="button"
+              data-wiedza-filter="all"
+              aria-pressed="true"
+              class="rounded-full border border-line px-4 py-2 text-sm text-ink-soft transition-colors hover:border-ink/25 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper"
+            >
+              Wszystkie
+            </button>
+            {WIEDZA_CATEGORIES.map((category) => (
+              <button
+                type="button"
+                data-wiedza-filter={category.id}
+                aria-pressed="false"
+                class="rounded-full border border-line px-4 py-2 text-sm text-ink-soft transition-colors hover:border-ink/25 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper"
+              >
+                {category.label}
+              </button>
+            ))}
+            <p
+              data-wiedza-count
+              aria-live="polite"
+              class="ml-auto hidden font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase sm:block"
+            >
+              {entries.length}{" "}
+              {plural(entries.length, "artykuł", "artykuły", "artykułów")}
+            </p>
+          </div>
+        )}
+
+        {featured && (
+          <article
+            data-article-card
+            data-category={featured.data.category}
+            class="group relative mt-8 overflow-hidden rounded-2xl border border-line bg-surface-muted px-6 py-8 sm:px-10 sm:py-10"
+          >
+            <span
+              aria-hidden="true"
+              class="pointer-events-none absolute top-4 right-6 hidden font-heading text-[7rem] leading-none font-semibold text-ink/[0.055] select-none sm:block lg:text-[9rem]"
+            >
+              01
+            </span>
+
+            <div class="relative max-w-3xl">
+              <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+                Artykuł na start
+                {featuredReadingTime
+                  ? ` · ${featuredReadingTime} min czytania`
+                  : ""}
+              </p>
+
+              <h2 class="mt-4 font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl">
+                <a
+                  href={wiedzaArticlePath(featured.id)}
+                  class="after:absolute after:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
+                >
+                  {featured.data.title}
+                </a>
+              </h2>
+
+              <div class="mt-4 max-w-2xl space-y-3 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                {cardParagraphs(featured).map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+
+              <div class="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <span class="inline-flex min-h-11 items-center gap-2 self-start rounded-[6px] bg-ink px-5 text-sm font-medium text-paper transition-colors group-hover:bg-signal-ink">
+                  Przeczytaj artykuł
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </span>
+                <p class="font-mono text-[11px] text-ink-soft">
+                  Karol Modelski
+                  {featured.data.publishedAt
+                    ? ` · ${formatDate(featured.data.publishedAt)}`
+                    : ""}
+                </p>
+              </div>
+            </div>
+          </article>
+        )}
+
+        {articles.length > 0 && (
+          <>
+            <div class="mt-14 flex items-baseline justify-between gap-6 border-b border-line pb-4">
+              <h2 class="font-heading text-xl font-semibold tracking-tight">
+                Pozostałe poradniki
+              </h2>
+              <span class="font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase">
+                Od podstaw do realizacji
+              </span>
+            </div>
+
+            <ul class="grid grid-cols-1 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
+              {articles.map((entry) => (
+                <li
+                  data-article-card
+                  data-category={entry.data.category}
+                  class="border-b border-line"
+                >
+                  <a
+                    href={wiedzaArticlePath(entry.id)}
+                    class="group flex h-full flex-col py-7 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
+                  >
+                    <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+                      {wiedzaCategoryLabel(entry.data.category)}
+                    </p>
+                    <h3 class="mt-3 font-heading text-lg leading-snug font-semibold text-balance underline-offset-4 group-hover:underline">
+                      {entry.data.title}
+                    </h3>
+                    <div class="mt-3 flex-1 space-y-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                      {cardParagraphs(entry).map((paragraph) => (
+                        <p>{paragraph}</p>
+                      ))}
+                    </div>
+                    <span class="mt-5 inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.12em] text-ink-soft uppercase">
+                      {readingTimeFor(entry)
+                        ? `${readingTimeFor(entry)} min czytania`
+                        : "Czytaj więcej"}
+                      <ArrowRight
+                        className="size-3.5 transition-transform group-hover:translate-x-1"
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <p
+              data-wiedza-empty
+              hidden
+              class="border-b border-line py-8 text-sm text-ink-soft"
+            >
+              Brak artykułów w tej kategorii.
+            </p>
+          </>
+        )}
+      </div>
+    </section>
+
+    <WiedzaCta />
+  </main>
+
+  <SiteFooter />
+
+  <script is:inline>
+    ;(() => {
+      const filters = document.querySelector("[data-wiedza-filters]")
+      if (!filters) return
+
+      filters.hidden = false
+
+      const buttons = Array.prototype.slice.call(
+        filters.querySelectorAll("[data-wiedza-filter]")
+      )
+      const cards = Array.prototype.slice.call(
+        document.querySelectorAll("[data-article-card]")
+      )
+      const count = document.querySelector("[data-wiedza-count]")
+      const empty = document.querySelector("[data-wiedza-empty]")
+
+      const plural = (n) => {
+        if (n === 1) return "1 artykuł"
+        if (n >= 2 && n <= 4) return n + " artykuły"
+        return n + " artykułów"
+      }
+
+      const apply = (category) => {
+        let visible = 0
+
+        cards.forEach((card) => {
+          const show = category === "all" || card.dataset.category === category
+          card.hidden = !show
+          if (show) visible++
+        })
+
+        buttons.forEach((button) => {
+          const active = button.dataset.wiedzaFilter === category
+          button.setAttribute("aria-pressed", String(active))
+        })
+
+        if (count) count.textContent = plural(visible)
+        if (empty) empty.hidden = visible !== 0
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          apply(button.dataset.wiedzaFilter || "all")
+        })
+      })
+    })()
+  </script>
+</Layout>
