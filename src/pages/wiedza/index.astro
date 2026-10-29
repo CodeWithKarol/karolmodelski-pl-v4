@@ -11,14 +11,18 @@ import {
 } from "@/data/wiedza"
 import { formatDate, plural } from "@/lib/format"
 import { getReadingTime } from "@/lib/reading-time"
+import { cn } from "@/lib/utils"
 import { ArrowRight } from "lucide-react"
 
 const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
 const entries = (await getCollection("wiedza")).sort(
   (a, b) => a.data.order - b.data.order
 )
+const availableCategories = WIEDZA_CATEGORIES.filter((category) =>
+  entries.some((entry) => entry.data.category === category.id)
+)
 const readingTimeFor = (entry: (typeof entries)[number]) =>
-  entry.data.readingTime ?? getReadingTime(entry.body)
+  getReadingTime(entry.body)
 const cardParagraphs = (entry: (typeof entries)[number]) =>
   (entry.data.cardDescription ?? entry.data.description)
     .split(/\n\s*\n/)
@@ -134,7 +138,7 @@ const jsonLd = [
             >
               Wszystkie
             </button>
-            {WIEDZA_CATEGORIES.map((category) => (
+            {availableCategories.map((category) => (
               <button
                 type="button"
                 data-wiedza-filter={category.id}
@@ -208,7 +212,7 @@ const jsonLd = [
         )}
 
         {articles.length > 0 && (
-          <>
+          <div data-wiedza-list>
             <div class="mt-14 flex items-baseline justify-between gap-6 border-b border-line pb-4">
               <h2 class="font-heading text-xl font-semibold tracking-tight">
                 Pozostałe poradniki
@@ -218,7 +222,14 @@ const jsonLd = [
               </span>
             </div>
 
-            <ul class="grid grid-cols-1 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
+            <ul
+              class={cn(
+                "grid grid-cols-1 gap-x-8",
+                articles.length >= 3
+                  ? "md:grid-cols-2 lg:grid-cols-3"
+                  : "md:grid-cols-2"
+              )}
+            >
               {articles.map((entry) => (
                 <li
                   data-article-card
@@ -261,7 +272,7 @@ const jsonLd = [
             >
               Brak artykułów w tej kategorii.
             </p>
-          </>
+          </div>
         )}
       </div>
     </section>
@@ -284,6 +295,12 @@ const jsonLd = [
       const cards = Array.prototype.slice.call(
         document.querySelectorAll("[data-article-card]")
       )
+      const list = document.querySelector("[data-wiedza-list]")
+      const listCards = list
+        ? Array.prototype.slice.call(
+            list.querySelectorAll("[data-article-card]")
+          )
+        : []
       const count = document.querySelector("[data-wiedza-count]")
       const empty = document.querySelector("[data-wiedza-empty]")
 
@@ -309,6 +326,11 @@ const jsonLd = [
 
         if (count) count.textContent = plural(visible)
         if (empty) empty.hidden = visible !== 0
+
+        if (list) {
+          const visibleList = listCards.filter((card) => !card.hidden).length
+          list.hidden = visibleList === 0
+        }
       }
 
       buttons.forEach((button) => {

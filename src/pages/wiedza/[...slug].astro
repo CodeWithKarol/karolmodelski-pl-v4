@@ -45,7 +45,7 @@ const relatedEntries = allEntries
 const toc = headings.filter((heading) => heading.depth === 2)
 const tocLabel = (text: string) => text.replace(/^\d+\.\s*/, "")
 const wordCount = countWords(entry.body)
-const readingTime = entry.data.readingTime ?? getReadingTime(entry.body)
+const readingTime = getReadingTime(entry.body)
 const isDraft = wordCount === 0
 const categoryLabel = wiedzaCategoryLabel(entry.data.category)
 
@@ -399,7 +399,12 @@ const jsonLd = [articleSchema, ...faqSchema, breadcrumbSchema]
             </a>
           </div>
 
-          <ul class="mt-6 grid grid-cols-1 gap-x-8 md:grid-cols-3">
+          <ul
+            class={cn(
+              "mt-6 grid grid-cols-1 gap-x-8",
+              relatedEntries.length >= 3 ? "md:grid-cols-3" : "md:grid-cols-2"
+            )}
+          >
             {relatedEntries.map((item) => (
               <li class="border-t border-line">
                 <a
@@ -425,11 +430,11 @@ const jsonLd = [articleSchema, ...faqSchema, breadcrumbSchema]
 
     <WiedzaCta
       title="Masz już pomysł? Porozmawiajmy, od czego warto zacząć."
-      description={`Nie musisz mieć wszystkiego dokładnie zaplanowanego.
+      description={`Opowiedz mi, co chcesz stworzyć. Wspólnie sprawdzimy, czy da się zacząć od pierwszej działającej wersji aplikacji w 4 tygodnie.
 
-Opowiedz mi, co chcesz stworzyć. Wspólnie przyjrzymy się najważniejszym funkcjom i sprawdzimy, czy możemy zacząć od działającej wersji w 4 tygodnie.
-
-Powiem Ci też wprost, czy Twój projekt pasuje do pakietu za 29 500 zł brutto, czy potrzebuje innego podejścia.`}
+Powiem Ci wprost, czy Twój pomysł pasuje do pakietu za 29 500 zł brutto, czy wymaga innego podejścia.`}
+      secondaryPrefix="Chcesz najpierw zobaczyć, jak wygląda współpraca?"
+      secondaryLabel="Zobacz proces realizacji."
     />
   </main>
 

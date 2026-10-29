@@ -12,7 +12,6 @@ const wiedza = defineCollection({
     cardDescription: z.string().optional(),
     lead: z.string().optional(),
     category: z.enum(WIEDZA_CATEGORY_IDS),
-    readingTime: z.number().int().positive().optional(),
     publishedAt: z.coerce.date().optional(),
     updatedAt: z.coerce.date().optional(),
     featured: z.boolean().default(false),
