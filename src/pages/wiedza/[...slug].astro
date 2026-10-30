@@ -126,6 +126,9 @@ const jsonLd = [articleSchema, ...faqSchema, breadcrumbSchema]
   title={entry.data.metaTitle ?? `${entry.data.title} | Karol Modelski`}
   description={entry.data.description}
   ogType="article"
+  articlePublishedTime={entry.data.publishedAt?.toISOString()}
+  articleModifiedTime={entry.data.updatedAt?.toISOString()}
+  articleSection={categoryLabel}
   noindex={isDraft}
   jsonLd={jsonLd}
 >
