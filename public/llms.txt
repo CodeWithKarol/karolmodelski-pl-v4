@@ -52,6 +52,7 @@ NIP: 6112800950
 ## Wiedza
 
 - [Masz pomysł na aplikację? Od czego zacząć?](https://www.karolmodelski.pl/wiedza/masz-pomysl-na-aplikacje-od-czego-zaczac/): Masz pomysł na aplikację? Potrzebujesz programisty czy całego zespołu? Ile to może kosztować? Jak podejść do pierwszej wersji bez zbędnych wydatków.
+- [Ile kosztuje stworzenie aplikacji w 2026 roku?](https://www.karolmodelski.pl/wiedza/ile-kosztuje-stworzenie-aplikacji-2026/): Realne ceny aplikacji mobilnych i webowych, koszty programistów oraz sposoby na oszczędności. Pierwsza działająca wersja: 29 500 zł brutto.
 
 ## Bezpieczeństwo i zasady
 
