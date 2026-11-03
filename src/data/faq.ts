@@ -1,75 +1,55 @@
 export const faq = [
   {
     question:
-      "Mam pomysł, ale nie wiem, od czego zacząć. Czy mogę się do Ciebie zgłosić?",
+      "Mam pomysł, ale boję się, że ktoś go wykorzysta. Czy możemy najpierw podpisać NDA?",
     answer:
-      "Tak. Właśnie z takimi projektami pracuję.\n\nNie musisz mieć gotowej dokumentacji, projektu graficznego ani szczegółowego planu technicznego.\n\nWystarczy, że opowiesz mi, co chcesz stworzyć, jak wyobrażasz sobie działanie aplikacji i komu mogłaby się przydać.\n\nPomogę Ci to uporządkować i sprawdzić, od czego najlepiej zacząć.",
+      "Tak. Umowę o poufności możemy podpisać, zanim opowiesz mi o szczegółach swojego rozwiązania.\n\nNDA określa obowiązki poufności i zasady odpowiedzialności, więc ryzyko nie znika całkowicie, ale szczegóły Twojego pomysłu są nim objęte.",
   },
   {
-    question: "Skąd mam wiedzieć, czy potraficie zbudować mój pomysł?",
+    question: "Czy po czterech tygodniach dostanę coś, co naprawdę działa?",
     answer:
-      "Najpierw muszę go dobrze zrozumieć.\n\nPodczas rozmowy omówimy najważniejsze funkcje i sprawdzimy, co może być technicznie trudne.\n\nJeśli projekt wymaga dodatkowej analizy albo wykracza poza zakres czterotygodniowego pakietu, powiem Ci o tym przed rozpoczęciem współpracy.\n\nNie chcę obiecywać realizacji czegoś, czego nie da się rzetelnie zaplanować.",
-  },
-  {
-    question: "A jeśli ktoś wykorzysta albo skopiuje mój pomysł?",
-    answer:
-      "Rozumiem taką obawę, szczególnie gdy pracujesz nad pomysłem od dłuższego czasu.\n\nMożemy podpisać umowę o poufności, zanim opowiesz mi o szczegółach swojego rozwiązania.\n\nW umowie określamy też zasady dotyczące praw do tworzonego produktu.\n\nJeśli potrzebujesz dodatkowej ochrony znaku towarowego, patentu lub innej formy ochrony prawnej, warto omówić to z odpowiednim prawnikiem lub rzecznikiem patentowym.",
+      "Tak. Otrzymujesz pierwszą działającą wersję aplikacji w uzgodnionym zakresie — możesz ją uruchomić w przeglądarce i sprawdzić najważniejszą funkcję.\n\nTo nie makieta ani projekt do pokazania. Pełny odbiór z poprawkami zamyka się zwykle w 6–8 tygodniach.",
   },
   {
     question:
-      "Czy po 4 tygodniach dostanę prawdziwą aplikację, czy tylko projekt do pokazania?",
+      "Skąd mam wiedzieć, czy mój pomysł da się zrealizować za 29 500 zł?",
     answer:
-      "Otrzymasz pierwszą działającą wersję aplikacji w ustalonym zakresie.\n\nBędzie można uruchomić ją w przeglądarce i samodzielnie wypróbować najważniejszą funkcję.\n\nTo nie jest wyłącznie makieta ani prezentacja pokazująca, jak produkt kiedyś mógłby wyglądać.",
+      "Sprawdzamy to na pierwszej rozmowie. Najważniejsze jest to, czy najważniejszą funkcję da się zbudować i uruchomić w 4 tygodniach.\n\nJeśli projekt wymaga większego zakresu, powiem Ci o tym wprost, zanim podpiszemy umowę.",
   },
   {
     question:
-      "Mam pomysł na bardzo rozbudowaną aplikację. Czy też zmieści się w 4 tygodniach?",
+      "Nie znam się na technologii. Jak będę wiedział, czy wszystko idzie zgodnie z planem?",
     answer:
-      "Cała aplikacja prawdopodobnie nie, ale być może możemy zacząć od jej najważniejszej części.\n\nPodczas rozmowy sprawdzimy, czy da się wyodrębnić funkcję, która ma sens jako pierwszy etap.\n\nJeśli tak, przygotujemy odpowiedni zakres. Pozostałe pomysły zapiszemy do dalszego rozwoju.\n\nJeśli projekt nie nadaje się do tego modelu, powiem Ci o tym wprost.",
+      "Pokazuję Ci działające efekty, nie techniczne raporty. Regularnie widzisz postępy i pytam Cię o decyzje, które wymagają Twojej opinii.\n\nPo udostępnieniu pierwszej wersji masz też 10 dni roboczych na odbiór techniczny.",
   },
   {
-    question: "Co, jeśli w trakcie budowy wpadnę na kolejne pomysły?",
+    question: "Czy muszę od razu budować wszystkie funkcje?",
     answer:
-      "To bardzo częsta sytuacja.\n\nKiedy zaczynasz oglądać działającą wersję, łatwiej zauważyć dodatkowe możliwości i rzeczy, które warto poprawić.\n\nWszystkie pomysły możemy zapisywać. Wspólnie zdecydujemy, które należą do uzgodnionego zakresu, a które warto przenieść do następnego etapu.\n\nDzięki temu nie tracimy kontroli nad terminem i budżetem.",
+      "Nie. Wybieramy najważniejszą funkcję i budujemy wokół niej pierwszą wersję.\n\nPozostałe pomysły zapisujemy w planie rozwoju — decydujesz o nich później, na podstawie pierwszych testów.",
   },
   {
-    question: "Czy to, co zbudujemy, będzie później można rozwijać?",
+    question: "Co jeśli podczas realizacji pojawią się nowe pomysły?",
     answer:
-      "Tak, celem jest stworzenie działającej podstawy, którą można rozbudowywać.\n\nNie oznacza to jednak, że każdą przyszłą funkcję lub wersję na inne urządzenia da się dodać bez zmian technicznych.\n\nDlatego od początku planujemy projekt z myślą o jego możliwych kolejnych etapach.",
+      "To normalne. Zapisujemy je i sprawdzamy, czy należą do uzgodnionego zakresu, czy do kolejnego etapu.\n\nNie dokładamy ich automatycznie, żeby nie zwiększać kosztu ani nie wydłużać terminu.",
   },
   {
-    question: "Czy od razu dostanę aplikację na Androida i iPhone'a?",
+    question: "Jakie koszty mogą pojawić się po uruchomieniu aplikacji?",
     answer:
-      "Pakiet obejmuje pierwszą wersję przeglądarkową w uzgodnionym zakresie.\n\nOsobne aplikacje mobilne oraz publikacja w App Store i Google Play mogą być przedmiotem kolejnego etapu.\n\nZanim zaczniemy, omówimy, jak ten wybór wpływa na dalszy rozwój produktu.",
+      "Cena pakietu obejmuje przygotowanie i realizację pierwszej wersji. Poza nią mogą wystąpić koszty zewnętrzne: domena, serwery i usługi, z których korzysta aplikacja.\n\nOmawiamy je przed rozpoczęciem prac. Dalszy rozwój i opieka techniczna to osobny, dobrowolny zakres.",
   },
   {
-    question: "Czy potrzebuję własnego programisty albo całego zespołu?",
+    question: "Czy aplikację będzie można później rozwijać?",
     answer:
-      "Nie.\n\nDoborem i koordynacją specjalistów zajmuję się ja.\n\nTy pozostajesz osobą podejmującą decyzje dotyczące produktu, ale nie musisz samodzielnie prowadzić prac technicznych.",
+      "Tak. Po rozliczeniu projektu otrzymujesz kod źródłowy i uzgodnione prawa, więc możesz rozwijać produkt samodzielnie, ze mną albo z innym zespołem.\n\nCzy da się dodać konkretną funkcję, zależy od technologii i architektury — sprawdzamy to przy planowaniu kolejnego etapu.",
   },
   {
-    question: "Czy po zbudowaniu aplikacji będą jeszcze jakieś koszty?",
+    question: "Czy otrzymam aplikację na Androida i iPhone'a?",
     answer:
-      "W zależności od rodzaju aplikacji mogą pojawić się koszty domeny, serwerów, zewnętrznych usług, utrzymania czy dalszego rozwoju.\n\nPrzed rozpoczęciem prac omówimy przewidywane koszty dotyczące Twojego projektu oraz ustalimy, co jest objęte pakietem.\n\nNie musisz zamawiać kolejnych funkcji ani dalszej współpracy ze mną, jeśli nie chcesz.",
+      "Pakiet obejmuje pierwszą wersję w przeglądarce, w uzgodnionym zakresie.\n\nOsobne aplikacje mobilne i publikacja w App Store czy Google Play mogą być kolejnym etapem. Omawiamy to przed startem, bo ten wybór wpływa na dalszy rozwój produktu.",
   },
   {
-    question: "Ile czasu będę musiał poświęcić na współpracę?",
+    question: "Czy mogę po prostu porozmawiać, zanim podejmę decyzję?",
     answer:
-      "Na początku zwykle kilka godzin na omówienie pomysłu i ustalenie szczegółów.\n\nPóźniej zazwyczaj około godziny tygodniowo na obejrzenie postępów i podjęcie decyzji.\n\nJeśli projekt jest bardziej złożony albo wymaga wielu szczegółowych uzgodnień, Twój udział może być większy.",
-  },
-  {
-    question: "A jeśli aplikacja nie spodoba się pierwszym użytkownikom?",
-    answer:
-      "Właśnie dlatego warto zacząć od mniejszej wersji zamiast od razu inwestować w cały produkt.\n\nMożesz zebrać opinie, sprawdzić zachowania użytkowników i przekonać się, co wymaga poprawy.\n\nNawet jeśli reakcje będą inne, niż oczekiwałeś, zdobędziesz informacje pomocne przy podejmowaniu kolejnych decyzji.\n\nNie gwarantuję sukcesu rynkowego, ale przygotuję produkt i narzędzia potrzebne do rozpoczęcia testów.",
-  },
-  {
-    question: "Skąd wezmę osoby do testowania aplikacji?",
-    answer:
-      "Na początek możesz zaprosić wybrane osoby z grupy, do której ma być skierowany produkt.\n\nW pakiecie otrzymujesz działającą wersję, stronę internetową i analitykę.\n\nNie oznacza to jednak automatycznego pozyskania testerów lub prowadzenia kampanii reklamowej. Jeśli nie masz jeszcze dostępu do odpowiednich użytkowników, omówimy możliwości zorganizowania testów i ewentualną potrzebę dodatkowego wsparcia marketingowego.",
-  },
-  {
-    question: "Czy mogę najpierw po prostu porozmawiać?",
-    answer:
-      "Oczywiście.\n\nPierwsza rozmowa trwa około 20 minut, jest bezpłatna i do niczego Cię nie zobowiązuje.\n\nOpowiesz mi o pomyśle, a ja pomogę Ci wstępnie ocenić, czy da się zrealizować jego pierwszą wersję w tym modelu.\n\nNie musisz znać technicznych pojęć ani mieć wszystkiego dokładnie przemyślanego.",
+      "Tak. Pierwsza rozmowa trwa około 20 minut, jest bezpłatna i do niczego Cię nie zobowiązuje.\n\nOpowiesz mi o pomyśle, a ja powiem, czy widzę możliwość zbudowania pierwszej wersji w tym modelu.",
   },
 ]
