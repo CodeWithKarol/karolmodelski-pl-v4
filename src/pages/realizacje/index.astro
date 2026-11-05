@@ -15,7 +15,7 @@ const metaTitle = "Realizacje aplikacji internetowych | Karol Modelski"
 const metaDescription =
   "Zobacz moje realizacje aplikacji internetowych. Poznaj historię Numerabble — od pomysłu sprzed prawie 30 lat do pierwszej działającej gry i testów."
 
-const consultationUrl = "https://calendly.com/kontakt-karolmodelski/konsultacja"
+const consultationUrl = "/rozmowa/"
 
 const numerabbleTags = [
   "Gra matematyczna",
@@ -477,8 +477,6 @@ const jsonLd = [
             <div class="mt-8">
               <a
                 href={consultationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 class={cn(
                   buttonVariants({ size: "lg" }),
                   "h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-6 py-3 text-center text-base text-balance whitespace-normal text-ink hover:bg-paper/85 sm:w-auto sm:py-0 sm:whitespace-nowrap"
@@ -491,6 +489,16 @@ const jsonLd = [
               <p class="mt-4 text-sm leading-relaxed text-paper/55">
                 Bezpłatna rozmowa · 20 minut · Bez zobowiązań
               </p>
+
+              <a
+                href="/oferta/"
+                class="group mt-3 inline-flex min-h-11 flex-wrap items-center gap-x-1.5 text-sm leading-relaxed text-paper/55 transition-colors hover:text-paper"
+              >
+                <span>Chcesz najpierw poznać zakres i cenę?</span>
+                <span class="underline decoration-paper/25 underline-offset-4 transition-colors group-hover:decoration-signal">
+                  Poznaj ofertę.
+                </span>
+              </a>
             </div>
 
             <p class="mt-6 border-t border-paper/15 pt-5 text-sm leading-relaxed text-pretty text-paper/60">

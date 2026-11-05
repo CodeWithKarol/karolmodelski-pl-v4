@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { faq } from "@/data/faq"
+import { homeFaq } from "@/data/faq"
 
 export default function FaqAccordion() {
   return (
@@ -13,7 +13,7 @@ export default function FaqAccordion() {
       defaultValue={["faq-1"]}
       className="mt-12 border-t border-line"
     >
-      {faq.map(({ question, answer }, index) => {
+      {homeFaq.map(({ question, answer }, index) => {
         const number = index + 1
         return (
           <AccordionItem

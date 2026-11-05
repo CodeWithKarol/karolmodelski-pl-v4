@@ -255,7 +255,7 @@ Niekoniecznie.
 
 Wiele zależy od tego, jaką pierwszą wersję chcemy zbudować.
 
-W moim modelu współpracy przygotowanie pierwszej działającej wersji aplikacji w uzgodnionym zakresie kosztuje [29 500 zł brutto](/#rozliczenie).
+W moim modelu współpracy przygotowanie pierwszej działającej wersji aplikacji w uzgodnionym zakresie kosztuje [29 500 zł brutto](/oferta/).
 
 Zakładam 4 tygodnie prac nad pierwszą wersją, liczone od ustalonego startu, po doprecyzowaniu zakresu i otrzymaniu potrzebnych materiałów. Cały proces wraz z odbiorem i ewentualnymi poprawkami zajmuje zwykle 6–8 tygodni.
 

@@ -2,7 +2,7 @@
 import "@/styles/global.css"
 import { execSync } from "node:child_process"
 import { Font } from "astro:assets"
-import { faq } from "@/data/faq"
+import { homeFaq } from "@/data/faq"
 
 function getLastModified() {
   try {
@@ -182,7 +182,7 @@ const structuredData = noindex
               {
                 "@type": "FAQPage",
                 "@id": `${pageURL}#faq`,
-                mainEntity: faq.map(({ question, answer }) => ({
+                mainEntity: homeFaq.map(({ question, answer }) => ({
                   "@type": "Question",
                   name: question,
                   acceptedAnswer: {
