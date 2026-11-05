@@ -4,7 +4,10 @@
 
 Wszystkie ceny w PLN. Cena pakietu jest stała i podana z góry — bez rozliczania za godziny i bez ukrytych kosztów.
 
+Strona oferty: https://www.karolmodelski.pl/oferta/
+
 ## Konsultacja wstępna
+- Rezerwacja: https://www.karolmodelski.pl/rozmowa/
 - Cena: 0 zł (bezpłatna)
 - Czas: 20 minut
 - Zakres: omówienie pomysłu, wybór najważniejszych elementów na start, plan działania na 4 tygodnie

@@ -53,3 +53,6 @@ export const faq = [
       "Tak. Pierwsza rozmowa trwa około 20 minut, jest bezpłatna i do niczego Cię nie zobowiązuje.\n\nOpowiesz mi o pomyśle, a ja powiem, czy widzę możliwość zbudowania pierwszej wersji w tym modelu.",
   },
 ]
+
+/** Cztery pytania pokazywane na stronie głównej — reszta w /oferta#faq. */
+export const homeFaq = [faq[1], faq[2], faq[0], faq[7]]

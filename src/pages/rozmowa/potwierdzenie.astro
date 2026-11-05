@@ -1,0 +1,85 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header.astro"
+import SiteFooter from "@/components/site-footer.astro"
+import { ArrowRight, Check } from "lucide-react"
+
+const metaTitle = "Termin rozmowy zarezerwowany | Karol Modelski"
+const metaDescription =
+  "Dziękuję za umówienie spotkania. Potwierdzenie terminu i link do rozmowy otrzymasz e-mailem."
+---
+
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+  noindex
+  canonical={false}
+>
+  <SiteHeader variant="page" />
+
+  <main id="main">
+    <section class="bg-paper px-4 py-16 sm:px-6 sm:py-24">
+      <div class="mx-auto max-w-3xl">
+        <div class="rounded-2xl border border-line bg-surface-muted p-6 sm:p-10">
+          <p class="flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] text-signal-ink uppercase">
+            <span class="h-px w-5 bg-signal" aria-hidden="true" />
+            Potwierdzenie rezerwacji
+          </p>
+
+          <h1 class="mt-4 font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+            Termin rozmowy został zarezerwowany!
+          </h1>
+
+          <div class="mt-6 space-y-4 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+            <p>Dziękuję za umówienie spotkania.</p>
+            <p>
+              Na podany adres e-mail otrzymasz potwierdzenie terminu oraz link
+              do rozmowy.
+            </p>
+            <p>
+              Nie musisz przygotowywać dokumentacji ani szczegółowego opisu
+              technicznego.
+            </p>
+            <p>
+              Wystarczy, że zastanowisz się, co chcesz stworzyć, komu aplikacja
+              miałaby służyć i co jest w niej najważniejsze.
+            </p>
+            <p class="font-medium text-ink">Do usłyszenia!</p>
+            <p class="font-heading font-semibold text-ink">Karol Modelski</p>
+          </div>
+
+          <ul class="mt-8 space-y-3 border-t border-line pt-6">
+            <li class="flex items-start gap-3">
+              <Check
+                className="mt-0.5 size-4 shrink-0 text-signal"
+                aria-hidden="true"
+              />
+              <p class="text-sm leading-relaxed text-pretty text-ink-soft">
+                Spotkanie odbędzie się online i potrwa około 20 minut.
+              </p>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check
+                className="mt-0.5 size-4 shrink-0 text-signal"
+                aria-hidden="true"
+              />
+              <p class="text-sm leading-relaxed text-pretty text-ink-soft">
+                Jeśli potrzebujesz, możemy podpisać NDA przed rozmową.
+              </p>
+            </li>
+          </ul>
+
+          <a
+            href="/"
+            class="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+          >
+            Wróć na stronę główną
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</Layout>

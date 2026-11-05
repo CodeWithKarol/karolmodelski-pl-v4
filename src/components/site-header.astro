@@ -6,22 +6,25 @@ import { Menu } from "lucide-react"
 interface Props {
   /** "home" keeps in-page anchors, "page" prefixes them with "/" */
   variant?: "home" | "page"
-  current?: "wiedza" | "realizacje"
+  current?: "wiedza" | "realizacje" | "oferta"
 }
 
 const { variant = "page", current } = Astro.props
 
-const sections = [
-  { label: "Jak pracuję", hash: "#proces" },
-  { label: "Oferta", hash: "#oferta" },
-  { label: "FAQ", hash: "#faq" },
-]
-
 const hrefFor = (hash: string) => (variant === "home" ? hash : `/${hash}`)
 const homeHref = variant === "home" ? "#" : "/"
-const consultationUrl = "https://calendly.com/kontakt-karolmodelski/konsultacja"
+const consultationUrl = "/rozmowa/"
 
-const realizacjeHref = "/realizacje/"
+const navItems = [
+  { label: "Realizacje", href: "/realizacje/", current: "realizacje" },
+  { label: "Oferta", href: "/oferta/", current: "oferta" },
+  { label: "O mnie", href: hrefFor("#o-mnie") },
+  { label: "FAQ", href: hrefFor("#faq") },
+  { label: "Wiedza", href: "/wiedza/", current: "wiedza" },
+]
+
+const isCurrent = (item: (typeof navItems)[number]) =>
+  item.current !== undefined && current === item.current
 ---
 
 <header
@@ -55,34 +58,18 @@ const realizacjeHref = "/realizacje/"
       aria-label="Nawigacja główna"
       class="hidden items-center gap-6 text-sm text-ink-soft lg:flex"
     >
-      <a
-        href={realizacjeHref}
-        aria-current={current === "realizacje" ? "page" : undefined}
-        class:list={[
-          "inline-flex min-h-11 items-center transition-colors hover:text-ink",
-          { "is-active": current === "realizacje" },
-        ]}
-      >
-        Realizacje
-      </a>
-      {sections.map((section) => (
+      {navItems.map((item) => (
         <a
-          class="inline-flex min-h-11 items-center transition-colors hover:text-ink"
-          href={hrefFor(section.hash)}
+          href={item.href}
+          aria-current={isCurrent(item) ? "page" : undefined}
+          class:list={[
+            "inline-flex min-h-11 items-center transition-colors hover:text-ink",
+            { "is-active": isCurrent(item) },
+          ]}
         >
-          {section.label}
+          {item.label}
         </a>
       ))}
-      <a
-        href="/wiedza/"
-        aria-current={current === "wiedza" ? "page" : undefined}
-        class:list={[
-          "inline-flex min-h-11 items-center transition-colors hover:text-ink",
-          { "is-active": current === "wiedza" },
-        ]}
-      >
-        Wiedza
-      </a>
     </nav>
 
     <div class="flex items-center gap-2">
@@ -122,14 +109,12 @@ const realizacjeHref = "/realizacje/"
 
       <a
         href={consultationUrl}
-        target="_blank"
-        rel="noopener noreferrer"
         class={cn(
           buttonVariants({ size: "sm" }),
           "hidden h-11 rounded-[6px] px-4 text-sm sm:inline-flex"
         )}
       >
-        Umów bezpłatną rozmowę
+        Umów rozmowę
       </a>
 
       <details class="relative lg:hidden">
@@ -141,45 +126,27 @@ const realizacjeHref = "/realizacje/"
         </summary>
         <div class="absolute top-full right-0 mt-2 w-72 rounded-xl border border-line bg-paper p-2 shadow-lg">
           <nav aria-label="Nawigacja mobilna" class="flex flex-col">
-            <a
-              href={realizacjeHref}
-              aria-current={current === "realizacje" ? "page" : undefined}
-              class:list={[
-                "rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink",
-                { "is-active": current === "realizacje" },
-              ]}
-            >
-              Realizacje
-            </a>
-            {sections.map((section) => (
+            {navItems.map((item) => (
               <a
-                class="rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink"
-                href={hrefFor(section.hash)}
+                href={item.href}
+                aria-current={isCurrent(item) ? "page" : undefined}
+                class:list={[
+                  "rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink",
+                  { "is-active": isCurrent(item) },
+                ]}
               >
-                {section.label}
+                {item.label}
               </a>
             ))}
-            <a
-              href="/wiedza/"
-              aria-current={current === "wiedza" ? "page" : undefined}
-              class:list={[
-                "rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink",
-                { "is-active": current === "wiedza" },
-              ]}
-            >
-              Wiedza
-            </a>
           </nav>
           <a
             href={consultationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             class={cn(
               buttonVariants({ size: "sm" }),
               "mt-1 h-11 w-full rounded-[6px] text-sm"
             )}
           >
-            Umów bezpłatną rozmowę
+            Umów rozmowę
           </a>
         </div>
       </details>

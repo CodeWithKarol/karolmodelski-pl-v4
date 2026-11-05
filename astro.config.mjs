@@ -37,6 +37,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
+      filter: (page) => !page.includes("/rozmowa/potwierdzenie"),
       serialize(item) {
         item.lastmod = lastmod
         return item
