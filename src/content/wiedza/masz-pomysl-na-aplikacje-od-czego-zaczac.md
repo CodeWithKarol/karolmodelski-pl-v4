@@ -224,7 +224,8 @@ Poniżej możesz zobaczyć fragment jej działania.
   </video>
   <figcaption>
     Fragment pierwszej grywalnej wersji Numerabble. Nagranie z rzeczywistego
-    projektu.
+    projektu. Pełny opis zakresu i efektu znajdziesz w
+    [studium realizacji Numerabble](/realizacje/numerabble/).
   </figcaption>
 </figure>
 

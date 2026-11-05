@@ -58,31 +58,6 @@ const conversationSteps = [
   },
 ]
 
-interface ExampleStage {
-  label: string
-  title: string
-  description: string
-}
-
-const exampleStages: ExampleStage[] = [
-  {
-    label: "Pomysł",
-    title: "Wieloletnia wizja",
-    description: "Zasady gry, wygląd i pomysły na kolejne funkcje.",
-  },
-  {
-    label: "Zakres",
-    title: "Co zbudować najpierw",
-    description:
-      "Podstawowa rozgrywka z komputerem. Reszta trafia na kolejne etapy.",
-  },
-  {
-    label: "Efekt",
-    title: "Działająca wersja",
-    description: "Gra w przeglądarce: partia, zasady i pierwsze testy.",
-  },
-]
-
 const outcomeItems = [
   {
     title: "Sam wypróbujesz swój produkt",
@@ -383,10 +358,10 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                 Strona produktu gry Numerabble, zbudowana razem z pierwszą
                 wersją aplikacji.{" "}
                 <a
-                  href="#przyklad"
+                  href="/realizacje/numerabble/"
                   class="font-medium text-ink underline underline-offset-4 hover:no-underline"
                 >
-                  Zobacz rozgrywkę
+                  Poznaj historię tej realizacji
                 </a>
               </span>
             </figcaption>
@@ -503,68 +478,38 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              01 · Przykład z mojej pracy
+              01 · Przykład realizacji
             </p>
           </div>
 
           <div class="lg:col-span-9">
             <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl">
-              Przez prawie 30 lat rozwijał pomysł na własną grę. Dziś może w nią
-              zagrać.
+              Pomysł sprzed prawie 30 lat. Dziś można już w niego zagrać.
             </h2>
             <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Mój klient od wielu lat miał pomysł na grę matematyczną.
+              Mój klient przez wiele lat rozwijał pomysł na własną grę
+              matematyczną.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Wiedział, jakie powinny być jej zasady i jak mogłaby wyglądać.
-              Miał też wiele pomysłów na kolejne funkcje: rozgrywki online,
-              rankingi, turnieje i różne tryby gry.
+              Miał przemyślane zasady i mnóstwo pomysłów na kolejne możliwości:
+              rozgrywki online, rankingi, turnieje i różne tryby gry.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+              Tylko czy trzeba było budować to wszystko od razu?
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Problem polegał na tym, że zrealizowanie wszystkiego od razu
-              oznaczałoby znacznie większy projekt.
+              Zaproponowałem, żebyśmy zaczęli od podstaw.
             </p>
-            <p class="mt-6 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
-              Dlatego zaczęliśmy od jednego pytania:
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Najpierw stworzymy wersję, w której można zagrać z komputerem.
+              Udostępnimy ją przez przeglądarkę i zaczniemy sprawdzać, jak
+              ludzie z niej korzystają.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              I właśnie tak powstała pierwsza działająca wersja Numerabble.
             </p>
 
-            <div class="relative mt-6 border-t border-line pt-6">
-              <span
-                class="absolute -top-px left-0 h-px w-20 bg-signal"
-                aria-hidden="true"
-              />
-              <p class="max-w-3xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
-                Co musimy zbudować najpierw, żeby można było sprawdzić, czy sama
-                gra działa tak, jak powinna?
-              </p>
-            </div>
-
-            <ol class="mt-14 grid grid-cols-1 gap-8 border-t border-line pt-8 md:grid-cols-3 md:gap-10">
-              {exampleStages.map(({ label, title, description }, index) => (
-                <li>
-                  <div class="flex items-center justify-between gap-4">
-                    <span class="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-ink-soft uppercase">
-                      <span
-                        class="size-1.5 rounded-full bg-signal"
-                        aria-hidden="true"
-                      />
-                      {label}
-                    </span>
-                    <span class="font-mono text-xs text-ink-soft">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <h3 class="mt-4 font-heading text-lg leading-snug font-semibold text-balance sm:text-xl md:min-h-[3.5rem]">
-                    {title}
-                  </h3>
-                  <p class="mt-2 max-w-md text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                    {description}
-                  </p>
-                </li>
-              ))}
-            </ol>
-
-            <figure class="mt-14">
+            <figure class="mt-12">
               <div class="overflow-hidden rounded-2xl border border-line bg-ink shadow-[0_35px_80px_-55px_rgba(20,20,20,0.5)]">
                 <video
                   data-clip
@@ -582,8 +527,8 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
               </div>
               <figcaption class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <p class="max-w-xl text-sm leading-relaxed text-pretty text-ink-soft">
-                  Nagranie z pierwszej działającej wersji: rozgrywka z
-                  komputerem w przeglądarce.
+                  To prawdziwa gra, a nie wizualizacja pomysłu. Można ją
+                  uruchomić w przeglądarce i rozegrać partię.
                 </p>
                 <button
                   type="button"
@@ -606,37 +551,21 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
               </figcaption>
             </figure>
 
-            <div class="mt-12 border-t border-line pt-8">
-              <p class="max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Nie jest to jeszcze pełna realizacja wieloletniej wizji ani
-                potwierdzony sukces rynkowy.
+            <div class="mt-10 border-t border-line pt-8">
+              <a
+                href="/realizacje/numerabble/"
+                class={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+                )}
+              >
+                Zobacz, jak powstało Numerabble
+                <ArrowRight />
+              </a>
+              <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+                Poznaj całą historię: od pierwszych rozmów i ustalania zasad,
+                przez cztery tygodnie pracy, aż po pierwsze testy i poprawki.
               </p>
-              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Ale klient nie musi już wyłącznie opowiadać o swoim pomyśle.
-                Może go pokazać. Może w niego zagrać. Może sprawdzić reakcje
-                innych.
-              </p>
-              <p class="mt-6 max-w-2xl font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
-                I właśnie o to chodzi w pierwszej wersji produktu.
-              </p>
-
-              <div class="mt-8 flex flex-col items-start gap-4">
-                <a
-                  href="https://calendly.com/kontakt-karolmodelski/konsultacja"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class={cn(
-                    buttonVariants({ size: "lg" }),
-                    "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
-                  )}
-                >
-                  Sprawdźmy, od czego zacząć Twój projekt
-                  <ArrowRight />
-                </a>
-                <p class="text-sm leading-relaxed text-pretty text-ink-soft">
-                  Bezpłatna rozmowa · 20 minut · Bez zobowiązań
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -832,7 +761,7 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
     </section>
 
     <section
-      id="otrzymujesz"
+      id="oferta"
       class="border-t border-line bg-paper px-4 py-20 sm:px-6 sm:py-32"
     >
       <div class="mx-auto max-w-[75rem]">
@@ -1039,10 +968,10 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                 <li class="text-ink-soft">NIP 6112800950</li>
                 <li>
                   <a
-                    href="#przyklad"
+                    href="/realizacje/numerabble/"
                     class="font-medium text-ink underline underline-offset-4 hover:no-underline"
                   >
-                    Przykład realizacji — Numerabble
+                    Zobacz moją realizację Numerabble
                   </a>
                 </li>
               </ul>
