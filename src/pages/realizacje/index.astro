@@ -1,0 +1,586 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header.astro"
+import SiteFooter from "@/components/site-footer.astro"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { REALIZACJE_BASE_PATH, realizacjaPath } from "@/data/realizacje"
+import { ArrowRight, Check, Pause, Play } from "lucide-react"
+
+const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
+const pageURL = new URL(`${REALIZACJE_BASE_PATH}/`, siteURL).toString()
+const caseStudyURL = new URL(realizacjaPath("numerabble"), siteURL).toString()
+
+const metaTitle = "Realizacje aplikacji internetowych | Karol Modelski"
+const metaDescription =
+  "Zobacz moje realizacje aplikacji internetowych. Poznaj historię Numerabble — od pomysłu sprzed prawie 30 lat do pierwszej działającej gry i testów."
+
+const consultationUrl = "https://calendly.com/kontakt-karolmodelski/konsultacja"
+
+const numerabbleTags = [
+  "Gra matematyczna",
+  "Aplikacja przeglądarkowa",
+  "Pierwsza działająca wersja",
+]
+
+const projectResults = [
+  "Działająca gra matematyczna w przeglądarce.",
+  "Rozgrywka z przeciwnikiem komputerowym.",
+  "Mechanizm sprawdzania zasad i naliczania punktów.",
+  "Projekt wyglądu i obsługi gry.",
+  "Strona internetowa produktu.",
+  "Narzędzia do obserwowania zachowań graczy.",
+]
+
+const approach = [
+  {
+    title: "Najpierw musimy dobrze zrozumieć pomysł",
+    paragraphs: [
+      "Nie oczekuję od Ciebie gotowej dokumentacji technicznej.",
+      "Opowiadasz mi, co chcesz stworzyć i jak wyobrażasz sobie działanie aplikacji. Ja pomagam przełożyć to na konkretny plan.",
+    ],
+  },
+  {
+    title: "Nie budujemy wszystkiego tylko dlatego, że można",
+    paragraphs: [
+      "Podczas rozmów często pojawia się mnóstwo dodatkowych pomysłów.",
+      "I jasne, wiele z nich może mieć sens.",
+      "Tylko nie zawsze są potrzebne już na początku.",
+      "Dlatego wspólnie wybieramy to, co najważniejsze, a pozostałe funkcje zapisujemy do kolejnych etapów.",
+    ],
+  },
+  {
+    title: "Chcę, żebyś mógł zobaczyć prawdziwy efekt",
+    paragraphs: [
+      "Nie chodzi wyłącznie o zaprojektowanie ekranów.",
+      "Celem pierwszego etapu jest działający produkt, który można uruchomić, pokazać innym i zacząć testować.",
+    ],
+  },
+  {
+    title: "Testujemy i poprawiamy to, co rzeczywiście wymaga poprawy",
+    paragraphs: [
+      "Dopiero podczas korzystania z produktu wychodzą na jaw rzeczy, których wcześniej można było nie przewidzieć.",
+      "Dlatego ważne są testy, zbieranie uwag i podejmowanie kolejnych decyzji na podstawie tego, co faktycznie dzieje się w aplikacji.",
+    ],
+  },
+]
+
+const exampleTypes = [
+  "Narzędzie dla firm",
+  "Aplikacja ułatwiająca codzienną pracę",
+  "Platforma internetowa",
+  "Zupełnie nowe rozwiązanie",
+]
+
+const jsonLd = [
+  {
+    "@type": "ItemList",
+    "@id": `${pageURL}#realizacje`,
+    name: "Realizacje",
+    numberOfItems: 1,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Numerabble",
+        url: caseStudyURL,
+      },
+    ],
+  },
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${pageURL}#breadcrumb`,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Strona główna",
+        item: new URL("/", siteURL).toString(),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Realizacje",
+        item: pageURL,
+      },
+    ],
+  },
+]
+---
+
+<Layout title={metaTitle} description={metaDescription} jsonLd={jsonLd}>
+  <a
+    href="#main"
+    class="fixed top-4 left-4 z-50 -translate-y-24 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform focus:translate-y-0 focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:outline-none motion-reduce:transition-none"
+  >
+    Przejdź do treści
+  </a>
+
+  <SiteHeader variant="page" current="realizacje" />
+
+  <main id="main">
+    <section class="relative overflow-hidden bg-paper px-4 pt-16 pb-12 sm:px-6 sm:pt-24 sm:pb-16">
+      <div
+        aria-hidden="true"
+        class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
+      ></div>
+
+      <div class="mx-auto max-w-[75rem]">
+        <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
+          <span class="h-px w-8 bg-signal"></span>
+          Realizacje · Przykłady z praktyki
+        </p>
+
+        <h1 class="mt-6 max-w-5xl font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl">
+          Realizacje. Zobacz, jak pomysły zamieniają się w działające aplikacje.
+        </h1>
+
+        <div class="mt-8 grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-10">
+          <p class="text-lg leading-relaxed text-pretty text-ink sm:text-xl">
+            Nie chcę pokazywać Ci tylko ładnych projektów graficznych ani
+            opowiadać, co teoretycznie można zbudować.
+          </p>
+          <p class="text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+            Wolę pokazać Ci prawdziwy projekt. Od pomysłu, przez pierwsze
+            decyzje i programowanie, aż po działający produkt, który można
+            uruchomić i sprawdzić w praktyce.
+          </p>
+        </div>
+
+        <p class="mt-6 max-w-2xl border-t border-line pt-5 text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+          Bo moim zdaniem właśnie to najlepiej pokazuje, jak wygląda współpraca.
+        </p>
+
+        <a
+          href="#numerabble"
+          class="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+        >
+          Zobacz zrealizowany projekt
+          <ArrowRight className="size-4" aria-hidden="true" />
+        </a>
+      </div>
+    </section>
+
+    <section
+      id="numerabble"
+      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              01 · Zrealizowany projekt
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Numerabble — pomysł sprzed prawie 30 lat, w który dziś można już
+              zagrać
+            </h2>
+
+            <p class="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase">
+              {numerabbleTags.map((tag, index) => (
+                <>
+                  {index > 0 && (
+                    <span aria-hidden="true" class="hidden text-line sm:inline">
+                      ·
+                    </span>
+                  )}
+                  <span>{tag}</span>
+                </>
+              ))}
+            </p>
+
+            <p class="mt-8 max-w-2xl text-lg leading-relaxed text-pretty text-ink">
+              Mój klient przez prawie 30 lat rozwijał pomysł na własną grę
+              matematyczną.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Miał przemyślane zasady, pomysły na wygląd oraz całą listę
+              funkcji, które można byłoby dodać w przyszłości.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Rozgrywki online, rankingi, turnieje i rywalizacja z graczami z
+              różnych części świata.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+              Tylko czy rzeczywiście trzeba było budować to wszystko od razu?
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Zaproponowałem, żebyśmy zaczęli od podstaw.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Najpierw stworzymy wersję, w której będzie można zagrać z
+              komputerem, uruchomimy ją w przeglądarce i sprawdzimy, jak ludzie
+              z niej korzystają.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Tak powstała pierwsza grywalna wersja Numerabble.
+            </p>
+
+            <figure class="mt-10">
+              <div class="overflow-hidden rounded-2xl border border-line bg-paper shadow-[0_35px_80px_-55px_rgba(20,20,20,0.5)]">
+                <div class="flex items-center gap-2 border-b border-line px-4 py-3">
+                  <span
+                    class="size-2.5 rounded-full bg-signal/70"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="size-2.5 rounded-full bg-line"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="size-2.5 rounded-full bg-line"
+                    aria-hidden="true"
+                  ></span>
+                  <p class="ml-2 truncate font-mono text-[10px] tracking-[0.12em] text-ink-soft uppercase">
+                    Numerabble · przeglądarka
+                  </p>
+                </div>
+                <video
+                  data-clip
+                  class="block aspect-[4/3] w-full object-cover"
+                  src="/showcase/numerabble-gameplay.webm"
+                  poster="/showcase/numerabble-gameplay.webp"
+                  width="960"
+                  height="720"
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  aria-label="Rozgrywka w Numerabble — plansza, ułożone działanie i panel z żetonami"
+                ></video>
+              </div>
+              <figcaption class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p class="max-w-xl text-sm leading-relaxed text-pretty text-ink-soft">
+                  To nie jest makieta ani symulacja. To działająca gra, w którą
+                  można zagrać na komputerze lub telefonie.
+                </p>
+                <button
+                  type="button"
+                  data-clip-toggle
+                  data-state="playing"
+                  class="inline-flex shrink-0 items-center gap-2 self-start rounded-md border border-line px-3 py-1.5 font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase transition-colors hover:border-ink/25 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+                >
+                  <Pause
+                    data-clip-icon-pause
+                    className="size-3.5"
+                    aria-hidden="true"
+                  />
+                  <Play
+                    data-clip-icon-play
+                    className="size-3.5"
+                    aria-hidden="true"
+                  />
+                  <span data-clip-label>Wstrzymaj nagranie</span>
+                </button>
+              </figcaption>
+            </figure>
+
+            <h3 class="mt-12 font-heading text-xl font-semibold tracking-tight sm:text-2xl">
+              Co powstało w pierwszym etapie?
+            </h3>
+
+            <ul class="mt-6 grid grid-cols-1 gap-x-10 border-t border-line md:grid-cols-2">
+              {projectResults.map((item) => (
+                <li class="flex items-start gap-3 border-b border-line py-4">
+                  <Check
+                    className="mt-0.5 size-4 shrink-0 text-signal"
+                    aria-hidden="true"
+                  />
+                  <span class="text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <p class="mt-8 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+              <strong class="font-semibold">
+                4 tygodnie zaplanowanych prac nad pierwszą wersją.
+              </strong>
+              Następnie testy, odbiory i poprawki.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nie oznacza to, że powstała już cała aplikacja ze wszystkimi
+              planowanymi funkcjami.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Powstało coś, od czego można zacząć dalszy rozwój — prawdziwa,
+              działająca gra.
+            </p>
+
+            <div class="mt-10 border-t border-line pt-8">
+              <a
+                href={realizacjaPath("numerabble")}
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+                )}
+              >
+                Poznaj całą historię Numerabble
+                <ArrowRight />
+              </a>
+              <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+                Przeczytaj, jak wyglądała nasza współpraca: od pierwszych
+                rozmów, przez ustalanie zasad i budowę gry, aż po pierwsze testy
+                i kolejne poprawki.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="podejscie"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              02 · Moje podejście
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Co łączy moje podejście do realizacji aplikacji?
+            </h2>
+            <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft">
+              Każdy pomysł jest inny. Ale jest kilka rzeczy, których staram się
+              trzymać niezależnie od projektu.
+            </p>
+
+            <ol class="mt-10 grid grid-cols-1 gap-x-10 md:grid-cols-2">
+              {approach.map(({ title, paragraphs }, index) => (
+                <li class="border-t border-line py-6 md:py-8">
+                  <span class="font-mono text-xs tracking-[0.16em] text-signal-ink">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 class="mt-2 font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
+                    {title}
+                  </h3>
+                  <div class="mt-3 space-y-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                    {paragraphs.map((paragraph) => (
+                      <p>{paragraph}</p>
+                    ))}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="nie-tylko-gry"
+      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              03 · Nie tylko gry
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              A jeśli Twój pomysł jest zupełnie inny?
+            </h2>
+
+            <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink">
+              Numerabble to gra matematyczna. Ale nie oznacza to, że zajmuję się
+              wyłącznie tworzeniem gier.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Pomagam osobom, które chcą zamienić swój pomysł na aplikację
+              internetową w pierwszą działającą wersję.
+            </p>
+
+            <ul class="mt-8 flex max-w-2xl flex-wrap gap-2">
+              {exampleTypes.map((type) => (
+                <li class="rounded-full border border-line px-3 py-1.5 text-sm leading-snug text-ink-soft">
+                  {type}
+                </li>
+              ))}
+            </ul>
+
+            <p class="mt-6 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Najważniejsze, żebyśmy potrafili określić, co powinno działać na
+              początku.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nie każdy projekt zmieści się w czterech tygodniach ani w
+              standardowym pakiecie. Dlatego przed rozpoczęciem współpracy
+              sprawdzamy zakres i możliwości realizacji.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="kontakt"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="on-ink relative overflow-hidden rounded-2xl bg-ink px-6 py-10 text-paper sm:px-10 sm:py-12">
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute -top-32 -right-24 size-80 rounded-full bg-signal/20 blur-3xl"
+          ></span>
+
+          <div class="relative max-w-2xl">
+            <p class="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-paper/60 uppercase">
+              <span class="h-px w-5 bg-signal" aria-hidden="true" />
+              04 · Twój projekt
+            </p>
+            <h2 class="mt-4 font-heading text-2xl leading-tight font-semibold tracking-tight text-balance sm:text-3xl">
+              Masz pomysł na własną aplikację?
+            </h2>
+
+            <div class="mt-4 space-y-3 text-base leading-relaxed text-pretty text-paper/75 sm:text-lg">
+              <p>Być może nosisz go w głowie już od jakiegoś czasu.</p>
+              <p>
+                Wiesz, co chcesz stworzyć, ale nie masz pewności, od czego
+                zacząć, komu powierzyć realizację ani ile to wszystko powinno
+                kosztować.
+              </p>
+              <p>
+                Nie musisz znać odpowiedzi na te pytania, zanim się odezwiesz.
+              </p>
+              <p>
+                Podczas bezpłatnej rozmowy przyjrzymy się Twojemu pomysłowi,
+                zastanowimy się nad najważniejszą funkcją i sprawdzimy, czy
+                możemy zacząć od pierwszej działającej wersji.
+              </p>
+              <p>
+                Jeśli projekt wymaga innego podejścia, powiem Ci o tym wprost.
+              </p>
+            </div>
+
+            <div class="mt-8">
+              <a
+                href={consultationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-6 py-3 text-center text-base text-balance whitespace-normal text-ink hover:bg-paper/85 sm:w-auto sm:py-0 sm:whitespace-nowrap"
+                )}
+              >
+                Porozmawiajmy o Twoim pomyśle
+                <ArrowRight />
+              </a>
+
+              <p class="mt-4 text-sm leading-relaxed text-paper/55">
+                Bezpłatna rozmowa · 20 minut · Bez zobowiązań
+              </p>
+            </div>
+
+            <p class="mt-6 border-t border-paper/15 pt-5 text-sm leading-relaxed text-pretty text-paper/60">
+              Jeżeli przed rozmową chcesz zabezpieczyć szczegóły swojego
+              pomysłu, możemy najpierw podpisać umowę o poufności.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+
+  <script is:inline>
+    ;(() => {
+      const clips = Array.prototype.slice.call(
+        document.querySelectorAll("main video[data-clip]")
+      )
+      if (!clips.length) return
+
+      const btn = document.querySelector("[data-clip-toggle]")
+      const label = btn ? btn.querySelector("[data-clip-label]") : null
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)")
+      let enabled = !reduce.matches
+
+      const render = () => {
+        if (!btn) return
+        btn.dataset.state = enabled ? "playing" : "paused"
+        if (label) {
+          label.textContent = enabled
+            ? "Wstrzymaj nagranie"
+            : "Odtwórz nagranie"
+        }
+      }
+
+      const sync = () => {
+        clips.forEach((clip) => {
+          const shouldPlay =
+            enabled && clip.dataset.inView === "true" && !document.hidden
+          if (shouldPlay) {
+            if (clip.paused) {
+              const p = clip.play()
+              if (p && p.catch) p.catch(() => {})
+            }
+          } else if (!clip.paused) {
+            clip.pause()
+          }
+        })
+      }
+
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              entry.target.dataset.inView = entry.isIntersecting
+                ? "true"
+                : "false"
+            })
+            sync()
+          },
+          { threshold: 0.35 }
+        )
+        clips.forEach((clip) => io.observe(clip))
+      } else {
+        clips.forEach((clip) => {
+          clip.dataset.inView = "true"
+        })
+      }
+
+      document.addEventListener("visibilitychange", sync)
+
+      if (btn) {
+        btn.addEventListener("click", () => {
+          enabled = !enabled
+          render()
+          sync()
+        })
+      }
+
+      if (reduce.addEventListener) {
+        reduce.addEventListener("change", (event) => {
+          enabled = !event.matches
+          render()
+          sync()
+        })
+      }
+
+      render()
+      sync()
+    })()
+  </script>
+</Layout>

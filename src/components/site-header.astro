@@ -6,23 +6,22 @@ import { Menu } from "lucide-react"
 interface Props {
   /** "home" keeps in-page anchors, "page" prefixes them with "/" */
   variant?: "home" | "page"
-  current?: "wiedza"
+  current?: "wiedza" | "realizacje"
 }
 
 const { variant = "page", current } = Astro.props
 
 const sections = [
-  { label: "Przykład", hash: "#przyklad" },
-  { label: "Problem", hash: "#problemy" },
-  { label: "O mnie", hash: "#o-mnie" },
-  { label: "Proces", hash: "#proces" },
-  { label: "Cena", hash: "#rozliczenie" },
+  { label: "Jak pracuję", hash: "#proces" },
+  { label: "Oferta", hash: "#oferta" },
   { label: "FAQ", hash: "#faq" },
 ]
 
 const hrefFor = (hash: string) => (variant === "home" ? hash : `/${hash}`)
 const homeHref = variant === "home" ? "#" : "/"
 const consultationUrl = "https://calendly.com/kontakt-karolmodelski/konsultacja"
+
+const realizacjeHref = "/realizacje/"
 ---
 
 <header
@@ -56,6 +55,16 @@ const consultationUrl = "https://calendly.com/kontakt-karolmodelski/konsultacja"
       aria-label="Nawigacja główna"
       class="hidden items-center gap-6 text-sm text-ink-soft lg:flex"
     >
+      <a
+        href={realizacjeHref}
+        aria-current={current === "realizacje" ? "page" : undefined}
+        class:list={[
+          "inline-flex min-h-11 items-center transition-colors hover:text-ink",
+          { "is-active": current === "realizacje" },
+        ]}
+      >
+        Realizacje
+      </a>
       {sections.map((section) => (
         <a
           class="inline-flex min-h-11 items-center transition-colors hover:text-ink"
@@ -132,6 +141,16 @@ const consultationUrl = "https://calendly.com/kontakt-karolmodelski/konsultacja"
         </summary>
         <div class="absolute top-full right-0 mt-2 w-72 rounded-xl border border-line bg-paper p-2 shadow-lg">
           <nav aria-label="Nawigacja mobilna" class="flex flex-col">
+            <a
+              href={realizacjeHref}
+              aria-current={current === "realizacje" ? "page" : undefined}
+              class:list={[
+                "rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink",
+                { "is-active": current === "realizacje" },
+              ]}
+            >
+              Realizacje
+            </a>
             {sections.map((section) => (
               <a
                 class="rounded-lg px-3 py-3 text-sm text-ink-soft hover:bg-secondary hover:text-ink"

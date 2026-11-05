@@ -48,35 +48,29 @@ Czas liczy się od wspólnego ustalenia zakresu i skompletowania materiałów or
 
 ---
 
-## 01 · Przykład z mojej pracy (#przyklad)
+## 01 · Przykład realizacji (#przyklad)
 
-### Przez prawie 30 lat rozwijał pomysł na własną grę. Dziś może w nią zagrać.
+### Pomysł sprzed prawie 30 lat. Dziś można już w niego zagrać.
 
-Mój klient od wielu lat miał pomysł na grę matematyczną.
+Mój klient przez wiele lat rozwijał pomysł na własną grę matematyczną.
 
-Wiedział, jakie powinny być jej zasady i jak mogłaby wyglądać. Miał też wiele pomysłów na kolejne funkcje: rozgrywki online, rankingi, turnieje i różne tryby gry.
+Miał przemyślane zasady i mnóstwo pomysłów na kolejne możliwości: rozgrywki online, rankingi, turnieje i różne tryby gry.
 
-Problem polegał na tym, że zrealizowanie wszystkiego od razu oznaczałoby znacznie większy projekt.
+Tylko czy trzeba było budować to wszystko od razu?
 
-Dlatego zaczęliśmy od jednego pytania:
+Zaproponowałem, żebyśmy zaczęli od podstaw.
 
-**Co musimy zbudować najpierw, żeby można było sprawdzić, czy sama gra działa tak, jak powinna?**
+Najpierw stworzymy wersję, w której można zagrać z komputerem. Udostępnimy ją przez przeglądarkę i zaczniemy sprawdzać, jak ludzie z niej korzystają.
 
-1. **Pomysł — wieloletnia wizja** — Zasady gry, wygląd i pomysły na kolejne funkcje.
-2. **Zakres — co zbudować najpierw** — Podstawowa rozgrywka z komputerem. Reszta trafia na kolejne etapy.
-3. **Efekt — działająca wersja** — Gra w przeglądarce: partia, zasady i pierwsze testy.
+I właśnie tak powstała pierwsza działająca wersja Numerabble.
 
-Najważniejszym elementem wizualnym sekcji jest duże nagranie z pierwszej działającej wersji: rozgrywka z komputerem w przeglądarce.
+Sekcja pokazuje duże nagranie rzeczywistej rozgrywki.
 
-Nie jest to jeszcze pełna realizacja wieloletniej wizji ani potwierdzony sukces rynkowy.
+**To prawdziwa gra, a nie wizualizacja pomysłu.** Można ją uruchomić w przeglądarce i rozegrać partię.
 
-Ale klient nie musi już wyłącznie opowiadać o swoim pomyśle. Może go pokazać. Może w niego zagrać. Może sprawdzić reakcje innych.
+**Wezwanie do działania:** Zobacz, jak powstało Numerabble → https://www.karolmodelski.pl/realizacje/numerabble/
 
-**I właśnie o to chodzi w pierwszej wersji produktu.**
-
-**Wezwanie do działania:** Sprawdźmy, od czego zacząć Twój projekt → https://calendly.com/kontakt-karolmodelski/konsultacja
-
-Bezpłatna rozmowa · 20 minut · Bez zobowiązań.
+Poznaj całą historię: od pierwszych rozmów i ustalania zasad, przez cztery tygodnie pracy, aż po pierwsze testy i poprawki.
 
 ---
 
@@ -139,7 +133,7 @@ Nie obiecuję, że pierwsza wersja od razu odniesie sukces na rynku.
 
 ---
 
-## 05 · Co otrzymujesz (#otrzymujesz)
+## 05 · Co otrzymujesz (#oferta)
 
 ### Co otrzymujesz za 29 500 zł brutto?
 
@@ -190,7 +184,7 @@ Dlatego nie zaczynam współpracy od pytania, ile funkcji możemy zbudować.
 
 Technologię i organizację pracy biorę na siebie. Ty pozostajesz osobą, która decyduje o kierunku rozwoju produktu.
 
-Dowody do sprawdzenia: profil LinkedIn, konto GitHub, wizytówka Google, NIP 6112800950 oraz przykład realizacji Numerabble (sekcja 02).
+Dowody do sprawdzenia: profil LinkedIn, konto GitHub, wizytówka Google, NIP 6112800950 oraz przykład realizacji Numerabble (sekcja 01, pełne studium: https://www.karolmodelski.pl/realizacje/numerabble/).
 
 ---
 
@@ -385,6 +379,18 @@ Jeżeli przed rozmową chcesz zabezpieczyć szczegóły swojego pomysłu, napisz
 
 ---
 
+
+## Realizacje
+
+Przegląd realizacji: https://www.karolmodelski.pl/realizacje/ — na razie jedna, szczegółowo opisana realizacja. Pełna historia Numerabble: https://www.karolmodelski.pl/realizacje/numerabble/
+
+### Numerabble — pierwsza grywalna wersja gry liczbowej
+
+Pomysłodawca rozwijał koncept gry matematycznej od prawie 30 lat. Wizja obejmowała rozgrywki z ludźmi przez internet, rankingi, turnieje, różne poziomy trudności, rywalizację ze sztuczną inteligencją i wykorzystanie gry w szkołach. Pierwszy etap zrealizowano w 4 tygodniach zaplanowanych prac: powstała plansza z polami premiowymi, mechanizm sprawdzania zasad i naliczania punktów, przeciwnik komputerowy, obsługa na komputerze i telefonie, strona produktu w wersji polskiej i angielskiej oraz narzędzia do obserwowania zachowań graczy. Po wdrożeniu poprawiono m.in. rozmiary elementów na telefonie, czytelność punktacji, logikę ruchów komputera i naliczanie bonusów. Konta graczy, rozgrywki online, rankingi, turnieje i dodatkowe poziomy trudności pozostały poza pierwszym zakresem. To nie pełna realizacja wizji ani potwierdzony sukces rynkowy — produkt można uruchomić, rozegrać partię i pokazać innym.
+
+Pełne studium realizacji: https://www.karolmodelski.pl/realizacje/numerabble/
+
+---
 
 ## Kontakt i profile
 

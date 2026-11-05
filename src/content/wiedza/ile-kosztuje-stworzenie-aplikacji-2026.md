@@ -319,6 +319,8 @@ Dlatego zaczęliśmy od podstawowej, grywalnej wersji dostępnej przez przegląd
 
 Takiej, na której można już sprawdzać mechanikę gry, testować zasady i zbierać pierwsze opinie.
 
+Pełny opis tego projektu — zakres pierwszej wersji, nagrania i dalsze kroki — znajdziesz w [studium realizacji Numerabble](/realizacje/numerabble/).
+
 To bardzo dobry przykład pokazujący, że nie musisz rezygnować ze swojej dużej wizji.
 
 Po prostu możesz podzielić jej realizację na mniejsze części.
