@@ -331,15 +331,15 @@ footer a:focus-visible {
   box-shadow: 0 1px 0 0 var(--line);
 }
 
-/* Przełącznik motywu */
-.dark .theme-sun {
+/* Przełącznik motywu: w trybie jasnym księżyc (przełącz na ciemny), w ciemnym słońce */
+.theme-sun {
   display: none;
 }
-.theme-moon {
-  display: none;
+.dark .theme-sun {
+  display: block;
 }
 .dark .theme-moon {
-  display: block;
+  display: none;
 }
 
 /* Przełącznik nagrań w sekcji „Przykład z mojej pracy” */

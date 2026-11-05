@@ -33,7 +33,7 @@ Bezpłatna rozmowa · 20 minut · Bez zobowiązań.
 
 29 500 zł brutto za uzgodniony pakiet · umowa o poufności (NDA) przed szczegółową rozmową.
 
-Na pierwszym ekranie znajduje się nagranie strony produktu gry Numerabble — widok przewijany na telefonie. To prawdziwa realizacja, nie makieta (szczegóły w sekcji 02).
+Na pierwszym ekranie znajduje się nagranie strony produktu gry Numerabble — widok przewijany na telefonie. To prawdziwa realizacja, nie makieta (szczegóły w sekcji 01).
 
 **Wolisz najpierw zabezpieczyć swój pomysł?** Rozumiem. Możemy podpisać umowę o poufności, zanim opowiesz mi o szczegółach swojego rozwiązania. Napisz w sprawie NDA: kontakt@karolmodelski.pl.
 
@@ -48,29 +48,7 @@ Czas liczy się od wspólnego ustalenia zakresu i skompletowania materiałów or
 
 ---
 
-## 01 · Problem (#problemy)
-
-### Masz pomysł na aplikację, ale nie wiesz, komu powierzyć jego realizację?
-
-Być może myślisz o niej od miesięcy. A może rozwijasz ten pomysł już od kilku lat.
-
-Wiesz, jak aplikacja powinna działać. Widzisz, komu mogłaby się przydać. Masz pomysły na funkcje, wygląd i możliwości dalszego rozwoju.
-
-Ale gdy próbujesz przejść do realizacji, pojawiają się pytania:
-
-1. Komu powierzyć pomysł, żeby ktoś naprawdę zrozumiał, co chcę stworzyć?
-2. Jak zabezpieczyć swoje rozwiązanie przed wykorzystaniem przez inne osoby?
-3. Czy potrzebuję całego zespołu i skąd mam wiedzieć, że dobrze wykonuje swoją pracę?
-4. Ile to naprawdę powinno kosztować i co dostanę za te pieniądze?
-5. Czy muszę od razu budować całą aplikację, czy można zacząć od czegoś mniejszego?
-
-Nie musisz znać odpowiedzi na wszystkie te pytania, zanim zaczniesz.
-
-**Właśnie od tego zaczniemy współpracę: uporządkujemy Twój pomysł i sprawdzimy, co warto zbudować w pierwszej kolejności.**
-
----
-
-## 02 · Przykład z mojej pracy (#przyklad)
+## 01 · Przykład z mojej pracy (#przyklad)
 
 ### Przez prawie 30 lat rozwijał pomysł na własną grę. Dziś może w nią zagrać.
 
@@ -99,6 +77,28 @@ Ale klient nie musi już wyłącznie opowiadać o swoim pomyśle. Może go pokaz
 **Wezwanie do działania:** Sprawdźmy, od czego zacząć Twój projekt → https://calendly.com/kontakt-karolmodelski/konsultacja
 
 Bezpłatna rozmowa · 20 minut · Bez zobowiązań.
+
+---
+
+## 02 · Problem (#problemy)
+
+### Masz pomysł na aplikację, ale nie wiesz, komu powierzyć jego realizację?
+
+Być może myślisz o niej od miesięcy. A może rozwijasz ten pomysł już od kilku lat.
+
+Wiesz, jak aplikacja powinna działać. Widzisz, komu mogłaby się przydać. Masz pomysły na funkcje, wygląd i możliwości dalszego rozwoju.
+
+Ale gdy próbujesz przejść do realizacji, pojawiają się pytania:
+
+1. Komu powierzyć pomysł, żeby ktoś naprawdę zrozumiał, co chcę stworzyć?
+2. Jak zabezpieczyć swoje rozwiązanie przed wykorzystaniem przez inne osoby?
+3. Czy potrzebuję całego zespołu i skąd mam wiedzieć, że dobrze wykonuje swoją pracę?
+4. Ile to naprawdę powinno kosztować i co dostanę za te pieniądze?
+5. Czy muszę od razu budować całą aplikację, czy można zacząć od czegoś mniejszego?
+
+Nie musisz znać odpowiedzi na wszystkie te pytania, zanim zaczniesz.
+
+**Właśnie od tego zaczniemy współpracę: uporządkujemy Twój pomysł i sprawdzimy, co warto zbudować w pierwszej kolejności.**
 
 ---
 
@@ -139,9 +139,40 @@ Nie obiecuję, że pierwsza wersja od razu odniesie sukces na rynku.
 
 ---
 
-## 05 · O mnie (#o-mnie)
+## 05 · Co otrzymujesz (#otrzymujesz)
 
-### Nie potrzebujesz kolejnej osoby, która tylko napisze kod. Potrzebujesz kogoś, kto pomoże Ci dobrze zacząć.
+### Co otrzymujesz za 29 500 zł brutto?
+
+Nie musisz osobno szukać programisty, projektanta i osoby, która dopilnuje całego projektu.
+
+Otrzymujesz uzgodniony pakiet obejmujący przygotowanie i realizację pierwszej działającej wersji aplikacji.
+
+**Pierwsza działająca wersja aplikacji — 29 500 zł brutto:**
+
+- Ustalenie zakresu i najważniejszych funkcji
+- Dwa kierunki wizualne aplikacji
+- Realizacja działającej pierwszej wersji
+- Wersja polska i angielska w uzgodnionym zakresie
+- Strona internetowa produktu
+- Podstawowa analityka użytkowników
+- Materiały do rozmów z partnerami i inwestorami
+- Plan kolejnych etapów rozwoju
+- Koordynacja całej realizacji technicznej
+- Przekazanie kodu i uzgodnionych praw autorskich
+
+Płacisz w trzech etapach. Zakres i cena są ustalane przed rozpoczęciem prac.
+
+Nie każda aplikacja kwalifikuje się do tego pakietu. Sprawdzamy to przed zawarciem umowy.
+
+**Masz pomysł i chcesz wiedzieć, czy zmieści się w tym pakiecie? Sprawdzimy to na bezpłatnej rozmowie.**
+
+**Wezwanie do działania:** Porozmawiajmy o Twoim projekcie → https://calendly.com/kontakt-karolmodelski/konsultacja
+
+---
+
+## 06 · O mnie (#o-mnie)
+
+### Masz pomysł na aplikację, ale nie musisz wiedzieć, jak ją zbudować. Od tego masz mnie.
 
 Cześć, jestem **Karol Modelski**.
 
@@ -163,7 +194,7 @@ Dowody do sprawdzenia: profil LinkedIn, konto GitHub, wizytówka Google, NIP 611
 
 ---
 
-## 06 · Jak pracujemy (#proces)
+## 07 · Jak pracujemy (#proces)
 
 ### Od rozmowy do pierwszej działającej wersji — krok po kroku.
 
@@ -190,51 +221,22 @@ Nie dokładamy automatycznie nowych funkcji do uzgodnionego zakresu, ponieważ m
 
 ---
 
-## 07 · Porównanie (#porownanie)
+## 08 · Bezpieczeństwo współpracy (#gwarancja)
 
-### Projekt graficzny, prototyp czy działająca aplikacja — jaka jest różnica?
+### Powierzasz mi swój pomysł i pieniądze. Dlatego od początku musisz wiedzieć, na czym stoisz.
 
-| Rozwiązanie | Co otrzymujesz | Do czego służy |
-| --- | --- | --- |
-| Projekt graficzny | Obrazy i widoki aplikacji | Zobaczenie, jak produkt może wyglądać |
-| Klikalny prototyp | Symulację przechodzenia między ekranami | Wstępne sprawdzenie układu i doświadczenia użytkownika |
-| Pierwsza działająca wersja | Funkcjonującą najważniejszą część produktu | Sprawdzenie podstawowego działania z użytkownikami |
-| Pełna aplikacja | Rozbudowany system z wieloma funkcjami | Realizacja szerszej, wcześniej określonej wizji |
+Zanim zaczniemy, ustalamy zakres prac, cenę, terminy i zasady przekazania gotowego produktu.
 
-Nie każdy pomysł trzeba od razu rozwijać do pełnej aplikacji.
+1. **Twój pomysł pozostaje poufny** — Możemy podpisać NDA jeszcze przed szczegółową rozmową.
+2. **Wiesz, za co płacisz** — Zakres i cena są zapisane w umowie.
+3. **Ustalamy konkretny termin** — Pierwsza działająca wersja powstaje w 4 tygodnie. Zasady odpowiedzialności za termin określa umowa.
+4. **Nie płacisz wszystkiego z góry** — Rozliczamy realizację w trzech etapach.
+5. **Możesz sprawdzać postępy** — Regularnie pokazuję efekty i omawiam z Tobą decyzje.
+6. **Masz czas na odbiór** — 10 dni roboczych na zgłoszenie niezgodności z ustalonym zakresem.
+7. **Otrzymujesz kod i uzgodnione prawa** — Po zakończeniu i rozliczeniu projektu, zgodnie z umową.
+8. **Masz trzy miesiące gwarancji technicznej** — Usuwamy niezgodności objęte gwarancją na zasadach zapisanych w umowie.
 
-Jeśli dopiero chcesz sprawdzić, czy najważniejsza część Twojego pomysłu działa tak, jak zakładasz, często warto zacząć od mniejszej wersji.
-
-**Właśnie w takim podejściu pomagam.**
-
----
-
-## 08 · Co otrzymujesz (#otrzymujesz)
-
-### Co otrzymujesz za 29 500 zł brutto?
-
-Nie musisz osobno szukać programisty, projektanta i osoby, która dopilnuje całego projektu.
-
-Za 29 500 zł brutto otrzymujesz uzgodniony pakiet obejmujący przygotowanie i realizację pierwszej działającej wersji aplikacji.
-
-**Pierwsza działająca wersja aplikacji — 29 500 zł brutto:**
-
-- Ustalenie zakresu i najważniejszych funkcji
-- Dwa kierunki wizualne aplikacji
-- Realizacja działającej pierwszej wersji
-- Wersja polska i angielska w uzgodnionym zakresie
-- Strona internetowa produktu
-- Podstawowa analityka użytkowników
-- Materiały do rozmów z partnerami i inwestorami
-- Plan kolejnych etapów rozwoju
-- Koordynacja całej realizacji technicznej
-- Przekazanie kodu i uzgodnionych praw autorskich
-
-Płacisz w trzech etapach. Zakres i cena są ustalane przed rozpoczęciem prac.
-
-Nie każda aplikacja kwalifikuje się do tego pakietu. Sprawdzamy to przed zawarciem umowy.
-
-**Wezwanie do działania:** Sprawdźmy, czy Twój projekt pasuje do pakietu → https://calendly.com/kontakt-karolmodelski/konsultacja
+Zasady korzystania z kodu i komponentów zewnętrznych oraz informacje o istotnych licencjach określa umowa.
 
 ---
 
@@ -268,7 +270,26 @@ To Ty decydujesz, czy i kiedy inwestować w rozwój aplikacji.
 
 ---
 
-## 10 · Dalszy rozwój (#rozwoj)
+## 10 · Porównanie (#porownanie)
+
+### Projekt graficzny, prototyp czy działająca aplikacja — jaka jest różnica?
+
+| Rozwiązanie | Co otrzymujesz | Do czego służy |
+| --- | --- | --- |
+| Projekt graficzny | Obrazy i widoki aplikacji | Zobaczenie, jak produkt może wyglądać |
+| Klikalny prototyp | Symulację przechodzenia między ekranami | Wstępne sprawdzenie układu i doświadczenia użytkownika |
+| Pierwsza działająca wersja | Funkcjonującą najważniejszą część produktu | Sprawdzenie podstawowego działania z użytkownikami |
+| Pełna aplikacja | Rozbudowany system z wieloma funkcjami | Realizacja szerszej, wcześniej określonej wizji |
+
+Nie każdy pomysł trzeba od razu rozwijać do pełnej aplikacji.
+
+Jeśli dopiero chcesz sprawdzić, czy najważniejsza część Twojego pomysłu działa tak, jak zakładasz, często warto zacząć od mniejszej wersji.
+
+**Właśnie w takim podejściu pomagam.**
+
+---
+
+## 11 · Dalszy rozwój (#rozwoj)
 
 ### Pierwsza wersja nie zamyka Twoich możliwości. Dopiero je otwiera.
 
@@ -278,26 +299,7 @@ Możesz rozbudować produkt o kolejne funkcje, rozwijać go z moją pomocą albo
 
 **Nie musisz dziś podejmować decyzji o kolejnych wydatkach.**
 
-Po zakończeniu projektu otrzymasz kod źródłowy i uzgodnione prawa do produktu. Będziesz mieć możliwość kontynuowania rozwoju na własnych zasadach.
-
----
-
-## 11 · Bezpieczeństwo współpracy (#gwarancja)
-
-### Powierzasz mi swój pomysł i pieniądze. Dlatego od początku musisz wiedzieć, na czym stoisz.
-
-Zanim zaczniemy, ustalamy zakres prac, cenę, terminy i zasady przekazania gotowego produktu.
-
-1. **Twój pomysł pozostaje poufny** — Możemy podpisać NDA jeszcze przed szczegółową rozmową.
-2. **Wiesz, za co płacisz** — Zakres i cena są zapisane w umowie.
-3. **Ustalamy konkretny termin** — Pierwsza działająca wersja powstaje w 4 tygodnie. Zasady odpowiedzialności za termin określa umowa.
-4. **Nie płacisz wszystkiego z góry** — Rozliczamy realizację w trzech etapach.
-5. **Możesz sprawdzać postępy** — Regularnie pokazuję efekty i omawiam z Tobą decyzje.
-6. **Masz czas na odbiór** — 10 dni roboczych na zgłoszenie niezgodności z ustalonym zakresem.
-7. **Otrzymujesz kod i uzgodnione prawa** — Po zakończeniu i rozliczeniu projektu, zgodnie z umową.
-8. **Masz trzy miesiące gwarancji technicznej** — Usuwamy niezgodności objęte gwarancją na zasadach zapisanych w umowie.
-
-Zasady korzystania z kodu i komponentów zewnętrznych oraz informacje o istotnych licencjach określa umowa.
+Kod i prawa do produktu przechodzą na Ciebie po rozliczeniu — dalszy rozwój prowadzisz na własnych zasadach.
 
 ---
 
@@ -359,23 +361,21 @@ Opowiesz mi o pomyśle, a ja powiem, czy widzę możliwość zbudowania pierwsze
 
 ## 13 · Kontakt (#kontakt)
 
-### Opowiedz mi o swoim pomyśle. Wspólnie sprawdzimy, od czego najlepiej zacząć.
+### Twój pomysł nie musi już pozostawać tylko pomysłem.
 
-Nie musisz wiedzieć, ile funkcji powinna mieć aplikacja, jakich technologii użyć ani jak zorganizować programistów.
+Porozmawiajmy o tym, co chcesz stworzyć. Pomogę Ci ustalić, od czego warto zacząć i sprawdzimy, czy pierwszą działającą wersję możemy przygotować w 4 tygodnie.
 
-Wystarczy, że opowiesz mi, co chcesz stworzyć.
-
-Podczas krótkiej rozmowy przyjrzymy się Twojemu pomysłowi i zastanowimy, czy możemy zacząć od pierwszej działającej wersji w 4 tygodnie.
+Nie potrzebujesz dokumentacji ani wiedzy technicznej. Wystarczy 20 minut rozmowy.
 
 **Jak wygląda rozmowa?**
 
-1. **Opowiesz mi o swoim pomyśle** — Własnymi słowami. Bez konieczności przygotowywania dokumentacji technicznej.
+1. **Powiesz mi, co chcesz stworzyć** — Własnymi słowami. Bez konieczności przygotowywania dokumentacji technicznej.
 2. **Porozmawiamy o najważniejszej funkcji** — Spróbujemy ustalić, od czego warto zacząć i co można zostawić na później.
-3. **Dowiesz się, jakie są możliwości** — Powiem Ci, czy widzę możliwość zbudowania pierwszej działającej wersji i poprowadzenia całej realizacji za 29 500 zł brutto, czy potrzebna będzie dokładniejsza analiza lub inny zakres.
+3. **Dowiesz się, jakie są możliwości** — Powiem Ci, czy widzę możliwość zbudowania pierwszej działającej wersji w tym modelu, czy potrzebna będzie dokładniejsza analiza lub inny zakres.
 
-**Umów bezpłatną, 20-minutową rozmowę:** https://calendly.com/kontakt-karolmodelski/konsultacja
+**Sprawdźmy możliwości realizacji Twojego pomysłu:** https://calendly.com/kontakt-karolmodelski/konsultacja
 
-Bez zobowiązań. Bez technicznego żargonu.
+Bezpłatna rozmowa. Bez zobowiązań.
 
 Wolisz napisać lub zadzwonić? kontakt@karolmodelski.pl · +48 664 598 563 (telefon i WhatsApp).
 
@@ -384,6 +384,7 @@ Ze względu na model partnerski realizuję maksymalnie jeden projekt w miesiącu
 Jeżeli przed rozmową chcesz zabezpieczyć szczegóły swojego pomysłu, napisz do mnie — możemy najpierw podpisać umowę o poufności.
 
 ---
+
 
 ## Kontakt i profile
 
