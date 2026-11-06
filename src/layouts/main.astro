@@ -336,7 +336,9 @@ const structuredData = noindex
               "main section[id] :is(h2,h3,figure,blockquote,dl,[data-reveal]), main section[id] :is(ol,ul) > li"
             ),
             function (el) {
-              return !el.closest("astro-island")
+              return (
+                !el.closest("astro-island") && !el.closest("[data-faq-toc]")
+              )
             }
           )
           if (

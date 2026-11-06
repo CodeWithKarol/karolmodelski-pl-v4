@@ -1011,15 +1011,37 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
 
             <FaqAccordion client:visible />
 
-            <p class="mt-6 text-sm leading-relaxed text-pretty text-ink-soft">
-              <a
-                href="/oferta/#faq"
-                class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-              >
-                Poznaj wszystkie szczegóły oferty i odpowiedzi na najczęstsze
-                pytania
-              </a>
-            </p>
+            <div class="mt-8 flex flex-col-reverse gap-5 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between sm:gap-10">
+              <div>
+                <a
+                  href="/faq/"
+                  class="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                >
+                  Zobacz wszystkie pytania i odpowiedzi
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </a>
+                <p class="mt-2 max-w-md text-sm leading-relaxed text-pretty text-ink-soft">
+                  Dowiedz się więcej o kosztach, etapach realizacji,
+                  bezpieczeństwie pomysłu i dalszym rozwoju aplikacji.
+                </p>
+              </div>
+
+              <div class="shrink-0">
+                <a
+                  href="/rozmowa/"
+                  class={cn(
+                    buttonVariants({ size: "lg" }),
+                    "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+                  )}
+                >
+                  Umów bezpłatną rozmowę
+                  <ArrowRight />
+                </a>
+                <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                  20 minut · Online · Bez zobowiązań
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

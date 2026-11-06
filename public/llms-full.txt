@@ -224,29 +224,31 @@ Pełne zasady współpracy: https://www.karolmodelski.pl/oferta/#bezpieczenstwo
 
 ## 09 · Najczęstsze pytania (#faq)
 
+Pełne FAQ z 29 pytaniami: https://www.karolmodelski.pl/faq/
+
 ### Masz wątpliwości? Prawdopodobnie ktoś już mnie o to zapytał.
 
 **Czy po czterech tygodniach dostanę coś, co naprawdę działa?**
-Tak. Otrzymujesz pierwszą działającą wersję aplikacji w uzgodnionym zakresie — możesz ją uruchomić w przeglądarce i sprawdzić najważniejszą funkcję.
+Tak. Celem czterech tygodni prac jest pierwsza działająca wersja aplikacji w uzgodnionym zakresie, którą możesz uruchomić w przeglądarce i samodzielnie sprawdzić.
 
-To nie makieta ani projekt do pokazania. Pełny odbiór z poprawkami zamyka się zwykle w 6–8 tygodniach.
+To nie tylko projekt graficzny. Cały proces, razem z odbiorem i wymaganymi poprawkami, trwa zwykle 6–8 tygodni.
 
 **Skąd mam wiedzieć, czy mój pomysł da się zrealizować za 29 500 zł?**
-Sprawdzamy to na pierwszej rozmowie. Najważniejsze jest to, czy najważniejszą funkcję da się zbudować i uruchomić w 4 tygodniach.
+Sprawdzimy to podczas pierwszej rozmowy.
 
-Jeśli projekt wymaga większego zakresu, powiem Ci o tym wprost, zanim podpiszemy umowę.
+Nie każdą aplikację da się zbudować za tę kwotę. Pomogę Ci jednak ustalić, czy można zacząć od mniejszej wersji z najważniejszymi funkcjami.
+
+Jeżeli projekt będzie wymagał większego zakresu, powiem Ci o tym przed rozpoczęciem prac.
 
 **Mam pomysł, ale boję się, że ktoś go wykorzysta. Czy możemy najpierw podpisać NDA?**
-Tak. Umowę o poufności możemy podpisać, zanim opowiesz mi o szczegółach swojego rozwiązania.
+Tak. Możemy podpisać umowę o zachowaniu poufności, zanim opowiesz mi o szczegółach rozwiązania.
 
-NDA określa obowiązki poufności i zasady odpowiedzialności, więc ryzyko nie znika całkowicie, ale szczegóły Twojego pomysłu są nim objęte.
+Nie musisz również ujawniać poufnych informacji w formularzu rezerwacji rozmowy.
 
 **Czy aplikację będzie można później rozwijać?**
-Tak. Po rozliczeniu projektu otrzymujesz kod źródłowy i uzgodnione prawa, więc możesz rozwijać produkt samodzielnie, ze mną albo z innym zespołem.
+Tak. Pierwsza wersja ma być podstawą do dalszego rozwoju.
 
-Czy da się dodać konkretną funkcję, zależy od technologii i architektury — sprawdzamy to przy planowaniu kolejnego etapu.
-
-Wszystkie pytania i szczegóły oferty: https://www.karolmodelski.pl/oferta/#faq
+Po zakończeniu i rozliczeniu projektu otrzymasz kod oraz uzgodnione prawa zgodnie z umową. Kolejne funkcje możesz realizować ze mną albo z innym wykonawcą, z uwzględnieniem odpowiednich licencji.
 
 ---
 

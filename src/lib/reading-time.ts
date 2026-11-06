@@ -8,7 +8,7 @@ export function countWords(text?: string) {
     .replace(/^\s*\|?[\s:|-]+\|[\s:|-]*\s*$/gm, " ")
     .replace(/\|/g, " ")
     .replace(/[*_`~]/g, "")
-    .replace(/^[#>\-]+\s*/gm, " ")
+    .replace(/^[#>-]+\s*/gm, " ")
     .trim()
     .split(/\s+/)
     .filter(Boolean).length
