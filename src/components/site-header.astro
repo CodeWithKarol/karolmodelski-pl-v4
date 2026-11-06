@@ -6,20 +6,19 @@ import { Menu } from "lucide-react"
 interface Props {
   /** "home" keeps in-page anchors, "page" prefixes them with "/" */
   variant?: "home" | "page"
-  current?: "wiedza" | "realizacje" | "oferta"
+  current?: "wiedza" | "realizacje" | "oferta" | "o-mnie" | "jak-pracuje"
 }
 
 const { variant = "page", current } = Astro.props
 
-const hrefFor = (hash: string) => (variant === "home" ? hash : `/${hash}`)
 const homeHref = variant === "home" ? "#" : "/"
 const consultationUrl = "/rozmowa/"
 
 const navItems = [
   { label: "Realizacje", href: "/realizacje/", current: "realizacje" },
   { label: "Oferta", href: "/oferta/", current: "oferta" },
-  { label: "O mnie", href: hrefFor("#o-mnie") },
-  { label: "FAQ", href: hrefFor("#faq") },
+  { label: "Jak pracuję", href: "/jak-pracuje/", current: "jak-pracuje" },
+  { label: "O mnie", href: "/o-mnie/", current: "o-mnie" },
   { label: "Wiedza", href: "/wiedza/", current: "wiedza" },
 ]
 
