@@ -52,7 +52,8 @@ NIP: 6112800950
 
 ## FAQ
 
-- [Najczęstsze pytania](https://www.karolmodelski.pl/#faq): Cztery najważniejsze pytania przed decyzją – czy po 4 tygodniach produkt naprawdę działa, czy pomysł da się zrealizować za 29 500 zł, NDA przed rozmową i dalszy rozwój aplikacji. Wszystkie szczegóły oferty i pozostałe odpowiedzi: https://www.karolmodelski.pl/oferta/#faq
+- [FAQ](https://www.karolmodelski.pl/faq/): 29 odpowiedzi na pytania o pomysł i MVP, cenę 29 500 zł, terminy, NDA, prawa autorskie, odbiór i dalszy rozwój aplikacji.
+- [Najczęstsze pytania](https://www.karolmodelski.pl/#faq): Cztery najważniejsze pytania przed decyzją – czy po 4 tygodniach produkt naprawdę działa, czy pomysł da się zrealizować za 29 500 zł, NDA przed rozmową i dalszy rozwój aplikacji. Pełne FAQ: https://www.karolmodelski.pl/faq/
 
 ## Wiedza
 

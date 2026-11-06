@@ -226,6 +226,17 @@ section[id] {
   scroll-margin-top: 5.5rem;
 }
 
+/* FAQ: kategorie muszą zmieścić się pod sticky chipsami na mobile */
+#spis section[id] {
+  scroll-margin-top: 9rem;
+}
+
+@media (min-width: 64rem) {
+  #spis section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
 /* Rozwijane bloki (details) */
 details[open] > summary .details-chevron {
   transform: rotate(180deg);
