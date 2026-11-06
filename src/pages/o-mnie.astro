@@ -1,0 +1,968 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header.astro"
+import SiteFooter from "@/components/site-footer.astro"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { ArrowRight, Check, Minus, Pause, Play } from "lucide-react"
+
+const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
+const pageURL = new URL("/o-mnie/", siteURL).toString()
+const siteRoot = new URL("/", siteURL).toString()
+
+const metaTitle =
+  "Karol Modelski – o mnie i moim doświadczeniu | Tworzenie aplikacji"
+const metaDescription =
+  "Poznaj Karola Modelskiego. Doświadczenie przy systemach dla banków i dużych firm, podejście do tworzenia aplikacji i przykład realizacji Numerabble."
+
+const consultationUrl = "/rozmowa/"
+
+const experienceQuestions = [
+  "Kto będzie z tego korzystał?",
+  "Co rzeczywiście musi działać?",
+  "Jak sprawdzimy, że efekt jest zgodny z ustaleniami?",
+  "Co się stanie, kiedy produkt trzeba będzie później rozwinąć?",
+]
+
+const experience = [
+  {
+    period: "2025 – obecnie",
+    company: "GFT Technologies",
+    role: "Senior Angular Developer",
+    description:
+      "Rozwój kluczowych rozwiązań dla sektora bankowego — skalowalne aplikacje webowe, architektura Nx Monorepo i narzędzia AI wspierające pracę zespołu.",
+    stack: "Angular · TypeScript · Nx · RxJS · React Native",
+  },
+  {
+    period: "2023 – 2025",
+    company: "Silent Eight",
+    role: "JavaScript Developer",
+    description:
+      "Architektura frontendowa platformy IRIS — systemu AI dla sektora finansowego do monitorowania transakcji i name screeningu.",
+    stack: "Angular · React · NgRx · RxJS · Jest · Cypress",
+  },
+  {
+    period: "2021 – 2023",
+    company: "BNP Paribas Bank Polska",
+    role: "Software Developer",
+    description:
+      "Współtworzenie platformy bankowości elektronicznej GOonline i modernizacja krytycznych systemów finansowych.",
+    stack: "Angular · AngularJS · TypeScript · NgRx · Nx",
+  },
+  {
+    period: "2019 – 2021",
+    company: "Amway",
+    role: "JavaScript Developer",
+    description:
+      "Rozwój platformy BOSS — systemu klasy enterprise dla Niezależnych Przedsiębiorców Amway.",
+    stack: "Angular · TypeScript · RxJS · Jasmine · Karma",
+  },
+]
+
+const collaborationSteps = [
+  {
+    label: "Ty",
+    title: "Opowiadasz, co chcesz stworzyć",
+    description:
+      "Nie potrzebuję na początku skomplikowanej dokumentacji. Ważniejsze jest zrozumienie Twojego pomysłu i tego, komu ma służyć aplikacja.",
+  },
+  {
+    label: "Razem",
+    title: "Ustalamy, od czego zacząć",
+    description:
+      "Rozmawiamy o możliwych rozwiązaniach i wybieramy te, które mają największy sens w pierwszym etapie.",
+  },
+  {
+    label: "Ja",
+    title: "Organizuję realizację i pokazuję postępy",
+    description:
+      "Nie chcę, żebyś przez kilka tygodni zastanawiał się, co dzieje się z projektem. Regularnie omawiamy efekty, pytania i decyzje.",
+  },
+  {
+    label: "Ty",
+    title: "Sprawdzasz, czy idziemy w dobrym kierunku",
+    description:
+      "Pokazujesz, co odpowiada, a co wymaga poprawy. Testujemy produkt i porównujemy rezultat z tym, na co się umówiliśmy.",
+  },
+]
+
+const clientQuestions = [
+  "A co właściwie znaczy prototyp?",
+  "Czy to już będzie działać, czy tylko będzie można poklikać po ekranach?",
+  "Skąd mam wiedzieć, że to jest dobrze zrobione?",
+  "Co będzie, jeżeli za miesiąc wpadnę na kolejny pomysł?",
+]
+
+const principles = [
+  {
+    title: "Jasne ustalenia",
+    description:
+      "Zanim rozpoczniemy prace, wiemy, co dokładnie ma powstać, w jakim terminie i za jaką kwotę. Nie chcę, żebyś po kilku tygodniach dowiadywał się, że inaczej rozumieliśmy zakres.",
+  },
+  {
+    title: "Normalna komunikacja",
+    description:
+      "Jeżeli coś jest niejasne, rozmawiamy o tym. Jeżeli pojawia się problem, nie udajemy, że go nie ma. A jeśli trzeba podjąć decyzję, wyjaśniam możliwości i konsekwencje.",
+  },
+  {
+    title: "Regularne pokazywanie efektów",
+    description:
+      "Chcę, żebyś widział, nad czym pracujemy. Dzięki temu oceniasz kierunek projektu na bieżąco, zamiast czekać do samego końca.",
+  },
+  {
+    title: "Rozsądne podejście do budżetu",
+    description:
+      "Nie uważam, że każdą funkcję trzeba budować od razu. Wolę wspólnie ustalić, co jest najważniejsze, a kolejne rzeczy rozwijać wtedy, kiedy będzie ku temu powód.",
+  },
+  {
+    title: "Odpowiedzialność za ustalony zakres",
+    description:
+      "Uzgadniamy warunki, harmonogram, sposób odbioru, zasady przekazania kodu oraz gwarancję techniczną. Znasz te zasady przed rozpoczęciem projektu, a nie dopiero wtedy, gdy pojawi się problem.",
+  },
+]
+
+const goodFit = [
+  "Masz pomysł na aplikację internetową, ale nie wiesz, jak przejść do jej realizacji.",
+  "Chcesz zbudować pierwszą działającą wersję, zamiast od razu inwestować w rozbudowany produkt.",
+  "Zależy Ci na współpracy z kimś, kto pomoże uporządkować zakres, wyjaśni techniczne kwestie i zajmie się koordynacją prac.",
+  "Jesteś gotowy poświęcić trochę czasu na wspólne ustalenia, podejmowanie decyzji i testowanie efektów.",
+]
+
+const badFit = [
+  "Potrzebujesz od razu bardzo rozbudowanego systemu z dziesiątkami funkcji, którego nie da się sensownie podzielić na mniejsze etapy.",
+  "Szukasz wyłącznie pojedynczego programisty do wykonania z góry określonych zadań, bez pomocy w organizacji projektu.",
+  "Oczekujesz gwarancji, że sama aplikacja odniesie sukces rynkowy.",
+]
+
+const profileLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/karol-modelski/",
+    description: "Zobacz moje doświadczenie zawodowe.",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/CodeWithKarol",
+    description: "Zobacz mój profil techniczny.",
+  },
+  {
+    label: "Wizytówka Google",
+    href: "https://g.page/r/CZSVfAGtTiIzEBM",
+    description: "Sprawdź dane firmy.",
+  },
+]
+
+const breadcrumbSchema = {
+  "@type": "BreadcrumbList",
+  "@id": `${pageURL}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Strona główna",
+      item: siteRoot,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "O mnie",
+      item: pageURL,
+    },
+  ],
+}
+---
+
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+  jsonLd={[breadcrumbSchema]}
+>
+  <a
+    href="#main"
+    class="fixed top-4 left-4 z-50 -translate-y-24 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform focus:translate-y-0 focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:outline-none motion-reduce:transition-none"
+  >
+    Przejdź do treści
+  </a>
+
+  <SiteHeader variant="page" current="o-mnie" />
+
+  <main id="main">
+    <section class="relative overflow-hidden bg-paper px-4 pt-8 pb-16 sm:px-6 sm:pt-10 sm:pb-24">
+      <div
+        aria-hidden="true"
+        class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
+      ></div>
+
+      <div class="relative mx-auto max-w-[75rem]">
+        <nav aria-label="Ścieżka nawigacji">
+          <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+            <li>
+              <a class="transition-colors hover:text-ink" href="/">
+                Strona główna
+              </a>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">O mnie</li>
+          </ol>
+        </nav>
+
+        <div class="mt-10 grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-12">
+          <div class="rise lg:col-span-7">
+            <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
+              <span class="h-px w-8 bg-signal"></span>O mnie · Karol Modelski
+            </p>
+
+            <h1 class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl">
+              Cześć, jestem Karol. Pomagam zamieniać pomysły na działające
+              aplikacje.
+            </h1>
+
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty font-medium text-ink sm:text-xl">
+              Nie musisz znać się na programowaniu, żeby stworzyć własny
+              produkt. Potrzebujesz kogoś, kto zrozumie Twój pomysł i pomoże Ci
+              przejść przez jego realizację.
+            </p>
+
+            <p class="mt-5 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nazywam się Karol Modelski. Od ponad 7 lat zajmuję się tworzeniem
+              oprogramowania. Pracowałem przy zaawansowanych systemach
+              informatycznych dla banków i dużych firm.
+            </p>
+            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Dziś wykorzystuję to doświadczenie, pomagając osobom, które mają
+              pomysł na własną aplikację, ale nie wiedzą, jak zabrać się za jej
+              stworzenie.
+            </p>
+            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nie oczekuję, że przyjdziesz do mnie z gotową dokumentacją, listą
+              technologii czy dokładnie rozpisanymi funkcjami. Wystarczy, że
+              opowiesz mi własnymi słowami, co chcesz zrobić.
+            </p>
+            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Pomogę Ci uporządkować ten pomysł, wybrać najważniejsze rzeczy i
+              zajmę się organizacją technicznej realizacji.
+            </p>
+
+            <div class="mt-8 flex flex-col items-start gap-4">
+              <a
+                href={consultationUrl}
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+                )}
+              >
+                Porozmawiajmy o Twoim pomyśle
+                <ArrowRight />
+              </a>
+              <p class="text-sm leading-relaxed text-pretty text-ink-soft">
+                Bezpłatna rozmowa · 20 minut · Bez zobowiązań
+              </p>
+            </div>
+          </div>
+
+          <figure
+            class="rise mx-auto w-full max-w-[21rem] lg:col-span-5"
+            style="animation-delay:.12s"
+          >
+            <div class="overflow-hidden rounded-2xl border border-line bg-paper shadow-[0_35px_80px_-55px_rgba(20,20,20,0.5)]">
+              <img
+                src="/karol-modelski.webp"
+                alt="Karol Modelski — twórca aplikacji i produktów cyfrowych"
+                width="1024"
+                height="1024"
+                loading="eager"
+                decoding="async"
+                class="aspect-[4/5] w-full object-cover object-center"
+              />
+            </div>
+            <figcaption class="mt-4">
+              <span class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+                Karol Modelski
+              </span>
+              <span class="mt-1 block text-sm leading-relaxed text-ink-soft">
+                Twórca aplikacji i produktów cyfrowych.
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="droga"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              01 · Moja droga
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Pracowałem przy dużych systemach. Dziś pomagam budować pierwsze
+              wersje nowych produktów.
+            </h2>
+
+            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Od ponad 7 lat zajmuję się tworzeniem oprogramowania. Pracowałem
+              przy systemach wykorzystywanych przez banki i duże organizacje. W
+              takich projektach szybko uczysz się, że samo napisanie kodu to nie
+              wszystko.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Trzeba jeszcze dobrze zrozumieć wymagania, przewidzieć możliwe
+              problemy, zadbać o jakość i dopilnować, żeby wszystkie elementy
+              współpracowały ze sobą tak, jak powinny. Czasem jedna pozornie
+              drobna zmiana potrafi mieć wpływ na wiele innych rzeczy.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Dlatego nauczyłem się patrzeć na oprogramowanie nie tylko od
+              strony technicznej, ale również od strony całego procesu.
+            </p>
+
+            <ul class="mt-8 grid max-w-2xl grid-cols-1 gap-x-10 gap-y-4 border-t border-line pt-6 sm:grid-cols-2">
+              {experienceQuestions.map((question) => (
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-2 h-px w-5 shrink-0 bg-signal"
+                    aria-hidden="true"
+                  />
+                  <span class="text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                    {question}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-10 max-w-2xl border-t border-line pt-8">
+              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+                Wybrane doświadczenie zawodowe
+              </h3>
+
+              <ol class="mt-6">
+                {experience.map(
+                  ({ period, company, role, description, stack }) => (
+                    <li class="grid grid-cols-1 gap-2 border-t border-line py-5 last:border-b sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-6">
+                      <p class="font-mono text-xs tracking-[0.12em] text-ink-soft uppercase">
+                        {period}
+                      </p>
+                      <div>
+                        <p class="font-heading text-base font-semibold text-ink sm:text-lg">
+                          {company}
+                        </p>
+                        <p class="text-sm text-ink-soft">{role}</p>
+                        <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                          {description}
+                        </p>
+                        <p class="mt-2 font-mono text-[10px] leading-relaxed tracking-[0.08em] text-ink-soft uppercase">
+                          {stack}
+                        </p>
+                      </div>
+                    </li>
+                  )
+                )}
+              </ol>
+            </div>
+
+            <p class="mt-8 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Dziś korzystam z tego doświadczenia, pracując z osobami, które
+              chcą stworzyć coś własnego. W takich projektach skala bywa
+              mniejsza, ale odpowiedzialność jest równie ważna.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+              Bo dla kogoś jego pierwszy pomysł na aplikację może być projektem,
+              o którym myśli od wielu lat. I dobrze to rozumiem.
+            </p>
+
+            <div class="mt-12 max-w-2xl border-t border-line pt-8">
+              <h3 class="font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-3xl">
+                Dlaczego nie zaczynam od programowania?
+              </h3>
+              <p class="mt-3 font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
+                Bo najpierw trzeba ustalić, co właściwie warto zbudować.
+              </p>
+
+              <p class="mt-5 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Wyobraź sobie, że przychodzisz do mnie z pomysłem na aplikację.
+                Masz w głowie jej wygląd, najważniejsze funkcje, a może nawet
+                plany rozwoju na kilka następnych lat.
+              </p>
+              <p class="mt-4 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Zaczynamy rozmawiać i okazuje się, że przydałoby się jeszcze
+                kilka rzeczy. Konta użytkowników. Powiadomienia. Płatności.
+                Statystyki. Dodatkowe wersje językowe.
+              </p>
+              <p class="mt-4 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                I jasne — wiele z tych pomysłów może mieć sens. Tylko czy
+                potrzebujemy wszystkiego już na początku?
+              </p>
+
+              <div class="relative mt-8 border-t border-line pt-6">
+                <span
+                  class="absolute -top-px left-0 h-px w-20 bg-signal"
+                  aria-hidden="true"
+                />
+                <p class="font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
+                  Co powinno działać w pierwszej kolejności, żeby można było
+                  pokazać produkt innym i sprawdzić go w praktyce?
+                </p>
+              </div>
+
+              <p class="mt-6 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Właśnie od tego zaczynam współpracę. Pomagam wybrać
+                najważniejszą funkcję i ustalić zakres pierwszej wersji. Dopiero
+                kiedy wiemy, co chcemy zbudować, przechodzimy do realizacji.
+              </p>
+              <p class="mt-4 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Nie chodzi o to, żeby pomniejszać Twoją wizję. Chodzi o to, żeby
+                nie wydawać pieniędzy na wszystkie jej elementy, zanim
+                sprawdzimy te najważniejsze.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="wspolpraca"
+      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              02 · Współpraca
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Ty znasz swój pomysł. Ja pomagam przełożyć go na konkretny plan i
+              dopilnować realizacji.
+            </h2>
+
+            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nie musisz rozumieć wszystkich technicznych szczegółów. Nie musisz
+              też samodzielnie szukać programistów, projektantów i zastanawiać
+              się, czy każdy z nich dobrze wykonuje swoją część pracy.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Biorę na siebie organizację prac i koordynację techniczną
+              projektu. Ale to nie oznacza, że podejmuję wszystkie decyzje za
+              Ciebie.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+              To nadal Twój produkt.
+            </p>
+
+            <ol class="mt-10 grid grid-cols-1 gap-x-10 md:grid-cols-2">
+              {collaborationSteps.map(
+                ({ label, title, description }, index) => (
+                  <li class="border-t border-line py-6">
+                    <div class="flex items-center justify-between gap-4">
+                      <span class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+                        {label}
+                      </span>
+                      <span class="font-mono text-xs text-ink-soft">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <h3 class="mt-3 font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
+                      {title}
+                    </h3>
+                    <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                      {description}
+                    </p>
+                  </li>
+                )
+              )}
+            </ol>
+
+            <p class="mt-6 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+              Jeśli pojawiają się nowe pomysły, wspólnie oceniamy, czy warto
+              realizować je teraz, czy zostawić na później.
+            </p>
+
+            <a
+              href="/jak-pracuje/"
+              class={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "mt-6 h-auto min-h-11 w-full gap-2 rounded-[6px] px-5 py-2.5 text-center text-sm text-balance whitespace-normal sm:w-auto sm:text-base"
+              )}
+            >
+              Zobacz, jak pracuję z klientami
+              <ArrowRight />
+            </a>
+
+            <a
+              href="/oferta/"
+              class="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+            >
+              Sprawdź zakres mojej oferty
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
+
+            <div class="mt-12 border-t border-line pt-8">
+              <h3 class="font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-3xl">
+                Nie chcę, żebyś musiał uczyć się programowania tylko po to, żeby
+                zrealizować swój pomysł.
+              </h3>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                W rozmowach z osobami, które po raz pierwszy tworzą aplikację,
+                często pojawiają się podobne pytania.
+              </p>
+
+              <ul class="mt-6 grid max-w-2xl grid-cols-1 gap-4 border-t border-line pt-6 md:grid-cols-2">
+                {clientQuestions.map((question) => (
+                  <li class="border-l-2 border-line pl-4 text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                    „{question}”
+                  </li>
+                ))}
+              </ul>
+
+              <p class="mt-6 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                To są bardzo rozsądne pytania. Nie zakładam, że każdy zna
+                różnicę między projektem graficznym, prototypem a działającą
+                aplikacją.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Jeżeli używam technicznego określenia, wolę je wyjaśnić na
+                prostym przykładzie. A jeżeli coś jest niejasne, możemy do tego
+                wrócić.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+                Moim zadaniem nie jest zasypywanie Cię technologią. Moim
+                zadaniem jest pomóc Ci zrozumieć, co robimy, dlaczego właśnie
+                tak i jaki będzie efekt.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="numerabble"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              03 · Przykład
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+              Numerabble
+            </p>
+            <h2 class="mt-3 font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Pomysł sprzed prawie 30 lat, który zamienił się w działającą grę.
+            </h2>
+
+            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Jeden z moich klientów przez wiele lat rozwijał pomysł na własną
+              grę matematyczną. Miał przemyślane zasady, wizję rozgrywki i sporo
+              pomysłów na funkcje, które chciałby kiedyś dodać.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Podczas naszych rozmów pojawiały się kolejne możliwości: rankingi,
+              turnieje, gra przez internet i różne sposoby rywalizacji. Tylko że
+              zbudowanie tego wszystkiego od razu oznaczałoby znacznie większy
+              projekt.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Zaproponowałem więc, żebyśmy najpierw skupili się na samej grze.
+              Przygotowaliśmy wersję, w której można rozegrać partię z
+              komputerem, uruchomić ją w przeglądarce i zacząć zbierać opinie.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Później przyszły testy. Pojawiały się błędy, poprawki i kolejne
+              pomysły. Ale najważniejsze było to, że nie rozmawialiśmy już tylko
+              o tym, jak aplikacja mogłaby kiedyś wyglądać. Mieliśmy działającą
+              grę, którą można było pokazać innym i sprawdzić w praktyce.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+              I właśnie tak lubię pracować — od konkretnego problemu do
+              konkretnego rezultatu.
+            </p>
+
+            <figure class="mt-10">
+              <div class="overflow-hidden rounded-2xl border border-line bg-paper shadow-[0_35px_80px_-55px_rgba(20,20,20,0.5)]">
+                <div class="flex items-center gap-2 border-b border-line px-4 py-3">
+                  <span
+                    class="size-2.5 rounded-full bg-signal/70"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="size-2.5 rounded-full bg-line"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="size-2.5 rounded-full bg-line"
+                    aria-hidden="true"
+                  ></span>
+                  <p class="ml-2 truncate font-mono text-[10px] tracking-[0.12em] text-ink-soft uppercase">
+                    Numerabble · przeglądarka
+                  </p>
+                </div>
+                <video
+                  data-clip
+                  class="block aspect-[4/3] w-full object-cover"
+                  src="/showcase/numerabble-gameplay.webm"
+                  poster="/showcase/numerabble-gameplay.webp"
+                  width="960"
+                  height="720"
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  aria-label="Fragment prawdziwej rozgrywki Numerabble — plansza, żetony i panel punktacji"
+                ></video>
+              </div>
+              <figcaption class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p class="max-w-xl text-sm leading-relaxed text-pretty text-ink-soft">
+                  Fragment prawdziwej rozgrywki. Nagranie z rzeczywistego
+                  projektu.
+                </p>
+                <button
+                  type="button"
+                  data-clip-toggle
+                  data-state="playing"
+                  class="inline-flex shrink-0 items-center gap-2 self-start rounded-md border border-line px-3 py-1.5 font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase transition-colors hover:border-ink/25 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+                >
+                  <Pause
+                    data-clip-icon-pause
+                    className="size-3.5"
+                    aria-hidden="true"
+                  />
+                  <Play
+                    data-clip-icon-play
+                    className="size-3.5"
+                    aria-hidden="true"
+                  />
+                  <span data-clip-label>Wstrzymaj nagranie</span>
+                </button>
+              </figcaption>
+            </figure>
+
+            <div class="mt-10 border-t border-line pt-8">
+              <a
+                href="/realizacje/numerabble/"
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+                )}
+              >
+                Zobacz całą historię Numerabble
+                <ArrowRight />
+              </a>
+              <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+                Od pierwszych rozmów i ustalania zasad aż po działającą grę,
+                testy i dalsze decyzje.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="zasady"
+      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              04 · Zasady i dopasowanie
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Co jest dla mnie ważne podczas współpracy?
+            </h2>
+
+            <ol class="mt-8 grid grid-cols-1 gap-x-10 md:grid-cols-2">
+              {principles.map(({ title, description }, index) => (
+                <li class="border-t border-line py-6">
+                  <span class="font-mono text-xs text-signal-ink">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 class="mt-2 font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
+                    {title}
+                  </h3>
+                  <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                    {description}
+                  </p>
+                </li>
+              ))}
+            </ol>
+
+            <div class="mt-12 border-t border-line pt-8">
+              <h3 class="font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-3xl">
+                Czy będę odpowiednią osobą do Twojego projektu?
+              </h3>
+
+              <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div class="flex h-full flex-col rounded-2xl border border-line bg-surface-muted p-5 sm:p-6">
+                  <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+                    Prawdopodobnie tak, jeśli...
+                  </p>
+                  <ul class="mt-4 border-t border-line">
+                    {goodFit.map((item) => (
+                      <li class="flex items-start gap-3 border-b border-line py-3">
+                        <Check
+                          className="mt-0.5 size-4 shrink-0 text-signal"
+                          aria-hidden="true"
+                        />
+                        <span class="text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="flex h-full flex-col rounded-2xl border border-line bg-surface-muted p-5 sm:p-6">
+                  <p class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase">
+                    A kiedy mogę nie być najlepszym wyborem?
+                  </p>
+                  <ul class="mt-4 border-t border-line">
+                    {badFit.map((item) => (
+                      <li class="flex items-start gap-3 border-b border-line py-3">
+                        <Minus
+                          className="mt-0.5 size-4 shrink-0 text-ink-soft"
+                          aria-hidden="true"
+                        />
+                        <span class="text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div class="mt-auto pt-4">
+                    <p class="border-t border-line pt-4 text-sm leading-relaxed text-pretty text-ink-soft">
+                      Tego ostatniego nikt rozsądnie nie powinien Ci obiecywać.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="mt-8 max-w-2xl border-l-2 border-signal pl-5 text-base leading-relaxed text-pretty text-ink sm:text-lg">
+                Mogę pomóc zbudować produkt i przygotować go do pierwszych
+                testów. Ale o tym, czy ludzie rzeczywiście będą chcieli z niego
+                korzystać, trzeba przekonać się w praktyce.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="profile"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              05 · Profile i kontakt
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Możesz sprawdzić, kim jestem i czym się zajmuję.
+            </h2>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nie musisz opierać się wyłącznie na tym, co napisałem na tej
+              stronie. Możesz zajrzeć do moich publicznych profili, zobaczyć
+              doświadczenie zawodowe i sprawdzić przykład wykonanej realizacji.
+            </p>
+
+            <ul class="mt-8 grid grid-cols-1 gap-4 border-t border-line pt-6 sm:grid-cols-3">
+              {profileLinks.map(({ label, href, description }) => (
+                <li>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="me noopener"
+                    class="group inline-flex flex-col gap-1 text-sm"
+                  >
+                    <span class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors group-hover:decoration-signal">
+                      {label}
+                    </span>
+                    <span class="text-xs leading-relaxed text-ink-soft">
+                      {description}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+              <a
+                href="/realizacje/"
+                class="inline-flex min-h-11 items-center gap-2 font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+              >
+                Zobacz realizacje
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </a>
+              <p class="font-mono text-xs text-ink-soft">NIP: 6112800950</p>
+            </div>
+
+            <div class="on-ink relative mt-10 overflow-hidden rounded-2xl bg-ink px-6 py-10 text-paper sm:px-10 sm:py-12">
+              <span
+                aria-hidden="true"
+                class="pointer-events-none absolute -top-32 -right-24 size-80 rounded-full bg-signal/20 blur-3xl"
+              ></span>
+
+              <div class="relative max-w-2xl">
+                <p class="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-paper/60 uppercase">
+                  <span class="h-px w-5 bg-signal" aria-hidden="true" />
+                  Porozmawiajmy
+                </p>
+                <h2 class="mt-4 font-heading text-2xl leading-tight font-semibold tracking-tight text-balance sm:text-3xl">
+                  Masz pomysł, o którym chciałbyś porozmawiać?
+                </h2>
+
+                <div class="mt-4 space-y-3 text-base leading-relaxed text-pretty text-paper/75 sm:text-lg">
+                  <p>
+                    Nie musisz na początku wiedzieć, jakich technologii użyć ani
+                    ilu specjalistów potrzeba do realizacji.
+                  </p>
+                  <p>
+                    Wystarczy, że opowiesz mi, co chcesz stworzyć. Podczas
+                    bezpłatnej, 20-minutowej rozmowy przyjrzymy się Twojemu
+                    pomysłowi, porozmawiamy o najważniejszej funkcji i
+                    sprawdzimy, czy możemy zacząć od pierwszej działającej
+                    wersji.
+                  </p>
+                  <p>
+                    Jeżeli zobaczę, że Twój projekt wymaga innego podejścia,
+                    również Ci o tym powiem. Bez zobowiązań i bez konieczności
+                    przygotowywania dokumentacji technicznej.
+                  </p>
+                </div>
+
+                <div class="mt-8">
+                  <a
+                    href={consultationUrl}
+                    class={cn(
+                      buttonVariants({ size: "lg" }),
+                      "h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-6 py-3 text-center text-base text-balance whitespace-normal text-ink hover:bg-paper/85 sm:w-auto sm:py-0 sm:whitespace-nowrap"
+                    )}
+                  >
+                    Porozmawiajmy o Twoim pomyśle
+                    <ArrowRight />
+                  </a>
+                  <p class="mt-4 text-sm leading-relaxed text-paper/55">
+                    Bezpłatnie · 20 minut · Online
+                  </p>
+                </div>
+
+                <p class="mt-6 border-t border-paper/15 pt-5 text-sm leading-relaxed text-pretty text-paper/60">
+                  A jeśli nie chcesz jeszcze ujawniać szczegółów swojego
+                  rozwiązania, możemy najpierw podpisać umowę o poufności.
+                </p>
+
+                <p class="mt-6 font-heading text-lg font-semibold text-paper">
+                  Do usłyszenia! Karol
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+
+  <script is:inline>
+    ;(() => {
+      const clips = Array.prototype.slice.call(
+        document.querySelectorAll("main video[data-clip]")
+      )
+      if (!clips.length) return
+
+      const btn = document.querySelector("[data-clip-toggle]")
+      const label = btn ? btn.querySelector("[data-clip-label]") : null
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)")
+      let enabled = !reduce.matches
+
+      const render = () => {
+        if (!btn) return
+        btn.dataset.state = enabled ? "playing" : "paused"
+        if (label) {
+          label.textContent = enabled
+            ? "Wstrzymaj nagranie"
+            : "Odtwórz nagranie"
+        }
+      }
+
+      const sync = () => {
+        clips.forEach((clip) => {
+          const shouldPlay =
+            enabled && clip.dataset.inView === "true" && !document.hidden
+          if (shouldPlay) {
+            if (clip.paused) {
+              const p = clip.play()
+              if (p && p.catch) p.catch(() => {})
+            }
+          } else if (!clip.paused) {
+            clip.pause()
+          }
+        })
+      }
+
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              entry.target.dataset.inView = entry.isIntersecting
+                ? "true"
+                : "false"
+            })
+            sync()
+          },
+          { threshold: 0.35 }
+        )
+        clips.forEach((clip) => io.observe(clip))
+      } else {
+        clips.forEach((clip) => {
+          clip.dataset.inView = "true"
+        })
+      }
+
+      document.addEventListener("visibilitychange", sync)
+
+      if (btn) {
+        btn.addEventListener("click", () => {
+          enabled = !enabled
+          render()
+          sync()
+        })
+      }
+
+      if (reduce.addEventListener) {
+        reduce.addEventListener("change", (event) => {
+          enabled = !event.matches
+          render()
+          sync()
+        })
+      }
+
+      render()
+      sync()
+    })()
+  </script>
+</Layout>

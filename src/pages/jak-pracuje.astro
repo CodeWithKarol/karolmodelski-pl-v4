@@ -1,0 +1,939 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header.astro"
+import SiteFooter from "@/components/site-footer.astro"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { processFaq, processTimeline } from "@/data/jak-pracuje"
+import { ArrowRight, Check, ChevronDown, Pause, Play } from "lucide-react"
+
+const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
+const pageURL = new URL("/jak-pracuje/", siteURL).toString()
+const siteRoot = new URL("/", siteURL).toString()
+
+const metaTitle =
+  "Jak wygląda tworzenie aplikacji krok po kroku? | Karol Modelski"
+const metaDescription =
+  "Poznaj proces tworzenia aplikacji: od pierwszej rozmowy i ustalenia zakresu, przez 4 tygodnie prac, aż po odbiór, poprawki i przekazanie produktu."
+
+const consultationUrl = "/rozmowa/"
+
+const summaryFacts = [
+  { label: "Pierwsza wersja", value: "4 tygodnie" },
+  { label: "Cały proces z odbiorem", value: "zwykle 6–8 tygodni" },
+  { label: "Standardowy pakiet", value: "29 500 zł brutto" },
+  { label: "Płatności", value: "40% / 40% / 20%" },
+]
+
+const firstStepQuestions = [
+  "Co Twoja aplikacja ma robić.",
+  "Kto ma z niej korzystać.",
+  "Co powinno działać w pierwszej kolejności.",
+]
+
+const scopeItems = [
+  "Najważniejsze funkcje pierwszej wersji.",
+  "To, jak użytkownik będzie korzystać z aplikacji.",
+  "Co dokładnie obejmuje realizacja.",
+  "Jakie pomysły zostawiamy na następne etapy.",
+  "Ile wyniesie koszt i jaki będzie harmonogram prac.",
+]
+
+const notNeeded = [
+  "Samodzielnie szukać programistów i projektantów.",
+  "Wybrać technologii, których nie znasz.",
+  "Rozdzielać pracy między specjalistów.",
+  "Codziennie sprawdzać, kto co zaprogramował.",
+  "Rozwiązywać problemów technicznych we własnym zakresie.",
+]
+
+const faqSchema = {
+  "@type": "FAQPage",
+  "@id": `${pageURL}#faq`,
+  mainEntity: processFaq.map(({ question, answer }) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: answer,
+    },
+  })),
+}
+
+const breadcrumbSchema = {
+  "@type": "BreadcrumbList",
+  "@id": `${pageURL}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Strona główna",
+      item: siteRoot,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Jak pracuję",
+      item: pageURL,
+    },
+  ],
+}
+---
+
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+  jsonLd={[faqSchema, breadcrumbSchema]}
+>
+  <a
+    href="#main"
+    class="fixed top-4 left-4 z-50 -translate-y-24 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform focus:translate-y-0 focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:outline-none motion-reduce:transition-none"
+  >
+    Przejdź do treści
+  </a>
+
+  <SiteHeader variant="page" current="jak-pracuje" />
+
+  <main id="main">
+    <section class="relative overflow-hidden bg-paper px-4 pt-8 pb-16 sm:px-6 sm:pt-10 sm:pb-24">
+      <div
+        aria-hidden="true"
+        class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
+      ></div>
+
+      <div class="relative mx-auto max-w-[75rem]">
+        <nav aria-label="Ścieżka nawigacji">
+          <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+            <li>
+              <a class="transition-colors hover:text-ink" href="/">
+                Strona główna
+              </a>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">Jak pracuję</li>
+          </ol>
+        </nav>
+
+        <div class="mt-10 grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-12">
+          <div class="rise lg:col-span-7">
+            <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
+              <span class="h-px w-8 bg-signal"></span>
+              Proces współpracy
+            </p>
+
+            <h1 class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl">
+              Masz pomysł na aplikację? Zobacz, jak przeprowadzę Cię przez jej
+              realizację.
+            </h1>
+
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
+              Od pierwszej rozmowy, przez wybór najważniejszych funkcji, aż po
+              działający produkt, który możesz uruchomić i pokazać innym.
+            </p>
+
+            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nie musisz wiedzieć, jak zaplanować programowanie, jakie
+              technologie wybrać ani ilu specjalistów będzie potrzebnych. Od
+              tego masz mnie.
+            </p>
+
+            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Ty opowiadasz mi, co chcesz stworzyć. Wspólnie ustalamy, od czego
+              warto zacząć. Następnie zajmuję się organizacją prac i
+              dopilnowaniem technicznej realizacji.
+            </p>
+
+            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Po drodze pokazuję Ci efekty, omawiamy ważne decyzje i sprawdzamy,
+              czy wszystko działa tak, jak ustaliliśmy.
+            </p>
+
+            <p class="mt-6 max-w-xl border-l-2 border-signal pl-4 text-sm leading-relaxed text-pretty font-medium text-ink sm:text-base">
+              4 tygodnie prac nad pierwszą działającą wersją. Zwykle 6–8 tygodni
+              całego procesu wraz z odbiorem i poprawkami.
+            </p>
+
+            <div class="mt-8 flex flex-col items-start gap-4">
+              <a
+                href={consultationUrl}
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+                )}
+              >
+                Porozmawiajmy o Twoim pomyśle
+                <ArrowRight />
+              </a>
+              <p class="text-sm leading-relaxed text-pretty text-ink-soft">
+                Bezpłatna rozmowa · 20 minut · Bez zobowiązań
+              </p>
+            </div>
+          </div>
+
+          <aside class="rise lg:col-span-5" style="animation-delay:.12s">
+            <div class="rounded-2xl border border-line bg-surface-muted p-6 sm:p-8 lg:sticky lg:top-24">
+              <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+                W skrócie
+              </p>
+
+              <dl class="mt-4 border-t border-line">
+                {summaryFacts.map(({ label, value }) => (
+                  <div class="border-b border-line py-3">
+                    <dt class="font-mono text-[10px] tracking-[0.12em] text-ink-soft uppercase">
+                      {label}
+                    </dt>
+                    <dd class="mt-1 font-heading text-base font-semibold text-ink sm:text-lg">
+                      {value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+
+              <a
+                href="/oferta/"
+                class="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+              >
+                Zobacz pełny zakres oferty
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="start"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              01 · Start
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Najpierw musimy dobrze zrozumieć Twój pomysł.
+            </h2>
+
+            <div
+              id="pierwsza-rozmowa"
+              class="mt-8 scroll-mt-24 border-t border-line pt-8"
+            >
+              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+                Poznajemy pomysł
+              </h3>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Zwykle wszystko zaczyna się od rozmowy. Opowiadasz mi o swoim
+                pomyśle, o tym, jak wyobrażasz sobie działanie aplikacji i komu
+                miałaby się przydać.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Nie musisz mówić językiem programistów. Możesz po prostu
+                powiedzieć: „Chciałbym, żeby użytkownik wszedł na stronę, zrobił
+                to i to, a potem zobaczył taki rezultat”. To już dobry początek.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Będę zadawał pytania, żeby upewnić się, że dobrze rozumiem Twoją
+                wizję. Możemy przyjrzeć się podobnym aplikacjom, szkicom,
+                notatkom albo przykładom, które pokażesz. Jeżeli nie masz
+                żadnych materiałów, również możemy zacząć.
+              </p>
+
+              <p class="mt-6 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+                Na koniec tego etapu chcemy wiedzieć trzy rzeczy:
+              </p>
+              <ul class="mt-4 max-w-2xl border-t border-line">
+                {firstStepQuestions.map((item) => (
+                  <li class="flex items-start gap-3 border-b border-line py-3">
+                    <Check
+                      className="mt-0.5 size-4 shrink-0 text-signal"
+                      aria-hidden="true"
+                    />
+                    <span class="text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+                Nie musimy jeszcze znać wszystkich funkcji, które aplikacja
+                mogłaby mieć za kilka lat. Na razie szukamy najlepszego
+                pierwszego kroku.
+              </p>
+            </div>
+
+            <div
+              id="ustalanie-zakresu"
+              class="mt-12 scroll-mt-24 border-t border-line pt-8"
+            >
+              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+                Ustalamy zakres
+              </h3>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Nie wszystko, co można dodać do aplikacji, trzeba budować od
+                razu. W trakcie pierwszych rozmów często okazuje się, że
+                pomysłów jest więcej, niż początkowo się wydawało.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Przydałyby się konta użytkowników. Może jeszcze płatności,
+                powiadomienia, statystyki i kilka dodatkowych ekranów? A gdyby w
+                przyszłości aplikacja działała również na telefonach jako osobny
+                program?
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                I jasne — wiele z tych rzeczy może mieć sens. Tylko każda
+                kolejna funkcja to dodatkowy czas, praca i pieniądze. Dlatego
+                wspólnie ustalamy, które elementy są naprawdę potrzebne na
+                początku, a które mogą spokojnie poczekać.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+                Nie chodzi o to, żeby budować jak najmniej za wszelką cenę.
+                Chodzi o stworzenie takiej pierwszej wersji, z której da się
+                rzeczywiście korzystać i która pozwoli sprawdzić najważniejsze
+                założenia Twojego pomysłu.
+              </p>
+
+              <p class="mt-6 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+                Na tym etapie ustalamy:
+              </p>
+              <ul class="mt-4 max-w-2xl border-t border-line">
+                {scopeItems.map((item) => (
+                  <li class="flex items-start gap-3 border-b border-line py-3">
+                    <Check
+                      className="mt-0.5 size-4 shrink-0 text-signal"
+                      aria-hidden="true"
+                    />
+                    <span class="text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+                Zapisujemy to w ustaleniach projektowych i umowie. Dzięki temu
+                obaj wiemy, co mamy zbudować, zanim rozpoczniemy programowanie.
+              </p>
+            </div>
+
+            <div class="mt-12 border-t border-line pt-8">
+              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+                Ustalamy warunki współpracy
+              </h3>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Chcę, żebyś wiedział, na co się umawiamy. Przed rozpoczęciem
+                prac omawiamy zakres projektu, termin, cenę, sposób płatności i
+                zasady odbioru.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Standardowy pakiet pierwszej działającej wersji aplikacji
+                kosztuje{" "}
+                <strong class="font-semibold text-ink">29 500 zł brutto</strong>
+                . Nie oznacza to jednak, że za tę kwotę da się zbudować dowolnie
+                rozbudowany produkt.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Najpierw sprawdzamy, czy Twój pomysł można rozsądnie podzielić
+                na etapy i czy uzgodniona pierwsza wersja mieści się w pakiecie.
+                Jeżeli projekt wymaga większej liczby funkcji, niestandardowych
+                integracji albo dodatkowych prac, powiem Ci o tym przed
+                rozpoczęciem realizacji.
+              </p>
+
+              <div class="mt-6 max-w-2xl rounded-xl border border-line bg-paper p-5 sm:p-6">
+                <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+                  Rozliczenie
+                </p>
+                <p class="mt-2 font-heading text-xl font-semibold text-ink sm:text-2xl">
+                  40% / 40% / 20%
+                </p>
+                <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                  Nie musisz wpłacać całej kwoty na samym początku. W umowie
+                  ustalamy również sposób sprawdzania rezultatów, zasady
+                  zgłaszania poprawek i przekazania produktu.
+                </p>
+                <a
+                  href="/oferta/"
+                  class="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                >
+                  Zobacz pełny zakres oferty i warunki współpracy
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </a>
+              </div>
+
+              <p class="mt-6 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+                A jeżeli zależy Ci na zabezpieczeniu pomysłu, możemy podpisać
+                umowę o poufności jeszcze przed szczegółową rozmową.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="harmonogram"
+      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              02 · Realizacja
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Jak będzie wyglądała realizacja?
+            </h2>
+            <p class="mt-4 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft">
+              Od ustaleń do działającego produktu — tydzień po tygodniu.
+            </p>
+
+            <ol class="mt-10">
+              {processTimeline.map(
+                ({ label, title, description, you, me, effect }, index) => (
+                  <li
+                    id={
+                      index === processTimeline.length - 1
+                        ? "odbior"
+                        : undefined
+                    }
+                    class="relative scroll-mt-24 border-t border-line py-8 last:border-b"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="absolute -top-[4.5px] left-0 size-2 rounded-full bg-signal ring-4 ring-paper"
+                    />
+                    <div class="grid grid-cols-1 gap-4 md:grid-cols-[8rem_minmax(0,1fr)] md:gap-10">
+                      <div class="flex items-baseline justify-between gap-4 md:block">
+                        <p class="font-mono text-xs tracking-[0.16em] text-signal-ink uppercase">
+                          {label}
+                        </p>
+                        <p class="font-mono text-xs text-ink-soft md:mt-2">
+                          {String(index + 1).padStart(2, "0")} / 05
+                        </p>
+                      </div>
+
+                      <div>
+                        <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+                          {title}
+                        </h3>
+                        <p class="mt-2 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                          {description}
+                        </p>
+
+                        <div class="mt-4 grid grid-cols-1 gap-4 border-t border-line pt-4 sm:grid-cols-2">
+                          <div>
+                            <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+                              Co robisz Ty
+                            </p>
+                            <p class="mt-1 text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                              {you}
+                            </p>
+                          </div>
+                          <div>
+                            <p class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase">
+                              Czym zajmuję się ja
+                            </p>
+                            <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                              {me}
+                            </p>
+                          </div>
+                        </div>
+
+                        <p class="mt-3 text-sm leading-relaxed text-pretty font-medium text-ink">
+                          Efekt: {effect}
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                )
+              )}
+            </ol>
+
+            <p class="mt-6 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+              Dokładny zakres i terminy ustalamy przed rozpoczęciem projektu.
+              Cztery tygodnie dotyczą prac nad pierwszą wersją; cały proces z
+              odbiorem i poprawkami trwa zwykle 6–8 tygodni.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="udzial"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              03 · Twój udział
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Twój udział, zmiany i gwarancja
+            </h2>
+
+            <div
+              id="twoj-czas"
+              class="mt-8 scroll-mt-24 rounded-2xl border border-line bg-paper p-6 sm:p-8"
+            >
+              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+                Ile czasu będę od Ciebie potrzebował?
+              </h3>
+              <p class="mt-3 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Nie musisz codziennie nadzorować programistów. Ale Twoje
+                zaangażowanie też jest ważne. Na początku potrzebuję przede
+                wszystkim Twojej wiedzy o pomyśle.
+              </p>
+
+              <dl class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <dt class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+                    Na początku
+                  </dt>
+                  <dd class="mt-1 font-heading text-2xl font-semibold text-ink">
+                    4–6 godzin
+                  </dd>
+                  <p class="mt-1 text-sm leading-relaxed text-ink-soft">
+                    na rozmowy i ustalenia
+                  </p>
+                </div>
+                <div>
+                  <dt class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+                    W trakcie realizacji
+                  </dt>
+                  <dd class="mt-1 font-heading text-2xl font-semibold text-ink">
+                    ok. 1 godzina
+                  </dd>
+                  <p class="mt-1 text-sm leading-relaxed text-ink-soft">
+                    tygodniowo na omówienie postępów i decyzje
+                  </p>
+                </div>
+              </dl>
+
+              <p class="mt-5 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+                Oczywiście są to wartości orientacyjne. Niektóre projekty
+                wymagają więcej rozmów i doprecyzowania.
+              </p>
+
+              <p class="mt-6 text-base leading-relaxed text-pretty font-medium text-ink">
+                Nie musisz jednak:
+              </p>
+              <ul class="mt-3 grid grid-cols-1 gap-x-8 border-t border-line sm:grid-cols-2">
+                {notNeeded.map((item) => (
+                  <li class="flex items-start gap-3 border-b border-line py-3">
+                    <Check
+                      className="mt-0.5 size-4 shrink-0 text-signal"
+                      aria-hidden="true"
+                    />
+                    <span class="text-sm leading-relaxed text-pretty text-ink-soft">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+                Tymi sprawami zajmuję się ja. Ty pozostajesz osobą, która
+                decyduje o swoim produkcie.
+              </p>
+
+              <a
+                href="/o-mnie/"
+                class="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+              >
+                Poznaj mnie
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </a>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-3">
+              <div class="flex h-full flex-col rounded-2xl border border-line bg-paper p-5 sm:p-6">
+                <h3 class="font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
+                  A co po uruchomieniu aplikacji?
+                </h3>
+                <p class="mt-3 mb-8 text-sm leading-relaxed text-pretty text-ink-soft">
+                  Pierwsza działająca wersja to początek zbierania odpowiedzi, a
+                  nie koniec wszystkich decyzji. Podstawowa analityka pomaga
+                  obserwować wybrane zachowania użytkowników i oceniać, w jakim
+                  kierunku rozwijać produkt.
+                </p>
+                <p class="mt-auto border-t border-line pt-4 text-sm leading-relaxed text-pretty font-medium text-ink xl:min-h-[6.75rem]">
+                  Najpierw działająca podstawa. Później decyzje na podstawie
+                  danych.
+                </p>
+              </div>
+
+              <div
+                id="zmiany"
+                class="flex h-full scroll-mt-24 flex-col rounded-2xl border border-line bg-paper p-5 sm:p-6"
+              >
+                <h3 class="font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
+                  Co jeśli w trakcie prac zmienisz zdanie?
+                </h3>
+                <p class="mt-3 mb-8 text-sm leading-relaxed text-pretty text-ink-soft">
+                  To się zdarza. Kiedy widzisz aplikację na ekranie, łatwiej
+                  zauważyć, co można zrobić inaczej. Sprawdzamy wtedy, czy
+                  zmiana mieści się w uzgodnionym zakresie, czy wymaga osobnego
+                  ustalenia kosztu i terminu.
+                </p>
+                <p class="mt-auto border-t border-line pt-4 text-sm leading-relaxed text-pretty font-medium text-ink xl:min-h-[6.75rem]">
+                  Rozwijasz pomysł, ale wiesz, za co płacisz i kiedy otrzymasz
+                  produkt.
+                </p>
+              </div>
+
+              <div
+                id="gwarancja"
+                class="flex h-full scroll-mt-24 flex-col rounded-2xl border border-line bg-paper p-5 sm:p-6"
+              >
+                <h3 class="font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
+                  A jeśli po odbiorze pojawi się błąd?
+                </h3>
+                <p class="mt-3 mb-8 text-sm leading-relaxed text-pretty text-ink-soft">
+                  Masz 3 miesiące gwarancji technicznej. Jeżeli funkcja nie
+                  działa zgodnie z uzgodnionymi wymaganiami, zgłaszasz problem.
+                  Usterki objęte gwarancją usuwamy bez dodatkowych opłat, na
+                  zasadach określonych w umowie.
+                </p>
+                <p class="mt-auto border-t border-line pt-4 text-sm leading-relaxed text-pretty font-medium text-ink xl:min-h-[6.75rem]">
+                  Gwarancja nie obejmuje dodawania nowych funkcji ani
+                  nieograniczonej opieki nad aplikacją.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="przyklad"
+      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              04 · Przykład
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+              Numerabble
+            </p>
+            <h2 class="mt-3 font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Zobacz, jak wyglądało to w prawdziwym projekcie
+            </h2>
+            <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
+              Od pomysłu rozwijanego przez prawie 30 lat do gry, w którą można
+              zagrać.
+            </p>
+
+            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Podczas pracy nad Numerabble bardzo dobrze było widać, dlaczego
+              warto zaczynać od mniejszej wersji. Klient miał pomysł na grę
+              matematyczną i wiele możliwości jej dalszego rozwoju: rozgrywki
+              przez internet, rankingi, turnieje i kolejne sposoby rywalizacji.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Zamiast realizować wszystko od razu, zaczęliśmy od podstawowej gry
+              z komputerem. Wspólnie omawialiśmy zasady, wygląd i sposób
+              działania poszczególnych elementów. Następnie powstała grywalna
+              wersja dostępna w przeglądarce.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Później zaczęły się testy, zgłaszanie uwag i poprawianie rzeczy,
+              które wymagały dopracowania. Nie wszystko od razu działało
+              idealnie. Ale właśnie dzięki temu, że mieliśmy prawdziwy produkt,
+              mogliśmy sprawdzać konkretne sytuacje, zamiast jedynie wyobrażać
+              sobie, jak gra będzie działać.
+            </p>
+
+            <figure class="mt-10">
+              <div class="overflow-hidden rounded-2xl border border-line bg-paper shadow-[0_35px_80px_-55px_rgba(20,20,20,0.5)]">
+                <div class="flex items-center gap-2 border-b border-line px-4 py-3">
+                  <span
+                    class="size-2.5 rounded-full bg-signal/70"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="size-2.5 rounded-full bg-line"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="size-2.5 rounded-full bg-line"
+                    aria-hidden="true"
+                  ></span>
+                  <p class="ml-2 truncate font-mono text-[10px] tracking-[0.12em] text-ink-soft uppercase">
+                    Numerabble · przeglądarka
+                  </p>
+                </div>
+                <video
+                  data-clip
+                  class="block aspect-[4/3] w-full object-cover"
+                  src="/showcase/numerabble-gameplay.webm"
+                  poster="/showcase/numerabble-gameplay.webp"
+                  width="960"
+                  height="720"
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  aria-label="Prawdziwa rozgrywka w Numerabble — plansza i panel punktacji"
+                ></video>
+              </div>
+              <figcaption class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p class="max-w-xl text-sm leading-relaxed text-pretty text-ink-soft">
+                  Fragment prawdziwej rozgrywki. Nagranie z rzeczywistego
+                  projektu.
+                </p>
+                <button
+                  type="button"
+                  data-clip-toggle
+                  data-state="playing"
+                  class="inline-flex shrink-0 items-center gap-2 self-start rounded-md border border-line px-3 py-1.5 font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase transition-colors hover:border-ink/25 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+                >
+                  <Pause
+                    data-clip-icon-pause
+                    className="size-3.5"
+                    aria-hidden="true"
+                  />
+                  <Play
+                    data-clip-icon-play
+                    className="size-3.5"
+                    aria-hidden="true"
+                  />
+                  <span data-clip-label>Wstrzymaj nagranie</span>
+                </button>
+              </figcaption>
+            </figure>
+
+            <a
+              href="/realizacje/numerabble/"
+              class={cn(
+                buttonVariants({ size: "lg" }),
+                "mt-10 h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+              )}
+            >
+              Zobacz pełną historię realizacji Numerabble
+              <ArrowRight />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="faq"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              05 · FAQ
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Najczęstsze pytania o przebieg współpracy
+            </h2>
+
+            <div class="mt-8 divide-y divide-line border-y border-line">
+              {processFaq.map(({ question, answer }) => (
+                <details class="group py-5">
+                  <summary class="flex cursor-pointer list-none items-start justify-between gap-6 [&::-webkit-details-marker]:hidden">
+                    <span class="font-heading text-base leading-snug font-semibold text-balance sm:text-lg">
+                      {question}
+                    </span>
+                    <ChevronDown
+                      className="details-chevron mt-0.5 size-5 shrink-0 text-ink-soft"
+                      aria-hidden="true"
+                    />
+                  </summary>
+                  <p class="mt-3 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                    {answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+
+            <p class="mt-6 text-sm leading-relaxed text-pretty text-ink-soft">
+              Masz inne pytanie?{" "}
+              <a
+                href="/oferta/#faq"
+                class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+              >
+                Zobacz też FAQ oferty
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="kontakt"
+      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="on-ink relative overflow-hidden rounded-2xl bg-ink px-6 py-10 text-paper sm:px-10 sm:py-12">
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute -top-32 -right-24 size-80 rounded-full bg-signal/20 blur-3xl"
+          ></span>
+
+          <div class="relative max-w-2xl">
+            <p class="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-paper/60 uppercase">
+              <span class="h-px w-5 bg-signal" aria-hidden="true" />
+              06 · Rozmowa
+            </p>
+            <h2 class="mt-4 font-heading text-2xl leading-tight font-semibold tracking-tight text-balance sm:text-3xl">
+              Masz pomysł? Sprawdźmy, od czego warto zacząć.
+            </h2>
+
+            <div class="mt-4 space-y-3 text-base leading-relaxed text-pretty text-paper/75 sm:text-lg">
+              <p>
+                Nie musisz wiedzieć, jak zaprogramować aplikację. Nie musisz
+                mieć gotowej dokumentacji ani znać wszystkich funkcji, które
+                kiedyś chciałbyś dodać.
+              </p>
+              <p>
+                Wystarczy, że opowiesz mi, co chcesz stworzyć. Podczas
+                bezpłatnej, 20-minutowej rozmowy przyjrzymy się Twojemu
+                pomysłowi i sprawdzimy, czy możemy zacząć od pierwszej
+                działającej wersji.
+              </p>
+              <p>
+                Jeżeli Twój projekt wymaga innego podejścia, również Ci o tym
+                powiem.
+              </p>
+            </div>
+
+            <div class="mt-8">
+              <a
+                href={consultationUrl}
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-6 py-3 text-center text-base text-balance whitespace-normal text-ink hover:bg-paper/85 sm:w-auto sm:py-0 sm:whitespace-nowrap"
+                )}
+              >
+                Umów bezpłatną rozmowę
+                <ArrowRight />
+              </a>
+              <p class="mt-4 text-sm leading-relaxed text-paper/55">
+                20 minut · Online · Bez zobowiązań
+              </p>
+            </div>
+
+            <p class="mt-6 border-t border-paper/15 pt-5 text-sm leading-relaxed text-pretty text-paper/60">
+              Wolisz najpierw zabezpieczyć swój pomysł? Możemy podpisać umowę o
+              poufności (NDA), zanim opowiesz mi o szczegółach rozwiązania.
+            </p>
+
+            <p class="mt-6 font-heading text-lg font-semibold text-paper">
+              Do usłyszenia! Karol Modelski
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+
+  <script is:inline>
+    ;(() => {
+      const clips = Array.prototype.slice.call(
+        document.querySelectorAll("main video[data-clip]")
+      )
+      if (!clips.length) return
+
+      const btn = document.querySelector("[data-clip-toggle]")
+      const label = btn ? btn.querySelector("[data-clip-label]") : null
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)")
+      let enabled = !reduce.matches
+
+      const render = () => {
+        if (!btn) return
+        btn.dataset.state = enabled ? "playing" : "paused"
+        if (label) {
+          label.textContent = enabled
+            ? "Wstrzymaj nagranie"
+            : "Odtwórz nagranie"
+        }
+      }
+
+      const sync = () => {
+        clips.forEach((clip) => {
+          const shouldPlay =
+            enabled && clip.dataset.inView === "true" && !document.hidden
+          if (shouldPlay) {
+            if (clip.paused) {
+              const p = clip.play()
+              if (p && p.catch) p.catch(() => {})
+            }
+          } else if (!clip.paused) {
+            clip.pause()
+          }
+        })
+      }
+
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              entry.target.dataset.inView = entry.isIntersecting
+                ? "true"
+                : "false"
+            })
+            sync()
+          },
+          { threshold: 0.35 }
+        )
+        clips.forEach((clip) => io.observe(clip))
+      } else {
+        clips.forEach((clip) => {
+          clip.dataset.inView = "true"
+        })
+      }
+
+      document.addEventListener("visibilitychange", sync)
+
+      if (btn) {
+        btn.addEventListener("click", () => {
+          enabled = !enabled
+          render()
+          sync()
+        })
+      }
+
+      if (reduce.addEventListener) {
+        reduce.addEventListener("change", (event) => {
+          enabled = !event.matches
+          render()
+          sync()
+        })
+      }
+
+      render()
+      sync()
+    })()
+  </script>
+</Layout>

@@ -171,23 +171,23 @@ Nie każda aplikacja kwalifikuje się do tego pakietu. Sprawdzamy to przed rozpo
 
 ### Masz pomysł na aplikację, ale nie musisz wiedzieć, jak ją zbudować. Od tego masz mnie.
 
-Cześć, jestem **Karol Modelski**.
+Cześć, jestem Karol Modelski.
 
-Przez lata pracowałem przy zaawansowanych systemach dla banków i korporacji. Nauczyłem się tam, jak ważne są jakość oprogramowania, przemyślana architektura i odpowiedzialność za efekt.
+Od ponad 7 lat pracuję przy zaawansowanych systemach dla banków i dużych firm.
 
 Dziś wykorzystuję to doświadczenie, pomagając osobom, które mają pomysł na własną aplikację, ale nie wiedzą, jak przełożyć go na konkretny plan.
 
-W takich projektach szybko pojawia się wiele pomysłów. Kolejne ekrany, funkcje, konta użytkowników, płatności, powiadomienia.
+Nie oczekuję, że będziesz znać się na programowaniu, wybierać technologie czy zarządzać zespołem.
 
-Każdy element może być przydatny. Ale nie każdy jest potrzebny na początku.
+Pomogę Ci ustalić, co warto zbudować na początku, a następnie zajmę się organizacją technicznej realizacji.
 
-Dlatego nie zaczynam współpracy od pytania, ile funkcji możemy zbudować.
+**Ty decydujesz, jaki ma być Twój produkt. Ja pomagam doprowadzić go do działającej pierwszej wersji.**
 
-**Zaczynam od pytania: co powinno działać w pierwszej kolejności, żeby Twój pomysł mógł zostać sprawdzony w praktyce?**
+**Wezwanie do działania:** Poznaj mnie i moje podejście do pracy → https://www.karolmodelski.pl/o-mnie/
 
-Technologię i organizację pracy biorę na siebie. Ty pozostajesz osobą, która decyduje o kierunku rozwoju produktu.
+Zobacz, skąd mam doświadczenie, jak pracuję z klientami i dlaczego nie zaczynam od budowania wszystkich funkcji naraz.
 
-Dowody do sprawdzenia: profil LinkedIn, konto GitHub, wizytówka Google, NIP 6112800950 oraz przykład realizacji Numerabble (sekcja 01, pełne studium: https://www.karolmodelski.pl/realizacje/numerabble/).
+Wybrane doświadczenie: GFT Technologies (Senior Angular Developer, 2025 – obecnie), Silent Eight (JavaScript Developer, 2023–2025), BNP Paribas Bank Polska (Software Developer, 2021–2023), Amway (JavaScript Developer, 2019–2021). Technologie: Angular, React, TypeScript, NgRx, RxJS, Nx, Jest, Cypress, React Native.
 
 ---
 
@@ -201,7 +201,7 @@ Dowody do sprawdzenia: profil LinkedIn, konto GitHub, wizytówka Google, NIP 611
 
 Cały proces trwa zwykle 6–8 tygodni.
 
-**Wezwanie do działania:** Poznaj szczegółowy harmonogram → https://www.karolmodelski.pl/oferta/#jak-pracujemy
+**Wezwanie do działania:** Poznaj szczegółowy harmonogram → https://www.karolmodelski.pl/jak-pracuje/#harmonogram
 
 ---
 
