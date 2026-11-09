@@ -5,6 +5,8 @@ import tailwindcss from "@tailwindcss/vite"
 import { defineConfig, fontProviders } from "astro/config"
 import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
+import { satteri } from "@astrojs/markdown-satteri"
+import tableCellLabels from "./src/lib/satteri-table-labels.mjs"
 
 function getLastModified() {
   try {
@@ -23,6 +25,11 @@ export default defineConfig({
   site: "https://www.karolmodelski.pl",
   vite: {
     plugins: [tailwindcss()],
+  },
+  markdown: {
+    processor: satteri({
+      hastPlugins: [tableCellLabels],
+    }),
   },
   fonts: [
     {
