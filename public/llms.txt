@@ -59,6 +59,8 @@ NIP: 6112800950
 
 - [Masz pomysł na aplikację? Od czego zacząć?](https://www.karolmodelski.pl/wiedza/masz-pomysl-na-aplikacje-od-czego-zaczac/): Masz pomysł na aplikację? Potrzebujesz programisty czy całego zespołu? Ile to może kosztować? Jak podejść do pierwszej wersji bez zbędnych wydatków.
 - [Ile kosztuje stworzenie aplikacji w 2026 roku?](https://www.karolmodelski.pl/wiedza/ile-kosztuje-stworzenie-aplikacji-2026/): Realne ceny aplikacji mobilnych i webowych, koszty programistów oraz sposoby na oszczędności. Pierwsza działająca wersja: 29 500 zł brutto.
+- [Jak zabezpieczyć pomysł na aplikację przed kradzieżą?](https://www.karolmodelski.pl/wiedza/jak-zabezpieczyc-pomysl-na-aplikacje/): Co chroni prawo autorskie, jak działa NDA i tajemnica przedsiębiorstwa, kiedy patent ma sens i o co zadbać w umowie z programistą.
+- [Freelancer, software house czy partner technologiczny?](https://www.karolmodelski.pl/wiedza/freelancer-software-house-czy-partner-technologiczny/): Porównanie trzech modeli współpracy — zakres odpowiedzialności, koszty, ryzyka i pytania, które warto zadać przed podpisaniem umowy.
 
 ## Bezpieczeństwo i zasady
 
