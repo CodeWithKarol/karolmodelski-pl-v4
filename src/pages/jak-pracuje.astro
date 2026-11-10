@@ -26,9 +26,9 @@ const summaryFacts = [
 ]
 
 const firstStepQuestions = [
-  "Co Twoja aplikacja ma robić.",
-  "Kto ma z niej korzystać.",
-  "Co powinno działać w pierwszej kolejności.",
+  "Co jest najważniejsze w Twoim pomyśle.",
+  "Jak powinna działać pierwsza wersja.",
+  "Co warto zostawić na później.",
 ]
 
 const scopeItems = [
@@ -127,25 +127,9 @@ const breadcrumbSchema = {
             </h1>
 
             <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Od pierwszej rozmowy, przez wybór najważniejszych funkcji, aż po
-              działający produkt, który możesz uruchomić i pokazać innym.
-            </p>
-
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Nie musisz wiedzieć, jak zaplanować programowanie, jakie
-              technologie wybrać ani ilu specjalistów będzie potrzebnych. Od
-              tego masz mnie.
-            </p>
-
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Ty opowiadasz mi, co chcesz stworzyć. Wspólnie ustalamy, od czego
-              warto zacząć. Następnie zajmuję się organizacją prac i
-              dopilnowaniem technicznej realizacji.
-            </p>
-
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Po drodze pokazuję Ci efekty, omawiamy ważne decyzje i sprawdzamy,
-              czy wszystko działa tak, jak ustaliliśmy.
+              Ty opowiadasz mi, co chcesz stworzyć. Ja pomagam ustalić zakres,
+              organizuję zespół i prowadzę realizację. Po drodze wspólnie
+              sprawdzamy efekty.
             </p>
 
             <p class="mt-6 max-w-xl border-l-2 border-signal pl-4 text-sm leading-relaxed text-pretty font-medium text-ink sm:text-base">
@@ -226,25 +210,30 @@ const breadcrumbSchema = {
               <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
                 Poznajemy pomysł
               </h3>
-              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Zwykle wszystko zaczyna się od rozmowy. Opowiadasz mi o swoim
-                pomyśle, o tym, jak wyobrażasz sobie działanie aplikacji i komu
-                miałaby się przydać.
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+                Zaczynamy od rozmowy.
               </p>
               <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Nie musisz mówić językiem programistów. Możesz po prostu
-                powiedzieć: „Chciałbym, żeby użytkownik wszedł na stronę, zrobił
-                to i to, a potem zobaczył taki rezultat”. To już dobry początek.
+                Opowiadasz mi, co chcesz stworzyć, dla kogo ma być aplikacja i
+                co użytkownik powinien móc w niej zrobić.
               </p>
               <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Będę zadawał pytania, żeby upewnić się, że dobrze rozumiem Twoją
-                wizję. Możemy przyjrzeć się podobnym aplikacjom, szkicom,
-                notatkom albo przykładom, które pokażesz. Jeżeli nie masz
-                żadnych materiałów, również możemy zacząć.
+                Nie musisz znać technicznych nazw ani mieć gotowej dokumentacji.
+                Możesz pokazać szkice, notatki, podobne aplikacje albo po prostu
+                opowiedzieć o swoim pomyśle własnymi słowami.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Będę zadawał pytania i proponował rozwiązania. Czasami okaże
+                się, że jakąś funkcję można zrobić prościej. Innym razem
+                zauważymy problem, o którym wcześniej nie myślałeś.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                I bardzo dobrze, że takie rzeczy wychodzą na tym etapie, a nie
+                dopiero pod koniec programowania.
               </p>
 
               <p class="mt-6 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
-                Na koniec tego etapu chcemy wiedzieć trzy rzeczy:
+                Na koniec chcę wiedzieć trzy rzeczy:
               </p>
               <ul class="mt-4 max-w-2xl border-t border-line">
                 {firstStepQuestions.map((item) => (
@@ -259,12 +248,6 @@ const breadcrumbSchema = {
                   </li>
                 ))}
               </ul>
-
-              <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
-                Nie musimy jeszcze znać wszystkich funkcji, które aplikacja
-                mogłaby mieć za kilka lat. Na razie szukamy najlepszego
-                pierwszego kroku.
-              </p>
             </div>
 
             <div
@@ -318,6 +301,46 @@ const breadcrumbSchema = {
               <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
                 Zapisujemy to w ustaleniach projektowych i umowie. Dzięki temu
                 obaj wiemy, co mamy zbudować, zanim rozpoczniemy programowanie.
+              </p>
+            </div>
+
+            <div
+              id="doprecyzowanie"
+              class="mt-12 scroll-mt-24 border-t border-line pt-8"
+            >
+              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+                Doprecyzowujemy zasady działania
+              </h3>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Sam opis pomysłu często nie wystarcza do rozpoczęcia
+                programowania.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Trzeba jeszcze ustalić, co stanie się w konkretnych sytuacjach.
+              </p>
+
+              <p class="mt-6 max-w-2xl border-l-2 border-signal pl-5 text-base leading-relaxed text-pretty text-ink sm:text-lg">
+                Co zobaczy użytkownik po kliknięciu przycisku? Co jeśli
+                wprowadzi niepoprawne dane? Czy może cofnąć działanie? Kiedy
+                aplikacja powinna pokazać komunikat albo zakończyć dany proces?
+              </p>
+
+              <p class="mt-6 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Nie musisz sam znać odpowiedzi na wszystkie takie pytania.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Pomogę Ci je uporządkować. W razie potrzeby przygotujemy listę
+                założeń i możliwych rozwiązań, które wspólnie omówimy i
+                zatwierdzimy.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Dzięki temu mój zespół wie, co ma zbudować, a Ty wiesz, jak
+                aplikacja powinna działać.
+              </p>
+              <p class="mt-6 max-w-2xl border-t border-line pt-6 text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+                Nie chodzi o tworzenie dokumentacji dla samej dokumentacji.
+                Chodzi o ograniczenie nieporozumień, poprawek i niepotrzebnych
+                kosztów.
               </p>
             </div>
 
@@ -559,23 +582,41 @@ const breadcrumbSchema = {
               </a>
             </div>
 
-            <div class="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-3">
-              <div class="flex h-full flex-col rounded-2xl border border-line bg-paper p-5 sm:p-6">
-                <h3 class="font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
-                  A co po uruchomieniu aplikacji?
-                </h3>
-                <p class="mt-3 mb-8 text-sm leading-relaxed text-pretty text-ink-soft">
-                  Pierwsza działająca wersja to początek zbierania odpowiedzi, a
-                  nie koniec wszystkich decyzji. Podstawowa analityka pomaga
-                  obserwować wybrane zachowania użytkowników i oceniać, w jakim
-                  kierunku rozwijać produkt.
-                </p>
-                <p class="mt-auto border-t border-line pt-4 text-sm leading-relaxed text-pretty font-medium text-ink xl:min-h-[6.75rem]">
-                  Najpierw działająca podstawa. Później decyzje na podstawie
-                  danych.
-                </p>
-              </div>
+            <div
+              id="po-uruchomieniu"
+              class="mt-8 scroll-mt-24 rounded-2xl border border-line bg-paper p-6 sm:p-8"
+            >
+              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+                A co po uruchomieniu aplikacji?
+              </h3>
+              <p class="mt-3 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Działająca pierwsza wersja pozwala zacząć sprawdzać rzeczy, na
+                które wcześniej nie mieliśmy odpowiedzi.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Czy użytkownicy wykonują najważniejsze czynności? Czy korzystają
+                z aplikacji zgodnie z założeniami? W którym momencie rezygnują?
+                Czy wracają?
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Podstawowa analityka pomaga obserwować wybrane zachowania.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Dzięki temu kolejne decyzje nie muszą opierać się wyłącznie na
+                przypuszczeniach.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Jeżeli zdecydujesz się na dalszą współpracę, możemy
+                przeanalizować zebrane dane, zaproponować usprawnienia i
+                ustalić, które funkcje warto rozwijać w następnej kolejności.
+              </p>
+              <p class="mt-6 max-w-2xl border-t border-line pt-4 text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+                Najpierw działający produkt. Później kolejne decyzje na
+                podstawie tego, co rzeczywiście wiemy.
+              </p>
+            </div>
 
+            <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
               <div
                 id="zmiany"
                 class="flex h-full scroll-mt-24 flex-col rounded-2xl border border-line bg-paper p-5 sm:p-6"
@@ -766,9 +807,11 @@ const breadcrumbSchema = {
                       aria-hidden="true"
                     />
                   </summary>
-                  <p class="mt-3 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                    {answer}
-                  </p>
+                  <div class="mt-3 max-w-2xl space-y-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                    {answer.split("\n\n").map((paragraph) => (
+                      <p>{paragraph}</p>
+                    ))}
+                  </div>
                 </details>
               ))}
             </div>

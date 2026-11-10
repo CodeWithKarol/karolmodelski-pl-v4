@@ -328,6 +328,8 @@ Każdy projekt jest trochę inny, ale sam proces można podzielić na kilka pros
 5. **Testy i poprawki** — sprawdzamy, czy aplikacja działa zgodnie z ustaleniami. Usuwamy wykryte błędy i przygotowujemy produkt do pierwszych testów z użytkownikami.
 6. **Uruchomienie i dalszy rozwój** — pierwsi użytkownicy zaczynają korzystać z aplikacji. Zbierasz opinie i dane, na podstawie których możemy planować następne funkcje.
 
+Każdy z tych etapów opisuję dokładniej na stronie [jak wygląda współpraca krok po kroku](/jak-pracuje/) — razem z tym, czego potrzebuję od Ciebie i co dostajesz na końcu.
+
 I tutaj chciałbym podkreślić coś, co moim zdaniem jest bardzo ważne.
 
 Udostępnienie aplikacji użytkownikom nie jest końcem pracy nad produktem. To często dopiero początek jego rzeczywistego rozwoju.

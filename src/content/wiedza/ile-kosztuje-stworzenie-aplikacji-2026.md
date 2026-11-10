@@ -281,6 +281,8 @@ Zakładam 4 tygodnie prac nad pierwszą wersją od wspólnie ustalonego startu, 
 
 Cały proces, łącznie z odbiorem i ewentualnymi poprawkami, zajmuje zwykle 6–8 tygodni.
 
+Pełny zakres pakietu, harmonogram i podział płatności znajdziesz na stronie [oferty](/oferta/).
+
 Co ważne, ta cena nie oznacza, że w takim budżecie zbudujemy każdą możliwą aplikację.
 
 Niektóre projekty są po prostu zbyt rozbudowane, żeby sensownie zamknąć je w tak krótkim czasie.

@@ -530,6 +530,8 @@ Ale jest to znacznie lepsza podstawa do podejmowania dalszych decyzji niż sama 
 
 Pełny opis tej realizacji znajdziesz w studium [Numerabble](/realizacje/numerabble/).
 
+Więcej o tym, jak pracuję z klientami i jakie projekty realizuję, przeczytasz w sekcji [realizacje](/realizacje/).
+
 ## 12. Jak sprawdzić, czy użytkownicy naprawdę lubią Twoją aplikację?
 
 Kiedy masz już pierwszą działającą wersję, możesz zacząć zbierać znacznie bardziej konkretne informacje.

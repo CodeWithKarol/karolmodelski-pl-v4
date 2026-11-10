@@ -21,19 +21,20 @@ export const processTimeline: ProcessTimelineStep[] = [
     label: "Tydzień 1",
     title: "Wygląd i sposób korzystania",
     description:
-      "Przygotowuję dwa kierunki wizualne. Omawiamy wygląd ekranów i sposób poruszania się po aplikacji.",
-    you: "Oceniasz propozycje i mówisz, co chcesz doprecyzować.",
-    me: "Organizuję projektowanie i pilnuję zgodności z ustalonym zakresem.",
-    effect: "Wybrany kierunek wyglądu i obsługi.",
+      "Przygotujemy dwa kierunki wizualne i omówimy sposób korzystania z aplikacji.",
+    you: "Oceniasz propozycje i podejmujesz decyzje dotyczące swojego produktu.",
+    me: "Organizuję pracę projektową, pilnuję uzgodnionego zakresu i pomagam ocenić, które rozwiązania będą najwygodniejsze dla użytkowników.",
+    effect: "Wybrany kierunek wyglądu i obsługi aplikacji.",
   },
   {
     label: "Tydzień 2",
-    title: "Budowa najważniejszych funkcji",
+    title: "Najważniejsze funkcje zaczynają działać",
     description:
-      "Zaczynam programować najważniejszą część produktu. Sprawdzamy, czy funkcje działają zgodnie z ustaleniami.",
-    you: "Wyjaśniasz wątpliwości i podejmujesz decyzje produktowe.",
-    me: "Koordynuję pracę techniczną i pilnuję zakresu.",
-    effect: "Najważniejsza część aplikacji zaczyna działać.",
+      "Rozpoczynamy budowę głównej części aplikacji. Sprawdzamy również, czy poszczególne elementy zachowują się zgodnie z przyjętymi założeniami.",
+    you: "Odpowiadasz na pytania dotyczące działania produktu i oceniasz pokazywane efekty.",
+    me: "Koordynuję pracę zespołu, rozwiązuję kwestie techniczne i omawiam z Tobą sytuacje wymagające decyzji.",
+    effect:
+      "Najważniejsza część aplikacji zaczyna działać, a kluczowe założenia są stopniowo weryfikowane w praktyce.",
   },
   {
     label: "Tygodnie 3–4",
@@ -51,7 +52,7 @@ export const processTimeline: ProcessTimelineStep[] = [
       "Sprawdzasz zgodność produktu z zakresem. Masz 10 dni roboczych na odbiór i zgłoszenie niezgodności. Wymagane poprawki wykonujemy zgodnie z umową.",
     you: "Testujesz produkt i zgłaszasz niezgodności w uzgodnionym zakresie.",
     me: "Wprowadzam wymagane poprawki i po rozliczeniu przekazuję kod, dostępy i prawa.",
-    effect: "Odebrany produkt, kod i uzgodnione prawa.",
+    effect: "Odebrany produkt, kod źródłowy i prawa do produktu.",
   },
 ]
 
@@ -85,11 +86,17 @@ export const processFaq: ProcessFaqItem[] = [
   {
     question: "Czy po zakończeniu projektu mogę współpracować z kimś innym?",
     answer:
-      "Tak. Po zakończeniu i rozliczeniu otrzymujesz kod oraz uzgodnione prawa, z uwzględnieniem zasad korzystania z komponentów zewnętrznych.",
+      "Tak. Po zakończeniu i rozliczeniu otrzymujesz kod źródłowy oraz prawa do produktu w zakresie określonym w umowie. Zasady korzystania z komponentów zewnętrznych ustalamy osobno.",
   },
   {
     question: "Czy muszę od razu zamawiać dalszy rozwój?",
     answer:
       "Nie. Możesz zacząć od pierwszej wersji, przetestować ją i dopiero później zdecydować, co dalej.",
+  },
+  {
+    question:
+      "Czy po zakończeniu projektu będę musiał płacić za utrzymanie aplikacji?",
+    answer:
+      "To zależy od tego, jak działa Twój produkt i jakich usług potrzebuje.\n\nNiektóre aplikacje wymagają tylko prostego hostingu. Inne korzystają z serwerów, baz danych albo płatnych usług zewnętrznych, których koszt może rosnąć wraz z liczbą użytkowników.\n\nPrzed uruchomieniem omówię z Tobą najważniejsze koszty zewnętrzne i wyjaśnię, od czego mogą zależeć przyszłe opłaty.\n\nNie musisz również wykupywać u mnie stałej opieki technicznej. Jeśli jednak będziesz jej potrzebować, możemy osobno ustalić jej zakres i cenę.",
   },
 ]

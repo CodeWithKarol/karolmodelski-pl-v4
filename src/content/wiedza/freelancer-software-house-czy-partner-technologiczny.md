@@ -112,6 +112,8 @@ Sukcesu biznesowego aplikacji. Nikt rozsądny nie powinien tego obiecywać. Part
 
 Warto też pamiętać o zależności od jednej osoby lub zespołu. Przy wyborze partnera liczy się nie tylko deklaracja, że „poprowadzi projekt”, ale konkretne doświadczenie i jasny podział odpowiedzialności.
 
+Moje doświadczenie i sposób pracy opisuję na stronie [o mnie](/o-mnie/).
+
 ## 5. Porównanie trzech modeli
 
 To porównanie typowych sposobów współpracy, a nie sztywne reguły. W praktyce granice bywają płynne.

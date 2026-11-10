@@ -131,6 +131,8 @@ Brzmi oficjalnie, ale sama idea jest dość prosta.
 
 Podpisujemy dokument, w którym ustalamy, jakie informacje są poufne, do czego można je wykorzystać i jakie konsekwencje grożą za naruszenie tych zasad.
 
+W mojej współpracy NDA możemy podpisać jeszcze przed szczegółową rozmową o pomyśle. Zasady poufności opisuję w sekcji [bezpieczeństwo na stronie oferty](/oferta/#bezpieczenstwo).
+
 ### Co powinna zawierać dobra umowa NDA?
 
 Przede wszystkim nie powinna ograniczać się do jednego ogólnego zdania, że strony zobowiązują się zachować tajemnicę.

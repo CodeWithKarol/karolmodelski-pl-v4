@@ -490,6 +490,8 @@ W tym miejscu warto wyjaśnić również, jak wygląda to w moim modelu współp
 
 Moja oferta zakłada kompleksową realizację pierwszej działającej wersji aplikacji w uzgodnionym zakresie za [29 500 zł brutto](/oferta/).
 
+Pakiet dotyczy aplikacji, których najważniejszą funkcję da się zbudować i uruchomić w ciągu 4 tygodni. Co konkretnie mieści się w zakresie, a co wymaga osobnego ustalenia, opisuję w sekcji [ograniczenia i zasady zakresu](/oferta/#ograniczenia).
+
 Dlaczego nie obiecuję stworzenia dowolnej aplikacji za 10 czy 15 tysięcy?
 
 Ponieważ nie chodzi mi wyłącznie o napisanie kilku fragmentów kodu.
