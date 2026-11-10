@@ -48,13 +48,17 @@ Strona oferty: https://www.karolmodelski.pl/oferta/
 - 20% (5 900 zł) – na sam koniec, po odbiorze technicznym: po komfortowych 10 dniach roboczych na spokojne sprawdzenie i naniesieniu ewentualnych poprawek zamykamy formalności i przekazuję Ci kompletny kod źródłowy, dostęp do wszystkiego oraz 100% majątkowych praw autorskich w uzgodnionym zakresie.
 - Łącznie: 29 500 zł brutto za pierwszą działającą wersję i kompleksową realizację. Fakturowanie: faktura VAT na każdym etapie; stała kwota ustalona z góry, bez ukrytych kosztów.
 
+## Opcjonalny plan pierwszej wersji (osobna wycena)
+- Dla kogo: projekty z kilkoma możliwymi kierunkami, wieloma zależnościami albo wymagające pisemnego planu przed decyzją o realizacji
+- Zakres: uporządkowanie wymagań, porównanie możliwości, wskazanie najważniejszych ryzyk i propozycja rozsądnego pierwszego etapu
+- Rezultat: dokument z planem, który klient może wykorzystać również w rozmowach z innymi wykonawcami
+- Zasady: usługa opcjonalna i wyceniana indywidualnie; jeżeli projekt pasuje do standardowego pakietu, nie jest potrzebna, bo podstawowe ustalenie zakresu jest częścią współpracy
+
 ## Usługi po pierwszym uruchomieniu (osobna wycena)
-- Analiza zachowania użytkowników — co wynika z dostępnych danych i jakie problemy warto rozwiązać w pierwszej kolejności
-- Usprawnienie strony i aplikacji — elementy utrudniające wykonanie najważniejszych czynności i propozycje zmian do sprawdzenia
-- Plan dalszego rozwoju — kolejne funkcje z uwzględnieniem potrzeb użytkowników, kosztu i stopnia trudności
-- Realizacja kolejnych funkcji — rozbudowa działającego produktu o wcześniej uzgodnione możliwości
-- Opieka techniczna — zasady późniejszego utrzymania, monitorowania i aktualizowania aplikacji
-- Zasady: zakres i cenę ustalamy indywidualnie; klient nie musi zamawiać kolejnego etapu i może rozwijać produkt z innym wykonawcą
+- Audyt aplikacji po uruchomieniu — analiza dostępnej analityki i sposobu korzystania z produktu, rekomendacje zmian uporządkowane według priorytetów (efekt: raport i plan usprawnień)
+- Rozwój kolejnych funkcji — ocena nowych pomysłów, ustalenie zakresu i organizacja kolejnego etapu prac (efekt: kolejna wersja aplikacji z uzgodnionymi funkcjami)
+- Opieka i wsparcie technologiczne — przeglądy techniczne, planowanie dalszych prac, bieżące wsparcie lub koordynacja zespołu; zakres, dostępność i wynagrodzenie ustalane indywidualnie
+- Zasady: usługi wyceniane osobno, poza pakietem za 29 500 zł; klient nie musi zamawiać kolejnego etapu i może rozwijać produkt z innym wykonawcą
 
 ## Kontakt
 - E-mail: kontakt@karolmodelski.pl

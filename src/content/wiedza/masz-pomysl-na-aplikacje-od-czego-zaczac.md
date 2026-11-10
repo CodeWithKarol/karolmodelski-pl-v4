@@ -404,6 +404,14 @@ Bo moim zdaniem nie chodzi o to, żeby od razu stworzyć największą i najbardz
 
 Chodzi o to, żeby zrobić pierwszy sensowny krok i zamienić pomysł w coś, co naprawdę działa.
 
+## Chcesz odnieść te wskazówki do własnego pomysłu?
+
+Pobierz moją bezpłatną checklistę „12 pytań, zanim zaczniesz budować aplikację”.
+
+Możesz zapisać swoje odpowiedzi i wykorzystać je przy planowaniu pierwszej wersji lub podczas rozmowy z wykonawcą.
+
+[Pobierz checklistę](/checklista/)
+
 ## Źródła i materiały dodatkowe
 
 Przygotowując ten poradnik, korzystałem z własnych doświadczeń przy realizacji aplikacji oraz materiałów dotyczących sprawdzania pomysłów, rozmów z użytkownikami i tworzenia pierwszych wersji produktów.

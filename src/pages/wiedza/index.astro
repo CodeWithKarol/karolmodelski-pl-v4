@@ -12,6 +12,7 @@ import {
 import { formatDate, plural } from "@/lib/format"
 import { getReadingTime } from "@/lib/reading-time"
 import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
 const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
@@ -126,6 +127,60 @@ const jsonLd = [
           <span class="h-px w-4 bg-line" aria-hidden="true"></span>
           <span>Przykłady z realizacji</span>
         </p>
+      </div>
+    </section>
+
+    <section class="border-t border-line bg-surface-muted px-4 py-12 sm:px-6 sm:py-16">
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-12">
+          <div class="md:col-span-8">
+            <h2 class="font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance text-ink sm:text-3xl">
+              Zanim zaczniesz czytać — uporządkuj własny pomysł.
+            </h2>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Przygotowałem bezpłatną checklistę z 12 pytaniami, które warto
+              sobie zadać przed rozpoczęciem budowy aplikacji.
+            </p>
+            <p class="mt-3 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+              Pomoże Ci zastanowić się, jaki problem chcesz rozwiązać, co
+              powinno działać w pierwszej wersji i na jakie koszty oraz ryzyka
+              warto się przygotować. Możesz ją uzupełnić własnymi odpowiedziami
+              i wykorzystać podczas rozmowy z wykonawcą.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+              <a
+                href="/checklista/"
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-11 w-full gap-2 rounded-[6px] px-5 py-2.5 text-center text-sm text-balance whitespace-normal sm:w-auto sm:text-base"
+                )}
+              >
+                Pobierz bezpłatną checklistę
+                <ArrowRight />
+              </a>
+              <p class="font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase">
+                PDF · 4 strony · Bez rejestracji
+              </p>
+            </div>
+          </div>
+
+          <div class="hidden md:col-span-4 md:block">
+            <a
+              href="/checklista/"
+              class="mx-auto block w-full max-w-[13rem] overflow-hidden rounded-xl border border-line bg-paper shadow-[0_25px_60px_-45px_rgba(20,20,20,0.5)]"
+            >
+              <img
+                src="/checklista/podglad-1-strona.png"
+                alt="Pierwsza strona checklisty „12 pytań, zanim zaczniesz budować aplikację”"
+                width="989"
+                height="1400"
+                loading="lazy"
+                decoding="async"
+                class="block w-full"
+              />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -274,6 +274,76 @@ const breadcrumbSchema = {
     </section>
 
     <section
+      id="plan"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              Opcjonalny plan
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              A jeśli Twój pomysł wymaga dokładniejszego planu?
+            </h2>
+
+            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nie każdy projekt da się od razu sprowadzić do jasno określonej
+              pierwszej wersji.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Jeżeli masz kilka możliwych kierunków rozwoju, wiele zależności
+              albo potrzebujesz pisemnego planu przed podjęciem decyzji o
+              realizacji, możemy przygotować osobną analizę.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Pomogę Ci uporządkować wymagania, porównać możliwości, wskazać
+              najważniejsze ryzyka i zaproponować rozsądny pierwszy etap.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Otrzymasz dokument, który możesz wykorzystać również podczas
+              rozmów z innymi wykonawcami.
+            </p>
+
+            <p class="mt-6 max-w-2xl border-l-2 border-signal pl-5 text-base leading-relaxed text-pretty text-ink sm:text-lg">
+              <strong class="font-semibold">
+                To opcjonalna, osobno wyceniana usługa.
+              </strong>{" "}
+              Jeśli Twój pomysł pasuje do standardowego pakietu, nie musisz jej
+              zamawiać — podstawowe ustalenie zakresu jest już częścią
+              współpracy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="border-t border-line bg-paper px-4 py-8 sm:px-6">
+      <div class="mx-auto flex max-w-[75rem] flex-col gap-4 rounded-xl border border-line bg-surface-muted px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+        <div>
+          <p class="font-heading text-base font-semibold text-balance text-ink">
+            Nie wiesz jeszcze, które funkcje są najważniejsze?
+          </p>
+          <p class="mt-1 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+            Nie musisz mieć gotowej specyfikacji przed pierwszą rozmową. W
+            bezpłatnej checkliście znajdziesz 12 pytań o użytkowników, pierwszą
+            wersję, budżet i dalszy rozwój.
+          </p>
+        </div>
+        <a
+          href="/checklista/"
+          class="inline-flex shrink-0 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+        >
+          Pobierz checklistę przed rozmową
+          <ArrowRight className="size-4" aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+
+    <section
       id="pakiet"
       class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
     >
@@ -829,52 +899,68 @@ const breadcrumbSchema = {
               Co możemy zrobić, kiedy aplikacja zacznie już działać?
             </h2>
             <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
-              Pierwsza wersja to dopiero moment, w którym możesz zacząć
-              sprawdzać swój pomysł z prawdziwymi użytkownikami.
+              Pierwsza wersja pozwala sprawdzić pomysł z prawdziwymi
+              użytkownikami. Dopiero wtedy często pojawiają się informacje, na
+              podstawie których warto planować kolejne działania.
             </p>
 
             <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Wtedy pojawiają się kolejne pytania.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Czy ludzie korzystają z aplikacji tak, jak zakładałeś? W którym
-              momencie rezygnują? Czy wracają? Co warto poprawić, zanim
-              zainwestujesz w nowe funkcje?
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Jeśli zdecydujesz się na dalszą współpracę, mogę pomóc Ci w
-              kolejnym etapie.
+              Jeśli będziesz potrzebować dalszej pomocy, możemy współpracować
+              również po zakończeniu pierwszego etapu.
             </p>
 
-            <ul class="mt-8 grid grid-cols-1 gap-x-10 border-t border-line md:grid-cols-2">
-              {ofertaAfterLaunch.map(({ title, description }) => (
-                <li class="flex items-start gap-3 border-b border-line py-4">
-                  <Check
-                    className="mt-0.5 size-4 shrink-0 text-signal"
-                    aria-hidden="true"
-                  />
-                  <div>
-                    <p class="text-sm leading-snug font-semibold text-ink sm:text-base">
+            <ol class="mt-10 grid grid-cols-1 gap-6 border-t border-line pt-8 md:grid-cols-3">
+              {ofertaAfterLaunch.map(
+                ({ title, paragraphs, effect, note }, index) => (
+                  <li class="flex flex-col rounded-2xl border border-line bg-paper p-5 sm:p-6">
+                    <span class="font-mono text-xs tracking-[0.16em] text-signal-ink">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 class="mt-2 font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
                       {title}
-                    </p>
-                    <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft">
-                      {description}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                    </h3>
+                    <div class="mt-3 space-y-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                      {paragraphs.map((paragraph) => (
+                        <p>{paragraph}</p>
+                      ))}
+                    </div>
+
+                    {effect && (
+                      <p class="mt-auto border-t border-line pt-3 text-sm leading-relaxed text-pretty text-ink">
+                        <span class="font-mono text-[11px] tracking-[0.14em] text-signal-ink uppercase">
+                          Efekt:
+                        </span>{" "}
+                        {effect}
+                      </p>
+                    )}
+                    {note && (
+                      <p class="mt-auto border-t border-line pt-3 text-sm leading-relaxed text-pretty font-medium text-ink">
+                        {note}
+                      </p>
+                    )}
+                  </li>
+                )
+              )}
+            </ol>
 
             <div class="mt-8 max-w-2xl space-y-4 border-t border-line pt-6">
               <p class="text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
-                To osobne usługi, których zakres i cenę ustalamy indywidualnie.
+                Wszystkie te usługi są wyceniane osobno i nie stanowią części
+                standardowego pakietu za 29 500 zł.
               </p>
               <p class="text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Nie musisz jednak podejmować tych decyzji już teraz. Najpierw
-                zbudujmy działającą podstawę i zobaczmy, co rzeczywiście warto
-                rozwijać.
+                Nie musisz też kontynuować współpracy ze mną. Po przekazaniu
+                produktu możesz rozwijać go z innym wykonawcą.
               </p>
             </div>
+
+            <a
+              href="/rozmowa/"
+              class="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+            >
+              Porozmawiajmy o Twoim projekcie
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>

@@ -753,6 +753,14 @@ Pomogę Ci uporządkować pomysł, wybrać najważniejsze funkcje i zaplanować 
 
 [Umów bezpłatną rozmowę](/rozmowa/) albo zobacz, [jak wygląda współpraca krok po kroku](/jak-pracuje/).
 
+## Chcesz odnieść te wskazówki do własnego pomysłu?
+
+Pobierz moją bezpłatną checklistę „12 pytań, zanim zaczniesz budować aplikację”.
+
+Możesz zapisać swoje odpowiedzi i wykorzystać je przy planowaniu pierwszej wersji lub podczas rozmowy z wykonawcą.
+
+[Pobierz checklistę](/checklista/)
+
 ## Źródła
 
 Przy opracowaniu artykułu wykorzystano następujące materiały dotyczące testowania pomysłów, badań zainteresowania użytkowników i tworzenia pierwszych wersji aplikacji.

@@ -12,12 +12,6 @@ const siteRoot = new URL("/", siteURL).toString()
 
 const calendlyUrl = "https://calendly.com/kontakt-karolmodelski/konsultacja"
 
-const preparationQuestions = [
-  "Co chcesz stworzyć?",
-  "Na jakim etapie jest pomysł?",
-  "Kiedy chciałbyś rozpocząć realizację?",
-]
-
 const metaTitle =
   "Bezpłatna rozmowa o Twoim pomyśle na aplikację | Karol Modelski"
 const metaDescription =
@@ -39,6 +33,13 @@ const agenda = [
     description:
       "Powiem Ci, czy widzę szansę na realizację pierwszej wersji w ramach mojego pakietu, czy projekt wymaga innego podejścia.",
   },
+]
+
+const conversationTypes = [
+  "Mam pomysł na aplikację i chcę zacząć realizację.",
+  "Potrzebuję dokładniejszej analizy i planu projektu.",
+  "Mam już działającą aplikację i chcę ją poprawić lub rozwinąć.",
+  "Potrzebuję pomocy technicznej przy istniejącym produkcie.",
 ]
 
 const breadcrumbSchema = {
@@ -148,27 +149,31 @@ const breadcrumbSchema = {
               </p>
 
               <p class="mt-3 text-xs leading-relaxed text-pretty text-paper/55">
-                Nie musisz przygotowywać dokumentacji ani szczegółowo opisywać
-                pomysłu podczas rezerwacji.
+                Nie musisz mieć gotowej dokumentacji ani wypełniać checklisty
+                przed spotkaniem. Wystarczy, że opowiesz mi własnymi słowami, co
+                chcesz stworzyć.
               </p>
 
               <div class="mt-5 border-t border-paper/15 pt-4">
-                <p class="font-mono text-[10px] tracking-[0.16em] text-paper/60 uppercase">
-                  Warto przygotować
+                <p class="text-sm leading-snug font-medium text-paper">
+                  Chcesz przygotować się do rozmowy?
                 </p>
-                <ul class="mt-3 space-y-2">
-                  {preparationQuestions.map((question) => (
-                    <li class="flex items-start gap-2.5">
-                      <Check
-                        className="mt-0.5 size-3.5 shrink-0 text-signal-bright"
-                        aria-hidden="true"
-                      />
-                      <span class="text-sm leading-relaxed text-pretty text-paper/80">
-                        {question}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                <p class="mt-1.5 text-xs leading-relaxed text-pretty text-paper/60">
+                  Przygotowałem bezpłatną checklistę z 12 pytaniami, które
+                  pomogą Ci uporządkować pomysł na aplikację. Możesz ją pobrać,
+                  zapisać swoje odpowiedzi i zabrać na nasze spotkanie.
+                </p>
+                <a
+                  href="/checklista/"
+                  class="mt-2 inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-paper underline decoration-paper/25 underline-offset-4 transition-colors hover:decoration-signal"
+                >
+                  Pobierz checklistę — 12 pytań
+                  <ArrowRight className="size-3.5" aria-hidden="true" />
+                </a>
+                <p class="mt-1 text-xs leading-relaxed text-pretty text-paper/55 italic">
+                  Nie musisz odpowiadać na wszystkie pytania. Przygotowanie nie
+                  jest obowiązkowe.
+                </p>
               </div>
 
               <div class="mt-5 border-t border-paper/15 pt-4">
@@ -230,6 +235,41 @@ const breadcrumbSchema = {
               Nie musisz znać się na technologii. Wystarczy, że opowiesz mi o
               pomyśle własnymi słowami.
             </p>
+
+            <div class="mt-10 max-w-2xl border-t border-line pt-8">
+              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+                Możemy porozmawiać również o działającej aplikacji.
+              </h3>
+              <p class="mt-3 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Jeśli masz już produkt i zastanawiasz się, co warto poprawić,
+                rozbudować albo jak zadbać o jego dalsze utrzymanie, opowiedz mi
+                o swojej sytuacji.
+              </p>
+              <p class="mt-3 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Sprawdzimy, czy i w jaki sposób mogę Ci pomóc.
+              </p>
+
+              <p class="mt-6 text-sm leading-relaxed text-pretty font-medium text-ink">
+                Z czym przychodzisz na rozmowę?
+              </p>
+              <ul class="mt-3 border-t border-line">
+                {conversationTypes.map((type) => (
+                  <li class="flex items-start gap-3 border-b border-line py-3">
+                    <Check
+                      className="mt-0.5 size-4 shrink-0 text-signal"
+                      aria-hidden="true"
+                    />
+                    <span class="text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                      {type}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft">
+                Wystarczy, że wybierzesz najbliższą sytuację — szczegóły omówimy
+                już podczas spotkania.
+              </p>
+            </div>
           </div>
         </div>
       </div>
