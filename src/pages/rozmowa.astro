@@ -4,7 +4,7 @@ import SiteHeader from "@/components/site-header.astro"
 import SiteFooter from "@/components/site-footer.astro"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { ArrowRight, Check, Lock } from "lucide-react"
+import { ArrowRight, Check } from "lucide-react"
 
 const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
 const pageURL = new URL("/rozmowa/", siteURL).toString()
@@ -12,42 +12,33 @@ const siteRoot = new URL("/", siteURL).toString()
 
 const calendlyUrl = "https://calendly.com/kontakt-karolmodelski/konsultacja"
 
+const preparationQuestions = [
+  "Co chcesz stworzyć?",
+  "Na jakim etapie jest pomysł?",
+  "Kiedy chciałbyś rozpocząć realizację?",
+]
+
 const metaTitle =
   "Bezpłatna rozmowa o Twoim pomyśle na aplikację | Karol Modelski"
 const metaDescription =
   "Masz pomysł na aplikację? Umów bezpłatną 20-minutową rozmowę. Sprawdzimy, od czego zacząć i czy pierwszą działającą wersję można stworzyć w 4 tygodnie."
 
-const steps = [
+const agenda = [
   {
-    title: "Opowiesz mi, co chcesz stworzyć",
-    paragraphs: [
-      "Własnymi słowami.",
-      "Możesz opowiedzieć, jak wyobrażasz sobie działanie aplikacji, komu miałaby służyć i dlaczego chcesz ją zbudować.",
-      "Nie musisz znać nazw technologii ani przygotowywać szczegółowego opisu.",
-    ],
+    title: "Twój pomysł",
+    description:
+      "Opowiesz mi, co chcesz stworzyć, komu aplikacja miałaby służyć i co jest dla Ciebie najważniejsze.",
   },
   {
-    title: "Porozmawiamy o tym, co jest najważniejsze",
-    paragraphs: [
-      "Być może masz już pomysły na dziesiątki funkcji. To normalne.",
-      "Spróbujemy ustalić, od czego warto zacząć i które rzeczy możemy spokojnie zostawić na później.",
-      "Nie chodzi o rezygnowanie z Twojej wizji. Chodzi o znalezienie rozsądnego pierwszego kroku.",
-    ],
+    title: "Możliwy pierwszy krok",
+    description:
+      "Zastanowimy się, od czego warto zacząć i które funkcje mogą poczekać na później.",
   },
   {
-    title: "Dowiesz się, jakie widzę możliwości",
-    paragraphs: [
-      "Powiem Ci, czy na podstawie naszej rozmowy widzę szansę na realizację pierwszej wersji w ramach mojego pakietu.",
-      "Jeżeli pomysł jest bardziej rozbudowany i wymaga dodatkowej analizy albo większego budżetu, również Ci o tym powiem.",
-      "Nie będę obiecywać, że każdą aplikację da się zbudować w cztery tygodnie.",
-    ],
+    title: "Dalsze możliwości",
+    description:
+      "Powiem Ci, czy widzę szansę na realizację pierwszej wersji w ramach mojego pakietu, czy projekt wymaga innego podejścia.",
   },
-]
-
-const preparation = [
-  "Co ma robić Twoja aplikacja?",
-  "Kto miałby z niej korzystać?",
-  "Co jest w Twoim pomyśle najważniejsze?",
 ]
 
 const breadcrumbSchema = {
@@ -104,57 +95,38 @@ const breadcrumbSchema = {
           </ol>
         </nav>
 
-        <div class="mt-10 grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-x-12 lg:gap-y-6">
-          <div class="rise lg:col-span-7 lg:col-start-1 lg:row-start-1">
+        <div class="mt-10 grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-x-12">
+          <div class="rise lg:col-span-7">
             <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
               <span class="h-px w-8 bg-signal"></span>
               Bezpłatna rozmowa · 20 minut
             </p>
 
             <h1 class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl">
-              Masz pomysł na aplikację? Porozmawiajmy o tym, od czego warto
-              zacząć.
+              Porozmawiajmy o Twoim pomyśle na aplikację.
             </h1>
 
             <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Nie musisz znać się na programowaniu ani wiedzieć, jak
-              zorganizować cały projekt.
-            </p>
-
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Wystarczy, że opowiesz mi własnymi słowami, co chcesz stworzyć.
+              W 20 minut omówimy Twój pomysł, wybierzemy możliwy pierwszy krok i
+              sprawdzimy, czy mogę pomóc Ci w realizacji.
             </p>
 
             <p class="mt-6 max-w-xl border-l-2 border-signal pl-4 text-sm leading-relaxed text-pretty font-medium text-ink sm:text-base">
-              Bez przygotowywania dokumentacji. Bez technicznego żargonu. Bez
-              zobowiązań.
+              Bezpłatnie · Online · Bez zobowiązań
             </p>
-
-            <a
-              href="#jak-wyglada"
-              class="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-            >
-              Jak wygląda pierwsza rozmowa?
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </a>
           </div>
 
           <aside
-            class="rise lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1"
+            id="rezerwacja"
+            class="rise scroll-mt-24 lg:col-span-5"
             style="animation-delay:.12s"
           >
-            <div class="on-ink rounded-2xl bg-ink p-6 text-paper sm:p-8 lg:sticky lg:top-24">
-              <p class="flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] text-paper/60 uppercase">
-                <span class="h-px w-5 bg-signal" aria-hidden="true" />
-                Rezerwacja terminu
-              </p>
-
-              <p class="mt-4 font-heading text-3xl leading-tight font-semibold text-paper">
-                20 minut{" "}
-                <span class="text-xl font-medium text-paper/60">· online</span>
-              </p>
+            <div class="on-ink rounded-2xl bg-ink p-6 text-paper sm:p-8">
+              <h2 class="font-heading text-2xl leading-tight font-semibold text-balance text-paper">
+                Wybierz dogodny termin
+              </h2>
               <p class="mt-2 text-sm leading-relaxed text-pretty text-paper/70">
-                Bezpłatnie, bez przygotowywania dokumentacji i bez zobowiązań.
+                Rozmowa trwa około 20 minut i odbywa się online.
               </p>
 
               <a
@@ -163,20 +135,44 @@ const breadcrumbSchema = {
                 rel="noopener noreferrer"
                 class={cn(
                   buttonVariants({ size: "lg" }),
-                  "mt-6 h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-5 py-3 text-center text-base text-balance whitespace-normal text-ink hover:bg-paper/85"
+                  "mt-5 h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-5 py-3 text-center text-base text-balance whitespace-normal text-ink hover:bg-paper/85"
                 )}
               >
                 Wybierz dogodny termin
                 <ArrowRight />
               </a>
 
-              <p class="mt-3 text-xs leading-relaxed text-paper/55">
+              <p class="mt-3 text-xs leading-relaxed text-pretty text-paper/55">
                 Kalendarz otworzy się w nowej karcie. Po wybraniu terminu
-                otrzymasz potwierdzenie i informacje potrzebne do dołączenia.
+                otrzymasz potwierdzenie oraz informacje potrzebne do dołączenia.
               </p>
 
-              <div class="mt-6 border-t border-paper/15 pt-5">
-                <p class="text-sm leading-relaxed text-paper/70">
+              <p class="mt-3 text-xs leading-relaxed text-pretty text-paper/55">
+                Nie musisz przygotowywać dokumentacji ani szczegółowo opisywać
+                pomysłu podczas rezerwacji.
+              </p>
+
+              <div class="mt-5 border-t border-paper/15 pt-4">
+                <p class="font-mono text-[10px] tracking-[0.16em] text-paper/60 uppercase">
+                  Warto przygotować
+                </p>
+                <ul class="mt-3 space-y-2">
+                  {preparationQuestions.map((question) => (
+                    <li class="flex items-start gap-2.5">
+                      <Check
+                        className="mt-0.5 size-3.5 shrink-0 text-signal-bright"
+                        aria-hidden="true"
+                      />
+                      <span class="text-sm leading-relaxed text-pretty text-paper/80">
+                        {question}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="mt-5 border-t border-paper/15 pt-4">
+                <p class="text-xs leading-relaxed text-pretty text-paper/55">
                   Wolisz najpierw napisać?
                 </p>
                 <a
@@ -186,63 +182,31 @@ const breadcrumbSchema = {
                   kontakt@karolmodelski.pl
                 </a>
               </div>
-
-              <div class="mt-4 border-t border-paper/15 pt-4">
-                <p class="text-xs leading-relaxed text-pretty text-paper/55">
-                  Nie chcesz jeszcze zdradzać szczegółów pomysłu? Nie musisz ich
-                  wpisywać do formularza — możemy najpierw podpisać NDA.
-                </p>
-                <a
-                  href="mailto:kontakt@karolmodelski.pl?subject=Umowa%20NDA%20przed%20rozmow%C4%85"
-                  class="mt-1 inline-flex min-h-11 items-center text-xs font-medium text-paper underline decoration-paper/25 underline-offset-4 transition-colors hover:decoration-signal"
-                >
-                  Napisz w sprawie NDA
-                </a>
-              </div>
             </div>
           </aside>
-
-          <div
-            class="rise lg:col-span-7 lg:col-start-1 lg:row-start-2"
-            style="animation-delay:.06s"
-          >
-            <p class="max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Podczas bezpłatnej, 20-minutowej rozmowy przyjrzymy się Twojemu
-              pomysłowi, spróbujemy wybrać najważniejszą funkcję i sprawdzimy,
-              czy możemy zacząć od pierwszej działającej wersji w 4 tygodnie.
-            </p>
-          </div>
         </div>
       </div>
     </section>
 
     <section
-      id="jak-wyglada"
-      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+      id="przebieg"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              01 · Przebieg rozmowy
+              01 · Co omówimy
             </p>
           </div>
 
           <div class="lg:col-span-9">
             <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              Jak wygląda pierwsza rozmowa?
+              Co omówimy podczas rozmowy?
             </h2>
-            <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink">
-              Nie jest to techniczny egzamin ani spotkanie, na które musisz
-              przyjść z gotowym planem.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Chcę przede wszystkim zrozumieć Twój pomysł i pomóc Ci ocenić,
-              jaki pierwszy krok ma sens.
-            </p>
 
             <ol class="mt-10 grid grid-cols-1 gap-8 border-t border-line pt-8 md:grid-cols-3 md:gap-10">
-              {steps.map(({ title, paragraphs }, index) => (
+              {agenda.map(({ title, description }, index) => (
                 <li>
                   <div class="flex items-center justify-between gap-4">
                     <span class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
@@ -255,64 +219,16 @@ const breadcrumbSchema = {
                   <h3 class="mt-4 font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl md:min-h-[4.5rem]">
                     {title}
                   </h3>
-                  <div class="mt-2 space-y-2 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                    {paragraphs.map((paragraph) => (
-                      <p>{paragraph}</p>
-                    ))}
-                  </div>
+                  <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                    {description}
+                  </p>
                 </li>
               ))}
             </ol>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section
-      id="przygotowanie"
-      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
-    >
-      <div class="mx-auto max-w-[75rem]">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
-          <div class="lg:col-span-3">
-            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              02 · Przygotowanie
-            </p>
-          </div>
-
-          <div class="lg:col-span-9">
-            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              Co warto przygotować przed rozmową?
-            </h2>
-            <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
-              Nic skomplikowanego.
-            </p>
-
-            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Wystarczy, że zastanowisz się nad trzema pytaniami:
-            </p>
-
-            <ul class="mt-6 max-w-2xl border-t border-line">
-              {preparation.map((question) => (
-                <li class="flex items-start gap-3 border-b border-line py-4">
-                  <Check
-                    className="mt-0.5 size-4 shrink-0 text-signal"
-                    aria-hidden="true"
-                  />
-                  <span class="text-sm leading-relaxed text-pretty text-ink sm:text-base">
-                    {question}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <p class="mt-6 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-              Jeśli masz już notatki, szkice albo przykłady podobnych aplikacji,
-              możesz z nich skorzystać. Ale nie są wymagane.
-            </p>
-            <p class="mt-3 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-              A jeśli nie potrafisz jeszcze odpowiedzieć na wszystkie pytania —
-              właśnie po to jest nasza rozmowa.
+            <p class="mt-8 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+              Nie musisz znać się na technologii. Wystarczy, że opowiesz mi o
+              pomyśle własnymi słowami.
             </p>
           </div>
         </div>
@@ -320,55 +236,58 @@ const breadcrumbSchema = {
     </section>
 
     <section
-      id="nda"
+      id="warto-wiedziec"
       class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              03 · Poufność
+              02 · Warto wiedzieć
             </p>
           </div>
 
           <div class="lg:col-span-9">
-            <div class="max-w-3xl rounded-2xl border border-line bg-paper p-6 sm:p-8">
-              <div class="flex items-start gap-4">
-                <span class="flex size-10 shrink-0 items-center justify-center rounded-full border border-line bg-surface-muted text-signal">
-                  <Lock className="size-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <h2 class="font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-3xl">
-                    Wolisz najpierw zabezpieczyć swój pomysł?
-                  </h2>
-                  <p class="mt-3 text-base leading-relaxed text-pretty text-ink-soft">
-                    Rozumiem. Jeśli nie chcesz opowiadać o szczegółach
-                    rozwiązania bez wcześniejszego zabezpieczenia, możemy
-                    najpierw podpisać umowę o poufności (NDA).
-                  </p>
-                  <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft">
-                    Nie musisz ujawniać mi najważniejszych informacji już
-                    podczas rezerwowania terminu.
-                  </p>
-                </div>
-              </div>
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Kilka rzeczy, które warto wiedzieć
+            </h2>
 
-              <div class="mt-6 border-t border-line pt-6">
+            <ul class="mt-10 max-w-2xl border-t border-line">
+              <li class="border-b border-line py-5">
+                <p class="text-base leading-snug font-semibold text-ink sm:text-lg">
+                  Rozmowa jest bezpłatna.
+                </p>
+                <p class="mt-1.5 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                  Trwa około 20 minut i nie zobowiązuje Cię do rozpoczęcia
+                  współpracy.
+                </p>
+              </li>
+              <li class="border-b border-line py-5">
+                <p class="text-base leading-snug font-semibold text-ink sm:text-lg">
+                  Nie potrzebujesz dokumentacji.
+                </p>
+                <p class="mt-1.5 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                  Możesz po prostu opowiedzieć mi, co chcesz stworzyć.
+                </p>
+              </li>
+              <li class="border-b border-line py-5">
+                <p class="text-base leading-snug font-semibold text-ink sm:text-lg">
+                  Możemy najpierw podpisać NDA.
+                </p>
+                <p class="mt-1.5 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                  Jeśli Twój pomysł wymaga poufności, napisz do mnie przed
+                  spotkaniem. Nie musisz wpisywać szczegółów rozwiązania w
+                  formularzu rezerwacji.
+                </p>
                 <a
                   href="mailto:kontakt@karolmodelski.pl?subject=Umowa%20NDA%20przed%20rozmow%C4%85"
-                  class={cn(
-                    buttonVariants({ variant: "outline", size: "lg" }),
-                    "h-auto min-h-11 w-full gap-2 rounded-[6px] px-5 py-2.5 text-center text-sm text-balance whitespace-normal sm:w-auto sm:text-base"
-                  )}
+                  class="mt-2 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
                 >
                   Napisz w sprawie NDA
-                  <ArrowRight />
+                  <ArrowRight className="size-4" aria-hidden="true" />
                 </a>
-                <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft">
-                  Po uzgodnieniu poufności będziemy mogli przejść do szczegółów.
-                </p>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -382,57 +301,33 @@ const breadcrumbSchema = {
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              04 · Koszt rozmowy
+              03 · Po rozmowie
             </p>
           </div>
 
           <div class="lg:col-span-9">
-            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              Ile kosztuje taka rozmowa?
+            <h2 class="font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance text-ink sm:text-3xl">
+              A jeśli zdecydujemy się na współpracę?
             </h2>
-            <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Nic. Pierwsza rozmowa jest bezpłatna i trwa około 20 minut.
+
+            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Mój standardowy pakiet przygotowania pierwszej działającej wersji
+              aplikacji kosztuje{" "}
+              <strong class="font-semibold text-ink">29 500 zł brutto</strong>.
+            </p>
+            <p class="mt-3 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+              Nie każdy projekt zmieści się w tym zakresie. Podczas rozmowy
+              wstępnie sprawdzimy, czy to odpowiednie rozwiązanie dla Twojego
+              pomysłu.
             </p>
 
-            <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-              <div class="space-y-3 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                <p>
-                  Nie podpisujesz żadnej umowy i nie zobowiązujesz się do
-                  rozpoczęcia współpracy.
-                </p>
-                <p>
-                  Jeśli okaże się, że Twój pomysł pasuje do mojego modelu
-                  realizacji, wyjaśnię Ci, jak wyglądają następne kroki.
-                </p>
-                <p>
-                  Nie każdy pomysł będzie można zrealizować w tej cenie i
-                  terminie — dlatego właśnie zaczynamy od rozmowy.
-                </p>
-              </div>
-
-              <div class="rounded-xl border border-line bg-paper p-5 sm:p-6">
-                <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
-                  Standardowy pakiet
-                </p>
-                <p class="mt-2 font-heading text-3xl font-semibold text-signal-ink">
-                  29 500 zł{" "}
-                  <span class="text-base font-medium tracking-normal text-ink-soft">
-                    brutto
-                  </span>
-                </p>
-                <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
-                  Przygotowanie pierwszej działającej wersji aplikacji. Zakres
-                  ustalamy przed rozpoczęciem projektu.
-                </p>
-                <a
-                  href="/oferta/"
-                  class="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-                >
-                  Poznaj szczegóły oferty
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </a>
-              </div>
-            </div>
+            <a
+              href="/oferta/"
+              class="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+            >
+              Poznaj szczegóły oferty
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>
@@ -450,47 +345,29 @@ const breadcrumbSchema = {
           ></span>
 
           <div class="relative max-w-2xl">
-            <p class="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-paper/60 uppercase">
-              <span class="h-px w-5 bg-signal" aria-hidden="true" />
-              05 · Rezerwacja
-            </p>
-            <h2 class="mt-4 font-heading text-2xl leading-tight font-semibold tracking-tight text-balance sm:text-3xl">
-              Wybierz termin, który Ci odpowiada
+            <h2 class="font-heading text-2xl leading-tight font-semibold tracking-tight text-balance sm:text-3xl">
+              Masz pomysł? Porozmawiajmy.
             </h2>
-
-            <div class="mt-4 space-y-3 text-base leading-relaxed text-pretty text-paper/75 sm:text-lg">
-              <p>
-                Jeśli masz pomysł i chcesz sprawdzić, jak można przejść do jego
-                realizacji, zapraszam na rozmowę.
-              </p>
-              <p>
-                Nie musisz wiedzieć, od czego zacząć. Od tego zaczniemy razem.
-              </p>
-            </div>
+            <p class="mt-3 text-base leading-relaxed text-pretty text-paper/75 sm:text-lg">
+              Wybierz dogodny termin i opowiedz mi, co chcesz stworzyć.
+            </p>
 
             <div class="mt-8">
               <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#rezerwacja"
                 class={cn(
                   buttonVariants({ size: "lg" }),
                   "h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-6 py-3 text-center text-base text-balance whitespace-normal text-ink hover:bg-paper/85 sm:w-auto sm:py-0 sm:whitespace-nowrap"
                 )}
               >
-                Wybierz dogodny termin
+                Umów bezpłatną rozmowę
                 <ArrowRight />
               </a>
 
               <p class="mt-4 text-sm leading-relaxed text-paper/55">
-                20 minut · Online · Bezpłatnie · Bez zobowiązań
+                20 minut · Online · Bez zobowiązań
               </p>
             </div>
-
-            <p class="mt-6 border-t border-paper/15 pt-5 text-sm leading-relaxed text-pretty text-paper/60">
-              Po wybraniu terminu otrzymasz potwierdzenie spotkania i informacje
-              potrzebne do dołączenia.
-            </p>
           </div>
         </div>
 

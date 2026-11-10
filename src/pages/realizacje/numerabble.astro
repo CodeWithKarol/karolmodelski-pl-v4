@@ -271,38 +271,10 @@ const breadcrumbSchema = {
             </h1>
 
             <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Od wieloletniej wizji gry matematycznej do pierwszej działającej
-              wersji w przeglądarce.
+              Zamiast od razu budować rozbudowaną aplikację, zaczęliśmy od tego,
+              co najważniejsze — działającej gry z komputerem, dostępnej w
+              przeglądarce.
             </p>
-
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Mój klient przez prawie 30 lat rozwijał pomysł na własną grę
-              matematyczną. Miał przemyślane zasady, pomysły na wygląd, różne
-              możliwości rozgrywki i wizję tego, jak gra mogłaby wyglądać w
-              przyszłości.
-            </p>
-
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Tylko że między pomysłem a działającą aplikacją jest jeszcze sporo
-              pracy. I właśnie tutaj zaczyna się nasza historia.
-            </p>
-
-            <div class="mt-9 flex flex-col items-start gap-4">
-              <a
-                href="#co-powstalo"
-                class={cn(
-                  buttonVariants({ size: "lg" }),
-                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
-                )}
-              >
-                Zobacz, co udało nam się zbudować
-                <ArrowRight />
-              </a>
-              <p class="text-sm leading-relaxed text-pretty text-ink-soft">
-                4 tygodnie zaplanowanych prac · Gra w przeglądarce · Rozgrywka z
-                komputerem · Pierwsze testy z użytkownikami
-              </p>
-            </div>
           </div>
 
           <figure
@@ -609,15 +581,26 @@ const breadcrumbSchema = {
             </p>
 
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Dlatego wspólnie przechodziliśmy przez kolejne możliwości. Klient
-              tłumaczył, jak wyobraża sobie grę, a ja przekładałem te pomysły na
-              konkretne zadania dla zespołu.
+              Dlatego mój zespół dokładnie przeanalizował otrzymane materiały i
+              przygotował listę pytań dotyczących zasad, nietypowych sytuacji i
+              sposobu działania gry.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Następnie wspólnie z klientem przechodziliśmy przez kolejne
+              kwestie. Wyjaśnialiśmy niejasności, proponowaliśmy możliwe
+              rozwiązania i ustalaliśmy, jak wszystko powinno działać.
             </p>
 
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
               Czasem trzeba było coś uprościć. Czasem zmienić wcześniejsze
               założenie. A czasem powiedzieć: to dobry pomysł, ale zostawmy go
               na następny etap.
+            </p>
+
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Dzięki temu zespół mógł pracować na konkretnych ustaleniach,
+              zamiast zgadywać, co autor gry miał na myśli.
             </p>
 
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
@@ -858,6 +841,37 @@ const breadcrumbSchema = {
               Nie mamy jeszcze odpowiedzi na wszystkie pytania. Ale mamy już
               produkt, który pozwala zacząć ich szukać.
             </p>
+
+            <div class="mt-12 border-t border-line pt-8">
+              <h3 class="font-heading text-xl leading-snug font-semibold tracking-tight text-balance text-ink sm:text-2xl">
+                Pierwsze dane to również pierwsze pomysły na usprawnienia
+              </h3>
+
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Kiedy gra zaczęła przyciągać pierwszych odwiedzających,
+                przyjrzałem się również stronie, z której można przejść do
+                rozgrywki.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Przygotowałem analizę jej najważniejszych elementów i
+                zaproponowałem kilka zmian do przetestowania.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Między innymi uproszczenie głównego komunikatu, ujednolicenie
+                przycisków i sprawdzenie, czy osoby odwiedzające stronę
+                rzeczywiście rozpoczynają grę.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Bo samo kliknięcie przycisku nie musi jeszcze oznaczać, że ktoś
+                zaczął korzystać z produktu.
+              </p>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                To dobry przykład tego, dlaczego analityka jest przydatna
+                również po zakończeniu programowania. Pozwala zadawać kolejne
+                pytania i sprawdzać, czy proponowane usprawnienia rzeczywiście
+                pomagają użytkownikom.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -948,42 +962,6 @@ const breadcrumbSchema = {
       </div>
     </section>
 
-    <section class="border-t border-line bg-paper px-4 py-12 sm:px-6 sm:py-16">
-      <div class="mx-auto max-w-[75rem]">
-        <div class="flex flex-col gap-6 rounded-2xl border border-line bg-surface-muted p-6 sm:flex-row sm:items-center sm:justify-between sm:gap-10 sm:p-8">
-          <div>
-            <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
-              Porozmawiajmy
-            </p>
-            <h2 class="mt-2 font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
-              Masz pomysł, który od dawna czeka na realizację?
-            </h2>
-            <p class="mt-3 max-w-xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-              Nie musisz od razu wiedzieć, jak go zbudować. Opowiedz mi, co
-              chcesz stworzyć, a wspólnie sprawdzimy, czy można zacząć od
-              pierwszej działającej wersji.
-            </p>
-          </div>
-
-          <div class="shrink-0">
-            <a
-              href={consultationUrl}
-              class={cn(
-                buttonVariants({ size: "lg" }),
-                "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
-              )}
-            >
-              Porozmawiajmy o Twoim pomyśle
-              <ArrowRight />
-            </a>
-            <p class="mt-3 text-xs leading-relaxed text-pretty text-ink-soft">
-              Bezpłatnie · 20 minut · Bez zobowiązań
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section
       id="dalej"
       class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
@@ -1052,37 +1030,27 @@ const breadcrumbSchema = {
             </h2>
 
             <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink">
-              Przede wszystkim utwierdził mnie w przekonaniu, że przy budowaniu
-              nowych aplikacji najtrudniejsze często nie jest samo
-              programowanie.
-            </p>
-
-            <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
-              Najtrudniejsze jest ustalenie, co naprawdę warto zbudować na
-              początku.
-            </p>
-
-            <p class="mt-6 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Bo kiedy ktoś nosi pomysł w głowie przez wiele lat, zwykle widzi
-              już całą aplikację. Wie, jak mogłaby wyglądać, co powinna robić i
-              jakie możliwości mogłaby mieć w przyszłości.
+              Przede wszystkim tego, że między dobrym pomysłem a działającą
+              aplikacją jest mnóstwo decyzji, których nie widać na pierwszy rzut
+              oka.
             </p>
 
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              I jasne, te pomysły mogą być bardzo dobre. Tylko nie wszystkie
-              trzeba realizować od razu.
+              Trzeba wybrać najważniejsze funkcje, dopracować zasady, rozwiązać
+              problemy pojawiające się podczas prac i sprawdzić efekt z
+              prawdziwymi użytkownikami.
             </p>
 
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              W przypadku Numerabble zaczęliśmy od tego, co najważniejsze —
-              samej gry. Dzięki temu zamiast miesiącami rozmawiać o kolejnych
-              funkcjach, mogliśmy przejść do sprawdzania działającego produktu.
+              W Numerabble nie wszystko od razu działało idealnie. Były
+              poprawki, nowe pytania i pomysły, które trzeba było odłożyć na
+              później.
             </p>
 
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Nie wszystko od razu działało idealnie. Były poprawki, nowe
-              pytania i decyzje, które trzeba było podejmować po drodze. Ale
-              właśnie na tym polega budowanie pierwszej wersji.
+              Ale właśnie dzięki temu, że zaczęliśmy od konkretnej, grywalnej
+              wersji, mogliśmy stosunkowo szybko przejść od dyskusji o pomyśle
+              do testowania prawdziwego produktu.
             </p>
 
             <div class="relative mt-10 border-t border-line pt-8">
@@ -1091,8 +1059,9 @@ const breadcrumbSchema = {
                 aria-hidden="true"
               />
               <p class="max-w-3xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
-                Najpierw tworzymy solidną podstawę. Sprawdzamy ją w praktyce. A
-                dopiero później decydujemy, co rozwijać dalej.
+                I to jest dla mnie najważniejsze. Nie budować wszystkiego naraz,
+                tylko stworzyć sensowną podstawę, sprawdzić ją i dopiero wtedy
+                podejmować kolejne decyzje.
               </p>
             </div>
 

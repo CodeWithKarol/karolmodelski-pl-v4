@@ -21,17 +21,15 @@ Model partnerski: realizuję maksymalnie jeden projekt w miesiącu.
 
 ### Zamień swój pomysł w działającą aplikację.
 
-Masz pomysł na własną aplikację?
+Pomogę Ci wybrać najważniejsze funkcje, dopracować pomysł i zajmę się całą realizacją. Bez szukania programistów i budowania wszystkiego od razu.
 
-Bez szukania programistów i budowania wszystkiego od razu. W 4 tygodnie przygotuję pierwszą działającą wersję Twojego produktu, którą będziesz mógł uruchomić, pokazać innym i zacząć testować.
+Pierwsza działająca wersja w 4 tygodnie prac.
 
-Nie musisz znać się na technologii ani mieć gotowej dokumentacji. Pomogę Ci wybrać najważniejsze funkcje i zajmę się całą realizacją.
+**Wezwanie do działania:** Umów bezpłatną rozmowę → https://www.karolmodelski.pl/rozmowa/
 
-**Wezwanie do działania:** Sprawdźmy, czy Twój pomysł da się zrealizować → https://www.karolmodelski.pl/rozmowa/
+20 minut · Bez zobowiązań.
 
-Bezpłatna rozmowa · 20 minut · Bez zobowiązań.
-
-29 500 zł brutto za uzgodniony pakiet · umowa o poufności (NDA) przed szczegółową rozmową.
+29 500 zł brutto za uzgodniony pakiet · możliwość podpisania NDA.
 
 Na pierwszym ekranie znajduje się nagranie strony produktu gry Numerabble — widok przewijany na telefonie. To prawdziwa realizacja, nie makieta (szczegóły w sekcji 01).
 
@@ -52,25 +50,25 @@ Czas liczy się od wspólnego ustalenia zakresu i skompletowania materiałów or
 
 ### Pomysł sprzed prawie 30 lat. Dziś można już w niego zagrać.
 
-Mój klient przez wiele lat rozwijał pomysł na własną grę matematyczną.
+Mój klient przez wiele lat rozwijał własną grę matematyczną. Miał przemyślane zasady i mnóstwo pomysłów na przyszłość: rozgrywki online, rankingi, turnieje i kolejne tryby gry.
 
-Miał przemyślane zasady i mnóstwo pomysłów na kolejne możliwości: rozgrywki online, rankingi, turnieje i różne tryby gry.
+Zaproponowałem, żebyśmy nie budowali wszystkiego od razu.
 
-Tylko czy trzeba było budować to wszystko od razu?
+Najpierw skupiliśmy się na najważniejszym — działającej rozgrywce z komputerem.
 
-Zaproponowałem, żebyśmy zaczęli od podstaw.
+Po drodze musieliśmy dopracować zasady gry, rozwiązać kilka nietypowych sytuacji i ustalić, jak wszystko powinno działać w aplikacji.
 
-Najpierw stworzymy wersję, w której można zagrać z komputerem. Udostępnimy ją przez przeglądarkę i zaczniemy sprawdzać, jak ludzie z niej korzystają.
+Tak powstała pierwsza grywalna wersja Numerabble, którą można uruchomić w przeglądarce.
 
-I właśnie tak powstała pierwsza działająca wersja Numerabble.
+Po premierze zaczęliśmy też sprawdzać, jak korzystają z niej prawdziwi gracze.
 
 Sekcja pokazuje duże nagranie rzeczywistej rozgrywki.
 
 **To prawdziwa gra, a nie wizualizacja pomysłu.** Można ją uruchomić w przeglądarce i rozegrać partię.
 
-**Wezwanie do działania:** Zobacz, jak powstało Numerabble → https://www.karolmodelski.pl/realizacje/numerabble/
+**Wezwanie do działania:** Studium realizacji Numerabble → https://www.karolmodelski.pl/realizacje/numerabble/
 
-Poznaj całą historię: od pierwszych rozmów i ustalania zasad, przez cztery tygodnie pracy, aż po pierwsze testy i poprawki.
+Zobacz pełną historię Numerabble — od pierwszych rozmów, przez cztery tygodnie prac, aż po testy i kolejne decyzje.
 
 ---
 
@@ -98,19 +96,19 @@ Nie musisz znać odpowiedzi na wszystkie te pytania, zanim zaczniesz.
 
 ## 03 · Współpraca (#model)
 
-### Ty znasz swój pomysł. Ja wiem, jak przeprowadzić Cię przez jego realizację.
+### Ty znasz swój pomysł. Ja pomogę Ci przełożyć go na działający produkt.
 
-Nie oczekuję, że będziesz rozumieć programowanie, wybierać technologie czy zarządzać specjalistami.
+Nie oczekuję, że będziesz znać się na programowaniu, przygotowywać dokumentację techniczną ani zarządzać specjalistami.
 
-Potrzebuję przede wszystkim zrozumieć, co chcesz stworzyć i dlaczego jest to dla Ciebie ważne.
+Potrzebuję przede wszystkim zrozumieć, co chcesz stworzyć i dla kogo.
 
-Następnie pomogę Ci wybrać najważniejszą funkcję, przygotuję plan działania i zajmę się organizacją całego procesu.
+1. **Ty opowiadasz o swoim pomyśle** — Własnymi słowami. Możesz pokazać mi notatki, szkice albo po prostu opisać, jak wyobrażasz sobie działanie aplikacji.
+2. **Wspólnie ustalamy, co ma największy sens na początku** — Wybieramy najważniejsze funkcje, doprecyzowujemy założenia i decydujemy, co może poczekać na kolejny etap.
+3. **Ja organizuję realizację, Ty oceniasz efekty** — Zajmuję się zespołem i techniczną stroną projektu. Pokazuję Ci postępy, wyjaśniam możliwe rozwiązania i rekomenduję kolejne kroki.
 
-1. **Ty opowiadasz o swojej wizji** — Własnymi słowami. Bez dokumentacji technicznej i wiedzy programistycznej.
-2. **Wspólnie ustalamy, co zbudować najpierw** — Oddzielamy funkcje niezbędne od tych, które mogą poczekać.
-3. **Ja organizuję realizację, Ty oceniasz efekty** — Regularnie pokazuję postępy, a Ty decydujesz, czy produkt zmierza we właściwym kierunku.
+**Ty podejmujesz najważniejsze decyzje dotyczące swojego produktu.**
 
-**Ty decydujesz, jaki ma być Twój produkt. Ja odpowiadam za jego techniczną realizację.**
+Nie musisz sam wiedzieć, jak wszystko zbudować. Od tego masz mnie.
 
 ---
 
@@ -137,7 +135,7 @@ Nie obiecuję, że pierwsza wersja od razu odniesie sukces na rynku.
 
 ### Pierwsza działająca wersja Twojej aplikacji. Bez organizowania całego zespołu.
 
-Pomogę Ci uporządkować pomysł, wybrać najważniejsze funkcje i zajmę się techniczną realizacją projektu.
+W jednej, ustalonej cenie masz cały zakres potrzebny do uruchomienia pierwszej wersji — od uporządkowania pomysłu po działającą aplikację w przeglądarce.
 
 Nie musisz samodzielnie szukać programistów, projektanta ani pilnować, czy wszyscy dobrze zrozumieli Twoją wizję.
 
@@ -147,13 +145,17 @@ Nie musisz samodzielnie szukać programistów, projektanta ani pilnować, czy ws
 
 **W pakiecie otrzymujesz:**
 
-- Ustalenie zakresu i plan realizacji.
-- Projekt wyglądu aplikacji.
-- Działającą pierwszą wersję w przeglądarce.
-- Stronę internetową produktu.
-- Podstawową analitykę.
-- Koordynację całej realizacji.
-- Kod źródłowy i uzgodnione prawa do produktu.
+- Pomoc w uporządkowaniu pomysłu i wyborze najważniejszych funkcji.
+- Dopracowanie zasad działania pierwszej wersji aplikacji.
+- Projekt wyglądu i sposobu obsługi.
+- Działającą aplikację dostępną przez przeglądarkę.
+- Polską i angielską wersję uzgodnionych ekranów.
+- Stronę internetową do przedstawienia produktu.
+- Podstawową analitykę zachowania użytkowników.
+- Koordynację całej realizacji i regularne omawianie postępów.
+- Kod źródłowy, odpowiednie dostępy i prawa w zakresie określonym w umowie.
+
+29 500 zł brutto za wcześniej uzgodniony zakres.
 
 Płatność w 3 etapach (40% / 40% / 20%) · NDA przed szczegółową rozmową · 3 miesiące gwarancji technicznej.
 
@@ -173,19 +175,15 @@ Nie każda aplikacja kwalifikuje się do tego pakietu. Sprawdzamy to przed rozpo
 
 Cześć, jestem Karol Modelski.
 
-Od ponad 7 lat pracuję przy zaawansowanych systemach dla banków i dużych firm.
+Od ponad 7 lat tworzę oprogramowanie. Pracowałem przy zaawansowanych systemach dla banków i dużych firm.
 
-Dziś wykorzystuję to doświadczenie, pomagając osobom, które mają pomysł na własną aplikację, ale nie wiedzą, jak przełożyć go na konkretny plan.
+Dziś wykorzystuję to doświadczenie, pomagając osobom, które chcą zbudować własną aplikację, ale nie wiedzą, jak przejść od pomysłu do działającego produktu.
 
-Nie oczekuję, że będziesz znać się na programowaniu, wybierać technologie czy zarządzać zespołem.
-
-Pomogę Ci ustalić, co warto zbudować na początku, a następnie zajmę się organizacją technicznej realizacji.
-
-**Ty decydujesz, jaki ma być Twój produkt. Ja pomagam doprowadzić go do działającej pierwszej wersji.**
+Pomogę Ci ustalić, co warto zrobić na początku, wyjaśnię techniczne kwestie i zajmę się organizacją realizacji.
 
 **Wezwanie do działania:** Poznaj mnie i moje podejście do pracy → https://www.karolmodelski.pl/o-mnie/
 
-Zobacz, skąd mam doświadczenie, jak pracuję z klientami i dlaczego nie zaczynam od budowania wszystkich funkcji naraz.
+Zobacz, jak pracuję z klientami i dlaczego nie zaczynam od wszystkich funkcji naraz.
 
 Wybrane doświadczenie: GFT Technologies (Senior Angular Developer, 2025 – obecnie), Silent Eight (JavaScript Developer, 2023–2025), BNP Paribas Bank Polska (Software Developer, 2021–2023), Amway (JavaScript Developer, 2019–2021). Technologie: Angular, React, TypeScript, NgRx, RxJS, Nx, Jest, Cypress, React Native.
 
@@ -197,7 +195,7 @@ Wybrane doświadczenie: GFT Technologies (Senior Angular Developer, 2025 – obe
 
 1. **Ustalamy zakres** — Opowiadasz mi o swoim pomyśle. Wspólnie wybieramy najważniejsze funkcje i zapisujemy ustalenia w umowie.
 2. **Budujemy pierwszą wersję — 4 tygodnie** — Przygotowujemy wygląd, programujemy najważniejszą funkcję i uruchamiamy aplikację w przeglądarce. Pokazuję Ci postępy, żebyś na bieżąco wiedział, co się dzieje.
-3. **Sprawdzamy i przekazujemy produkt** — Przeprowadzamy odbiór, wprowadzamy wymagane poprawki i przekazuję Ci kod oraz uzgodnione prawa po rozliczeniu.
+3. **Sprawdzamy i przekazujemy produkt** — Przeprowadzamy odbiór, wprowadzamy wymagane poprawki i przekazuję Ci kod źródłowy oraz prawa do produktu w zakresie określonym w umowie.
 
 Cały proces trwa zwykle 6–8 tygodni.
 
@@ -216,7 +214,7 @@ Dlatego przed rozpoczęciem współpracy ustalamy wszystkie najważniejsze warun
 1. **Poufność** — Możemy podpisać NDA, zanim opowiesz mi o szczegółach pomysłu.
 2. **Stała cena za ustalony zakres** — Wiesz, co dokładnie powstanie i ile za to zapłacisz.
 3. **Płatności etapami** — Nie wpłacasz całej kwoty na początku. Rozliczamy projekt w trzech częściach.
-4. **Kod, prawa i gwarancja** — Po zakończeniu i rozliczeniu otrzymujesz kod oraz uzgodnione prawa do produktu. Masz także trzy miesiące gwarancji technicznej na warunkach zapisanych w umowie.
+4. **Kod źródłowy i prawa do produktu** — Po zakończeniu i rozliczeniu otrzymujesz kod źródłowy oraz prawa do utworów powstałych w ramach realizacji, w zakresie określonym w umowie. Masz także trzy miesiące gwarancji technicznej na warunkach zapisanych w umowie.
 
 Pełne zasady współpracy: https://www.karolmodelski.pl/oferta/#bezpieczenstwo
 
@@ -248,7 +246,7 @@ Nie musisz również ujawniać poufnych informacji w formularzu rezerwacji rozmo
 **Czy aplikację będzie można później rozwijać?**
 Tak. Pierwsza wersja ma być podstawą do dalszego rozwoju.
 
-Po zakończeniu i rozliczeniu projektu otrzymasz kod oraz uzgodnione prawa zgodnie z umową. Kolejne funkcje możesz realizować ze mną albo z innym wykonawcą, z uwzględnieniem odpowiednich licencji.
+Po zakończeniu i rozliczeniu projektu otrzymasz kod źródłowy oraz prawa do produktu w zakresie określonym w umowie. Kolejne funkcje możesz realizować ze mną albo z innym wykonawcą, z uwzględnieniem odpowiednich licencji.
 
 ---
 
@@ -274,7 +272,7 @@ Wolisz napisać? kontakt@karolmodelski.pl
 
 ## Realizacje
 
-Przegląd realizacji: https://www.karolmodelski.pl/realizacje/ — na razie jedna, szczegółowo opisana realizacja. Pełna historia Numerabble: https://www.karolmodelski.pl/realizacje/numerabble/
+Przegląd realizacji: https://www.karolmodelski.pl/realizacje/ — krótka prezentacja projektu, najważniejsze rezultaty pierwszej wersji i link do pełnej historii. Szczegółowe studium przypadku: https://www.karolmodelski.pl/realizacje/numerabble/ — decyzja o mniejszym zakresie, dopracowanie zasad gry z zespołem, cztery tygodnie prac, testy i poprawki, pierwsze reakcje graczy, analityka, propozycje usprawnień strony produktu i wnioski.
 
 ### Numerabble — pierwsza grywalna wersja gry liczbowej
 

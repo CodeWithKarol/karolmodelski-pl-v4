@@ -110,6 +110,7 @@ Nie jest to jednak cena za dowolnie rozbudowaną aplikację. Przed rozpoczęciem
         answer: `W standardowym pakiecie przewidziane są:`,
         items: [
           "Pomoc w ustaleniu najważniejszych funkcji i zakresu pierwszej wersji.",
+          "Dopracowanie zasad działania pierwszej wersji aplikacji.",
           "Dwa kierunki wizualne aplikacji.",
           "Pierwsza działająca wersja aplikacji w przeglądarce.",
           "Polski i angielski interfejs w ustalonym zakresie.",

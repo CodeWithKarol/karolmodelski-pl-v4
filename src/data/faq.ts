@@ -20,6 +20,6 @@ export const homeFaq = [
   {
     question: "Czy aplikację będzie można później rozwijać?",
     answer:
-      "Tak. Pierwsza wersja ma być podstawą do dalszego rozwoju.\n\nPo zakończeniu i rozliczeniu projektu otrzymasz kod oraz uzgodnione prawa zgodnie z umową. Kolejne funkcje możesz realizować ze mną albo z innym wykonawcą, z uwzględnieniem odpowiednich licencji.",
+      "Tak. Pierwsza wersja ma być podstawą do dalszego rozwoju.\n\nPo zakończeniu i rozliczeniu projektu otrzymasz kod źródłowy oraz prawa do produktu w zakresie określonym w umowie. Kolejne funkcje możesz realizować ze mną albo z innym wykonawcą, z uwzględnieniem odpowiednich licencji.",
   },
 ]

@@ -5,6 +5,7 @@ import SiteFooter from "@/components/site-footer.astro"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import {
+  ofertaAfterLaunch,
   ofertaComparison,
   ofertaFaq,
   ofertaOutcomes,
@@ -37,7 +38,7 @@ const consultationUrl = "/rozmowa/"
 
 const priceFacts = [
   { label: "Pierwsza wersja", value: "4 tygodnie" },
-  { label: "Cały proces z odbiorem", value: "zwykle 6–8 tygodni" },
+  { label: "Cały proces z odbiorem i poprawkami", value: "zwykle 6–8 tygodni" },
   { label: "Płatności", value: "40% / 40% / 20%" },
   { label: "Gwarancja techniczna", value: "3 miesiące" },
 ]
@@ -123,37 +124,24 @@ const breadcrumbSchema = {
             </p>
 
             <h1 class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl">
-              Masz pomysł na aplikację? Pomogę Ci zbudować jej pierwszą
-              działającą wersję.
+              Masz pomysł na aplikację? Pomogę Ci zamienić go w działający
+              produkt.
             </h1>
 
             <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Bez szukania programistów, zarządzania zespołem i inwestowania od
-              razu w dziesiątki funkcji.
+              Nie musisz znać się na programowaniu ani szukać specjalistów.
+              Pomogę Ci wybrać najważniejsze funkcje, dopracować pomysł i zajmę
+              się całą realizacją.
             </p>
 
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Być może od dawna myślisz o własnej aplikacji. Wiesz, co powinna
-              robić, komu mogłaby się przydać i jak wyobrażasz sobie jej
-              działanie.
+            <p class="mt-8 max-w-xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+              Pierwsza działająca wersja w 4 tygodnie prac.
             </p>
-
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Tylko kiedy przychodzi do realizacji, zaczynają się pytania. Od
-              czego właściwie zacząć? Kogo zatrudnić? Ile to powinno kosztować?
-              I skąd mieć pewność, że po kilku tygodniach otrzymasz coś, co
-              naprawdę działa?
-            </p>
-
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Właśnie w tym pomagam. Wspólnie ustalimy, co warto zbudować na
-              początku. Następnie zajmę się organizacją prac i techniczną
-              realizacją, żebyś mógł zobaczyć swój pomysł w praktyce.
-            </p>
-
-            <p class="mt-6 max-w-xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
-              Pierwsza działająca wersja w 4 tygodnie. Kompleksowy pakiet za 29
-              500 zł brutto.
+            <p class="mt-1 max-w-xl text-base leading-relaxed text-pretty text-ink sm:text-lg">
+              <strong class="font-semibold text-signal-ink">
+                29 500 zł brutto
+              </strong>{" "}
+              za uzgodniony zakres.
             </p>
 
             <div class="mt-8 flex flex-col items-start gap-4">
@@ -171,8 +159,7 @@ const breadcrumbSchema = {
                 Bezpłatna rozmowa · 20 minut · Bez zobowiązań
               </p>
               <p class="max-w-md border-t border-line pt-4 text-sm leading-relaxed text-pretty text-ink-soft">
-                Możemy podpisać umowę o poufności, zanim opowiesz mi o
-                szczegółach pomysłu.
+                Możliwość podpisania NDA przed rozmową.
               </p>
             </div>
           </div>
@@ -232,26 +219,29 @@ const breadcrumbSchema = {
             <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
               Dlaczego warto zacząć od mniejszej wersji?
             </h2>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Co zrobić najpierw? Ile to powinno kosztować? Jak sprawdzić, czy
+              wszystkie funkcje są naprawdę potrzebne? I skąd wiedzieć, że efekt
+              będzie zgodny z Twoją wizją?
+            </p>
             <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
-              Nie musisz budować całej aplikacji od razu.
+              Nie wszystko, co można zbudować, trzeba robić od razu.
             </p>
 
             <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Kiedy zaczynamy rozmawiać o pomyśle na aplikację, zwykle okazuje
-              się, że możliwości jest całkiem sporo.
+              Kiedy zaczynam rozmawiać z klientem o jego pomyśle, często okazuje
+              się, że lista możliwości jest naprawdę długa.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Oprócz podstawowej funkcji przydałyby się konta użytkowników,
-              powiadomienia, płatności, statystyki, rankingi albo kilkanaście
-              innych rzeczy.
+              Konta użytkowników, powiadomienia, płatności, rankingi,
+              statystyki, kolejne wersje aplikacji...
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              I jasne, wiele z tych pomysłów może mieć sens. Tylko czy naprawdę
-              potrzebujesz ich wszystkich już na początku?
+              I jasne, wiele z tych rzeczy może mieć sens. Tylko każda dodatkowa
+              funkcja to więcej pracy, większy koszt i dłuższy czas realizacji.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Każda kolejna funkcja to dodatkowa praca, koszt i czas. Dlatego
-              proponuję inne podejście.
+              Dlatego na początku proponuję coś prostszego.
             </p>
 
             <div class="relative mt-10 border-t border-line pt-8">
@@ -260,24 +250,23 @@ const breadcrumbSchema = {
                 aria-hidden="true"
               />
               <p class="max-w-3xl font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
-                Najpierw zbudujmy to, co najważniejsze.
+                Najpierw ustalmy, co jest najważniejsze. Co musi działać, żebyś
+                mógł pokazać swój pomysł innym i sprawdzić go w praktyce?
               </p>
               <p class="mt-3 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Wersję, którą będziesz mógł uruchomić, pokazać innym i zacząć
-                sprawdzać w praktyce.
+                Od tego zaczniemy.
               </p>
             </div>
 
             <p class="mt-8 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Dzięki temu nie musisz podejmować wszystkich decyzji dotyczących
-              rozwoju aplikacji jeszcze przed jej uruchomieniem. Zobaczysz
-              pierwsze efekty, zbierzesz informacje i dopiero wtedy zdecydujesz,
-              w co warto inwestować dalej.
+              Pozostałych pomysłów nie wyrzucamy. Zapisujemy je i wracamy do
+              nich wtedy, kiedy mamy już działający produkt i więcej informacji.
             </p>
 
             <p class="mt-8 max-w-2xl border-l-2 border-signal pl-5 text-base leading-relaxed text-pretty text-ink sm:text-lg">
-              Nie chodzi o rezygnowanie z Twojej wizji. Chodzi o to, żeby
-              realizować ją w przemyślanej kolejności.
+              Nie chodzi o to, żeby zrezygnować z Twojej wizji. Chodzi o to,
+              żeby nie wydawać od razu całego budżetu na rzeczy, których jeszcze
+              nie potrzebujesz.
             </p>
           </div>
         </div>
@@ -301,15 +290,18 @@ const breadcrumbSchema = {
               Co dokładnie otrzymujesz za 29 500 zł?
             </h2>
             <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
-              Pierwsza działająca wersja aplikacji
+              Pierwsza działająca wersja aplikacji, ale nie tylko.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Pomogę Ci uporządkować pomysł, dopracować najważniejsze założenia
+              i przeprowadzę Cię przez realizację.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nie musisz samodzielnie organizować programistów ani wiedzieć, jak
+              rozwiązać wszystkie problemy techniczne.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
               29 500 zł brutto — stała cena za wcześniej uzgodniony zakres.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Nie płacisz wyłącznie za napisanie kodu. Otrzymujesz pomoc w
-              uporządkowaniu pomysłu, przygotowanie pierwszej wersji produktu
-              oraz organizację całej realizacji.
             </p>
 
             <div class="mt-10 rounded-2xl border border-line bg-surface-muted p-6 sm:p-8">
@@ -328,7 +320,7 @@ const breadcrumbSchema = {
               </div>
 
               <ol class="mt-6">
-                {ofertaPackage.map(({ title, description }, index) => (
+                {ofertaPackage.map(({ title, description, effect }, index) => (
                   <li class="border-t border-line">
                     <details class="group py-4" open={index === 0}>
                       <summary class="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
@@ -345,9 +337,17 @@ const breadcrumbSchema = {
                           aria-hidden="true"
                         />
                       </summary>
-                      <p class="mt-2 pl-8 text-sm leading-relaxed text-pretty text-ink-soft">
-                        {description}
-                      </p>
+                      <div class="mt-2 space-y-3 pl-8 text-sm leading-relaxed text-pretty text-ink-soft">
+                        {description.map((paragraph) => (
+                          <p>{paragraph}</p>
+                        ))}
+                        <p class="text-ink">
+                          <span class="font-mono text-[11px] tracking-[0.14em] text-signal-ink uppercase">
+                            Efekt:
+                          </span>{" "}
+                          {effect}
+                        </p>
+                      </div>
                     </details>
                   </li>
                 ))}
@@ -377,6 +377,35 @@ const breadcrumbSchema = {
                   Sprawdzamy to przed zawarciem umowy.
                 </p>
               </div>
+            </div>
+
+            <div class="mt-10 max-w-2xl border-t border-line pt-8">
+              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+                A co, jeśli w Twoim pomyśle są rzeczy, których jeszcze nie
+                przewidziałeś?
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                To normalne. Podczas przygotowywania aplikacji często wychodzą
+                na jaw pytania, na które wcześniej nie było potrzeby odpowiadać.
+              </p>
+              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                Dlatego nie ograniczam się do zebrania listy funkcji. Pomagam
+                również dopracować najważniejsze zasady działania i wyjaśnić
+                kwestie, które mogłyby stać się problemem podczas programowania.
+              </p>
+              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                Tak pracowaliśmy między innymi nad grą Numerabble, w której
+                trzeba było przełożyć rozbudowane zasady gry planszowej na
+                działającą aplikację.
+              </p>
+              <p class="mt-4">
+                <a
+                  href="/realizacje/"
+                  class="inline-flex min-h-11 items-center text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                >
+                  Zobacz, jak wyglądało to w praktyce — realizacja Numerabble.
+                </a>
+              </p>
             </div>
 
             <div class="mt-10 flex flex-col gap-5 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between sm:gap-10">
@@ -764,9 +793,10 @@ const breadcrumbSchema = {
                 A co, jeśli podczas budowy wpadniesz na kolejne pomysły?
               </h3>
               <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                To normalne. W miarę powstawania produktu często pojawiają się
-                nowe możliwości. Może przydałaby się jeszcze jedna funkcja? Inny
-                sposób logowania? Dodatkowy ekran? Powiadomienia albo płatności?
+                Tak dzieje się niemal zawsze. W miarę powstawania produktu
+                pojawiają się nowe możliwości. Może przydałaby się jeszcze jedna
+                funkcja? Inny sposób logowania? Dodatkowy ekran? Powiadomienia
+                albo płatności?
               </p>
               <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
                 Nie oznacza to jednak, że każdą nową rzecz powinniśmy od razu
@@ -777,25 +807,72 @@ const breadcrumbSchema = {
                 swój budżet.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="mt-8 max-w-2xl border-t border-line pt-6">
-              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
-                Dalszy rozwój po pierwszej wersji
-              </h3>
-              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                Gdy aplikacja zacznie działać, możesz pokazać ją użytkownikom,
-                sprawdzić ich reakcje i zdecydować, co warto zrobić dalej.
+    <section
+      id="po-uruchomieniu"
+      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              08 · Po uruchomieniu
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Co możemy zrobić, kiedy aplikacja zacznie już działać?
+            </h2>
+            <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
+              Pierwsza wersja to dopiero moment, w którym możesz zacząć
+              sprawdzać swój pomysł z prawdziwymi użytkownikami.
+            </p>
+
+            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Wtedy pojawiają się kolejne pytania.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Czy ludzie korzystają z aplikacji tak, jak zakładałeś? W którym
+              momencie rezygnują? Czy wracają? Co warto poprawić, zanim
+              zainwestujesz w nowe funkcje?
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Jeśli zdecydujesz się na dalszą współpracę, mogę pomóc Ci w
+              kolejnym etapie.
+            </p>
+
+            <ul class="mt-8 grid grid-cols-1 gap-x-10 border-t border-line md:grid-cols-2">
+              {ofertaAfterLaunch.map(({ title, description }) => (
+                <li class="flex items-start gap-3 border-b border-line py-4">
+                  <Check
+                    className="mt-0.5 size-4 shrink-0 text-signal"
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <p class="text-sm leading-snug font-semibold text-ink sm:text-base">
+                      {title}
+                    </p>
+                    <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft">
+                      {description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-8 max-w-2xl space-y-4 border-t border-line pt-6">
+              <p class="text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+                To osobne usługi, których zakres i cenę ustalamy indywidualnie.
               </p>
-              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                Możesz rozbudować produkt o kolejne funkcje, rozwijać go z moją
-                pomocą albo przekazać pracę innemu zespołowi. Jeśli aplikacja
-                będzie regularnie używana, możesz też zlecić mi stałą opiekę
-                techniczną.
-              </p>
-              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                Nie musisz dziś podejmować decyzji o kolejnych wydatkach. Kod i
-                prawa do produktu przechodzą na Ciebie po rozliczeniu — dalszy
-                rozwój prowadzisz na własnych zasadach.
+              <p class="text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Nie musisz jednak podejmować tych decyzji już teraz. Najpierw
+                zbudujmy działającą podstawę i zobaczmy, co rzeczywiście warto
+                rozwijać.
               </p>
             </div>
           </div>
@@ -805,13 +882,13 @@ const breadcrumbSchema = {
 
     <section
       id="bezpieczenstwo"
-      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              08 · Bezpieczeństwo
+              09 · Bezpieczeństwo
             </p>
           </div>
 
@@ -859,13 +936,13 @@ const breadcrumbSchema = {
 
     <section
       id="w-praktyce"
-      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              09 · W praktyce
+              10 · W praktyce
             </p>
           </div>
 
@@ -876,24 +953,6 @@ const breadcrumbSchema = {
             <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
               Numerabble — pomysł sprzed prawie 30 lat, który zamienił się w
               działającą grę.
-            </p>
-
-            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Mój klient miał pomysł na grę matematyczną, nad którym pracował od
-              wielu lat. Wraz z rozwojem koncepcji pojawiało się coraz więcej
-              możliwości: rozgrywki online, turnieje, rankingi i kolejne tryby
-              gry.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Zamiast budować wszystko od razu, zaczęliśmy od podstawowej
-              rozgrywki z komputerem. Przygotowaliśmy pierwszą działającą wersję
-              w przeglądarce, dzięki której można było zacząć testować zasady,
-              zbierać uwagi i sprawdzać, jak ludzie korzystają z gry.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Po drodze pojawiały się poprawki i kolejne decyzje. Ale
-              najważniejsze jest to, że klient nie musi już tylko opowiadać o
-              swoim pomyśle. Może pokazać działającą grę.
             </p>
 
             <figure class="mt-10">
@@ -978,13 +1037,13 @@ const breadcrumbSchema = {
 
     <section
       id="faq"
-      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              10 · FAQ
+              11 · FAQ
             </p>
           </div>
 
@@ -1005,9 +1064,11 @@ const breadcrumbSchema = {
                       aria-hidden="true"
                     />
                   </summary>
-                  <p class="mt-3 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                    {answer}
-                  </p>
+                  <div class="mt-3 max-w-2xl space-y-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                    {answer.split("\n\n").map((paragraph) => (
+                      <p>{paragraph}</p>
+                    ))}
+                  </div>
                 </details>
               ))}
             </div>
@@ -1027,7 +1088,7 @@ const breadcrumbSchema = {
 
     <section
       id="rozmowa"
-      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="on-ink relative overflow-hidden rounded-2xl bg-ink px-6 py-10 text-paper sm:px-10 sm:py-12">
@@ -1039,7 +1100,7 @@ const breadcrumbSchema = {
           <div class="relative max-w-2xl">
             <p class="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-paper/60 uppercase">
               <span class="h-px w-5 bg-signal" aria-hidden="true" />
-              11 · Rozmowa
+              12 · Rozmowa
             </p>
             <h2 class="mt-4 font-heading text-2xl leading-tight font-semibold tracking-tight text-balance sm:text-3xl">
               Sprawdźmy, czy Twój pomysł możemy zrealizować

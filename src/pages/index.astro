@@ -71,20 +71,22 @@ const guarantees = [
       "Nie wpłacasz całej kwoty na początku. Rozliczamy projekt w trzech częściach.",
   },
   {
-    title: "Kod, prawa i gwarancja",
+    title: "Kod źródłowy i prawa do produktu",
     description:
-      "Po zakończeniu i rozliczeniu otrzymujesz kod oraz uzgodnione prawa do produktu. Masz także trzy miesiące gwarancji technicznej na warunkach zapisanych w umowie.",
+      "Po zakończeniu i rozliczeniu otrzymujesz kod źródłowy oraz prawa do utworów powstałych w ramach realizacji, w zakresie określonym w umowie. Masz także trzy miesiące gwarancji technicznej na warunkach zapisanych w umowie.",
   },
 ]
 
 const packageItems = [
-  "Ustalenie zakresu i plan realizacji",
-  "Projekt wyglądu aplikacji",
-  "Działająca pierwsza wersja w przeglądarce",
-  "Strona internetowa produktu",
-  "Podstawowa analityka",
-  "Koordynacja całej realizacji",
-  "Kod źródłowy i uzgodnione prawa do produktu",
+  "Pomoc w uporządkowaniu pomysłu i wyborze najważniejszych funkcji",
+  "Dopracowanie zasad działania pierwszej wersji aplikacji",
+  "Projekt wyglądu i sposobu obsługi",
+  "Działającą aplikację dostępną przez przeglądarkę",
+  "Polską i angielską wersję uzgodnionych ekranów",
+  "Stronę internetową do przedstawienia produktu",
+  "Podstawową analitykę zachowania użytkowników",
+  "Koordynację całej realizacji i regularne omawianie postępów",
+  "Kod źródłowy, odpowiednie dostępy i prawa w zakresie określonym w umowie",
 ]
 
 type ProcessStep = {
@@ -106,7 +108,7 @@ const process: ProcessStep[] = [
   {
     title: "Zwykle tygodnie 5–8 — odbiór i przekazanie",
     description:
-      "Sprawdzasz produkt, wykonujemy wymagane poprawki i po rozliczeniu przekazuję Ci kod oraz uzgodnione prawa.",
+      "Sprawdzasz produkt, wykonujemy wymagane poprawki i po rozliczeniu przekazuję Ci kod źródłowy oraz prawa do produktu w zakresie określonym w umowie.",
   },
 ]
 
@@ -119,21 +121,21 @@ interface CollaborationStep {
 const collaborationSteps: CollaborationStep[] = [
   {
     label: "Ty",
-    title: "Ty opowiadasz o swojej wizji",
+    title: "Ty opowiadasz o swoim pomyśle",
     description:
-      "Własnymi słowami. Bez dokumentacji technicznej i wiedzy programistycznej.",
+      "Własnymi słowami. Możesz pokazać mi notatki, szkice albo po prostu opisać, jak wyobrażasz sobie działanie aplikacji.",
   },
   {
     label: "Ty i ja",
-    title: "Wspólnie ustalamy, co zbudować najpierw",
+    title: "Wspólnie ustalamy, co ma największy sens na początku",
     description:
-      "Oddzielamy najważniejsze funkcje od tych, które mogą poczekać.",
+      "Wybieramy najważniejsze funkcje, doprecyzowujemy założenia i decydujemy, co może poczekać na kolejny etap.",
   },
   {
     label: "Ja",
     title: "Ja organizuję realizację, Ty oceniasz efekty",
     description:
-      "Regularnie pokazuję postępy, a Ty decydujesz, czy produkt zmierza we właściwym kierunku.",
+      "Zajmuję się zespołem i techniczną stroną projektu. Pokazuję Ci postępy, wyjaśniam możliwe rozwiązania i rekomenduję kolejne kroki.",
   },
 ]
 
@@ -180,15 +182,13 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
             </h1>
 
             <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink-soft">
-              Bez szukania programistów i budowania wszystkiego od razu. W 4
-              tygodnie przygotuję pierwszą działającą wersję Twojego produktu,
-              którą będziesz mógł uruchomić, pokazać innym i zacząć testować.
+              Pomogę Ci wybrać najważniejsze funkcje, dopracować pomysł i zajmę
+              się całą realizacją. Bez szukania programistów i budowania
+              wszystkiego od razu.
             </p>
 
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft">
-              Nie musisz znać się na technologii ani mieć gotowej dokumentacji.
-              Pomogę Ci wybrać najważniejsze funkcje i zajmę się całą
-              realizacją.
+            <p class="mt-4 max-w-xl text-sm leading-relaxed font-medium text-pretty text-ink">
+              Pierwsza działająca wersja w 4 tygodnie prac.
             </p>
 
             <div class="mt-9 flex flex-col items-start gap-4">
@@ -200,17 +200,16 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                   "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
                 )}
               >
-                Sprawdźmy, czy Twój pomysł da się zrealizować
+                Umów bezpłatną rozmowę
                 <ArrowRight />
               </a>
               <p class="max-w-md text-sm leading-relaxed text-pretty text-ink-soft">
-                Bezpłatna rozmowa · 20 minut · Bez zobowiązań
+                20 minut · Bez zobowiązań
               </p>
             </div>
 
-            <p class="mt-6 max-w-md border-t border-line pt-4 text-sm leading-relaxed text-pretty text-ink-soft">
-              29 500 zł brutto za uzgodniony pakiet · umowa o poufności (NDA)
-              przed szczegółową rozmową
+            <p class="mt-5 max-w-md border-t border-line pt-4 text-sm leading-relaxed text-pretty text-ink-soft">
+              29 500 zł brutto za uzgodniony pakiet · Możliwość podpisania NDA
             </p>
           </div>
 
@@ -311,7 +310,7 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
               <FileCheck2 className="size-4" />
             </span>
             <span class="leading-snug text-pretty">
-              Pełne prawa do produktu
+              Kod źródłowy i prawa do produktu
             </span>
           </li>
           <li class="flex items-center gap-2.5 py-2 sm:py-0 lg:justify-center lg:px-4">
@@ -371,26 +370,29 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
               Pomysł sprzed prawie 30 lat. Dziś można już w niego zagrać.
             </h2>
             <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Mój klient przez wiele lat rozwijał pomysł na własną grę
-              matematyczną.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Miał przemyślane zasady i mnóstwo pomysłów na kolejne możliwości:
-              rozgrywki online, rankingi, turnieje i różne tryby gry.
+              Mój klient przez wiele lat rozwijał własną grę matematyczną. Miał
+              przemyślane zasady i mnóstwo pomysłów na przyszłość: rozgrywki
+              online, rankingi, turnieje i kolejne tryby gry.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
-              Tylko czy trzeba było budować to wszystko od razu?
+              Zaproponowałem, żebyśmy nie budowali wszystkiego od razu.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Zaproponowałem, żebyśmy zaczęli od podstaw.
+              Najpierw skupiliśmy się na najważniejszym — działającej rozgrywce
+              z komputerem.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Najpierw stworzymy wersję, w której można zagrać z komputerem.
-              Udostępnimy ją przez przeglądarkę i zaczniemy sprawdzać, jak
-              ludzie z niej korzystają.
+              Po drodze musieliśmy dopracować zasady gry, rozwiązać kilka
+              nietypowych sytuacji i ustalić, jak wszystko powinno działać w
+              aplikacji.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              I właśnie tak powstała pierwsza działająca wersja Numerabble.
+              Tak powstała pierwsza grywalna wersja Numerabble, którą można
+              uruchomić w przeglądarce.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Po premierze zaczęliśmy też sprawdzać, jak korzystają z niej
+              prawdziwi gracze.
             </p>
 
             <figure class="mt-12">
@@ -451,13 +453,13 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                   href="/realizacje/numerabble/"
                   class="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
                 >
-                  Zobacz, jak powstało Numerabble
+                  Studium realizacji Numerabble
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </a>
               </div>
               <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
-                Poznaj całą historię: od pierwszych rozmów i ustalania zasad,
-                przez cztery tygodnie pracy, aż po pierwsze testy i poprawki.
+                Zobacz pełną historię Numerabble — od pierwszych rozmów, przez
+                cztery tygodnie prac, aż po testy i kolejne decyzje.
               </p>
             </div>
           </div>
@@ -542,20 +544,16 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
 
           <div class="lg:col-span-9">
             <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl">
-              Ty znasz swój pomysł. Ja wiem, jak przeprowadzić Cię przez jego
-              realizację.
+              Ty znasz swój pomysł. Ja pomogę Ci przełożyć go na działający
+              produkt.
             </h2>
             <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Nie oczekuję, że będziesz rozumieć programowanie, wybierać
-              technologie czy zarządzać specjalistami.
+              Nie oczekuję, że będziesz znać się na programowaniu, przygotowywać
+              dokumentację techniczną ani zarządzać specjalistami.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Potrzebuję przede wszystkim zrozumieć, co chcesz stworzyć i
-              dlaczego jest to dla Ciebie ważne.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Następnie pomogę Ci wybrać najważniejszą funkcję, przygotuję plan
-              działania i zajmę się organizacją całego procesu.
+              Potrzebuję przede wszystkim zrozumieć, co chcesz stworzyć i dla
+              kogo.
             </p>
 
             <ol class="mt-14 grid grid-cols-1 gap-8 border-t border-line pt-8 md:grid-cols-3 md:gap-10">
@@ -591,9 +589,11 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                 aria-hidden="true"
               />
               <span>
-                Ty decydujesz, jaki ma być Twój produkt. Ja odpowiadam za
-                organizację i techniczną realizację.
+                Ty podejmujesz najważniejsze decyzje dotyczące swojego produktu.
               </span>
+            </p>
+            <p class="mt-3 max-w-xl pl-9 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nie musisz sam wiedzieć, jak wszystko zbudować. Od tego masz mnie.
             </p>
 
             <div class="mt-6 max-w-2xl">
@@ -688,8 +688,9 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
               całego zespołu.
             </h2>
             <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Pomogę Ci uporządkować pomysł, wybrać najważniejsze funkcje i
-              zajmę się techniczną realizacją projektu.
+              W jednej, ustalonej cenie masz cały zakres potrzebny do
+              uruchomienia pierwszej wersji — od uporządkowania pomysłu po
+              działającą aplikację w przeglądarce.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
               Nie musisz samodzielnie szukać programistów, projektanta ani
@@ -720,9 +721,15 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                   <p class="mt-6 font-heading text-base font-semibold text-ink">
                     W pakiecie otrzymujesz:
                   </p>
-                  <ul class="mt-4 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2">
-                    {packageItems.map((item) => (
-                      <li class="flex items-start gap-2.5">
+                  <ul class="mt-4 grid grid-cols-1 gap-x-8 gap-y-2.5 sm:grid-cols-2 lg:grid-cols-1 lg:gap-y-3">
+                    {packageItems.map((item, index) => (
+                      <li
+                        class:list={[
+                          "flex items-start gap-2.5",
+                          index === packageItems.length - 1 &&
+                            "sm:col-span-2 lg:col-span-1",
+                        ]}
+                      >
                         <Check
                           className="mt-0.5 size-4 shrink-0 text-signal"
                           aria-hidden="true"
@@ -733,6 +740,10 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                       </li>
                     ))}
                   </ul>
+
+                  <p class="mt-5 text-sm leading-relaxed font-medium text-pretty text-ink">
+                    29 500 zł brutto za wcześniej uzgodniony zakres.
+                  </p>
 
                   <p class="mt-6 border-t border-line pt-4 text-xs leading-relaxed text-pretty text-ink-soft">
                     Płatność w 3 etapach (40% / 40% / 20%) · NDA przed
@@ -820,25 +831,17 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
             <div class="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
               <div class="lg:col-span-7">
                 <p class="text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-                  Od ponad 7 lat pracuję przy zaawansowanych systemach dla
-                  banków i dużych firm.
+                  Od ponad 7 lat tworzę oprogramowanie. Pracowałem przy
+                  zaawansowanych systemach dla banków i dużych firm.
                 </p>
                 <p class="mt-4 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
                   Dziś wykorzystuję to doświadczenie, pomagając osobom, które
-                  mają pomysł na własną aplikację, ale nie wiedzą, jak przełożyć
-                  go na konkretny plan.
+                  chcą zbudować własną aplikację, ale nie wiedzą, jak przejść od
+                  pomysłu do działającego produktu.
                 </p>
                 <p class="mt-4 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                  Nie oczekuję, że będziesz znać się na programowaniu, wybierać
-                  technologie czy zarządzać zespołem.
-                </p>
-                <p class="mt-4 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                  Pomogę Ci ustalić, co warto zbudować na początku, a następnie
-                  zajmę się organizacją technicznej realizacji.
-                </p>
-                <p class="mt-6 border-l-2 border-signal pl-5 text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
-                  Ty decydujesz, jaki ma być Twój produkt. Ja pomagam
-                  doprowadzić go do działającej pierwszej wersji.
+                  Pomogę Ci ustalić, co warto zrobić na początku, wyjaśnię
+                  techniczne kwestie i zajmę się organizacją realizacji.
                 </p>
 
                 <div class="mt-8">
@@ -853,8 +856,8 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                     <ArrowRight />
                   </a>
                   <p class="mt-3 max-w-md text-sm leading-relaxed text-pretty text-ink-soft">
-                    Zobacz, skąd mam doświadczenie, jak pracuję z klientami i
-                    dlaczego nie zaczynam od budowania wszystkich funkcji naraz.
+                    Zobacz, jak pracuję z klientami i dlaczego nie zaczynam od
+                    wszystkich funkcji naraz.
                   </p>
                 </div>
               </div>
