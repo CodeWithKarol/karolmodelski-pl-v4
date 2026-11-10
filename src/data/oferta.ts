@@ -6,7 +6,9 @@ export interface OfertaPackageItem {
 
 export interface OfertaAfterLaunchItem {
   title: string
-  description: string
+  paragraphs: string[]
+  effect?: string
+  note?: string
 }
 
 export interface OfertaProcessStep {
@@ -124,29 +126,30 @@ export const ofertaPackage: OfertaPackageItem[] = [
 
 export const ofertaAfterLaunch: OfertaAfterLaunchItem[] = [
   {
-    title: "Analiza zachowania użytkowników",
-    description:
-      "Sprawdzimy dostępne dane i ustalimy, co z nich wynika oraz jakie problemy warto rozwiązać w pierwszej kolejności.",
+    title: "Audyt aplikacji po uruchomieniu",
+    paragraphs: [
+      "Masz działający produkt, ale nie wiesz, co warto poprawić?",
+      "Przyjrzę się dostępnej analityce, sposobowi korzystania z aplikacji i najważniejszym problemom.",
+      "Przygotuję rekomendacje zmian, uporządkowane według priorytetów, żebyś wiedział, od czego moim zdaniem warto zacząć.",
+    ],
+    effect: "konkretny raport i plan możliwych usprawnień.",
   },
   {
-    title: "Usprawnienie strony i aplikacji",
-    description:
-      "Przyjrzymy się elementom, które utrudniają użytkownikom wykonanie najważniejszych czynności, i zaproponujemy zmiany do sprawdzenia.",
+    title: "Rozwój kolejnych funkcji",
+    paragraphs: [
+      "Wiesz już, co chcesz dodać do aplikacji?",
+      "Pomogę Ci ocenić nowe pomysły, ustalić zakres i zorganizować kolejny etap prac.",
+      "Nie musimy budować wszystkiego od razu. Możemy rozwijać produkt stopniowo, na podstawie uzgodnionego planu i budżetu.",
+    ],
+    effect: "kolejna wersja aplikacji z nowymi, uzgodnionymi funkcjami.",
   },
   {
-    title: "Plan dalszego rozwoju",
-    description:
-      "Wybierzemy kolejne funkcje, uwzględniając potrzeby użytkowników, koszt i stopień trudności.",
-  },
-  {
-    title: "Realizacja kolejnych funkcji",
-    description:
-      "Rozbudujemy działający produkt o wcześniej uzgodnione możliwości.",
-  },
-  {
-    title: "Opieka techniczna",
-    description:
-      "Możemy również ustalić zasady późniejszego utrzymania, monitorowania i aktualizowania aplikacji.",
+    title: "Opieka i wsparcie technologiczne",
+    paragraphs: [
+      "Jeżeli potrzebujesz stałej pomocy w utrzymaniu i rozwijaniu aplikacji, możemy ustalić zasady dłuższej współpracy.",
+      "W zależności od potrzeb może ona obejmować przeglądy techniczne, planowanie dalszych prac, bieżące wsparcie lub koordynację zespołu.",
+    ],
+    note: "Zakres, dostępność i wynagrodzenie ustalam indywidualnie.",
   },
 ]
 
