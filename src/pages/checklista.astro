@@ -13,9 +13,10 @@ const siteRoot = new URL("/", siteURL).toString()
 const pdfPath = "/checklista/12-pytan-przed-budowa-aplikacji.pdf"
 const previewPath = "/checklista/podglad-1-strona.png"
 
-const metaTitle = "12 pytań przed budową aplikacji — bezpłatna checklista"
+const metaTitle =
+  "Checklista przed budową aplikacji — 12 pytań | Karol Modelski"
 const metaDescription =
-  "Bezpłatna checklista PDF z 12 pytaniami, które warto sobie zadać przed budową aplikacji. Uporządkuj pomysł, wybierz pierwszą wersję i przygotuj się do rozmowy."
+  "Pobierz bezpłatną checklistę z 12 pytaniami przed budową aplikacji. Uporządkuj pomysł, wybierz najważniejsze funkcje i przygotuj się do rozmowy z wykonawcą."
 
 const benefits = [
   {
@@ -107,7 +108,7 @@ const breadcrumbSchema = {
             </p>
 
             <p class="mt-6 max-w-xl border-l-2 border-signal pl-4 text-sm leading-relaxed text-pretty font-medium text-ink sm:text-base">
-              4 strony · 12 pytań · Bez wiedzy technicznej
+              PDF · 12 pytań · 4 strony · Bez rejestracji
             </p>
 
             <div class="mt-8 flex flex-col items-start gap-4">
@@ -123,9 +124,6 @@ const breadcrumbSchema = {
                 <Download className="size-5" aria-hidden="true" />
                 Pobierz bezpłatną checklistę
               </a>
-              <p class="text-sm leading-relaxed text-pretty text-ink-soft">
-                PDF · 4 strony · Bez rejestracji i bez podawania e-maila
-              </p>
             </div>
           </div>
 
@@ -197,16 +195,66 @@ const breadcrumbSchema = {
             </ol>
 
             <p class="mt-8 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-              Pytania 1–6 dotyczą pomysłu i użytkowników, 7–9 pierwszej wersji,
-              a 10–12 budżetu, ryzyka i dalszego rozwoju. Na drugiej stronie
-              znajdziesz przykład z realizacji Numerabble.
+              Checklista prowadzi Cię przez cztery etapy: zrozumienie pomysłu,
+              wybór najważniejszych funkcji, zaplanowanie budżetu i terminu oraz
+              przygotowanie się na dalszy rozwój aplikacji.
             </p>
+            <p class="mt-2 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+              Na drugiej stronie znajdziesz też przykład Numerabble — gry, którą
+              zaczęliśmy budować od jednej najważniejszej funkcji.
+            </p>
+
+            <div class="mt-10 max-w-2xl border-t border-line pt-8">
+              <h3 class="font-heading text-xl leading-snug font-semibold tracking-tight text-balance text-ink sm:text-2xl">
+                Dla kogo jest ta checklista?
+              </h3>
+              <p class="mt-3 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+                Przygotowałem ją dla osób, które myślą o stworzeniu własnej
+                aplikacji, ale nie mają jeszcze gotowego planu realizacji.
+              </p>
+
+              <ul class="mt-6 space-y-5">
+                <li>
+                  <p class="text-base leading-snug font-semibold text-ink">
+                    Masz pomysł, ale nie wiesz, od czego zacząć?
+                  </p>
+                  <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                    Checklista pomoże Ci uporządkować najważniejsze założenia i
+                    zastanowić się, co rzeczywiście powinno powstać na początku.
+                  </p>
+                </li>
+                <li>
+                  <p class="text-base leading-snug font-semibold text-ink">
+                    Szukasz wykonawcy aplikacji?
+                  </p>
+                  <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                    Łatwiej będzie Ci opisać swój pomysł, zadawać konkretne
+                    pytania i porównywać propozycje różnych wykonawców.
+                  </p>
+                </li>
+                <li>
+                  <p class="text-base leading-snug font-semibold text-ink">
+                    Przygotowujesz się do pierwszej rozmowy?
+                  </p>
+                  <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                    Możesz zapisać swoje odpowiedzi i wykorzystać je podczas
+                    konsultacji. Dzięki temu szybciej przejdziemy do
+                    najważniejszych kwestii.
+                  </p>
+                </li>
+              </ul>
+
+              <p class="mt-6 border-l-2 border-signal pl-5 text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                Nie musisz odpowiadać na wszystkie 12 pytań. Jeśli czegoś
+                jeszcze nie wiesz, to również cenna informacja.
+              </p>
+            </div>
 
             <a
               href={pdfPath}
               download
               data-checklist-download
-              class="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+              class="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
             >
               Pobierz checklistę (PDF, 4 strony)
               <ArrowRight className="size-4" aria-hidden="true" />
