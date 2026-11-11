@@ -216,6 +216,34 @@ const structuredData = noindex
       })(window, document, "script", "dataLayer", "GTM-N3QL4956")
     </script>}
 
+    {/*
+      Zdarzenie kliknięcia w kalendarz rezerwacji dla GTM/GA4.
+      Wysyłane niezależnie od zgód (jak zdarzenia checklisty); konsumpcję
+      reguluje GTM i ustawienia zgód. `source` wskazuje miejsce CTA.
+    */}
+    <script is:inline>
+      ;(function () {
+        window.dataLayer = window.dataLayer || []
+        document.addEventListener("click", function (ev) {
+          var target = ev.target
+          var link = target && target.closest ? target.closest("a[href]") : null
+          if (!link) return
+
+          var href = link.getAttribute("href") || ""
+          if (href.indexOf("calendly.com") === -1) return
+
+          var scope = link.closest ? link.closest("section[id], header") : null
+          window.dataLayer.push({
+            event: "booking_calendar_click",
+            source:
+              link.getAttribute("data-booking-calendar") ||
+              (scope && scope.id) ||
+              "page",
+          })
+        })
+      })()
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

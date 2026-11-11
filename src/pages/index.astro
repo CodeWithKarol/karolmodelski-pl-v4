@@ -19,11 +19,11 @@ import {
   ArrowRight,
   BadgeCheck,
   Check,
+  CreditCard,
   FileCheck2,
   Lock,
   Pause,
   Play,
-  ShieldCheck,
 } from "lucide-react"
 
 const outcomeItems = [
@@ -78,15 +78,16 @@ const guarantees = [
 ]
 
 const packageItems = [
-  "Pomoc w uporządkowaniu pomysłu i wyborze najważniejszych funkcji",
-  "Dopracowanie zasad działania pierwszej wersji aplikacji",
-  "Projekt wyglądu i sposobu obsługi",
+  "Pomoc w wyborze najważniejszej funkcji i zakresu pierwszej wersji",
+  "Dopracowanie zasad działania i kryteriów odbioru",
+  "Projekt wyglądu i sposobu obsługi kluczowych ekranów",
   "Działającą aplikację dostępną przez przeglądarkę",
-  "Polską i angielską wersję uzgodnionych ekranów",
-  "Stronę internetową do przedstawienia produktu",
-  "Podstawową analitykę zachowania użytkowników",
-  "Koordynację całej realizacji i regularne omawianie postępów",
-  "Kod źródłowy, odpowiednie dostępy i prawa w zakresie określonym w umowie",
+  "Prostą stronę internetową produktu",
+  "Podstawową analitykę wybranych działań użytkowników",
+  "Plan pierwszych testów i pytań do użytkowników",
+  "Koordynację realizacji i trzy punkty kontrolne z prezentacją efektów",
+  "Testy techniczne, poprawki i przekazanie kodu, dostępów oraz praw",
+  "Krótkie podsumowanie rekomendowanych kolejnych kroków",
 ]
 
 type ProcessStep = {
@@ -103,7 +104,7 @@ const process: ProcessStep[] = [
   {
     title: "Pierwsze 4 tygodnie — budujemy aplikację",
     description:
-      "Przygotowujemy wygląd, programujemy uzgodnione funkcje i uruchamiamy pierwszą działającą wersję.",
+      "Przygotowujemy wygląd, programujemy uzgodnione funkcje i uruchamiamy pierwszą działającą wersję. Po tygodniu 1, po tygodniu 2 i na koniec tygodnia 4 pokazuję Ci efekty.",
   },
   {
     title: "Zwykle tygodnie 5–8 — odbiór i przekazanie",
@@ -188,7 +189,8 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
             </p>
 
             <p class="mt-4 max-w-xl text-sm leading-relaxed font-medium text-pretty text-ink">
-              Pierwsza działająca wersja w 4 tygodnie prac.
+              Pierwsza działająca wersja w 4 tygodnie prac — gotowa do pokazania
+              pierwszym użytkownikom.
             </p>
 
             <div class="mt-9 flex flex-col items-start gap-4">
@@ -216,10 +218,6 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
               >
                 Pobierz bezpłatną checklistę z 12 pytaniami.
               </a>
-            </p>
-
-            <p class="mt-5 max-w-md border-t border-line pt-4 text-sm leading-relaxed text-pretty text-ink-soft">
-              29 500 zł brutto za uzgodniony pakiet · Możliwość podpisania NDA
             </p>
           </div>
 
@@ -331,9 +329,11 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
           </li>
           <li class="flex items-center gap-2.5 py-2 sm:py-0 lg:justify-center lg:px-4">
             <span class="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-paper text-signal">
-              <ShieldCheck className="size-4" />
+              <CreditCard className="size-4" />
             </span>
-            <span class="leading-snug text-pretty">3 miesiące gwarancji</span>
+            <span class="leading-snug text-pretty">
+              Płatności w 3 etapach: 40% / 40% / 20%
+            </span>
           </li>
         </ul>
       </div>
@@ -499,9 +499,8 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
               już od kilku lat.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Wiesz, jak aplikacja powinna działać. Widzisz, komu mogłaby się
-              przydać. Masz pomysły na funkcje, wygląd i możliwości dalszego
-              rozwoju.
+              Wiesz, jak aplikacja powinna działać. Masz pomysły na funkcje,
+              wygląd i możliwości dalszego rozwoju.
             </p>
             <p class="mt-6 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
               Ale gdy próbujesz przejść do realizacji, pojawiają się pytania:
@@ -519,11 +518,6 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                 </li>
               ))}
             </ol>
-
-            <p class="mt-10 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Nie musisz znać odpowiedzi na wszystkie te pytania, zanim
-              zaczniesz.
-            </p>
 
             <div class="relative mt-10 border-t border-line pt-8">
               <span
@@ -602,9 +596,6 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                 Ty podejmujesz najważniejsze decyzje dotyczące swojego produktu.
               </span>
             </p>
-            <p class="mt-3 max-w-xl pl-9 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Nie musisz sam wiedzieć, jak wszystko zbudować. Od tego masz mnie.
-            </p>
 
             <div class="mt-6 max-w-2xl">
               <a
@@ -617,10 +608,6 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                 Zobacz, jak wygląda cała współpraca
                 <ArrowRight />
               </a>
-              <p class="mt-3 max-w-md text-sm leading-relaxed text-pretty text-ink-soft">
-                Poznaj etapy realizacji, harmonogram i to, ile czasu będę
-                potrzebował od Ciebie.
-              </p>
             </div>
           </div>
         </div>
@@ -702,10 +689,6 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
               uruchomienia pierwszej wersji — od uporządkowania pomysłu po
               działającą aplikację w przeglądarce.
             </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Nie musisz samodzielnie szukać programistów, projektanta ani
-              pilnować, czy wszyscy dobrze zrozumieli Twoją wizję.
-            </p>
             <p class="mt-4 max-w-2xl border-l-2 border-signal pl-4 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
               Nie musisz budować wszystkiego od razu. Najpierw stworzymy
               działającą podstawę, a o kolejnych funkcjach zdecydujesz później.
@@ -729,7 +712,7 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                   </p>
 
                   <p class="mt-6 font-heading text-base font-semibold text-ink">
-                    W pakiecie otrzymujesz:
+                    Na ten rezultat składa się:
                   </p>
                   <ul class="mt-4 grid grid-cols-1 gap-x-8 gap-y-2.5 sm:grid-cols-2 lg:grid-cols-1 lg:gap-y-3">
                     {packageItems.map((item, index) => (
@@ -750,10 +733,6 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                       </li>
                     ))}
                   </ul>
-
-                  <p class="mt-5 text-sm leading-relaxed font-medium text-pretty text-ink">
-                    29 500 zł brutto za wcześniej uzgodniony zakres.
-                  </p>
 
                   <p class="mt-6 border-t border-line pt-4 text-xs leading-relaxed text-pretty text-ink-soft">
                     Płatność w 3 etapach (40% / 40% / 20%) · NDA przed
@@ -780,8 +759,7 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                     <ArrowRight />
                   </a>
                   <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft">
-                    Dowiedz się, co dokładnie obejmuje pakiet, jak wygląda
-                    harmonogram, płatności i zasady współpracy.
+                    Dowiedz się, co dokładnie obejmuje pakiet.
                   </p>
 
                   <div class="mt-6 border-t border-line pt-6">
@@ -908,8 +886,7 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
               Od pierwszych ustaleń do działającej aplikacji.
             </h2>
             <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Nie musisz samodzielnie organizować całego procesu. Przeprowadzę
-              Cię przez kolejne etapy i będę pokazywał postępy.
+              Przeprowadzę Cię przez kolejne etapy i będę pokazywał postępy.
             </p>
 
             <ol class="mt-10 grid grid-cols-1 gap-8 border-t border-line pt-8 md:grid-cols-3 md:gap-10">
@@ -943,10 +920,6 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
               Zobacz szczegółowy przebieg realizacji
               <ArrowRight />
             </a>
-            <p class="mt-3 max-w-md text-sm leading-relaxed text-pretty text-ink-soft">
-              Dowiedz się, co dzieje się w każdym tygodniu, co należy do Ciebie
-              i jak wygląda odbiór produktu.
-            </p>
           </div>
         </div>
       </div>
@@ -1034,8 +1007,8 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </a>
                 <p class="mt-2 max-w-md text-sm leading-relaxed text-pretty text-ink-soft">
-                  Dowiedz się więcej o kosztach, etapach realizacji,
-                  bezpieczeństwie pomysłu i dalszym rozwoju aplikacji.
+                  Koszty, etapy realizacji, bezpieczeństwo pomysłu i dalszy
+                  rozwój aplikacji.
                 </p>
               </div>
 
@@ -1050,9 +1023,6 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                   Umów bezpłatną rozmowę
                   <ArrowRight />
                 </a>
-                <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
-                  20 minut · Online · Bez zobowiązań
-                </p>
               </div>
             </div>
           </div>
@@ -1146,11 +1116,7 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
             <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance text-paper sm:text-4xl lg:text-5xl">
               Twój pomysł nie musi już pozostawać tylko pomysłem.
             </h2>
-            <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-paper/85 sm:text-xl">
-              Nie musisz wiedzieć, jakich technologii użyć, ile osób potrzeba do
-              realizacji ani od czego zacząć.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-paper/70 sm:text-lg">
+            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-paper/70 sm:text-lg">
               Wystarczy, że opowiesz mi własnymi słowami, co chcesz stworzyć.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-paper/70 sm:text-lg">
