@@ -23,13 +23,11 @@ Model partnerski: realizuję maksymalnie jeden projekt w miesiącu.
 
 Pomogę Ci wybrać najważniejsze funkcje, dopracować pomysł i zajmę się całą realizacją. Bez szukania programistów i budowania wszystkiego od razu.
 
-Pierwsza działająca wersja w 4 tygodnie prac.
+Pierwsza działająca wersja w 4 tygodnie prac — gotowa do pokazania pierwszym użytkownikom.
 
 **Wezwanie do działania:** Umów bezpłatną rozmowę → https://www.karolmodelski.pl/rozmowa/
 
 20 minut · Bez zobowiązań.
-
-29 500 zł brutto za uzgodniony pakiet · możliwość podpisania NDA.
 
 **Nie jesteś jeszcze gotowy na rozmowę?** Bezpłatna checklista „12 pytań, zanim zaczniesz budować aplikację” — PDF, 4 strony, bez rejestracji: https://www.karolmodelski.pl/checklista/
 
@@ -80,7 +78,7 @@ Zobacz pełną historię Numerabble — od pierwszych rozmów, przez cztery tygo
 
 Być może myślisz o niej od miesięcy. A może rozwijasz ten pomysł już od kilku lat.
 
-Wiesz, jak aplikacja powinna działać. Widzisz, komu mogłaby się przydać. Masz pomysły na funkcje, wygląd i możliwości dalszego rozwoju.
+Wiesz, jak aplikacja powinna działać. Masz pomysły na funkcje, wygląd i możliwości dalszego rozwoju.
 
 Ale gdy próbujesz przejść do realizacji, pojawiają się pytania:
 
@@ -89,8 +87,6 @@ Ale gdy próbujesz przejść do realizacji, pojawiają się pytania:
 3. Czy potrzebuję całego zespołu i skąd mam wiedzieć, że dobrze wykonuje swoją pracę?
 4. Ile to naprawdę powinno kosztować i co dostanę za te pieniądze?
 5. Czy muszę od razu budować całą aplikację, czy można zacząć od czegoś mniejszego?
-
-Nie musisz znać odpowiedzi na wszystkie te pytania, zanim zaczniesz.
 
 **Właśnie od tego zaczniemy współpracę: uporządkujemy Twój pomysł i sprawdzimy, co warto zbudować w pierwszej kolejności.**
 
@@ -109,8 +105,6 @@ Potrzebuję przede wszystkim zrozumieć, co chcesz stworzyć i dla kogo.
 3. **Ja organizuję realizację, Ty oceniasz efekty** — Zajmuję się zespołem i techniczną stroną projektu. Pokazuję Ci postępy, wyjaśniam możliwe rozwiązania i rekomenduję kolejne kroki.
 
 **Ty podejmujesz najważniejsze decyzje dotyczące swojego produktu.**
-
-Nie musisz sam wiedzieć, jak wszystko zbudować. Od tego masz mnie.
 
 ---
 
@@ -139,25 +133,22 @@ Nie obiecuję, że pierwsza wersja od razu odniesie sukces na rynku.
 
 W jednej, ustalonej cenie masz cały zakres potrzebny do uruchomienia pierwszej wersji — od uporządkowania pomysłu po działającą aplikację w przeglądarce.
 
-Nie musisz samodzielnie szukać programistów, projektanta ani pilnować, czy wszyscy dobrze zrozumieli Twoją wizję.
-
 **Pierwsza działająca wersja aplikacji — 29 500 zł brutto**
 
 **4 tygodnie do pierwszej wersji · Zwykle 6–8 tygodni całego procesu**
 
-**W pakiecie otrzymujesz:**
+**Na ten rezultat składa się:**
 
-- Pomoc w uporządkowaniu pomysłu i wyborze najważniejszych funkcji.
-- Dopracowanie zasad działania pierwszej wersji aplikacji.
-- Projekt wyglądu i sposobu obsługi.
+- Pomoc w wyborze najważniejszej funkcji i zakresu pierwszej wersji.
+- Dopracowanie zasad działania i kryteriów odbioru.
+- Projekt wyglądu i sposobu obsługi kluczowych ekranów.
 - Działającą aplikację dostępną przez przeglądarkę.
-- Polską i angielską wersję uzgodnionych ekranów.
-- Stronę internetową do przedstawienia produktu.
-- Podstawową analitykę zachowania użytkowników.
-- Koordynację całej realizacji i regularne omawianie postępów.
-- Kod źródłowy, odpowiednie dostępy i prawa w zakresie określonym w umowie.
-
-29 500 zł brutto za wcześniej uzgodniony zakres.
+- Prostą stronę internetową produktu.
+- Podstawową analitykę wybranych działań użytkowników.
+- Plan pierwszych testów i pytań do użytkowników.
+- Koordynację realizacji i trzy punkty kontrolne z prezentacją efektów.
+- Testy techniczne, poprawki i przekazanie kodu, dostępów oraz praw.
+- Krótkie podsumowanie rekomendowanych kolejnych kroków.
 
 Płatność w 3 etapach (40% / 40% / 20%) · NDA przed szczegółową rozmową · 3 miesiące gwarancji technicznej.
 
@@ -193,11 +184,13 @@ Wybrane doświadczenie: GFT Technologies (Senior Angular Developer, 2025 – obe
 
 ## 07 · Jak pracujemy (#proces)
 
-### Od pierwszej rozmowy do działającej wersji — krok po kroku.
+### Od pierwszych ustaleń do działającej aplikacji.
 
-1. **Ustalamy zakres** — Opowiadasz mi o swoim pomyśle. Wspólnie wybieramy najważniejsze funkcje i zapisujemy ustalenia w umowie.
-2. **Budujemy pierwszą wersję — 4 tygodnie** — Przygotowujemy wygląd, programujemy najważniejszą funkcję i uruchamiamy aplikację w przeglądarce. Pokazuję Ci postępy, żebyś na bieżąco wiedział, co się dzieje.
-3. **Sprawdzamy i przekazujemy produkt** — Przeprowadzamy odbiór, wprowadzamy wymagane poprawki i przekazuję Ci kod źródłowy oraz prawa do produktu w zakresie określonym w umowie.
+Przeprowadzę Cię przez kolejne etapy i będę pokazywał postępy.
+
+1. **Przed rozpoczęciem — ustalamy zakres** — Wspólnie wybieramy najważniejsze funkcje, ustalamy cenę i zapisujemy warunki w umowie.
+2. **Pierwsze 4 tygodnie — budujemy aplikację** — Przygotowujemy wygląd, programujemy uzgodnione funkcje i uruchamiamy pierwszą działającą wersję. Po tygodniu 1, po tygodniu 2 i na koniec tygodnia 4 pokazuję Ci efekty.
+3. **Zwykle tygodnie 5–8 — odbiór i przekazanie** — Sprawdzasz produkt, wykonujemy wymagane poprawki i po rozliczeniu przekazuję Ci kod źródłowy oraz prawa do produktu w zakresie określonym w umowie.
 
 Cały proces trwa zwykle 6–8 tygodni.
 
@@ -255,8 +248,6 @@ Po zakończeniu i rozliczeniu projektu otrzymasz kod źródłowy oraz prawa do p
 ## 10 · Kontakt (#kontakt)
 
 ### Twój pomysł nie musi już pozostawać tylko pomysłem.
-
-Nie musisz wiedzieć, jakich technologii użyć, ile osób potrzeba do realizacji ani od czego zacząć.
 
 Wystarczy, że opowiesz mi własnymi słowami, co chcesz stworzyć.
 

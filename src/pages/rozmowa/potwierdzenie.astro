@@ -2,11 +2,13 @@
 import Layout from "@/layouts/main.astro"
 import SiteHeader from "@/components/site-header.astro"
 import SiteFooter from "@/components/site-footer.astro"
-import { ArrowRight, Check } from "lucide-react"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { ArrowRight } from "lucide-react"
 
-const metaTitle = "Termin rozmowy zarezerwowany | Karol Modelski"
+const metaTitle = "Sprawdź potwierdzenie rezerwacji | Karol Modelski"
 const metaDescription =
-  "Dziękuję za umówienie spotkania. Potwierdzenie terminu i link do rozmowy otrzymasz e-mailem."
+  "Sprawdź potwierdzenie rezerwacji rozmowy. Wiadomość z datą spotkania i linkiem do rozmowy wysyła Calendly na podany adres e-mail."
 ---
 
 <Layout
@@ -27,55 +29,40 @@ const metaDescription =
           </p>
 
           <h1 class="mt-4 font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-            Termin rozmowy został zarezerwowany!
+            Sprawdź potwierdzenie swojej rezerwacji
           </h1>
 
           <div class="mt-6 space-y-4 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-            <p>Dziękuję za umówienie spotkania.</p>
             <p>
-              Na podany adres e-mail otrzymasz potwierdzenie terminu oraz link
-              do rozmowy.
+              Jeśli właśnie wybrałeś termin w Calendly, powinieneś otrzymać
+              wiadomość e-mail z datą spotkania i linkiem do rozmowy.
             </p>
-            <p>
-              Nie musisz przygotowywać dokumentacji ani szczegółowego opisu
-              technicznego.
-            </p>
-            <p>
-              Wystarczy, że zastanowisz się, co chcesz stworzyć, komu aplikacja
-              miałaby służyć i co jest w niej najważniejsze.
-            </p>
-            <p class="font-medium text-ink">Do usłyszenia!</p>
-            <p class="font-heading font-semibold text-ink">Karol Modelski</p>
+            <p>Nie widzisz wiadomości? Sprawdź również folder spam.</p>
           </div>
 
-          <ul class="mt-8 space-y-3 border-t border-line pt-6">
-            <li class="flex items-start gap-3">
-              <Check
-                className="mt-0.5 size-4 shrink-0 text-signal"
-                aria-hidden="true"
-              />
-              <p class="text-sm leading-relaxed text-pretty text-ink-soft">
-                Spotkanie odbędzie się online i potrwa około 20 minut.
-              </p>
-            </li>
-            <li class="flex items-start gap-3">
-              <Check
-                className="mt-0.5 size-4 shrink-0 text-signal"
-                aria-hidden="true"
-              />
-              <p class="text-sm leading-relaxed text-pretty text-ink-soft">
-                Jeśli potrzebujesz, możemy podpisać NDA przed rozmową.
-              </p>
-            </li>
-          </ul>
+          <div class="mt-8">
+            <a
+              href="/rozmowa/#rezerwacja"
+              class={cn(
+                buttonVariants({ size: "lg" }),
+                "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+              )}
+            >
+              Wróć do strony rezerwacji
+              <ArrowRight />
+            </a>
+          </div>
 
-          <a
-            href="/"
-            class="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-          >
-            Wróć na stronę główną
-            <ArrowRight className="size-4" aria-hidden="true" />
-          </a>
+          <p class="mt-6 border-t border-line pt-6 text-sm leading-relaxed text-pretty text-ink-soft">
+            Nie dostałeś potwierdzenia albo termin nie odpowiada?{" "}
+            <a
+              href="mailto:kontakt@karolmodelski.pl?subject=Rezerwacja%20rozmowy"
+              class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+            >
+              Napisz do mnie
+            </a>
+            .
+          </p>
         </div>
       </div>
     </section>

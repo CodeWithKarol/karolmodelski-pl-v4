@@ -72,7 +72,7 @@ MVP nie oznacza aplikacji zrobionej byle jak. Oznacza świadomie wybrany, mniejs
         question: "Czy prototyp i działająca aplikacja to to samo?",
         answer: `Nie. I to bardzo ważna różnica.
 
-Projekt graficzny pokazuje, jak aplikacja może wyglądać. Klikalny prototyp pozwala przechodzić między przykładowymi ekranami, ale nie musi wykonywać prawdziwych działań. Działająca aplikacja ma zaprogramowane funkcje, z których można rzeczywiście korzystać.
+Projekt graficzny pokazuje, jak aplikacja może wyglądać. Klikalny prototyp pozwala przechodzić między przykładowymi ekranami, ale nie musi wykonywać prawdziwych działań. Działająca aplikacja ma zaprogramowane funkcje, z których można rzeczywiście korzystać. Pełna aplikacja to dopiero kolejny etap — rozbudowany system z wieloma funkcjami, który ma sens po sprawdzeniu pierwszej wersji.
 
 W moim standardowym pakiecie celem jest właśnie pierwsza działająca wersja aplikacji w uzgodnionym zakresie. Nie tylko obrazki ani prezentacja tego, jak produkt mógłby kiedyś wyglądać.`,
       },
@@ -109,17 +109,17 @@ Nie jest to jednak cena za dowolnie rozbudowaną aplikację. Przed rozpoczęciem
         question: "Co dokładnie otrzymam za 29 500 zł?",
         answer: `W standardowym pakiecie przewidziane są:`,
         items: [
-          "Pomoc w ustaleniu najważniejszych funkcji i zakresu pierwszej wersji.",
-          "Dopracowanie zasad działania pierwszej wersji aplikacji.",
-          "Dwa kierunki wizualne aplikacji.",
+          "Plan pierwszej wersji — główny cel, najważniejszy scenariusz i lista funkcji odłożonych na później.",
+          "Dopracowanie zasad działania i kryteriów odbioru pierwszej wersji.",
+          "Projekt wyglądu i sposobu obsługi kluczowych ekranów, z uzgodnioną rundą poprawek.",
           "Pierwsza działająca wersja aplikacji w przeglądarce.",
-          "Polski i angielski interfejs w ustalonym zakresie.",
-          "Strona internetowa produktu.",
-          "Podstawowa analityka.",
-          "Uzgodnione materiały pomocne w prezentacji produktu.",
-          "Plan możliwego dalszego rozwoju.",
+          "Interfejs w jednej wersji językowej dopasowanej do pierwszych użytkowników; drugi język możliwy w ustalonym zakresie.",
+          "Prosta strona internetowa produktu.",
+          "Podstawowa analityka — pomiar wybranych działań użytkownika w pierwszej wersji.",
+          "Plan pierwszych testów i pytań do użytkowników.",
           "Organizacja i koordynacja technicznej realizacji.",
-          "Przekazanie kodu i uzgodnionych praw zgodnie z umową.",
+          "Testy techniczne i poprawki przed przekazaniem.",
+          "Przekazanie kodu, uzgodnionych praw i jednostronicowego podsumowania kolejnych kroków.",
         ],
       },
       {
@@ -208,7 +208,9 @@ Potrzebuję jednak Twojego udziału w ustaleniach i ważnych decyzjach dotycząc
 
 Nie zakładam modelu, w którym przez kilka tygodni nie masz żadnych informacji, a potem dostajesz gotowy produkt.
 
-Regularnie pokazuję postępy i omawiam z Tobą sprawy wymagające decyzji. Dzięki temu możesz wcześniej zwrócić uwagę, jeśli coś odbiega od uzgodnionego kierunku.`,
+W trakcie prac mamy trzy punkty kontrolne: po tygodniu 1 pokazuję projekt kluczowych ekranów, po tygodniu 2 działającą najważniejszą funkcję, a na koniec tygodnia 4 wersję gotową do testów. Na każdym z tych momentów widzisz efekty i wspólnie podejmujemy decyzje.
+
+Między punktami kontrolnymi prace trwają dalej, a uwagi możesz zgłaszać na bieżąco. Dzięki temu możesz wcześniej zwrócić uwagę, jeśli coś odbiega od uzgodnionego kierunku.`,
       },
       {
         id: "pytanie-17",
@@ -306,11 +308,11 @@ Nie oznacza to jednak, że każda pierwsza wersja jest od razu gotowa do obsług
         id: "pytanie-25",
         question:
           "Czy pomożesz mi sprawdzić, czy ludzie rzeczywiście chcą korzystać z mojej aplikacji?",
-        answer: `W standardowym pakiecie przygotowujemy podstawową analitykę, która umożliwia obserwowanie wybranych zachowań użytkowników.
+        answer: `W standardowym pakiecie przygotowujemy podstawową analitykę, która umożliwia obserwowanie wybranych zachowań użytkowników. Ustalamy też, co warto przetestować i o co zapytać pierwsze osoby, które zobaczą produkt.
 
 Możesz dzięki temu lepiej zrozumieć, jak ludzie korzystają z aplikacji, gdzie napotykają trudności i które elementy wymagają uwagi.
 
-Samo uruchomienie aplikacji nie gwarantuje jednak zainteresowania rynku. Ważne jest również dotarcie do odpowiednich odbiorców, zebranie opinii i wyciąganie wniosków z testów.`,
+Samo uruchomienie aplikacji nie gwarantuje jednak zainteresowania rynku. Pomagam zaplanować test, ale nie wyszukuję testerów ani nie prowadzę badań rynku. Ważne jest również dotarcie do odpowiednich odbiorców i wyciąganie wniosków z rozmów.`,
       },
       {
         id: "pytanie-26",

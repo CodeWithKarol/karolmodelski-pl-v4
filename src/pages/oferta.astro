@@ -6,23 +6,16 @@ import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import {
   ofertaAfterLaunch,
-  ofertaComparison,
+  ofertaAnalysis,
+  ofertaCheckpoints,
+  ofertaExclusions,
   ofertaFaq,
-  ofertaOutcomes,
   ofertaPackage,
   ofertaPayments,
   ofertaProcess,
+  ofertaResultOverview,
   ofertaSecurity,
 } from "@/data/oferta"
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
 import { ArrowRight, Check, ChevronDown, Pause, Play } from "lucide-react"
 
 const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
@@ -124,14 +117,13 @@ const breadcrumbSchema = {
             </p>
 
             <h1 class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl">
-              Masz pomysł na aplikację? Pomogę Ci zamienić go w działający
-              produkt.
+              Twoja pierwsza działająca aplikacja. Bez samodzielnego
+              organizowania zespołu.
             </h1>
 
             <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Nie musisz znać się na programowaniu ani szukać specjalistów.
-              Pomogę Ci wybrać najważniejsze funkcje, dopracować pomysł i zajmę
-              się całą realizacją.
+              Pomogę Ci wybrać najważniejsze funkcje, dopracować zasady
+              działania i poprowadzę całą realizację.
             </p>
 
             <p class="mt-8 max-w-xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
@@ -181,9 +173,9 @@ const breadcrumbSchema = {
 
               <dl class="mt-6 border-t border-line">
                 {priceFacts.map(({ label, value }) => (
-                  <div class="flex items-baseline justify-between gap-4 border-b border-line py-3">
+                  <div class="flex flex-col gap-1 border-b border-line py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                     <dt class="text-sm leading-snug text-ink-soft">{label}</dt>
-                    <dd class="text-right font-heading text-sm font-semibold text-ink">
+                    <dd class="font-heading text-sm font-semibold text-ink sm:text-right">
                       {value}
                     </dd>
                   </div>
@@ -204,146 +196,6 @@ const breadcrumbSchema = {
     </section>
 
     <section
-      id="mniejsza-wersja"
-      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
-    >
-      <div class="mx-auto max-w-[75rem]">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
-          <div class="lg:col-span-3">
-            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              01 · Dlaczego mniejsza wersja
-            </p>
-          </div>
-
-          <div class="lg:col-span-9">
-            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              Dlaczego warto zacząć od mniejszej wersji?
-            </h2>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Co zrobić najpierw? Ile to powinno kosztować? Jak sprawdzić, czy
-              wszystkie funkcje są naprawdę potrzebne? I skąd wiedzieć, że efekt
-              będzie zgodny z Twoją wizją?
-            </p>
-            <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
-              Nie wszystko, co można zbudować, trzeba robić od razu.
-            </p>
-
-            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Kiedy zaczynam rozmawiać z klientem o jego pomyśle, często okazuje
-              się, że lista możliwości jest naprawdę długa.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Konta użytkowników, powiadomienia, płatności, rankingi,
-              statystyki, kolejne wersje aplikacji...
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              I jasne, wiele z tych rzeczy może mieć sens. Tylko każda dodatkowa
-              funkcja to więcej pracy, większy koszt i dłuższy czas realizacji.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Dlatego na początku proponuję coś prostszego.
-            </p>
-
-            <div class="relative mt-10 border-t border-line pt-8">
-              <span
-                class="absolute -top-px left-0 h-px w-20 bg-signal"
-                aria-hidden="true"
-              />
-              <p class="max-w-3xl font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
-                Najpierw ustalmy, co jest najważniejsze. Co musi działać, żebyś
-                mógł pokazać swój pomysł innym i sprawdzić go w praktyce?
-              </p>
-              <p class="mt-3 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Od tego zaczniemy.
-              </p>
-            </div>
-
-            <p class="mt-8 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Pozostałych pomysłów nie wyrzucamy. Zapisujemy je i wracamy do
-              nich wtedy, kiedy mamy już działający produkt i więcej informacji.
-            </p>
-
-            <p class="mt-8 max-w-2xl border-l-2 border-signal pl-5 text-base leading-relaxed text-pretty text-ink sm:text-lg">
-              Nie chodzi o to, żeby zrezygnować z Twojej wizji. Chodzi o to,
-              żeby nie wydawać od razu całego budżetu na rzeczy, których jeszcze
-              nie potrzebujesz.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="plan"
-      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
-    >
-      <div class="mx-auto max-w-[75rem]">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
-          <div class="lg:col-span-3">
-            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              Opcjonalny plan
-            </p>
-          </div>
-
-          <div class="lg:col-span-9">
-            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              A jeśli Twój pomysł wymaga dokładniejszego planu?
-            </h2>
-
-            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Nie każdy projekt da się od razu sprowadzić do jasno określonej
-              pierwszej wersji.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Jeżeli masz kilka możliwych kierunków rozwoju, wiele zależności
-              albo potrzebujesz pisemnego planu przed podjęciem decyzji o
-              realizacji, możemy przygotować osobną analizę.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Pomogę Ci uporządkować wymagania, porównać możliwości, wskazać
-              najważniejsze ryzyka i zaproponować rozsądny pierwszy etap.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Otrzymasz dokument, który możesz wykorzystać również podczas
-              rozmów z innymi wykonawcami.
-            </p>
-
-            <p class="mt-6 max-w-2xl border-l-2 border-signal pl-5 text-base leading-relaxed text-pretty text-ink sm:text-lg">
-              <strong class="font-semibold">
-                To opcjonalna, osobno wyceniana usługa.
-              </strong>{" "}
-              Jeśli Twój pomysł pasuje do standardowego pakietu, nie musisz jej
-              zamawiać — podstawowe ustalenie zakresu jest już częścią
-              współpracy.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="border-t border-line bg-paper px-4 py-8 sm:px-6">
-      <div class="mx-auto flex max-w-[75rem] flex-col gap-4 rounded-xl border border-line bg-surface-muted px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
-        <div>
-          <p class="font-heading text-base font-semibold text-balance text-ink">
-            Nie wiesz jeszcze, które funkcje są najważniejsze?
-          </p>
-          <p class="mt-1 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
-            Nie musisz mieć gotowej specyfikacji przed pierwszą rozmową. W
-            bezpłatnej checkliście znajdziesz 12 pytań o użytkowników, pierwszą
-            wersję, budżet i dalszy rozwój.
-          </p>
-        </div>
-        <a
-          href="/checklista/"
-          class="inline-flex shrink-0 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-        >
-          Pobierz checklistę przed rozmową
-          <ArrowRight className="size-4" aria-hidden="true" />
-        </a>
-      </div>
-    </div>
-
-    <section
       id="pakiet"
       class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
     >
@@ -351,7 +203,7 @@ const breadcrumbSchema = {
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              02 · Pakiet
+              01 · Pakiet
             </p>
           </div>
 
@@ -360,30 +212,45 @@ const breadcrumbSchema = {
               Co dokładnie otrzymujesz za 29 500 zł?
             </h2>
             <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
-              Pierwsza działająca wersja aplikacji, ale nie tylko.
+              Jeden rezultat: pierwsza wersja, którą możesz sprawdzić z
+              użytkownikami.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Pomogę Ci uporządkować pomysł, dopracować najważniejsze założenia
-              i przeprowadzę Cię przez realizację.
+              Nie chodzi o jak najdłuższą listę funkcji. Chodzi o to, żebyś po
+              czterech tygodniach miał produkt, który uruchomisz, pokażesz innym
+              i na jego podstawie podejmiesz decyzję o dalszym rozwoju.
             </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Nie musisz samodzielnie organizować programistów ani wiedzieć, jak
-              rozwiązać wszystkie problemy techniczne.
+            <p class="mt-10 font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase">
+              W skrócie
             </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
-              29 500 zł brutto — stała cena za wcześniej uzgodniony zakres.
+            <ol class="mt-4 grid grid-cols-1 gap-x-10 gap-y-6 border-t border-line pt-6 sm:grid-cols-2">
+              {ofertaResultOverview.map(({ title, description }) => (
+                <li>
+                  <p class="font-heading text-base leading-snug font-semibold text-ink">
+                    {title}
+                  </p>
+                  <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft">
+                    {description}
+                  </p>
+                </li>
+              ))}
+            </ol>
+
+            <p class="mt-6">
+              <a
+                href={consultationUrl}
+                class="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+              >
+                Sprawdźmy, czy Twój pomysł pasuje do pakietu
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </a>
             </p>
 
             <div class="mt-10 rounded-2xl border border-line bg-surface-muted p-6 sm:p-8">
               <div class="flex flex-col gap-3 border-b border-line pb-6 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
-                <div>
-                  <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
-                    W ramach pakietu
-                  </p>
-                  <p class="mt-2 font-heading text-2xl font-semibold text-balance text-ink sm:text-3xl">
-                    10 elementów jednej realizacji
-                  </p>
-                </div>
+                <p class="font-heading text-2xl font-semibold text-balance text-ink sm:text-3xl">
+                  10 elementów, jeden rezultat
+                </p>
                 <p class="font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase">
                   29 500 zł brutto
                 </p>
@@ -438,9 +305,8 @@ const breadcrumbSchema = {
                     href="#platnosci"
                     class="font-medium text-ink underline underline-offset-4 hover:no-underline"
                   >
-                    Zobacz, jak wyglądają płatności
+                    Zobacz, jak wyglądają płatności.
                   </a>
-                  .
                 </p>
                 <p>
                   Nie każda aplikacja kwalifikuje się do tego pakietu.
@@ -449,32 +315,15 @@ const breadcrumbSchema = {
               </div>
             </div>
 
-            <div class="mt-10 max-w-2xl border-t border-line pt-8">
-              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
-                A co, jeśli w Twoim pomyśle są rzeczy, których jeszcze nie
-                przewidziałeś?
-              </h3>
-              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                To normalne. Podczas przygotowywania aplikacji często wychodzą
-                na jaw pytania, na które wcześniej nie było potrzeby odpowiadać.
+            <div class="mt-10 max-w-2xl rounded-2xl border border-line bg-surface-muted p-6 sm:p-8">
+              <p class="text-base leading-relaxed text-pretty text-ink-soft">
+                Nie obiecuję Ci, że aplikacja od razu zdobędzie tysiące
+                użytkowników albo zacznie zarabiać. Sukces rynkowy zależy
+                również od pomysłu, odbiorców i sposobu dotarcia do nich.
               </p>
-              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                Dlatego nie ograniczam się do zebrania listy funkcji. Pomagam
-                również dopracować najważniejsze zasady działania i wyjaśnić
-                kwestie, które mogłyby stać się problemem podczas programowania.
-              </p>
-              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                Tak pracowaliśmy między innymi nad grą Numerabble, w której
-                trzeba było przełożyć rozbudowane zasady gry planszowej na
-                działającą aplikację.
-              </p>
-              <p class="mt-4">
-                <a
-                  href="/realizacje/"
-                  class="inline-flex min-h-11 items-center text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-                >
-                  Zobacz, jak wyglądało to w praktyce — realizacja Numerabble.
-                </a>
+              <p class="mt-4 font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
+                Otrzymujesz działającą podstawę i możliwość rozpoczęcia
+                sprawdzania swojego pomysłu.
               </p>
             </div>
 
@@ -500,61 +349,121 @@ const breadcrumbSchema = {
     </section>
 
     <section
-      id="po-czterech-tygodniach"
+      id="w-praktyce"
       class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              03 · Po 4 tygodniach
+              02 · W praktyce
             </p>
           </div>
 
           <div class="lg:col-span-9">
             <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              Co będziesz mieć po pierwszych 4 tygodniach?
+              Zobacz, jak wyglądało to w prawdziwym projekcie.
             </h2>
             <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
-              Coś, co możesz naprawdę uruchomić i pokazać innym.
+              Numerabble — pomysł sprzed prawie 30 lat, który stał się
+              działającą grą.
             </p>
 
-            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Wyobraź sobie, że zamiast kolejny raz opowiadać znajomemu albo
-              potencjalnemu partnerowi, jak ma działać Twoja aplikacja, po
-              prostu wysyłasz mu link.
+            <p class="mt-8 max-w-2xl text-lg leading-relaxed text-pretty text-ink">
+              Mój klient przez prawie 30 lat rozwijał pomysł na grę matematyczną
+              Numerabble. Miał rozbudowane zasady i plany na przyszłość — między
+              innymi turnieje, rankingi i rozgrywki online.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Może wejść, zobaczyć produkt i samodzielnie wypróbować jego
-              najważniejszą funkcję.
+              Zaproponowałem, żebyśmy zaczęli od gry z komputerem.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Samo ograniczenie funkcji jednak nie wystarczyło. Musieliśmy też
+              dopracować zasady, rozstrzygnąć nietypowe sytuacje i ustalić, jak
+              aplikacja powinna zachowywać się podczas rozgrywki.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              W cztery tygodnie zaplanowanych prac powstała pierwsza grywalna
+              wersja dostępna w przeglądarce.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
+              Możesz zobaczyć prawdziwą grę, a nie tylko projekt ekranów.
             </p>
 
-            <p class="mt-8 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
-              Będziesz mógł:
-            </p>
-            <ul class="mt-4 max-w-2xl border-t border-line">
-              {ofertaOutcomes.map((item) => (
-                <li class="flex items-start gap-3 border-b border-line py-4">
-                  <Check
-                    className="mt-0.5 size-4 shrink-0 text-signal"
+            <figure class="mt-10">
+              <div class="overflow-hidden rounded-2xl border border-line bg-paper shadow-[0_35px_80px_-55px_rgba(20,20,20,0.5)]">
+                <div class="flex items-center gap-2 border-b border-line px-4 py-3">
+                  <span
+                    class="size-2.5 rounded-full bg-signal/70"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="size-2.5 rounded-full bg-line"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="size-2.5 rounded-full bg-line"
+                    aria-hidden="true"
+                  ></span>
+                  <p class="ml-2 truncate font-mono text-[10px] tracking-[0.12em] text-ink-soft uppercase">
+                    Numerabble · przeglądarka
+                  </p>
+                </div>
+                <video
+                  data-clip
+                  class="block aspect-[4/3] w-full object-cover"
+                  src="/showcase/numerabble-gameplay.webm"
+                  poster="/showcase/numerabble-gameplay.webp"
+                  width="960"
+                  height="720"
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  aria-label="Prawdziwa rozgrywka w Numerabble — plansza, ułożone działanie i panel z żetonami"
+                ></video>
+              </div>
+              <figcaption class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p class="max-w-xl text-sm leading-relaxed text-pretty text-ink-soft">
+                  Prawdziwa rozgrywka Numerabble. Nagranie z rzeczywistego
+                  projektu.
+                </p>
+                <button
+                  type="button"
+                  data-clip-toggle
+                  data-state="playing"
+                  class="inline-flex shrink-0 items-center gap-2 self-start rounded-md border border-line px-3 py-1.5 font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase transition-colors hover:border-ink/25 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+                >
+                  <Pause
+                    data-clip-icon-pause
+                    className="size-3.5"
                     aria-hidden="true"
                   />
-                  <span class="text-sm leading-relaxed text-pretty text-ink sm:text-base">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
+                  <Play
+                    data-clip-icon-play
+                    className="size-3.5"
+                    aria-hidden="true"
+                  />
+                  <span data-clip-label>Wstrzymaj nagranie</span>
+                </button>
+              </figcaption>
+            </figure>
 
-            <div class="mt-8 max-w-2xl rounded-2xl border border-line bg-paper p-6 sm:p-8">
-              <p class="text-base leading-relaxed text-pretty text-ink-soft">
-                Nie obiecuję Ci, że aplikacja od razu zdobędzie tysiące
-                użytkowników albo zacznie zarabiać. Sukces rynkowy zależy
-                również od pomysłu, odbiorców i sposobu dotarcia do nich.
-              </p>
-              <p class="mt-4 font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
-                Otrzymujesz działającą podstawę i możliwość rozpoczęcia
-                sprawdzania swojego pomysłu.
+            <div class="mt-10 border-t border-line pt-8">
+              <a
+                href="/realizacje/numerabble/"
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+                )}
+              >
+                Zobacz pełną historię Numerabble
+                <ArrowRight />
+              </a>
+              <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+                Cała historia tej realizacji: od pierwszych rozmów i ustalania
+                zakresu, przez cztery tygodnie prac, aż po pierwsze testy i
+                kolejne poprawki.
               </p>
             </div>
           </div>
@@ -563,101 +472,120 @@ const breadcrumbSchema = {
     </section>
 
     <section
-      id="porownanie"
+      id="punkty-kontrolne"
       class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              04 · Porównanie
+              03 · Punkty kontrolne
             </p>
           </div>
 
           <div class="lg:col-span-9">
             <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              Projekt graficzny, prototyp czy działająca aplikacja — jaka jest
-              różnica?
+              Nie czekasz czterech tygodni, żeby zobaczyć pierwszy efekt.
             </h2>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Po drodze mamy trzy ustalone momenty. Na każdym widzisz efekty i
+              wiesz, co będzie dalej.
+            </p>
 
-            <div class="mt-10 hidden md:block">
-              <Table>
-                <TableCaption className="sr-only">
-                  Różnice między projektem graficznym, klikalnym prototypem,
-                  pierwszą działającą wersją i pełną aplikacją
-                </TableCaption>
-                <TableHeader>
-                  <TableRow className="border-line hover:bg-transparent">
-                    <TableHead className="px-3 py-3 align-bottom text-xs font-medium tracking-[0.14em] whitespace-normal text-ink-soft uppercase sm:py-4">
-                      Rozwiązanie
-                    </TableHead>
-                    <TableHead className="px-3 py-3 align-bottom text-xs font-medium tracking-[0.14em] whitespace-normal text-ink-soft uppercase sm:py-4">
-                      Co otrzymujesz
-                    </TableHead>
-                    <TableHead className="px-3 py-3 align-bottom text-xs font-medium tracking-[0.14em] whitespace-normal text-ink-soft uppercase sm:py-4">
-                      Do czego służy
-                    </TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {ofertaComparison.map((option) => (
-                    <TableRow className="border-line hover:bg-transparent">
-                      <TableCell className="w-[15rem] px-3 py-4 align-top font-heading text-base font-semibold whitespace-normal text-ink">
-                        {option.name}
-                      </TableCell>
-                      <TableCell className="px-3 py-4 align-top text-sm leading-relaxed whitespace-normal text-ink-soft">
-                        {option.what}
-                      </TableCell>
-                      <TableCell className="px-3 py-4 align-top text-sm leading-relaxed whitespace-normal text-ink-soft">
-                        {option.use}
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-
-            <div class="mt-10 border-t border-line md:hidden">
-              {ofertaComparison.map((option) => (
-                <div class="border-b border-line py-5">
-                  <h3 class="font-heading text-lg font-semibold text-balance text-ink">
-                    {option.name}
-                  </h3>
-                  <dl class="mt-3 space-y-2">
-                    <div class="grid grid-cols-[7rem_minmax(0,1fr)] gap-3">
-                      <dt class="font-mono text-[10px] leading-4 tracking-[0.14em] text-ink-soft uppercase">
-                        Co otrzymujesz
-                      </dt>
-                      <dd class="text-sm leading-relaxed text-pretty text-ink-soft">
-                        {option.what}
-                      </dd>
-                    </div>
-                    <div class="grid grid-cols-[7rem_minmax(0,1fr)] gap-3">
-                      <dt class="font-mono text-[10px] leading-4 tracking-[0.14em] text-ink-soft uppercase">
-                        Do czego służy
-                      </dt>
-                      <dd class="text-sm leading-relaxed text-pretty text-ink-soft">
-                        {option.use}
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
+            <ol class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+              {ofertaCheckpoints.map(({ when, title, description }) => (
+                <li class="rounded-xl border border-line bg-surface-muted p-5 sm:p-6">
+                  <p class="font-mono text-xs tracking-[0.16em] text-signal-ink uppercase">
+                    {when}
+                  </p>
+                  <p class="mt-2 font-heading text-lg leading-snug font-semibold text-balance text-ink">
+                    {title}
+                  </p>
+                  <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                    {description}
+                  </p>
+                </li>
               ))}
-            </div>
+            </ol>
 
-            <div class="mt-10 max-w-2xl space-y-4">
-              <p class="text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Nie każdy pomysł trzeba od razu rozwijać do pełnej aplikacji.
-              </p>
-              <p class="text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Jeśli dopiero chcesz sprawdzić, czy najważniejsza część Twojego
-                pomysłu działa tak, jak zakładasz, często warto zacząć od
-                mniejszej wersji.
-              </p>
-              <p class="font-heading text-lg leading-snug text-balance text-ink sm:text-xl">
-                Pierwsza działająca wersja pozwala sprawdzić to w praktyce.
-              </p>
+            <p class="mt-6 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+              Między punktami kontrolnymi pracuję dalej, więc nie musisz czekać
+              z uwagami do prezentacji.
+            </p>
+
+            <div class="mt-10 grid grid-cols-1 gap-x-10 gap-y-6 border-t border-line pt-8 md:grid-cols-3">
+              <div>
+                <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+                  Odbiór
+                </p>
+                <p class="mt-2 text-sm leading-relaxed text-pretty text-ink">
+                  Sprawdzasz produkt według kryteriów ustalonych przed
+                  rozpoczęciem prac. Masz 10 dni roboczych na zgłoszenie
+                  niezgodności.
+                </p>
+              </div>
+              <div>
+                <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+                  Płatności
+                </p>
+                <p class="mt-2 text-sm leading-relaxed text-pretty text-ink">
+                  40% na start, 40% gdy wersja jest gotowa do testów, 20% po
+                  odbiorze technicznym.{" "}
+                  <a
+                    href="#platnosci"
+                    class="font-medium underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                  >
+                    Zobacz kwoty i etapy
+                  </a>
+                </p>
+              </div>
+              <div>
+                <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+                  Gwarancja
+                </p>
+                <p class="mt-2 text-sm leading-relaxed text-pretty text-ink">
+                  Trzy miesiące gwarancji technicznej na usterki objęte umową.{" "}
+                  <a
+                    href="#bezpieczenstwo"
+                    class="font-medium underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                  >
+                    Zobacz zasady współpracy
+                  </a>
+                </p>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="mniejsza-wersja"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              04 · Dlaczego mniejsza wersja
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Nie musisz budować całej wizji od razu.
+            </h2>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink sm:text-lg">
+              Na początku wspólnie wybieramy najważniejszą funkcję, dzięki
+              której będziesz mógł sprawdzić swój pomysł w praktyce.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Pozostałych pomysłów nie wyrzucamy. Zapisujemy je na później.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Dzięki temu nie inwestujesz od razu w rozbudowaną aplikację, zanim
+              sprawdzisz jej podstawowe działanie z użytkownikami.
+            </p>
           </div>
         </div>
       </div>
@@ -690,30 +618,38 @@ const breadcrumbSchema = {
             </p>
 
             <ol class="mt-10">
-              {ofertaProcess.map(({ label, title, description }, index) => (
-                <li class="relative grid grid-cols-1 gap-4 border-t border-line py-7 last:border-b md:grid-cols-[9rem_minmax(0,1fr)] md:gap-10 md:py-8">
-                  <span
-                    aria-hidden="true"
-                    class="absolute -top-[4.5px] left-0 size-2 rounded-full bg-signal ring-4 ring-surface-muted"
-                  />
-                  <div class="flex items-baseline justify-between gap-4 md:block">
-                    <p class="font-mono text-xs tracking-[0.16em] text-signal-ink uppercase">
-                      {label}
-                    </p>
-                    <p class="font-mono text-xs text-ink-soft md:mt-2">
-                      {String(index + 1).padStart(2, "0")} / 04
-                    </p>
-                  </div>
-                  <div>
-                    <h3 class="font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
-                      {title}
-                    </h3>
-                    <p class="mt-2 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                      {description}
-                    </p>
-                  </div>
-                </li>
-              ))}
+              {ofertaProcess.map(
+                ({ label, title, description, you }, index) => (
+                  <li class="relative grid grid-cols-1 gap-4 border-t border-line py-7 last:border-b md:grid-cols-[9rem_minmax(0,1fr)] md:gap-10 md:py-8">
+                    <span
+                      aria-hidden="true"
+                      class="absolute -top-[4.5px] left-0 size-2 rounded-full bg-signal ring-4 ring-surface-muted"
+                    />
+                    <div class="flex items-baseline justify-between gap-4 md:block">
+                      <p class="font-mono text-xs tracking-[0.16em] text-signal-ink uppercase">
+                        {label}
+                      </p>
+                      <p class="font-mono text-xs text-ink-soft md:mt-2">
+                        {String(index + 1).padStart(2, "0")} / 04
+                      </p>
+                    </div>
+                    <div>
+                      <h3 class="font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
+                        {title}
+                      </h3>
+                      <p class="mt-2 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                        {description}
+                      </p>
+                      <p class="mt-2 max-w-2xl text-sm leading-relaxed text-pretty text-ink">
+                        <span class="font-mono text-[11px] tracking-[0.14em] text-signal-ink uppercase">
+                          Twoja rola:
+                        </span>{" "}
+                        {you}
+                      </p>
+                    </div>
+                  </li>
+                )
+              )}
             </ol>
 
             <p class="mt-5 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
@@ -721,19 +657,37 @@ const breadcrumbSchema = {
               wpłaty pierwszej części i skompletowania materiałów oraz dostępów.
             </p>
 
-            <div class="mt-10 max-w-2xl border-l-2 border-signal pl-5 sm:pl-6">
-              <p class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase">
-                Ile czasu potrzebuję od Ciebie?
+            <div class="mt-10 max-w-2xl rounded-xl border border-line bg-paper p-5 sm:p-6">
+              <h3 class="font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
+                Ile czasu będę potrzebował od Ciebie?
+              </h3>
+              <dl class="mt-4">
+                <div class="border-t border-line py-3">
+                  <dt class="font-mono text-xs tracking-[0.16em] text-signal-ink uppercase">
+                    Na początku
+                  </dt>
+                  <dd class="mt-1 text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                    Zwykle 4–6 godzin na poznanie pomysłu i najważniejsze
+                    decyzje.
+                  </dd>
+                </div>
+                <div class="border-t border-line py-3">
+                  <dt class="font-mono text-xs tracking-[0.16em] text-signal-ink uppercase">
+                    Później
+                  </dt>
+                  <dd class="mt-1 text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                    Orientacyjnie godzina tygodniowo na omówienie efektów i
+                    odpowiedzi na bieżące pytania.
+                  </dd>
+                </div>
+              </dl>
+              <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                Nie musisz codziennie nadzorować programistów ani samodzielnie
+                rozwiązywać problemów technicznych.
               </p>
-              <p class="mt-2 text-sm leading-relaxed text-pretty text-ink sm:text-base">
-                Na początku zwykle około 4–6 godzin na poznanie pomysłu i
-                najważniejsze ustalenia.
-              </p>
-              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink sm:text-base">
-                Później najczęściej wystarczy około godziny tygodniowo na
-                sprawdzenie postępów, rozmowę i podjęcie potrzebnych decyzji.
-                Przy bardziej złożonym projekcie może być potrzebne większe
-                zaangażowanie.
+              <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                To wartości orientacyjne — bardziej złożone projekty mogą
+                wymagać większego zaangażowania.
               </p>
             </div>
 
@@ -813,14 +767,67 @@ const breadcrumbSchema = {
     </section>
 
     <section
-      id="ograniczenia"
+      id="bezpieczenstwo"
       class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              07 · Ograniczenia
+              07 · Zasady współpracy
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
+              Wiesz, za co płacisz i kiedy zobaczysz efekty.
+            </h2>
+            <p class="mt-4 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft">
+              Zanim rozpoczniemy prace, ustalamy zakres, cenę i sposób odbioru.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink sm:text-lg">
+              Nie mogę zagwarantować sukcesu rynkowego aplikacji. Mogę natomiast
+              jasno określić, co zbudujemy i w jaki sposób będziemy sprawdzać
+              wykonaną pracę.
+            </p>
+
+            <ul class="mt-8 grid grid-cols-1 gap-x-10 border-t border-line md:grid-cols-2">
+              {ofertaSecurity.map(({ title, description }) => (
+                <li class="flex items-start gap-3 border-b border-line py-4">
+                  <Check
+                    className="mt-0.5 size-4 shrink-0 text-signal"
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <p class="text-sm leading-snug font-semibold text-ink sm:text-base">
+                      {title}
+                    </p>
+                    <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft">
+                      {description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <p class="mt-6 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+              Chcę, żebyś wiedział, co dzieje się z Twoim projektem i jakie masz
+              możliwości na każdym etapie.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="ograniczenia"
+      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              08 · Ograniczenia
             </p>
           </div>
 
@@ -877,6 +884,26 @@ const breadcrumbSchema = {
                 swój budżet.
               </p>
             </div>
+            <div class="mt-10 max-w-2xl border-t border-line pt-8">
+              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+                Czego pakiet nie obejmuje?
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                Żeby uniknąć nieporozumień przy odbiorze, kilka rzeczy wymaga
+                osobnego ustalenia:
+              </p>
+              <ul class="mt-4 border-t border-line">
+                {ofertaExclusions.map((item) => (
+                  <li class="border-b border-line py-3 text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p class="mt-4 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                Jeżeli Twój projekt wymaga którejś z tych rzeczy, powiem Ci o
+                tym wprost i pomogę ustalić, jak i z kim warto ją zrealizować.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -884,13 +911,13 @@ const breadcrumbSchema = {
 
     <section
       id="po-uruchomieniu"
-      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              08 · Po uruchomieniu
+              09 · Po uruchomieniu
             </p>
           </div>
 
@@ -912,7 +939,7 @@ const breadcrumbSchema = {
             <ol class="mt-10 grid grid-cols-1 gap-6 border-t border-line pt-8 md:grid-cols-3">
               {ofertaAfterLaunch.map(
                 ({ title, paragraphs, effect, note }, index) => (
-                  <li class="flex flex-col rounded-2xl border border-line bg-paper p-5 sm:p-6">
+                  <li class="flex flex-col rounded-2xl border border-line bg-paper p-5 sm:p-6 md:row-span-4 md:grid md:grid-rows-subgrid md:gap-0">
                     <span class="font-mono text-xs tracking-[0.16em] text-signal-ink">
                       {String(index + 1).padStart(2, "0")}
                     </span>
@@ -926,7 +953,7 @@ const breadcrumbSchema = {
                     </div>
 
                     {effect && (
-                      <p class="mt-auto border-t border-line pt-3 text-sm leading-relaxed text-pretty text-ink">
+                      <p class="mt-6 border-t border-line pt-4 text-sm leading-relaxed text-pretty text-ink">
                         <span class="font-mono text-[11px] tracking-[0.14em] text-signal-ink uppercase">
                           Efekt:
                         </span>{" "}
@@ -934,7 +961,7 @@ const breadcrumbSchema = {
                       </p>
                     )}
                     {note && (
-                      <p class="mt-auto border-t border-line pt-3 text-sm leading-relaxed text-pretty font-medium text-ink">
+                      <p class="mt-6 border-t border-line pt-4 text-sm leading-relaxed text-pretty font-medium text-ink">
                         {note}
                       </p>
                     )}
@@ -967,159 +994,119 @@ const breadcrumbSchema = {
     </section>
 
     <section
-      id="bezpieczenstwo"
-      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
-    >
-      <div class="mx-auto max-w-[75rem]">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
-          <div class="lg:col-span-3">
-            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              09 · Bezpieczeństwo
-            </p>
-          </div>
-
-          <div class="lg:col-span-9">
-            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              A co z bezpieczeństwem Twojego pomysłu i pieniędzy?
-            </h2>
-            <p class="mt-4 max-w-2xl text-lg leading-relaxed text-pretty text-ink-soft">
-              Wszystko, co najważniejsze, ustalamy przed rozpoczęciem prac.
-            </p>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Rozumiem, że powierzenie komuś własnego pomysłu może budzić obawy.
-              Szczególnie jeśli myślisz o nim od lat i widzisz w nim możliwość
-              stworzenia czegoś wartościowego. Dlatego współpraca ma jasne
-              zasady.
-            </p>
-
-            <ul class="mt-8 grid grid-cols-1 gap-x-10 border-t border-line md:grid-cols-2">
-              {ofertaSecurity.map(({ title, description }) => (
-                <li class="flex items-start gap-3 border-b border-line py-4">
-                  <Check
-                    className="mt-0.5 size-4 shrink-0 text-signal"
-                    aria-hidden="true"
-                  />
-                  <div>
-                    <p class="text-sm leading-snug font-semibold text-ink sm:text-base">
-                      {title}
-                    </p>
-                    <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft">
-                      {description}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <p class="mt-6 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
-              Chcę, żebyś wiedział, co dzieje się z Twoim projektem i jakie masz
-              możliwości na każdym etapie.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="w-praktyce"
+      id="plan"
       class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
             <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              10 · W praktyce
+              10 · Opcjonalna analiza
             </p>
           </div>
 
           <div class="lg:col-span-9">
             <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              Zobacz, jak wyglądało to w praktyce
+              A jeśli Twój pomysł wymaga dokładniejszego planu?
             </h2>
-            <p class="mt-4 max-w-2xl font-heading text-xl leading-snug text-balance text-ink sm:text-2xl">
-              Numerabble — pomysł sprzed prawie 30 lat, który zamienił się w
-              działającą grę.
+
+            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Nie każdy projekt da się od razu sprowadzić do jasno określonej
+              pierwszej wersji.
+            </p>
+            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
+              Jeżeli masz kilka możliwych kierunków rozwoju, wiele zależności
+              albo potrzebujesz pisemnego planu przed podjęciem decyzji o
+              realizacji, możemy zacząć od osobnej analizy.
             </p>
 
-            <figure class="mt-10">
-              <div class="overflow-hidden rounded-2xl border border-line bg-paper shadow-[0_35px_80px_-55px_rgba(20,20,20,0.5)]">
-                <div class="flex items-center gap-2 border-b border-line px-4 py-3">
-                  <span
-                    class="size-2.5 rounded-full bg-signal/70"
-                    aria-hidden="true"
-                  ></span>
-                  <span
-                    class="size-2.5 rounded-full bg-line"
-                    aria-hidden="true"
-                  ></span>
-                  <span
-                    class="size-2.5 rounded-full bg-line"
-                    aria-hidden="true"
-                  ></span>
-                  <p class="ml-2 truncate font-mono text-[10px] tracking-[0.12em] text-ink-soft uppercase">
-                    Numerabble · przeglądarka
-                  </p>
-                </div>
-                <video
-                  data-clip
-                  class="block aspect-[4/3] w-full object-cover"
-                  src="/showcase/numerabble-gameplay.webm"
-                  poster="/showcase/numerabble-gameplay.webp"
-                  width="960"
-                  height="720"
-                  muted
-                  loop
-                  playsinline
-                  preload="none"
-                  aria-label="Prawdziwa rozgrywka w Numerabble — plansza, ułożone działanie i panel z żetonami"
-                ></video>
-              </div>
-              <figcaption class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <p class="max-w-xl text-sm leading-relaxed text-pretty text-ink-soft">
-                  Prawdziwa rozgrywka Numerabble. Nagranie z rzeczywistego
-                  projektu.
-                </p>
-                <button
-                  type="button"
-                  data-clip-toggle
-                  data-state="playing"
-                  class="inline-flex shrink-0 items-center gap-2 self-start rounded-md border border-line px-3 py-1.5 font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase transition-colors hover:border-ink/25 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
-                >
-                  <Pause
-                    data-clip-icon-pause
-                    className="size-3.5"
-                    aria-hidden="true"
-                  />
-                  <Play
-                    data-clip-icon-play
-                    className="size-3.5"
-                    aria-hidden="true"
-                  />
-                  <span data-clip-label>Wstrzymaj nagranie</span>
-                </button>
-              </figcaption>
-            </figure>
-
-            <div class="mt-10 border-t border-line pt-8">
-              <a
-                href="/realizacje/numerabble/"
-                class={cn(
-                  buttonVariants({ size: "lg" }),
-                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
-                )}
-              >
-                Zobacz pełną historię
-                <ArrowRight />
-              </a>
-              <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
-                Poznaj pełną historię tej realizacji — od pierwszych rozmów i
-                ustalania zakresu aż po działający produkt i testy.
+            <div class="mt-8 rounded-2xl border border-line bg-surface-muted p-6 sm:p-8">
+              <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+                Osobna, płatna usługa
               </p>
+              <h3 class="mt-2 font-heading text-2xl leading-[1.15] font-semibold text-balance text-ink sm:text-3xl">
+                {ofertaAnalysis.name}
+              </h3>
+
+              <div class="mt-4 space-y-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                {ofertaAnalysis.intro.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+
+              <p class="mt-6 font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase">
+                Co otrzymasz?
+              </p>
+              <ul class="mt-3">
+                {ofertaAnalysis.deliverables.map((item) => (
+                  <li class="flex items-start gap-3 border-b border-line py-3 last:border-b-0">
+                    <Check
+                      className="mt-0.5 size-4 shrink-0 text-signal"
+                      aria-hidden="true"
+                    />
+                    <span class="text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p class="mt-5 border-t border-line pt-5 text-sm leading-relaxed text-pretty text-ink">
+                <span class="font-mono text-[11px] tracking-[0.14em] text-signal-ink uppercase">
+                  Efekt:
+                </span>{" "}
+                {ofertaAnalysis.effect}
+              </p>
+
+              <div class="mt-4 space-y-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                {ofertaAnalysis.notes.map((note) => (
+                  <p>{note}</p>
+                ))}
+              </div>
+
+              <a
+                href={consultationUrl}
+                class="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+              >
+                Porozmawiajmy o analizie Twojego pomysłu
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </a>
             </div>
+
+            <p class="mt-6 max-w-2xl border-l-2 border-signal pl-5 text-base leading-relaxed text-pretty text-ink sm:text-lg">
+              <strong class="font-semibold">
+                To opcjonalna, osobno wyceniana usługa.
+              </strong>{" "}
+              Jeśli Twój pomysł pasuje do standardowego pakietu, nie musisz jej
+              zamawiać — podstawowe ustalenie zakresu jest już częścią
+              współpracy.
+            </p>
           </div>
         </div>
       </div>
     </section>
+
+    <div class="border-t border-line bg-surface-muted px-4 py-8 sm:px-6">
+      <div class="mx-auto flex max-w-[75rem] flex-col gap-4 rounded-xl border border-line bg-paper px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+        <div>
+          <p class="font-heading text-base font-semibold text-balance text-ink">
+            Nie wiesz jeszcze, które funkcje są najważniejsze?
+          </p>
+          <p class="mt-1 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+            Nie musisz mieć gotowej specyfikacji przed pierwszą rozmową. W
+            bezpłatnej checkliście znajdziesz 12 pytań o użytkowników, pierwszą
+            wersję, budżet i dalszy rozwój.
+          </p>
+        </div>
+        <a
+          href="/checklista/"
+          class="inline-flex shrink-0 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+        >
+          Pobierz checklistę przed rozmową
+          <ArrowRight className="size-4" aria-hidden="true" />
+        </a>
+      </div>
+    </div>
 
     <section
       id="faq"
