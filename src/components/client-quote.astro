@@ -1,0 +1,51 @@
+---
+import { Star } from "lucide-react"
+import type { Testimonial } from "@/data/testimonials"
+
+interface Props {
+  testimonial: Testimonial
+  excerpt?: boolean
+  class?: string
+}
+
+const { testimonial, excerpt = false, class: className } = Astro.props
+const quote = excerpt ? testimonial.excerpt : testimonial.quote
+---
+
+<figure class:list={["rounded-2xl border border-line p-6 sm:p-8", className]}>
+  <div
+    class="flex items-center gap-1 text-signal"
+    role="img"
+    aria-label={`Ocena ${testimonial.rating} na 5`}
+  >
+    {Array.from({ length: testimonial.rating }).map(() => (
+      <Star className="size-4 fill-current" aria-hidden="true" />
+    ))}
+  </div>
+
+  <blockquote class="mt-4">
+    <p class="font-heading text-lg leading-snug text-balance text-ink sm:text-xl">
+      „{quote}”
+    </p>
+  </blockquote>
+
+  <figcaption class="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-sm leading-relaxed text-ink-soft">
+    <span class="font-semibold text-ink">{testimonial.author}</span>
+    <span>· {testimonial.context}</span>
+    <span class="font-mono text-[10px] tracking-[0.14em] uppercase">
+      ·{" "}
+      {testimonial.url ? (
+        <a
+          href={testimonial.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+        >
+          {testimonial.source}
+        </a>
+      ) : (
+        testimonial.source
+      )}
+    </span>
+  </figcaption>
+</figure>
