@@ -5,6 +5,8 @@ import SiteFooter from "@/components/site-footer.astro"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { realizacjaPath } from "@/data/realizacje"
+import ClientQuote from "@/components/client-quote.astro"
+import { numerabbleTestimonial } from "@/data/testimonials"
 import { ArrowRight, Check, Minus, Pause, Play } from "lucide-react"
 
 const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
@@ -388,6 +390,11 @@ const breadcrumbSchema = {
             </dd>
           </div>
         </dl>
+
+        <ClientQuote
+          testimonial={numerabbleTestimonial}
+          class="mt-10 max-w-3xl bg-surface-muted"
+        />
       </div>
     </section>
 

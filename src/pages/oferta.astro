@@ -4,6 +4,8 @@ import SiteHeader from "@/components/site-header.astro"
 import SiteFooter from "@/components/site-footer.astro"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import ClientQuote from "@/components/client-quote.astro"
+import { numerabbleTestimonial } from "@/data/testimonials"
 import {
   ofertaAfterLaunch,
   ofertaAnalysis,
@@ -448,6 +450,11 @@ const breadcrumbSchema = {
                 </button>
               </figcaption>
             </figure>
+
+            <ClientQuote
+              testimonial={numerabbleTestimonial}
+              class="mt-10 max-w-2xl bg-paper"
+            />
 
             <div class="mt-10 border-t border-line pt-8">
               <a

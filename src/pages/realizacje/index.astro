@@ -5,6 +5,7 @@ import SiteFooter from "@/components/site-footer.astro"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { REALIZACJE_BASE_PATH, realizacjaPath } from "@/data/realizacje"
+import { numerabbleTestimonial } from "@/data/testimonials"
 import { ArrowRight, Check, Pause, Play } from "lucide-react"
 
 const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
@@ -293,6 +294,28 @@ const jsonLd = [
               Powstało coś, od czego można zacząć dalszy rozwój — prawdziwa,
               działająca gra.
             </p>
+
+            <blockquote class="mt-6 max-w-2xl border-l-2 border-signal pl-4">
+              <p class="text-sm leading-relaxed text-pretty text-ink sm:text-base">
+                „{numerabbleTestimonial.excerpt}”
+              </p>
+              <footer class="mt-1 text-sm leading-relaxed text-ink-soft">
+                {numerabbleTestimonial.author} · {numerabbleTestimonial.context}
+                {numerabbleTestimonial.url && (
+                  <>
+                    {" · "}
+                    <a
+                      href={numerabbleTestimonial.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                    >
+                      opinia z Google
+                    </a>
+                  </>
+                )}
+              </footer>
+            </blockquote>
 
             <div class="mt-10 border-t border-line pt-8">
               <a

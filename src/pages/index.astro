@@ -15,6 +15,8 @@ import { wiedzaArticlePath, wiedzaCategoryLabel } from "@/data/wiedza"
 import { getReadingTime } from "@/lib/reading-time"
 import FaqAccordion from "@/components/faq-accordion"
 import ProfileAvatar from "@/components/profile-avatar"
+import ClientQuote from "@/components/client-quote.astro"
+import { numerabbleTestimonial } from "@/data/testimonials"
 import {
   ArrowRight,
   BadgeCheck,
@@ -446,6 +448,12 @@ const cardParagraphsFor = (entry: (typeof wiedzaEntries)[number]) =>
                 </button>
               </figcaption>
             </figure>
+
+            <ClientQuote
+              testimonial={numerabbleTestimonial}
+              excerpt
+              class="mt-10 max-w-2xl bg-surface-muted"
+            />
 
             <div class="mt-10 border-t border-line pt-8">
               <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
