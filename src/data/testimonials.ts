@@ -14,7 +14,7 @@ export const numerabbleTestimonial: Testimonial = {
   excerpt:
     "Dziękuję całemu Twojemu zespołowi… Spokojnie czekam na kolejne etapy współpracy!",
   author: "Remigiusz",
-  context: "klient Numerabble",
+  context: "pomysłodawca Numerabble",
   source: "opinia z Google, listopad 2026",
   rating: 5,
   url: "https://maps.app.goo.gl/z9ve1PNTGFpW9Rum9",
