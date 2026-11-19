@@ -171,6 +171,16 @@ Zamiast szukać jednego „najlepszego” wykonawcy, zacznij od pytania, czego w
 
 Kluczowe jest dopasowanie zakresu odpowiedzialności do tego, ile pracy organizacyjnej możesz wziąć na siebie. Model, który wymaga od Ciebie zarządzania zespołem, będzie zły, jeśli nie masz na to czasu. Model, który oferuje pełną koordynację, będzie zbędny, jeśli masz już własny zespół i plan.
 
+## Jeszcze nie wiesz, jaki zakres prac zlecić?
+
+Zanim wybierzesz freelancera, software house lub partnera technologicznego, spróbuj określić, co aplikacja powinna robić w pierwszej wersji.
+
+Pomogą Ci w tym pytania z mojej bezpłatnej checklisty.
+
+[Uporządkuj zakres pierwszej wersji](/checklista/)
+
+*Bezpłatna checklista PDF. Możesz otrzymać ją e-mailem razem z newsletterem albo pobrać bez zapisu.*
+
 ## Podsumowanie. Porównaj zakres, nie tylko cenę
 
 Freelancer, software house i partner technologiczny to różne sposoby organizacji tej samej pracy. Żaden nie jest lepszy sam w sobie.

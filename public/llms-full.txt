@@ -29,7 +29,7 @@ Pierwsza działająca wersja w 4 tygodnie prac — gotowa do pokazania pierwszym
 
 20 minut · Bez zobowiązań.
 
-**Nie jesteś jeszcze gotowy na rozmowę?** Zacznij od checklisty — bezpłatny PDF „12 pytań, zanim zaczniesz budować aplikację”, 4 strony. Można go pobrać bez rejestracji albo otrzymać e-mailem po zapisie do newslettera: https://www.karolmodelski.pl/checklista/
+**Nie jesteś jeszcze gotowy na rozmowę?** Uporządkuj swój pomysł w 12 pytaniach — bezpłatny PDF „12 pytań, zanim zaczniesz budować aplikację”, 4 strony. Można go pobrać bez rejestracji albo otrzymać e-mailem po zapisie do newslettera: https://www.karolmodelski.pl/checklista/
 
 Na pierwszym ekranie znajduje się nagranie strony produktu gry Numerabble — widok przewijany na telefonie. To prawdziwa realizacja, nie makieta (szczegóły w sekcji 01).
 

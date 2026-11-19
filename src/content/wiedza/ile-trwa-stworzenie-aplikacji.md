@@ -650,6 +650,16 @@ Jeżeli podczas pierwszej rozmowy ktoś podaje Ci bardzo dokładny termin realiz
 
 Rzetelna wycena czasu wymaga przynajmniej podstawowego zrozumienia zakresu.
 
+## Przygotuj się do rozmowy o terminie realizacji
+
+Nie potrzebujesz gotowej specyfikacji. Wystarczy, że uporządkujesz podstawowe założenia: użytkowników, najważniejszą funkcję, budżet i oczekiwany termin.
+
+Przygotowałem 12 pytań, które pomogą Ci zrobić to we własnym tempie.
+
+[Pobierz checklistę przed rozmową](/checklista/)
+
+*Bezpłatna checklista PDF. Możesz otrzymać ją e-mailem razem z newsletterem albo pobrać bez zapisu.*
+
 ## Podsumowanie. Ile naprawdę trwa stworzenie aplikacji?
 
 Jak widzisz, czas stworzenia aplikacji może wynosić od kilku tygodni do kilkunastu miesięcy, a przy dużych systemach nawet dłużej.

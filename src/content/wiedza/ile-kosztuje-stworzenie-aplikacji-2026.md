@@ -575,6 +575,8 @@ Możesz zapisać swoje odpowiedzi i wykorzystać je przy planowaniu pierwszej we
 
 [Pobierz checklistę](/checklista/)
 
+*Bezpłatna checklista PDF. Możesz otrzymać ją e-mailem razem z newsletterem albo pobrać bez zapisu.*
+
 ## Źródła i sposób przygotowania zestawienia
 
 Przygotowując ten artykuł, porównałem publiczne zestawienia kosztów tworzenia aplikacji, cenniki firm programistycznych oraz materiały dotyczące stawek specjalistów.

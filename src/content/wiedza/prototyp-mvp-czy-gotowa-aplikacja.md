@@ -699,6 +699,16 @@ Poproś o oszacowanie opłat za infrastrukturę oraz ewentualną opiekę technic
 
 Odpowiedzi na te pytania mogą być dla Ciebie znacznie bardziej wartościowe niż sama informacja o cenie.
 
+## Zanim porównasz oferty wykonawców, uporządkuj własne wymagania
+
+Warto wiedzieć nie tylko, o co zapytać wykonawcę, ale też czego rzeczywiście potrzebujesz w pierwszej wersji aplikacji.
+
+Moja bezpłatna checklista zawiera 12 pytań dotyczących pomysłu, zakresu, budżetu i dalszego rozwoju produktu.
+
+[Przygotuj swój pomysł do wyceny](/checklista/)
+
+*Bezpłatna checklista PDF. Możesz otrzymać ją e-mailem razem z newsletterem albo pobrać bez zapisu.*
+
 ## Podsumowanie. Za co właściwie płacisz, zamawiając aplikację?
 
 Jak widzisz, prototyp, MVP i gotowa aplikacja mogą wyglądać podobnie na pierwszy rzut oka.
