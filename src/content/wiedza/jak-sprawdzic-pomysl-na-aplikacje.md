@@ -761,6 +761,8 @@ Możesz zapisać swoje odpowiedzi i wykorzystać je przy planowaniu pierwszej we
 
 [Pobierz checklistę](/checklista/)
 
+*Bezpłatna checklista PDF. Możesz otrzymać ją e-mailem razem z newsletterem albo pobrać bez zapisu.*
+
 ## Źródła
 
 Przy opracowaniu artykułu wykorzystano następujące materiały dotyczące testowania pomysłów, badań zainteresowania użytkowników i tworzenia pierwszych wersji aplikacji.

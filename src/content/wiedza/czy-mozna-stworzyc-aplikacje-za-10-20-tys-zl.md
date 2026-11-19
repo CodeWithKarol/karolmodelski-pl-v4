@@ -550,6 +550,16 @@ Zapytaj, ile będzie kosztować przygotowanie dokładnie tych funkcji, których 
 
 I co najważniejsze — upewnij się, że wiesz, co otrzymasz po zakończeniu prac.
 
+## Nie wiesz jeszcze, ile warto przeznaczyć na pierwszą wersję?
+
+Zanim zaczniesz zbierać wyceny, określ najważniejszą funkcję, możliwości budżetowe i rzeczy, które mogą poczekać.
+
+Moja bezpłatna checklista z 12 pytaniami pomoże Ci uporządkować te decyzje bez presji wydawania konkretnej kwoty.
+
+[Uporządkuj pomysł przed wyceną](/checklista/)
+
+*Bezpłatna checklista PDF. Możesz otrzymać ją e-mailem razem z newsletterem albo pobrać bez zapisu.*
+
 ## Podsumowanie. Czy 10–20 tys. zł wystarczy na stworzenie aplikacji?
 
 Tak, taki budżet może wystarczyć na stworzenie prostej aplikacji, prototypu albo niewielkiego MVP.

@@ -598,6 +598,8 @@ Nie musisz robić wszystkiego jednocześnie.
 
 Najważniejsze jest dostosowanie zabezpieczeń do konkretnego projektu.
 
+Chcesz przygotować się do pierwszej rozmowy bez ujawniania szczegółów pomysłu? Możesz zacząć od samodzielnego uporządkowania założeń. [Checklista z 12 pytaniami](/checklista/) pomoże Ci przemyśleć zakres aplikacji, budżet i możliwe ryzyka.
+
 ## 16. Ile kosztuje zabezpieczenie pomysłu na aplikację?
 
 Dobra wiadomość jest taka, że nie wszystkie zabezpieczenia wymagają dużych pieniędzy.

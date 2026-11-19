@@ -116,6 +116,16 @@ Z mojego doświadczenia wynika, że osoby, które nie programują, często potra
 
 Potrzebują jedynie pomocy w przełożeniu swojej wizji na konkretny plan.
 
+## Zanim wybierzesz technologię, uporządkuj swój pomysł
+
+Nie musisz wiedzieć, jak zaprogramować aplikację, żeby zacząć ją planować. Wystarczy, że odpowiesz sobie na cztery pytania z poprzedniej sekcji.
+
+Przygotowałem bezpłatną checklistę z 12 pytaniami, które pomogą Ci doprecyzować, dla kogo tworzysz produkt, co powinno działać na początku i co możesz zostawić na później.
+
+[Przejdź do bezpłatnej checklisty](/checklista/)
+
+*Bezpłatna checklista PDF. Możesz otrzymać ją e-mailem razem z newsletterem albo pobrać bez zapisu.*
+
 ## 3. Pierwszy sposób: stworzenie aplikacji za pomocą no-code
 
 Zacznijmy od rozwiązania, które w ostatnich latach zyskało dużą popularność.

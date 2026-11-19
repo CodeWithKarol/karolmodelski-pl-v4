@@ -412,6 +412,8 @@ Możesz zapisać swoje odpowiedzi i wykorzystać je przy planowaniu pierwszej we
 
 [Pobierz checklistę](/checklista/)
 
+*Bezpłatna checklista PDF. Możesz otrzymać ją e-mailem razem z newsletterem albo pobrać bez zapisu.*
+
 ## Źródła i materiały dodatkowe
 
 Przygotowując ten poradnik, korzystałem z własnych doświadczeń przy realizacji aplikacji oraz materiałów dotyczących sprawdzania pomysłów, rozmów z użytkownikami i tworzenia pierwszych wersji produktów.
