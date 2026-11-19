@@ -1,0 +1,1335 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header.astro"
+import SiteFooter from "@/components/site-footer.astro"
+import { ArrowLeft } from "lucide-react"
+
+const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
+const pageURL = new URL("/polityka-prywatnosci/", siteURL).toString()
+const siteRoot = new URL("/", siteURL).toString()
+
+const metaTitle = "Polityka prywatności i plików cookies | Karol Modelski"
+const metaDescription =
+  "Jak przetwarzam dane osobowe i używam plików cookies w serwisie karolmodelski.pl – administrator, cele, odbiorcy, retencja i Twoje prawa."
+
+const updatedAt = "19 listopada 2026 r."
+
+const sections = [
+  { id: "informacje-ogolne", n: "01", label: "Informacje ogólne" },
+  { id: "administrator", n: "02", label: "Administrator danych" },
+  { id: "zakres-danych", n: "03", label: "Zakres danych" },
+  { id: "cele", n: "04", label: "Cele i podstawy prawne" },
+  { id: "odbiorcy", n: "05", label: "Odbiorcy danych" },
+  { id: "cookies", n: "06", label: "Pliki cookies" },
+  { id: "retencja", n: "07", label: "Okres przechowywania" },
+  { id: "transfery", n: "08", label: "Dane poza EOG" },
+  { id: "prawa", n: "09", label: "Prawa osób" },
+  { id: "dobrowolnosc", n: "10", label: "Dobrowolność danych" },
+  { id: "automatyzacja", n: "11", label: "Automatyzacja" },
+  { id: "bezpieczenstwo", n: "12", label: "Bezpieczeństwo" },
+  { id: "zmiany", n: "13", label: "Zmiany polityki" },
+]
+
+const breadcrumbSchema = {
+  "@type": "BreadcrumbList",
+  "@id": `${pageURL}#breadcrumb`,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Strona główna",
+      item: siteRoot,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Polityka prywatności",
+      item: pageURL,
+    },
+  ],
+}
+
+const h2 =
+  "font-heading text-2xl leading-[1.2] font-semibold tracking-tight text-balance text-ink sm:text-3xl"
+const h3 =
+  "mt-8 font-heading text-lg leading-snug font-semibold text-balance text-ink"
+const p = "mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base"
+const pStrong = "mt-3 text-sm leading-relaxed text-pretty text-ink sm:text-base"
+const list =
+  "mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base"
+const link =
+  "underline decoration-line underline-offset-4 transition-colors hover:decoration-signal hover:text-ink"
+const sectionClass =
+  "scroll-mt-24 border-t border-line pt-10 first:border-t-0 first:pt-0"
+const noteClass =
+  "mt-5 rounded-xl border border-line bg-surface-muted p-5 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base"
+const thClass =
+  "border-b border-line py-3 pr-4 text-left font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase"
+const tdClass = "border-b border-line py-3 pr-4 text-sm text-ink-soft"
+const tdName = "border-b border-line py-3 pr-4 font-mono text-xs text-ink"
+const doc = "mt-3 font-mono text-xs leading-relaxed break-words text-ink-soft"
+---
+
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+  jsonLd={[breadcrumbSchema]}
+>
+  <a
+    href="#main"
+    class="fixed top-4 left-4 z-50 -translate-y-24 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-paper transition-transform focus:translate-y-0 focus:ring-2 focus:ring-signal focus:ring-offset-2 focus:outline-none motion-reduce:transition-none"
+  >
+    Przejdź do treści
+  </a>
+
+  <SiteHeader variant="page" />
+
+  <main id="main">
+    <section class="relative overflow-hidden bg-paper px-4 pt-8 pb-14 sm:px-6 sm:pt-10 sm:pb-16">
+      <div
+        aria-hidden="true"
+        class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
+      ></div>
+
+      <div class="relative mx-auto max-w-[75rem]">
+        <nav aria-label="Ścieżka nawigacji">
+          <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+            <li>
+              <a class="transition-colors hover:text-ink" href="/">
+                Strona główna
+              </a>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">Polityka prywatności</li>
+          </ol>
+        </nav>
+
+        <div class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="rise lg:col-span-7">
+            <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
+              <span class="h-px w-8 bg-signal"></span>
+              Dokumenty prawne · Prywatność
+            </p>
+
+            <h1 class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl">
+              Polityka prywatności i plików cookies
+            </h1>
+
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
+              Poniżej wyjaśniam, jakie dane zbieram w serwisie karolmodelski.pl,
+              w jakim celu i na jakiej podstawie prawnej je przetwarzam, komu je
+              powierzam oraz jak możesz kontrolować ich wykorzystanie.
+            </p>
+
+            <p class="mt-6 font-mono text-xs tracking-[0.14em] text-ink-soft uppercase">
+              Serwis: karolmodelski.pl · Data aktualizacji:
+              <time datetime="2026-11-19">{updatedAt}</time>
+            </p>
+          </div>
+
+          <div class="rise lg:col-span-5" style="animation-delay:.12s">
+            <div class="rounded-2xl border border-line bg-surface-muted p-6 sm:p-8">
+              <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+                Administrator danych
+              </p>
+              <p class="mt-3 font-heading text-xl leading-snug font-semibold text-balance text-ink">
+                Karol Modelski
+              </p>
+              <p class="mt-1 text-sm leading-relaxed text-ink-soft">
+                jednoosobowa działalność gospodarcza
+              </p>
+
+              <dl class="mt-5 space-y-3 border-t border-line pt-5 text-sm leading-relaxed">
+                <div>
+                  <dt class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+                    Adres
+                  </dt>
+                  <dd class="mt-0.5 text-ink">
+                    ul. Mieczysława Karłowicza 1/40
+                    <br />
+                    58-506 Jelenia Góra
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+                    NIP / REGON
+                  </dt>
+                  <dd class="mt-0.5 text-ink">6112800950 / 383132957</dd>
+                </div>
+                <div>
+                  <dt class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+                    E-mail
+                  </dt>
+                  <dd class="mt-0.5">
+                    <a class={link} href="mailto:kontakt@karolmodelski.pl">
+                      kontakt@karolmodelski.pl
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="tresc"
+      class="border-t border-line bg-surface-muted px-4 py-14 sm:px-6 sm:py-20"
+    >
+      <div class="mx-auto max-w-[75rem] lg:grid lg:grid-cols-12 lg:gap-x-16">
+        <nav
+          aria-labelledby="spis-tresci"
+          class="mb-10 lg:col-span-3 lg:mb-0 lg:self-start lg:sticky lg:top-24"
+        >
+          <p
+            id="spis-tresci"
+            class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase"
+          >
+            Spis treści
+          </p>
+          <ul class="mt-4 grid grid-cols-2 gap-x-3 gap-y-1 border-t border-line pt-4 lg:grid-cols-1">
+            {sections.map((section) => (
+              <li>
+                <a
+                  href={`#${section.id}`}
+                  class="flex min-h-11 items-baseline gap-2 rounded-lg px-2 py-2 text-sm leading-snug text-ink-soft transition-colors hover:bg-secondary hover:text-ink lg:min-h-0 lg:gap-3"
+                >
+                  <span class="font-mono text-[10px] text-ink-soft/70">
+                    {section.n}
+                  </span>
+                  <span>{section.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="/"
+            class="mt-6 inline-flex min-h-11 items-center gap-2 border-t border-line pt-4 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+          >
+            <ArrowLeft className="size-4" aria-hidden="true" />
+            Wróć na stronę główną
+          </a>
+        </nav>
+
+        <article class="lg:col-span-9">
+          <div class="max-w-2xl space-y-12">
+            <section id="informacje-ogolne" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  01
+                </span>
+                Informacje ogólne
+              </h2>
+
+              <p class={p}>
+                Niniejsza Polityka prywatności określa zasady przetwarzania
+                danych osobowych oraz stosowania plików cookies i podobnych
+                technologii w serwisie karolmodelski.pl.
+              </p>
+
+              <p class={p}>
+                Dane osobowe przetwarzane są zgodnie z obowiązującymi
+                przepisami, w szczególności z rozporządzeniem Parlamentu
+                Europejskiego i Rady (UE) 2016/679 (RODO) oraz ustawą z dnia 12
+                lipca 2024 r. – Prawo komunikacji elektronicznej.
+              </p>
+            </section>
+
+            <section id="administrator" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  02
+                </span>
+                Administrator danych osobowych
+              </h2>
+
+              <p class={p}>Administratorem danych osobowych jest:</p>
+
+              <p class={pStrong}>
+                <strong class="font-semibold">
+                  Karol Modelski, prowadzący jednoosobową działalność
+                  gospodarczą pod firmą Karol Modelski.
+                </strong>
+              </p>
+
+              <ul class={list}>
+                <li>
+                  Adres: ul. Mieczysława Karłowicza 1/40, 58-506 Jelenia Góra
+                </li>
+                <li>NIP: 6112800950</li>
+                <li>REGON: 383132957</li>
+                <li>
+                  E-mail:{" "}
+                  <a class={link} href="mailto:kontakt@karolmodelski.pl">
+                    kontakt@karolmodelski.pl
+                  </a>
+                </li>
+              </ul>
+
+              <p class={p}>
+                W sprawach związanych z ochroną danych osobowych możesz
+                kontaktować się ze mną za pośrednictwem poczty elektronicznej
+                lub korespondencyjnie.
+              </p>
+            </section>
+
+            <section id="zakres-danych" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  03
+                </span>
+                Zakres przetwarzanych danych
+              </h2>
+
+              <p class={p}>
+                W zależności od sposobu korzystania z serwisu mogę przetwarzać:
+              </p>
+
+              <ul class={list}>
+                <li>
+                  adres e-mail podany podczas zapisu do newslettera lub
+                  zamówienia checklisty;
+                </li>
+                <li>
+                  imię, nazwisko, adres e-mail i inne dane dobrowolnie podane
+                  podczas rezerwacji konsultacji;
+                </li>
+                <li>informacje przekazane w korespondencji;</li>
+                <li>
+                  datę, godzinę, źródło i potwierdzenie zgody na komunikację
+                  marketingową;
+                </li>
+                <li>
+                  informacje o interakcjach z wiadomościami e-mail, jeżeli
+                  odpowiednie funkcje MailerLite są wykorzystywane;
+                </li>
+                <li>
+                  adres IP, dane przeglądarki, urządzenia i informacje o
+                  żądaniach HTTP;
+                </li>
+                <li>
+                  identyfikatory internetowe oraz dane dotyczące korzystania ze
+                  strony, jeśli użytkownik wyrazi odpowiednią zgodę;
+                </li>
+                <li>preferencje dotyczące plików cookies.</li>
+              </ul>
+
+              <p class={p}>
+                Zakres przetwarzania zależy od wybranej funkcjonalności serwisu
+                i udzielonych zgód.
+              </p>
+            </section>
+
+            <section id="cele" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  04
+                </span>
+                Cele i podstawy prawne przetwarzania danych
+              </h2>
+
+              <h3 class={h3}>4.1. Newsletter</h3>
+
+              <p class={p}>
+                Za pośrednictwem strony możesz zapisać się do newslettera
+                prowadzonego przez Karola Modelskiego.
+              </p>
+
+              <p class={p}>Newsletter może zawierać:</p>
+
+              <ul class={list}>
+                <li>porady dotyczące tworzenia aplikacji internetowych;</li>
+                <li>
+                  materiały edukacyjne dotyczące planowania i realizacji
+                  produktów cyfrowych;
+                </li>
+                <li>
+                  informacje dotyczące wyboru funkcji pierwszej wersji
+                  aplikacji;
+                </li>
+                <li>przykłady realizacji i doświadczenia projektowe;</li>
+                <li>
+                  informacje handlowe i marketingowe dotyczące usług
+                  administratora.
+                </li>
+              </ul>
+
+              <p class={p}>
+                W celu obsługi newslettera przetwarzany jest przede wszystkim
+                Twój adres e-mail.
+              </p>
+
+              <p class={p}>
+                Podstawą prawną przetwarzania danych osobowych w celu wysyłki
+                newslettera jest zgoda — art. 6 ust. 1 lit. a RODO.
+              </p>
+
+              <p class={p}>
+                Wysyłanie informacji handlowych i marketingowych drogą
+                elektroniczną odbywa się również na podstawie uprzedniej zgody
+                wymaganej przez art. 398 Prawa komunikacji elektronicznej.
+              </p>
+
+              <p class={p}>
+                Zgoda jest dobrowolna i może zostać wycofana w dowolnym
+                momencie.
+              </p>
+
+              <p class={p}>
+                Wycofanie zgody nie wpływa na zgodność z prawem przetwarzania
+                danych dokonanego przed jej wycofaniem.
+              </p>
+
+              <p class={p}>
+                Do obsługi formularzy, przechowywania kontaktów, zarządzania
+                zgodami i wysyłki wiadomości wykorzystuję MailerLite.
+              </p>
+
+              <h3 class={h3}>4.2. Checklista dla subskrybentów</h3>
+
+              <p class={p}>
+                Osoby zapisujące się do newslettera mogą otrzymać bezpłatną
+                checklistę „12 pytań, zanim zaczniesz budować aplikację”.
+              </p>
+
+              <p class={p}>
+                Po potwierdzeniu zapisu checklista jest dostarczana drogą
+                elektroniczną na podany adres e-mail za pośrednictwem
+                MailerLite.
+              </p>
+
+              <p class={p}>
+                Wysyłka checklisty jest elementem procesu powitalnego
+                newslettera i wykorzystuje dane podane podczas zapisu.
+              </p>
+
+              <p class={p}>
+                Jeżeli użytkownik chce otrzymać wyłącznie checklistę, bez
+                zapisywania się do newslettera, może skorzystać z odrębnej
+                możliwości pobrania materiału bez zgody na komunikację
+                marketingową.
+              </p>
+
+              <p class={p}>
+                Pobranie samej checklisty nie powoduje automatycznego zapisania
+                na listę subskrybentów.
+              </p>
+
+              <h3 class={h3}>4.3. Potwierdzanie zapisu</h3>
+
+              <p class={p}>
+                W procesie zapisu do newslettera wykorzystywany jest mechanizm
+                double opt-in.
+              </p>
+
+              <p class={p}>
+                Po wypełnieniu formularza na podany adres e-mail wysyłana jest
+                wiadomość zawierająca link potwierdzający zapis.
+              </p>
+
+              <p class={p}>
+                Po potwierdzeniu adresu użytkownik zostaje aktywowany jako
+                subskrybent newslettera.
+              </p>
+
+              <p class={p}>
+                W celu udokumentowania zgody mogą być przechowywane informacje o
+                dacie, godzinie, adresie IP, źródle i sposobie dokonania oraz
+                potwierdzenia zapisu.
+              </p>
+
+              <p class={p}>
+                Dane potwierdzające udzielenie lub wycofanie zgody mogą być
+                przechowywane w zakresie niezbędnym do wykazania zgodności
+                przetwarzania z prawem lub obrony przed roszczeniami, na
+                podstawie art. 6 ust. 1 lit. f RODO.
+              </p>
+
+              <h3 class={h3}>4.4. Kontakt</h3>
+
+              <p class={p}>
+                W przypadku kontaktu e-mailowego przetwarzam dane przekazane w
+                wiadomości w celu udzielenia odpowiedzi i obsługi
+                korespondencji.
+              </p>
+
+              <p class={p}>
+                Podstawą przetwarzania danych jest, zależnie od charakteru
+                kontaktu:
+              </p>
+
+              <ul class={list}>
+                <li>
+                  art. 6 ust. 1 lit. b RODO — działania na żądanie osoby przed
+                  zawarciem umowy lub realizacja umowy;
+                </li>
+                <li>
+                  art. 6 ust. 1 lit. f RODO — prawnie uzasadniony interes
+                  administratora związany z obsługą korespondencji.
+                </li>
+              </ul>
+
+              <h3 class={h3}>4.5. Rezerwacja konsultacji</h3>
+
+              <p class={p}>
+                Serwis umożliwia rezerwację bezpłatnej konsultacji za
+                pośrednictwem Calendly.
+              </p>
+
+              <p class={p}>
+                W tym celu mogą być przetwarzane dane podane podczas rezerwacji,
+                w szczególności imię, adres e-mail, termin spotkania oraz
+                dodatkowe informacje dobrowolnie przekazane przez użytkownika.
+              </p>
+
+              <p class={p}>
+                Podstawą przetwarzania jest art. 6 ust. 1 lit. b RODO, gdy
+                konsultacja dotyczy działań przed zawarciem umowy, lub art. 6
+                ust. 1 lit. f RODO, gdy przetwarzanie jest niezbędne do obsługi
+                pozostałych zapytań.
+              </p>
+
+              <h3 class={h3}>4.6. Analityka</h3>
+
+              <p class={p}>
+                Serwis korzysta z Google Analytics 4 do analizowania liczby
+                odwiedzin, źródeł ruchu, popularności poszczególnych podstron i
+                interakcji użytkowników.
+              </p>
+
+              <p class={p}>
+                Przetwarzanie danych osobowych w ramach opcjonalnych technologii
+                analitycznych odbywa się na podstawie zgody użytkownika — art. 6
+                ust. 1 lit. a RODO.
+              </p>
+
+              <p class={p}>
+                Google Analytics 4 nie jest wykorzystywany do analityki przed
+                uzyskaniem odpowiedniej zgody na analitykę.
+              </p>
+
+              <h3 class={h3}>4.7. Reklama i pomiar konwersji</h3>
+
+              <p class={p}>
+                Serwis wykorzystuje Meta Pixel do mierzenia skuteczności
+                kampanii reklamowych prowadzonych m.in. na Facebooku i
+                Instagramie.
+              </p>
+
+              <p class={p}>
+                Dane mogą być wykorzystywane do pomiaru konwersji oraz, jeżeli
+                zostaną uruchomione odpowiednie funkcje, do remarketingu i
+                tworzenia grup odbiorców.
+              </p>
+
+              <p class={p}>
+                Podstawą przetwarzania danych osobowych w ramach opcjonalnych
+                technologii reklamowych jest zgoda — art. 6 ust. 1 lit. a RODO.
+              </p>
+
+              <p class={p}>
+                Meta Pixel nie jest wykorzystywany do pomiaru ani remarketingu
+                przed uzyskaniem odpowiedniej zgody na marketingowe cookies.
+              </p>
+
+              <h3 class={h3}>4.8. Bezpieczeństwo serwisu</h3>
+
+              <p class={p}>
+                Dane techniczne mogą być przetwarzane w celu zapewnienia
+                działania serwisu, ochrony infrastruktury, diagnozowania błędów
+                i zapobiegania nadużyciom.
+              </p>
+
+              <p class={p}>
+                Podstawą prawną jest art. 6 ust. 1 lit. f RODO — prawnie
+                uzasadniony interes administratora.
+              </p>
+
+              <h3 class={h3}>4.9. Roszczenia</h3>
+
+              <p class={p}>
+                Dane mogą być również przetwarzane w zakresie niezbędnym do
+                ustalenia, dochodzenia lub obrony roszczeń na podstawie art. 6
+                ust. 1 lit. f RODO.
+              </p>
+            </section>
+
+            <section id="odbiorcy" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  05
+                </span>
+                Odbiorcy danych i dostawcy usług
+              </h2>
+
+              <p class={p}>
+                W związku z prowadzeniem strony korzystam z następujących
+                dostawców:
+              </p>
+
+              <ul class={list}>
+                <li>
+                  <strong class="font-semibold text-ink">Vercel Inc.</strong> —
+                  hosting strony, obsługa żądań internetowych oraz
+                  infrastruktura techniczna. Nie korzystam z Vercel Analytics
+                  ani Speed Insights.
+                </li>
+                <li>
+                  <strong class="font-semibold text-ink">Google</strong> —
+                  Google Analytics 4 do analizy ruchu oraz Google Tag Manager do
+                  zarządzania tagami.
+                </li>
+                <li>
+                  <strong class="font-semibold text-ink">Meta Platforms</strong>{" "}
+                  — Meta Pixel wykorzystywany do pomiaru skuteczności kampanii
+                  reklamowych i ewentualnego remarketingu.
+                </li>
+                <li>
+                  <strong class="font-semibold text-ink">CookieYes</strong> —
+                  zarządzanie zgodami na cookies oraz zapamiętywanie preferencji
+                  użytkowników.
+                </li>
+                <li>
+                  <strong class="font-semibold text-ink">MailerLite</strong> —
+                  obsługa newslettera, zapisów, potwierdzeń subskrypcji,
+                  automatycznych wiadomości i wysyłki checklisty.
+                </li>
+                <li>
+                  <strong class="font-semibold text-ink">Calendly</strong> —
+                  obsługa rezerwacji konsultacji.
+                </li>
+              </ul>
+
+              <p class={p}>
+                W zależności od rodzaju usługi dostawcy mogą występować jako
+                podmioty przetwarzające dane w imieniu administratora albo jako
+                odrębni administratorzy danych.
+              </p>
+
+              <p class={p}>
+                Szczegóły ich przetwarzania danych wynikają z odpowiednich umów
+                i informacji o prywatności.
+              </p>
+            </section>
+
+            <section id="cookies" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  06
+                </span>
+                Pliki cookies
+              </h2>
+
+              <p class={p}>
+                Serwis wykorzystuje pliki cookies i podobne technologie w celu
+                zapewnienia prawidłowego działania strony, zapamiętywania
+                preferencji, prowadzenia analityki i pomiaru skuteczności
+                działań reklamowych.
+              </p>
+
+              <h3 class={h3}>6.1. Niezbędne cookies</h3>
+
+              <div class="mt-4 overflow-x-auto">
+                <table class="w-full min-w-[32rem] border-collapse text-left">
+                  <caption class="sr-only">
+                    Niezbędne pliki cookies wykorzystywane w serwisie
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class={thClass}>
+                        Nazwa
+                      </th>
+                      <th scope="col" class={thClass}>
+                        Cel
+                      </th>
+                      <th scope="col" class={thClass}>
+                        Okres
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class={tdName}>
+                        cookieyes-consent
+                      </th>
+                      <td class={tdClass}>
+                        Zapamiętywanie zgód i preferencji użytkownika
+                      </td>
+                      <td class={`${tdClass} whitespace-nowrap`}>365 dni</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class={p}>
+                Plik ten służy do przechowywania informacji o preferencjach
+                dotyczących cookies. Nie jest wykorzystywany do reklamy
+                behawioralnej.
+              </p>
+
+              <p class={p}>
+                Niezbędne cookies są stosowane w zakresie koniecznym do
+                działania serwisu i mechanizmu zarządzania zgodami.
+              </p>
+
+              <h3 class={h3}>6.2. Analityczne cookies</h3>
+
+              <p class={p}>Serwis korzysta z Google Analytics 4.</p>
+
+              <div class="mt-4 overflow-x-auto">
+                <table class="w-full min-w-[32rem] border-collapse text-left">
+                  <caption class="sr-only">
+                    Analityczne pliki cookies wykorzystywane w serwisie
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class={thClass}>
+                        Nazwa
+                      </th>
+                      <th scope="col" class={thClass}>
+                        Cel
+                      </th>
+                      <th scope="col" class={thClass}>
+                        Okres deklarowany w CookieYes
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class={tdName}>
+                        _ga
+                      </th>
+                      <td class={tdClass}>
+                        Rozróżnianie użytkowników za pomocą identyfikatorów
+                        internetowych
+                      </td>
+                      <td class={`${tdClass} whitespace-nowrap`}>2 lata</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class={tdName}>
+                        _ga_*
+                      </th>
+                      <td class={tdClass}>
+                        Utrzymywanie informacji dotyczących sesji i działania
+                        GA4
+                      </td>
+                      <td class={`${tdClass} whitespace-nowrap`}>2 lata</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class={p}>
+                Cookies analityczne pomagają analizować ruch i zachowania
+                użytkowników. Dane mogą zawierać identyfikatory internetowe oraz
+                informacje techniczne i dotyczące aktywności na stronie.
+              </p>
+
+              <p class={p}>
+                Cookies analityczne są stosowane po uzyskaniu odpowiedniej
+                zgody.
+              </p>
+
+              <h3 class={h3}>6.3. Reklamowe cookies</h3>
+
+              <p class={p}>Serwis wykorzystuje Meta Pixel.</p>
+
+              <div class="mt-4 overflow-x-auto">
+                <table class="w-full min-w-[32rem] border-collapse text-left">
+                  <caption class="sr-only">
+                    Reklamowe pliki cookies wykorzystywane w serwisie
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class={thClass}>
+                        Nazwa
+                      </th>
+                      <th scope="col" class={thClass}>
+                        Cel
+                      </th>
+                      <th scope="col" class={thClass}>
+                        Okres deklarowany w CookieYes
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class={tdName}>
+                        _fbp
+                      </th>
+                      <td class={tdClass}>
+                        Pomiar interakcji użytkowników i skuteczności reklam
+                      </td>
+                      <td class={`${tdClass} whitespace-nowrap`}>90 dni</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class={tdName}>
+                        _fbc
+                      </th>
+                      <td class={tdClass}>
+                        Zapisywanie identyfikatora kliknięcia reklamy Meta,
+                        jeżeli jest dostępny
+                      </td>
+                      <td class={`${tdClass} whitespace-nowrap`}>90 dni</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class={p}>
+                Reklamowe cookies są wykorzystywane po uzyskaniu odpowiedniej
+                zgody użytkownika.
+              </p>
+
+              <h3 class={h3}>6.4. Pozostałe kategorie</h3>
+
+              <p class={p}>
+                Panel CookieYes może również prezentować kategorie funkcjonalne
+                i wydajnościowe. Samo wyświetlanie kategorii nie oznacza
+                automatycznie stosowania przypisanych do niej cookies.
+              </p>
+
+              <p class={p}>
+                Szczegółowy wykaz technologii powinien odpowiadać aktualnym
+                wynikom skanowania serwisu.
+              </p>
+
+              <h3 class={h3}>6.5. Zarządzanie zgodami</h3>
+
+              <p class={p}>
+                Do zarządzania zgodami wykorzystywany jest CookieYes.
+              </p>
+
+              <p class={p}>Podczas pierwszej wizyty użytkownik może:</p>
+
+              <ul class={list}>
+                <li>zaakceptować wszystkie opcjonalne kategorie cookies;</li>
+                <li>odrzucić wszystkie opcjonalne kategorie;</li>
+                <li>
+                  samodzielnie wybrać preferowane kategorie i zapisać swoje
+                  ustawienia.
+                </li>
+              </ul>
+
+              <p class={p}>
+                Użytkownik może w dowolnym momencie ponownie otworzyć panel
+                preferencji za pomocą pływającej ikony znajdującej się w lewym
+                dolnym rogu strony.
+              </p>
+
+              <p class={p}>
+                Może w ten sposób zmienić lub wycofać wcześniej udzielone zgody.
+              </p>
+
+              <p class={p}>
+                Google Analytics 4 oraz Meta Pixel nie zapisują opcjonalnych
+                cookies ani nie wysyłają danych pomiarowych przed uzyskaniem
+                odpowiedniej zgody.
+              </p>
+
+              <p class={p}>
+                Cookies można także usuwać i blokować w ustawieniach
+                przeglądarki internetowej.
+              </p>
+            </section>
+
+            <section id="retencja" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  07
+                </span>
+                Okres przechowywania danych
+              </h2>
+
+              <p class={p}>
+                Dane są przechowywane przez okres niezbędny do realizacji celu,
+                dla którego zostały zebrane.
+              </p>
+
+              <dl class="mt-5 space-y-5">
+                <div>
+                  <dt class="text-sm font-semibold text-ink sm:text-base">
+                    Newsletter
+                  </dt>
+                  <dd class={p}>
+                    Dane wykorzystywane do wysyłki newslettera są przetwarzane
+                    do momentu wycofania zgody lub zakończenia świadczenia
+                    usługi. Ograniczone dane potwierdzające udzielenie i
+                    wycofanie zgody mogą być dalej przechowywane przez okres
+                    niezbędny do wykazania zgodności działań z prawem lub obrony
+                    roszczeń.
+                  </dd>
+                </div>
+
+                <div>
+                  <dt class="text-sm font-semibold text-ink sm:text-base">
+                    Korespondencja
+                  </dt>
+                  <dd class={p}>
+                    Dane są przechowywane przez czas obsługi zapytania, a
+                    następnie w uzasadnionym zakresie przez okres związany z
+                    ewentualnymi roszczeniami.
+                  </dd>
+                </div>
+
+                <div>
+                  <dt class="text-sm font-semibold text-ink sm:text-base">
+                    Konsultacje
+                  </dt>
+                  <dd class={p}>
+                    Dane są przechowywane przez okres potrzebny do organizacji
+                    spotkania i ewentualnej dalszej współpracy oraz uzasadnione
+                    okresy związane z roszczeniami.
+                  </dd>
+                </div>
+
+                <div>
+                  <dt class="text-sm font-semibold text-ink sm:text-base">
+                    Dane analityczne
+                  </dt>
+                  <dd class={p}>
+                    W Google Analytics 4 okres retencji danych użytkownika i
+                    zdarzeń jest ustawiony na 14 miesięcy. Po tym czasie dane
+                    szczegółowe są usuwane, a pozostają wyłącznie dane zbiorcze.
+                    Okresy przechowywania danych w Meta, MailerLite i Calendly
+                    wynikają z konfiguracji tych usług oraz właściwych ustawień
+                    retencji.
+                  </dd>
+                </div>
+
+                <div>
+                  <dt class="text-sm font-semibold text-ink sm:text-base">
+                    Dane techniczne i logi
+                  </dt>
+                  <dd class={p}>
+                    Logi serwera są przechowywane przez krótki okres wynikający
+                    z planu i konfiguracji Vercel, a następnie usuwane
+                    automatycznie. Dane techniczne mogą być dłużej przechowywane
+                    wyłącznie w zakresie niezbędnym do wyjaśnienia incydentu
+                    bezpieczeństwa lub obrony roszczeń.
+                  </dd>
+                </div>
+
+                <div>
+                  <dt class="text-sm font-semibold text-ink sm:text-base">
+                    Dokumentacja zgód
+                  </dt>
+                  <dd class={p}>
+                    Preferencje cookies są zapamiętywane przez 365 dni. Zapis
+                    zgody i jej wycofania w MailerLite jest przechowywany przez
+                    okres subskrypcji, a następnie przez okres niezbędny do
+                    wykazania zgodności przetwarzania z prawem lub obrony
+                    roszczeń.
+                  </dd>
+                </div>
+
+                <div>
+                  <dt class="text-sm font-semibold text-ink sm:text-base">
+                    Cookies
+                  </dt>
+                  <dd class={p}>
+                    Deklarowane okresy przedstawiono w sekcji 6.
+                  </dd>
+                </div>
+              </dl>
+            </section>
+
+            <section id="transfery" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  08
+                </span>
+                Przekazywanie danych poza EOG
+              </h2>
+
+              <p class={p}>
+                W związku z prowadzeniem serwisu karolmodelski.pl korzystam z
+                usług zewnętrznych dostawców technologicznych. W określonych
+                przypadkach może to wiązać się z przekazywaniem danych osobowych
+                poza Europejski Obszar Gospodarczy (EOG), w szczególności do
+                Stanów Zjednoczonych.
+              </p>
+
+              <h3 class={h3}>8.1. MailerLite</h3>
+
+              <p class={p}>
+                Do obsługi newslettera, zarządzania subskrybentami i
+                dostarczania checklisty korzystam z MailerLite.
+              </p>
+
+              <p class={p}>
+                Zgodnie z informacjami dostawcy dane subskrybentów klientów z
+                EOG obsługiwanych przez MailerLite Limited są przechowywane i
+                przetwarzane w Unii Europejskiej.
+              </p>
+
+              <p class={p}>
+                W zakresie innych kategorii danych lub ewentualnych transferów
+                międzynarodowych mogą mieć zastosowanie odpowiednie mechanizmy
+                ochrony danych przewidziane w RODO.
+              </p>
+
+              <p class={doc}>
+                Dokumentacja:{" "}
+                <a
+                  class={link}
+                  href="https://www.mailerlite.com/legal/data-processing-agreement"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  mailerlite.com/legal/data-processing-agreement
+                </a>
+              </p>
+
+              <h3 class={h3}>8.2. CookieYes</h3>
+
+              <p class={p}>
+                CookieYes służy do zarządzania zgodami dotyczącymi plików
+                cookies.
+              </p>
+
+              <p class={p}>
+                Dostawca korzysta z podwykonawców działających w różnych
+                państwach, również poza EOG, w tym w Stanach Zjednoczonych i
+                Indiach.
+              </p>
+
+              <p class={p}>
+                W zależności od konkretnego transferu stosowane mogą być
+                odpowiednie mechanizmy prawne, w tym standardowe klauzule umowne
+                lub decyzje stwierdzające odpowiedni stopień ochrony.
+              </p>
+
+              <p class={doc}>
+                Dokumentacja:{" "}
+                <a
+                  class={link}
+                  href="https://www.cookieyes.com/sub-processors-list/"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  cookieyes.com/sub-processors-list
+                </a>
+              </p>
+
+              <h3 class={h3}>8.3. Google</h3>
+
+              <p class={p}>
+                Google Analytics 4 służy do analizy ruchu i zachowania
+                użytkowników serwisu.
+              </p>
+
+              <p class={p}>
+                Google LLC deklaruje uczestnictwo w EU–US Data Privacy
+                Framework. W zakresie właściwych transferów, które nie są objęte
+                odpowiednią decyzją stwierdzającą odpowiedni stopień ochrony,
+                Google przewiduje stosowanie standardowych klauzul umownych.
+              </p>
+
+              <p class={doc}>
+                Dokumentacja:{" "}
+                <a
+                  class={link}
+                  href="https://business.safety.google/adsdatatransfers/"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  business.safety.google/adsdatatransfers
+                </a>
+              </p>
+
+              <h3 class={h3}>8.4. Meta</h3>
+
+              <p class={p}>
+                Meta Pixel służy do pomiaru skuteczności kampanii reklamowych i
+                związanych z nimi działań użytkowników.
+              </p>
+
+              <p class={p}>
+                Meta deklaruje wykorzystywanie EU–US Data Privacy Framework dla
+                określonych transferów danych osobowych z UE do Stanów
+                Zjednoczonych, w tym danych związanych z narzędziami
+                biznesowymi.
+              </p>
+
+              <p class={doc}>
+                Dokumentacja:{" "}
+                <a
+                  class={link}
+                  href="https://www.facebook.com/privacy/policy/"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  facebook.com/privacy/policy
+                </a>
+              </p>
+
+              <h3 class={h3}>8.5. Vercel</h3>
+
+              <p class={p}>Serwis jest hostowany na platformie Vercel.</p>
+
+              <p class={p}>
+                Vercel deklaruje uczestnictwo w EU–US Data Privacy Framework
+                oraz stosowanie standardowych klauzul umownych w odpowiednich
+                przypadkach przekazywania danych osobowych.
+              </p>
+
+              <p class={doc}>
+                Dokumentacja:{" "}
+                <a
+                  class={link}
+                  href="https://vercel.com/legal/dpa"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  vercel.com/legal/dpa
+                </a>
+              </p>
+
+              <h3 class={h3}>8.6. Calendly</h3>
+
+              <p class={p}>
+                Calendly służy do obsługi rezerwacji bezpłatnych konsultacji.
+              </p>
+
+              <p class={p}>
+                Korzystanie z Calendly może wiązać się z przekazywaniem danych
+                osobowych do Stanów Zjednoczonych.
+              </p>
+
+              <p class={p}>
+                Umowa powierzenia przetwarzania danych Calendly zawiera
+                standardowe klauzule umowne Komisji Europejskiej, w tym klauzule
+                dotyczące przekazywania danych od administratora do podmiotu
+                przetwarzającego.
+              </p>
+
+              <p class={doc}>
+                Dokumentacja:{" "}
+                <a
+                  class={link}
+                  href="https://calendly.com/legal/data-processing-addendum"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  calendly.com/legal/data-processing-addendum
+                </a>
+              </p>
+
+              <h3 class={h3}>
+                8.7. Zabezpieczenia transferów międzynarodowych
+              </h3>
+
+              <p class={p}>
+                W przypadku przekazywania danych osobowych poza EOG stosowane są
+                odpowiednie mechanizmy prawne przewidziane w rozdziale V RODO,
+                zależnie od konkretnego transferu i odbiorcy danych.
+              </p>
+
+              <p class={p}>Mogą to być w szczególności:</p>
+
+              <ul class={list}>
+                <li>
+                  decyzje Komisji Europejskiej stwierdzające odpowiedni stopień
+                  ochrony danych, w tym decyzja dotycząca EU–US Data Privacy
+                  Framework w odniesieniu do objętych nią podmiotów;
+                </li>
+                <li>
+                  standardowe klauzule umowne zatwierdzone przez Komisję
+                  Europejską, wraz z dodatkowymi zabezpieczeniami, jeżeli są
+                  wymagane.
+                </li>
+              </ul>
+
+              <p class={p}>
+                Informacje o stosowanych zabezpieczeniach, w tym o sposobie
+                uzyskania kopii odpowiednich klauzul lub miejscu ich
+                udostępnienia, można uzyskać, kontaktując się z administratorem
+                pod adresem{" "}
+                <a class={link} href="mailto:kontakt@karolmodelski.pl">
+                  kontakt@karolmodelski.pl
+                </a>
+                .
+              </p>
+
+              <p class={p}>
+                Dokumentacja dotycząca odpowiednich mechanizmów transferowych
+                jest również dostępna pod adresami wskazanymi powyżej.
+              </p>
+            </section>
+
+            <section id="prawa" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  09
+                </span>
+                Prawa osób, których dane dotyczą
+              </h2>
+
+              <p class={p}>Na zasadach określonych w RODO masz prawo do:</p>
+
+              <ul class={list}>
+                <li>dostępu do danych;</li>
+                <li>sprostowania danych;</li>
+                <li>usunięcia danych;</li>
+                <li>ograniczenia przetwarzania;</li>
+                <li>przenoszenia danych;</li>
+                <li>
+                  wniesienia sprzeciwu wobec przetwarzania opartego na prawnie
+                  uzasadnionym interesie;
+                </li>
+                <li>wycofania zgody w dowolnym momencie.</li>
+              </ul>
+
+              <p class={p}>
+                Jeżeli dane są przetwarzane na potrzeby marketingu
+                bezpośredniego, możesz w dowolnym momencie wnieść sprzeciw wobec
+                takiego przetwarzania, w tym związanego z nim profilowania.
+              </p>
+
+              <p class={p}>
+                Masz również prawo wniesienia skargi do Prezesa Urzędu Ochrony
+                Danych Osobowych.
+              </p>
+
+              <p class={p}>
+                W sprawach dotyczących danych osobowych napisz na{" "}
+                <a class={link} href="mailto:kontakt@karolmodelski.pl">
+                  kontakt@karolmodelski.pl
+                </a>
+                .
+              </p>
+            </section>
+
+            <section id="dobrowolnosc" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  10
+                </span>
+                Dobrowolność podania danych
+              </h2>
+
+              <p class={p}>Podanie danych osobowych jest dobrowolne.</p>
+
+              <p class={p}>
+                Adres e-mail jest niezbędny do zapisania się do newslettera oraz
+                dostarczenia checklisty pocztą elektroniczną.
+              </p>
+
+              <p class={p}>
+                Zapis do newslettera wymaga świadomej zgody użytkownika.
+              </p>
+
+              <p class={p}>
+                Osoba, która nie chce otrzymywać newslettera, może skorzystać z
+                odrębnej możliwości pobrania samej checklisty bez udzielania
+                zgody marketingowej.
+              </p>
+
+              <p class={p}>
+                Brak zgody na newsletter nie ogranicza możliwości skorzystania z
+                bezpłatnej konsultacji.
+              </p>
+            </section>
+
+            <section id="automatyzacja" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  11
+                </span>
+                Automatyzacja i profilowanie
+              </h2>
+
+              <p class={p}>
+                MailerLite może służyć do automatycznego wysyłania wiadomości
+                powitalnych i edukacyjnych oraz zarządzania subskrybentami.
+                Automatyzacja dotyczy wyłącznie sekwencji wysyłki i nie prowadzi
+                do podejmowania wobec użytkownika decyzji wywołujących skutki
+                prawne.
+              </p>
+
+              <p class={p}>
+                Narzędzia analityczne i reklamowe mogą wykorzystywać informacje
+                o aktywności użytkowników do celów pomiarowych, segmentacyjnych
+                i reklamowych, zgodnie z ich konfiguracją oraz udzielonymi
+                zgodami. Segmentacja może obejmować podstawowe informacje o
+                otwieraniu wiadomości i odwiedzanych podstronach.
+              </p>
+
+              <p class={p}>
+                Nie podejmuję decyzji opierających się wyłącznie na
+                automatycznym przetwarzaniu, które wywoływałyby skutki prawne
+                lub w podobny sposób istotnie wpływały na użytkownika w
+                rozumieniu art. 22 RODO.
+              </p>
+            </section>
+
+            <section id="bezpieczenstwo" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  12
+                </span>
+                Bezpieczeństwo danych
+              </h2>
+
+              <p class={p}>
+                Stosuję odpowiednie środki techniczne i organizacyjne w celu
+                ochrony przetwarzanych danych osobowych, z uwzględnieniem
+                charakteru danych i ryzyka związanego z ich przetwarzaniem.
+              </p>
+
+              <p class={p}>
+                Dostęp do danych powinien być ograniczony do podmiotów i osób,
+                dla których jest to niezbędne do realizacji określonych celów.
+              </p>
+            </section>
+
+            <section id="zmiany" class={sectionClass}>
+              <h2 class={h2}>
+                <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
+                  13
+                </span>
+                Zmiany polityki prywatności
+              </h2>
+
+              <p class={p}>
+                Polityka prywatności może być aktualizowana w związku ze
+                zmianami przepisów prawa, sposobu przetwarzania danych lub
+                wykorzystywanych usług.
+              </p>
+
+              <p class={p}>
+                Aktualna wersja dokumentu jest udostępniana na stronie
+                karolmodelski.pl.
+              </p>
+
+              <p class={p}>
+                W przypadku zmian wymagających odrębnego poinformowania
+                użytkowników odpowiednie informacje zostaną przekazane zgodnie z
+                obowiązującymi przepisami.
+              </p>
+
+              <div class={noteClass}>
+                <p class="font-medium text-ink">Administrator danych</p>
+                <p class="mt-2">
+                  Karol Modelski ·{" "}
+                  <a class={link} href="mailto:kontakt@karolmodelski.pl">
+                    kontakt@karolmodelski.pl
+                  </a>{" "}
+                  ·{" "}
+                  <a class={link} href="https://karolmodelski.pl">
+                    https://karolmodelski.pl
+                  </a>
+                </p>
+              </div>
+            </section>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</Layout>

@@ -404,7 +404,7 @@ Bo moim zdaniem nie chodzi o to, żeby od razu stworzyć największą i najbardz
 
 Chodzi o to, żeby zrobić pierwszy sensowny krok i zamienić pomysł w coś, co naprawdę działa.
 
-## Chcesz odnieść te wskazówki do własnego pomysłu?
+## Przejdź od pomysłu do konkretnego planu
 
 Pobierz moją bezpłatną checklistę „12 pytań, zanim zaczniesz budować aplikację”.
 

@@ -567,6 +567,14 @@ Bo celem nie powinno być wydanie jak największej kwoty na programowanie.
 
 **Celem powinno być stworzenie produktu, z którego ludzie rzeczywiście będą chcieli korzystać.**
 
+## Zanim ustalisz budżet, wybierz zakres pierwszej wersji
+
+Budżet zależy przede wszystkim od tego, co ma powstać w pierwszej kolejności. Pomogą Ci w tym 12 pytań z mojej bezpłatnej checklisty.
+
+Możesz zapisać swoje odpowiedzi i wykorzystać je przy planowaniu pierwszej wersji lub podczas rozmowy z wykonawcą.
+
+[Pobierz checklistę](/checklista/)
+
 ## Źródła i sposób przygotowania zestawienia
 
 Przygotowując ten artykuł, porównałem publiczne zestawienia kosztów tworzenia aplikacji, cenniki firm programistycznych oraz materiały dotyczące stawek specjalistów.

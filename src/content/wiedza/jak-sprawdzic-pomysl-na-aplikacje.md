@@ -753,7 +753,7 @@ Pomogę Ci uporządkować pomysł, wybrać najważniejsze funkcje i zaplanować 
 
 [Umów bezpłatną rozmowę](/rozmowa/) albo zobacz, [jak wygląda współpraca krok po kroku](/jak-pracuje/).
 
-## Chcesz odnieść te wskazówki do własnego pomysłu?
+## Uporządkuj pomysł za pomocą 12 pytań
 
 Pobierz moją bezpłatną checklistę „12 pytań, zanim zaczniesz budować aplikację”.
 

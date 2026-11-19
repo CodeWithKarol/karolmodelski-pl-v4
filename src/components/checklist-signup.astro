@@ -1,0 +1,23 @@
+---
+import { mailerLiteFormId } from "@/data/mailing"
+import { Download } from "lucide-react"
+
+const pdfPath = "/checklista/12-pytan-przed-budowa-aplikacji.pdf"
+---
+
+<div>
+  <div class="ml-embedded" data-form={mailerLiteFormId}></div>
+
+  <p class="mt-5 max-w-xl text-sm leading-relaxed text-pretty text-ink-soft">
+    Nie chcesz otrzymywać newslettera?{" "}
+    <a
+      href={pdfPath}
+      download
+      data-checklist-download
+      class="inline-flex min-h-11 items-center gap-1.5 font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+    >
+      Pobierz samą checklistę PDF
+      <Download className="size-4" aria-hidden="true" />
+    </a>
+  </p>
+</div>
