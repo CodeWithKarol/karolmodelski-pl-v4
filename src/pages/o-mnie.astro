@@ -87,10 +87,10 @@ const collaborationSteps = [
 ]
 
 const clientQuestions = [
-  "A co właściwie znaczy prototyp?",
-  "Czy to już będzie działać, czy tylko będzie można poklikać po ekranach?",
-  "Skąd mam wiedzieć, że to jest dobrze zrobione?",
-  "Co będzie, jeżeli za miesiąc wpadnę na kolejny pomysł?",
+  "Co właściwie oznacza prototyp?",
+  "Czy produkt będzie już działać, czy będzie można tylko przechodzić między ekranami?",
+  "Jak sprawdzimy, że funkcje działają zgodnie z ustaleniami?",
+  "Co stanie się, jeśli w trakcie prac pojawi się nowy pomysł?",
 ]
 
 const principles = [
@@ -383,8 +383,8 @@ const breadcrumbSchema = {
               </p>
 
               <p class="mt-5 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Podczas rozmów często okazuje się, że klient ma znacznie więcej
-                pomysłów, niż początkowo zakładał.
+                W rozmowach zdarza się, że lista pomysłów na funkcje rośnie,
+                zanim ustalimy, co powinno znaleźć się w pierwszej wersji.
               </p>
               <p class="mt-4 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
                 I ja to rozumiem. Kiedy przez długi czas rozwijasz własną
@@ -394,9 +394,9 @@ const breadcrumbSchema = {
                 Tylko że moją rolą nie jest przytakiwanie każdej propozycji.
               </p>
               <p class="mt-4 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Jeżeli widzę, że jakaś funkcja niepotrzebnie zwiększy koszt,
-                skomplikuje aplikację albo opóźni jej uruchomienie, powiem Ci o
-                tym wprost.
+                Jeżeli uważam, że dodatkowa funkcja zwiększy koszt, skomplikuje
+                aplikację albo opóźni jej uruchomienie bez wyraźnej korzyści na
+                tym etapie, powiem Ci o tym wprost.
               </p>
               <p class="mt-4 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
                 Wyjaśnię dlaczego i zaproponuję inne rozwiązanie.
@@ -505,14 +505,14 @@ const breadcrumbSchema = {
                 zrealizować swój pomysł.
               </h3>
               <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                W rozmowach z osobami, które po raz pierwszy tworzą aplikację,
-                często pojawiają się podobne pytania.
+                Kiedy ktoś po raz pierwszy planuje aplikację, warto wyjaśnić
+                między innymi takie kwestie:
               </p>
 
               <ul class="mt-6 grid max-w-2xl grid-cols-1 gap-4 border-t border-line pt-6 md:grid-cols-2">
                 {clientQuestions.map((question) => (
                   <li class="border-l-2 border-line pl-4 text-sm leading-relaxed text-pretty text-ink sm:text-base">
-                    „{question}”
+                    {question}
                   </li>
                 ))}
               </ul>
@@ -572,8 +572,10 @@ const breadcrumbSchema = {
               komputerem i sprawdzić najważniejszą część pomysłu w praktyce.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Podczas realizacji nie brakowało pytań, poprawek i decyzji,
-              których nie sposób było przewidzieć na początku.
+              Podczas realizacji doprecyzowywaliśmy także nietypowe sytuacje w
+              zasadach gry i sprawdzaliśmy, jak aplikacja powinna na nie
+              reagować. Później pojawiały się pytania, testy i poprawki
+              wymagające kolejnych decyzji.
             </p>
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
               Ale właśnie od tego był cały proces — żeby wspólnie rozwiązywać
@@ -844,9 +846,9 @@ const breadcrumbSchema = {
                   <p>
                     Wystarczy, że opowiesz mi, co chcesz stworzyć. Podczas
                     bezpłatnej, 20-minutowej rozmowy przyjrzymy się Twojemu
-                    pomysłowi, porozmawiamy o najważniejszej funkcji i
-                    sprawdzimy, czy możemy zacząć od pierwszej działającej
-                    wersji.
+                    pomysłowi, porozmawiamy o najważniejszych funkcjach i
+                    wstępnie ocenimy, czy pierwsza działająca wersja pasuje do
+                    mojego sposobu realizacji.
                   </p>
                   <p>
                     Jeżeli zobaczę, że Twój projekt wymaga innego podejścia,

@@ -549,13 +549,13 @@ Opowiedz mi o nim.
 
 Podczas krótkiej, niezobowiązującej rozmowy możemy przyjrzeć się Twojemu pomysłowi i zastanowić się, jak najlepiej rozpocząć realizację.
 
-Pomogę Ci określić najważniejsze funkcje, zaplanować pierwszy etap i zrozumieć, jakie koszty mogą pojawić się po uruchomieniu produktu.
+Porozmawiamy o najważniejszych funkcjach i rodzajach kosztów, które mogą pojawić się po uruchomieniu produktu. Ich wysokość będzie zależeć od wybranego rozwiązania i wymaga osobnego oszacowania.
 
 Nie musisz znać się na programowaniu ani wiedzieć, jak działają serwery czy bazy danych.
 
 Wystarczy, że opowiesz własnymi słowami, co chcesz stworzyć.
 
-Ja pomogę Ci przełożyć tę wizję na konkretny plan realizacji.
+Jeżeli zdecydujemy się kontynuować, pomogę Ci przełożyć tę wizję na uzgodniony zakres i plan realizacji.
 
 [Umów bezpłatną rozmowę](/rozmowa/) albo zobacz, [jak wygląda współpraca krok po kroku](/jak-pracuje/).
 

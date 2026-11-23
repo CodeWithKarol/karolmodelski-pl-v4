@@ -606,7 +606,7 @@ Nie musisz znać się na programowaniu ani przygotowywać dokumentacji techniczn
 
 Wystarczy, że opowiesz własnymi słowami, co chcesz osiągnąć.
 
-Pomogę Ci uporządkować pomysł, określić najważniejsze funkcje i zaplanować pierwszy etap realizacji.
+Podczas rozmowy możemy uporządkować najważniejsze niewiadome i wstępnie ocenić możliwy pierwszy krok. Dokładniejszy plan realizacji wymaga ustalenia zakresu.
 
 [Umów bezpłatną rozmowę](/rozmowa/) albo zobacz, [jak wygląda współpraca krok po kroku](/jak-pracuje/).
 

@@ -739,7 +739,7 @@ Celem jest stworzenie czegoś, z czego ludzie naprawdę będą chcieli korzysta�
 
 Opowiedz mi o nim.
 
-Podczas krótkiej, niezobowiązującej rozmowy przyjrzymy się Twojemu pomysłowi, zastanowimy się, co jest w nim najważniejsze i sprawdzimy, od czego najlepiej rozpocząć realizację.
+Podczas krótkiej, niezobowiązującej rozmowy przyjrzymy się Twojemu pomysłowi, porozmawiamy o najważniejszym założeniu i wstępnie ocenimy, jaki kolejny krok może mieć sens.
 
 Być może okaże się, że warto najpierw przetestować zainteresowanie prostą stroną internetową lub prototypem.
 

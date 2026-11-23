@@ -690,7 +690,7 @@ Opowiedz mi o nim.
 
 Podczas krótkiej, niezobowiązującej rozmowy przyjrzymy się Twojemu pomysłowi i sprawdzimy, od czego najlepiej rozpocząć realizację.
 
-Pomogę Ci ustalić najważniejsze funkcje, zaplanować pierwszy etap i ocenić, czy możemy przygotować pierwszą działającą wersję w ciągu 4 tygodni.
+Porozmawiamy o najważniejszych funkcjach i wstępnie ocenimy, czy Twój pomysł może pasować do czterotygodniowego etapu prac nad pierwszą wersją. Szczegóły zakresu i harmonogramu wymagają osobnych ustaleń.
 
 W moim modelu współpracy koszt kompleksowej realizacji takiej wersji w uzgodnionym zakresie wynosi [29 500 zł brutto](/oferta/), a cały proces wraz z odbiorem i poprawkami zajmuje zwykle 6–8 tygodni.
 

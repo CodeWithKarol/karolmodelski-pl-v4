@@ -660,7 +660,7 @@ Nie musisz znać się na programowaniu ani przygotowywać dokumentacji techniczn
 
 Wystarczy, że opowiesz mi własnymi słowami, co chcesz osiągnąć.
 
-Pomogę Ci uporządkować pomysł, wybrać najważniejsze funkcje i sprawdzić, czy możemy rozpocząć od pierwszej działającej wersji aplikacji.
+Po ustaleniu zasad poufności możemy porozmawiać o celu aplikacji i wstępnie sprawdzić, czy mój sposób realizacji do niej pasuje.
 
 [Umów bezpłatną rozmowę](/rozmowa/) albo sprawdź, [jak wygląda współpraca krok po kroku](/jak-pracuje/).
 

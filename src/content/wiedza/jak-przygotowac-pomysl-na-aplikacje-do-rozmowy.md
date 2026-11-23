@@ -797,7 +797,7 @@ Możemy zacząć od zwykłej rozmowy.
 
 Opowiesz mi własnymi słowami, co chcesz stworzyć, dla kogo i jak wyobrażasz sobie działanie aplikacji.
 
-Pomogę Ci uporządkować pomysł, wybrać najważniejsze funkcje i sprawdzić, czy możemy rozpocząć od pierwszej działającej wersji.
+Podczas 20-minutowej rozmowy uporządkujemy najważniejsze pytania i wstępnie ocenimy, czy pierwsza działająca wersja pasuje do Twojego celu i mojego modelu współpracy.
 
 Jeżeli obawiasz się ujawniania poufnych szczegółów, możemy wcześniej podpisać umowę NDA.
 

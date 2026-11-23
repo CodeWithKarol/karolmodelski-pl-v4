@@ -43,7 +43,7 @@ Nie oczekuję, że będziesz rozumieć kod, wybierać technologie czy wiedzieć,
 
 Od Ciebie potrzebuję przede wszystkim wiedzy o pomyśle, którym chcesz się zająć.
 
-Ty wiesz, co ma robić produkt. Ja pomagam przełożyć to na rozwiązanie, które będzie można zbudować i uruchomić.`,
+Ty opowiadasz, co chcesz osiągnąć i dla kogo tworzysz produkt. Ja pomagam przełożyć te założenia na rozwiązanie, które będzie można zbudować i uruchomić.`,
       },
       {
         id: "pytanie-3",
@@ -72,7 +72,7 @@ MVP nie oznacza aplikacji zrobionej byle jak. Oznacza świadomie wybrany, mniejs
         question: "Czy prototyp i działająca aplikacja to to samo?",
         answer: `Nie. I to bardzo ważna różnica.
 
-Projekt graficzny pokazuje, jak aplikacja może wyglądać. Klikalny prototyp pozwala przechodzić między przykładowymi ekranami, ale nie musi wykonywać prawdziwych działań. Działająca aplikacja ma zaprogramowane funkcje, z których można rzeczywiście korzystać. Pełna aplikacja to dopiero kolejny etap — rozbudowany system z wieloma funkcjami, który ma sens po sprawdzeniu pierwszej wersji.
+Projekt graficzny pokazuje, jak aplikacja może wyglądać. Klikalny prototyp pozwala przechodzić między przykładowymi ekranami, ale nie musi wykonywać prawdziwych działań. Działająca aplikacja ma zaprogramowane funkcje, z których można rzeczywiście korzystać. Bardziej rozbudowana wersja może powstać w kolejnym etapie, jeśli testy i cele projektu uzasadniają dodanie następnych funkcji.
 
 W moim standardowym pakiecie celem jest właśnie pierwsza działająca wersja aplikacji w uzgodnionym zakresie. Nie tylko obrazki ani prezentacja tego, jak produkt mógłby kiedyś wyglądać.`,
       },
@@ -100,7 +100,7 @@ Nie musisz rezygnować z całej swojej wizji. Warto po prostu realizować ją w 
         question: "Ile kosztuje stworzenie pierwszej wersji aplikacji?",
         answer: `Mój standardowy pakiet kosztuje 29 500 zł brutto.
 
-Obejmuje przygotowanie pierwszej działającej wersji aplikacji internetowej w wcześniej uzgodnionym zakresie, wraz z pracami projektowymi, koordynacją realizacji i pozostałymi elementami pakietu.
+Obejmuje przygotowanie pierwszej działającej wersji aplikacji internetowej we wcześniej uzgodnionym zakresie, wraz z pracami projektowymi, koordynacją realizacji i pozostałymi elementami pakietu.
 
 Nie jest to jednak cena za dowolnie rozbudowaną aplikację. Przed rozpoczęciem współpracy sprawdzamy, co chcesz stworzyć i czy można wybrać taki pierwszy etap, który zmieści się w tym budżecie.`,
       },
@@ -112,8 +112,7 @@ Nie jest to jednak cena za dowolnie rozbudowaną aplikację. Przed rozpoczęciem
           "Plan pierwszej wersji — główny cel, najważniejszy scenariusz i lista funkcji odłożonych na później.",
           "Dopracowanie zasad działania i kryteriów odbioru pierwszej wersji.",
           "Projekt wyglądu i sposobu obsługi kluczowych ekranów, z uzgodnioną rundą poprawek.",
-          "Pierwsza działająca wersja aplikacji w przeglądarce.",
-          "Interfejs w jednej wersji językowej dopasowanej do pierwszych użytkowników; drugi język możliwy w ustalonym zakresie.",
+          "Pierwsza działająca wersja aplikacji w przeglądarce, z interfejsem w jednej uzgodnionej wersji językowej; drugi język możliwy w ustalonym zakresie.",
           "Prosta strona internetowa produktu.",
           "Podstawowa analityka — pomiar wybranych działań użytkownika w pierwszej wersji.",
           "Plan pierwszych testów i pytań do użytkowników.",

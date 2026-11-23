@@ -792,7 +792,7 @@ A później wybierz sposób realizacji dopasowany do swoich możliwości, budże
 
 ## Masz pomysł na aplikację, ale nie znasz się na programowaniu?
 
-Właśnie z takimi osobami najczęściej współpracuję.
+Pomagam również osobom, które mają pomysł na aplikację, ale nie zajmują się programowaniem.
 
 Nie musisz wiedzieć, czym jest backend, jak działa baza danych ani jakie technologie będą odpowiednie.
 
