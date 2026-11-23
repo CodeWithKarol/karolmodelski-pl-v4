@@ -745,9 +745,7 @@ A im lepiej dopasujesz pierwszy etap do swoich potrzeb, tym rozsądniej wykorzys
 
 Nie musisz samodzielnie decydować, czy potrzebujesz prototypu, MVP czy rozbudowanego systemu.
 
-Możemy wspólnie to przeanalizować.
-
-Podczas krótkiej, niezobowiązującej rozmowy opowiesz mi o swoim pomyśle, a ja pomogę Ci uporządkować najważniejsze funkcje i ocenić, jaki zakres pierwszego etapu będzie miał sens.
+Podczas krótkiej, niezobowiązującej rozmowy opowiesz mi o swoim pomyśle. Wstępnie ocenimy, czy potrzebujesz prototypu, pierwszej działającej wersji czy innego podejścia. Dokładny zakres ustalimy dopiero na odpowiednim etapie przygotowania projektu.
 
 Nie musisz znać się na programowaniu ani przygotowywać profesjonalnej dokumentacji technicznej.
 

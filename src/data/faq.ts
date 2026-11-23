@@ -9,7 +9,7 @@ export const homeFaq = [
     question:
       "Skąd mam wiedzieć, czy mój pomysł da się zrealizować za 29 500 zł?",
     answer:
-      "Sprawdzimy to podczas pierwszej rozmowy.\n\nNie każdą aplikację da się zbudować za tę kwotę. Pomogę Ci jednak ustalić, czy można zacząć od mniejszej wersji z najważniejszymi funkcjami.\n\nJeżeli projekt będzie wymagał większego zakresu, powiem Ci o tym przed rozpoczęciem prac.",
+      "Podczas pierwszej rozmowy wstępnie ocenimy, czy Twój pomysł może pasować do tego pakietu.\n\nNie każdą aplikację da się zbudować za 29 500 zł. Porozmawiamy o najważniejszych funkcjach i sprawdzimy, czy można zacząć od mniejszej wersji.\n\nJeżeli do określenia zakresu potrzebna będzie dokładniejsza analiza, wyjaśnię Ci to przed podjęciem decyzji o współpracy.",
   },
   {
     question:

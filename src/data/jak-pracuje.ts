@@ -12,7 +12,7 @@ export const processTimeline: ProcessTimelineStep[] = [
     label: "Przed startem",
     title: "Ustalamy zakres i warunki",
     description:
-      "Rozmawiamy o pomyśle, wybieramy najważniejsze funkcje, ustalamy kryteria odbioru i zapisujemy ustalenia w umowie. Znasz zakres, cenę i termin.",
+      "Rozmawiamy o pomyśle, wybieramy najważniejsze funkcje, ustalamy kryteria odbioru i zapisujemy ustalenia w umowie. Przed rozpoczęciem czterotygodniowego etapu prac potwierdzamy zakres, cenę, termin oraz potrzebne materiały i dostępy.",
     you: "Opowiadasz o pomyśle i pomagasz wybrać, co jest najważniejsze. Podpisujesz umowę i wnosisz pierwszą płatność.",
     me: "Prowadzę ustalenia, przygotowuję plan pierwszej wersji i organizuję start prac.",
     effect: "Uzgodniony plan pierwszej wersji, cena, termin i umowa.",
@@ -21,7 +21,7 @@ export const processTimeline: ProcessTimelineStep[] = [
     label: "Tydzień 1",
     title: "Wygląd i sposób korzystania",
     description:
-      "Przygotuję projekt kluczowych ekranów i omówimy sposób korzystania z aplikacji. To pierwszy punkt kontrolny — widzisz efekty przed rozpoczęciem programowania.",
+      "Przygotuję projekt kluczowych ekranów i omówimy sposób korzystania z aplikacji. To pierwszy punkt kontrolny — możesz ocenić kierunek wyglądu i obsługi, zanim przejdziemy do programowania tych ekranów.",
     you: "Oceniasz propozycje i podejmujesz decyzje dotyczące swojego produktu.",
     me: "Organizuję pracę projektową, pilnuję uzgodnionego zakresu i pomagam ocenić, które rozwiązania będą najwygodniejsze dla użytkowników.",
     effect: "Wybrany kierunek wyglądu i obsługi aplikacji.",
@@ -42,7 +42,7 @@ export const processTimeline: ProcessTimelineStep[] = [
     description:
       "Kończę uzgodnione funkcje, uruchamiam aplikację w przeglądarce i przygotowuję stronę produktu, analitykę oraz plan pierwszych testów. To trzeci punkt kontrolny — na koniec tygodnia 4 pokazuję wersję gotową do testów.",
     you: "Samodzielnie sprawdzasz działanie najważniejszych funkcji.",
-    me: "Doprowadzam zakres do gotowości do odbioru i pokazuję Ci produkt.",
+    me: "Przygotowuję uzgodnioną pierwszą wersję do testów i pokazuję Ci jej działanie. Następnie przechodzimy do formalnego odbioru zgodnie z umową.",
     effect: "Pierwsza działająca wersja do uruchomienia i pokazania.",
   },
   {

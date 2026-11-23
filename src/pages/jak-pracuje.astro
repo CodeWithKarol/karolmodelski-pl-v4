@@ -27,8 +27,8 @@ const summaryFacts = [
 
 const firstStepQuestions = [
   "Co jest najważniejsze w Twoim pomyśle.",
-  "Jak powinna działać pierwsza wersja.",
-  "Co warto zostawić na później.",
+  "Jaką główną potrzebę powinna zaspokajać pierwsza wersja.",
+  "Które kwestie trzeba jeszcze wyjaśnić przed ustaleniem zakresu.",
 ]
 
 const scopeItems = [
@@ -233,7 +233,7 @@ const breadcrumbSchema = {
               </p>
 
               <p class="mt-6 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
-                Na koniec chcę wiedzieć trzy rzeczy:
+                Po pierwszej rozmowie chcę przede wszystkim zrozumieć:
               </p>
               <ul class="mt-4 max-w-2xl border-t border-line">
                 {firstStepQuestions.map((item) => (
@@ -248,6 +248,10 @@ const breadcrumbSchema = {
                   </li>
                 ))}
               </ul>
+              <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                Szczegóły działania i funkcje przeznaczone na później
+                doprecyzujemy na etapie przygotowania realizacji.
+              </p>
             </div>
 
             <div class="mt-10 max-w-2xl border-t border-line pt-8">
@@ -672,15 +676,23 @@ const breadcrumbSchema = {
                 <h3 class="font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl">
                   Co jeśli w trakcie prac zmienisz zdanie?
                 </h3>
+                <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft">
+                  To naturalne, że kiedy widzisz działającą aplikację, mogą
+                  pojawić się nowe pomysły.
+                </p>
+                <p class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft">
+                  Najpierw ustalamy, czy zgłoszona uwaga dotyczy niezgodności z
+                  przyjętymi wymaganiami, czy jest propozycją dodatkowej
+                  funkcji.
+                </p>
                 <p class="mt-3 mb-8 text-sm leading-relaxed text-pretty text-ink-soft">
-                  To się zdarza. Kiedy widzisz aplikację na ekranie, łatwiej
-                  zauważyć, co można zrobić inaczej. Sprawdzamy wtedy, czy
-                  zmiana mieści się w uzgodnionym zakresie, czy wymaga osobnego
-                  ustalenia kosztu i terminu.
+                  Niezgodności usuwamy zgodnie z zasadami odbioru i umową. Jeśli
+                  chodzi o rozszerzenie zakresu, osobno omawiamy jego wpływ na
+                  koszt i termin, zanim podejmiemy decyzję o realizacji.
                 </p>
                 <p class="mt-auto border-t border-line pt-4 text-sm leading-relaxed text-pretty font-medium text-ink xl:min-h-[6.75rem]">
-                  Rozwijasz pomysł, ale wiesz, za co płacisz i kiedy otrzymasz
-                  produkt.
+                  Dzięki temu możesz rozwijać pomysł, zachowując jasność co do
+                  zakresu współpracy.
                 </p>
               </div>
 
@@ -908,8 +920,8 @@ const breadcrumbSchema = {
               <p>
                 Wystarczy, że opowiesz mi, co chcesz stworzyć. Podczas
                 bezpłatnej, 20-minutowej rozmowy przyjrzymy się Twojemu
-                pomysłowi i sprawdzimy, czy możemy zacząć od pierwszej
-                działającej wersji.
+                pomysłowi i wstępnie ocenimy, czy jego pierwsza wersja pasuje do
+                mojego sposobu realizacji.
               </p>
               <p>
                 Jeżeli Twój projekt wymaga innego podejścia, również Ci o tym

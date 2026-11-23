@@ -24,6 +24,13 @@ const numerabbleTags = [
   "Pierwsza działająca wersja",
 ]
 
+const heroFacts = [
+  { label: "Projekt", value: "Numerabble" },
+  { label: "Rodzaj", value: "Gra matematyczna w przeglądarce" },
+  { label: "Pierwsza wersja", value: "4 tygodnie prac" },
+  { label: "Efekt", value: "Grywalna wersja i strona produktu" },
+]
+
 const projectResults = [
   "Działająca gra matematyczna w przeglądarce.",
   "Rozgrywka z przeciwnikiem komputerowym.",
@@ -108,45 +115,92 @@ const jsonLd = [
   <SiteHeader variant="page" current="realizacje" />
 
   <main id="main">
-    <section class="relative overflow-hidden bg-paper px-4 pt-16 pb-12 sm:px-6 sm:pt-24 sm:pb-16">
+    <section class="relative overflow-hidden bg-paper px-4 pt-8 pb-16 sm:px-6 sm:pt-10 sm:pb-24">
       <div
         aria-hidden="true"
         class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
       ></div>
 
-      <div class="mx-auto max-w-[75rem]">
-        <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
-          <span class="h-px w-8 bg-signal"></span>
-          Realizacje · Przykłady z praktyki
-        </p>
+      <div class="relative mx-auto max-w-[75rem]">
+        <nav aria-label="Ścieżka nawigacji">
+          <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+            <li>
+              <a class="transition-colors hover:text-ink" href="/">
+                Strona główna
+              </a>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">Realizacje</li>
+          </ol>
+        </nav>
 
-        <h1 class="mt-6 max-w-5xl font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl">
-          Realizacje. Zobacz, jak pomysły zamieniają się w działające aplikacje.
-        </h1>
+        <div class="mt-10 grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-12">
+          <div class="rise lg:col-span-7">
+            <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
+              <span class="h-px w-8 bg-signal"></span>
+              Realizacje · Przykłady z praktyki
+            </p>
 
-        <div class="mt-8 grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-10">
-          <p class="text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-            Nie chcę pokazywać Ci tylko ładnych projektów graficznych ani
-            opowiadać, co teoretycznie można zbudować.
-          </p>
-          <p class="text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-            Wolę pokazać Ci prawdziwy projekt. Od pomysłu, przez pierwsze
-            decyzje i programowanie, aż po działający produkt, który można
-            uruchomić i sprawdzić w praktyce.
-          </p>
+            <h1 class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl">
+              Prawdziwy projekt. Od pomysłu do działającej aplikacji.
+            </h1>
+
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
+              Nie pokazuję makiet ani nie opowiadam, co teoretycznie można
+              zbudować. Pokazuję prawdziwy projekt — od pierwszych decyzji i
+              programowania, aż po produkt, który można uruchomić.
+            </p>
+
+            <p class="mt-6 max-w-xl border-l-2 border-signal pl-4 text-sm leading-relaxed text-pretty font-medium text-ink sm:text-base">
+              Właśnie to najlepiej pokazuje, jak wygląda współpraca.
+            </p>
+
+            <div class="mt-8 flex flex-col items-start gap-4">
+              <a
+                href="#numerabble"
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+                )}
+              >
+                Zobacz zrealizowany projekt
+                <ArrowRight />
+              </a>
+              <p class="text-sm leading-relaxed text-pretty text-ink-soft">
+                Numerabble · pierwsza działająca wersja
+              </p>
+            </div>
+          </div>
+
+          <aside class="rise lg:col-span-5" style="animation-delay:.12s">
+            <div class="rounded-2xl border border-line bg-surface-muted p-6 sm:p-8 lg:sticky lg:top-24">
+              <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
+                Projekt w skrócie
+              </p>
+
+              <dl class="mt-4 border-t border-line">
+                {heroFacts.map(({ label, value }) => (
+                  <div class="border-b border-line py-3">
+                    <dt class="font-mono text-[10px] tracking-[0.12em] text-ink-soft uppercase">
+                      {label}
+                    </dt>
+                    <dd class="mt-1 font-heading text-base font-semibold text-ink sm:text-lg">
+                      {value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+
+              <a
+                href={realizacjaPath("numerabble")}
+                class="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+              >
+                Przeczytaj studium przypadku
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </a>
+            </div>
+          </aside>
         </div>
-
-        <p class="mt-6 max-w-2xl border-t border-line pt-5 text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
-          Bo moim zdaniem właśnie to najlepiej pokazuje, jak wygląda współpraca.
-        </p>
-
-        <a
-          href="#numerabble"
-          class="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-        >
-          Zobacz zrealizowany projekt
-          <ArrowRight className="size-4" aria-hidden="true" />
-        </a>
       </div>
     </section>
 
@@ -197,8 +251,10 @@ const jsonLd = [
             </p>
 
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty font-medium text-ink sm:text-lg">
-              Po uruchomieniu mogliśmy rozpocząć testy, obserwować zachowania
-              graczy i planować dalszy rozwój.
+              Po przygotowaniu grywalnej wersji mogliśmy rozpocząć testy i
+              zbierać uwagi. Wprowadziliśmy też narzędzia do obserwowania
+              wybranych zachowań graczy, które pomagają planować kolejne
+              usprawnienia.
             </p>
 
             <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
@@ -464,8 +520,8 @@ const jsonLd = [
               </p>
               <p>
                 Podczas bezpłatnej rozmowy przyjrzymy się Twojemu pomysłowi,
-                zastanowimy się nad najważniejszą funkcją i sprawdzimy, czy
-                możemy zacząć od pierwszej działającej wersji.
+                porozmawiamy o najważniejszej funkcji i wstępnie ocenimy, czy
+                pierwsza działająca wersja pasuje do mojego sposobu realizacji.
               </p>
               <p>
                 Jeśli projekt wymaga innego podejścia, powiem Ci o tym wprost.

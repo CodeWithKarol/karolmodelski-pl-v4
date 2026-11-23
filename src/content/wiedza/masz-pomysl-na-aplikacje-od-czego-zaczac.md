@@ -394,7 +394,7 @@ Możesz zacząć od zwykłej rozmowy.
 
 Opowiedzieć, co chodzi Ci po głowie, dla kogo chcesz to stworzyć i jaki efekt chciałbyś osiągnąć.
 
-A potem wspólnie zastanowimy się, jak podzielić ten pomysł na konkretne etapy i od czego najlepiej rozpocząć realizację.
+A podczas pierwszej rozmowy możemy wstępnie określić możliwy kierunek. Szczegółowy zakres i etapy realizacji doprecyzujemy, jeśli projekt będzie pasował do mojego modelu współpracy.
 
 Nie obiecam Ci, że każda aplikacja odniesie sukces. Tego nie jest w stanie zagwarantować żaden programista ani żadna firma technologiczna.
 

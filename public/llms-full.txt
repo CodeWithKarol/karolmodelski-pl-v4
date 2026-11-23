@@ -80,7 +80,7 @@ Zobacz pełną historię Numerabble — od pierwszych rozmów, przez cztery tygo
 
 Być może myślisz o niej od miesięcy. A może rozwijasz ten pomysł już od kilku lat.
 
-Wiesz, jak aplikacja powinna działać. Masz pomysły na funkcje, wygląd i możliwości dalszego rozwoju.
+Masz wyobrażenie, jak aplikacja mogłaby działać. Być może masz już pomysły na funkcje i wygląd, ale nie wszystkie szczegóły są jeszcze ustalone.
 
 Ale gdy próbujesz przejść do realizacji, pojawiają się pytania:
 
@@ -110,13 +110,11 @@ Potrzebuję przede wszystkim zrozumieć, co chcesz stworzyć i dla kogo.
 
 ---
 
----
-
 ## 04 · Po 4 tygodniach (#efekt)
 
-### Po 4 tygodniach Twój pomysł będzie czymś więcej niż dokumentem lub projektem graficznym.
+### Po 4 tygodniach prac Twój pomysł będzie czymś więcej niż dokumentem lub projektem graficznym.
 
-Otrzymasz pierwszą działającą wersję, którą możesz uruchomić w przeglądarce.
+Otrzymasz pierwszą działającą wersję aplikacji w uzgodnionym zakresie, którą możesz uruchomić w przeglądarce.
 
 1. **Sam wypróbujesz swój produkt** — Zobaczysz, jak działa jego najważniejsza funkcja.
 2. **Pokażesz go innym** — Wyślesz link partnerowi, znajomemu lub pierwszym testerom.
@@ -152,7 +150,7 @@ W jednej, ustalonej cenie masz cały zakres potrzebny do uruchomienia pierwszej 
 - Testy techniczne, poprawki i przekazanie kodu, dostępów oraz praw.
 - Krótkie podsumowanie rekomendowanych kolejnych kroków.
 
-Płatność w 3 etapach (40% / 40% / 20%) · NDA przed szczegółową rozmową · 3 miesiące gwarancji technicznej.
+Płatność w 3 etapach (40% / 40% / 20%) · Możliwość podpisania NDA przed szczegółową rozmową · 3 miesiące gwarancji technicznej.
 
 Pełny zakres, harmonogram, płatności i zasady współpracy: https://www.karolmodelski.pl/oferta/
 
@@ -229,11 +227,11 @@ Tak. Celem czterech tygodni prac jest pierwsza działająca wersja aplikacji w u
 To nie tylko projekt graficzny. Cały proces, razem z odbiorem i wymaganymi poprawkami, trwa zwykle 6–8 tygodni.
 
 **Skąd mam wiedzieć, czy mój pomysł da się zrealizować za 29 500 zł?**
-Sprawdzimy to podczas pierwszej rozmowy.
+Podczas pierwszej rozmowy wstępnie ocenimy, czy Twój pomysł może pasować do tego pakietu.
 
-Nie każdą aplikację da się zbudować za tę kwotę. Pomogę Ci jednak ustalić, czy można zacząć od mniejszej wersji z najważniejszymi funkcjami.
+Nie każdą aplikację da się zbudować za 29 500 zł. Porozmawiamy o najważniejszych funkcjach i sprawdzimy, czy można zacząć od mniejszej wersji.
 
-Jeżeli projekt będzie wymagał większego zakresu, powiem Ci o tym przed rozpoczęciem prac.
+Jeżeli do określenia zakresu potrzebna będzie dokładniejsza analiza, wyjaśnię Ci to przed podjęciem decyzji o współpracy.
 
 **Mam pomysł, ale boję się, że ktoś go wykorzysta. Czy możemy najpierw podpisać NDA?**
 Tak. Możemy podpisać umowę o zachowaniu poufności, zanim opowiesz mi o szczegółach rozwiązania.
@@ -253,7 +251,7 @@ Po zakończeniu i rozliczeniu projektu otrzymasz kod źródłowy oraz prawa do p
 
 Wystarczy, że opowiesz mi własnymi słowami, co chcesz stworzyć.
 
-Podczas bezpłatnej, 20-minutowej rozmowy przyjrzymy się Twojemu pomysłowi, porozmawiamy o najważniejszej funkcji i sprawdzimy, czy możemy zacząć od pierwszej działającej wersji w 4 tygodnie.
+Podczas bezpłatnej, 20-minutowej rozmowy przyjrzymy się Twojemu pomysłowi, porozmawiamy o najważniejszych funkcjach i wstępnie ocenimy, czy pierwszą wersję możemy zrealizować w ramach mojego pakietu.
 
 **Wezwanie do działania:** Umów bezpłatną rozmowę → https://www.karolmodelski.pl/rozmowa/
 

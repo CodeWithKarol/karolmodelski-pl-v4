@@ -191,7 +191,7 @@ Zanim wybierzesz, ustal, czego potrzebujesz: gotowej specyfikacji, zespołu czy 
 
 ## Masz pomysł na aplikację, ale nie wiesz, komu powierzyć realizację?
 
-Opowiedz mi o swoim pomyśle. Podczas krótkiej, niezobowiązującej rozmowy sprawdzimy, co chcesz stworzyć i od czego najlepiej zacząć. Nie musisz mieć dokumentacji technicznej ani wiedzieć, jakiego wykonawcy potrzebujesz.
+Opowiedz mi o swoim pomyśle. Podczas krótkiej, niezobowiązującej rozmowy wstępnie ocenimy, czy mój sposób współpracy pasuje do Twojego projektu. Nie musisz mieć dokumentacji technicznej ani wiedzieć, jaki model wykonawcy będzie odpowiedni.
 
 [Umów bezpłatną rozmowę](/rozmowa/) albo zobacz, [jak wygląda współpraca krok po kroku](/jak-pracuje/).
 

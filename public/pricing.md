@@ -10,7 +10,7 @@ Strona oferty: https://www.karolmodelski.pl/oferta/
 - Rezerwacja: https://www.karolmodelski.pl/rozmowa/
 - Cena: 0 zł (bezpłatna)
 - Czas: 20 minut
-- Zakres: omówienie pomysłu, wybór najważniejszych elementów na start, plan działania na 4 tygodnie
+- Zakres: omówienie pomysłu, wstępna ocena dopasowania do pakietu, wybór najważniejszych elementów na start
 - Bez sprzedaży i bez technicznego żargonu
 
 ## Proces w 4 tygodnie (od pomysłu do działającego produktu)
@@ -29,13 +29,13 @@ Strona oferty: https://www.karolmodelski.pl/oferta/
   - Koordynację całej realizacji — organizacja pracy specjalistów, komunikacja z zespołem i regularne omawianie postępów
   - Testy techniczne i poprawki — sprawdzenie działania aplikacji i zgodności z uzgodnionym zakresem oraz kryteriami odbioru; klient ma 10 dni roboczych na odbiór i zgłoszenie niezgodności
   - Przekazanie produktu i kolejnych kroków — kompletny kod źródłowy, odpowiednie dostępy, 100% majątkowych praw autorskich w zakresie określonym w umowie oraz jednostronicowe podsumowanie: co zbudowano, gdzie jest produkt, co sprawdzić, co odłożono i jakie kroki rekomenduję
-  - Zamknięty zakres ustalony wspólnie na pierwszej rozmowie (dodatkowe pomysły – na kolejny etap)
+  - Zamknięty zakres ustalony wspólnie przed podpisaniem umowy (dodatkowe pomysły – na kolejny etap)
 
 ### Warunki
 - Własność: cały kod i 100% majątkowych praw autorskich w uzgodnionym zakresie przechodzi na klienta
 - Licencje: przed przekazaniem produktu określamy prawa do stworzonego kodu i zasady korzystania z wykorzystywanych komponentów zewnętrznych; informacje o istotnych licencjach i warunkach używania rozwiązania przekazuję zgodnie z umową
-- Poufność: umowa o zachowaniu poufności podpisywana przed omówieniem szczegółów
-- Zakres: ustalany wspólnie na pierwszej rozmowie; zmiany i nowe funkcje w trakcie prac wymagają osobnego ustalenia terminu
+- Poufność: możliwość podpisania umowy o zachowaniu poufności przed omówieniem szczegółów
+- Zakres: ustalany wspólnie przed podpisaniem umowy; zmiany i nowe funkcje w trakcie prac wymagają osobnego ustalenia terminu
 - Kontakt: decyzje i materiały po stronie klienta w ciągu 24 godzin; oczekiwanie wydłuża termin realizacji o tyle samo
 - Gwarancja terminu: 4 tygodnie na pierwszą działającą wersję od uzgodnienia zakresu i spełnienia warunków rozpoczęcia prac; kary umowne za zawinione opóźnienie na zasadach określonych w umowie
 - Gwarancja techniczna: 3 miesiące gwarancji – błędy i usterki w uzgodnionym zakresie usuwamy bez dodatkowych opłat, na zasadach określonych w umowie

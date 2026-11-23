@@ -206,23 +206,24 @@ export interface OfertaResultOverviewItem {
 export const ofertaResultOverview: OfertaResultOverviewItem[] = [
   {
     title: "Plan",
-    description: "Wiem, co budujemy i czego nie robimy jeszcze teraz.",
+    description: "Wiesz, co budujemy i co odkładamy na później.",
   },
   {
     title: "Projekt",
-    description: "Widzę, jak aplikacja będzie działać.",
+    description: "Widzisz, jak aplikacja będzie działać.",
   },
   {
     title: "Produkt",
-    description: "Mogę uruchomić pierwszą wersję.",
+    description: "Możesz uruchomić pierwszą wersję.",
   },
   {
     title: "Testy",
-    description: "Wiem, co sprawdzić z użytkownikami.",
+    description: "Wiesz, co sprawdzić z użytkownikami.",
   },
   {
     title: "Przekazanie",
-    description: "Mam kod, dostępy i jasne kolejne kroki.",
+    description:
+      "Otrzymujesz kod, dostępy i podsumowanie kolejnych kroków na warunkach umowy.",
   },
 ]
 
@@ -277,7 +278,7 @@ export const ofertaCheckpoints: OfertaCheckpoint[] = [
     when: "Po tygodniu 1",
     title: "Wygląd i sposób obsługi",
     description:
-      "Pokazuję projekt kluczowych ekranów. Omawiamy poprawki, zanim rozpocznie się programowanie.",
+      "Pokazuję projekt kluczowych ekranów. Omawiamy poprawki, zanim rozpocznie się programowanie tych ekranów.",
   },
   {
     when: "Po tygodniu 2",
@@ -289,7 +290,7 @@ export const ofertaCheckpoints: OfertaCheckpoint[] = [
     when: "Koniec tygodnia 4",
     title: "Wersja gotowa do testów",
     description:
-      "Uruchamiamy produkt w przeglądarce i przechodzimy przez uzgodnione kryteria odbioru.",
+      "Uruchamiamy pierwszą wersję w przeglądarce i sprawdzamy jej gotowość do testów według uzgodnionych kryteriów. Formalny odbiór i ewentualne poprawki odbywają się w dalszej części procesu.",
   },
 ]
 
@@ -389,7 +390,7 @@ export const ofertaFaq: OfertaFaqItem[] = [
   {
     question: "Co jeśli mój pomysł wymaga większego budżetu?",
     answer:
-      "Powiem Ci o tym po wstępnym poznaniu projektu. Sprawdzimy, czy można zacząć od mniejszego zakresu albo czy potrzebny będzie inny model realizacji.",
+      "Po wstępnym poznaniu projektu powiem Ci, czy widzę taką możliwość. Sprawdzimy, czy można zacząć od mniejszego zakresu albo czy potrzebne będzie dokładniejsze rozpoznanie przed wyborem innego modelu realizacji.",
   },
   {
     question: "Czy później mogę rozwijać aplikację z innym wykonawcą?",
