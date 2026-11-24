@@ -1,43 +1,54 @@
+export type OfertaPackageGroupId =
+  "koncepcja" | "projekt" | "analityka" | "przekazanie"
+
+export interface OfertaPackageGroup {
+  id: OfertaPackageGroupId
+  letter: string
+  title: string
+  description: string
+}
+
 export interface OfertaPackageItem {
   title: string
+  summary: string
+  group: OfertaPackageGroupId
   description: string[]
   effect: string
 }
 
-export interface OfertaAfterLaunchItem {
-  title: string
-  paragraphs: string[]
-  effect?: string
-  note?: string
-}
-
-export interface OfertaProcessStep {
-  label: string
-  title: string
-  description: string
-  you: string
-}
-
-export interface OfertaPaymentStage {
-  share: string
-  amount: string
-  title: string
-  description: string
-}
-
-export interface OfertaSecurityPoint {
-  title: string
-  description: string
-}
-
-export interface OfertaFaqItem {
-  question: string
-  answer: string
-}
+export const ofertaPackageGroups: OfertaPackageGroup[] = [
+  {
+    id: "koncepcja",
+    letter: "A",
+    title: "Koncepcja i zakres",
+    description: "Ustalamy, co ma powstać i po czym poznamy, że działa.",
+  },
+  {
+    id: "projekt",
+    letter: "B",
+    title: "Projekt i produkt",
+    description: "Projektujemy, budujemy i uruchamiamy pierwszą wersję.",
+  },
+  {
+    id: "analityka",
+    letter: "C",
+    title: "Analityka i pierwsze testy",
+    description: "Sprawdzamy, co robią użytkownicy i co warto przetestować.",
+  },
+  {
+    id: "przekazanie",
+    letter: "D",
+    title: "Koordynacja i przekazanie",
+    description: "Prowadzę prace, testy i przekazanie produktu.",
+  },
+]
 
 export const ofertaPackage: OfertaPackageItem[] = [
   {
     title: "Wybierzemy najważniejszą funkcję i zakres pierwszej wersji",
+    summary:
+      "Plan pierwszej wersji: cel, użytkownicy, najważniejszy scenariusz i funkcje odłożone na później.",
+    group: "koncepcja",
     description: [
       "Na początku dokładnie omówimy Twój pomysł i zastanowimy się, co użytkownik powinien móc zrobić w aplikacji.",
       "Jeśli masz wiele pomysłów na funkcje, pomogę Ci wybrać te, od których warto zacząć. Jeżeli da się coś zrobić prościej, zaproponuję Ci takie rozwiązanie.",
@@ -48,6 +59,9 @@ export const ofertaPackage: OfertaPackageItem[] = [
   },
   {
     title: "Dopracujemy zasady działania i kryteria odbioru",
+    summary:
+      "Zasady działania, kryteria odbioru i wstępne rozpoznanie ograniczeń.",
+    group: "koncepcja",
     description: [
       "Nie musisz mieć gotowej dokumentacji technicznej ani przewidywać wszystkich sytuacji, które mogą pojawić się podczas korzystania z aplikacji.",
       "Wspólnie przejdziemy przez główne scenariusze działania, doprecyzujemy niejasności i ustalimy, jak powinny zachowywać się najważniejsze funkcje.",
@@ -59,6 +73,8 @@ export const ofertaPackage: OfertaPackageItem[] = [
   },
   {
     title: "Zaprojektujemy wygląd i sposób obsługi",
+    summary: "Projekt kluczowych ekranów i sposób obsługi aplikacji.",
+    group: "projekt",
     description: [
       "Przygotujemy projekt najważniejszych ekranów aplikacji, uwzględniając jej cel i sposób korzystania przez użytkowników.",
       "Zaproponuję rozwiązanie, które moim zdaniem najlepiej sprawdzi się w pierwszej wersji.",
@@ -68,6 +84,8 @@ export const ofertaPackage: OfertaPackageItem[] = [
   },
   {
     title: "Zbudujemy działającą aplikację",
+    summary: "Działająca aplikacja w przeglądarce z najważniejszą funkcją.",
+    group: "projekt",
     description: [
       "Mój zespół przygotuje uzgodnione funkcje i uruchomi pierwszą wersję w przeglądarce.",
       "To nie będzie tylko zestaw ekranów ani prezentacja pokazująca, jak aplikacja mogłaby kiedyś działać.",
@@ -77,6 +95,8 @@ export const ofertaPackage: OfertaPackageItem[] = [
   },
   {
     title: "Przygotujemy prostą stronę internetową produktu",
+    summary: "Prosta strona produktu z przejściem do aplikacji lub kontaktu.",
+    group: "projekt",
     description: [
       "Stworzymy stronę, na której przedstawisz swoją aplikację i pokażesz odwiedzającym, co mogą dzięki niej zrobić.",
       "Zadbamy o czytelny opis, najważniejsze informacje i wyraźne przejście do produktu lub uzgodnionego sposobu kontaktu.",
@@ -87,6 +107,8 @@ export const ofertaPackage: OfertaPackageItem[] = [
   },
   {
     title: "Przygotujemy podstawową analitykę pierwszej wersji",
+    summary: "Pomiar wybranych działań użytkowników i dostęp do danych.",
+    group: "analityka",
     description: [
       "Samo uruchomienie aplikacji nie powie Ci jeszcze, czy ludzie korzystają z niej zgodnie z Twoimi założeniami.",
       "Dlatego ustalimy, które zachowania użytkowników warto obserwować.",
@@ -97,6 +119,9 @@ export const ofertaPackage: OfertaPackageItem[] = [
   },
   {
     title: "Przygotujemy pierwszą wersję do testów i pierwszych opinii",
+    summary:
+      "Plan testów, pytania do użytkowników i sposób udostępnienia wersji.",
+    group: "analityka",
     description: [
       "Ustalimy, jak udostępnić produkt pierwszym użytkownikom — jako publiczną wersję aplikacji albo dostęp dla ograniczonej grupy osób.",
       "Wspólnie ustalimy, co warto przetestować i jakie zachowania użytkowników obserwować.",
@@ -108,6 +133,8 @@ export const ofertaPackage: OfertaPackageItem[] = [
   },
   {
     title: "Będę prowadził całą realizację",
+    summary: "Jeden kontakt, organizacja zespołu i trzy punkty kontrolne.",
+    group: "przekazanie",
     description: [
       "Nie musisz samodzielnie szukać programistów, dzielić zadań ani pilnować, kto co robi.",
       "Zajmuję się organizacją prac, komunikacją z zespołem i rozwiązywaniem bieżących problemów technicznych.",
@@ -117,6 +144,9 @@ export const ofertaPackage: OfertaPackageItem[] = [
   },
   {
     title: "Sprawdzimy produkt przed przekazaniem",
+    summary:
+      "Testy zgodności z zakresem, poprawki i 10 dni roboczych na odbiór.",
+    group: "przekazanie",
     description: [
       "Zanim przekażę Ci produkt, mój zespół sprawdzi działanie aplikacji i jej zgodność z uzgodnionym zakresem.",
       "Wprowadzimy poprawki do funkcji, które nie działają zgodnie z ustalonymi zasadami i kryteriami odbioru.",
@@ -127,6 +157,9 @@ export const ofertaPackage: OfertaPackageItem[] = [
   },
   {
     title: "Przekażę Ci produkt i podsumuję możliwe kolejne kroki",
+    summary:
+      "Kod, dostępy i prawa w zakresie umowy oraz podsumowanie kolejnych kroków.",
+    group: "przekazanie",
     description: [
       "Po zakończeniu i rozliczeniu projektu otrzymasz kod źródłowy, odpowiednie dostępy i prawa do produktu w zakresie określonym w umowie. Zasady korzystania z komponentów i bibliotek zewnętrznych ustalamy osobno.",
       "Omówimy też najważniejsze wnioski z realizacji oraz możliwości dalszego rozwoju. Wskażę, które funkcje warto rozważyć w kolejnym etapie, a z którymi moim zdaniem nie trzeba się spieszyć.",
@@ -169,9 +202,19 @@ export const ofertaAnalysis: OfertaAnalysisService = {
   ],
 }
 
+export interface OfertaAfterLaunchItem {
+  title: string
+  summary: string
+  paragraphs: string[]
+  effect?: string
+  note?: string
+}
+
 export const ofertaAfterLaunch: OfertaAfterLaunchItem[] = [
   {
     title: "Audyt aplikacji po uruchomieniu",
+    summary:
+      "Analiza dostępnej analityki i sposobu korzystania z produktu. Raport i plan usprawnień.",
     paragraphs: [
       "Masz działający produkt, ale nie wiesz, co warto poprawić?",
       "Przyjrzę się dostępnej analityce, sposobowi korzystania z aplikacji i najważniejszym problemom.",
@@ -181,6 +224,8 @@ export const ofertaAfterLaunch: OfertaAfterLaunchItem[] = [
   },
   {
     title: "Rozwój kolejnych funkcji",
+    summary:
+      "Ocena nowych pomysłów, ustalenie zakresu i organizacja kolejnego etapu prac.",
     paragraphs: [
       "Wiesz już, co chcesz dodać do aplikacji?",
       "Pomogę Ci ocenić nowe pomysły, ustalić zakres i zorganizować kolejny etap prac.",
@@ -190,6 +235,8 @@ export const ofertaAfterLaunch: OfertaAfterLaunchItem[] = [
   },
   {
     title: "Opieka i wsparcie technologiczne",
+    summary:
+      "Przeglądy techniczne, planowanie prac i bieżące wsparcie lub koordynacja zespołu.",
     paragraphs: [
       "Jeżeli potrzebujesz stałej pomocy w utrzymaniu i rozwijaniu aplikacji, możemy ustalić zasady dłuższej współpracy.",
       "W zależności od potrzeb może ona obejmować przeglądy techniczne, planowanie dalszych prac, bieżące wsparcie lub koordynację zespołu.",
@@ -198,101 +245,12 @@ export const ofertaAfterLaunch: OfertaAfterLaunchItem[] = [
   },
 ]
 
-export interface OfertaResultOverviewItem {
+export interface OfertaPaymentStage {
+  share: string
+  amount: string
   title: string
   description: string
 }
-
-export const ofertaResultOverview: OfertaResultOverviewItem[] = [
-  {
-    title: "Plan",
-    description: "Wiesz, co budujemy i co odkładamy na później.",
-  },
-  {
-    title: "Projekt",
-    description: "Widzisz, jak aplikacja będzie działać.",
-  },
-  {
-    title: "Produkt",
-    description: "Możesz uruchomić pierwszą wersję.",
-  },
-  {
-    title: "Testy",
-    description: "Wiesz, co sprawdzić z użytkownikami.",
-  },
-  {
-    title: "Przekazanie",
-    description:
-      "Otrzymujesz kod, dostępy i podsumowanie kolejnych kroków na warunkach umowy.",
-  },
-]
-
-export const ofertaExclusions = [
-  "Audyt bezpieczeństwa i testy penetracyjne — to osobna usługa specjalistyczna.",
-  "Obsługa prawna znaków towarowych i uzyskiwanie zgód od zewnętrznych dostawców.",
-  "Stałe monitorowanie, administracja i utrzymanie produktu po zakończeniu projektu.",
-  "Materiały inwestorskie, model finansowy i badanie rynku.",
-  "Rekrutacja testerów i prowadzenie badań z użytkownikami — pomagam zaplanować test, nie organizuję go za Ciebie.",
-  "Potwierdzenie dostępności wszystkich integracji z zewnętrznymi aplikacjami i systemami — sprawdzamy je przed zatwierdzeniem zakresu, w miarę możliwości.",
-]
-
-export const ofertaProcess: OfertaProcessStep[] = [
-  {
-    label: "Przed rozpoczęciem",
-    title: "Ustalamy zakres",
-    description:
-      "Opowiadasz mi, co chcesz stworzyć. Wspólnie wybieramy najważniejsze funkcje, ustalamy ograniczenia i kryteria odbioru, a ustalenia zapisujemy w umowie. Wiesz, co dokładnie mamy zbudować i za jaką kwotę.",
-    you: "Opowiadasz o pomyśle i pomagasz wybrać, co jest najważniejsze.",
-  },
-  {
-    label: "Tygodnie 1–2",
-    title: "Pomysł zaczyna nabierać kształtu",
-    description:
-      "Przygotowujemy projekt wyglądu i rozpoczynamy budowę najważniejszej części aplikacji. Ustalamy też szczegóły, które wymagają Twojej decyzji.",
-    you: "Oceniasz projekt i decydujesz o wyglądzie oraz zasadach działania.",
-  },
-  {
-    label: "Tygodnie 3–4",
-    title: "Otrzymujesz pierwszą działającą wersję",
-    description:
-      "Kończymy podstawową funkcjonalność, uruchamiamy produkt w przeglądarce oraz przygotowujemy uzgodnioną stronę internetową, analitykę i plan pierwszych testów.",
-    you: "Sprawdzasz produkt i zgłaszasz uwagi w uzgodnionym zakresie.",
-  },
-  {
-    label: "Zwykle tygodnie 5–8",
-    title: "Odbiór, poprawki i przekazanie",
-    description:
-      "Sprawdzamy zgodność produktu z ustalonym zakresem. Masz 10 dni roboczych na odbiór techniczny i zgłoszenie niezgodności. Wymagane poprawki wykonujemy zgodnie z umową. Po zakończeniu odbioru i rozliczeniu przekazuję kod źródłowy, dostępy i prawa do produktu w zakresie określonym w umowie.",
-    you: "Testujesz produkt i zgłaszasz niezgodności w uzgodnionym zakresie.",
-  },
-]
-
-export interface OfertaCheckpoint {
-  when: string
-  title: string
-  description: string
-}
-
-export const ofertaCheckpoints: OfertaCheckpoint[] = [
-  {
-    when: "Po tygodniu 1",
-    title: "Wygląd i sposób obsługi",
-    description:
-      "Pokazuję projekt kluczowych ekranów. Omawiamy poprawki, zanim rozpocznie się programowanie tych ekranów.",
-  },
-  {
-    when: "Po tygodniu 2",
-    title: "Działa najważniejsza funkcja",
-    description:
-      "Sprawdzasz, czy produkt robi to, co ustaliliśmy. Wątpliwości wyjaśniamy od razu, a nie na końcu.",
-  },
-  {
-    when: "Koniec tygodnia 4",
-    title: "Wersja gotowa do testów",
-    description:
-      "Uruchamiamy pierwszą wersję w przeglądarce i sprawdzamy jej gotowość do testów według uzgodnionych kryteriów. Formalny odbiór i ewentualne poprawki odbywają się w dalszej części procesu.",
-  },
-]
 
 export const ofertaPayments: OfertaPaymentStage[] = [
   {
@@ -300,126 +258,188 @@ export const ofertaPayments: OfertaPaymentStage[] = [
     amount: "11 800 zł",
     title: "Na rozpoczęcie realizacji",
     description:
-      "Najpierw ustalamy dokładny zakres, podpisujemy umowę i kompletujemy niezbędne materiały oraz dostępy. Po wpłacie rozpoczynamy prace.",
+      "Po ustaleniu zakresu, podpisaniu umowy i wpłacie pierwszej części.",
   },
   {
     share: "40%",
     amount: "11 800 zł",
     title: "Gdy pierwsza wersja jest gotowa do testów",
     description:
-      "Otrzymujesz działającą aplikację, stronę internetową i uzgodnioną analitykę. Możesz już sprawdzać produkt i rozpocząć pierwsze testy.",
+      "Gdy otrzymasz działającą aplikację, stronę produktu i uzgodnioną analitykę.",
   },
   {
     share: "20%",
     amount: "5 900 zł",
     title: "Po odbiorze technicznym",
     description:
-      "Sprawdzasz zgodność aplikacji z ustaleniami. Po zakończeniu odbioru, wymaganych poprawkach i rozliczeniu ostatniej części przekazuję Ci kod źródłowy, odpowiednie dostępy i prawa do produktu w zakresie określonym w umowie.",
+      "Po sprawdzeniu zgodności z zakresem, poprawkach i rozliczeniu.",
   },
 ]
+
+export interface OfertaSecurityPoint {
+  title: string
+  description: string
+}
 
 export const ofertaSecurity: OfertaSecurityPoint[] = [
   {
     title: "Poufność i NDA",
     description:
-      "Możemy podpisać umowę o zachowaniu poufności, zanim opowiesz mi o szczegółach rozwiązania.",
+      "Umowę o zachowaniu poufności możemy podpisać przed szczegółową rozmową o pomyśle.",
   },
   {
-    title: "Zakres i cena ustalone z góry",
+    title: "Uzgodniony zakres i cena",
     description:
-      "Przed rozpoczęciem zapisujemy w umowie, co dokładnie ma powstać, ile kosztuje realizacja i jakie są terminy.",
+      "Przed startem zapisujemy w umowie, co ma powstać, ile kosztuje realizacja i jakie są terminy.",
   },
   {
-    title: "Płacisz etapami",
+    title: "Kod, dostępy i prawa",
     description:
-      "Standardowo dzielimy wynagrodzenie na trzy części: 40% na start, 40% gdy wersja jest gotowa do testów i 20% po odbiorze technicznym.",
+      "Po zakończeniu i rozliczeniu otrzymujesz kod źródłowy, dostępy i prawa w zakresie określonym w umowie. Licencje komponentów zewnętrznych ustalamy osobno.",
   },
   {
-    title: "Widzisz postępy w ustalonych momentach",
+    title: "Gwarancja techniczna",
     description:
-      "W trakcie prac mamy trzy punkty kontrolne: po tygodniu 1, po tygodniu 2 i na koniec tygodnia 4. Pokazuję wtedy efekty i wspólnie podejmujemy decyzje.",
+      "3 miesiące gwarancji na usterki objęte umową, na zasadach w niej zapisanych.",
+  },
+]
+
+export const ofertaFitGood = [
+  "Najważniejszą funkcję można zbudować i uruchomić w ciągu czterech tygodni.",
+  "Produkt działa w przeglądarce i nie wymaga publikacji w sklepach mobilnych.",
+  "Wystarczy jedna wersja językowa dopasowana do pierwszych użytkowników.",
+  "Integracje i zależności są standardowe i możliwe do sprawdzenia przed startem.",
+]
+
+export const ofertaFitComplex = [
+  "Potrzebna jest osobna aplikacja na Androida i iPhone'a.",
+  "Zakres obejmuje wiele języków, rozbudowane integracje lub nietypowe obliczenia.",
+  "Wymagane są testy penetracyjne, audyt bezpieczeństwa albo obsługa prawna.",
+  "Projekt zakłada rekrutację testerów, badania rynku lub stałe utrzymanie.",
+]
+
+export const ofertaFitNote =
+  "To wstępne kryteria, nie gwarancja przyjęcia projektu. Ostateczną ocenę podejmujemy po rozmowie i ustaleniu zakresu."
+
+export const ofertaExclusions = [
+  "Osobne aplikacje mobilne w App Store i Google Play.",
+  "Dodatkowe wersje językowe poza jedną wersją dopasowaną do pierwszych użytkowników.",
+  "Rozbudowane integracje z zewnętrznymi systemami — sprawdzamy je przed zatwierdzeniem zakresu, w miarę możliwości.",
+  "Audyt bezpieczeństwa i testy penetracyjne.",
+  "Obsługa prawna znaków towarowych, uzyskiwanie zgód i kwestie licencyjne wymagające doradcy prawnego.",
+  "Rekrutacja testerów i prowadzenie badań z użytkownikami — pomagam zaplanować test, nie organizuję go za Ciebie.",
+  "Koszty zewnętrzne: domena, hosting, serwery i usługi innych dostawców — omawiamy je przed startem.",
+  "Materiały inwestorskie, model finansowy i badanie rynku.",
+  "Stałe utrzymanie, administracja i monitoring produktu po zakończeniu projektu.",
+]
+
+export type OfertaFaqGroupId = "zakres" | "budzet" | "wspolpraca"
+
+export interface OfertaFaqItem {
+  question: string
+  answer: string
+  group: OfertaFaqGroupId
+}
+
+export const ofertaFaqGroups: {
+  id: OfertaFaqGroupId
+  title: string
+  description: string
+}[] = [
+  {
+    id: "zakres",
+    title: "Zakres i wymagania",
+    description: "Co powstaje, jak działa i czego potrzebujesz na starcie.",
   },
   {
-    title: "Odbiór według uzgodnionych kryteriów",
-    description:
-      "Masz czas na sprawdzenie produktu i zgłoszenie niezgodności z uzgodnionym zakresem oraz kryteriami odbioru.",
+    id: "budzet",
+    title: "Budżet i terminy",
+    description: "Cena, koszty zewnętrzne i tempo pracy.",
   },
   {
-    title: "Kod źródłowy i prawa do produktu",
-    description:
-      "Po zakończeniu i rozliczeniu projektu otrzymujesz kod źródłowy oraz prawa do utworów powstałych w ramach realizacji, w zakresie określonym w umowie. Zasady korzystania z komponentów i bibliotek zewnętrznych ustalamy osobno.",
-  },
-  {
-    title: "Trzy miesiące gwarancji technicznej",
-    description:
-      "Jeżeli po odbiorze okaże się, że funkcja nie działa zgodnie z uzgodnionymi wymaganiami, usuwamy usterki objęte gwarancją na zasadach zapisanych w umowie.",
+    id: "wspolpraca",
+    title: "Dalsza współpraca",
+    description: "Rozwój produktu, opieka i przekazanie praw.",
   },
 ]
 
 export const ofertaFaq: OfertaFaqItem[] = [
   {
     question: "Jak będę wiedział, że prace idą zgodnie z planem?",
+    group: "zakres",
     answer:
       "W trakcie realizacji mamy trzy punkty kontrolne: po tygodniu 1 pokazuję projekt kluczowych ekranów, po tygodniu 2 działającą najważniejszą funkcję, a na koniec tygodnia 4 wersję gotową do testów.\n\nNa każdym z tych momentów widzisz efekty i wspólnie podejmujemy decyzje. Między punktami kontrolnymi pracuję dalej, więc nie musisz czekać z uwagami do prezentacji. Postępy pokazuję również na bieżąco.",
   },
   {
     question: "Czy po czterech tygodniach dostanę prawdziwą aplikację?",
+    group: "zakres",
     answer:
       "Tak, celem pierwszych czterech tygodni jest przygotowanie działającej wersji przeglądarkowej w uzgodnionym zakresie, a nie tylko projektu graficznego. Odbiory i ewentualne poprawki są realizowane w dalszej części procesu.",
   },
   {
     question: "Czy muszę znać się na programowaniu?",
+    group: "zakres",
     answer:
       "Nie. Potrzebuję Twojej wiedzy o pomyśle i decyzji dotyczących produktu. Sprawy techniczne oraz organizację pracy biorę na siebie.",
   },
   {
     question: "Czy za 29 500 zł otrzymam aplikację na Androida i iPhone'a?",
+    group: "zakres",
     answer:
       "Standardowy pakiet dotyczy aplikacji działającej w przeglądarce. Osobne aplikacje publikowane w sklepach mobilnych wymagają odrębnego ustalenia zakresu i wyceny.",
   },
   {
     question: "Czy aplikacja będzie w języku polskim i angielskim?",
+    group: "zakres",
     answer:
       "Interfejs przygotujemy w języku odpowiednim dla grupy, do której kierujesz produkt. Standardowy pakiet obejmuje jedną wersję językową, dopasowaną do pierwszych użytkowników.\n\nJeżeli potrzebujesz również drugiej wersji językowej, możemy uwzględnić ją w ustalanym zakresie. Nie jest to jednak automatyczny element każdej realizacji — decydujemy o tym podczas ustalania zakresu.",
   },
   {
     question: "Czy po uruchomieniu będą jeszcze jakieś koszty?",
+    group: "budzet",
     answer:
       "Mogą pojawić się koszty zewnętrzne, takie jak domena, hosting, usługi innych dostawców lub późniejsza opieka techniczna. Omawiamy je przed rozpoczęciem realizacji w zakresie, w jakim można je przewidzieć.",
   },
   {
     question: "Co jeśli mój pomysł wymaga większego budżetu?",
+    group: "budzet",
     answer:
       "Po wstępnym poznaniu projektu powiem Ci, czy widzę taką możliwość. Sprawdzimy, czy można zacząć od mniejszego zakresu albo czy potrzebne będzie dokładniejsze rozpoznanie przed wyborem innego modelu realizacji.",
   },
   {
     question: "Czy później mogę rozwijać aplikację z innym wykonawcą?",
+    group: "wspolpraca",
     answer:
       "Tak. Po zakończeniu i rozliczeniu otrzymujesz kod źródłowy oraz prawa do produktu w zakresie określonym w umowie. Zasady wykorzystania komponentów zewnętrznych ustalamy osobno.",
   },
   {
     question:
       "Czy muszę mieć dokładnie rozpisane wszystkie funkcje i zasady działania aplikacji?",
+    group: "zakres",
     answer:
       "Nie. Wystarczy, że potrafisz mi własnymi słowami opowiedzieć, co chcesz stworzyć i do czego ma służyć Twój produkt.\n\nPodczas ustalania zakresu przejdziemy przez najważniejsze scenariusze działania. Będę zadawał pytania, pokazywał możliwe rozwiązania i pomagał Ci podejmować decyzje.\n\nNie musisz znać technicznych odpowiedzi. Ważne, żebyśmy przed rozpoczęciem prac mieli wspólne rozumienie tego, co ma powstać.",
   },
   {
     question: "Co dokładnie obejmuje podstawowa analityka?",
+    group: "zakres",
     answer:
       "Przed rozpoczęciem prac ustalimy kilka najważniejszych zdarzeń, które warto mierzyć w pierwszej wersji produktu.\n\nW ramach pakietu wdrożę uzgodniony pomiar i przekażę Ci dostęp do odpowiednich narzędzi.\n\nRozbudowane raporty, regularna analiza wyników, eksperymenty A/B oraz dalsza optymalizacja mogą być realizowane jako osobny etap współpracy.",
   },
   {
     question: "Czy pomożesz mi również po uruchomieniu aplikacji?",
+    group: "wspolpraca",
     answer:
       "Tak, możemy współpracować także po zakończeniu pierwszego etapu.\n\nMogę pomóc Ci przeanalizować zachowanie użytkowników, zaplanować usprawnienia, rozbudować aplikację albo ustalić zasady opieki technicznej.\n\nTakie prace wyceniam osobno. Nie musisz jednak decydować się na dalszą współpracę — po przekazaniu i rozliczeniu produktu możesz rozwijać go również z innym zespołem.",
   },
   {
     question: "Czy mogę zamówić samą analizę pomysłu, bez budowy aplikacji?",
+    group: "wspolpraca",
     answer:
       "Tak. Analiza pomysłu i plan realizacji aplikacji to osobna, płatna usługa, której zakres i cenę ustalam indywidualnie.\n\nOtrzymujesz propozycję najważniejszej funkcji pierwszej wersji, wstępne rozpoznanie ograniczeń i zależności, podział projektu na etapy, pisemne podsumowanie oraz spotkanie omawiające rekomendacje.\n\nNie musisz później zamawiać u mnie realizacji. Przygotowany plan możesz wykorzystać również podczas rozmów z innymi wykonawcami.",
   },
   {
     question: "Czy mogę najpierw porozmawiać bez zobowiązań?",
+    group: "budzet",
     answer:
       "Oczywiście. Pierwsza rozmowa jest bezpłatna i trwa około 20 minut. Nie musisz na tym etapie zamawiać żadnych prac.",
   },

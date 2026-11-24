@@ -1,0 +1,86 @@
+---
+import { ChevronDown } from "lucide-react"
+
+interface Item {
+  id: string
+  question: string
+  answer: string
+  items?: string[]
+  search: string
+}
+
+interface Props {
+  id: string
+  title: string
+  link?: { label: string; href: string }
+  questions: Item[]
+}
+
+const { id, title, link, questions } = Astro.props
+---
+
+<section
+  id={id}
+  data-faq-group
+  class="scroll-mt-24 border-t border-line pt-10 first:border-t-0 first:pt-0"
+>
+  <div class="flex flex-wrap items-baseline justify-between gap-3">
+    <h2 class="font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-3xl">
+      {title}
+    </h2>
+    <span class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+      {questions.length} pytań
+    </span>
+  </div>
+
+  <div class="mt-5 border-t border-line">
+    {questions.map(({ id: itemId, question, answer, items, search }) => (
+      <details
+        id={itemId}
+        data-faq-item
+        data-search={search}
+        class="group scroll-mt-24 border-b border-line"
+      >
+        <summary class="flex cursor-pointer list-none items-start justify-between gap-6 py-4 [&::-webkit-details-marker]:hidden">
+          <h3 class="font-heading text-base leading-snug font-semibold text-balance text-ink sm:text-lg">
+            {question}
+          </h3>
+          <ChevronDown
+            className="details-chevron mt-0.5 size-5 shrink-0 text-ink-soft transition-transform group-open:rotate-180 motion-reduce:transition-none"
+            aria-hidden="true"
+          />
+        </summary>
+
+        <div class="max-w-[42rem] space-y-3 pb-5 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+          {answer.split("\n\n").map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+
+          {items && items.length > 0 && (
+            <ul class="list-disc space-y-2 pl-5">
+              {items.map((item) => (
+                <li class="pl-1">{item}</li>
+              ))}
+            </ul>
+          )}
+
+          <a
+            href={`#${itemId}`}
+            class="inline-flex min-h-11 items-center text-xs text-ink-soft underline decoration-line underline-offset-4 transition-colors hover:text-ink hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+          >
+            Link do tego pytania
+          </a>
+        </div>
+      </details>
+    ))}
+  </div>
+
+  {link && (
+    <a
+      href={link.href}
+      class="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+    >
+      {link.label}
+    </a>
+  )}
+</section>

@@ -2,6 +2,7 @@
 title: "Freelancer, software house czy partner technologiczny?"
 metaTitle: "Freelancer, software house czy partner technologiczny? | Poradnik"
 description: "Komu zlecić stworzenie aplikacji? Porównaj freelancera, software house i partnera technologicznego. Sprawdź koszty, zalety, ryzyka i wybierz mądrze."
+teaser: "Trzy modele współpracy — zakres odpowiedzialności, koszty, ryzyka i tempo prac."
 cardDescription: |-
   Freelancer, software house czy partner technologiczny? Każdy model ma sens w innych warunkach.
 
@@ -23,6 +24,11 @@ faq:
     answer: "Nie. Niższa stawka godzinowa nie oznacza niższego kosztu całego projektu. Trzeba porównać zakres prac, liczbę osób zaangażowanych, sposób testowania, przekazania kodu i wsparcia po odbiorze. Dwie oferty mogą wyglądać podobnie, a obejmować zupełnie różny zakres."
   - question: "Fixed price czy rozliczenie godzinowe?"
     answer: "Fixed price daje przewidywalny koszt przy jasno określonym zakresie, ale zmiany wymagają osobnych ustaleń. Rozliczenie godzinowe jest elastyczniejsze przy projektach o zmiennym zakresie, wymaga jednak kontroli budżetu. Często spotyka się rozwiązania mieszane, na przykład stałą cenę za pierwszy etap i rozliczenie godzinowe przy dalszym rozwoju."
+keyTakeaways:
+  - "Freelancer, software house i partner technologiczny różnią się zakresem odpowiedzialności, nie tylko ceną."
+  - "Granice między modelami bywają płynne; nazwa nie zastępuje sprawdzenia zakresu."
+  - "Wybierz model do etapu, budżetu i tego, ile pracy organizacyjnej chcesz zatrzymać."
+  - "Porównuj zakres, przekazanie produktu i ryzyko, nie tylko stawkę."
 ---
 
 Masz pomysł na aplikację. Wiesz mniej więcej, jak powinna działać, komu mogłaby się przydać i jakie funkcje chciałbyś w niej zobaczyć. Przychodzi moment, w którym zaczynasz zastanawiać się nad realizacją — i pojawia się pytanie: **komu właściwie zlecić stworzenie aplikacji?**
@@ -130,6 +136,10 @@ To porównanie typowych sposobów współpracy, a nie sztywne reguły. W praktyc
 
 Żaden wiersz nie jest jednoznacznie lepszy. Wszystko zależy od tego, co już masz: pomysł, dokumentację, zespół, budżet i czas na zarządzanie pracą.
 
+![Kompozycja ceramicznych brył na kamiennej powierzchni](../../assets/images/editorial/a09-collaboration-models.webp)
+
+<p class="article-caption">Modele współpracy mogą się przenikać. Nazwa nie zastępuje sprawdzenia zakresu odpowiedzialności.</p>
+
 ## 6. Ile to kosztuje i jak rozliczać prace?
 
 Nie ma jednej ceny stworzenia aplikacji — zależy od zakresu, liczby funkcji, integracji i tego, kto odpowiada za organizację. Szersze zestawienie znajdziesz w artykule [Ile kosztuje stworzenie aplikacji w 2026 roku?](/wiedza/ile-kosztuje-stworzenie-aplikacji-2026/).
@@ -170,6 +180,20 @@ Zamiast szukać jednego „najlepszego” wykonawcy, zacznij od pytania, czego w
 - **Masz własny zespół i potrzebujesz jednej integracji** — dodatkowy freelancer zwykle wystarczy.
 
 Kluczowe jest dopasowanie zakresu odpowiedzialności do tego, ile pracy organizacyjnej możesz wziąć na siebie. Model, który wymaga od Ciebie zarządzania zespołem, będzie zły, jeśli nie masz na to czasu. Model, który oferuje pełną koordynację, będzie zbędny, jeśli masz już własny zespół i plan.
+
+<div class="article-module article-checklist" data-article-checklist role="group" aria-labelledby="checklista-model">
+  <p class="article-module__eyebrow" id="checklista-model">Przed wyborem modelu</p>
+  <ul>
+    <li><label><input type="checkbox"> <span>Masz opisany zakres i wiesz, co ma powstać w pierwszym etapie.</span></label></li>
+    <li><label><input type="checkbox"> <span>Znasz orientacyjny budżet i oczekiwany termin.</span></label></li>
+    <li><label><input type="checkbox"> <span>Wiesz, kto będzie zarządzał projektem i podejmował decyzje.</span></label></li>
+    <li><label><input type="checkbox"> <span>Sprawdzasz kompetencje, doświadczenie i przykłady realizacji.</span></label></li>
+    <li><label><input type="checkbox"> <span>Ustaliłeś zasady przekazania kodu, praw i dostępów.</span></label></li>
+    <li><label><input type="checkbox"> <span>Pamiętasz, że modele współpracy mogą się przenikać.</span></label></li>
+  </ul>
+  <p class="article-checklist__status" data-checklist-status aria-live="polite">Zaznacz pozycje</p>
+  <p class="article-module__note">To lista przygotowawcza, nie ranking wykonawców. Nazwa modelu nie zastępuje sprawdzenia zakresu odpowiedzialności.</p>
+</div>
 
 ## Jeszcze nie wiesz, jaki zakres prac zlecić?
 

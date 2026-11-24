@@ -1,0 +1,116 @@
+---
+import { Check, Minus } from "lucide-react"
+
+interface Props {
+  id?: string
+  label?: string
+  title?: string
+  included: string[]
+  deferred: string[]
+  embedded?: boolean
+}
+
+const {
+  id = "porownanie",
+  label = "",
+  title = "",
+  included,
+  deferred,
+  embedded = false,
+} = Astro.props
+---
+
+{embedded ? (
+  <div class="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2">
+    <div class="bg-paper p-6">
+      <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+        W pierwszej wersji
+      </p>
+      <ul class="mt-4 space-y-2.5">
+        {included.map((item) => (
+          <li class="flex items-start gap-2.5 text-sm leading-relaxed text-ink">
+            <Check
+              className="mt-0.5 size-4 shrink-0 text-signal"
+              aria-hidden="true"
+            />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="bg-paper p-6">
+      <p class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase">
+        Poza pierwszym etapem
+      </p>
+      <ul class="mt-4 space-y-2.5">
+        {deferred.map((item) => (
+          <li class="flex items-start gap-2.5 text-sm leading-relaxed text-ink-soft">
+            <Minus
+              className="mt-0.5 size-4 shrink-0 text-ink-soft"
+              aria-hidden="true"
+            />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+) : (
+  <section
+    id={id}
+    class="border-t border-line bg-surface-muted px-4 py-12 sm:px-6 sm:py-16"
+  >
+    <div class="mx-auto max-w-[75rem]">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-3">
+          <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+            {label}
+          </p>
+        </div>
+
+        <div class="lg:col-span-9">
+          <h2 class="font-heading text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+            {title}
+          </h2>
+
+          <div class="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2">
+            <div class="bg-paper p-6">
+              <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+                W pierwszej wersji
+              </p>
+              <ul class="mt-4 space-y-2.5">
+                {included.map((item) => (
+                  <li class="flex items-start gap-2.5 text-sm leading-relaxed text-ink">
+                    <Check
+                      className="mt-0.5 size-4 shrink-0 text-signal"
+                      aria-hidden="true"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="bg-paper p-6">
+              <p class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase">
+                Poza pierwszym etapem
+              </p>
+              <ul class="mt-4 space-y-2.5">
+                {deferred.map((item) => (
+                  <li class="flex items-start gap-2.5 text-sm leading-relaxed text-ink-soft">
+                    <Minus
+                      className="mt-0.5 size-4 shrink-0 text-ink-soft"
+                      aria-hidden="true"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}

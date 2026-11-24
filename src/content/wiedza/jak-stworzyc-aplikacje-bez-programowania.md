@@ -2,6 +2,7 @@
 title: "Jak stworzyć aplikację bez umiejętności programowania?"
 metaTitle: "Jak stworzyć aplikację bez programowania? Poradnik"
 description: "Chcesz stworzyć własną aplikację, ale nie umiesz programować? Poznaj no-code, narzędzia AI, koszty i sposoby realizacji aplikacji krok po kroku."
+teaser: "No-code, narzędzia AI czy współpraca ze specjalistą — co ma sens na start."
 cardDescription: |-
   Masz pomysł na aplikację, ale nie potrafisz programować? W 2026 roku to nie przeszkoda.
 
@@ -25,6 +26,14 @@ faq:
     answer: "To zależy od projektu. Bubble sprawdza się przy aplikacjach webowych i platformach usługowych, FlutterFlow przy aplikacjach mobilnych na Androida i iOS, Glide przy prostych narzędziach wewnętrznych opartych na danych, a WeWeb przy rozbudowanych portalach i interfejsach webowych wymagających elastyczności. Przed wyborem warto sprawdzić nie tylko możliwości platformy, ale też koszty przy większej skali i zasady eksportu danych lub kodu."
   - question: "Kiedy lepiej zlecić stworzenie aplikacji specjaliście?"
     answer: "Warto to rozważyć, gdy zależy Ci na szybkim uruchomieniu produktu, planujesz większy biznes albo aplikacja ma przechowywać dane osobowe, obsługiwać płatności lub integrować się z innymi systemami. Samodzielne no-code ma sens szczególnie wtedy, gdy masz czas, lubisz eksperymentować i chcesz sprawdzić niewielki pomysł na własne potrzeby."
+keyTakeaways:
+  - "No-code, AI i praca ze specjalistą to różne kompromisy między kosztem, kontrolą i bezpieczeństwem."
+  - "Frontend pokazuje interfejs, backend realizuje logikę, baza danych przechowuje informacje."
+  - "Sprawdź eksport danych, koszty przy większej skali i zależność od platformy."
+  - "Wygenerowany kod nadal wymaga testów, uprawnień i konfiguracji bezpieczeństwa."
+tocLabels:
+  "2. Zanim wybierzesz narzędzie, uporządkuj swój pomysł": "Uporządkuj pomysł"
+  "Zanim wybierzesz technologię, uporządkuj swój pomysł": "Checklista na start"
 ---
 
 Masz pomysł na aplikację. Być może pracujesz nad nim od kilku miesięcy, a może nosisz go w głowie już od kilku lat.
@@ -355,6 +364,20 @@ Klient nie musi widzieć, jak wszystko działa.
 
 Ale bez tego restauracja nie byłaby w stanie obsługiwać zamówień.
 
+<div class="article-module article-layers" role="group" aria-labelledby="warstwy-aplikacji">
+  <p class="article-module__eyebrow" id="warstwy-aplikacji">Trzy warstwy aplikacji</p>
+  <ol>
+    <li><strong>Frontend</strong><span>To, co widzi i z czym klika użytkownik: ekrany, formularze i przyciski.</span></li>
+    <li><strong>Backend</strong><span>Logika działania: reguły, uprawnienia, obliczenia i połączenia z usługami.</span></li>
+    <li><strong>Baza danych</strong><span>Miejsce, w którym zapisują się konta, treści, zamówienia i inne informacje.</span></li>
+  </ol>
+  <p class="article-module__note">No-code i AI mogą uprościć jedną lub kilka warstw, ale nie zwalniają z myślenia o całości.</p>
+</div>
+
+![Warstwowe ceramiczne bryły z małym terakotowym sześcianem](../../assets/images/editorial/a07-layers-of-technology.webp)
+
+<p class="article-caption">Frontend, backend i baza danych to trzy warstwy jednego produktu — no-code nie usuwa żadnej z nich.</p>
+
 ### Czy musisz samodzielnie budować backend?
 
 Nie.
@@ -529,6 +552,19 @@ Ale jeśli planujesz budować duży biznes oparty na aplikacji, warto dokładnie
 
 **Nie wybieraj narzędzia wyłącznie dlatego, że pozwala stworzyć aplikację najszybciej. Sprawdź również, co stanie się z Twoim produktem za rok lub dwa.**
 
+<div class="article-module article-checklist" data-article-checklist role="group" aria-labelledby="checklista-platforma">
+  <p class="article-module__eyebrow" id="checklista-platforma">Zanim wybierzesz platformę</p>
+  <ul>
+    <li><label><input type="checkbox"> <span>Czy możesz wyeksportować dane, a jeśli trzeba — kod?</span></label></li>
+    <li><label><input type="checkbox"> <span>Jak zmienia się koszt przy większej liczbie użytkowników?</span></label></li>
+    <li><label><input type="checkbox"> <span>Jakie limity planu mogą zablokować rozwój?</span></label></li>
+    <li><label><input type="checkbox"> <span>Czy potrzebne integracje i płatności są dostępne?</span></label></li>
+    <li><label><input type="checkbox"> <span>Co się stanie, jeśli zechcesz przejść do innego dostawcy?</span></label></li>
+  </ul>
+  <p class="article-checklist__status" data-checklist-status aria-live="polite">Zaznacz pozycje</p>
+  <p class="article-module__note">Vendor lock-in nie zawsze jest problemem, ale warto znać jego koszt przed startem.</p>
+</div>
+
 ## 11. Czy aplikacja zrobiona bez programowania może być bezpieczna?
 
 Tak.
@@ -553,12 +589,18 @@ Ale dlatego, że zostały nieprawidłowo skonfigurowane.
 
 Dlatego przy tworzeniu aplikacji trzeba zadbać między innymi o:
 
-- Prawidłowe logowanie i uprawnienia użytkowników.
-- Ograniczenie dostępu do danych po stronie serwera lub bazy danych.
-- Bezpieczne przechowywanie haseł i kluczy dostępu.
-- Weryfikację danych wprowadzanych przez użytkowników.
-- Kopie zapasowe i możliwość odzyskiwania danych.
-- Testowanie podstawowych scenariuszy przed publikacją.
+<div class="article-module article-checklist" data-article-checklist role="group" aria-labelledby="checklista-bezpieczenstwo">
+  <p class="article-module__eyebrow" id="checklista-bezpieczenstwo">Bezpieczeństwo przed publikacją</p>
+  <ul>
+    <li><label><input type="checkbox"> <span>Prawidłowe logowanie i uprawnienia użytkowników.</span></label></li>
+    <li><label><input type="checkbox"> <span>Ograniczenie dostępu do danych po stronie serwera lub bazy.</span></label></li>
+    <li><label><input type="checkbox"> <span>Bezpieczne przechowywanie haseł i kluczy dostępu.</span></label></li>
+    <li><label><input type="checkbox"> <span>Weryfikacja danych wprowadzanych przez użytkowników.</span></label></li>
+    <li><label><input type="checkbox"> <span>Kopie zapasowe i możliwość odzyskania danych.</span></label></li>
+    <li><label><input type="checkbox"> <span>Testy podstawowych scenariuszy przed publikacją.</span></label></li>
+  </ul>
+  <p class="article-checklist__status" data-checklist-status aria-live="polite">Zaznacz pozycje</p>
+</div>
 
 Szczególnie ważna jest kwestia uprawnień.
 
@@ -693,6 +735,17 @@ Moim zdaniem zależy to przede wszystkim od Twojej sytuacji.
 | Partner technologiczny | Wsparcie w zaplanowaniu i przeprowadzeniu realizacji | Trzeba dobrze dopasować ofertę i zakres odpowiedzialności |
 
 Jeśli chcesz po prostu sprawdzić własny pomysł, zacząłbym od możliwie prostego rozwiązania.
+
+<div class="article-module article-decision" role="group" aria-labelledby="wybor-sposobu">
+  <p class="article-module__eyebrow" id="wybor-sposobu">Od czego zacząć?</p>
+  <ul>
+    <li><strong>Chcesz szybko sprawdzić pomysł</strong><span>Prototyp lub AI</span></li>
+    <li><strong>Potrzebujesz niewielkiego narzędzia</strong><span>No-code</span></li>
+    <li><strong>Budujesz produkt dla klientów</strong><span>Specjalista i architektura</span></li>
+    <li><strong>Chcesz rozwijać i kontrolować produkt</strong><span>Wykonawca lub partner</span></li>
+  </ul>
+  <p class="article-module__note">To wskazówka, nie ranking narzędzi. Wybór zależy od danych, płatności, skali i planów rozwoju.</p>
+</div>
 
 Być może wystarczy prototyp przygotowany z pomocą AI.
 

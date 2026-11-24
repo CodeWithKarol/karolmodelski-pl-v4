@@ -1,0 +1,157 @@
+---
+import { ChevronDown } from "lucide-react"
+
+interface TocItem {
+  slug: string
+  label: string
+}
+
+interface Props {
+  items: TocItem[]
+  variant: "desktop" | "mobile"
+}
+
+const { items, variant } = Astro.props
+---
+
+{variant === "desktop" ? (
+  <nav aria-labelledby="spis-tresci" data-article-toc class="hidden xl:block">
+    <div class="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pr-2">
+      <p
+        id="spis-tresci"
+        class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase"
+      >
+        W tym artykule
+      </p>
+      <ol class="mt-4 border-l border-line">
+        {items.map((item, index) => (
+          <li>
+            <a
+              href={`#${item.slug}`}
+              class="-ml-px flex gap-3 border-l-2 border-transparent py-1.5 pr-2 pl-4 text-[13px] leading-snug text-ink-soft transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal aria-[current=location]:border-signal aria-[current=location]:text-ink"
+            >
+              <span class="w-5 shrink-0 pt-0.5 font-mono text-[10px] text-signal-ink">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span>{item.label}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </nav>
+) : (
+  <details class="group mb-8 border-y border-line xl:hidden">
+    <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-1 [&::-webkit-details-marker]:hidden">
+      <span class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase">
+        Spis treści
+        <span class="ml-2 text-ink-soft">({items.length})</span>
+      </span>
+      <ChevronDown
+        className="size-4 shrink-0 text-ink-soft transition-transform group-open:rotate-180 motion-reduce:transition-none"
+        aria-hidden="true"
+      />
+    </summary>
+    <nav aria-label="Spis treści" data-article-toc>
+      <ol class="grid grid-cols-1 gap-x-8 gap-y-1 pb-4 sm:grid-cols-2">
+        {items.map((item, index) => (
+          <li>
+            <a
+              href={`#${item.slug}`}
+              class="flex gap-3 py-1 text-[13px] leading-snug text-ink-soft transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal aria-[current=location]:text-ink"
+            >
+              <span class="w-5 shrink-0 pt-0.5 font-mono text-[10px] text-signal-ink">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span>{item.label}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </details>
+)}
+
+{variant === "desktop" && <script is:inline>
+  ;(() => {
+    const init = () => {
+      const links = Array.from(
+        document.querySelectorAll("[data-article-toc] a[href^='#']")
+      )
+      if (!links.length) return
+
+      const targets = []
+      const seen = new Set()
+
+      links.forEach((link) => {
+        const id = decodeURIComponent(link.hash.slice(1))
+        if (!id || seen.has(id)) return
+        const target = document.getElementById(id)
+        if (!target) return
+        seen.add(id)
+        targets.push(target)
+      })
+
+      if (!targets.length) return
+
+      let frame = 0
+      let activeId = null
+
+      const ensureVisible = (id) => {
+        const link = links.find(
+          (item) =>
+            item.getBoundingClientRect().height > 0 &&
+            decodeURIComponent(item.hash.slice(1)) === id
+        )
+        const scroller = link?.closest("nav")?.querySelector(".overflow-y-auto")
+        if (!link || !scroller) return
+
+        const linkRect = link.getBoundingClientRect()
+        const scrollerRect = scroller.getBoundingClientRect()
+
+        if (linkRect.top < scrollerRect.top) {
+          scroller.scrollTop -= scrollerRect.top - linkRect.top + 8
+        } else if (linkRect.bottom > scrollerRect.bottom) {
+          scroller.scrollTop += linkRect.bottom - scrollerRect.bottom + 8
+        }
+      }
+
+      const setActive = (id) => {
+        if (id === activeId) return
+        activeId = id
+        links.forEach((link) => {
+          const active = decodeURIComponent(link.hash.slice(1)) === id
+          if (active) link.setAttribute("aria-current", "location")
+          else link.removeAttribute("aria-current")
+        })
+        ensureVisible(id)
+      }
+
+      const update = () => {
+        frame = 0
+        let current = targets[0].id
+
+        for (const target of targets) {
+          if (target.getBoundingClientRect().top <= 140) current = target.id
+        }
+
+        setActive(current)
+      }
+
+      const requestUpdate = () => {
+        if (frame) return
+        frame = window.requestAnimationFrame(update)
+      }
+
+      update()
+      window.addEventListener("scroll", requestUpdate, { passive: true })
+      window.addEventListener("resize", requestUpdate)
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init, { once: true })
+    } else {
+      init()
+    }
+  })()
+</script>}

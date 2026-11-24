@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets"
+import { ArrowRight } from "lucide-react"
+
+interface Props {
+  name: string
+  type: string
+  summary: string
+  href: string
+  image?: ImageMetadata
+  imageAlt?: string
+}
+
+const { name, type, summary, href, image, imageAlt = "" } = Astro.props
+---
+
+<article class="group flex h-full flex-col">
+  <a
+    href={href}
+    class="flex h-full flex-col focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
+  >
+    {image && (
+      <div class="overflow-hidden rounded-lg border border-line bg-surface-muted">
+        <Image
+          src={image}
+          alt={imageAlt}
+          widths={[480, 720, 960]}
+          sizes="(min-width: 768px) 45vw, calc(100vw - 2rem)"
+          quality={84}
+          loading="lazy"
+          decoding="async"
+          class="aspect-[16/9] w-full object-cover transition-transform duration-500 motion-reduce:transition-none group-hover:scale-[1.02]"
+        />
+      </div>
+    )}
+
+    <p class="mt-4 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+      {type}
+    </p>
+    <h3 class="mt-2 font-heading text-xl leading-snug font-semibold text-balance text-ink">
+      {name}
+    </h3>
+    <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+      {summary}
+    </p>
+    <span class="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-medium text-ink">
+      Zobacz projekt
+      <ArrowRight className="size-4" aria-hidden="true" />
+    </span>
+  </a>
+</article>

@@ -1,8 +1,8 @@
 ---
 import Layout from "@/layouts/main.astro"
 import SiteHeader from "@/components/site-header.astro"
-import SiteFooter from "@/components/site-footer.astro"
-import { ArrowLeft } from "lucide-react"
+import LegalFooter from "@/components/legal-footer.astro"
+import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react"
 
 const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
 const pageURL = new URL("/polityka-prywatnosci/", siteURL).toString()
@@ -53,10 +53,12 @@ const h2 =
   "font-heading text-2xl leading-[1.2] font-semibold tracking-tight text-balance text-ink sm:text-3xl"
 const h3 =
   "mt-8 font-heading text-lg leading-snug font-semibold text-balance text-ink"
-const p = "mt-3 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base"
-const pStrong = "mt-3 text-sm leading-relaxed text-pretty text-ink sm:text-base"
+const p =
+  "mt-3 text-[16px] leading-[1.7] text-pretty text-ink-soft sm:text-[17px]"
+const pStrong =
+  "mt-3 text-[16px] leading-[1.7] text-pretty text-ink sm:text-[17px]"
 const list =
-  "mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base"
+  "mt-3 list-disc space-y-2 pl-5 text-[16px] leading-[1.7] text-pretty text-ink-soft sm:text-[17px]"
 const link =
   "underline decoration-line underline-offset-4 transition-colors hover:decoration-signal hover:text-ink"
 const sectionClass =
@@ -85,7 +87,7 @@ const doc = "mt-3 font-mono text-xs leading-relaxed break-words text-ink-soft"
   <SiteHeader variant="page" />
 
   <main id="main">
-    <section class="relative overflow-hidden bg-paper px-4 pt-8 pb-14 sm:px-6 sm:pt-10 sm:pb-16">
+    <section class="relative overflow-hidden bg-paper px-4 pt-6 pb-10 sm:px-6 sm:pt-8 sm:pb-12">
       <div
         aria-hidden="true"
         class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
@@ -104,69 +106,142 @@ const doc = "mt-3 font-mono text-xs leading-relaxed break-words text-ink-soft"
           </ol>
         </nav>
 
-        <div class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
-          <div class="rise lg:col-span-7">
-            <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
-              <span class="h-px w-8 bg-signal"></span>
+        <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
+          <div class="lg:col-span-8">
+            <p class="flex items-center gap-3 font-mono text-[11px] tracking-[0.18em] text-ink-soft uppercase">
+              <span class="h-px w-6 bg-signal"></span>
               Dokumenty prawne · Prywatność
             </p>
 
-            <h1 class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl">
+            <h1 class="mt-5 font-heading text-[clamp(2.25rem,1.5rem+2.4vw,3.5rem)] leading-[1.05] font-semibold tracking-tight text-balance">
               Polityka prywatności i plików cookies
             </h1>
 
-            <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Poniżej wyjaśniam, jakie dane zbieram w serwisie karolmodelski.pl,
-              w jakim celu i na jakiej podstawie prawnej je przetwarzam, komu je
-              powierzam oraz jak możesz kontrolować ich wykorzystanie.
+            <p class="mt-5 max-w-[42rem] text-[17px] leading-[1.65] text-pretty text-ink sm:text-lg">
+              Dowiedz się, jakie dane są przetwarzane podczas korzystania z
+              serwisu, w jakich celach i jak możesz zarządzać swoimi
+              preferencjami.
             </p>
 
-            <p class="mt-6 font-mono text-xs tracking-[0.14em] text-ink-soft uppercase">
+            <p class="mt-5 font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase">
               Serwis: karolmodelski.pl · Data aktualizacji:{" "}
               <time datetime="2026-11-19">{updatedAt}</time>
             </p>
           </div>
 
-          <div class="rise lg:col-span-5" style="animation-delay:.12s">
-            <div class="rounded-2xl border border-line bg-surface-muted p-6 sm:p-8">
-              <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
-                Administrator danych
-              </p>
-              <p class="mt-3 font-heading text-xl leading-snug font-semibold text-balance text-ink">
-                Karol Modelski
-              </p>
-              <p class="mt-1 text-sm leading-relaxed text-ink-soft">
-                jednoosobowa działalność gospodarcza
-              </p>
+          <div class="lg:col-span-4 lg:pt-2">
+            <a
+              href="#tresc"
+              class="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[6px] bg-ink px-5 text-center text-base text-paper transition-colors hover:bg-ink/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal sm:w-auto"
+            >
+              Przejdź do pełnej polityki
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
+            <p class="mt-3 text-sm leading-relaxed text-ink-soft">
+              13 rozdziałów · pełna treść poniżej
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-              <dl class="mt-5 space-y-3 border-t border-line pt-5 text-sm leading-relaxed">
-                <div>
-                  <dt class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
-                    Adres
-                  </dt>
-                  <dd class="mt-0.5 text-ink">
-                    ul. Mieczysława Karłowicza 1/40
-                    <br />
-                    58-506 Jelenia Góra
-                  </dd>
-                </div>
-                <div>
-                  <dt class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
-                    NIP / REGON
-                  </dt>
-                  <dd class="mt-0.5 text-ink">6112800950 / 383132957</dd>
-                </div>
-                <div>
-                  <dt class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
-                    E-mail
-                  </dt>
-                  <dd class="mt-0.5">
-                    <a class={link} href="mailto:kontakt@karolmodelski.pl">
-                      kontakt@karolmodelski.pl
-                    </a>
-                  </dd>
-                </div>
-              </dl>
+    <section
+      id="skrot"
+      class="border-t border-line bg-surface-muted px-4 py-10 sm:px-6 sm:py-14"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              Prywatność w skrócie
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class={h2}>Najważniejsze informacje</h2>
+            <p class={p}>
+              Krótkie podsumowanie. Wiążąca jest pełna polityka poniżej.
+            </p>
+
+            <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div class="border-t border-line pt-4">
+                <h3 class="font-heading text-base leading-snug font-semibold text-ink">
+                  Administrator danych
+                </h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">
+                  Karol Modelski, jednoosobowa działalność gospodarcza. ul.
+                  Mieczysława Karłowicza 1/40, 58-506 Jelenia Góra. NIP
+                  6112800950, REGON 383132957.
+                </p>
+              </div>
+
+              <div class="border-t border-line pt-4">
+                <h3 class="font-heading text-base leading-snug font-semibold text-ink">
+                  Kiedy dane są przetwarzane
+                </h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">
+                  Gdy piszesz e-mail, zapisujesz się do newslettera, rezerwujesz
+                  konsultację lub korzystasz z serwisu.
+                </p>
+              </div>
+
+              <div class="border-t border-line pt-4">
+                <h3 class="font-heading text-base leading-snug font-semibold text-ink">
+                  Cele i podstawy prawne
+                </h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">
+                  Kontakt i realizacja umowy (art. 6 ust. 1 lit. b RODO), zgoda
+                  (lit. a) oraz prawnie uzasadniony interes (lit. f).
+                </p>
+              </div>
+
+              <div class="border-t border-line pt-4">
+                <h3 class="font-heading text-base leading-snug font-semibold text-ink">
+                  Pliki cookies
+                </h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">
+                  Niezbędne działają zawsze. Analityczne (GA4) i reklamowe
+                  (Meta) tylko po zgodzie.
+                </p>
+              </div>
+
+              <div class="border-t border-line pt-4">
+                <h3 class="font-heading text-base leading-snug font-semibold text-ink">
+                  Twoje prawa
+                </h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">
+                  Dostęp, sprostowanie, usunięcie, ograniczenie, przenoszenie,
+                  sprzeciw, wycofanie zgody i skarga do UODO.
+                </p>
+              </div>
+
+              <div class="border-t border-line pt-4">
+                <h3 class="font-heading text-base leading-snug font-semibold text-ink">
+                  Kontakt w sprawie danych
+                </h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">
+                  <a class={link} href="mailto:kontakt@karolmodelski.pl">
+                    kontakt@karolmodelski.pl
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-col gap-3 border-t border-line pt-5 sm:flex-row sm:items-center">
+              <button
+                type="button"
+                data-cookie-settings
+                class="cky-banner-element inline-flex min-h-12 items-center justify-center gap-2 rounded-[6px] border border-ink px-5 text-sm font-medium text-ink transition-colors hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+              >
+                Zmień ustawienia cookies
+              </button>
+              <a
+                href="#tresc"
+                class="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+              >
+                Przejdź do pełnej polityki
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </a>
             </div>
           </div>
         </div>
@@ -175,46 +250,79 @@ const doc = "mt-3 font-mono text-xs leading-relaxed break-words text-ink-soft"
 
     <section
       id="tresc"
-      class="border-t border-line bg-surface-muted px-4 py-14 sm:px-6 sm:py-20"
+      class="border-t border-line bg-paper px-4 py-12 sm:px-6 sm:py-16"
     >
       <div class="mx-auto max-w-[75rem] lg:grid lg:grid-cols-12 lg:gap-x-16">
         <nav
-          aria-labelledby="spis-tresci"
-          class="mb-10 lg:col-span-3 lg:mb-0 lg:self-start lg:sticky lg:top-24"
+          aria-label="Spis treści"
+          class="mb-8 lg:col-span-3 lg:mb-0 lg:self-start lg:sticky lg:top-24"
         >
-          <p
-            id="spis-tresci"
-            class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase"
-          >
-            Spis treści
-          </p>
-          <ul class="mt-4 grid grid-cols-2 gap-x-3 gap-y-1 border-t border-line pt-4 lg:grid-cols-1">
-            {sections.map((section) => (
-              <li>
-                <a
-                  href={`#${section.id}`}
-                  class="flex min-h-11 items-baseline gap-2 rounded-lg px-2 py-2 text-sm leading-snug text-ink-soft transition-colors hover:bg-secondary hover:text-ink lg:min-h-0 lg:gap-3"
-                >
-                  <span class="font-mono text-[10px] text-ink-soft/70">
-                    {section.n}
-                  </span>
-                  <span>{section.label}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <details class="group rounded-lg border border-line bg-paper lg:hidden">
+            <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 px-4 py-2 [&::-webkit-details-marker]:hidden">
+              <span class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase">
+                Spis treści
+              </span>
+              <span class="flex items-center gap-2 text-sm text-ink">
+                13 rozdziałów
+                <ChevronDown
+                  className="details-chevron size-4 text-ink-soft"
+                  aria-hidden="true"
+                />
+              </span>
+            </summary>
+            <div class="px-4 pb-4">
+              <ul class="border-t border-line pt-3">
+                {sections.map((section) => (
+                  <li>
+                    <a
+                      href={`#${section.id}`}
+                      data-toc-link={section.id}
+                      class="flex min-h-11 items-baseline gap-3 rounded-md px-2 py-2 text-sm leading-snug text-ink-soft transition-colors hover:bg-secondary hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal aria-[current=location]:bg-secondary aria-[current=location]:font-medium aria-[current=location]:text-ink"
+                    >
+                      <span class="font-mono text-[10px] text-ink-soft">
+                        {section.n}
+                      </span>
+                      <span>{section.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </details>
 
-          <a
-            href="/"
-            class="mt-6 inline-flex min-h-11 items-center gap-2 border-t border-line pt-4 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-          >
-            <ArrowLeft className="size-4" aria-hidden="true" />
-            Wróć na stronę główną
-          </a>
+          <div class="hidden lg:block">
+            <p class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase">
+              Spis treści
+            </p>
+            <ul class="mt-4 border-t border-line pt-3">
+              {sections.map((section) => (
+                <li>
+                  <a
+                    href={`#${section.id}`}
+                    data-toc-link={section.id}
+                    class="flex min-h-9 items-baseline gap-3 rounded-md px-2 py-1.5 text-sm leading-snug text-ink-soft transition-colors hover:bg-secondary hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal aria-[current=location]:bg-secondary aria-[current=location]:font-medium aria-[current=location]:text-ink"
+                  >
+                    <span class="font-mono text-[10px] text-ink-soft">
+                      {section.n}
+                    </span>
+                    <span>{section.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="/"
+              class="mt-4 inline-flex min-h-11 items-center gap-2 border-t border-line pt-4 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+            >
+              <ArrowLeft className="size-4" aria-hidden="true" />
+              Wróć na stronę główną
+            </a>
+          </div>
         </nav>
 
         <article class="lg:col-span-9">
-          <div class="max-w-2xl space-y-12">
+          <div class="max-w-[46rem] space-y-12">
             <section id="informacje-ogolne" class={sectionClass}>
               <h2 class={h2}>
                 <span class="mr-3 align-middle font-mono text-xs font-normal tracking-[0.16em] text-ink-soft">
@@ -802,6 +910,20 @@ const doc = "mt-3 font-mono text-xs leading-relaxed break-words text-ink-soft"
                 Do zarządzania zgodami wykorzystywany jest CookieYes.
               </p>
 
+              <p class="mt-4">
+                <button
+                  type="button"
+                  data-cookie-settings
+                  class="cky-banner-element inline-flex min-h-12 items-center justify-center gap-2 rounded-[6px] border border-ink px-5 text-sm font-medium text-ink transition-colors hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+                >
+                  Zmień ustawienia cookies
+                </button>
+              </p>
+              <p class="mt-2 text-sm leading-relaxed text-ink-soft">
+                Przycisk otwiera panel CookieYes. Nie zmienia preferencji
+                automatycznie.
+              </p>
+
               <p class={p}>Podczas pierwszej wizyty użytkownik może:</p>
 
               <ul class={list}>
@@ -1331,5 +1453,66 @@ const doc = "mt-3 font-mono text-xs leading-relaxed break-words text-ink-soft"
     </section>
   </main>
 
-  <SiteFooter />
+  <LegalFooter />
+
+  <script is:inline>
+    ;(() => {
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({ event: "privacy_view" })
+
+      document.addEventListener("click", (event) => {
+        const target = event.target
+        if (!target || !target.closest) return
+
+        if (target.closest("[data-cookie-settings]")) {
+          window.dataLayer.push({ event: "cookie_settings_click" })
+        }
+
+        const toc = target.closest("[data-toc-link]")
+        if (toc) {
+          window.dataLayer.push({
+            event: "privacy_toc_click",
+            section: toc.getAttribute("data-toc-link"),
+          })
+        }
+      })
+
+      const links = Array.from(document.querySelectorAll("[data-toc-link]"))
+      const sections = links
+        .map((link) =>
+          document.getElementById(link.getAttribute("data-toc-link") || "")
+        )
+        .filter(Boolean)
+
+      if (sections.length) {
+        let frame = 0
+
+        const setActive = () => {
+          frame = 0
+          let active = null
+          sections.forEach((section) => {
+            if (section.getBoundingClientRect().top <= 160) active = section
+          })
+          links.forEach((link) => {
+            if (active && link.getAttribute("data-toc-link") === active.id) {
+              link.setAttribute("aria-current", "location")
+            } else {
+              link.removeAttribute("aria-current")
+            }
+          })
+        }
+
+        const schedule = () => {
+          if (frame) return
+          frame = window.requestAnimationFrame(setActive)
+        }
+
+        window.addEventListener("scroll", schedule, { passive: true })
+        window.addEventListener("hashchange", () =>
+          window.setTimeout(setActive, 60)
+        )
+        setActive()
+      }
+    })()
+  </script>
 </Layout>

@@ -1,0 +1,80 @@
+---
+interface Props {
+  id?: string
+  label: string
+  title: string
+  intro?: string
+  video: string
+  poster: string
+  ariaLabel: string
+  videoCaption: string
+  videoNote?: string
+}
+
+const {
+  id = "produkt",
+  label,
+  title,
+  intro,
+  video,
+  poster,
+  ariaLabel,
+  videoCaption,
+  videoNote,
+} = Astro.props
+---
+
+<section
+  id={id}
+  class="border-t border-line bg-paper px-4 py-12 sm:px-6 sm:py-16"
+>
+  <div class="mx-auto max-w-[75rem]">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-3">
+        <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+          {label}
+        </p>
+      </div>
+
+      <div class="lg:col-span-9">
+        <h2 class="max-w-[26ch] font-heading text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+          {title}
+        </h2>
+        {intro && (
+          <p class="mt-4 max-w-[40rem] text-[16px] leading-[1.7] text-pretty text-ink-soft">
+            {intro}
+          </p>
+        )}
+
+        <figure class="mt-8">
+          <div class="overflow-hidden rounded-lg border border-line bg-surface-muted">
+            <video
+              data-case-video
+              class="block aspect-[4/3] w-full object-cover"
+              src={video}
+              poster={poster}
+              width="960"
+              height="720"
+              controls
+              muted
+              playsinline
+              preload="none"
+              aria-label={ariaLabel}
+            >
+              Twoja przeglądarka nie obsługuje nagrań wideo.
+              <a href={video}>Otwórz nagranie</a>.
+            </video>
+          </div>
+          <figcaption class="mt-3 flex flex-col gap-1 text-sm leading-relaxed text-pretty text-ink-soft sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+            <span class="max-w-[42rem]">{videoCaption}</span>
+            {videoNote && <span class="shrink-0 text-xs">{videoNote}</span>}
+          </figcaption>
+        </figure>
+
+        <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-12 sm:gap-8">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

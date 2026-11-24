@@ -1,0 +1,26 @@
+---
+interface Fact {
+  label: string
+  value: string
+}
+
+interface Props {
+  facts: Fact[]
+  class?: string
+}
+
+const { facts, class: className = "" } = Astro.props
+---
+
+<dl class:list={["border-t border-line", className]}>
+  {facts.map(({ label, value }) => (
+    <div class="border-b border-line py-3.5">
+      <dt class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+        {label}
+      </dt>
+      <dd class="mt-1 font-heading text-[15px] leading-snug font-semibold text-balance text-ink sm:text-base">
+        {value}
+      </dd>
+    </div>
+  ))}
+</dl>

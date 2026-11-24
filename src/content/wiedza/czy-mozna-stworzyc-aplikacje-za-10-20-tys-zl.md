@@ -2,6 +2,7 @@
 title: "Czy można stworzyć aplikację za 10–20 tys. zł?"
 metaTitle: "Czy można stworzyć aplikację za 10–20 tys. zł? | Poradnik"
 description: "Czy 10–20 tys. zł wystarczy na stworzenie aplikacji? Sprawdź, jakie funkcje można zbudować w tym budżecie, na czym oszczędzić i jakie koszty doliczyć."
+teaser: "Jakie funkcje da się zbudować w tym budżecie i na czym oszczędzić."
 cardDescription: |-
   Tak, w 2026 roku można stworzyć aplikację za 10–20 tys. zł. Ale nie każdą.
 
@@ -25,6 +26,11 @@ faq:
     answer: "No-code i low-code mogą przyspieszyć przygotowanie prototypu lub prostej wersji produktu. Trzeba jednak uwzględnić abonamenty, ograniczenia platformy, możliwość przeniesienia aplikacji oraz późniejsze koszty rozwoju i bezpieczeństwa."
   - question: "Jakie koszty pojawiają się po uruchomieniu aplikacji?"
     answer: "Serwery i baza danych, zewnętrzne usługi (SMS, płatności, mapy, AI), konta deweloperskie w sklepach oraz aktualizacje i opieka techniczna. W analizach branżowych przyjmuje się orientacyjnie 10–25% kosztu stworzenia aplikacji rocznie, ale przy prostym produkcie może to być znacznie mniej."
+keyTakeaways:
+  - "10–20 tys. zł może wystarczyć na prototyp lub prostą pierwszą wersję, nie na rozbudowany produkt."
+  - "Najpierw wybierz jedną funkcję, która daje realną wartość."
+  - "Nie oszczędzaj na bezpieczeństwie, prawach do kodu i dostępie do danych."
+  - "Porównuj oferty netto i brutto oraz sprawdzaj, co dokładnie obejmuje zakres."
 ---
 
 Masz pomysł na aplikację. Wiesz mniej więcej, jak powinna działać, komu mogłaby się przydać i jakie funkcje chciałbyś w niej zobaczyć.
@@ -215,6 +221,31 @@ To nie znaczy, że musisz od razu rezygnować ze swojego pomysłu.
 
 Możesz przecież podzielić go na etapy.
 
+<div class="article-module article-compare" role="group" aria-labelledby="zakres-10-20">
+  <p class="article-module__eyebrow" id="zakres-10-20">Co mieści się w 10–20 tys. zł?</p>
+  <div class="article-compare__grid">
+    <div class="article-compare__col article-compare__col--signal">
+      <h3>Realny zakres</h3>
+      <ul>
+        <li>prototyp lub klikalna makieta,</li>
+        <li>proste narzędzie branżowe,</li>
+        <li>niewielka aplikacja edukacyjna,</li>
+        <li>pierwsza wersja prostej gry.</li>
+      </ul>
+    </div>
+    <div class="article-compare__col">
+      <h3>Zwykle poza budżetem</h3>
+      <ul>
+        <li>platforma z dwiema grupami użytkowników,</li>
+        <li>płatności, czat, mapa i panel administracyjny,</li>
+        <li>aplikacja mobilna na kilka platform,</li>
+        <li>dane medyczne lub rozbudowane integracje.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="article-module__note">To orientacyjne przykłady, a nie obietnica, że dany zakres zawsze zmieści się w tej kwocie.</p>
+</div>
+
 I właśnie tutaj pojawia się możliwość znacznie rozsądniejszego wykorzystania budżetu.
 
 ## 5. Nie musisz budować całej aplikacji od razu
@@ -247,9 +278,33 @@ Jeżeli tak, można planować kolejne etapy.
 
 Jeżeli nie, lepiej dowiedzieć się o tym wcześniej, niż po wydaniu znacznie większego budżetu.
 
+<div class="article-module article-levels" role="group" aria-labelledby="priorytety-funkcji">
+  <p class="article-module__eyebrow" id="priorytety-funkcji">Kolejność funkcji</p>
+  <div class="article-levels__grid">
+    <div class="article-levels__item article-levels__item--signal">
+      <span class="article-levels__num">01 · Teraz</span>
+      <h3>Jedna funkcja</h3>
+      <p>Bez niej produkt traci sens. To ona odpowiada na najważniejszy problem użytkownika.</p>
+    </div>
+    <div class="article-levels__item">
+      <span class="article-levels__num">02 · Pierwsza wersja</span>
+      <h3>Minimalny przepływ</h3>
+      <p>Użytkownik może przejść od początku do końca i wykonać kluczową czynność.</p>
+    </div>
+    <div class="article-levels__item">
+      <span class="article-levels__num">03 · Później</span>
+      <h3>Reszta pomysłu</h3>
+      <p>Konta, płatności, powiadomienia, rankingi, czat i funkcje premium — po sprawdzeniu pierwszej wersji.</p>
+    </div>
+  </div>
+  <p class="article-module__note">Kolejność wynika z wartości dla użytkownika, a nie z tego, co najłatwiej zbudować.</p>
+</div>
+
 Nie chodzi więc o rezygnowanie z dużej wizji.
 
-Chodzi o to, żeby dochodzić do niej w przemyślanej kolejności.
+![Rozproszone geometryczne klocki na kamiennej powierzchni](../../assets/images/editorial/a01-focus-on-essentials.webp)
+
+<p class="article-caption">Nie każdy element z listy musi znaleźć się w pierwszej wersji. Wybierz ten, który daje najwięcej wartości.</p>
 
 ## 6. Przykład z mojej pracy — aplikacja, którą można rozwijać etapami
 
@@ -370,6 +425,31 @@ I jeżeli zlecasz wykonanie aplikacji zewnętrznej osobie, warto odpowiednio ure
 Bo stworzenie aplikacji tanio to jedno.
 
 A stworzenie aplikacji, którą można bezpiecznie rozwijać, to już coś trochę innego.
+
+<div class="article-module article-compare" role="group" aria-labelledby="oszczednosci">
+  <p class="article-module__eyebrow" id="oszczednosci">Na czym oszczędzać, a czego nie pomijać</p>
+  <div class="article-compare__grid">
+    <div class="article-compare__col article-compare__col--signal">
+      <h3>Można ograniczyć</h3>
+      <ul>
+        <li>zakres pierwszej wersji,</li>
+        <li>liczba integracji,</li>
+        <li>gotowe elementy interfejsu,</li>
+        <li>start od jednej platformy lub wersji webowej.</li>
+      </ul>
+    </div>
+    <div class="article-compare__col">
+      <h3>Lepiej nie pomijać</h3>
+      <ul>
+        <li>bezpieczeństwo danych,</li>
+        <li>podstawowe testy,</li>
+        <li>poprawne działanie płatności,</li>
+        <li>prawa do kodu i zasady przekazania.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="article-module__note">Oszczędność, która tworzy ryzyko, nie jest oszczędnością. Pełne widełki i czynniki kosztowe znajdziesz w <a href="/wiedza/ile-kosztuje-stworzenie-aplikacji-2026/">poradniku kosztowym</a>.</p>
+</div>
 
 ## 10. Czy 20 tysięcy złotych wystarczy na cały projekt?
 

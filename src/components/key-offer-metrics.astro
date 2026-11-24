@@ -1,0 +1,49 @@
+---
+const metrics = [
+  {
+    label: "Pierwsza działająca wersja",
+    value: "4 tygodnie",
+  },
+  {
+    label: "Pierwsza wersja i kompleksowa realizacja",
+    value: "29 500 zł",
+    suffix: "brutto",
+    accent: true,
+  },
+  {
+    label: "Zwykle cały proces z odbiorem i poprawkami",
+    value: "6–8 tygodni",
+  },
+]
+---
+
+<div class="bg-paper">
+  <div class="shell pb-10 sm:pb-14">
+    <dl class="grid grid-cols-1 divide-y divide-line border-t border-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+      {metrics.map(({ label, value, suffix, accent }) => (
+        <div class="flex items-baseline justify-between gap-6 py-4 sm:block sm:px-8 sm:py-6 sm:first:pl-0 sm:last:pr-0">
+          <dt class="font-mono text-[11px] leading-4 tracking-[0.14em] text-ink-soft uppercase sm:max-w-[30ch]">
+            {label}
+          </dt>
+          <dd
+            class:list={[
+              "font-heading text-[clamp(1.375rem,1.1rem+1vw,1.875rem)] font-semibold tracking-tight whitespace-nowrap sm:mt-2 sm:whitespace-normal",
+              accent && "text-signal-ink",
+            ]}
+          >
+            {value}
+            {suffix && (
+              <span class="ml-2 text-sm font-medium tracking-normal text-ink-soft">
+                {suffix}
+              </span>
+            )}
+          </dd>
+        </div>
+      ))}
+    </dl>
+    <p class="mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft">
+      Czas liczy się od wspólnego ustalenia zakresu i skompletowania materiałów
+      oraz dostępów.
+    </p>
+  </div>
+</div>

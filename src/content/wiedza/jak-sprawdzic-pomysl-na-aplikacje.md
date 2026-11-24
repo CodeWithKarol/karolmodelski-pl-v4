@@ -2,6 +2,7 @@
 title: "Jak sprawdzić pomysł na aplikację przed inwestycją?"
 metaTitle: "Jak sprawdzić pomysł na aplikację przed inwestycją? | Poradnik"
 description: "Masz pomysł na aplikację i nie wiesz, czy warto inwestować? Sprawdź zainteresowanie, przetestuj rynek i zwaliduj pomysł bez dużych kosztów."
+teaser: "Rozmowy z użytkownikami, analiza konkurencji i tani test przed inwestycją."
 cardDescription: |-
   Zanim wydasz kilkanaście tysięcy złotych na programowanie, warto sprawdzić, czy ludzie rzeczywiście potrzebują Twojej aplikacji.
 
@@ -25,6 +26,11 @@ faq:
     answer: "Gdy masz już sygnały zainteresowania z rozmów, strony lub testów prototypu i wiesz, która funkcja jest najważniejsza. Pierwsza wersja powinna pozwolić użytkownikom wykonać tę kluczową czynność w praktyce, a nie odwzorowywać całą docelową wizję produktu."
   - question: "Czy no-code wystarczy do zbudowania aplikacji?"
     answer: "W prostych projektach narzędzia no-code i low-code mogą wystarczyć do przygotowania pierwszej wersji lub testu. Przy bardziej rozbudowanej logice, integracjach i wymaganiach bezpieczeństwa warto ocenić ograniczenia platformy oraz możliwość późniejszego przejęcia kodu lub przeniesienia produktu."
+keyTakeaways:
+  - "Walidacja zmniejsza ryzyko, ale nie gwarantuje sukcesu biznesowego."
+  - "Deklaracje są tańsze niż zachowania — patrz, co ludzie naprawdę robią."
+  - "Testuj jedno najważniejsze założenie i ustal próg przed zbieraniem danych."
+  - "Rozmowy, landing page i prototyp mają różne koszty i różną siłę dowodu."
 ---
 
 Masz pomysł na aplikację. Być może chodzi Ci po głowie już od dłuższego czasu. Wiesz, jak powinna działać, jakie funkcje chciałbyś w niej zobaczyć i dlaczego ludzie mogliby chcieć z niej korzystać.
@@ -133,7 +139,9 @@ Wystarczy kilka konkretnych rozmów.
 
 Ważne jednak, żeby nie ograniczać się wyłącznie do rodziny i znajomych, którzy mogą oceniać Twój pomysł przez pryzmat relacji z Tobą.
 
-Takie rozmowy nie udowodnią jeszcze, że aplikacja odniesie sukces, ale mogą pomóc Ci uniknąć wielu błędnych założeń.
+![Trzy szkice interfejsu na kartkach papieru](../../assets/images/editorial/a02-understanding-user-needs.webp)
+
+<p class="article-caption">Rozmowy i szkice pomagają oddzielić rzeczywistą potrzebę od założenia.</p>
 
 ## 3. Sprawdź, czy podobne aplikacje już istnieją
 
@@ -304,6 +312,29 @@ Możesz na przykład zaprosić zapisane osoby na krótką rozmowę, pokazać im 
 
 Jeżeli ludzie rzeczywiście poświęcają swój czas, odpowiadają na wiadomości i chcą zobaczyć produkt, jest to mocniejszy sygnał.
 
+<div class="article-module article-compare" role="group" aria-labelledby="deklaracje-zachowania">
+  <p class="article-module__eyebrow" id="deklaracje-zachowania">Deklaracja czy zachowanie?</p>
+  <div class="article-compare__grid">
+    <div class="article-compare__col">
+      <h3>Słabszy sygnał</h3>
+      <ul>
+        <li>„Podoba mi się pomysł”.</li>
+        <li>Zapis na listę oczekujących bez dalszego kontaktu.</li>
+        <li>Deklaracja, że ktoś „kiedyś kupi”.</li>
+      </ul>
+    </div>
+    <div class="article-compare__col article-compare__col--signal">
+      <h3>Mocniejszy sygnał</h3>
+      <ul>
+        <li>Odpowiedź i rozmowa o rzeczywistym problemie.</li>
+        <li>Udział w teście lub poświęcony czas.</li>
+        <li>Płatny pilotaż, zaliczka lub realne zamówienie.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="article-module__note">Mierz zachowanie odpowiadające temu, na czym docelowo ma opierać się sukces produktu.</p>
+</div>
+
 Jeszcze więcej możesz dowiedzieć się, sprawdzając ich gotowość do zapłaty.
 
 ### Czy ludzie byliby gotowi zapłacić za Twoją aplikację?
@@ -355,6 +386,17 @@ Albo:
 „Co najmniej 10 z 30 zaproszonych nauczycieli zgodzi się przetestować nasze narzędzie w praktyce”.
 
 To przykładowe cele eksperymentów, a nie uniwersalne progi świadczące o sukcesie.
+
+<div class="article-module article-experiment" role="group" aria-labelledby="karta-eksperymentu">
+  <p class="article-module__eyebrow" id="karta-eksperymentu">Karta eksperymentu</p>
+  <dl>
+    <div><dt>Hipoteza</dt><dd>Co najmniej 10 z 30 zaproszonych nauczycieli zgodzi się przetestować narzędzie w praktyce.</dd></div>
+    <div><dt>Grupa</dt><dd>30 nauczycieli dobranych z grupy, do której kierujesz produkt.</dd></div>
+    <div><dt>Sygnał</dt><dd>Rzeczywisty udział w teście, a nie sama deklaracja zainteresowania.</dd></div>
+    <div><dt>Próg</dt><dd>10 osób. Próg jest celem testu, a nie uniwersalną miarą sukcesu.</dd></div>
+  </dl>
+  <p class="article-module__note">Przed testem zapisz hipotezę, grupę, sygnał i próg. Po teście porównaj wynik z założeniem.</p>
+</div>
 
 Dlaczego warto je ustalić?
 
@@ -514,6 +556,23 @@ Dlatego rozpoczęliśmy od podstawowej wersji, którą można uruchomić w przeg
 
 Dzięki temu mogliśmy przejść od wieloletniej koncepcji do czegoś, co rzeczywiście działa.
 
+<div class="article-module article-case-study" role="group" aria-labelledby="case-w05">
+  <p class="article-module__eyebrow" id="case-w05">Case study · Numerabble</p>
+  <div class="article-case-study__head">
+    <h3>Od wieloletniej koncepcji do grywalnej wersji</h3>
+    <p class="article-case-study__meta">Gra matematyczna · pierwsza wersja · rzeczywisty projekt</p>
+  </div>
+  <figure>
+    <video controls loop muted playsinline preload="metadata" poster="/showcase/numerabble-gameplay.webp" width="960" height="720" aria-label="Fragment rozgrywki w grze Numerabble — plansza, żetony gracza i zestaw komputera">
+      <source src="/showcase/numerabble-gameplay.webm" type="video/webm" />
+      Twoja przeglądarka nie obsługuje nagrań wideo.
+      <a href="/showcase/numerabble-gameplay.webm">Otwórz nagranie</a>.
+    </video>
+    <figcaption>Fragment pierwszej grywalnej wersji Numerabble. Nagranie z rzeczywistego projektu, bez dźwięku.</figcaption>
+  </figure>
+  <a class="article-case-study__link" href="/realizacje/numerabble/">Zobacz pełne studium realizacji Numerabble →</a>
+</div>
+
 Co ciekawe, nawet przy tak szczegółowo przemyślanym pomyśle podczas testów pojawiały się kwestie wymagające doprecyzowania.
 
 Dotyczyły między innymi zasad układania działań matematycznych i zachowania komputera podczas rozgrywki.
@@ -581,7 +640,9 @@ Sean Ellis zaproponował orientacyjny próg 40% odpowiedzi „bardzo rozczarowan
 
 To jednak praktyczna wskazówka, a nie matematyczna gwarancja sukcesu. Wynik zależy od tego, kogo zapytasz, a deklaracje nie zawsze przekładają się na rzeczywiste zachowanie.
 
-Dlatego najlepiej połączyć taką ankietę z obserwowaniem, czy użytkownicy naprawdę wracają do aplikacji.
+![Otwarte notatniki ze szkicami i wykresami](../../assets/images/editorial/a06-testing-hypotheses.webp)
+
+<p class="article-caption">Walidacja to nie jedna liczba. Liczą się deklaracje, zachowanie i to, czy użytkownicy wracają.</p>
 
 ## 13. Ile kosztuje sprawdzenie pomysłu na aplikację?
 
@@ -602,6 +663,29 @@ Spójrzmy na kilka możliwości.
 | Pierwsza działająca wersja MVP | Zwykle od kilkunastu tysięcy złotych, zależnie od zakresu |
 
 Podane kwoty są orientacyjnymi przykładami budżetów testowych, a nie gwarantowanymi cenami rynkowymi. Nie uwzględniają wszystkich możliwych kosztów, w tym Twojego czasu i ewentualnego wynagrodzenia uczestników badań.
+
+<div class="article-module article-compare" role="group" aria-labelledby="metody-walidacji">
+  <p class="article-module__eyebrow" id="metody-walidacji">Koszt a siła dowodu</p>
+  <div class="article-compare__grid">
+    <div class="article-compare__col">
+      <h3>Tańsze i szybsze</h3>
+      <ul>
+        <li>rozmowy z użytkownikami,</li>
+        <li>analiza konkurencji,</li>
+        <li>prosta ankieta.</li>
+      </ul>
+    </div>
+    <div class="article-compare__col article-compare__col--signal">
+      <h3>Droższe, mocniejszy dowód</h3>
+      <ul>
+        <li>strona z listą oczekujących i kampania,</li>
+        <li>klikalny prototyp,</li>
+        <li>pierwsza działająca wersja.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="article-module__note">Nie każdy projekt potrzebuje wszystkich metod. Dobierz metodę do pytania, na które chcesz odpowiedzieć.</p>
+</div>
 
 Widzisz więc, że nie musisz od razu inwestować kilkudziesięciu tysięcy złotych, żeby zdobyć pierwsze informacje o zainteresowaniu swoim pomysłem.
 
@@ -661,33 +745,18 @@ Bo lepiej odkryć problem przed rozpoczęciem programowania niż po wydaniu cał
 
 Jeżeli chcesz podejść do tego praktycznie, proponuję następującą kolejność.
 
-**Krok 1. Opisz swój pomysł jednym lub dwoma zdaniami.**
-
-Dla kogo jest aplikacja? Jaki problem rozwiązuje? Co daje użytkownikowi?
-
-**Krok 2. Znajdź osoby, które rzeczywiście mają ten problem.**
-
-Porozmawiaj z nimi o ich obecnych doświadczeniach, zamiast od razu prezentować swoją wizję.
-
-**Krok 3. Sprawdź konkurencję.**
-
-Zobacz, jakie rozwiązania już istnieją, co użytkownicy o nich mówią i czego im brakuje.
-
-**Krok 4. Przygotuj prosty test zainteresowania.**
-
-Może to być strona internetowa, lista oczekujących, ręczna realizacja usługi lub niewielki prototyp.
-
-**Krok 5. Obserwuj rzeczywiste zachowanie.**
-
-Sprawdź, czy ludzie zapisują się na testy, poświęcają czas, wracają albo wykazują gotowość do zapłaty.
-
-**Krok 6. Wyciągnij wnioski.**
-
-Zastanów się, które założenia się potwierdziły, a co wymaga zmiany.
-
-**Krok 7. Dopiero wtedy zaplanuj pierwszą działającą wersję.**
-
-Wybierz najważniejsze funkcje, określ budżet i przygotuj konkretny zakres realizacji.
+<div class="article-module article-process" role="group" aria-labelledby="sciezka-walidacji">
+  <p class="article-module__eyebrow" id="sciezka-walidacji">Ścieżka walidacji</p>
+  <ol>
+    <li><strong>Opisz pomysł</strong><span>Dla kogo jest aplikacja? Jaki problem rozwiązuje? Co daje użytkownikowi?</span></li>
+    <li><strong>Znajdź osoby z problemem</strong><span>Rozmawiaj o ich obecnych doświadczeniach, zamiast od razu prezentować swoją wizję.</span></li>
+    <li><strong>Sprawdź konkurencję</strong><span>Zobacz, jakie rozwiązania istnieją, co użytkownicy o nich mówią i czego im brakuje.</span></li>
+    <li><strong>Przygotuj prosty test</strong><span>Strona, lista oczekujących, ręczna usługa albo niewielki prototyp.</span></li>
+    <li><strong>Obserwuj zachowanie</strong><span>Czy ludzie zapisują się na testy, poświęcają czas, wracają i są gotowi zapłacić?</span></li>
+    <li><strong>Wyciągnij wnioski</strong><span>Które założenia się potwierdziły, a co wymaga zmiany?</span></li>
+    <li><strong>Zaplanuj pierwszą wersję</strong><span>Wybierz najważniejsze funkcje, określ budżet i przygotuj zakres realizacji.</span></li>
+  </ol>
+</div>
 
 Nie musisz oczywiście przechodzić przez wszystkie te etapy przez wiele miesięcy.
 

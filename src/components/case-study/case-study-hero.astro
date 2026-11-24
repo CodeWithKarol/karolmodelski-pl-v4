@@ -1,0 +1,117 @@
+---
+import { Image } from "astro:assets"
+
+interface Metric {
+  label: string
+  value: string
+}
+
+interface Props {
+  breadcrumb: string[]
+  eyebrow: string
+  title: string
+  lead: string
+  note?: string
+  metrics: Metric[]
+  image: ImageMetadata
+  imageAlt: string
+  caption?: string
+}
+
+const {
+  breadcrumb,
+  eyebrow,
+  title,
+  lead,
+  note,
+  metrics,
+  image,
+  imageAlt,
+  caption,
+} = Astro.props
+---
+
+<section class="relative overflow-hidden bg-paper px-4 pt-6 pb-12 sm:px-6 sm:pt-8 sm:pb-16">
+  <div
+    aria-hidden="true"
+    class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
+  ></div>
+
+  <div class="relative mx-auto max-w-[75rem]">
+    <nav aria-label="Ścieżka nawigacji" class="mb-6">
+      <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+        {breadcrumb.map((item, index) => (
+          <li class="flex items-center gap-2">
+            {index < breadcrumb.length - 1 ? (
+              <>
+                <a
+                  class="transition-colors hover:text-ink"
+                  href={index === 0 ? "/" : "/realizacje/"}
+                >
+                  {item}
+                </a>
+                <span aria-hidden="true">/</span>
+              </>
+            ) : (
+              <span aria-current="page">{item}</span>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <p class="flex items-center gap-3 font-mono text-[11px] tracking-[0.18em] text-ink-soft uppercase">
+      <span class="h-px w-6 bg-signal"></span>
+      {eyebrow}
+    </p>
+
+    <div class="mt-5 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-12">
+      <h1 class="font-heading text-[clamp(2.25rem,1.5rem+2.6vw,4.5rem)] leading-[1.03] font-semibold tracking-tight text-balance lg:col-span-8">
+        {title}
+      </h1>
+
+      <div class="lg:col-span-4 lg:pt-2">
+        <p class="max-w-[34rem] text-[17px] leading-[1.65] text-pretty text-ink sm:text-lg">
+          {lead}
+        </p>
+        {note && (
+          <p class="mt-4 border-l-2 border-signal pl-4 text-sm leading-relaxed text-pretty text-ink-soft">
+            {note}
+          </p>
+        )}
+      </div>
+    </div>
+
+    <dl class="mt-8 grid grid-cols-2 gap-x-8 gap-y-5 border-t border-line pt-5 sm:grid-cols-4">
+      {metrics.map(({ label, value }) => (
+        <div>
+          <dt class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+            {label}
+          </dt>
+          <dd class="mt-1 font-heading text-[15px] leading-snug font-semibold text-ink sm:text-base">
+            {value}
+          </dd>
+        </div>
+      ))}
+    </dl>
+
+    <figure class="mt-10 sm:mt-12">
+      <Image
+        src={image}
+        alt={imageAlt}
+        widths={[640, 960, 1280, 1448]}
+        sizes="(min-width: 1280px) 1200px, (min-width: 768px) calc(100vw - 3rem), 100vw"
+        quality={84}
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="aspect-[16/9] w-full rounded-lg border border-line object-cover"
+      />
+      {caption && (
+        <figcaption class="mt-3 text-xs leading-relaxed text-ink-soft">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  </div>
+</section>

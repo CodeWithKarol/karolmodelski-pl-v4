@@ -1,0 +1,69 @@
+---
+import { ArrowRight } from "lucide-react"
+import SectionHeading from "@/components/section-heading.astro"
+
+const features = [
+  {
+    title: "Poufność",
+    description:
+      "NDA możemy podpisać, zanim opowiesz mi o szczegółach pomysłu.",
+  },
+  {
+    title: "Stała cena za ustalony zakres",
+    description: "Wiesz, co powstanie i ile zapłacisz. Zapisujemy to w umowie.",
+  },
+  {
+    title: "Płatności etapami",
+    description: "40% / 40% / 20%. Nie wpłacasz całej kwoty na początku.",
+  },
+  {
+    title: "Kod źródłowy i prawa do produktu",
+    description:
+      "Po zakończeniu i rozliczeniu otrzymujesz kod źródłowy oraz prawa do utworów powstałych w ramach realizacji, w zakresie określonym w umowie. Masz także 3 miesiące gwarancji technicznej.",
+  },
+]
+---
+
+<section
+  id="gwarancja"
+  class="on-ink section-y border-t border-line bg-ink text-paper"
+>
+  <div class="shell">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-4">
+        <SectionHeading
+          eyebrow="07 · Bezpieczeństwo współpracy"
+          title="Jasne zasady od pierwszego dnia."
+          lead="Powierzenie komuś pomysłu i pieniędzy to ważna decyzja. Najważniejsze warunki ustalamy przed startem."
+          tone="dark"
+        />
+      </div>
+
+      <div class="lg:col-span-7 lg:col-start-6">
+        <ol class="grid grid-cols-1 gap-x-10 md:grid-cols-2">
+          {features.map(({ title, description }, index) => (
+            <li class="border-t border-paper/15 py-5">
+              <span class="font-mono text-xs tracking-[0.16em] text-signal-bright">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 class="mt-2 font-heading text-lg leading-snug font-semibold text-balance text-paper">
+                {title}
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-pretty text-paper/65">
+                {description}
+              </p>
+            </li>
+          ))}
+        </ol>
+
+        <a
+          href="/oferta/#bezpieczenstwo"
+          class="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-paper underline decoration-paper/25 underline-offset-4 transition-colors hover:decoration-signal"
+        >
+          Poznaj zasady współpracy
+          <ArrowRight className="size-4" aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

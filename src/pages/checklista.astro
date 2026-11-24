@@ -1,39 +1,89 @@
 ---
 import Layout from "@/layouts/main.astro"
 import SiteHeader from "@/components/site-header.astro"
-import SiteFooter from "@/components/site-footer.astro"
-import ChecklistSignup from "@/components/checklist-signup.astro"
+import CompactFooter from "@/components/compact-footer.astro"
+import DocumentPreview from "@/components/checklista/document-preview.astro"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { ArrowRight } from "lucide-react"
+import { Image } from "astro:assets"
+import { ArrowRight, Download } from "lucide-react"
+import { mailerLiteAccountId, mailerLiteFormId } from "@/data/mailing"
+import page1 from "@/assets/images/checklista/page-1.webp"
+import workbookMockup from "@/assets/images/checklista/d01-workbook.webp"
+import page2 from "@/assets/images/checklista/page-2.webp"
+import page3 from "@/assets/images/checklista/page-3.webp"
+import page4 from "@/assets/images/checklista/page-4.webp"
+import portrait from "@/assets/images/about/b02-approachable-expert.webp"
 
 const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
 const pageURL = new URL("/checklista/", siteURL).toString()
 const siteRoot = new URL("/", siteURL).toString()
 
 const pdfPath = "/checklista/12-pytan-przed-budowa-aplikacji.pdf"
-const previewPath = "/checklista/podglad-1-strona.png"
 
 const metaTitle =
   "Checklista przed budową aplikacji — 12 pytań | Karol Modelski"
 const metaDescription =
-  "Checklista z 12 pytaniami przed budową aplikacji — otrzymaj PDF e-mailem albo pobierz bez rejestracji. Uporządkuj pomysł, funkcje i budżet."
+  "12 pytań, które porządkują pomysł na aplikację: problem, zakres, budżet i dalszy rozwój. Pobierz PDF bez rejestracji i bez podawania e-maila."
 
-const benefits = [
+const stages = [
   {
-    title: "Zrozumiesz swój pomysł",
-    description:
-      "Zastanowisz się, jaki problem ma rozwiązywać aplikacja, dla kogo ją tworzysz i jak przyszli użytkownicy radzą sobie dzisiaj.",
+    title: "Zrozum swój pomysł",
+    description: "Problem, odbiorcy i to, jak radzą sobie dziś.",
+    range: "Pytania 01–03",
   },
   {
-    title: "Wybierzesz najważniejszy pierwszy krok",
-    description:
-      "Spróbujesz określić, co musi działać w pierwszej wersji, a które funkcje mogą poczekać na później.",
+    title: "Wybierz pierwszy krok",
+    description: "Najważniejsza funkcja i pierwszy scenariusz użycia.",
+    range: "Pytania 04–06",
   },
   {
-    title: "Przygotujesz się do rozmowy o realizacji",
-    description:
-      "Przemyślisz budżet, termin, najważniejsze ryzyka i to, co warto sprawdzić przed dalszym inwestowaniem w produkt.",
+    title: "Zaplanuj rozsądnie",
+    description: "Zakres, budżet i realny termin.",
+    range: "Pytania 07–09",
+  },
+  {
+    title: "Pomyśl o dalszym rozwoju",
+    description: "Ryzyka, utrzymanie i decyzja o kolejnym etapie.",
+    range: "Pytania 10–12",
+  },
+]
+
+const pages = [
+  {
+    src: page1,
+    title: "Zrozum swój pomysł",
+    alt: "Strona 1 checklisty — etap „Zrozum swój pomysł” z pytaniami 1–3",
+  },
+  {
+    src: page2,
+    title: "Wybierz pierwszy krok",
+    alt: "Strona 2 checklisty — etap „Wybierz pierwszy krok” z pytaniami 4–6 i przykładem Numerabble",
+  },
+  {
+    src: page3,
+    title: "Zaplanuj rozsądnie",
+    alt: "Strona 3 checklisty — etap „Zaplanuj rozsądnie” z pytaniami 7–9",
+  },
+  {
+    src: page4,
+    title: "Pomyśl o dalszym rozwoju",
+    alt: "Strona 4 checklisty — etap „Pomyśl o dalszym rozwoju” z pytaniami 10–12",
+  },
+]
+
+const audiences = [
+  {
+    title: "Mam pomysł na aplikację.",
+    description: "Chcesz uporządkować założenia przed pierwszą decyzją.",
+  },
+  {
+    title: "Szukam wykonawcy.",
+    description: "Chcesz porównywać oferty i zadawać konkretne pytania.",
+  },
+  {
+    title: "Przygotowuję się do rozmowy.",
+    description: "Chcesz przyjść z gotowymi odpowiedziami.",
   },
 ]
 
@@ -61,7 +111,6 @@ const breadcrumbSchema = {
   title={metaTitle}
   description={metaDescription}
   jsonLd={[breadcrumbSchema]}
-  enableMailerLite
 >
   <a
     href="#main"
@@ -73,7 +122,10 @@ const breadcrumbSchema = {
   <SiteHeader variant="page" />
 
   <main id="main">
-    <section class="relative overflow-hidden bg-paper px-4 pt-8 pb-16 sm:px-6 sm:pt-10 sm:pb-24">
+    <section
+      id="pobierz"
+      class="relative overflow-hidden bg-paper px-4 pt-6 pb-12 sm:px-6 sm:pt-8 sm:pb-16"
+    >
       <div
         aria-hidden="true"
         class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
@@ -92,50 +144,81 @@ const breadcrumbSchema = {
           </ol>
         </nav>
 
-        <div class="mt-10 grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-12">
-          <div class="rise lg:col-span-7">
-            <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
-              <span class="h-px w-8 bg-signal"></span>
+        <div class="mt-8 grid grid-cols-1 items-center gap-10 lg:mt-12 lg:grid-cols-12 lg:gap-14">
+          <div class="lg:col-span-5">
+            <p class="flex items-center gap-3 font-mono text-[11px] tracking-[0.18em] text-ink-soft uppercase">
+              <span class="h-px w-6 bg-signal"></span>
               Bezpłatna checklista
             </p>
 
-            <h1 class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl">
+            <h1 class="mt-5 font-heading text-[clamp(2.125rem,1.5rem+2.2vw,4rem)] leading-[1.04] font-semibold tracking-tight text-balance">
               12 pytań, zanim zaczniesz budować aplikację.
             </h1>
 
-            <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Masz pomysł, ale nie wiesz, od czego zacząć? Ta checklista pomoże
-              Ci uporządkować najważniejsze kwestie przed rozmową z wykonawcą i
-              podjęciem decyzji o inwestycji.
+            <p class="mt-5 max-w-[34rem] text-[17px] leading-[1.65] text-pretty text-ink sm:text-lg">
+              Uporządkuj swój pomysł, wybierz najważniejsze funkcje i przygotuj
+              się do pierwszych decyzji — bez znajomości technologii.
             </p>
 
-            <p class="mt-6 max-w-xl border-l-2 border-signal pl-4 text-sm leading-relaxed text-pretty font-medium text-ink sm:text-base">
-              PDF · 12 pytań · 4 strony
+            <p class="mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-sm text-ink-soft">
+              <span>12 pytań</span>
+              <span aria-hidden="true" class="text-line">
+                ·
+              </span>
+              <span>4 strony</span>
+              <span aria-hidden="true" class="text-line">
+                ·
+              </span>
+              <span>Miejsce na odpowiedzi</span>
+              <span aria-hidden="true" class="text-line">
+                ·
+              </span>
+              <span>Bezpłatny PDF</span>
             </p>
 
-            <div id="zapisz" class="mt-8">
-              <ChecklistSignup />
+            <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href={pdfPath}
+                download
+                data-checklist-download
+                class={cn(
+                  buttonVariants({ size: "lg" }),
+                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base sm:w-auto"
+                )}
+              >
+                <Download aria-hidden="true" />
+                Pobierz bezpłatną checklistę
+              </a>
+              <a
+                href={pdfPath}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-checklist-pdf-open
+                class="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+              >
+                Otwórz PDF
+              </a>
             </div>
+
+            <p class="mt-4 text-sm leading-relaxed text-ink-soft">
+              PDF · Bez rejestracji · Bez podawania adresu e-mail
+            </p>
           </div>
 
-          <figure
-            class="rise mx-auto w-full max-w-[19rem] lg:col-span-5 lg:max-w-none"
-            style="animation-delay:.12s"
-          >
-            <div class="overflow-hidden rounded-2xl border border-line bg-paper shadow-[0_35px_80px_-55px_rgba(20,20,20,0.5)]">
-              <img
-                src={previewPath}
-                alt="Pierwsza strona checklisty „12 pytań, zanim zaczniesz budować aplikację”"
-                width="989"
-                height="1400"
-                loading="eager"
-                decoding="async"
-                class="block w-full"
-              />
-            </div>
-            <figcaption class="mt-3 text-sm leading-relaxed text-pretty text-ink-soft">
-              Podgląd pierwszej strony. Dokument zawiera miejsce na własne
-              odpowiedzi.
+          <figure class="lg:col-span-7">
+            <Image
+              src={workbookMockup}
+              alt="Wizualizacja pierwszej strony checklisty na biurku — tytuł, etap pierwszy i pytania 1–3"
+              widths={[480, 720, 1080]}
+              sizes="(min-width: 1024px) 576px, (min-width: 640px) 560px, calc(100vw - 2rem)"
+              quality={84}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              class="mx-auto w-full max-w-[36rem] rounded-lg"
+            />
+            <figcaption class="mt-3 text-xs leading-relaxed text-ink-soft">
+              Wizualizacja pierwszej strony dokumentu z miejscem na odpowiedzi.
             </figcaption>
           </figure>
         </div>
@@ -143,108 +226,193 @@ const breadcrumbSchema = {
     </section>
 
     <section
-      id="co-porzadkuje"
-      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+      id="etapy"
+      class="border-t border-line bg-surface-muted px-4 py-12 sm:px-6 sm:py-16"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
-            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              W środku
+            <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              01 · Etapy
             </p>
           </div>
 
           <div class="lg:col-span-9">
-            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              Co pomoże Ci uporządkować ta checklista?
+            <h2 class="font-heading text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+              Cztery etapy, dwanaście pytań.
             </h2>
-
-            <ol class="mt-10 grid grid-cols-1 gap-8 border-t border-line pt-8 md:grid-cols-3 md:gap-10">
-              {benefits.map(({ title, description }, index) => (
-                <li>
-                  <div class="flex items-center justify-between gap-4">
-                    <span class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
-                      Część {index + 1}
-                    </span>
-                    <span class="font-mono text-xs text-ink-soft">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+            <ol class="mt-8 border-t border-line">
+              {stages.map(({ title, description, range }, index) => (
+                <li class="grid grid-cols-[2.5rem_1fr] gap-x-5 gap-y-2 border-b border-line py-6 sm:grid-cols-[4rem_1fr_9rem] sm:items-baseline sm:gap-8">
+                  <span
+                    class="font-heading text-2xl leading-none font-semibold text-signal-ink tabular-nums sm:text-3xl"
+                    aria-hidden="true"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 class="font-heading text-lg leading-snug font-semibold text-ink sm:text-xl">
+                      {title}
+                    </h3>
+                    <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft">
+                      {description}
+                    </p>
                   </div>
-                  <h3 class="mt-4 font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl md:min-h-[4.5rem]">
-                    {title}
-                  </h3>
-                  <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                    {description}
+                  <p class="col-start-2 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase sm:col-start-3 sm:text-right">
+                    {range}
                   </p>
                 </li>
               ))}
             </ol>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <p class="mt-8 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-              Checklista prowadzi Cię przez cztery etapy: zrozumienie pomysłu,
-              wybór najważniejszych funkcji, zaplanowanie budżetu i terminu oraz
-              przygotowanie się na dalszy rozwój aplikacji.
+    <section
+      id="podglad"
+      class="border-t border-line bg-paper px-4 py-12 sm:px-6 sm:py-16"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              02 · Podgląd
             </p>
-            <p class="mt-2 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-              Na drugiej stronie znajdziesz też przykład Numerabble — gry, którą
-              zaczęliśmy budować od jednej najważniejszej funkcji.
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+              Zobacz, co jest w środku.
+            </h2>
+            <p class="mt-4 max-w-[40rem] text-[16px] leading-[1.7] text-ink-soft">
+              Cztery strony dokumentu.
             </p>
 
-            <div class="mt-10 max-w-2xl border-t border-line pt-8">
-              <h3 class="font-heading text-xl leading-snug font-semibold tracking-tight text-balance text-ink sm:text-2xl">
-                Dla kogo jest ta checklista?
-              </h3>
-              <p class="mt-3 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Przygotowałem ją dla osób, które myślą o stworzeniu własnej
-                aplikacji, ale nie mają jeszcze gotowego planu realizacji.
-              </p>
+            <div class="mt-8">
+              <DocumentPreview pages={pages} pdfHref={pdfPath} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-              <ul class="mt-6 space-y-5">
-                <li>
-                  <p class="text-base leading-snug font-semibold text-ink">
-                    Masz pomysł, ale nie wiesz, od czego zacząć?
-                  </p>
-                  <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                    Checklista pomoże Ci uporządkować najważniejsze założenia i
-                    zastanowić się, co rzeczywiście powinno powstać na początku.
-                  </p>
-                </li>
-                <li>
-                  <p class="text-base leading-snug font-semibold text-ink">
-                    Szukasz wykonawcy aplikacji?
-                  </p>
-                  <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                    Łatwiej będzie Ci opisać swój pomysł, zadawać konkretne
-                    pytania i porównywać propozycje różnych wykonawców.
-                  </p>
-                </li>
-                <li>
-                  <p class="text-base leading-snug font-semibold text-ink">
-                    Przygotowujesz się do pierwszej rozmowy?
-                  </p>
-                  <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                    Możesz zapisać swoje odpowiedzi i wykorzystać je podczas
-                    konsultacji. Dzięki temu szybciej przejdziemy do
-                    najważniejszych kwestii.
-                  </p>
-                </li>
-              </ul>
+    <section
+      id="dla-kogo"
+      class="border-t border-line bg-surface-muted px-4 py-12 sm:px-6 sm:py-16"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              03 · Dla kogo
+            </p>
+          </div>
 
-              <p class="mt-6 border-l-2 border-signal pl-5 text-sm leading-relaxed text-pretty text-ink sm:text-base">
-                Nie musisz odpowiadać na wszystkie 12 pytań. Jeśli czegoś
-                jeszcze nie wiesz, to również cenna informacja.
-              </p>
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+              Dla kogo jest ten materiał?
+            </h2>
+
+            <div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-10">
+              {audiences.map(({ title, description }) => (
+                <div class="border-t border-line pt-5">
+                  <h3 class="font-heading text-base leading-snug font-semibold text-ink sm:text-lg">
+                    {title}
+                  </h3>
+                  <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                    {description}
+                  </p>
+                </div>
+              ))}
             </div>
 
-            <a
-              href={pdfPath}
-              download
-              data-checklist-download
-              class="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-            >
-              Pobierz checklistę (PDF, 4 strony)
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </a>
+            <p class="mt-8 text-sm leading-relaxed text-ink-soft">
+              Nie musisz odpowiadać na wszystkie pytania — to też cenna
+              informacja.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="ponownie"
+      class="border-t border-line bg-paper px-4 py-8 sm:px-6 sm:py-10"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="flex flex-col gap-4 border-y border-line py-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+          <div>
+            <p class="text-sm font-semibold text-ink">Pobierz ponownie</p>
+            <p class="mt-1 text-sm text-ink-soft">
+              PDF · 4 strony · bez rejestracji
+            </p>
+          </div>
+          <a
+            href={pdfPath}
+            download
+            data-checklist-download
+            class="inline-flex min-h-11 shrink-0 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+          >
+            <Download className="size-4" aria-hidden="true" />
+            Pobierz PDF
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="newsletter"
+      class="border-t border-line bg-surface-muted px-4 py-12 sm:px-6 sm:py-16"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              04 · Newsletter
+            </p>
+          </div>
+
+          <div class="lg:col-span-9">
+            <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
+              <div class="lg:col-span-6">
+                <h2 class="font-heading text-[clamp(1.5rem,1.2rem+1.2vw,2rem)] leading-[1.15] font-semibold tracking-tight text-balance">
+                  Więcej wiedzy. Mniej technicznego żargonu.
+                </h2>
+                <p class="mt-4 max-w-[34rem] text-[15px] leading-[1.7] text-ink-soft">
+                  Poradniki o tworzeniu aplikacji i decyzjach technicznych.
+                  Zapis dotyczy tylko newslettera — checklistę pobierasz od
+                  razu, bez e-maila.
+                </p>
+                <p class="mt-3 text-xs leading-relaxed text-ink-soft">
+                  Możesz zrezygnować w każdej chwili.{" "}
+                  <a
+                    href="/polityka-prywatnosci/"
+                    class="underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                  >
+                    Polityka prywatności
+                  </a>
+                </p>
+              </div>
+
+              <div class="lg:col-span-6">
+                <div
+                  class="ml-embedded min-h-[28rem] w-full max-w-[26rem] sm:min-h-[29rem]"
+                  data-form={mailerLiteFormId}
+                  data-account={mailerLiteAccountId}
+                ></div>
+
+                <p class="mt-4 text-xs leading-relaxed text-ink-soft">
+                  Wolisz napisać?{" "}
+                  <a
+                    href="mailto:kontakt@karolmodelski.pl"
+                    class="underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                  >
+                    kontakt@karolmodelski.pl
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -252,61 +420,76 @@ const breadcrumbSchema = {
 
     <section
       id="rozmowa"
-      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+      class="on-ink border-t border-line bg-ink px-4 py-12 text-paper sm:px-6 sm:py-16"
     >
       <div class="mx-auto max-w-[75rem]">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
-          <div class="lg:col-span-3">
-            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              Następny krok
+        <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-8">
+            <p class="font-mono text-[10px] tracking-[0.2em] text-paper/65 uppercase">
+              05 · Rozmowa
             </p>
-          </div>
-
-          <div class="lg:col-span-9">
-            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              Nie masz odpowiedzi na wszystkie pytania?
+            <h2 class="mt-5 max-w-2xl font-heading text-[clamp(1.875rem,1.3rem+2vw,3rem)] leading-[1.08] font-semibold tracking-tight text-balance">
+              Nie masz jeszcze wszystkich odpowiedzi?
             </h2>
-
-            <p class="mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-ink">
-              Nie musisz.
-            </p>
-            <p class="mt-3 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Właśnie po to przygotowałem tę checklistę — żebyś mógł zobaczyć,
-              co już wiesz o swoim pomyśle, a co warto jeszcze wyjaśnić.
-            </p>
-            <p class="mt-3 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Jeśli chcesz, podczas bezpłatnej, 20-minutowej rozmowy możemy
-              przyjrzeć się wybranym odpowiedziom i najważniejszym niewiadomym.
-            </p>
-            <p class="mt-3 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Pomogę Ci zastanowić się nad możliwym pierwszym krokiem i wstępnie
-              ocenić, czy Twój projekt pasuje do mojego sposobu realizacji.
+            <p class="mt-4 max-w-[38rem] text-[17px] leading-[1.65] text-pretty text-paper/75 sm:text-lg">
+              I nie musisz. Jeśli chcesz, możemy wspólnie przyjrzeć się Twojemu
+              pomysłowi i zastanowić się, od czego warto zacząć.
             </p>
 
-            <div class="mt-8">
-              <a
-                href="/rozmowa/"
-                data-checklist-consultation
-                class={cn(
-                  buttonVariants({ size: "lg" }),
-                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
-                )}
-              >
-                Umów bezpłatną rozmowę
-                <ArrowRight />
-              </a>
-              <p class="mt-4 max-w-xl text-sm leading-relaxed text-pretty text-ink-soft italic">
-                Możesz zabrać checklistę na spotkanie, ale nie musisz jej
-                wypełniać ani wysyłać mi wcześniej.
-              </p>
-            </div>
+            <a
+              href="/rozmowa/"
+              data-checklist-consultation
+              class={cn(
+                buttonVariants({ size: "lg" }),
+                "mt-6 h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-6 py-3 text-center text-base text-ink hover:bg-paper/85 sm:w-auto"
+              )}
+            >
+              Umów bezpłatną rozmowę
+              <ArrowRight aria-hidden="true" />
+            </a>
+
+            <p class="mt-4 text-sm leading-relaxed text-paper/60">
+              20 minut · Online · Bezpłatnie · Bez zobowiązań
+            </p>
+            <p class="mt-2 text-sm leading-relaxed text-paper/60">
+              Checklisty nie musisz wypełniać przed rozmową.
+            </p>
           </div>
+
+          <figure class="lg:col-span-4">
+            <Image
+              src={portrait}
+              alt="Karol Modelski — partner technologiczny"
+              widths={[240, 360, 480]}
+              sizes="(min-width: 1024px) 300px, 70vw"
+              quality={84}
+              loading="lazy"
+              decoding="async"
+              class="mx-auto w-full max-w-[18rem] rounded-lg border border-paper/15 object-cover lg:ml-auto"
+            />
+          </figure>
         </div>
       </div>
     </section>
   </main>
 
-  <SiteFooter />
+  <CompactFooter />
+
+  <style is:global>
+    /* Nagłówek i opis formularza są konfigurowane w panelu MailerLite.
+       Ukrywamy je, bo dublują nagłówek sekcji i zapowiadają checklistę
+       e-mailem, podczas gdy PDF jest dostępny bezpośrednio. */
+    .ml-embedded .ml-form-embedContent {
+      display: none;
+    }
+
+    /* Po ukryciu nagłówka embedu jego górny padding (20 px) zostawiał
+       formularz 20 px niżej niż nagłówek sekcji. Zerujemy tylko górę,
+       żeby pola i zgody zachowały swoje marginesy. */
+    .ml-embedded .ml-form-embedBody {
+      padding-top: 0 !important;
+    }
+  </style>
 
   <script is:inline>
     ;(() => {
@@ -328,6 +511,13 @@ const breadcrumbSchema = {
           })
         }
 
+        if (link.hasAttribute("data-checklist-pdf-open")) {
+          window.dataLayer.push({
+            event: "checklist_pdf_open",
+            checklist: "12-pytan-przed-budowa-aplikacji",
+          })
+        }
+
         if (link.hasAttribute("data-checklist-consultation")) {
           window.dataLayer.push({
             event: "checklist_consultation_click",
@@ -338,6 +528,51 @@ const breadcrumbSchema = {
 
       // Formularz MailerLite jest wstrzykiwany po wczytaniu universal.js,
       // dlatego nasłuchujemy na poziomie dokumentu.
+      // MailerLite wczytujemy dopiero przy sekcji newslettera — formularz
+      // dociąga własne zasoby (m.in. reCAPTCHA), więc nie obciążamy nimi
+      // pierwszego renderu strony.
+      const mailerMount = document.querySelector(".ml-embedded")
+      const newsletterSection = document.getElementById("newsletter")
+      let mailerStarted = false
+
+      function initMailerLite() {
+        if (mailerStarted || !mailerMount) return
+        mailerStarted = true
+        ;(function (w, d, e, u, f, l, n) {
+          w[f] =
+            w[f] ||
+            function () {
+              ;(w[f].q = w[f].q || []).push(arguments)
+            }
+          ;((l = d.createElement(e)), (l.async = 1), (l.src = u))
+          ;((n = d.getElementsByTagName(e)[0]), n.parentNode.insertBefore(l, n))
+        })(
+          window,
+          document,
+          "script",
+          "https://assets.mailerlite.com/js/universal.js",
+          "ml"
+        )
+        window.ml("account", mailerMount.getAttribute("data-account"))
+      }
+
+      if (newsletterSection && mailerMount) {
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              if (entries.some((entry) => entry.isIntersecting)) {
+                observer.disconnect()
+                initMailerLite()
+              }
+            },
+            { rootMargin: "600px 0px" }
+          )
+          observer.observe(newsletterSection)
+        } else {
+          initMailerLite()
+        }
+      }
+
       document.addEventListener("submit", (event) => {
         const form = event.target
         if (!form || !form.closest || !form.closest(".ml-embedded")) return

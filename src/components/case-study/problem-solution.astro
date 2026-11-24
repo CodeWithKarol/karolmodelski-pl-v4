@@ -1,0 +1,76 @@
+---
+interface Item {
+  problem: string
+  action: string
+}
+
+interface Props {
+  id?: string
+  label: string
+  title: string
+  intro: string
+  items: Item[]
+  note?: string
+}
+
+const { id = "testy", label, title, intro, items, note } = Astro.props
+---
+
+<section
+  id={id}
+  class="border-t border-line bg-paper px-4 py-12 sm:px-6 sm:py-16"
+>
+  <div class="mx-auto max-w-[75rem]">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-3">
+        <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+          {label}
+        </p>
+      </div>
+
+      <div class="lg:col-span-9">
+        <h2 class="max-w-[26ch] font-heading text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+          {title}
+        </h2>
+        <p class="mt-4 max-w-[40rem] text-[16px] leading-[1.7] text-pretty text-ink-soft">
+          {intro}
+        </p>
+
+        <ul class="mt-8 border-t border-line">
+          {items.map(({ problem, action }, index) => (
+            <li class="grid grid-cols-1 gap-2 border-b border-line py-5 sm:grid-cols-[1fr_1.15fr] sm:gap-8">
+              <div class="flex items-start gap-3">
+                <span
+                  class="mt-0.5 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase tabular-nums"
+                  aria-hidden="true"
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p class="text-sm leading-relaxed text-pretty font-medium text-ink sm:text-[15px]">
+                  {problem}
+                </p>
+              </div>
+              <div class="flex items-start gap-3 pl-7 sm:pl-0">
+                <span
+                  class="mt-0.5 font-mono text-[9px] tracking-[0.14em] text-signal-ink uppercase"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+                <p class="text-sm leading-relaxed text-pretty text-ink-soft sm:text-[15px]">
+                  {action}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        {note && (
+          <p class="mt-8 max-w-[42rem] text-sm leading-relaxed text-ink-soft">
+            {note}
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

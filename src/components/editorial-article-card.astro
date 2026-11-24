@@ -1,0 +1,102 @@
+---
+import type { CollectionEntry } from "astro:content"
+import type { ImageMetadata } from "astro"
+import { ArrowRight } from "lucide-react"
+import ArticleCover from "@/components/article-cover.astro"
+import { formatDate } from "@/lib/format"
+import { getReadingTime } from "@/lib/reading-time"
+import { wiedzaArticlePath, wiedzaCategoryLabel } from "@/data/wiedza"
+
+interface Props {
+  entry: CollectionEntry<"wiedza">
+  image?: { src: ImageMetadata; alt: string }
+  variant?: "featured" | "grid"
+  priority?: boolean
+}
+
+const { entry, image, variant = "grid", priority = false } = Astro.props
+const category = wiedzaCategoryLabel(entry.data.category)
+const readingTime = getReadingTime(entry.body)
+const teaser = entry.data.teaser ?? entry.data.description
+const publishedAt = entry.data.publishedAt
+  ? formatDate(entry.data.publishedAt)
+  : null
+const meta = [category, readingTime ? `${readingTime} min czytania` : null]
+  .filter(Boolean)
+  .join(" · ")
+---
+
+{variant === "featured" ? (
+  <article
+    data-article-card
+    data-category={entry.data.category}
+    class="group relative grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12"
+  >
+    <div class="lg:col-span-7">
+      <ArticleCover
+        image={image}
+        order={entry.data.order}
+        category={category}
+        sizes="(min-width: 1024px) 56vw, 100vw"
+        priority={priority}
+      />
+    </div>
+
+    <div class="lg:col-span-5 lg:self-center">
+      <p class="font-mono text-[12px] tracking-[0.12em] text-ink-soft uppercase">
+        Artykuł na start · {meta}
+      </p>
+      <h2 class="mt-3 font-heading text-[clamp(1.75rem,1.4rem+1vw,2.25rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+        <a
+          href={wiedzaArticlePath(entry.id)}
+          class="after:absolute after:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
+        >
+          {entry.data.title}
+        </a>
+      </h2>
+      <p class="copy mt-4 text-base">{teaser}</p>
+
+      <div class="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4">
+        <p class="font-mono text-[12px] text-ink-soft">
+          Karol Modelski{publishedAt ? ` · ${publishedAt}` : ""}
+        </p>
+        <span class="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.12em] text-ink uppercase">
+          Czytaj poradnik
+          <ArrowRight className="size-3.5" aria-hidden="true" />
+        </span>
+      </div>
+    </div>
+  </article>
+) : (
+  <article
+    data-article-card
+    data-category={entry.data.category}
+    class="group flex h-full flex-col"
+  >
+    <a
+      href={wiedzaArticlePath(entry.id)}
+      class="flex h-full flex-col focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
+    >
+      <ArticleCover
+        image={image}
+        order={entry.data.order}
+        category={category}
+        sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, calc(100vw - 2rem)"
+      />
+      <p class="mt-4 font-mono text-[12px] tracking-[0.12em] text-ink-soft uppercase">
+        {meta}
+      </p>
+      <h3 class="mt-2 font-heading text-[1.375rem] leading-snug font-semibold text-balance underline-offset-4 group-hover:underline sm:text-[1.5rem]">
+        {entry.data.title}
+      </h3>
+      <p class="copy mt-2 text-sm">{teaser}</p>
+      <span class="mt-auto inline-flex items-center gap-2 pt-4 font-mono text-[11px] tracking-[0.12em] text-ink uppercase">
+        Czytaj poradnik
+        <ArrowRight
+          className="size-3.5 transition-transform group-hover:translate-x-0.5"
+          aria-hidden="true"
+        />
+      </span>
+    </a>
+  </article>
+)}

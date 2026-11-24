@@ -2,6 +2,7 @@
 title: "Jak przygotować pomysł na aplikację do pierwszej rozmowy?"
 metaTitle: "Jak przygotować pomysł na aplikację do rozmowy? | Poradnik"
 description: "Masz pomysł na aplikację, ale nie wiesz, jak opisać go wykonawcy? Sprawdź, co przygotować, o co zapytać i skorzystaj z prostego wzoru briefu."
+teaser: "Co zabrać na spotkanie, o co zapytać i jak opisać pomysł."
 cardDescription: |-
   Nie potrzebujesz projektu graficznego ani dokumentacji technicznej, żeby porozmawiać o realizacji.
 
@@ -14,6 +15,11 @@ related:
   - "freelancer-software-house-czy-partner-technologiczny"
   - "masz-pomysl-na-aplikacje-od-czego-zaczac"
   - "jak-zabezpieczyc-pomysl-na-aplikacje"
+keyTakeaways:
+  - "Do pierwszej rozmowy nie potrzebujesz dokumentacji technicznej."
+  - "Opisz problem, odbiorcę, sposób działania i najważniejszą funkcję."
+  - "Brief nie musi być kompletny — brakujące odpowiedzi też są informacją."
+  - "Ustal budżet i termin, a szczegóły poufności zabezpiecz przed rozmową."
 ---
 
 W końcu podejmujesz decyzję — czas znaleźć kogoś, kto pomoże Ci zamienić pomysł w działający produkt.
@@ -471,6 +477,29 @@ I to nawet jeśli nie znasz się na programowaniu.
 
 Przede wszystkim zapytałbym o kilka rzeczy.
 
+<div class="article-module article-compare" role="group" aria-labelledby="pytania-wykonawca">
+  <p class="article-module__eyebrow" id="pytania-wykonawca">O co zapytać wykonawcę</p>
+  <div class="article-compare__grid">
+    <div class="article-compare__col">
+      <h3>O realizację</h3>
+      <ul>
+        <li>Kto prowadzi projekt i odpowiada na pytania?</li>
+        <li>Co dokładnie obejmuje oferta?</li>
+        <li>Jak będę sprawdzać postępy i zgłaszać uwagi?</li>
+      </ul>
+    </div>
+    <div class="article-compare__col article-compare__col--signal">
+      <h3>O własność i utrzymanie</h3>
+      <ul>
+        <li>Kto będzie miał prawa do kodu i aplikacji?</li>
+        <li>Czy otrzymam kod, dokumentację i dostępy?</li>
+        <li>Co obejmuje wsparcie i gwarancja po odbiorze?</li>
+      </ul>
+    </div>
+  </div>
+  <p class="article-module__note">Nie musisz znać wszystkich odpowiedzi przed pierwszą rozmową, ale warto wiedzieć, o co zapytać przed podpisaniem umowy.</p>
+</div>
+
 ### Kto będzie odpowiadał za cały projekt?
 
 Czy będziesz rozmawiać bezpośrednio z osobą, która pisze kod?
@@ -646,22 +675,60 @@ A jeśli nie znasz jeszcze odpowiedzi na niektóre pytania, po prostu zaznacz to
 
 Nie musisz wymyślać szczegółów tylko po to, żeby dokument wyglądał profesjonalnie.
 
+<div class="article-module article-exercise" data-article-brief>
+  <p class="article-module__eyebrow">Brief w skrócie</p>
+  <h3 id="brief-title">Uporządkuj najważniejsze odpowiedzi</h3>
+  <p class="article-exercise__intro">Wpisz to, co już wiesz. Puste pola możesz zostawić — brak odpowiedzi też jest informacją.</p>
+  <div class="article-exercise__fields" role="group" aria-labelledby="brief-title">
+    <div><label for="brief-name">Nazwa lub roboczy tytuł</label><textarea id="brief-name" name="name" rows="2"></textarea></div>
+    <div><label for="brief-problem">Problem użytkownika</label><textarea id="brief-problem" name="problem" rows="2"></textarea></div>
+    <div><label for="brief-audience">Dla kogo jest aplikacja?</label><textarea id="brief-audience" name="audience" rows="2"></textarea></div>
+    <div><label for="brief-function">Najważniejsza funkcja pierwszej wersji</label><textarea id="brief-function" name="function" rows="2"></textarea></div>
+    <div><label for="brief-budget">Orientacyjny budżet</label><textarea id="brief-budget" name="budget" rows="2"></textarea></div>
+    <div><label for="brief-deadline">Oczekiwany termin</label><textarea id="brief-deadline" name="deadline" rows="2"></textarea></div>
+  </div>
+  <div class="article-exercise__actions">
+    <button type="button" class="article-exercise__button" data-exercise-copy hidden>Kopiuj brief</button>
+    <span class="article-exercise__status" data-exercise-status aria-live="polite"></span>
+  </div>
+  <p class="article-exercise__note">Odpowiedzi zostają w tym formularzu. Nie wysyłamy ich na serwer ani do analityki.</p>
+</div>
+
+![Szkic interfejsu na kartce i ołówek w ciepłym świetle](../../assets/images/editorial/a03-from-idea-to-first-action.webp)
+
+<p class="article-caption">Pierwszy krok nie wymaga dokumentacji technicznej. Wystarczy uporządkowany opis pomysłu.</p>
+
 ## 16. Krótka checklista przed rozmową
 
 Brief nie zawsze jest potrzebny. Jeśli masz dziesięć minut, wystarczy ta lista.
 
 **Przed rozmową przygotuj:**
 
-- **Opis w kilku zdaniach** — co chcesz stworzyć, dla kogo i po co.
-- **Problem, który rozwiązujesz** — jak użytkownicy radzą sobie dzisiaj.
-- **Listę użytkowników** — kto będzie korzystał z aplikacji i co ma móc zrobić.
-- **Ścieżkę użytkownika** — 5–7 kroków od uruchomienia aplikacji do oczekiwanego efektu.
-- **Funkcje pierwszej wersji** — tylko te, bez których aplikacja nie spełnia swojego zadania.
-- **Funkcje na później** — reszta pomysłu, zapisana, ale odłożona.
-- **Inspiracje** — 1–2 zrzuty ekranu z komentarzem, co Ci się w nich podoba.
-- **Budżet i termin** — orientacyjny przedział albo jasne „jeszcze nie wiem”.
-- **Pytania do wykonawcy** — te, na które chcesz znać odpowiedź przed podpisaniem umowy.
-- **Decyzję o NDA** — czy chcesz podpisać umowę poufności przed szczegółową rozmową.
+<div class="article-module article-checklist" data-article-checklist role="group" aria-labelledby="checklista-rozmowa">
+  <p class="article-module__eyebrow" id="checklista-rozmowa">Lista przed spotkaniem</p>
+  <ul>
+    <li><label><input type="checkbox"> <span>Opis w kilku zdaniach — co, dla kogo i po co.</span></label></li>
+    <li><label><input type="checkbox"> <span>Problem, który rozwiązujesz, i sposób radzenia sobie z nim dzisiaj.</span></label></li>
+    <li><label><input type="checkbox"> <span>Lista użytkowników i to, co mają móc zrobić.</span></label></li>
+    <li><label><input type="checkbox"> <span>Ścieżka użytkownika — 5–7 kroków do oczekiwanego efektu.</span></label></li>
+    <li><label><input type="checkbox"> <span>Funkcje pierwszej wersji i funkcje odłożone na później.</span></label></li>
+    <li><label><input type="checkbox"> <span>Inspiracje — 1–2 przykłady z komentarzem.</span></label></li>
+    <li><label><input type="checkbox"> <span>Budżet i termin albo jasne „jeszcze nie wiem”.</span></label></li>
+    <li><label><input type="checkbox"> <span>Pytania do wykonawcy i decyzja o NDA.</span></label></li>
+  </ul>
+  <p class="article-checklist__status" data-checklist-status aria-live="polite">Zaznacz pozycje</p>
+</div>
+
+<div class="article-module article-factors" role="group" aria-labelledby="efekt-rozmowy">
+  <p class="article-module__eyebrow" id="efekt-rozmowy">Po rozmowie powinieneś wiedzieć</p>
+  <ol>
+    <li><span class="article-factors__num">01</span><div><strong>Zakres</strong><span>Co wchodzi do pierwszej wersji, a co zostaje na później.</span></div></li>
+    <li><span class="article-factors__num">02</span><div><strong>Termin</strong><span>Realny harmonogram i zależności po Twojej stronie.</span></div></li>
+    <li><span class="article-factors__num">03</span><div><strong>Koszt</strong><span>Budżet, konwencja netto/brutto i zasady rozliczeń.</span></div></li>
+    <li><span class="article-factors__num">04</span><div><strong>Ryzyka</strong><span>Integracje, dane, płatności i kwestie do wyjaśnienia.</span></div></li>
+    <li><span class="article-factors__num">05</span><div><strong>Następny krok</strong><span>Decyzja, dokumenty i informacje potrzebne do startu.</span></div></li>
+  </ol>
+</div>
 
 **Czego nie musisz przygotowywać:** projektu graficznego, dokumentacji technicznej, wyboru technologii ani ostatecznej decyzji o aplikacji mobilnej czy internetowej.
 

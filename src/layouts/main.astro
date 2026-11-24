@@ -40,6 +40,9 @@ interface Props {
   includeFaqSchema?: boolean
   /** Wczytaj skrypt MailerLite — tylko strony z osadzonym formularzem zapisu. */
   enableMailerLite?: boolean
+  /** Opcjonalny obraz Open Graph, np. dedykowana okładka artykułu. */
+  ogImage?: string
+  ogImageAlt?: string
 }
 
 const {
@@ -54,6 +57,8 @@ const {
   jsonLd = [],
   includeFaqSchema = false,
   enableMailerLite = false,
+  ogImage,
+  ogImageAlt,
 } = Astro.props
 
 const canonicalURL =
@@ -61,7 +66,20 @@ const canonicalURL =
     ? null
     : (canonical ?? new URL(Astro.url.pathname, Astro.site)).toString()
 const ogURL = canonicalURL ?? new URL("/", Astro.site).toString()
-const ogImage = new URL("/og-image.png", Astro.site)
+const ogImageURL = new URL(ogImage ?? "/og-image.png", Astro.site)
+const hasCustomOgImage = Boolean(ogImage)
+const ogImageExtension = ogImageURL.pathname.split(".").pop()?.toLowerCase()
+const ogImageType =
+  ogImageExtension === "webp"
+    ? "image/webp"
+    : ogImageExtension === "jpg" || ogImageExtension === "jpeg"
+      ? "image/jpeg"
+      : ogImageExtension === "avif"
+        ? "image/avif"
+        : "image/png"
+const ogImageAltText =
+  ogImageAlt ??
+  "Karol Modelski — od pomysłu do działającego produktu w 4 tygodnie"
 
 const pageURL =
   canonicalURL ?? new URL(Astro.url.pathname, Astro.site).toString()
@@ -296,25 +314,23 @@ const structuredData = noindex
         )}
       </>
     )}
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Karol Modelski — od pomysłu do działającego produktu w 4 tygodnie"
-    />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:type" content={ogImageType} />
+    {!hasCustomOgImage && (
+      <>
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+      </>
+    )}
+    <meta property="og:image:alt" content={ogImageAltText} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@modelski_karol" />
     <meta name="twitter:creator" content="@modelski_karol" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
-    <meta
-      name="twitter:image:alt"
-      content="Karol Modelski — od pomysłu do działającego produktu w 4 tygodnie"
-    />
+    <meta name="twitter:image" content={ogImageURL} />
+    <meta name="twitter:image:alt" content={ogImageAltText} />
 
     {structuredData && (
       <script
@@ -369,7 +385,9 @@ const structuredData = noindex
             ),
             function (el) {
               return (
-                !el.closest("astro-island") && !el.closest("[data-faq-toc]")
+                !el.closest("astro-island") &&
+                !el.closest("[data-faq-toc]") &&
+                !el.closest("[data-no-reveal]")
               )
             }
           )

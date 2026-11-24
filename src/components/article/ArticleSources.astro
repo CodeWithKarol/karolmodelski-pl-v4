@@ -1,0 +1,96 @@
+---
+interface SourceItem {
+  title: string
+  url: string
+  description?: string
+}
+
+interface SourceGroup {
+  group: string
+  items: SourceItem[]
+}
+
+interface Props {
+  sources: SourceGroup[]
+  intro?: string
+  note?: string
+}
+
+const { sources, intro, note } = Astro.props
+
+let sourceIndex = 0
+const groups = sources.map((group) => ({
+  ...group,
+  items: group.items.map((item) => {
+    sourceIndex += 1
+    let domain = ""
+    try {
+      domain = new URL(item.url).hostname.replace(/^www\./, "")
+    } catch {}
+    return { ...item, index: sourceIndex, domain }
+  }),
+}))
+---
+
+<section
+  aria-labelledby="źródła-i-materiały-dodatkowe"
+  class="border-t border-line pt-8"
+>
+  <h2
+    id="źródła-i-materiały-dodatkowe"
+    class="scroll-mt-28 font-heading text-[1.75rem] leading-tight font-semibold tracking-tight sm:text-[2rem]"
+  >
+    Źródła i materiały dodatkowe
+  </h2>
+
+  {intro && (
+    <p class="mt-4 text-[15px] leading-[1.7] text-pretty text-ink-soft">
+      {intro}
+    </p>
+  )}
+
+  <div class="mt-8 space-y-8">
+    {groups.map((group) => (
+      <div>
+        <h3 class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+          {group.group}
+        </h3>
+        <ol class="mt-3 border-t border-line">
+          {group.items.map((item) => (
+            <li class="border-b border-line py-4">
+              <div class="flex gap-3">
+                <span class="mt-1 w-5 shrink-0 font-mono text-[10px] text-signal-ink">
+                  {String(item.index).padStart(2, "0")}
+                </span>
+                <div class="min-w-0">
+                  <a
+                    href={item.url}
+                    class="font-heading text-[17px] leading-snug font-semibold text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+                  >
+                    {item.title}
+                  </a>
+                  {item.description && (
+                    <p class="mt-1.5 text-[14px] leading-[1.65] text-pretty text-ink-soft">
+                      {item.description}
+                    </p>
+                  )}
+                  {item.domain && (
+                    <p class="mt-1.5 font-mono text-[10px] tracking-[0.1em] text-ink-soft">
+                      {item.domain}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    ))}
+  </div>
+
+  {note && (
+    <p class="mt-6 border-t border-line pt-4 text-[13px] leading-[1.7] text-pretty text-ink-soft">
+      {note}
+    </p>
+  )}
+</section>

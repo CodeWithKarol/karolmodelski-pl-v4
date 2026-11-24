@@ -1,0 +1,50 @@
+---
+interface Props {
+  quote: string
+  author: string
+  context: string
+  source: string
+  url?: string
+}
+
+const { quote, author, context, source, url } = Astro.props
+---
+
+<section class="on-ink border-t border-line bg-ink px-4 py-12 text-paper sm:px-6 sm:py-16">
+  <div class="mx-auto max-w-[75rem]">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-3">
+        <h2 class="font-mono text-[10px] tracking-[0.2em] text-paper/65 uppercase">
+          Opinia pomysłodawcy
+        </h2>
+      </div>
+
+      <div class="lg:col-span-9">
+        <blockquote class="max-w-[46rem]">
+          <p class="font-heading text-[clamp(1.25rem,1.05rem+1vw,1.75rem)] leading-[1.4] font-medium text-balance text-paper">
+            „{quote}”
+          </p>
+          <footer class="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-paper/65">
+            <span class="font-medium text-paper">{author}</span>
+            <span aria-hidden="true">·</span>
+            <span>{context}</span>
+            <span aria-hidden="true">·</span>
+            {url ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testimonial-source
+                class="underline decoration-paper/25 underline-offset-4 transition-colors hover:text-paper hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+              >
+                {source}
+              </a>
+            ) : (
+              <span>{source}</span>
+            )}
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>

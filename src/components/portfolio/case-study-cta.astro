@@ -1,0 +1,60 @@
+---
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { ArrowRight } from "lucide-react"
+
+interface Props {
+  id?: string
+  label?: string
+  title: string
+  description?: string
+  href: string
+  hrefLabel: string
+}
+
+const {
+  id = "studium",
+  label,
+  title,
+  description,
+  href,
+  hrefLabel,
+} = Astro.props
+---
+
+<section
+  id={id}
+  class="border-t border-line bg-paper px-4 py-10 sm:px-6 sm:py-12"
+>
+  <div class="mx-auto max-w-[75rem]">
+    <div class="flex flex-col gap-5 border-y border-line py-6 sm:flex-row sm:items-center sm:justify-between sm:gap-10">
+      <div class="max-w-[42rem]">
+        {label && (
+          <p class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase">
+            {label}
+          </p>
+        )}
+        <h2 class="mt-1 font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+          {title}
+        </h2>
+        {description && (
+          <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+            {description}
+          </p>
+        )}
+      </div>
+
+      <a
+        href={href}
+        data-case-study-link
+        class={cn(
+          buttonVariants({ size: "lg" }),
+          "h-auto min-h-12 w-full shrink-0 gap-2 rounded-[6px] px-6 py-3 text-center text-base whitespace-normal sm:w-auto"
+        )}
+      >
+        {hrefLabel}
+        <ArrowRight aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</section>

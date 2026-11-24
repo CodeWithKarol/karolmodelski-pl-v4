@@ -1,0 +1,31 @@
+---
+interface Props {
+  points: string[]
+}
+
+const { points } = Astro.props
+---
+
+{points.length > 0 && (
+  <aside
+    aria-labelledby="najwazniejsze-wnioski"
+    class="border-y border-line bg-surface-muted px-5 py-6 sm:px-8 sm:py-7"
+  >
+    <p
+      id="najwazniejsze-wnioski"
+      class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase"
+    >
+      Najważniejsze wnioski
+    </p>
+    <ul class="mt-4 space-y-3.5">
+      {points.map((point, index) => (
+        <li class="grid grid-cols-[1.5rem_minmax(0,1fr)] gap-3">
+          <span class="pt-1 font-mono text-[10px] text-signal-ink">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <p class="text-[15px] leading-[1.65] text-pretty text-ink">{point}</p>
+        </li>
+      ))}
+    </ul>
+  </aside>
+)}

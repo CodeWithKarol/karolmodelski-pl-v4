@@ -1,0 +1,144 @@
+---
+import { ChevronDown } from "lucide-react"
+import type { ImageMetadata } from "astro"
+import type { ProcessTimelineStep } from "@/data/jak-pracuje"
+import JourneyStageBody from "@/components/journey-stage-body.astro"
+
+interface StageImage {
+  src: ImageMetadata
+  alt: string
+}
+
+interface Props {
+  stages: ProcessTimelineStep[]
+  media?: (StageImage | undefined)[]
+}
+
+const { stages, media = [] } = Astro.props
+---
+
+<div class="journey mt-10" data-no-reveal>
+  <div class="hidden lg:block">
+    <fieldset>
+      <legend class="sr-only">Wybierz etap realizacji</legend>
+      <div class="grid grid-cols-5 border-t border-line">
+        {stages.map((stage, index) => (
+          <div class="contents">
+            <input
+              id={`journey-tab-${index + 1}`}
+              type="radio"
+              name="journey-stage"
+              class="peer sr-only"
+              checked={index === 0}
+            />
+            <label
+              for={`journey-tab-${index + 1}`}
+              id={`journey-tab-label-${index + 1}`}
+              class="flex cursor-pointer flex-col gap-2 border-t-2 border-transparent px-4 py-4 text-left transition-colors hover:bg-surface-muted peer-checked:border-signal peer-checked:bg-surface-muted"
+            >
+              <span class="flex items-baseline justify-between gap-3">
+                <span class="font-mono text-[10px] tracking-[0.16em] text-signal-ink">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                {stage.checkpoint && (
+                  <span class="font-mono text-[9px] tracking-[0.12em] text-ink-soft uppercase">
+                    Punkt kontrolny
+                  </span>
+                )}
+              </span>
+              <span class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+                {stage.label}
+              </span>
+              <span class="font-heading text-sm leading-snug font-semibold text-balance text-ink">
+                {stage.title}
+              </span>
+            </label>
+          </div>
+        ))}
+      </div>
+    </fieldset>
+
+    <div class="mt-8" aria-live="polite">
+      {stages.map((stage, index) => (
+        <section
+          class={`journey-panel journey-panel-${index + 1}`}
+          role="region"
+          aria-labelledby={`journey-tab-label-${index + 1}`}
+        >
+          <div class="flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+            <div class="flex items-baseline gap-4">
+              <span class="font-heading text-5xl leading-none font-semibold text-signal-ink">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <p class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase">
+                  {stage.label}
+                </p>
+                <h3 class="mt-1 font-heading text-xl leading-snug font-semibold text-balance sm:text-2xl">
+                  {stage.title}
+                </h3>
+              </div>
+            </div>
+            {stage.checkpoint && (
+              <span class="shrink-0 border border-line bg-paper px-3 py-1 font-mono text-[10px] tracking-[0.12em] text-signal-ink uppercase">
+                Punkt kontrolny
+              </span>
+            )}
+          </div>
+
+          <div class="mt-5 max-w-4xl">
+            <JourneyStageBody stage={stage} image={media[index]} />
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+
+  <ol class="lg:hidden">
+    {stages.map((stage, index) => (
+      <li class="border-t border-line last:border-b">
+        <details open={index === 0} class="group py-5">
+          <summary class="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            <div class="flex items-baseline gap-3">
+              <span class="font-mono text-xs text-signal-ink">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <span class="block font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+                  {stage.label}
+                </span>
+                <h3 class="mt-1 font-heading text-base leading-snug font-semibold text-balance text-ink">
+                  {stage.title}
+                </h3>
+              </div>
+            </div>
+            <ChevronDown
+              className="details-chevron mt-1 size-4 shrink-0 text-ink-soft"
+              aria-hidden="true"
+            />
+          </summary>
+          <div class="mt-4 pl-7">
+            <JourneyStageBody stage={stage} image={media[index]} />
+          </div>
+        </details>
+      </li>
+    ))}
+  </ol>
+</div>
+
+<style>
+  .journey-panel {
+    display: none;
+  }
+  .journey:has(#journey-tab-1:checked) .journey-panel-1,
+  .journey:has(#journey-tab-2:checked) .journey-panel-2,
+  .journey:has(#journey-tab-3:checked) .journey-panel-3,
+  .journey:has(#journey-tab-4:checked) .journey-panel-4,
+  .journey:has(#journey-tab-5:checked) .journey-panel-5 {
+    display: block;
+  }
+  .journey input:focus-visible + label {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+  }
+</style>

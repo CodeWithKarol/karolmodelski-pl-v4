@@ -1,0 +1,49 @@
+---
+interface Props {
+  good: string[]
+  bad: string[]
+  note?: string
+}
+
+const { good, bad, note } = Astro.props
+---
+
+<div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
+  <section aria-labelledby="fit-good">
+    <h3
+      id="fit-good"
+      class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase"
+    >
+      Prawdopodobnie tak, jeśli...
+    </h3>
+    <ul class="mt-4 border-t border-line">
+      {good.map((item) => (
+        <li class="border-b border-line py-3.5 text-[15px] leading-[1.65] text-pretty text-ink">
+          {item}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="fit-bad">
+    <h3
+      id="fit-bad"
+      class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase"
+    >
+      Mogę nie być najlepszym wyborem, jeśli...
+    </h3>
+    <ul class="mt-4 border-t border-line">
+      {bad.map((item) => (
+        <li class="border-b border-line py-3.5 text-[15px] leading-[1.65] text-pretty text-ink-soft">
+          {item}
+        </li>
+      ))}
+    </ul>
+  </section>
+</div>
+
+{note && (
+  <p class="mt-8 max-w-[38rem] border-l-2 border-signal pl-5 text-[15px] leading-[1.65] text-pretty text-ink">
+    {note}
+  </p>
+)}

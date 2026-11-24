@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets"
+import type { ImageMetadata } from "astro"
+import type { ProcessTimelineStep } from "@/data/jak-pracuje"
+
+interface StageImage {
+  src: ImageMetadata
+  alt: string
+}
+
+interface Props {
+  stage: ProcessTimelineStep
+  image?: StageImage
+}
+
+const { stage, image } = Astro.props
+---
+
+<div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-8">
+  <div>
+    <p class="copy text-sm sm:text-base">{stage.description}</p>
+
+    <div class="mt-4 grid grid-cols-1 gap-4 border-t border-line pt-4 sm:grid-cols-2">
+      <div>
+        <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+          Ty
+        </p>
+        <p class="mt-1 text-sm leading-relaxed text-pretty text-ink">
+          {stage.you}
+        </p>
+      </div>
+      <div>
+        <p class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase">
+          Ja
+        </p>
+        <p class="mt-1 text-sm leading-relaxed text-pretty text-ink-soft">
+          {stage.me}
+        </p>
+      </div>
+    </div>
+
+    <p class="mt-3 text-sm leading-relaxed text-pretty text-ink">
+      <span class="font-mono text-[10px] tracking-[0.14em] text-signal-ink uppercase">
+        Rezultat:
+      </span>{" "}
+      {stage.effect}
+    </p>
+  </div>
+
+  {image && (
+    <figure class="lg:order-last">
+      <Image
+        src={image.src}
+        alt={image.alt}
+        widths={[320, 480, 640, 800]}
+        sizes="(min-width: 1024px) 288px, calc(100vw - 3rem)"
+        quality={82}
+        loading="lazy"
+        decoding="async"
+        class="aspect-[4/3] w-full rounded-lg border border-line object-cover"
+      />
+    </figure>
+  )}
+</div>

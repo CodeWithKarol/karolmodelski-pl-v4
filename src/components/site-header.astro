@@ -7,9 +7,11 @@ interface Props {
   /** "home" keeps in-page anchors, "page" prefixes them with "/" */
   variant?: "home" | "page"
   current?: "wiedza" | "realizacje" | "oferta" | "o-mnie" | "jak-pracuje"
+  /** Globalny pasek postępu — na artykułach zastępuje go dedykowany ReadingProgress. */
+  showProgress?: boolean
 }
 
-const { variant = "page", current } = Astro.props
+const { variant = "page", current, showProgress = true } = Astro.props
 
 const homeHref = variant === "home" ? "#" : "/"
 const consultationUrl = "/rozmowa/"
@@ -151,9 +153,11 @@ const isCurrent = (item: (typeof navItems)[number]) =>
       </details>
     </div>
   </div>
-  <span
-    id="scroll-progress"
-    aria-hidden="true"
-    class="absolute inset-x-0 -bottom-px h-[2px] origin-left scale-x-0 bg-signal"
-  ></span>
+  {showProgress && (
+    <span
+      id="scroll-progress"
+      aria-hidden="true"
+      class="absolute inset-x-0 -bottom-px h-[2px] origin-left scale-x-0 bg-signal"
+    ></span>
+  )}
 </header>

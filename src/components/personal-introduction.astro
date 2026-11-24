@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets"
+import { ArrowRight } from "lucide-react"
+import SectionHeading from "@/components/section-heading.astro"
+import ProfileAvatar from "@/components/profile-avatar"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import wystapienie from "@/assets/images/karol-modelski-wystapienie.webp"
+---
+
+<section id="o-mnie" class="section-y border-t border-line bg-surface-muted">
+  <div class="shell">
+    <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
+      <div class="order-1 lg:order-2 lg:col-span-6 lg:col-start-7">
+        <SectionHeading
+          eyebrow="05 · O mnie"
+          title="Masz pomysł. Resztą zajmę się ja."
+        />
+
+        <p class="mt-6 flex items-center gap-3 text-base text-ink-soft">
+          <ProfileAvatar client:visible />
+          <span>
+            Cześć, jestem{" "}
+            <strong class="font-semibold text-ink">Karol Modelski</strong>.
+          </span>
+        </p>
+
+        <p class="copy mt-5">
+          Od ponad 7 lat tworzę oprogramowanie — wcześniej systemy dla banków i
+          dużych firm. Dziś pomagam zamieniać pomysły w działające produkty:
+          ustalam, co zrobić najpierw, tłumaczę decyzje techniczne i prowadzę
+          realizację.
+        </p>
+
+        <div class="mt-8">
+          <a
+            href="/o-mnie/"
+            class={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "h-auto min-h-11 w-full gap-2 rounded-[6px] px-5 py-2.5 text-center text-sm text-balance whitespace-normal sm:w-auto sm:text-base"
+            )}
+          >
+            Poznaj mnie i moje podejście
+            <ArrowRight />
+          </a>
+        </div>
+      </div>
+
+      <figure class="order-2 mx-auto w-full max-w-md lg:order-1 lg:col-span-5 lg:max-w-none">
+        <div class="overflow-hidden rounded-xl border border-line">
+          <Image
+            src={wystapienie}
+            alt="Karol Modelski podczas szkolenia z automatyzacji testów (Playwright)"
+            widths={[320, 480, 640, 768]}
+            sizes="(min-width: 1024px) 420px, (min-width: 768px) 448px, calc(100vw - 2rem)"
+            loading="lazy"
+            decoding="async"
+            class="aspect-[4/5] w-full object-cover object-top"
+          />
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
