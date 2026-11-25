@@ -1,0 +1,55 @@
+---
+import { ChevronDown } from "lucide-react"
+
+interface CareerEntry {
+  period: string
+  company: string
+  role: string
+  summary: string
+  stack: string
+}
+
+interface Props {
+  entries: CareerEntry[]
+}
+
+const { entries } = Astro.props
+---
+
+<ol class="relative ml-1 border-l border-line">
+  {entries.map((entry) => (
+    <li class="relative pb-10 pl-6 last:pb-0">
+      <span
+        class="absolute top-1.5 -left-[5px] size-2.5 rounded-full border-2 border-paper bg-signal"
+        aria-hidden="true"
+      />
+      <div class="flex flex-col gap-2 md:flex-row-reverse md:items-baseline md:justify-between md:gap-8">
+        <p class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase md:shrink-0 md:whitespace-nowrap">
+          {entry.period}
+        </p>
+        <div class="min-w-0 md:flex-1">
+          <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
+            {entry.company}
+          </h3>
+          <p class="mt-1 text-sm font-medium text-signal-ink">{entry.role}</p>
+          <p class="mt-2 max-w-[34rem] text-[15px] leading-[1.65] text-pretty text-ink-soft">
+            {entry.summary}
+          </p>
+
+          <details class="group mt-4 border-t border-line pt-3">
+            <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 py-1 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal [&::-webkit-details-marker]:hidden">
+              <span>Szczegóły techniczne</span>
+              <ChevronDown
+                className="size-4 shrink-0 transition-transform group-open:rotate-180 motion-reduce:transition-none"
+                aria-hidden="true"
+              />
+            </summary>
+            <p class="max-w-[34rem] pb-1 text-sm leading-relaxed text-ink-soft">
+              {entry.stack}
+            </p>
+          </details>
+        </div>
+      </div>
+    </li>
+  ))}
+</ol>

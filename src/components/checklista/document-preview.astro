@@ -1,0 +1,243 @@
+---
+import { Image } from "astro:assets"
+import { ArrowLeft, ArrowRight, Maximize2 } from "lucide-react"
+
+interface Page {
+  src: ImageMetadata
+  title: string
+  alt: string
+}
+
+interface Props {
+  pages: Page[]
+  pdfHref: string
+}
+
+const { pages, pdfHref } = Astro.props
+---
+
+<div data-preview>
+  <div class="mx-auto grid max-w-[32rem] grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-12 lg:gap-8">
+    <div class="lg:col-span-8">
+      <div class="overflow-hidden rounded-lg border border-line bg-white p-2 sm:p-3">
+        {pages.map((page, index) => (
+          <Image
+            src={page.src}
+            alt={page.alt}
+            widths={[420, 760, 1100]}
+            sizes="(min-width: 1024px) 620px, calc(100vw - 3rem)"
+            quality={84}
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
+            data-page={index}
+            data-title={page.title}
+            class={`w-full rounded-sm${index === 0 ? " is-active" : ""}`}
+          />
+        ))}
+      </div>
+
+      <div class="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+        <div class="flex min-w-0 items-center gap-3">
+          <div class="flex items-center gap-2" data-preview-controls hidden>
+            <button
+              type="button"
+              data-prev
+              aria-label="Poprzednia strona"
+              class="flex size-10 items-center justify-center rounded-md border border-line text-ink transition-colors hover:border-ink/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+            >
+              <ArrowLeft className="size-4" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              data-next
+              aria-label="Następna strona"
+              class="flex size-10 items-center justify-center rounded-md border border-line text-ink transition-colors hover:border-ink/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+            >
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </button>
+          </div>
+
+          <p class="min-w-0 text-sm text-ink-soft" aria-live="polite">
+            <span data-caption>Strona 1 · {pages[0].title}</span>
+            <span class="ml-2 font-mono text-[11px] tracking-[0.14em] tabular-nums">
+              <span data-current>1</span> / {pages.length}
+            </span>
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <button
+            type="button"
+            data-zoom
+            data-preview-controls
+            hidden
+            class="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+          >
+            <Maximize2 className="size-3.5" aria-hidden="true" />
+            Powiększ
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-4">
+      <p class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase">
+        Strony dokumentu
+      </p>
+      <ol class="mt-3 grid grid-cols-4 gap-2 sm:gap-3 lg:grid-cols-2">
+        {pages.map((page, index) => (
+          <li>
+            <button
+              type="button"
+              data-thumb={index}
+              aria-label={`Pokaż stronę ${index + 1}: ${page.title}`}
+              aria-pressed={index === 0 ? "true" : "false"}
+              class="group block w-full overflow-hidden rounded-md border border-line bg-white p-1 transition-colors hover:border-ink/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal aria-pressed:border-signal"
+            >
+              <Image
+                src={page.src}
+                alt=""
+                widths={[120, 200]}
+                sizes="(min-width: 1024px) 140px, 22vw"
+                quality={70}
+                loading="lazy"
+                decoding="async"
+                class="block w-full rounded-sm"
+              />
+            </button>
+          </li>
+        ))}
+      </ol>
+
+      <a
+        href={pdfHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-checklist-pdf-open
+        class="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+      >
+        Otwórz pełny PDF
+        <ArrowRight className="size-3.5" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+
+  <dialog
+    data-preview-dialog
+    aria-label="Powiększony podgląd strony"
+    class="m-auto w-[min(92vw,56rem)] rounded-lg border border-line bg-white p-0 text-ink backdrop:bg-ink/60"
+  >
+    <div class="flex items-center justify-between gap-4 border-b border-line px-4 py-3">
+      <p class="text-sm font-medium" data-dialog-caption>
+        Strona 1
+      </p>
+      <button
+        type="button"
+        data-dialog-close
+        class="inline-flex min-h-11 items-center rounded-md px-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+      >
+        Zamknij
+      </button>
+    </div>
+    <div class="max-h-[80vh] overflow-auto p-2 sm:p-3">
+      <img
+        data-dialog-image
+        alt=""
+        class="mx-auto block h-auto w-full"
+        width="1191"
+        height="1684"
+      />
+    </div>
+  </dialog>
+</div>
+
+<style>
+  [data-preview].is-ready [data-page] {
+    display: none;
+  }
+  [data-preview].is-ready [data-page].is-active {
+    display: block;
+  }
+</style>
+
+<script>
+  const roots = document.querySelectorAll("[data-preview]")
+
+  roots.forEach((root) => {
+    const pages = Array.from(
+      root.querySelectorAll("[data-page]")
+    ) as HTMLImageElement[]
+    const thumbs = Array.from(
+      root.querySelectorAll("[data-thumb]")
+    ) as HTMLButtonElement[]
+    const caption = root.querySelector("[data-caption]") as HTMLElement
+    const current = root.querySelector("[data-current]") as HTMLElement
+    const controls = root.querySelectorAll("[data-preview-controls]")
+    const prev = root.querySelector("[data-prev]") as HTMLButtonElement
+    const next = root.querySelector("[data-next]") as HTMLButtonElement
+    const zoom = root.querySelector("[data-zoom]") as HTMLButtonElement
+    const dialog = root.querySelector(
+      "[data-preview-dialog]"
+    ) as HTMLDialogElement
+    const dialogImage = root.querySelector(
+      "[data-dialog-image]"
+    ) as HTMLImageElement
+    const dialogCaption = root.querySelector(
+      "[data-dialog-caption]"
+    ) as HTMLElement
+    const dialogClose = root.querySelector(
+      "[data-dialog-close]"
+    ) as HTMLButtonElement
+    if (!pages.length) return
+
+    let index = 0
+    let lastZoomTrigger: HTMLElement | null = null
+
+    root.classList.add("is-ready")
+    controls.forEach((element) => element.removeAttribute("hidden"))
+
+    function push(event: string, page: number) {
+      const target = window as Window & {
+        dataLayer?: Record<string, unknown>[]
+      }
+      target.dataLayer = target.dataLayer || []
+      target.dataLayer.push({ event, page })
+    }
+
+    function show(nextIndex: number, source: string) {
+      index = (nextIndex + pages.length) % pages.length
+      pages.forEach((page, i) => {
+        const active = i === index
+        page.classList.toggle("is-active", active)
+        thumbs[i].setAttribute("aria-pressed", active ? "true" : "false")
+      })
+      const title = pages[index].dataset.title || ""
+      if (caption) caption.textContent = `Strona ${index + 1} · ${title}`
+      if (current) current.textContent = String(index + 1)
+      push("checklist_preview_page", index + 1)
+      if (source === "thumb") push("checklist_preview_thumb", index + 1)
+    }
+
+    thumbs.forEach((thumb, i) => {
+      thumb.addEventListener("click", () => show(i, "thumb"))
+    })
+    prev?.addEventListener("click", () => show(index - 1, "button"))
+    next?.addEventListener("click", () => show(index + 1, "button"))
+
+    zoom?.addEventListener("click", () => {
+      const active = pages[index]
+      if (!dialog || !dialogImage) return
+      lastZoomTrigger = zoom
+      dialogImage.src = active.currentSrc || active.src
+      dialogImage.alt = active.alt
+      if (dialogCaption)
+        dialogCaption.textContent = `Strona ${index + 1} z ${pages.length}`
+      dialog.showModal()
+      dialogClose?.focus()
+      push("checklist_preview_zoom", index + 1)
+    })
+
+    dialogClose?.addEventListener("click", () => dialog?.close())
+    dialog?.addEventListener("close", () => lastZoomTrigger?.focus())
+  })
+</script>

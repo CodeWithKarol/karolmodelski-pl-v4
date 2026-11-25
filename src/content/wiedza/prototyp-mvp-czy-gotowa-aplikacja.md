@@ -2,6 +2,7 @@
 title: "Prototyp, MVP czy gotowa aplikacja — za co właściwie płacisz?"
 metaTitle: "Prototyp, MVP czy gotowa aplikacja — za co płacisz?"
 description: "Czym różni się prototyp od MVP i gotowej aplikacji? Sprawdź, co otrzymujesz za swoje pieniądze, ile kosztują poszczególne etapy i co warto wybrać."
+teaser: "Trzy poziomy dojrzałości produktu i różnice w kosztach oraz zakresie."
 cardDescription: |-
   Prototyp za kilka tysięcy, MVP za 25 tysięcy, gotowa aplikacja za sto. Trzy oferty, ten sam pomysł — i trzy różne produkty.
 
@@ -25,6 +26,11 @@ faq:
     answer: "Tak, ale nie każde MVP jest przygotowane z myślą o dalszym rozwoju. Jeśli pierwsza wersja powstała na narzędziu, które szybko generuje ekrany, ale mocno ogranicza kolejne funkcje, część produktu może wymagać przebudowy. Dlatego przed zamówieniem warto zapytać wykonawcę, czy ta wersja będzie podstawą dalszego rozwoju, czy przy większej skali trzeba będzie zacząć od nowa."
   - question: "Od czego zacząć: od prototypu, MVP czy pełnej aplikacji?"
     answer: "Od prototypu, jeśli chcesz przede wszystkim pokazać pomysł inwestorowi, wspólnikowi lub potencjalnym użytkownikom. Od MVP, jeśli masz określony problem i chcesz sprawdzić działający produkt w praktyce. Od szerszej wersji, jeśli masz już sprawdzony model biznesowy, znaną grupę klientów i dokładnie wiesz, jakich funkcji potrzebujesz."
+keyTakeaways:
+  - "Prototyp pokazuje koncepcję, MVP pozwala wykonać kluczową czynność, gotowa aplikacja obsługuje szerszy zakres."
+  - "To nie są obowiązkowe etapy każdego projektu."
+  - "Płać za zakres, przekazanie kodu, dokumentację i utrzymanie, nie tylko za nazwę etapu."
+  - "Wybierz poziom do celu: prezentacja, test rynku czy obsługa większej grupy."
 ---
 
 Masz pomysł na aplikację. Wiesz, jak powinna działać, jakie funkcje chciałbyś w niej zobaczyć i komu mogłaby się przydać.
@@ -139,6 +145,28 @@ Czasami można od razu przejść do MVP.
 A jeśli masz dokładnie określone wymagania, budżet i sprawdzoną grupę klientów, możesz potrzebować od razu szerszej wersji produktu.
 
 Wszystko zależy od tego, co chcesz osiągnąć.
+
+<div class="article-module article-levels" role="group" aria-labelledby="poziomy-realizacji">
+  <p class="article-module__eyebrow" id="poziomy-realizacji">Trzy poziomy realizacji</p>
+  <div class="article-levels__grid">
+    <div class="article-levels__item">
+      <span class="article-levels__num">01 · Prototyp</span>
+      <h3>Pokazać koncepcję</h3>
+      <p>Klikalna makieta lub wczesna wersja do rozmów, testów użyteczności i prezentacji pomysłu.</p>
+    </div>
+    <div class="article-levels__item article-levels__item--signal">
+      <span class="article-levels__num">02 · MVP</span>
+      <h3>Sprawdzić produkt</h3>
+      <p>Działająca wersja z najważniejszą funkcją, prawdziwymi danymi i pierwszymi użytkownikami.</p>
+    </div>
+    <div class="article-levels__item">
+      <span class="article-levels__num">03 · Gotowa aplikacja</span>
+      <h3>Obsłużyć większy zakres</h3>
+      <p>Szerszy zestaw funkcji, integracji i wymagań, zgodny z uzgodnioną specyfikacją.</p>
+    </div>
+  </div>
+  <p class="article-module__note">To nie są obowiązkowe etapy każdego projektu. Wybierz poziom do celu, budżetu i tego, co chcesz sprawdzić.</p>
+</div>
 
 ## 3. Prototyp aplikacji — za co właściwie płacisz?
 
@@ -426,6 +454,19 @@ Dlatego zamiast porównywać dwie kwoty, warto porównać listę tego, co wykona
 
 ## 11. Kod źródłowy, prawa autorskie i dokumentacja — czy są w cenie?
 
+<div class="article-module article-checklist" data-article-checklist role="group" aria-labelledby="checklista-przekazanie">
+  <p class="article-module__eyebrow" id="checklista-przekazanie">Co powinno być w przekazaniu</p>
+  <ul>
+    <li><label><input type="checkbox"> <span>Kod źródłowy i zasady jego wykorzystania.</span></label></li>
+    <li><label><input type="checkbox"> <span>Zakres przeniesionych praw autorskich i pól eksploatacji.</span></label></li>
+    <li><label><input type="checkbox"> <span>Dokumentacja uruchomienia i podstawowa architektura.</span></label></li>
+    <li><label><input type="checkbox"> <span>Testy, lista znanych ograniczeń i sposób zgłaszania błędów.</span></label></li>
+    <li><label><input type="checkbox"> <span>Dostęp do domeny, serwera, bazy i kont zewnętrznych.</span></label></li>
+    <li><label><input type="checkbox"> <span>Zasady gwarancji, opieki i dalszego rozwoju.</span></label></li>
+  </ul>
+  <p class="article-checklist__status" data-checklist-status aria-live="polite">Zaznacz pozycje</p>
+</div>
+
 To temat, którego zdecydowanie nie pomijałbym podczas wyboru wykonawcy.
 
 Załóżmy, że zamówiłeś aplikację.
@@ -461,6 +502,10 @@ Dlatego odpowiednio przygotowana umowa powinna jasno określać, do czego otrzym
 W moim modelu współpracy zakładam przekazanie klientowi kodu źródłowego i uzgodnionych majątkowych praw autorskich po zakończeniu i rozliczeniu projektu, z uwzględnieniem zasad korzystania z zewnętrznych komponentów.
 
 Chodzi o to, żeby klient wiedział, jakie możliwości dalszego rozwoju produktu rzeczywiście posiada.
+
+![Makieta architektoniczna z łukiem, klockami i rysunkiem](../../assets/images/editorial/a08-stable-foundations.webp)
+
+<p class="article-caption">Gotowa aplikacja to także fundamenty: kod, dokumentacja, dostępy i zasady utrzymania.</p>
 
 ## 12. Testowanie, poprawki i gwarancja — co powinno być uwzględnione?
 
@@ -632,6 +677,17 @@ A dopiero później ustalić, jaki wariant realizacji będzie miał sens.
 Pełny zakres pakietu, harmonogram i podział płatności znajdziesz na stronie [oferty](/oferta/).
 
 ## 16. Co wybrać: prototyp, MVP czy gotową aplikację?
+
+<div class="article-module article-decision" role="group" aria-labelledby="wybor-poziomu">
+  <p class="article-module__eyebrow" id="wybor-poziomu">Szybka decyzja</p>
+  <ul>
+    <li><strong>Chcesz pokazać pomysł inwestorowi lub użytkownikom</strong><span>Prototyp</span></li>
+    <li><strong>Chcesz sprawdzić działający produkt w praktyce</strong><span>MVP</span></li>
+    <li><strong>Masz sprawdzony model i znany zakres</strong><span>Szersza aplikacja</span></li>
+    <li><strong>Nie wiesz, czego potrzebujesz</strong><span>Zacznij od rozmowy o zakresie</span></li>
+  </ul>
+  <p class="article-module__note">Decyzja zależy od celu, nie od tego, który etap brzmi najbardziej profesjonalnie.</p>
+</div>
 
 Gdybym miał podsumować to najprościej, podzieliłbym sytuacje na trzy przypadki.
 

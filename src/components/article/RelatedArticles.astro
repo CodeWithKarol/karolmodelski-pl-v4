@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from "astro:content"
+import { ArrowRight } from "lucide-react"
+import EditorialArticleCard from "@/components/editorial-article-card.astro"
+import { wiedzaImageFor } from "@/data/wiedza-images"
+
+interface Props {
+  entries: CollectionEntry<"wiedza">[]
+}
+
+const { entries } = Astro.props
+---
+
+{entries.length > 0 && (
+  <section
+    aria-labelledby="powiazane-poradniki"
+    class="border-t border-line bg-paper"
+  >
+    <div class="shell py-12 sm:py-16">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between">
+        <h2
+          id="powiazane-poradniki"
+          class="font-heading text-2xl leading-snug font-semibold tracking-tight"
+        >
+          Powiązane poradniki
+        </h2>
+        <a
+          href="/wiedza/"
+          class="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+        >
+          Wszystkie poradniki
+          <ArrowRight className="size-4" aria-hidden="true" />
+        </a>
+      </div>
+
+      <div class="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+        {entries.map((entry) => (
+          <EditorialArticleCard
+            entry={entry}
+            image={wiedzaImageFor(entry.id)}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+)}

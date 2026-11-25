@@ -2,6 +2,7 @@
 title: "Ile trwa stworzenie aplikacji i od czego zależy czas realizacji?"
 metaTitle: "Ile trwa stworzenie aplikacji? Czas realizacji w 2026 | Poradnik"
 description: "Ile trwa stworzenie aplikacji mobilnej lub webowej? Sprawdź realne terminy, etapy prac, przyczyny opóźnień i sposoby na szybsze uruchomienie produktu."
+teaser: "Etapy prac, przyczyny opóźnień i sprawdzone sposoby na szybszy start."
 cardDescription: |-
   Od kilku tygodni do kilkunastu miesięcy — czas realizacji zależy przede wszystkim od zakresu, a nie od liczby programistów.
 
@@ -25,6 +26,11 @@ faq:
     answer: "Niekoniecznie. Nie wszystkie zadania da się wykonywać równolegle, a nowe osoby potrzebują czasu na poznanie projektu. Prawo Brooksa mówi wprost, że dodawanie ludzi do opóźnionego projektu może zwiększyć opóźnienie. Ważniejsza od liczby osób jest dobra organizacja pracy."
   - question: "Ile trwa publikacja aplikacji w App Store i Google Play?"
     answer: "Apple podaje, że rozpatruje co najmniej 50% zgłoszeń w ciągu 24 godzin i 90% w ciągu 48 godzin, ale nie jest to gwarancja akceptacji. W Google Play nowe osobiste konta deweloperskie muszą przejść zamknięte testy z co najmniej 12 testerami przez minimum 14 dni. Ten etap warto uwzględnić w harmonogramie."
+keyTakeaways:
+  - "Cztery tygodnie dotyczą pierwszej wersji, a cały proces z odbiorem trwa zwykle 6–8 tygodni."
+  - "Zakres, integracje i tempo decyzji wpływają na termin bardziej niż liczba programistów."
+  - "Więcej osób nie skraca automatycznie projektu — zwiększa koszt koordynacji."
+  - "Przygotuj materiały i decyzje przed startem, żeby nie wydłużać realizacji."
 ---
 
 Masz pomysł na aplikację. Wiesz mniej więcej, jak powinna działać, jakie funkcje chciałbyś w niej zobaczyć i komu mogłaby się przydać.
@@ -65,6 +71,19 @@ Na podstawie analiz branżowych i ofert firm programistycznych można przyjąć 
 | Duży system z wieloma integracjami | 12–24 miesiące lub dłużej |
 
 To orientacyjne przedziały, a nie gwarantowane terminy. Poszczególni wykonawcy mogą inaczej definiować zakres MVP i moment zakończenia projektu.
+
+<div class="article-module article-range" role="group" aria-labelledby="wykres-czasu">
+  <p class="article-module__eyebrow" id="wykres-czasu">Orientacyjny czas realizacji</p>
+  <ul>
+    <li><div class="article-range__head"><span>Prototyp lub makieta</span><strong>1–4 tygodnie</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:1;--to:4"></span></div></li>
+    <li><div class="article-range__head"><span>Bardzo prosta aplikacja</span><strong>4–8 tygodni</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:4;--to:8"></span></div></li>
+    <li><div class="article-range__head"><span>Typowe MVP</span><strong>8–16 tygodni</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:8;--to:16"></span></div></li>
+    <li><div class="article-range__head"><span>Aplikacja średniej wielkości</span><strong>4–8 miesięcy</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:17;--to:35"></span></div></li>
+    <li><div class="article-range__head"><span>Rozbudowana platforma</span><strong>8–14 miesięcy</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:35;--to:60"></span></div></li>
+    <li><div class="article-range__head"><span>Duży system</span><strong>12–24 miesiące lub dłużej</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:52;--to:100"></span></div></li>
+  </ul>
+  <p class="article-module__note">Skala orientacyjna 0–24 miesiące. Dokładne przedziały i ich zastrzeżenia znajdziesz w tabeli powyżej.</p>
+</div>
 
 Jak widzisz, różnice są naprawdę duże.
 
@@ -216,6 +235,22 @@ A po zakończeniu programowania aplikację trzeba jeszcze przetestować.
 
 Przejdźmy przez najważniejsze etapy.
 
+<div class="article-module article-process" role="group" aria-labelledby="etapy-czasu">
+  <p class="article-module__eyebrow" id="etapy-czasu">Etapy realizacji</p>
+  <ol>
+    <li><strong>Rozmowa i uporządkowanie pomysłu</strong><span>Ustalamy, jak aplikacja ma działać i jakie są rzeczywiste oczekiwania.</span></li>
+    <li><strong>Wybór najważniejszych funkcji</strong><span>Dzielimy projekt na etapy i wybieramy zakres pierwszej wersji.</span></li>
+    <li><strong>Projektowanie wyglądu i działania</strong><span>Powstają makiety lub projekt, który można sprawdzić przed programowaniem.</span></li>
+    <li><strong>Programowanie</strong><span>Powstają funkcje, zaplecze i połączenia z usługami zewnętrznymi.</span></li>
+    <li><strong>Testowanie</strong><span>Sprawdzamy najważniejsze przepływy, dane i zachowanie na różnych urządzeniach.</span></li>
+    <li><strong>Odbiór i uruchomienie</strong><span>Klient testuje produkt, zgłasza uwagi, a my przygotowujemy publikację.</span></li>
+  </ol>
+</div>
+
+![Planowanie zakresu i etapów na biurku](../../assets/images/journey-o02-planning.webp)
+
+<p class="article-caption">Planowanie zakresu i etapów przed startem realizacji.</p>
+
 ### Etap 1. Rozmowa i uporządkowanie pomysłu
 
 Na początku chcę przede wszystkim zrozumieć, jak wyobrażasz sobie działanie aplikacji.
@@ -315,6 +350,16 @@ To jedno z najważniejszych pytań.
 Bo nawet jeśli wykonawca przygotuje rozsądny harmonogram, podczas realizacji mogą pojawić się rzeczy, które ten harmonogram zmienią.
 
 I nie zawsze jest to wina programistów.
+
+<div class="article-module article-factors" role="group" aria-labelledby="przyczyny-opoznien">
+  <p class="article-module__eyebrow" id="przyczyny-opoznien">Najczęstsze przyczyny opóźnień</p>
+  <ol>
+    <li><span class="article-factors__num">01</span><div><strong>Dokładanie funkcji</strong><span>Każda nowa funkcja to dodatkowa praca i kolejny element do przetestowania.</span></div></li>
+    <li><span class="article-factors__num">02</span><div><strong>Brak szybkich decyzji</strong><span>Oczekiwanie na akceptację ekranu, treści lub materiałów zatrzymuje kolejne zadania.</span></div></li>
+    <li><span class="article-factors__num">03</span><div><strong>Niedoprecyzowane zasady</strong><span>Logika, wyjątki i sytuacje graniczne wymagają ustalenia przed programowaniem.</span></div></li>
+    <li><span class="article-factors__num">04</span><div><strong>Zależność od innych firm</strong><span>Płatności, weryfikacja kont i usługi zewnętrzne mają własne terminy.</span></div></li>
+  </ol>
+</div>
 
 ### Problem pierwszy: dokładanie nowych funkcji
 
@@ -637,6 +682,20 @@ Zastanów się przede wszystkim nad następującymi kwestiami:
 3. Jak powinna działać? Co dzieje się po uruchomieniu aplikacji?
 4. Które funkcje są najważniejsze? Co musi znaleźć się w pierwszej wersji?
 5. Czy masz konkretny termin? Na przykład premierę produktu, wydarzenie branżowe lub planowaną kampanię marketingową.
+
+<div class="article-module article-checklist" data-article-checklist role="group" aria-labelledby="checklista-termin">
+  <p class="article-module__eyebrow" id="checklista-termin">Przed rozmową o terminie</p>
+  <ul>
+    <li><label><input type="checkbox"> <span>Wiesz, dla kogo jest aplikacja i kto będzie z niej korzystać.</span></label></li>
+    <li><label><input type="checkbox"> <span>Umiesz opisać problem i korzyść dla użytkownika.</span></label></li>
+    <li><label><input type="checkbox"> <span>Masz zapisany najważniejszy przepływ użytkownika.</span></label></li>
+    <li><label><input type="checkbox"> <span>Wiesz, które funkcje muszą znaleźć się w pierwszej wersji.</span></label></li>
+    <li><label><input type="checkbox"> <span>Masz orientacyjny budżet lub jasne „jeszcze nie wiem”.</span></label></li>
+    <li><label><input type="checkbox"> <span>Znasz oczekiwany termin lub wydarzenie, na które ma być gotowe.</span></label></li>
+  </ul>
+  <p class="article-checklist__status" data-checklist-status aria-live="polite">Zaznacz pozycje</p>
+  <p class="article-module__note">To nie musi być dokument. Wystarczy notatka, którą wykorzystasz podczas rozmowy.</p>
+</div>
 
 Nie musisz znać odpowiedzi na wszystkie pytania.
 

@@ -1,47 +1,42 @@
 ---
 import Layout from "@/layouts/main.astro"
 import SiteHeader from "@/components/site-header.astro"
-import SiteFooter from "@/components/site-footer.astro"
-import WiedzaCta from "@/components/wiedza-cta.astro"
+import CompactFooter from "@/components/compact-footer.astro"
+import SectionHeading from "@/components/section-heading.astro"
+import EditorialArticleCard from "@/components/editorial-article-card.astro"
+import { Image } from "astro:assets"
 import { getCollection } from "astro:content"
 import {
   WIEDZA_CATEGORIES,
+  WIEDZA_BASE_PATH,
   wiedzaArticlePath,
-  wiedzaCategoryLabel,
 } from "@/data/wiedza"
-import { formatDate, plural } from "@/lib/format"
-import { getReadingTime } from "@/lib/reading-time"
-import { cn } from "@/lib/utils"
+import { wiedzaImageFor } from "@/data/wiedza-images"
+import { plural } from "@/lib/format"
 import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 import { ArrowRight } from "lucide-react"
+import checklistPreview from "@/assets/images/checklista-preview.png"
+import portrait from "@/assets/images/karol-modelski-portrait.webp"
 
 const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
 const entries = (await getCollection("wiedza")).sort(
   (a, b) => a.data.order - b.data.order
 )
-const availableCategories = WIEDZA_CATEGORIES.filter((category) =>
-  entries.some((entry) => entry.data.category === category.id)
-)
-const readingTimeFor = (entry: (typeof entries)[number]) =>
-  getReadingTime(entry.body)
-const cardParagraphs = (entry: (typeof entries)[number]) =>
-  (entry.data.cardDescription ?? entry.data.description)
-    .split(/\n\s*\n/)
-    .map((paragraph) => paragraph.trim())
-    .filter(Boolean)
 const featured = entries.find((entry) => entry.data.featured) ?? entries[0]
-const featuredReadingTime = featured ? readingTimeFor(featured) : null
 const articles = entries.filter((entry) => entry.id !== featured?.id)
 
-const heroFacts = [
-  {
-    label: "W bibliotece",
-    value: `${entries.length} ${plural(entries.length, "poradnik", "poradniki", "poradników")}`,
-  },
-  { label: "Dla kogo", value: "Osoby z pomysłem na aplikację" },
-  { label: "Zakres", value: "Od pomysłu po utrzymanie produktu" },
-  { label: "Forma", value: "Praktyczne przykłady, bez żargonu" },
+const filters = [
+  { id: "all", label: "Wszystkie", count: entries.length },
+  ...WIEDZA_CATEGORIES.map((category) => ({
+    id: category.id,
+    label: category.label,
+    count: entries.filter((entry) => entry.data.category === category.id)
+      .length,
+  })),
 ]
+
+const consultationUrl = "/rozmowa/"
 
 const jsonLd = [
   {
@@ -70,7 +65,7 @@ const jsonLd = [
         "@type": "ListItem",
         position: 2,
         name: "Wiedza",
-        item: new URL("/wiedza/", siteURL).toString(),
+        item: new URL(`${WIEDZA_BASE_PATH}/`, siteURL).toString(),
       },
     ],
   },
@@ -92,13 +87,13 @@ const jsonLd = [
   <SiteHeader variant="page" current="wiedza" />
 
   <main id="main">
-    <section class="relative overflow-hidden bg-paper px-4 pt-8 pb-16 sm:px-6 sm:pt-10 sm:pb-24">
+    <section class="relative overflow-hidden bg-paper">
       <div
         aria-hidden="true"
-        class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
+        class="grain pointer-events-none absolute inset-0 -z-10 opacity-50"
       ></div>
 
-      <div class="relative mx-auto max-w-[75rem]">
+      <div class="shell pt-10 pb-12 sm:pt-16 lg:pt-24 lg:pb-16">
         <nav aria-label="Ścieżka nawigacji">
           <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
             <li>
@@ -111,126 +106,196 @@ const jsonLd = [
           </ol>
         </nav>
 
-        <div class="mt-10 grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-12">
-          <div class="rise lg:col-span-7">
-            <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
-              <span class="h-px w-8 bg-signal"></span>
-              Wiedza · Od pomysłu do aplikacji
+        <div class="mt-10 max-w-4xl lg:mt-14">
+          <p class="flex items-center gap-3 font-mono text-[11px] tracking-[0.2em] text-ink-soft uppercase">
+            <span class="h-px w-8 bg-signal" aria-hidden="true" />
+            Wiedza · Od pomysłu do aplikacji
+          </p>
+
+          <h1 class="mt-6 font-heading text-[clamp(2.5rem,1.2rem+3.2vw,3.75rem)] leading-[1.03] font-semibold tracking-tight text-balance">
+            Wiedza, która pomaga zamienić pomysł w produkt.
+          </h1>
+
+          <p class="lede mt-6 max-w-2xl">
+            Praktyczne poradniki o tworzeniu aplikacji, kosztach i współpracy z
+            wykonawcami. Bez żargonu i bez obiecywania sukcesu.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-line pt-5">
+            <p class="font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase">
+              {entries.length}{" "}
+              {plural(entries.length, "poradnik", "poradniki", "poradników")}
             </p>
-
-            <h1 class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl">
-              Masz pomysł na aplikację? Zacznij tutaj.
-            </h1>
-
-            <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Nie wiesz, od czego zacząć, ile to może kosztować i co przygotować
-              przed rozmową z wykonawcą?
-            </p>
-
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Zbieram tu wiedzę z projektów informatycznych i pierwszych wersji
-              produktów — bez technicznego żargonu, z przykładami z realizacji.
-            </p>
-
-            <div class="mt-8 flex flex-col items-start gap-4">
-              <a
-                href={featured ? wiedzaArticlePath(featured.id) : "#poradniki"}
-                class={cn(
-                  buttonVariants({ size: "lg" }),
-                  "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
-                )}
-              >
-                Przeczytaj poradnik na start
-                <ArrowRight />
-              </a>
-              <p class="text-sm leading-relaxed text-pretty text-ink-soft">
-                {entries.length}{" "}
-                {plural(entries.length, "poradnik", "poradniki", "poradników")}{" "}
-                · koszty, ryzyko, realizacja
-              </p>
-            </div>
+            <a
+              href="#poradniki"
+              class="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+            >
+              Przejdź do biblioteki
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
           </div>
-
-          <aside class="rise lg:col-span-5" style="animation-delay:.12s">
-            <div class="rounded-2xl border border-line bg-surface-muted p-6 sm:p-8 lg:sticky lg:top-24">
-              <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
-                W skrócie
-              </p>
-
-              <dl class="mt-4 border-t border-line">
-                {heroFacts.map(({ label, value }) => (
-                  <div class="border-b border-line py-3">
-                    <dt class="font-mono text-[10px] tracking-[0.12em] text-ink-soft uppercase">
-                      {label}
-                    </dt>
-                    <dd class="mt-1 font-heading text-base font-semibold text-ink sm:text-lg">
-                      {value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-
-              <a
-                href="#poradniki"
-                class="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-              >
-                Zobacz wszystkie poradniki
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </a>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
 
-    <section class="border-t border-line bg-surface-muted px-4 py-12 sm:px-6 sm:py-16">
-      <div class="mx-auto max-w-[75rem]">
-        <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-12">
-          <div class="md:col-span-8">
-            <h2 class="font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance text-ink sm:text-3xl">
-              Zanim zaczniesz czytać — uporządkuj własny pomysł.
-            </h2>
-            <p class="mt-4 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Przygotowałem bezpłatną checklistę z 12 pytaniami, które warto
-              sobie zadać przed rozpoczęciem budowy aplikacji.
-            </p>
-            <p class="mt-3 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-              Pomoże Ci zastanowić się, jaki problem chcesz rozwiązać, co
-              powinno działać w pierwszej wersji i na jakie koszty oraz ryzyka
-              warto się przygotować. Możesz ją uzupełnić własnymi odpowiedziami
-              i wykorzystać podczas rozmowy z wykonawcą.
-            </p>
-            <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
-              <a
-                href="/checklista/"
-                class={cn(
-                  buttonVariants({ size: "lg" }),
-                  "h-auto min-h-11 w-full gap-2 rounded-[6px] px-5 py-2.5 text-center text-sm text-balance whitespace-normal sm:w-auto sm:text-base"
-                )}
+    <section id="poradniki" class="scroll-mt-24 border-t border-line bg-paper">
+      <div class="shell pb-16 sm:pb-20">
+        <div
+          data-wiedza-filters
+          hidden
+          role="group"
+          aria-label="Filtruj poradniki według tematu"
+          class="border-b border-line py-3"
+        >
+          <div class="flex items-center gap-5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {filters.map(({ id, label, count }) => (
+              <button
+                type="button"
+                data-wiedza-filter={id}
+                aria-pressed={id === "all" ? "true" : "false"}
+                class="flex shrink-0 items-baseline gap-1.5 border-b-2 border-transparent py-2 text-sm text-ink-soft transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal aria-pressed:border-signal aria-pressed:text-ink"
               >
-                Pobierz bezpłatną checklistę
-                <ArrowRight />
-              </a>
-              <p class="font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase">
-                PDF · 4 strony · Bez rejestracji
-              </p>
-            </div>
+                {label}
+                <span class="font-mono text-[10px] text-ink-soft">{count}</span>
+              </button>
+            ))}
+            <p
+              data-wiedza-count
+              aria-live="polite"
+              class="ml-auto hidden shrink-0 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase sm:block"
+            >
+              {entries.length}{" "}
+              {plural(entries.length, "artykuł", "artykuły", "artykułów")}
+            </p>
+          </div>
+        </div>
+
+        <div data-featured-section class="pt-10 sm:pt-12">
+          {featured && (
+            <EditorialArticleCard
+              entry={featured}
+              image={wiedzaImageFor(featured.id)}
+              variant="featured"
+              priority
+            />
+          )}
+        </div>
+
+        <div class="mt-14 border-t border-line pt-8">
+          <div class="border-b border-line pb-4">
+            <h2 class="font-heading text-2xl leading-snug font-semibold tracking-tight">
+              Poradniki o tworzeniu aplikacji
+            </h2>
           </div>
 
-          <div class="hidden md:col-span-4 md:block">
+          <div class="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+            {articles.map((entry, index) => (
+              <Fragment>
+                <EditorialArticleCard
+                  entry={entry}
+                  image={wiedzaImageFor(entry.id)}
+                />
+
+                {index === 2 && (
+                  <div
+                    data-checklist-module
+                    class="border-y border-line bg-surface-muted px-5 py-8 sm:px-8 sm:py-10 md:col-span-2 lg:col-span-3"
+                  >
+                    <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-12">
+                      <div class="md:col-span-8">
+                        <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+                          Bezpłatna checklista
+                        </p>
+                        <h3 class="mt-3 font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-3xl">
+                          Zanim zaczniesz czytać — uporządkuj własny pomysł.
+                        </h3>
+                        <p class="copy mt-3 text-sm sm:text-base">
+                          12 pytań pomaga uporządkować pomysł, użytkowników,
+                          budżet i ryzyka przed rozmową z wykonawcą.
+                        </p>
+                        <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
+                          <a
+                            href="/checklista/"
+                            class={cn(
+                              buttonVariants({ size: "lg" }),
+                              "h-auto min-h-11 gap-2 rounded-[6px] px-5 py-2.5 text-center text-sm text-balance whitespace-normal sm:text-base"
+                            )}
+                          >
+                            Pobierz bezpłatną checklistę
+                            <ArrowRight />
+                          </a>
+                          <p class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+                            PDF · 4 strony · Bez rejestracji
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="md:col-span-4">
+                        <a
+                          href="/checklista/"
+                          class="mx-auto block w-full max-w-[10rem] overflow-hidden rounded-lg border border-line bg-paper md:max-w-[13rem]"
+                        >
+                          <Image
+                            src={checklistPreview}
+                            alt="Pierwsza strona checklisty „12 pytań, zanim zaczniesz budować aplikację”"
+                            widths={[240, 320, 480, 640]}
+                            sizes="(min-width: 768px) 208px, 160px"
+                            quality={80}
+                            loading="lazy"
+                            decoding="async"
+                            class="h-auto w-full"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </Fragment>
+            ))}
+          </div>
+        </div>
+
+        <p
+          data-wiedza-empty
+          hidden
+          class="border-b border-line py-8 text-sm text-ink-soft"
+        >
+          Brak artykułów w tej kategorii.
+        </p>
+      </div>
+    </section>
+
+    <section class="border-t border-line bg-surface-muted">
+      <div class="shell py-12 sm:py-16">
+        <div class="grid grid-cols-[7rem_minmax(0,1fr)] items-start gap-6 sm:grid-cols-[9rem_minmax(0,1fr)] sm:items-center sm:gap-10">
+          <Image
+            src={portrait}
+            alt="Karol Modelski"
+            widths={[160, 240, 320, 480]}
+            sizes="(min-width: 640px) 144px, 112px"
+            quality={82}
+            loading="lazy"
+            decoding="async"
+            class="aspect-[4/5] w-full rounded-lg border border-line object-cover"
+          />
+          <div>
+            <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+              Autor
+            </p>
+            <h2 class="mt-2 font-heading text-2xl leading-snug font-semibold tracking-tight">
+              Karol Modelski
+            </h2>
+            <p class="copy mt-2 text-sm sm:text-base">
+              Techniczny partner pomysłodawców. Od ponad 7 lat tworzę
+              oprogramowanie — wcześniej systemy dla banków i dużych firm. Piszę
+              o zakresie, kosztach i realizacji pierwszej wersji.
+            </p>
             <a
-              href="/checklista/"
-              class="mx-auto block w-full max-w-[13rem] overflow-hidden rounded-xl border border-line bg-paper shadow-[0_25px_60px_-45px_rgba(20,20,20,0.5)]"
+              href="/o-mnie/"
+              class="mt-3 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
             >
-              <img
-                src="/checklista/podglad-1-strona.png"
-                alt="Pierwsza strona checklisty „12 pytań, zanim zaczniesz budować aplikację”"
-                width="989"
-                height="1400"
-                loading="lazy"
-                decoding="async"
-                class="block w-full"
-              />
+              Poznaj mnie i moje podejście
+              <ArrowRight className="size-4" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -238,169 +303,47 @@ const jsonLd = [
     </section>
 
     <section
-      id="poradniki"
-      class="scroll-mt-24 border-t border-line bg-paper px-4 py-10 sm:px-6 sm:py-14"
+      id="kontakt"
+      class="force-dark on-ink section-y border-t border-line bg-ink text-paper"
     >
-      <div class="mx-auto max-w-[75rem]">
-        {entries.length > 1 && (
-          <div
-            data-wiedza-filters
-            hidden
-            role="group"
-            aria-label="Filtruj artykuły według tematu"
-            class="flex flex-wrap items-center gap-2 border-b border-line pb-5"
-          >
-            <button
-              type="button"
-              data-wiedza-filter="all"
-              aria-pressed="true"
-              class="rounded-full border border-line px-4 py-2 text-sm text-ink-soft transition-colors hover:border-ink/25 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper"
-            >
-              Wszystkie
-            </button>
-            {availableCategories.map((category) => (
-              <button
-                type="button"
-                data-wiedza-filter={category.id}
-                aria-pressed="false"
-                class="rounded-full border border-line px-4 py-2 text-sm text-ink-soft transition-colors hover:border-ink/25 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-paper"
-              >
-                {category.label}
-              </button>
-            ))}
-            <p
-              data-wiedza-count
-              aria-live="polite"
-              class="ml-auto hidden font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase sm:block"
-            >
-              {entries.length}{" "}
-              {plural(entries.length, "artykuł", "artykuły", "artykułów")}
-            </p>
-          </div>
-        )}
+      <div class="shell">
+        <div class="max-w-3xl">
+          <SectionHeading
+            eyebrow="Na koniec"
+            title="Czas przełożyć wiedzę na Twój pomysł."
+            lead="Opowiesz mi, co chcesz stworzyć. W 20 minut sprawdzimy pierwszy krok."
+            tone="dark"
+          />
 
-        {featured && (
-          <article
-            data-article-card
-            data-category={featured.data.category}
-            class="group relative mt-8 overflow-hidden rounded-2xl border border-line bg-surface-muted px-6 py-8 sm:px-10 sm:py-10"
-          >
-            <span
-              aria-hidden="true"
-              class="pointer-events-none absolute top-4 right-6 hidden font-heading text-[7rem] leading-none font-semibold text-ink/[0.055] select-none sm:block lg:text-[9rem]"
-            >
-              01
-            </span>
-
-            <div class="relative max-w-3xl">
-              <p class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
-                Artykuł na start
-                {featuredReadingTime
-                  ? ` · ${featuredReadingTime} min czytania`
-                  : ""}
-              </p>
-
-              <h2 class="mt-4 font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance sm:text-3xl lg:text-4xl">
-                <a
-                  href={wiedzaArticlePath(featured.id)}
-                  class="after:absolute after:inset-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
-                >
-                  {featured.data.title}
-                </a>
-              </h2>
-
-              <div class="mt-4 max-w-2xl space-y-3 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                {cardParagraphs(featured).map((paragraph) => (
-                  <p>{paragraph}</p>
-                ))}
-              </div>
-
-              <div class="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <span class="inline-flex min-h-11 items-center gap-2 self-start rounded-[6px] bg-ink px-5 text-sm font-medium text-paper transition-colors group-hover:bg-signal-ink">
-                  Przeczytaj artykuł
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </span>
-                <p class="font-mono text-[11px] text-ink-soft">
-                  Karol Modelski
-                  {featured.data.publishedAt
-                    ? ` · ${formatDate(featured.data.publishedAt)}`
-                    : ""}
-                </p>
-              </div>
-            </div>
-          </article>
-        )}
-
-        {articles.length > 0 && (
-          <div data-wiedza-list>
-            <div class="mt-14 flex items-baseline justify-between gap-6 border-b border-line pb-4">
-              <h2 class="font-heading text-xl font-semibold tracking-tight">
-                Pozostałe poradniki
-              </h2>
-              <span class="font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase">
-                Od podstaw do realizacji
-              </span>
-            </div>
-
-            <ul
+          <div class="mt-8">
+            <a
+              href={consultationUrl}
               class={cn(
-                "grid grid-cols-1 gap-x-8",
-                articles.length >= 3
-                  ? "md:grid-cols-2 lg:grid-cols-3"
-                  : "md:grid-cols-2"
+                buttonVariants({ size: "lg" }),
+                "h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-6 py-3 text-center text-base text-balance whitespace-normal text-ink hover:bg-paper/85 sm:w-auto"
               )}
             >
-              {articles.map((entry) => (
-                <li
-                  data-article-card
-                  data-category={entry.data.category}
-                  class="border-b border-line"
-                >
-                  <a
-                    href={wiedzaArticlePath(entry.id)}
-                    class="group flex h-full flex-col py-7 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal"
-                  >
-                    <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
-                      {wiedzaCategoryLabel(entry.data.category)}
-                    </p>
-                    <h3 class="mt-3 font-heading text-lg leading-snug font-semibold text-balance underline-offset-4 group-hover:underline">
-                      {entry.data.title}
-                    </h3>
-                    <div class="mt-3 flex-1 space-y-2 text-sm leading-relaxed text-pretty text-ink-soft">
-                      {cardParagraphs(entry).map((paragraph) => (
-                        <p>{paragraph}</p>
-                      ))}
-                    </div>
-                    <span class="mt-5 inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.12em] text-ink-soft uppercase">
-                      {readingTimeFor(entry)
-                        ? `${readingTimeFor(entry)} min czytania`
-                        : "Czytaj więcej"}
-                      <ArrowRight
-                        className="size-3.5 transition-transform group-hover:translate-x-1"
-                        aria-hidden="true"
-                      />
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <p
-              data-wiedza-empty
-              hidden
-              class="border-b border-line py-8 text-sm text-ink-soft"
-            >
-              Brak artykułów w tej kategorii.
+              Umów bezpłatną rozmowę
+              <ArrowRight />
+            </a>
+            <p class="mt-4 text-sm leading-relaxed text-paper/60">
+              Bezpłatna rozmowa · 20 minut · Bez zobowiązań
             </p>
           </div>
-        )}
+
+          <a
+            href="/jak-pracuje/"
+            class="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-paper underline decoration-paper/25 underline-offset-4 transition-colors hover:decoration-signal"
+          >
+            Zobacz, jak pracuję
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </section>
-
-    <WiedzaCta />
   </main>
 
-  <SiteFooter />
+  <CompactFooter />
 
   <script is:inline>
     ;(() => {
@@ -415,14 +358,13 @@ const jsonLd = [
       const cards = Array.prototype.slice.call(
         document.querySelectorAll("[data-article-card]")
       )
-      const list = document.querySelector("[data-wiedza-list]")
-      const listCards = list
-        ? Array.prototype.slice.call(
-            list.querySelectorAll("[data-article-card]")
-          )
-        : []
       const count = document.querySelector("[data-wiedza-count]")
       const empty = document.querySelector("[data-wiedza-empty]")
+      const featuredSection = document.querySelector("[data-featured-section]")
+      const checklist = document.querySelector("[data-checklist-module]")
+      const valid = new Set(
+        buttons.map((button) => button.dataset.wiedzaFilter)
+      )
 
       const plural = (n) => {
         if (n === 1) return "1 artykuł"
@@ -430,7 +372,9 @@ const jsonLd = [
         return n + " artykułów"
       }
 
-      const apply = (category) => {
+      const apply = (category, updateUrl = true) => {
+        if (!valid.has(category)) category = "all"
+
         let visible = 0
 
         cards.forEach((card) => {
@@ -445,11 +389,21 @@ const jsonLd = [
         })
 
         if (count) count.textContent = plural(visible)
+
+        if (featuredSection) {
+          featuredSection.hidden = !cards.some(
+            (card) => featuredSection.contains(card) && !card.hidden
+          )
+        }
+
+        if (checklist) checklist.hidden = category !== "all"
         if (empty) empty.hidden = visible !== 0
 
-        if (list) {
-          const visibleList = listCards.filter((card) => !card.hidden).length
-          list.hidden = visibleList === 0
+        if (updateUrl) {
+          const url = new URL(window.location.href)
+          if (category === "all") url.searchParams.delete("kategoria")
+          else url.searchParams.set("kategoria", category)
+          window.history.replaceState(null, "", url)
         }
       }
 
@@ -457,6 +411,16 @@ const jsonLd = [
         button.addEventListener("click", () => {
           apply(button.dataset.wiedzaFilter || "all")
         })
+      })
+
+      const initial =
+        new URL(window.location.href).searchParams.get("kategoria") || "all"
+      apply(initial, false)
+
+      window.addEventListener("popstate", () => {
+        const category =
+          new URL(window.location.href).searchParams.get("kategoria") || "all"
+        apply(category, false)
       })
     })()
   </script>

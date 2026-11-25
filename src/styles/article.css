@@ -1,0 +1,925 @@
+/* Moduły redakcyjne wewnątrz treści artykułów „Wiedza”. */
+
+.article-body > .article-module {
+  margin-block: 2.75rem;
+}
+
+.article-body .article-module__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--signal-ink);
+}
+
+.article-body .article-module__note {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.article-body .article-caption {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* 1. Trzy pytania porządkujące pomysł */
+.article-body .article-questions {
+  counter-reset: article-question;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-block: 1.5rem;
+}
+
+.article-body .article-questions ol {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.1rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.article-body .article-questions li {
+  counter-increment: article-question;
+  position: relative;
+  padding-left: 2.1rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.article-body .article-questions li::before {
+  content: "0" counter(article-question);
+  position: absolute;
+  top: 0.1rem;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  color: var(--signal-ink);
+}
+
+.article-body .article-questions strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+@media (min-width: 720px) {
+  .article-body .article-questions ol {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+/* 2. Porównanie pytań */
+.article-body .article-compare__grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.article-body .article-compare__col {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 1.15rem 1.2rem;
+}
+
+.article-body .article-compare__col--signal {
+  border-color: color-mix(in srgb, var(--signal) 45%, var(--line));
+  background: var(--surface-muted);
+}
+
+.article-body .article-compare h3 {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.article-body .article-compare__col--signal h3 {
+  color: var(--signal-ink);
+}
+
+.article-body .article-compare ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.article-body .article-compare__col--signal ul {
+  color: var(--ink);
+}
+
+.article-body .article-compare li + li {
+  margin-top: 0.5rem;
+}
+
+.article-body .article-compare li::marker {
+  color: var(--signal-ink);
+}
+
+@media (min-width: 640px) {
+  .article-body .article-compare__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* 3. Diagram: pełna wizja vs pierwsza wersja */
+.article-body .article-diagram {
+  margin-block: 2.75rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-block: 1.5rem;
+}
+
+.article-body .article-diagram__grid {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.1rem;
+}
+
+.article-body .article-diagram__col {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 1.1rem 1.2rem;
+}
+
+.article-body .article-diagram__col--focus {
+  border-color: var(--signal);
+  background: var(--surface-muted);
+}
+
+.article-body .article-diagram__label {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.article-body .article-diagram__col--focus .article-diagram__label {
+  color: var(--signal-ink);
+}
+
+.article-body .article-diagram__col ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.article-body .article-diagram__col--focus ul {
+  color: var(--ink);
+}
+
+.article-body .article-diagram__arrow {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--signal);
+  font-size: 1.5rem;
+}
+
+.article-body .article-diagram figcaption {
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 640px) {
+  .article-body .article-diagram__grid {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .article-body .article-diagram__arrow {
+    display: flex;
+  }
+}
+
+/* 4. Pull quote */
+.article-body .article-pullquote {
+  margin-block: 2.75rem;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+.article-body .article-pullquote::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-bottom: 1.25rem;
+  background: var(--signal);
+}
+
+.article-body .article-pullquote p {
+  margin: 0;
+}
+
+/* 5. Case study */
+.article-body .article-case-study {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 1.5rem;
+}
+
+.article-body .article-case-study__head {
+  margin-top: 0.75rem;
+}
+
+.article-body .article-case-study h3 {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+.article-body .article-case-study__meta {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.article-body .article-case-study figure {
+  margin: 1.25rem 0 0;
+}
+
+.article-body .article-case-study video {
+  border-radius: 0.5rem;
+  box-shadow: none;
+}
+
+.article-body .article-case-study figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.article-body .article-case-study__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 4px;
+}
+
+.article-body .article-case-study__link:hover {
+  text-decoration-color: var(--signal);
+}
+
+@media (min-width: 640px) {
+  .article-body .article-case-study {
+    padding: 2rem;
+  }
+}
+
+/* 6. Czynniki kosztowe */
+.article-body .article-factors {
+  margin-block: 2.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.article-body .article-factors ol {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article-body .article-factors li {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--line);
+  padding: 0.8rem 0;
+}
+
+.article-body .article-factors__num {
+  padding-top: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--signal-ink);
+}
+
+.article-body .article-factors strong {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.article-body .article-factors span {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 640px) {
+  .article-body .article-factors ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+  }
+}
+
+/* 7. Proces realizacji */
+.article-body .article-process {
+  margin-block: 2.75rem;
+}
+
+.article-body .article-process ol {
+  counter-reset: article-step;
+  margin: 0 0 0 0.7rem;
+  border-left: 1px solid var(--line);
+  padding: 0 0 0 1.6rem;
+  list-style: none;
+}
+
+.article-body .article-process li {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.article-body .article-process li:last-child {
+  padding-bottom: 0;
+}
+
+.article-body .article-process li::before {
+  content: "0" counter(article-step);
+  counter-increment: article-step;
+  position: absolute;
+  top: 0.1rem;
+  left: -2.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  color: var(--signal-ink);
+}
+
+.article-body .article-process strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.article-body .article-process span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* 8. Ćwiczenie praktyczne */
+.article-body .article-exercise {
+  border: 1px solid var(--line);
+  background: var(--surface-muted);
+  padding: 1.5rem;
+}
+
+.article-body .article-exercise h3 {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  color: var(--ink);
+}
+
+.article-body .article-exercise__intro {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.article-body .article-exercise__fields {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.article-body .article-exercise label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.article-body .article-exercise textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.4rem;
+  border: 1px solid var(--ink-soft);
+  border-radius: 0.375rem;
+  background: var(--paper);
+  padding: 0.6rem 0.7rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--ink);
+  resize: vertical;
+}
+
+.article-body .article-exercise textarea::placeholder {
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.article-body .article-exercise textarea:focus-visible {
+  border-color: var(--signal);
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+.article-body .article-exercise__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.article-body .article-exercise__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  border: 0;
+  border-radius: 6px;
+  background: var(--ink);
+  padding: 0.55rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--paper);
+  cursor: pointer;
+}
+
+.article-body .article-exercise__button:hover {
+  background: color-mix(in srgb, var(--ink) 85%, var(--paper));
+}
+
+.article-body .article-exercise__button:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+.article-body .article-exercise__status {
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+}
+
+.article-body .article-exercise__note {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 640px) {
+  .article-body .article-exercise {
+    padding: 2rem;
+  }
+
+  .article-body .article-exercise__fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.5rem;
+  }
+}
+
+/* Reset globalnego rytmu list wewnątrz modułów opartych na gridzie. */
+.article-body .article-questions li + li,
+.article-body .article-factors li + li,
+.article-body .article-process li + li {
+  margin-top: 0;
+}
+
+/* 9. Wykres zakresów (RangeChart) */
+.article-body .article-range ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.article-body .article-range li {
+  margin: 0;
+}
+
+.article-body .article-range__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.article-body .article-range__head span {
+  color: var(--ink);
+}
+
+.article-body .article-range__head strong {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.article-body .article-range__track {
+  height: 6px;
+  margin-top: 0.4rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--line);
+}
+
+.article-body .article-range__bar {
+  display: block;
+  width: calc((var(--to) - var(--from)) * 1%);
+  min-width: 4px;
+  height: 100%;
+  margin-left: calc(var(--from) * 1%);
+  border-radius: 999px;
+  background: var(--signal);
+}
+
+/* 10. Interaktywna checklista */
+.article-body .article-checklist ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.article-body .article-checklist li {
+  margin: 0;
+}
+
+.article-body .article-checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.article-body .article-checklist input {
+  flex-shrink: 0;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.2rem;
+  accent-color: var(--signal);
+}
+
+.article-body .article-checklist input:checked + span {
+  color: var(--ink);
+  text-decoration: line-through;
+  text-decoration-color: var(--line);
+}
+
+.article-body .article-checklist__status {
+  margin-top: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* 11. Kalkulator edukacyjny */
+.article-body .article-calculator {
+  border: 1px solid var(--line);
+  background: var(--surface-muted);
+  padding: 1.25rem;
+}
+
+.article-body .article-calculator__fields {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.article-body .article-calculator label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.article-body .article-calculator input {
+  display: block;
+  width: 100%;
+  margin-top: 0.4rem;
+  border: 1px solid var(--ink-soft);
+  border-radius: 0.375rem;
+  background: var(--paper);
+  padding: 0.55rem 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.article-body .article-calculator input:focus-visible {
+  border-color: var(--signal);
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+.article-body .article-calculator__results {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 1.1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+}
+
+.article-body .article-calculator__results p {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+}
+
+.article-body .article-calculator__results strong {
+  color: var(--ink);
+  font-size: 1.0625rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.article-body .article-calculator__note {
+  margin-top: 0.8rem;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 640px) {
+  .article-body .article-calculator {
+    padding: 1.5rem;
+  }
+
+  .article-body .article-calculator__fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.25rem;
+  }
+}
+
+/* 12. Warstwy technologii */
+.article-body .article-layers ol {
+  counter-reset: layer;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.article-body .article-layers li {
+  position: relative;
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 1rem 1.1rem 1rem 3.3rem;
+}
+
+.article-body .article-layers li::before {
+  counter-increment: layer;
+  content: "0" counter(layer);
+  position: absolute;
+  top: 1rem;
+  left: 1.05rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--signal-ink);
+}
+
+.article-body .article-layers strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.article-body .article-layers span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* 13. Prosty wybór / decision list */
+.article-body .article-decision ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.article-body .article-decision li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 0.8rem 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.article-body .article-decision li strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.article-body .article-decision li span {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--signal-ink);
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .article-body .article-decision li {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .article-body .article-decision li span {
+    text-align: left;
+  }
+}
+
+/* 14. Karta eksperymentu */
+.article-body .article-experiment {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 1.25rem;
+}
+
+.article-body .article-experiment dl {
+  margin: 1rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.article-body .article-experiment dl > div {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+  padding: 0.7rem 0;
+}
+
+.article-body .article-experiment dt {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--signal-ink);
+}
+
+.article-body .article-experiment dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+@media (max-width: 480px) {
+  .article-body .article-experiment dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
+
+/* 15. Trzy poziomy realizacji */
+.article-body .article-levels__grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.article-body .article-levels__item {
+  border-top: 2px solid var(--line);
+  padding-top: 0.9rem;
+}
+
+.article-body .article-levels__item--signal {
+  border-color: var(--signal);
+}
+
+.article-body .article-levels__num {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--signal-ink);
+}
+
+.article-body .article-levels h3 {
+  margin: 0.35rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.article-body .article-levels p {
+  margin: 0.4rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 720px) {
+  .article-body .article-levels__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* 16. Tabele porównawcze wewnątrz artykułu */
+.article-body thead {
+  background: var(--surface-muted);
+}
+
+.article-body tbody td:first-child {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.article-body tbody tr:hover {
+  background: color-mix(in srgb, var(--ink) 2%, transparent);
+}

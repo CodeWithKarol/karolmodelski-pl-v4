@@ -6,14 +6,25 @@ import {
 } from "@/components/ui/accordion"
 import { homeFaq } from "@/data/faq"
 
-export default function FaqAccordion() {
+interface FaqItem {
+  question: string
+  answer: string
+}
+
+interface FaqAccordionProps {
+  items?: FaqItem[]
+  defaultValue?: string[]
+  className?: string
+}
+
+export default function FaqAccordion({
+  items = homeFaq,
+  defaultValue = ["faq-1"],
+  className = "mt-10 border-t border-line",
+}: FaqAccordionProps) {
   return (
-    <Accordion
-      keepMounted
-      defaultValue={["faq-1"]}
-      className="mt-12 border-t border-line"
-    >
-      {homeFaq.map(({ question, answer }, index) => {
+    <Accordion keepMounted defaultValue={defaultValue} className={className}>
+      {items.map(({ question, answer }, index) => {
         const number = index + 1
         return (
           <AccordionItem

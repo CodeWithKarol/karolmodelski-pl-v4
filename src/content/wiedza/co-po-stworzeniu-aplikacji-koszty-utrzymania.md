@@ -2,6 +2,7 @@
 title: "Co dzieje się po stworzeniu aplikacji? Koszty utrzymania i dalszy rozwój"
 metaTitle: "Co po stworzeniu aplikacji? Koszty utrzymania i rozwój"
 description: "Ile kosztuje utrzymanie aplikacji po jej uruchomieniu? Sprawdź wydatki na serwery, aktualizacje, gwarancję, opiekę techniczną i dalszy rozwój."
+teaser: "Koszty utrzymania aplikacji po wdrożeniu, opieka techniczna i planowanie dalszego rozwoju."
 cardDescription: |-
   Uruchomienie aplikacji nie zamyka budżetu. Ale nie oznacza też, że produkt będzie generował niekończące się wydatki.
 
@@ -14,6 +15,11 @@ related:
   - "ile-kosztuje-stworzenie-aplikacji-2026"
   - "prototyp-mvp-czy-gotowa-aplikacja"
   - "jak-przygotowac-pomysl-na-aplikacje-do-rozmowy"
+keyTakeaways:
+  - "Utrzymanie to osobny budżet: infrastruktura, usługi, opieka i rozwój."
+  - "Orientacyjnie 15–25% wartości projektu rocznie, ale dolna suma może być wyższa."
+  - "Gwarancja nie zastępuje utrzymania; nowe funkcje wyceniaj osobno."
+  - "Zaplanuj pierwszy rok z buforem i kontroluj dostęp do kodu, domeny i kont."
 ---
 
 Niekoniecznie.
@@ -72,6 +78,29 @@ Dlatego procenty warto traktować jako punkt odniesienia, a nie podstawę budże
 | Rozwój produktu | Nowe funkcje i usprawnienia | Osobna wycena etapu |
 
 Pierwsze trzy grupy to koszt posiadania aplikacji. Czwarta to inwestycja w jej rozwój. Warto trzymać je osobno, bo tylko pierwsze trzy są w pewnym sensie obowiązkowe — rozwój zależy od Twoich decyzji i budżetu.
+
+<div class="article-module article-compare" role="group" aria-labelledby="posiadanie-rozwoj">
+  <p class="article-module__eyebrow" id="posiadanie-rozwoj">Posiadanie czy rozwój?</p>
+  <div class="article-compare__grid">
+    <div class="article-compare__col article-compare__col--signal">
+      <h3>Koszty posiadania</h3>
+      <ul>
+        <li>serwer, baza danych i domena,</li>
+        <li>usługi zewnętrzne i analityka,</li>
+        <li>monitoring, aktualizacje i poprawki.</li>
+      </ul>
+    </div>
+    <div class="article-compare__col">
+      <h3>Inwestycja w rozwój</h3>
+      <ul>
+        <li>nowe funkcje,</li>
+        <li>usprawnienia produktu,</li>
+        <li>kolejne etapy po sprawdzeniu wyników.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="article-module__note">Rozwój nie jest obowiązkowym abonamentem. To decyzja podejmowana na podstawie wyników i budżetu.</p>
+</div>
 
 ### Dwie metody liczenia
 
@@ -379,6 +408,22 @@ Trzeba wiedzieć, w jaki sposób zabezpieczane są dane i jak można je odzyska�
 
 Dlaczego to ważne? Bo nawet jeśli dzisiaj nie planujesz zmiany wykonawcy, dobrze zachować taką możliwość. Nie chodzi o brak zaufania, tylko o zabezpieczenie przyszłości Twojego produktu.
 
+<div class="article-module article-checklist" data-article-checklist role="group" aria-labelledby="checklista-przekazanie-w11">
+  <p class="article-module__eyebrow" id="checklista-przekazanie-w11">Przekazanie produktu</p>
+  <ul>
+    <li><label><input type="checkbox"> <span>Wiesz, gdzie jest kod i na jakich zasadach możesz go wykorzystywać.</span></label></li>
+    <li><label><input type="checkbox"> <span>Umowa określa przeniesione prawa i elementy licencjonowane.</span></label></li>
+    <li><label><input type="checkbox"> <span>Masz kontrolę nad domeną, hostingiem, bazą i publikacją.</span></label></li>
+    <li><label><input type="checkbox"> <span>Otrzymałeś dokumentację uruchomienia i podstawową architekturę.</span></label></li>
+    <li><label><input type="checkbox"> <span>Wiesz, jak działają kopie zapasowe i odzyskiwanie danych.</span></label></li>
+  </ul>
+  <p class="article-checklist__status" data-checklist-status aria-live="polite">Zaznacz pozycje</p>
+</div>
+
+![Czysta kartka i ołówek — przygotowanie dokumentacji przekazania](../../assets/images/journey-j05-handover.webp)
+
+<p class="article-caption">Przekazanie kodu, dokumentacji i dostępów warto opisać w umowie, a nie zostawiać w dobrej woli.</p>
+
 W moim modelu współpracy zasady przekazania kodu źródłowego i uzgodnionych majątkowych praw autorskich określamy w umowie, z uwzględnieniem rozliczenia projektu i licencji do komponentów zewnętrznych.
 
 ## 15. Czy możesz samodzielnie utrzymywać swoją aplikację?
@@ -418,6 +463,22 @@ Nie musisz znać dokładnych kwot, ale warto przygotować wstępny plan. Wystarc
 **Krok 4. Zostaw bufor.** Nawet przy dobrym planie mogą pojawić się nieprzewidziane prace, na przykład wymuszona aktualizacja po zmianie w zewnętrznej usłudze.
 
 Załóżmy, że tworzymy niewielką aplikację internetową, a pierwszą wersję wyceniono na 29 500 zł brutto. Zgodnie z modelem z części 3 planowany koszt utrzymania to około 900 zł miesięcznie. W okresie gwarancji określone błędy są poprawiane zgodnie z umową, a nowe funkcje planujemy jako osobne etapy.
+
+<div class="article-module article-calculator" data-calculator="first-year">
+  <p class="article-module__eyebrow">Kalkulator orientacyjny: pierwszy rok</p>
+  <div class="article-calculator__fields">
+    <label for="calc-infra">Infrastruktura miesięcznie (zł)<input id="calc-infra" data-calc="infra" type="number" min="0" step="1" inputmode="numeric" placeholder="np. 200"></label>
+    <label for="calc-services">Usługi zewnętrzne miesięcznie (zł)<input id="calc-services" data-calc="services" type="number" min="0" step="1" inputmode="numeric" placeholder="np. 100"></label>
+    <label for="calc-care">Opieka techniczna miesięcznie (zł)<input id="calc-care" data-calc="care" type="number" min="0" step="1" inputmode="numeric" placeholder="np. 600"></label>
+    <label for="calc-one-time">Koszty jednorazowe w pierwszym roku (zł)<input id="calc-one-time" data-calc="one-time" type="number" min="0" step="1" inputmode="numeric" placeholder="np. 0"></label>
+  </div>
+  <div class="article-calculator__results" aria-live="polite">
+    <p><span>Miesięcznie</span><strong data-calc-output="monthly">—</strong></p>
+    <p><span>Rocznie</span><strong data-calc-output="annual">—</strong></p>
+    <p><span>Pierwszy rok razem</span><strong data-calc-output="first-year">—</strong></p>
+  </div>
+  <p class="article-calculator__note">Wpisz wszystkie kwoty w jednej konwencji: netto albo brutto. To obliczenie orientacyjne, a nie indywidualna wycena ani oferta.</p>
+</div>
 
 Dzięki temu nie musisz od razu podpisywać dużego kontraktu na rozwój całej platformy. Możesz obserwować zainteresowanie produktem i inwestować kolejne środki wtedy, gdy pojawi się uzasadnienie biznesowe.
 
@@ -464,6 +525,17 @@ Po zakończeniu projektu obowiązuje uzgodniona **3-miesięczna gwarancja techni
 A co dalej? To zależy od Twoich planów.
 
 Możesz rozpocząć testy z użytkownikami. Możesz sprawdzić, czy aplikacja rzeczywiście rozwiązuje problem, dla którego powstała. A jeśli okaże się, że potrzebujesz kolejnych funkcji, możemy wspólnie przeanalizować następny etap.
+
+<div class="article-module article-process" role="group" aria-labelledby="cykl-rozwoju">
+  <p class="article-module__eyebrow" id="cykl-rozwoju">Cykl dalszego rozwoju</p>
+  <ol>
+    <li><strong>Zbierz sygnały</strong><span>Opinie, zachowanie i dane od pierwszych użytkowników.</span></li>
+    <li><strong>Wybierz jeden priorytet</strong><span>Najważniejsza zmiana, która odpowiada na rzeczywisty problem.</span></li>
+    <li><strong>Ustal zakres etapu</strong><span>Funkcje, termin, koszt i sposób pomiaru efektu.</span></li>
+    <li><strong>Zrealizuj i przetestuj</strong><span>Wdróż zmianę i sprawdź, czy działa zgodnie z założeniem.</span></li>
+    <li><strong>Zdecyduj o kolejnym kroku</strong><span>Rozwijaj, popraw lub zatrzymaj kierunek na podstawie wyniku.</span></li>
+  </ol>
+</div>
 
 Nie musisz od razu decydować się na budowę ogromnego systemu. Nie musisz też zakładać, że po zakończeniu pierwszego etapu każda kolejna zmiana będzie częścią pierwotnej ceny — dalsze prace i opieka po gwarancji wymagają osobnego ustalenia zakresu oraz kosztów.
 

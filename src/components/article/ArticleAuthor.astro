@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets"
+import { ArrowRight } from "lucide-react"
+import portrait from "@/assets/images/karol-modelski-portrait.webp"
+---
+
+<section aria-labelledby="o-autorze" class="border-t border-line pt-8">
+  <div class="grid grid-cols-[6rem_minmax(0,1fr)] items-start gap-5 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-8">
+    <Image
+      src={portrait}
+      alt="Karol Modelski"
+      widths={[120, 180, 240, 320]}
+      sizes="(min-width: 640px) 128px, 96px"
+      quality={82}
+      loading="lazy"
+      decoding="async"
+      class="aspect-[4/5] w-full rounded-lg border border-line object-cover"
+    />
+    <div>
+      <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+        O autorze
+      </p>
+      <h2
+        id="o-autorze"
+        class="mt-2 font-heading text-2xl leading-snug font-semibold tracking-tight"
+      >
+        Karol Modelski
+      </h2>
+      <p class="mt-1 font-mono text-[10px] tracking-[0.12em] text-ink-soft uppercase">
+        Techniczny partner pomysłodawców
+      </p>
+      <p class="mt-3 text-[14px] leading-[1.7] text-pretty text-ink-soft sm:text-[15px]">
+        Od ponad 7 lat tworzę oprogramowanie — wcześniej systemy dla banków i
+        dużych firm. Dziś pomagam zamienić pomysł w działającą pierwszą wersję:
+        ustalam zakres, koordynuję realizację i przekazuję kod.
+      </p>
+      <a
+        href="/o-mnie/"
+        class="mt-3 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+      >
+        Poznaj mnie i moje podejście
+        <ArrowRight className="size-4" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</section>

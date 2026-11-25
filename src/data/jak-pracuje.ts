@@ -5,6 +5,7 @@ export interface ProcessTimelineStep {
   you: string
   me: string
   effect: string
+  checkpoint?: boolean
 }
 
 export const processTimeline: ProcessTimelineStep[] = [
@@ -12,48 +13,49 @@ export const processTimeline: ProcessTimelineStep[] = [
     label: "Przed startem",
     title: "Ustalamy zakres i warunki",
     description:
-      "Rozmawiamy o pomyśle, wybieramy najważniejsze funkcje, ustalamy kryteria odbioru i zapisujemy ustalenia w umowie. Przed rozpoczęciem czterotygodniowego etapu prac potwierdzamy zakres, cenę, termin oraz potrzebne materiały i dostępy.",
-    you: "Opowiadasz o pomyśle i pomagasz wybrać, co jest najważniejsze. Podpisujesz umowę i wnosisz pierwszą płatność.",
+      "Ustalamy najważniejszą funkcję, zakres, cenę i termin. Podpisujemy umowę, a prace startują po wpłacie pierwszej części i skompletowaniu materiałów oraz dostępów.",
+    you: "Opowiadasz o pomyśle i wybierasz priorytety. Podpisujesz umowę i wnosisz pierwszą płatność.",
     me: "Prowadzę ustalenia, przygotowuję plan pierwszej wersji i organizuję start prac.",
-    effect: "Uzgodniony plan pierwszej wersji, cena, termin i umowa.",
+    effect: "Uzgodniony zakres, cena, termin, kryteria odbioru i umowa.",
   },
   {
     label: "Tydzień 1",
-    title: "Wygląd i sposób korzystania",
+    title: "Projekt kluczowych ekranów",
     description:
-      "Przygotuję projekt kluczowych ekranów i omówimy sposób korzystania z aplikacji. To pierwszy punkt kontrolny — możesz ocenić kierunek wyglądu i obsługi, zanim przejdziemy do programowania tych ekranów.",
-    you: "Oceniasz propozycje i podejmujesz decyzje dotyczące swojego produktu.",
-    me: "Organizuję pracę projektową, pilnuję uzgodnionego zakresu i pomagam ocenić, które rozwiązania będą najwygodniejsze dla użytkowników.",
-    effect: "Wybrany kierunek wyglądu i obsługi aplikacji.",
+      "Przygotowuję projekt najważniejszych ekranów i sposób obsługi. To pierwszy punkt kontrolny — oceniasz kierunek, zanim zaczniemy programować te ekrany.",
+    you: "Oceniasz projekt i decydujesz o wyglądzie oraz zasadach działania.",
+    me: "Organizuję pracę projektową, pilnuję zakresu i doradzam rozwiązania.",
+    effect: "Zaakceptowany projekt kluczowych ekranów.",
+    checkpoint: true,
   },
   {
     label: "Tydzień 2",
-    title: "Najważniejsze funkcje zaczynają działać",
+    title: "Działa najważniejsza funkcja",
     description:
-      "Rozpoczynamy budowę głównej części aplikacji. To drugi punkt kontrolny — pokazuję działającą najważniejszą funkcję i sprawdzamy, czy zachowuje się zgodnie z przyjętymi założeniami.",
-    you: "Odpowiadasz na pytania dotyczące działania produktu i oceniasz pokazywane efekty.",
-    me: "Koordynuję pracę zespołu, rozwiązuję kwestie techniczne i omawiam z Tobą sytuacje wymagające decyzji.",
-    effect:
-      "Najważniejsza część aplikacji zaczyna działać, a kluczowe założenia są stopniowo weryfikowane w praktyce.",
+      "Budujemy główną część aplikacji. To drugi punkt kontrolny — pokazuję działającą najważniejszą funkcję i sprawdzamy ją na konkretnych scenariuszach.",
+    you: "Odpowiadasz na pytania i oceniasz pokazywane efekty.",
+    me: "Koordynuję zespół, rozwiązuję kwestie techniczne i pokazuję postępy.",
+    effect: "Działająca najważniejsza funkcja aplikacji.",
+    checkpoint: true,
   },
   {
     label: "Tygodnie 3–4",
     title: "Pierwsza działająca wersja",
     description:
-      "Kończę uzgodnione funkcje, uruchamiam aplikację w przeglądarce i przygotowuję stronę produktu, analitykę oraz plan pierwszych testów. To trzeci punkt kontrolny — na koniec tygodnia 4 pokazuję wersję gotową do testów.",
-    you: "Samodzielnie sprawdzasz działanie najważniejszych funkcji.",
-    me: "Przygotowuję uzgodnioną pierwszą wersję do testów i pokazuję Ci jej działanie. Następnie przechodzimy do formalnego odbioru zgodnie z umową.",
-    effect: "Pierwsza działająca wersja do uruchomienia i pokazania.",
+      "Kończymy uzgodnione funkcje, uruchamiamy aplikację w przeglądarce i przygotowujemy stronę produktu, analitykę oraz plan testów. Trzeci punkt kontrolny wypada na koniec tygodnia 4.",
+    you: "Sprawdzasz działanie najważniejszych funkcji.",
+    me: "Doprowadzam pierwszą wersję do testów i pokazuję jej działanie.",
+    effect: "Pierwsza wersja gotowa do testów i pokazania użytkownikom.",
+    checkpoint: true,
   },
   {
     label: "Zwykle tygodnie 5–8",
     title: "Odbiór, poprawki i przekazanie",
     description:
-      "Sprawdzasz zgodność produktu z zakresem i kryteriami odbioru. Masz 10 dni roboczych na odbiór i zgłoszenie niezgodności. Wymagane poprawki wykonujemy zgodnie z umową.",
+      "Sprawdzasz produkt według kryteriów odbioru. Masz 10 dni roboczych na zgłoszenie niezgodności; wymagane poprawki wykonujemy zgodnie z umową. Po rozliczeniu przekazuję kod, dostępy i prawa.",
     you: "Testujesz produkt i zgłaszasz niezgodności w uzgodnionym zakresie.",
-    me: "Wprowadzam wymagane poprawki i po rozliczeniu przekazuję kod, dostępy, prawa oraz podsumowanie kolejnych kroków.",
-    effect:
-      "Odebrany produkt, kod źródłowy, prawa do produktu i podsumowanie dalszych kroków.",
+    me: "Wprowadzam poprawki i przekazuję produkt oraz podsumowanie kolejnych kroków.",
+    effect: "Odebrany produkt, kod źródłowy, dostępy, prawa i kolejne kroki.",
   },
 ]
 
@@ -66,38 +68,38 @@ export const processFaq: ProcessFaqItem[] = [
   {
     question: "Czy muszę mieć gotowy projekt aplikacji?",
     answer:
-      "Nie. Możesz przyjść z samym pomysłem. Pomogę Ci określić, co powinno powstać w pierwszej kolejności.",
+      "Nie. Wystarczy pomysł — pomogę wybrać najważniejszą funkcję i zakres pierwszej wersji.",
   },
   {
     question: "Kiedy potrzebna jest osobna analiza pomysłu?",
     answer:
-      "Jeżeli masz rozbudowany pomysł, kilka możliwych kierunków rozwoju albo potrzebujesz pisemnego planu przed decyzją o realizacji, możemy zacząć od płatnej usługi „Analiza pomysłu i plan realizacji aplikacji”. Otrzymasz propozycję najważniejszej funkcji pierwszej wersji, wstępne rozpoznanie ograniczeń i zależności, podział projektu na etapy oraz pisemne podsumowanie z rekomendacjami.\n\nJeżeli Twój pomysł pasuje do standardowego pakietu, taka analiza nie jest potrzebna — podstawowe ustalenie zakresu jest już częścią współpracy. Szczegóły opisuję w sekcji „Analiza pomysłu i plan realizacji aplikacji” na stronie oferty.",
+      "Gdy masz rozbudowany pomysł, kilka możliwych kierunków albo potrzebujesz pisemnego planu przed decyzją o realizacji. Analiza jest opcjonalna i płatna. Przy standardowym pakiecie podstawowe ustalenie zakresu jest już częścią współpracy.",
   },
   {
     question: "Czy będę rozmawiał bezpośrednio z Tobą?",
     answer:
-      "Tak. To ja prowadzę ustalenia dotyczące zakresu, koordynuję realizację i omawiam z Tobą postępy projektu. W pracach technicznych mogą uczestniczyć odpowiedni specjaliści.",
+      "Tak. Prowadzę ustalenia, koordynuję realizację i omawiam z Tobą postępy. W pracach technicznych mogą uczestniczyć specjaliści.",
   },
   {
     question: "Czy zobaczę produkt przed zakończeniem prac?",
     answer:
-      "Tak. W trakcie realizacji mamy trzy punkty kontrolne: po tygodniu 1 pokazuję projekt kluczowych ekranów, po tygodniu 2 działającą najważniejszą funkcję, a na koniec tygodnia 4 wersję gotową do testów.\n\nMiędzy tymi momentami prace trwają dalej, a uwagi możesz zgłaszać na bieżąco. Nie dowiadujesz się więc dopiero na końcu, jak wygląda Twój produkt.",
+      "Tak. Mamy trzy punkty kontrolne: po tygodniu 1 projekt ekranów, po tygodniu 2 działającą najważniejszą funkcję, a na koniec tygodnia 4 wersję do testów. Między nimi prace trwają dalej, a uwagi możesz zgłaszać na bieżąco.",
   },
   {
     question:
       "Czy po czterech tygodniach aplikacja będzie już całkowicie gotowa?",
     answer:
-      "Po czterech tygodniach prac celem jest pierwsza działająca wersja w uzgodnionym zakresie. Na odbiór i ewentualne poprawki przewidujemy dodatkowy czas. Cały proces trwa zwykle 6–8 tygodni.",
+      "Po czterech tygodniach otrzymujesz pierwszą działającą wersję w uzgodnionym zakresie. Odbiór i poprawki zajmują dodatkowy czas; cały proces trwa zwykle 6–8 tygodni.",
   },
   {
     question: "Czy mogę zmieniać funkcje w trakcie realizacji?",
     answer:
-      "Możemy omawiać nowe pomysły, ale większe zmiany zakresu mogą wymagać osobnej wyceny i zmiany harmonogramu.",
+      "Możemy omawiać nowe pomysły. Większe zmiany zakresu wymagają osobnego ustalenia kosztu, terminu i wpływu na umowę.",
   },
   {
     question: "Czy po zakończeniu projektu mogę współpracować z kimś innym?",
     answer:
-      "Tak. Po zakończeniu i rozliczeniu otrzymujesz kod źródłowy oraz prawa do produktu w zakresie określonym w umowie. Zasady korzystania z komponentów zewnętrznych ustalamy osobno.",
+      "Tak. Po zakończeniu i rozliczeniu otrzymujesz kod źródłowy oraz prawa w zakresie określonym w umowie. Zasady korzystania z komponentów zewnętrznych ustalamy osobno.",
   },
   {
     question: "Czy muszę od razu zamawiać dalszy rozwój?",
@@ -108,6 +110,6 @@ export const processFaq: ProcessFaqItem[] = [
     question:
       "Czy po zakończeniu projektu będę musiał płacić za utrzymanie aplikacji?",
     answer:
-      "To zależy od tego, jak działa Twój produkt i jakich usług potrzebuje.\n\nNiektóre aplikacje wymagają tylko prostego hostingu. Inne korzystają z serwerów, baz danych albo płatnych usług zewnętrznych, których koszt może rosnąć wraz z liczbą użytkowników.\n\nPrzed uruchomieniem omówię z Tobą najważniejsze koszty zewnętrzne i wyjaśnię, od czego mogą zależeć przyszłe opłaty.\n\nNie musisz również wykupywać u mnie stałej opieki technicznej. Jeśli jednak będziesz jej potrzebować, możemy osobno ustalić jej zakres i cenę.",
+      "To zależy od hostingu, serwerów i usług zewnętrznych. Koszty omawiamy przed uruchomieniem. Stała opieka techniczna jest opcjonalna i wyceniana osobno.",
   },
 ]

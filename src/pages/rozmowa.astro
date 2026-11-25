@@ -1,37 +1,60 @@
 ---
 import Layout from "@/layouts/main.astro"
 import SiteHeader from "@/components/site-header.astro"
-import SiteFooter from "@/components/site-footer.astro"
+import CompactFooter from "@/components/compact-footer.astro"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { ArrowRight } from "lucide-react"
+import { Image } from "astro:assets"
+import { ArrowRight, ChevronDown } from "lucide-react"
+import portrait from "@/assets/images/about/b02-approachable-expert.webp"
+import planningSketch from "@/assets/images/journey-o02-planning.webp"
+import workingApp from "@/assets/images/journey-j04-working-function.webp"
+import conversationSetting from "@/assets/images/about/c01-conversation-setting.webp"
 
 const siteURL = Astro.site ?? new URL("https://www.karolmodelski.pl")
 const pageURL = new URL("/rozmowa/", siteURL).toString()
 const siteRoot = new URL("/", siteURL).toString()
 
 const calendlyUrl = "https://calendly.com/kontakt-karolmodelski/konsultacja"
-
+const calendlyEmbedUrl =
+  "https://calendly.com/kontakt-karolmodelski/konsultacja?primary_color=c75b3b&text_color=141414&background_color=ffffff&locale=pl"
 const metaTitle =
   "Bezpłatna rozmowa o Twoim pomyśle na aplikację | Karol Modelski"
 const metaDescription =
   "Masz pomysł na aplikację? Umów bezpłatną 20-minutową rozmowę. Omówimy Twój pomysł i wstępnie ocenimy, czy pasuje do mojego pakietu."
 
-const agenda = [
+const steps = [
   {
     title: "Twój pomysł",
-    description:
-      "Opowiesz mi, co chcesz stworzyć, komu aplikacja miałaby służyć i co jest dla Ciebie najważniejsze.",
+    description: "Co chcesz stworzyć i komu ma to służyć.",
   },
   {
-    title: "Możliwy pierwszy krok",
-    description:
-      "Zastanowimy się, od czego warto zacząć i które funkcje mogą poczekać na później.",
+    title: "Pierwszy krok",
+    description: "Od czego zacząć, co może poczekać.",
   },
   {
     title: "Dalsze możliwości",
-    description:
-      "Powiem Ci, czy widzę szansę na realizację pierwszej wersji w ramach mojego pakietu, czy projekt wymaga innego podejścia.",
+    description: "Czy pasuje do pakietu, czy potrzebne jest inne podejście.",
+  },
+]
+
+const faq = [
+  {
+    question: "Czy możemy podpisać NDA?",
+    answer: "Tak, przed spotkaniem — napisz na kontakt@karolmodelski.pl.",
+  },
+  {
+    question: "Czy porozmawiamy o istniejącej aplikacji?",
+    answer: "Tak. Rozwój i utrzymanie oceniam indywidualnie.",
+  },
+  {
+    question: "Czy otrzymam gotową wycenę?",
+    answer:
+      "Nie. Kierunek ustalamy na rozmowie; zakres i termin potwierdzamy później.",
+  },
+  {
+    question: "Czy muszę od razu podjąć decyzję?",
+    answer: "Nie. Decydujesz po spotkaniu.",
   },
 ]
 
@@ -70,7 +93,10 @@ const breadcrumbSchema = {
   <SiteHeader variant="page" />
 
   <main id="main">
-    <section class="relative overflow-hidden bg-paper px-4 pt-8 pb-16 sm:px-6 sm:pt-10 sm:pb-24">
+    <section
+      id="hero"
+      class="relative overflow-hidden bg-paper px-4 pt-6 pb-12 sm:px-6 sm:pt-8 lg:pb-16"
+    >
       <div
         aria-hidden="true"
         class="grain pointer-events-none absolute inset-0 -z-10 opacity-60"
@@ -89,97 +115,148 @@ const breadcrumbSchema = {
           </ol>
         </nav>
 
-        <div class="mt-10 grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-x-12">
-          <div class="rise lg:col-span-7">
-            <p class="flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-ink-soft uppercase">
-              <span class="h-px w-8 bg-signal"></span>
-              Bezpłatna rozmowa · 20 minut
+        <div class="mt-8 grid grid-cols-1 items-start gap-8 lg:mt-10 lg:grid-cols-12 lg:gap-12">
+          <div class="lg:col-span-5">
+            <p class="flex items-center gap-3 font-mono text-[11px] tracking-[0.18em] text-ink-soft uppercase">
+              <span class="h-px w-6 bg-signal"></span>
+              Konsultacja
             </p>
 
-            <h1 class="mt-6 font-heading text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl">
-              Porozmawiajmy o Twoim pomyśle na aplikację.
+            <h1 class="mt-5 font-heading text-[clamp(2.125rem,1.5rem+2.2vw,3.5rem)] leading-[1.04] font-semibold tracking-tight text-balance">
+              Porozmawiajmy o Twoim pomyśle.
             </h1>
 
-            <p class="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink sm:text-xl">
-              Podczas 20-minutowej rozmowy omówimy Twój pomysł, zastanowimy się
-              nad możliwym pierwszym krokiem i wstępnie ocenimy, czy mogę pomóc
-              w jego realizacji.
+            <p class="mt-5 max-w-[34rem] text-[17px] leading-[1.65] text-pretty text-ink sm:text-lg">
+              Opowiedz mi, co chcesz stworzyć. Wspólnie sprawdzimy, od czego
+              warto zacząć i czy mogę pomóc Ci w realizacji.
             </p>
 
-            <p class="mt-6 max-w-xl border-l-2 border-signal pl-4 text-sm leading-relaxed text-pretty font-medium text-ink sm:text-base">
-              Bezpłatnie · Online · Bez zobowiązań
+            <p class="mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-sm text-ink-soft">
+              <span>20 minut</span>
+              <span aria-hidden="true" class="text-line">
+                ·
+              </span>
+              <span>Online</span>
+              <span aria-hidden="true" class="text-line">
+                ·
+              </span>
+              <span>Bezpłatnie</span>
+              <span aria-hidden="true" class="text-line">
+                ·
+              </span>
+              <span>Bez zobowiązań</span>
+            </p>
+
+            <div class="mt-7 flex items-center gap-3 border-t border-line pt-5">
+              <Image
+                src={portrait}
+                alt="Karol Modelski"
+                widths={[96, 144, 192]}
+                sizes="56px"
+                quality={84}
+                loading="eager"
+                decoding="async"
+                class="size-14 shrink-0 rounded-full border border-line object-cover object-top"
+              />
+              <div class="text-sm leading-snug">
+                <p class="font-semibold text-ink">Karol Modelski</p>
+                <p class="mt-0.5 text-ink-soft">
+                  Niezależny partner technologiczny
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-5 max-w-[32rem] text-sm leading-relaxed text-ink-soft">
+              Nie potrzebujesz dokumentacji ani wiedzy technicznej.
             </p>
           </div>
 
           <aside
             id="rezerwacja"
-            class="rise scroll-mt-24 lg:col-span-5"
-            style="animation-delay:.12s"
+            class="scroll-mt-24 lg:col-span-7"
+            aria-labelledby="termin-h"
           >
-            <div class="on-ink rounded-2xl bg-ink p-6 text-paper sm:p-8">
-              <h2 class="font-heading text-2xl leading-tight font-semibold text-balance text-paper">
-                Wybierz dogodny termin
-              </h2>
-              <p class="mt-2 text-sm leading-relaxed text-pretty text-paper/70">
-                Wybierz termin, który Ci odpowiada. Spotkanie odbywa się online.
-              </p>
-
-              <a
-                href={calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-booking-calendar="hero"
-                class={cn(
-                  buttonVariants({ size: "lg" }),
-                  "mt-5 h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-5 py-3 text-center text-base text-balance whitespace-normal text-ink hover:bg-paper/85"
-                )}
-              >
-                Wybierz dogodny termin
-                <ArrowRight />
-              </a>
-
-              <p class="mt-3 text-xs leading-relaxed text-pretty text-paper/55">
-                Kalendarz otworzy się w nowej karcie. Po wybraniu terminu
-                otrzymasz potwierdzenie oraz informacje potrzebne do dołączenia.
-              </p>
-
-              <p class="mt-3 text-xs leading-relaxed text-pretty text-paper/55">
-                Nie musisz mieć gotowej dokumentacji ani wypełniać checklisty
-                przed spotkaniem.
-              </p>
-
-              <div class="mt-5 border-t border-paper/15 pt-4">
-                <p class="text-sm leading-snug font-medium text-paper">
-                  Chcesz przygotować się do rozmowy?
-                </p>
-                <p class="mt-1.5 text-xs leading-relaxed text-pretty text-paper/60">
-                  Przygotowałem bezpłatną checklistę z 12 pytaniami, które
-                  pomogą Ci uporządkować pomysł na aplikację. Możesz ją pobrać,
-                  zapisać swoje odpowiedzi i zabrać na nasze spotkanie.
-                </p>
-                <a
-                  href="/checklista/"
-                  class="mt-2 inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-paper underline decoration-paper/25 underline-offset-4 transition-colors hover:decoration-signal"
+            <div class="rounded-xl border border-line bg-card p-4 sm:p-6">
+              <div class="flex items-baseline justify-between gap-4">
+                <h2
+                  id="termin-h"
+                  class="font-heading text-xl leading-tight font-semibold text-ink sm:text-2xl"
                 >
-                  Pobierz checklistę — 12 pytań
-                  <ArrowRight className="size-3.5" aria-hidden="true" />
-                </a>
-                <p class="mt-1 text-xs leading-relaxed text-pretty text-paper/55 italic">
-                  Nie musisz odpowiadać na wszystkie pytania. Przygotowanie nie
-                  jest obowiązkowe.
-                </p>
+                  Wybierz termin
+                </h2>
+                <span class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase">
+                  Calendly
+                </span>
               </div>
 
-              <div class="mt-5 border-t border-paper/15 pt-4">
-                <p class="text-xs leading-relaxed text-pretty text-paper/55">
-                  Wolisz najpierw napisać?
+              <div
+                class="mt-4"
+                data-booking
+                data-state="idle"
+                data-embed-url={calendlyEmbedUrl}
+              >
+                <div data-booking-placeholder>
+                  <p class="max-w-[36rem] text-sm leading-relaxed text-ink-soft">
+                    Kalendarz wczyta się po kliknięciu.
+                  </p>
+                  <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+                    <button
+                      type="button"
+                      data-booking-activate
+                      class={cn(
+                        buttonVariants({ size: "lg" }),
+                        "h-auto min-h-12 w-full gap-2 rounded-[6px] bg-ink px-6 py-3 text-center text-base text-paper hover:bg-ink/90 sm:w-auto"
+                      )}
+                    >
+                      Pokaż kalendarz
+                      <ArrowRight aria-hidden="true" />
+                    </button>
+                    <a
+                      href={calendlyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-booking-calendar="rozmowa-fallback"
+                      class="inline-flex min-h-11 items-center text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                    >
+                      Otwórz w nowej karcie
+                    </a>
+                  </div>
+                  <p class="mt-4 text-xs leading-relaxed text-ink-soft">
+                    Calendly może zapisać własne cookies. Potwierdzenie
+                    otrzymasz e-mailem.
+                  </p>
+                </div>
+
+                <div
+                  data-booking-mount
+                  role="group"
+                  aria-label="Kalendarz rezerwacji"
+                  tabindex="-1"
+                  class="hidden h-[680px] outline-none sm:h-[720px] [&_iframe]:h-full [&_iframe]:w-full"
+                ></div>
+
+                <p
+                  role="status"
+                  aria-live="polite"
+                  class="sr-only"
+                  data-booking-status
+                ></p>
+              </div>
+
+              <div class="mt-5 border-t border-line pt-4">
+                <p class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase">
+                  Poufność
                 </p>
-                <a
-                  href="mailto:kontakt@karolmodelski.pl"
-                  class="mt-1 inline-flex min-h-11 items-center text-sm font-medium text-paper underline decoration-paper/25 underline-offset-4 transition-colors hover:decoration-signal"
-                >
-                  kontakt@karolmodelski.pl
-                </a>
+                <p class="mt-2 max-w-[38rem] text-sm leading-relaxed text-ink-soft">
+                  Możemy podpisać NDA przed spotkaniem — napisz na{" "}
+                  <a
+                    href="mailto:kontakt@karolmodelski.pl?subject=Umowa%20NDA%20przed%20rozmow%C4%85"
+                    class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+                  >
+                    kontakt@karolmodelski.pl
+                  </a>
+                  . Szczegółów rozwiązania nie podawaj w formularzu.
+                </p>
               </div>
             </div>
           </aside>
@@ -189,70 +266,120 @@ const breadcrumbSchema = {
 
     <section
       id="przebieg"
-      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
+      class="border-t border-line bg-surface-muted px-4 py-12 sm:px-6 sm:py-16"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
-            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              01 · Co omówimy
+            <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              01 · Przebieg
             </p>
           </div>
 
           <div class="lg:col-span-9">
-            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              Co omówimy podczas rozmowy?
+            <h2 class="font-heading text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+              Jak wygląda rozmowa
             </h2>
 
-            <ol class="mt-10 grid grid-cols-1 gap-8 border-t border-line pt-8 md:grid-cols-3 md:gap-10">
-              {agenda.map(({ title, description }, index) => (
+            <ol class="mt-8 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-3 sm:gap-10">
+              {steps.map(({ title, description }, index) => (
                 <li>
-                  <div class="flex items-center justify-between gap-4">
-                    <span class="font-mono text-[11px] tracking-[0.16em] text-signal-ink uppercase">
-                      Krok {index + 1}
-                    </span>
-                    <span class="font-mono text-xs text-ink-soft">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <h3 class="mt-4 font-heading text-lg leading-snug font-semibold text-balance text-ink sm:text-xl md:min-h-[4.5rem]">
+                  <span class="font-mono text-sm tracking-[0.16em] text-signal-ink tabular-nums">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 class="mt-2 font-heading text-lg leading-snug font-semibold text-ink">
                     {title}
                   </h3>
-                  <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
+                  <p class="mt-1.5 text-sm leading-relaxed text-pretty text-ink-soft">
                     {description}
                   </p>
                 </li>
               ))}
             </ol>
 
-            <p class="mt-8 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-              Nie musisz znać się na technologii. Wystarczy, że opowiesz mi o
-              pomyśle własnymi słowami.
+            <p class="mt-8 max-w-[42rem] text-sm leading-relaxed text-ink-soft">
+              Rozmowa wstępna, bez wiążącej wyceny.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <p class="mt-4 max-w-2xl border-l-2 border-signal pl-4 text-sm leading-relaxed text-pretty text-ink sm:text-base">
-              Podczas pierwszej rozmowy wstępnie ocenimy Twój pomysł i możliwy
-              kierunek realizacji. Jeśli projekt wymaga dokładniejszego
-              rozpoznania technicznego albo wieloetapowego planu, mogę
-              zaproponować osobną, płatną analizę. Nie jest ona warunkiem
-              odbycia bezpłatnej rozmowy.
+    <section
+      id="scenariusze"
+      class="border-t border-line bg-paper px-4 py-12 sm:px-6 sm:py-16"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              02 · Punkt startu
             </p>
+          </div>
 
-            <div class="mt-10 max-w-2xl border-t border-line pt-8">
-              <h3 class="font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
-                Możemy porozmawiać również o działającej aplikacji.
-              </h3>
-              <p class="mt-3 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Jeśli masz już produkt i zastanawiasz się, co warto poprawić,
-                rozbudować albo jak zadbać o jego dalsze utrzymanie, opowiedz mi
-                o swojej sytuacji.
-              </p>
-              <p class="mt-3 text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-                Wstępnie ocenimy, czy mogę Ci pomóc w dalszym rozwoju lub
-                utrzymaniu produktu. Taki projekt rozpatruję osobno —
-                standardowy pakiet dotyczy stworzenia pierwszej działającej
-                wersji.
-              </p>
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+              Dwa punkty startu
+            </h2>
+
+            <div class="mt-8 grid grid-cols-1 gap-8 border-t border-line pt-8 md:grid-cols-2 md:gap-10">
+              <article>
+                <Image
+                  src={planningSketch}
+                  alt="Szkice przepływu i notatki na kartkach obok laptopa"
+                  widths={[480, 720, 960]}
+                  sizes="(min-width: 768px) 40vw, calc(100vw - 2rem)"
+                  quality={84}
+                  loading="lazy"
+                  decoding="async"
+                  class="aspect-[4/3] w-full rounded-lg border border-line object-cover"
+                />
+                <h3 class="mt-5 font-heading text-lg leading-snug font-semibold text-ink">
+                  Mam pomysł na aplikację
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                  Sprawdzimy, jak zacząć.
+                </p>
+              </article>
+
+              <article>
+                <Image
+                  src={workingApp}
+                  alt="Działająca gra Numerabble otwarta na laptopie"
+                  widths={[480, 720, 960]}
+                  sizes="(min-width: 768px) 40vw, calc(100vw - 2rem)"
+                  quality={84}
+                  loading="lazy"
+                  decoding="async"
+                  class="aspect-[4/3] w-full rounded-lg border border-line object-cover"
+                />
+                <h3 class="mt-5 font-heading text-lg leading-snug font-semibold text-ink">
+                  Mam już działającą aplikację
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                  Rozwój i utrzymanie oceniam indywidualnie. Pakiet dotyczy
+                  pierwszej wersji.
+                </p>
+              </article>
+            </div>
+
+            <div class="mt-8 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+              <div>
+                <p class="text-sm font-semibold text-ink">
+                  Checklista — 12 pytań
+                </p>
+                <p class="mt-1 text-sm leading-relaxed text-ink-soft">
+                  Opcjonalna, bez rejestracji.
+                </p>
+              </div>
+              <a
+                href="/checklista/"
+                data-checklist-link
+                class="inline-flex min-h-11 shrink-0 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+              >
+                Zobacz checklistę
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </a>
             </div>
           </div>
         </div>
@@ -260,171 +387,307 @@ const breadcrumbSchema = {
     </section>
 
     <section
-      id="warto-wiedziec"
-      class="border-t border-line bg-paper px-4 py-16 sm:px-6 sm:py-24"
+      id="po-rozmowie"
+      class="border-t border-line bg-surface-muted px-4 py-12 sm:px-6 sm:py-16"
     >
       <div class="mx-auto max-w-[75rem]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
           <div class="lg:col-span-3">
-            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
-              02 · Warto wiedzieć
-            </p>
-          </div>
-
-          <div class="lg:col-span-9">
-            <h2 class="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-4xl">
-              Kilka rzeczy, które warto wiedzieć
-            </h2>
-
-            <ul class="mt-10 max-w-2xl border-t border-line">
-              <li class="border-b border-line py-5">
-                <p class="text-base leading-snug font-semibold text-ink sm:text-lg">
-                  Rozmowa jest bezpłatna.
-                </p>
-                <p class="mt-1.5 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                  Trwa około 20 minut i nie zobowiązuje Cię do rozpoczęcia
-                  współpracy.
-                </p>
-              </li>
-              <li class="border-b border-line py-5">
-                <p class="text-base leading-snug font-semibold text-ink sm:text-lg">
-                  Nie potrzebujesz dokumentacji.
-                </p>
-                <p class="mt-1.5 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                  Możesz po prostu opowiedzieć mi, co chcesz stworzyć.
-                </p>
-              </li>
-              <li class="border-b border-line py-5">
-                <p class="text-base leading-snug font-semibold text-ink sm:text-lg">
-                  Możemy najpierw podpisać NDA.
-                </p>
-                <p class="mt-1.5 text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-                  Jeśli Twój pomysł wymaga poufności, napisz do mnie przed
-                  spotkaniem. Nie musisz wpisywać szczegółów rozwiązania w
-                  formularzu rezerwacji.
-                </p>
-                <a
-                  href="mailto:kontakt@karolmodelski.pl?subject=Umowa%20NDA%20przed%20rozmow%C4%85"
-                  class="mt-2 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-                >
-                  Napisz w sprawie NDA
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="cena"
-      class="border-t border-line bg-surface-muted px-4 py-16 sm:px-6 sm:py-24"
-    >
-      <div class="mx-auto max-w-[75rem]">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
-          <div class="lg:col-span-3">
-            <p class="font-mono text-xs tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+            <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
               03 · Po rozmowie
             </p>
           </div>
 
           <div class="lg:col-span-9">
-            <h2 class="font-heading text-2xl leading-[1.15] font-semibold tracking-tight text-balance text-ink sm:text-3xl">
-              Co dzieje się po rozmowie?
+            <h2 class="font-heading text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+              Co dalej
             </h2>
 
-            <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-ink-soft sm:text-lg">
-              Jeśli projekt wstępnie pasuje do mojej oferty, ustalimy, jakie
-              informacje są jeszcze potrzebne do potwierdzenia zakresu i
-              warunków współpracy. Jeśli wymaga innego podejścia lub
-              dokładniejszej analizy, wyjaśnię możliwe kolejne kroki. Nie musisz
-              podejmować decyzji podczas spotkania.
-            </p>
-            <p class="mt-3 max-w-2xl text-sm leading-relaxed text-pretty text-ink-soft sm:text-base">
-              Standardowy pakiet stworzenia pierwszej działającej wersji
-              aplikacji kosztuje{" "}
-              <strong class="font-semibold text-ink">29 500 zł brutto</strong>.
-              Nie każdy projekt mieści się w tym zakresie.
-            </p>
+            <ul class="mt-8 max-w-[46rem] border-t border-line">
+              <li class="border-b border-line py-4 text-sm leading-relaxed text-ink-soft">
+                <strong class="font-semibold text-ink">
+                  Pasuje do pakietu?
+                </strong>{" "}
+                Ustalamy dane do potwierdzenia zakresu.
+              </li>
+              <li class="border-b border-line py-4 text-sm leading-relaxed text-ink-soft">
+                <strong class="font-semibold text-ink">Inne podejście?</strong>{" "}
+                Omawiamy dalsze możliwości.
+              </li>
+              <li class="border-b border-line py-4 text-sm leading-relaxed text-ink-soft">
+                <strong class="font-semibold text-ink">
+                  Dokładniejsza analiza techniczna
+                </strong>{" "}
+                to osobna płatna usługa — nie warunek rozmowy.
+              </li>
+            </ul>
 
-            <a
-              href="/oferta/"
-              class="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-            >
-              Poznaj szczegóły oferty
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </a>
+            <p class="mt-6 max-w-[46rem] text-sm leading-relaxed text-ink-soft">
+              Standardowy pakiet:{" "}
+              <strong class="font-semibold text-ink">29 500 zł brutto</strong>.
+              Nie każdy projekt się w nim mieści.{" "}
+              <a
+                href="/oferta/"
+                class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+              >
+                Zobacz ofertę
+              </a>
+              .
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <section
-      id="termin"
+      id="faq"
       class="border-t border-line bg-paper px-4 py-12 sm:px-6 sm:py-16"
     >
       <div class="mx-auto max-w-[75rem]">
-        <div class="flex flex-col gap-4 border-b border-line pb-8 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
-          <h2 class="max-w-xl font-heading text-xl leading-snug font-semibold text-balance text-ink sm:text-2xl">
-            Masz pomysł? Wybierz termin rozmowy.
-          </h2>
-          <a
-            href="#rezerwacja"
-            class="inline-flex min-h-11 shrink-0 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-          >
-            Wróć do kalendarza
-            <ArrowRight className="size-4" aria-hidden="true" />
-          </a>
-        </div>
-
-        <div class="mt-8 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <p class="font-mono text-[11px] tracking-[0.16em] text-ink-soft uppercase">
-              Wolisz najpierw napisać?
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-3">
+            <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+              04 · Pytania
             </p>
-            <div class="mt-3 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-              <a
-                href="mailto:kontakt@karolmodelski.pl"
-                class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-              >
-                kontakt@karolmodelski.pl
-              </a>
-              <a
-                href="tel:+48664598563"
-                class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-              >
-                +48 664 598 563
-              </a>
-              <a
-                href="https://wa.me/48664598563"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
-              >
-                WhatsApp
-              </a>
+          </div>
+
+          <div class="lg:col-span-9">
+            <h2 class="font-heading text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+              Pytania przed rozmową
+            </h2>
+
+            <div class="mt-8 max-w-[46rem] border-t border-line">
+              {faq.map(({ question, answer }) => (
+                <details class="group border-b border-line">
+                  <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-6 py-4 [&::-webkit-details-marker]:hidden">
+                    <h3 class="font-heading text-base leading-snug font-semibold text-balance text-ink">
+                      {question}
+                    </h3>
+                    <ChevronDown
+                      className="size-5 shrink-0 text-ink-soft transition-transform group-open:rotate-180 motion-reduce:transition-none"
+                      aria-hidden="true"
+                    />
+                  </summary>
+                  <p class="max-w-[40rem] pb-4 text-sm leading-relaxed text-pretty text-ink-soft">
+                    {answer}
+                  </p>
+                </details>
+              ))}
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="flex max-w-sm items-center gap-3">
-            <img
-              src="/karol-modelski-avatar.webp"
-              alt="Karol Modelski"
-              width="96"
-              height="96"
-              class="size-10 shrink-0 rounded-full object-cover"
-            />
-            <p class="text-sm leading-relaxed text-pretty text-ink-soft">
-              <strong class="font-semibold text-ink">Karol Modelski</strong> —
-              pomagam osobom z pomysłem na aplikację zamienić go w pierwszy
-              działający produkt.
+    <section
+      id="kontakt"
+      class="border-t border-line bg-paper px-4 pb-12 sm:px-6 sm:pb-16"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 gap-3 border-t border-line pt-6 sm:grid-cols-[10rem_1fr] sm:gap-8">
+          <p class="font-mono text-[10px] tracking-[0.18em] text-ink-soft uppercase">
+            05 · Inny kontakt
+          </p>
+          <p class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+            <a
+              href="mailto:kontakt@karolmodelski.pl"
+              data-contact-channel="email"
+              class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+            >
+              kontakt@karolmodelski.pl
+            </a>
+            <a
+              href="tel:+48664598563"
+              data-contact-channel="phone"
+              class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+            >
+              +48 664 598 563
+            </a>
+            <a
+              href="https://wa.me/48664598563"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-contact-channel="whatsapp"
+              class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+            >
+              WhatsApp
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="cta"
+      class="on-ink border-t border-paper/10 bg-ink px-4 py-12 text-paper sm:px-6 sm:py-16"
+    >
+      <div class="mx-auto max-w-[75rem]">
+        <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-7">
+            <h2 class="max-w-3xl font-heading text-[clamp(1.875rem,1.3rem+2vw,3rem)] leading-[1.08] font-semibold tracking-tight text-balance">
+              Nie musisz mieć wszystkich odpowiedzi.
+            </h2>
+            <p class="mt-4 max-w-[38rem] text-[17px] leading-[1.65] text-pretty text-paper/75 sm:text-lg">
+              Od tego jest nasza pierwsza rozmowa.
             </p>
+
+            <a
+              href="#rezerwacja"
+              data-booking-cta
+              class={cn(
+                buttonVariants({ size: "lg" }),
+                "mt-6 h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-6 py-3 text-center text-base text-ink hover:bg-paper/85 sm:w-auto"
+              )}
+            >
+              Wybierz dogodny termin
+              <ArrowRight aria-hidden="true" />
+            </a>
           </div>
+
+          <figure class="lg:col-span-5">
+            <Image
+              src={conversationSetting}
+              alt=""
+              widths={[400, 640, 800]}
+              sizes="(min-width: 1024px) 380px, calc(100vw - 2rem)"
+              quality={82}
+              loading="lazy"
+              decoding="async"
+              class="aspect-[16/9] w-full rounded-lg border border-paper/15 object-cover"
+            />
+          </figure>
         </div>
       </div>
     </section>
   </main>
 
-  <SiteFooter />
+  <CompactFooter />
 </Layout>
+
+<script is:inline>
+  ;(function () {
+    var WIDGET_SRC = "https://assets.calendly.com/assets/external/widget.js"
+    var CALENDLY_ORIGIN = "https://calendly.com"
+    var REMEMBER_KEY = "calendly-widget-enabled"
+    var root = document.querySelector("[data-booking]")
+    if (!root) return
+
+    var placeholder = root.querySelector("[data-booking-placeholder]")
+    var mount = root.querySelector("[data-booking-mount]")
+    var status = root.querySelector("[data-booking-status]")
+    var activate = root.querySelector("[data-booking-activate]")
+    var embedUrl = root.getAttribute("data-embed-url")
+    var loaded = false
+
+    window.dataLayer = window.dataLayer || []
+    function push(event, data) {
+      var payload = { event: event }
+      if (data) {
+        for (var key in data) {
+          if (Object.prototype.hasOwnProperty.call(data, key))
+            payload[key] = data[key]
+        }
+      }
+      window.dataLayer.push(payload)
+    }
+
+    function initWidget() {
+      mount.classList.remove("hidden")
+      if (placeholder) placeholder.classList.add("hidden")
+      window.Calendly.initInlineWidget({ url: embedUrl, parentElement: mount })
+      var frame = mount.querySelector("iframe")
+      if (frame)
+        frame.setAttribute(
+          "title",
+          "Kalendarz Calendly — wybór terminu bezpłatnej rozmowy"
+        )
+      root.setAttribute("data-state", "ready")
+      mount.focus({ preventScroll: true })
+      if (status)
+        status.textContent =
+          "Kalendarz jest gotowy. Wybierz dogodny termin w kalendarzu."
+      push("booking_widget_load", { source: "rozmowa-hero" })
+    }
+
+    function showError() {
+      root.setAttribute("data-state", "error")
+      loaded = false
+      if (activate) activate.disabled = false
+      if (status)
+        status.textContent =
+          "Nie udało się uruchomić kalendarza. Otwórz w nowej karcie."
+      if (placeholder) placeholder.classList.remove("hidden")
+      mount.classList.add("hidden")
+    }
+
+    function loadWidget() {
+      if (loaded || !mount) return
+      loaded = true
+      root.setAttribute("data-state", "loading")
+      if (status) status.textContent = "Ładowanie kalendarza…"
+      if (activate) activate.disabled = true
+      try {
+        sessionStorage.setItem(REMEMBER_KEY, "1")
+      } catch (e) {}
+
+      if (window.Calendly && window.Calendly.initInlineWidget) {
+        initWidget()
+        return
+      }
+
+      var script = document.createElement("script")
+      script.src = WIDGET_SRC
+      script.async = true
+      script.addEventListener("load", initWidget, { once: true })
+      script.addEventListener("error", showError, { once: true })
+      document.head.appendChild(script)
+    }
+
+    if (activate) activate.addEventListener("click", loadWidget)
+
+    var cta = document.querySelector("[data-booking-cta]")
+    if (cta)
+      cta.addEventListener("click", function () {
+        if (!loaded) loadWidget()
+      })
+
+    try {
+      if (sessionStorage.getItem(REMEMBER_KEY) === "1") loadWidget()
+    } catch (e) {}
+
+    // Zdarzenia widgetu: wyłącznie zaufane pochodzenie i bez danych osobowych.
+    var seen = {}
+    window.addEventListener("message", function (event) {
+      if (event.origin !== CALENDLY_ORIGIN) return
+      var data = event.data
+      if (!data || typeof data.event !== "string") return
+      if (data.event.indexOf("calendly.") !== 0) return
+
+      var map = {
+        "calendly.profile_page_viewed": "booking_widget_viewed",
+        "calendly.date_and_time_selected": "booking_slot_selected",
+        "calendly.event_scheduled": "booking_scheduled",
+      }
+      var name = map[data.event]
+      if (!name) return
+      if (seen[name]) return
+      seen[name] = true
+      push(name, { source: "calendly-inline" })
+    })
+
+    document.addEventListener("click", function (event) {
+      var target = event.target
+      if (!target || !target.closest) return
+
+      if (target.closest("[data-checklist-link]"))
+        push("checklist_click", { source: "rozmowa" })
+
+      var contact = target.closest("[data-contact-channel]")
+      if (contact)
+        push("contact_click", {
+          source: "rozmowa",
+          channel: contact.getAttribute("data-contact-channel"),
+        })
+    })
+  })()
+</script>

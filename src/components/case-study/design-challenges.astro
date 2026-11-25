@@ -1,0 +1,78 @@
+---
+interface Challenge {
+  title: string
+  questions: string[]
+  detail?: string
+}
+
+interface Props {
+  id?: string
+  label: string
+  title: string
+  intro: string
+  items: Challenge[]
+  note?: string
+}
+
+const { id = "zasady", label, title, intro, items, note } = Astro.props
+---
+
+<section
+  id={id}
+  class="border-t border-line bg-paper px-4 py-12 sm:px-6 sm:py-16"
+>
+  <div class="mx-auto max-w-[75rem]">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-3">
+        <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+          {label}
+        </p>
+      </div>
+
+      <div class="lg:col-span-9">
+        <h2 class="max-w-[24ch] font-heading text-[clamp(1.75rem,1.3rem+1.6vw,2.5rem)] leading-[1.12] font-semibold tracking-tight text-balance">
+          {title}
+        </h2>
+        <p class="mt-4 max-w-[40rem] text-[16px] leading-[1.7] text-pretty text-ink-soft">
+          {intro}
+        </p>
+
+        <div class="mt-8 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-3 sm:gap-10">
+          {items.map(({ title: itemTitle, questions, detail }, index) => (
+            <div>
+              <span
+                class="font-mono text-sm tracking-[0.16em] text-signal-ink tabular-nums"
+                aria-hidden="true"
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 class="mt-2 font-heading text-lg leading-snug font-semibold text-ink">
+                {itemTitle}
+              </h3>
+              <ul class="mt-2 space-y-2">
+                {questions.map((question) => (
+                  <li class="text-sm leading-relaxed text-pretty text-ink-soft">
+                    {question}
+                  </li>
+                ))}
+              </ul>
+              {detail && (
+                <p class="mt-2 text-sm leading-relaxed text-pretty text-ink-soft">
+                  {detail}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {note && (
+          <p class="mt-8 max-w-[42rem] text-sm leading-relaxed text-ink-soft">
+            {note}
+          </p>
+        )}
+
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>

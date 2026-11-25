@@ -2,6 +2,7 @@
 title: "Jak zabezpieczyć pomysł na aplikację przed kradzieżą?"
 metaTitle: "Jak zabezpieczyć pomysł na aplikację? | Poradnik"
 description: "Boisz się, że ktoś ukradnie Twój pomysł na aplikację? Sprawdź, jak działa NDA, co chronią prawa autorskie i jak zabezpieczyć współpracę z programistą."
+teaser: "Co chroni prawo, jak działa NDA i o co zadbać w umowie z wykonawcą."
 cardDescription: |-
   Boisz się, że ktoś wykorzysta Twój pomysł, zanim zdążysz go zrealizować? To zrozumiałe.
 
@@ -27,6 +28,11 @@ faq:
     answer: "Zwykłej koncepcji aplikacji mobilnej nie można po prostu opatentować. Ochrona patentowa może być możliwa, jeśli rozwiązanie ma rzeczywisty charakter techniczny i spełnia wymagania stawiane wynalazkom. W takim przypadku warto skonsultować się z rzecznikiem patentowym jeszcze przed publicznym ujawnieniem szczegółów."
   - question: "Kto ma prawa autorskie do aplikacji — klient czy programista?"
     answer: "Zależy to od umowy. Przy współpracy B2B samo opłacenie faktury nie oznacza automatycznie nabycia majątkowych praw autorskich do kodu. Prawa trzeba wyraźnie przenieść w umowie, wskazując między innymi pola eksploatacji. Inaczej wygląda sytuacja z programistą zatrudnionym na umowę o pracę, gdzie zastosowanie mogą mieć szczególne przepisy art. 74 ust. 3 prawa autorskiego."
+keyTakeaways:
+  - "Sam pomysł zwykle nie jest chroniony jak własność — znaczenie mają konkretne elementy i umowy."
+  - "NDA daje podstawę do reakcji, ale nie gwarantuje monopolu na pomysł."
+  - "Prawa do kodu trzeba wyraźnie przenieść w umowie B2B."
+  - "Kontroluj dostęp do kodu, domeny, serwerów i najważniejszych kont."
 ---
 
 Masz pomysł na aplikację. Być może pracujesz nad nim od kilku miesięcy, a może rozwijasz go w głowie już od kilku lat. Wiesz, jak powinna działać, co ma robić i dlaczego ludzie mogliby chcieć z niej korzystać.
@@ -112,6 +118,17 @@ Nie musisz zgłaszać programu do żadnego urzędu, żeby taka ochrona powstała
 Z kolei uzyskanie prawa ochronnego na znak towarowy czy prawa z rejestracji wzoru przemysłowego wymaga przejścia odpowiedniej procedury.
 
 Dlatego nie ma sensu traktować wszystkich metod ochrony jako jednego wielkiego pakietu, który musisz wykupić, zanim jeszcze zaczniesz realizować projekt.
+
+| Instrument | Co pomaga zabezpieczyć | Czego nie gwarantuje |
+| --- | --- | --- |
+| Umowa NDA | Poufność przekazanych informacji i dokumentów | Wyłączności na sam pomysł |
+| Prawo autorskie | Kod, dokumentację i projekty, jeśli spełniają warunki ochrony | Ochrony samej koncepcji produktu |
+| Znak towarowy | Nazwę i logo w obrocie gospodarczym | Ochrony funkcji lub logiki aplikacji |
+| Wzór przemysłowy | Charakterystyczny wygląd produktu, jeśli spełnia wymogi | Ochrony sposobu działania |
+| Patent | Nowatorskie rozwiązanie techniczne, jeśli spełnia wymogi | Ochrony zwykłej koncepcji aplikacji |
+| Tajemnica przedsiębiorstwa | Poufne informacje biznesowe i techniczne | Wyłączności na każdy podobny pomysł |
+
+*To uproszczone porównanie, a nie porada prawna. Konkretny zakres ochrony zależy od stanu faktycznego, umowy i spełnienia ustawowych warunków.*
 
 Wiele zależy od tego, na jakim etapie jesteś i co dokładnie chcesz stworzyć.
 
@@ -379,6 +396,20 @@ Chodzi o to, żeby klient miał jasność co do swoich praw i możliwości dalsz
 
 Źródła: [Creativa Legal — Pola eksploatacji programu komputerowego](https://creativa.legal/pola-eksploatacji-programu-komputerowego/), [BDRP — Nabycie praw autorskich w IT](https://bdrp.pl/prawo/it/nabycie-praw-autorskich-w-it), [KR Group — Umowy IT a prawo autorskie](https://www.krgroup.pl/umowy-it-a-prawo-autorskie-kluczowe-aspekty-ochrony/).
 
+<div class="article-module article-checklist" data-article-checklist role="group" aria-labelledby="checklista-umowa">
+  <p class="article-module__eyebrow" id="checklista-umowa">Przed podpisaniem umowy sprawdź</p>
+  <ul>
+    <li><label><input type="checkbox"> <span>Czy umowa przekazuje Ci kod źródłowy i określa prawa do jego wykorzystania?</span></label></li>
+    <li><label><input type="checkbox"> <span>Czy wskazano pola eksploatacji i moment przejścia majątkowych praw autorskich?</span></label></li>
+    <li><label><input type="checkbox"> <span>Czy możesz zlecić dalszy rozwój innemu wykonawcy?</span></label></li>
+    <li><label><input type="checkbox"> <span>Czy rozróżniono elementy tworzone dla Ciebie od zewnętrznych bibliotek i licencji?</span></label></li>
+    <li><label><input type="checkbox"> <span>Czy zakres, termin, płatności i odbiór są opisane jednoznacznie?</span></label></li>
+    <li><label><input type="checkbox"> <span>Czy wiesz, kto administruje domeną, serwerem i kontami deweloperskimi?</span></label></li>
+  </ul>
+  <p class="article-checklist__status" data-checklist-status aria-live="polite">Zaznacz pozycje</p>
+  <p class="article-module__note">To lista robocza, a nie porada prawna. Konkretną umowę warto skonsultować z prawnikiem.</p>
+</div>
+
 ## 9. A co, jeśli nad Twoją aplikacją pracuje cały zespół?
 
 To kolejna kwestia, o której nie każdy pomysłodawca pomyśli na początku.
@@ -469,12 +500,19 @@ Dlatego już na początku warto ustalić, kto będzie administratorem poszczegó
 
 Mam tutaj na myśli przede wszystkim:
 
-- Repozytorium z kodem źródłowym.
-- Domenę internetową.
-- Serwery i bazy danych.
-- Konta deweloperskie w Google Play i App Store.
-- Konta usług zewnętrznych wykorzystywanych przez aplikację.
-- Dokumentację techniczną i kopie zapasowe.
+<div class="article-module article-checklist" data-article-checklist role="group" aria-labelledby="checklista-dostepy">
+  <p class="article-module__eyebrow" id="checklista-dostepy">Kontrola dostępu i własności</p>
+  <ul>
+    <li><label><input type="checkbox"> <span>Repozytorium z kodem źródłowym</span></label></li>
+    <li><label><input type="checkbox"> <span>Domena internetowa</span></label></li>
+    <li><label><input type="checkbox"> <span>Serwery i bazy danych</span></label></li>
+    <li><label><input type="checkbox"> <span>Konta deweloperskie w Google Play i App Store</span></label></li>
+    <li><label><input type="checkbox"> <span>Konta usług zewnętrznych wykorzystywanych przez aplikację</span></label></li>
+    <li><label><input type="checkbox"> <span>Dokumentacja techniczna i kopie zapasowe</span></label></li>
+    <li><label><input type="checkbox"> <span>Uwierzytelnianie dwuskładnikowe i ograniczone uprawnienia</span></label></li>
+  </ul>
+  <p class="article-checklist__status" data-checklist-status aria-live="polite">Zaznacz pozycje</p>
+</div>
 
 Nie oznacza to, że musisz samodzielnie zarządzać wszystkimi tymi elementami.
 
@@ -486,7 +524,9 @@ Warto również zadbać o odpowiednie zabezpieczenia dostępu.
 
 Na przykład uwierzytelnianie dwuskładnikowe, ograniczanie uprawnień czy bezpieczne przechowywanie haseł.
 
-To nie są szczególnie skomplikowane kwestie, ale mogą oszczędzić Ci wielu problemów w przyszłości.
+![Czarny notatnik i klucz na biurku](../../assets/images/editorial/a05-controlled-access.webp)
+
+<p class="article-caption">Kontrola dostępu do kodu, domeny i kont jest częścią własności produktu — nie tylko kwestią zaufania.</p>
 
 ## 13. Czy ktoś może legalnie stworzyć aplikację podobną do Twojej?
 

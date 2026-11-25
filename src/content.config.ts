@@ -9,6 +9,7 @@ const wiedza = defineCollection({
     title: z.string(),
     metaTitle: z.string().max(70).optional(),
     description: z.string().max(160),
+    teaser: z.string().max(180).optional(),
     cardDescription: z.string().optional(),
     lead: z.string().optional(),
     category: z.enum(WIEDZA_CATEGORY_IDS),
@@ -17,6 +18,34 @@ const wiedza = defineCollection({
     featured: z.boolean().default(false),
     order: z.number().int().default(99),
     related: z.array(z.string()).default([]),
+    keyTakeaways: z.array(z.string()).max(5).default([]),
+    tocLabels: z.record(z.string(), z.string()).default({}),
+    sourcesIntro: z.string().optional(),
+    sourcesNote: z.string().optional(),
+    sources: z
+      .array(
+        z.object({
+          group: z.string(),
+          items: z.array(
+            z.object({
+              title: z.string(),
+              url: z.url(),
+              description: z.string().optional(),
+            })
+          ),
+        })
+      )
+      .default([]),
+    download: z
+      .object({
+        title: z.string(),
+        description: z.string(),
+        href: z.string(),
+        label: z.string().default("Pobierz materiał"),
+        meta: z.string().optional(),
+        note: z.string().optional(),
+      })
+      .optional(),
     faq: z
       .array(
         z.object({

@@ -1,0 +1,75 @@
+---
+import ProjectFacts from "@/components/portfolio/project-facts.astro"
+import { ArrowRight } from "lucide-react"
+
+interface Fact {
+  label: string
+  value: string
+}
+
+interface Props {
+  id?: string
+  label: string
+  name: string
+  type: string
+  summary: string
+  facts: Fact[]
+  href: string
+  hrefLabel: string
+}
+
+const {
+  id = "projekt",
+  label,
+  name,
+  type,
+  summary,
+  facts,
+  href,
+  hrefLabel,
+} = Astro.props
+---
+
+<section
+  id={id}
+  class="border-t border-line bg-surface-muted px-4 py-12 sm:px-6 sm:py-16"
+>
+  <div class="mx-auto max-w-[75rem]">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-3">
+        <p class="font-mono text-[10px] tracking-[0.2em] text-ink-soft uppercase lg:sticky lg:top-24">
+          {label}
+        </p>
+      </div>
+
+      <div class="lg:col-span-9">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
+          <div class="lg:col-span-6">
+            <h2 class="font-heading text-[clamp(2rem,1.4rem+2.4vw,3.25rem)] leading-[1.02] font-semibold tracking-tight text-balance">
+              {name}
+            </h2>
+            <p class="mt-3 font-mono text-[11px] tracking-[0.14em] text-signal-ink uppercase">
+              {type}
+            </p>
+            <p class="mt-5 max-w-[36rem] text-[17px] leading-[1.65] text-pretty text-ink-soft sm:text-lg">
+              {summary}
+            </p>
+
+            <a
+              href={href}
+              data-case-study-link
+              class="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+            >
+              {hrefLabel}
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </a>
+          </div>
+
+          <div class="lg:col-span-6">
+            <ProjectFacts facts={facts} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

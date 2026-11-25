@@ -1,0 +1,46 @@
+---
+import { ArrowRight } from "lucide-react"
+import SectionHeading from "@/components/section-heading.astro"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+---
+
+<section
+  id="kontakt"
+  class="force-dark on-ink section-y border-t border-line bg-ink text-paper"
+>
+  <div class="shell">
+    <div class="max-w-3xl">
+      <SectionHeading
+        eyebrow="Na koniec"
+        title="Masz już pomysł? Porozmawiajmy, od czego warto zacząć."
+        lead="Opowiesz mi, co chcesz stworzyć. W 20 minut sprawdzimy pierwszy krok."
+        tone="dark"
+      />
+
+      <div class="mt-8">
+        <a
+          href="/rozmowa/"
+          class={cn(
+            buttonVariants({ size: "lg" }),
+            "h-auto min-h-12 w-full gap-2 rounded-[6px] bg-paper px-6 py-3 text-center text-base text-balance whitespace-normal text-ink hover:bg-paper/85 sm:w-auto"
+          )}
+        >
+          Umów bezpłatną rozmowę
+          <ArrowRight aria-hidden="true" />
+        </a>
+        <p class="mt-4 text-sm leading-relaxed text-paper/60">
+          Bezpłatna rozmowa · 20 minut · Bez zobowiązań
+        </p>
+      </div>
+
+      <a
+        href="/jak-pracuje/"
+        class="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-paper underline decoration-paper/25 underline-offset-4 transition-colors hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+      >
+        Zobacz, jak pracuję
+        <ArrowRight className="size-4" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "./article.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -175,6 +176,12 @@
   html {
     @apply font-sans antialiased;
   }
+  a:focus-visible,
+  summary:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+  }
 }
 
 @keyframes rise {
@@ -221,9 +228,83 @@ main section li:hover {
   background-color: color-mix(in oklch, var(--ink) 3.5%, transparent);
 }
 
+/* Rytm i szerokości strony głównej
+   mobile 56px · tablet 80px · desktop 112–144px */
+.section-y {
+  padding-block: 3.5rem;
+}
+@media (min-width: 40rem) {
+  .section-y {
+    padding-block: 5rem;
+  }
+}
+@media (min-width: 64rem) {
+  .section-y {
+    padding-block: clamp(7rem, 8vw, 9rem);
+  }
+}
+
+.shell {
+  width: 100%;
+  max-width: 75rem; /* 1200px — wspólna siatka z nagłówkiem i stopką */
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Artykuły mają odrobinę szerszy margines mobilny (20–24 px). */
+.shell.article-shell {
+  padding-inline: 1.25rem;
+}
+@media (min-width: 40rem) {
+  .shell {
+    padding-inline: 1.5rem;
+  }
+
+  .shell.article-shell {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* Typografia treści: 17px / 1.65, wiersz ~60–65 znaków */
+.lede {
+  max-width: 58ch;
+  font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
+  line-height: 1.6;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.copy {
+  max-width: 65ch;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+.on-ink .lede {
+  color: var(--paper);
+}
+.on-ink .copy {
+  color: color-mix(in oklch, var(--paper) 78%, transparent);
+}
+
 /* Zakotwiczenia nie chowają się pod sticky railem */
-section[id] {
+section[id],
+[id="konsultacja"] {
   scroll-margin-top: 5.5rem;
+}
+
+/* /oferta/ ma dodatkową sticky nawigację kotwicową pod nagłówkiem */
+main.oferta-main section[id],
+main.oferta-main [id="punkty-kontrolne"],
+main.oferta-main [id="po-uruchomieniu"] {
+  scroll-margin-top: 8rem;
+}
+@media (max-width: 63.999rem) {
+  main.oferta-main section[id],
+  main.oferta-main [id="punkty-kontrolne"],
+  main.oferta-main [id="po-uruchomieniu"] {
+    scroll-margin-top: 5.5rem;
+  }
 }
 
 /* FAQ: kategorie muszą zmieścić się pod sticky chipsami na mobile */
@@ -264,6 +345,22 @@ html {
    więc akcent na nich musi być ciemny (inaczej kontrast < 2:1) */
 .dark .on-ink {
   --signal-bright: #7a4a43;
+}
+
+/* Sekcje, które mają pozostać ciemne również w trybie ciemnym */
+.force-dark {
+  color-scheme: dark;
+  --paper: #f7f5f2;
+  --ink: #141414;
+  --ink-soft: #6a6a6a;
+  --line: #e7e2dc;
+  --signal: #c75b3b;
+  --signal-ink: #7a4a43;
+  --signal-bright: #e08a6c;
+  --surface-muted: #f1ece6;
+}
+.dark .force-dark {
+  --signal-bright: #e08a6c;
 }
 
 /* Mockup produktu zawsze w jasnej palecie (to „zrzut ekranu”), nawet w trybie ciemnym */
@@ -368,28 +465,28 @@ footer a:focus-visible {
 }
 
 .article-body > * + * {
-  margin-top: 1.1em;
+  margin-top: 1.2em;
 }
 
 .article-body h2 {
-  margin-top: 2.6em;
-  font-size: 1.5rem;
-  line-height: 1.2;
+  margin-top: 3em;
+  font-size: 1.75rem;
+  line-height: 1.18;
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
   color: var(--ink);
   text-wrap: balance;
-  scroll-margin-top: 6rem;
+  scroll-margin-top: 7rem;
 }
 
 .article-body h3 {
-  margin-top: 2em;
-  font-size: 1.15rem;
-  line-height: 1.35;
+  margin-top: 2.4em;
+  font-size: 1.25rem;
+  line-height: 1.3;
   font-weight: 600;
   color: var(--ink);
   text-wrap: balance;
-  scroll-margin-top: 6rem;
+  scroll-margin-top: 7rem;
 }
 
 .article-body h2:first-child,
@@ -438,7 +535,8 @@ footer a:focus-visible {
   border-left: 2px solid var(--signal);
   padding-left: 1.25rem;
   font-family: var(--font-heading);
-  font-size: 1.125rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
   color: var(--ink);
 }
 
@@ -542,12 +640,12 @@ footer a:focus-visible {
 .article-body img {
   max-width: 100%;
   height: auto;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
 }
 
 .article-body figure {
-  margin-top: 2.25rem;
-  margin-bottom: 2.25rem;
+  margin-top: 2.75rem;
+  margin-bottom: 2.75rem;
 }
 
 .article-body video {
@@ -564,22 +662,23 @@ footer a:focus-visible {
 
 .article-body figcaption {
   margin-top: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.65;
+  font-size: 0.8125rem;
+  line-height: 1.6;
   color: var(--ink-soft);
 }
 
 @media (min-width: 640px) {
   .article-body {
-    font-size: 1.125rem;
+    font-size: 1.1875rem;
+    line-height: 1.75;
   }
 
   .article-body h2 {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   .article-body h3 {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
   }
 }
 

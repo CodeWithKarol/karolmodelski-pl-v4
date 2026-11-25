@@ -2,6 +2,7 @@
 title: "Ile kosztuje stworzenie aplikacji w 2026 roku?"
 metaTitle: "Ile kosztuje stworzenie aplikacji w 2026 roku? Cennik"
 description: "Ile kosztuje stworzenie aplikacji w 2026 roku? Sprawdź orientacyjne przedziały cenowe aplikacji mobilnych i webowych oraz czynniki wpływające na budżet."
+teaser: "Widełki cenowe, czynniki wpływające na budżet i sposoby na oszczędności."
 lead: "Masz pomysł na aplikację. Wiesz, jak powinna działać, komu mogłaby się przydać i być może masz już nawet rozpisane najważniejsze funkcje."
 category: "koszty"
 order: 2
@@ -9,6 +10,11 @@ publishedAt: 2026-10-29
 updatedAt: 2026-10-30
 related:
   - "masz-pomysl-na-aplikacje-od-czego-zaczac"
+keyTakeaways:
+  - "Orientacyjne widełki zależą od zakresu, a nie od samej technologii."
+  - "Porównuj oferty w tej samej konwencji: netto z netto, brutto z brutto."
+  - "Węższa pierwsza wersja pozwala sprawdzić produkt przed większym wydatkiem."
+  - "Pamiętaj o kosztach utrzymania: serwery, usługi i opieka techniczna to osobny budżet."
 ---
 
 W końcu przychodzi moment, w którym zaczynasz zastanawiać się nad realizacją. I pojawia się ważne pytanie, które pada również w rozmowach z potencjalnymi klientami:
@@ -56,6 +62,19 @@ Dlatego potraktuj te kwoty jako punkt wyjścia do planowania budżetu, a nie wyc
 
 To oczywiście orientacyjne widełki, a nie gotowy cennik. Zestawiają różne modele realizacji, od niewielkich zespołów po większe firmy programistyczne. Konkretna wycena może wykraczać poza te przedziały.
 
+<div class="article-module article-range" role="group" aria-labelledby="wykres-kosztow">
+  <p class="article-module__eyebrow" id="wykres-kosztow">Orientacyjne przedziały netto</p>
+  <ul>
+    <li><div class="article-range__head"><span>Prototyp</span><strong>5–10 tys. zł</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:1;--to:2"></span></div></li>
+    <li><div class="article-range__head"><span>Prosta aplikacja webowa (MVP)</span><strong>12–30 tys. zł</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:2.4;--to:6"></span></div></li>
+    <li><div class="article-range__head"><span>Pierwsza wersja mobilna (MVP)</span><strong>15–80 tys. zł</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:3;--to:16"></span></div></li>
+    <li><div class="article-range__head"><span>Aplikacja średniej złożoności</span><strong>50–200 tys. zł</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:10;--to:40"></span></div></li>
+    <li><div class="article-range__head"><span>Platforma lub marketplace</span><strong>100–400 tys. zł</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:20;--to:80"></span></div></li>
+    <li><div class="article-range__head"><span>Zaawansowany system</span><strong>250–500 tys. zł i więcej</strong></div><div class="article-range__track" aria-hidden="true"><span class="article-range__bar" style="--from:50;--to:100"></span></div></li>
+  </ul>
+  <p class="article-module__note">Skala 0–500 tys. zł. To orientacyjne przedziały z publicznych cenników, a nie średnia rynkowa ani wycena Twojego projektu.</p>
+</div>
+
 Ale nawet patrząc na tę tabelę, można zauważyć jedną ciekawą rzecz.
 
 **Nie każda aplikacja musi kosztować kilkaset tysięcy złotych.**
@@ -86,8 +105,6 @@ W pierwszym przypadku mamy stosunkowo prostą aplikację, która realizuje jedno
 
 W drugim budujemy już całkiem rozbudowany system, w którym wiele elementów musi ze sobą współpracować.
 
-A każdy dodatkowy element to czas potrzebny na jego zaprojektowanie, zaprogramowanie i przetestowanie.
-
 Dlatego podczas pierwszej rozmowy nie zaczynam od pytania, ile ekranów ma mieć aplikacja.
 
 Wolę zapytać:
@@ -95,6 +112,10 @@ Wolę zapytać:
 **Wyobraź sobie, że aplikacja jest już gotowa. Uruchamiasz ją na telefonie i co dalej? Co dokładnie możesz w niej zrobić?**
 
 W ten sposób dużo łatwiej ustalić, co rzeczywiście trzeba zbudować.
+
+![Dwie kompozycje geometrycznych klocków — mała i rozbudowana](../../assets/images/editorial/a04-complexity-and-scope.webp)
+
+<p class="article-caption">Ten sam pomysł, dwa różne zakresy. Koszt wynika z liczby elementów, które muszą ze sobą współpracować.</p>
 
 ## Co najbardziej wpływa na koszt stworzenia aplikacji?
 
@@ -206,6 +227,19 @@ Dlatego przy porównywaniu ofert najważniejsze jest nie tylko to, ile kosztuje 
 Przyjmijmy prosty przykład.
 
 Jeżeli realizacja projektu wymaga 400 godzin pracy, a średnia stawka wynosi 150 zł netto za godzinę, otrzymujemy koszt 60 000 zł netto.
+
+<div class="article-module article-calculator" data-calculator="hours-rate">
+  <p class="article-module__eyebrow">Kalkulator orientacyjny: godziny × stawka</p>
+  <div class="article-calculator__fields">
+    <label for="calc-hours">Liczba godzin<input id="calc-hours" data-calc="hours" type="number" min="0" step="1" inputmode="numeric" placeholder="np. 400"></label>
+    <label for="calc-rate">Stawka netto za godzinę (zł)<input id="calc-rate" data-calc="rate" type="number" min="0" step="1" inputmode="numeric" placeholder="np. 150"></label>
+  </div>
+  <div class="article-calculator__results" aria-live="polite">
+    <p><span>Koszt netto</span><strong data-calc-output="net">—</strong></p>
+    <p><span>Koszt brutto (VAT 23%)</span><strong data-calc-output="gross">—</strong></p>
+  </div>
+  <p class="article-calculator__note">To obliczenie orientacyjne, a nie wycena. Stawki netto i VAT zależą od wykonawcy i Twojej sytuacji podatkowej.</p>
+</div>
 
 I to jeszcze niekoniecznie oznacza pełny koszt projektu.
 
@@ -424,6 +458,31 @@ Dla zobrazowania: niewielka aplikacja może mieć miesięczne koszty utrzymania 
 | Usługi zewnętrzne (e-mail, SMS, płatności) | 100 zł | 1 200 zł |
 | Opieka techniczna (monitoring, aktualizacje, drobne poprawki) | 600 zł | 7 200 zł |
 | **Razem** | **900 zł** | **10 800 zł** |
+
+<div class="article-module article-compare" role="group" aria-labelledby="koszty-jednorazowe-cykliczne">
+  <p class="article-module__eyebrow" id="koszty-jednorazowe-cykliczne">Jednorazowo czy co miesiąc?</p>
+  <div class="article-compare__grid">
+    <div class="article-compare__col">
+      <h3>Koszty jednorazowe</h3>
+      <ul>
+        <li>zakres, projekt i przygotowanie realizacji,</li>
+        <li>programowanie pierwszej wersji,</li>
+        <li>testy, wdrożenie i odbiór,</li>
+        <li>poprawki objęte uzgodnioną gwarancją.</li>
+      </ul>
+    </div>
+    <div class="article-compare__col article-compare__col--signal">
+      <h3>Koszty cykliczne</h3>
+      <ul>
+        <li>serwer, baza danych i domena,</li>
+        <li>usługi zewnętrzne: e-mail, SMS, płatności,</li>
+        <li>monitoring, aktualizacje i poprawki,</li>
+        <li>nowe funkcje i dalszy rozwój.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="article-module__note">Gwarancja techniczna nie oznacza, że utrzymanie aplikacji jest bezpłatne. To osobny, zwykle miesięczny budżet.</p>
+</div>
 
 To przykład ilustracyjny, a nie cennik. Przy większym ruchu, płatnościach i integracjach każda z tych pozycji może być wyższa. Większe, nowe funkcje to zwykle osobny zakres i wycena.
 

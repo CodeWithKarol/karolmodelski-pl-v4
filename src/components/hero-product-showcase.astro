@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets"
+import { ArrowRight } from "lucide-react"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import showcase from "@/assets/images/numerabble-laptop-phone.webp"
+---
+
+<section class="relative overflow-hidden bg-paper">
+  <div
+    aria-hidden="true"
+    class="grain pointer-events-none absolute inset-0 -z-10 opacity-50"
+  ></div>
+
+  <div class="shell pt-10 pb-10 sm:pt-14 lg:pt-20 lg:pb-14">
+    <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-6">
+        <p class="flex items-center gap-3 font-mono text-[11px] tracking-[0.2em] text-ink-soft uppercase">
+          <span class="h-px w-8 bg-signal" aria-hidden="true" />
+          Masz pomysł na własną aplikację?
+        </p>
+
+        <h1 class="mt-6 font-heading text-[clamp(2.5rem,1.2rem+3.2vw,3.75rem)] leading-[1.03] font-semibold tracking-tight text-balance">
+          Zamień swój pomysł w działającą aplikację.
+        </h1>
+
+        <p class="lede mt-6">
+          Wybierzemy najważniejsze funkcje, dopracuję pomysł i poprowadzę całą
+          realizację. Bez szukania programistów i budowania wszystkiego od razu.
+        </p>
+
+        <div class="mt-8 flex flex-col items-start gap-4 sm:mt-10">
+          <a
+            id="konsultacja"
+            href="/rozmowa/"
+            class={cn(
+              buttonVariants({ size: "lg" }),
+              "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+            )}
+          >
+            Umów bezpłatną rozmowę
+            <ArrowRight />
+          </a>
+          <p class="text-sm leading-relaxed text-ink-soft">
+            20 minut · Bez zobowiązań
+          </p>
+        </div>
+
+        <p class="mt-6 max-w-md text-sm leading-relaxed text-ink-soft">
+          <a
+            href="/checklista/"
+            class="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+          >
+            Uporządkuj pomysł w 12 pytaniach.
+          </a>
+        </p>
+      </div>
+
+      <figure class="mx-auto w-full max-w-[34rem] lg:col-span-6 lg:max-w-none">
+        <div class="overflow-hidden rounded-xl border border-line">
+          <Image
+            src={showcase}
+            alt="Numerabble — strona produktu na laptopie i plansza gry na telefonie"
+            widths={[480, 640, 800, 1086, 1448]}
+            sizes="(min-width: 1024px) 40vw, (min-width: 640px) 544px, calc(100vw - 2rem)"
+            quality={84}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            class="block aspect-[4/3] w-full object-cover"
+          />
+        </div>
+        <figcaption class="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-sm leading-relaxed text-ink-soft">
+          <span class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+            Numerabble
+          </span>
+          <span>Strona produktu i rozgrywka w przeglądarce.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>

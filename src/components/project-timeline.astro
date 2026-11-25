@@ -1,0 +1,103 @@
+---
+import { ArrowRight } from "lucide-react"
+import SectionHeading from "@/components/section-heading.astro"
+
+interface Props {
+  id?: string
+  eyebrow?: string
+  title?: string
+  lead?: string
+  showLink?: boolean
+}
+
+const {
+  id = "proces",
+  eyebrow = "06 · Przebieg realizacji",
+  title = "Cztery tygodnie, trzy punkty kontrolne.",
+  lead = "Zaczynamy od zakresu, nie od kodowania. Widzisz postępy na bieżąco.",
+  showLink = true,
+} = Astro.props
+
+const phases = [
+  {
+    marker: "Start",
+    unit: "0",
+    label: "Przed rozpoczęciem",
+    title: "Zakres i umowa",
+    description:
+      "Ustalamy funkcje, cenę i warunki. Zbieramy materiały oraz dostępy.",
+  },
+  {
+    marker: "Punkt kontrolny",
+    unit: "1",
+    label: "Tydzień 1",
+    title: "Projekt ekranów",
+    description: "Kluczowe ekrany i sposób obsługi aplikacji.",
+  },
+  {
+    marker: "Punkt kontrolny",
+    unit: "2",
+    label: "Tydzień 2",
+    title: "Najważniejsza funkcja",
+    description: "Działa i jest gotowa do sprawdzenia.",
+  },
+  {
+    marker: "Punkt kontrolny",
+    unit: "4",
+    label: "Tydzień 4",
+    title: "Wersja do testów",
+    description: "Strona produktu i podstawowa analityka.",
+  },
+  {
+    marker: "Zwykle",
+    unit: "5–8",
+    label: "Tygodnie 5–8",
+    title: "Odbiór i przekazanie",
+    description: "Poprawki, rozliczenie, kod źródłowy i prawa.",
+  },
+]
+---
+
+<section id={id} class="section-y border-t border-line bg-paper">
+  <div class="shell">
+    <SectionHeading eyebrow={eyebrow} title={title} lead={lead} />
+
+    <ol class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:mt-16 lg:grid-cols-5 lg:gap-x-8">
+      {phases.map(({ marker, unit, label, title, description }) => (
+        <li class="relative border-t border-line py-6 lg:pt-8">
+          <span
+            class="absolute -top-[3px] left-0 h-1.5 w-6 bg-signal"
+            aria-hidden="true"
+          />
+          <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+            {marker}
+          </p>
+          <p class="mt-3 font-heading text-4xl leading-none font-semibold tracking-tight text-ink">
+            {unit}
+          </p>
+          <p class="mt-2 font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+            {label}
+          </p>
+          <h3 class="mt-3 font-heading text-lg leading-snug font-semibold text-balance">
+            {title}
+          </h3>
+          <p class="copy mt-2 text-sm">{description}</p>
+        </li>
+      ))}
+    </ol>
+
+    <slot />
+
+    {showLink && (
+      <div class="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-end">
+        <a
+          href="/jak-pracuje/#harmonogram"
+          class="inline-flex min-h-11 shrink-0 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+        >
+          Szczegółowy przebieg realizacji
+          <ArrowRight className="size-4" aria-hidden="true" />
+        </a>
+      </div>
+    )}
+  </div>
+</section>

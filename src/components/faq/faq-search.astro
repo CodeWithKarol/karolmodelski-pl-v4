@@ -1,0 +1,184 @@
+---
+// Komponent nie wymaga propsów — licznik i kategorie czyta z DOM.
+---
+
+<div data-faq-search>
+  <label
+    for="faq-query"
+    class="font-mono text-[10px] tracking-[0.16em] text-ink-soft uppercase"
+  >
+    Szukaj w pytaniach i odpowiedziach
+  </label>
+
+  <div class="relative mt-2">
+    <input
+      id="faq-query"
+      type="search"
+      name="faq"
+      autocomplete="off"
+      placeholder="np. cena, termin, NDA"
+      aria-describedby="faq-status"
+      class="h-12 w-full rounded-lg border border-line bg-card pr-24 pl-4 text-base text-ink placeholder:text-ink-soft/70 focus-visible:border-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+    />
+    <button
+      type="button"
+      data-faq-clear
+      hidden
+      class="absolute top-1/2 right-2 -translate-y-1/2 rounded-md px-2 py-1 text-xs font-medium text-ink-soft transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+    >
+      Wyczyść
+    </button>
+  </div>
+
+  <p
+    id="faq-status"
+    role="status"
+    aria-live="polite"
+    class="mt-2 text-sm text-ink-soft"
+  >
+    Wpisz słowo lub wybierz kategorię.
+  </p>
+</div>
+
+<script>
+  const root = document.querySelector("[data-faq-search]")
+  const input = document.querySelector("#faq-query") as HTMLInputElement | null
+  const clear = root?.querySelector(
+    "[data-faq-clear]"
+  ) as HTMLButtonElement | null
+  const status = document.querySelector<HTMLElement>("#faq-status")
+  const clearButtons = document.querySelectorAll("[data-faq-reset]")
+  const empty = document.querySelector<HTMLElement>("[data-faq-empty]")
+  const emptyText = document.querySelector<HTMLElement>("[data-faq-empty-text]")
+
+  const items = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-faq-item]")
+  )
+  const groups = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-faq-group]")
+  )
+  const categories = Array.from(
+    document.querySelectorAll<HTMLButtonElement>("[data-faq-category]")
+  )
+
+  if (!input || !status || !items.length) {
+    // Brak wyszukiwarki lub treści — strona działa bez filtrowania.
+  } else {
+    const field: HTMLInputElement = input
+    const statusEl: HTMLElement = status
+    const total = items.length
+    let query = ""
+    let category = "all"
+    let wasEmpty = false
+
+    const normalize = (value: string) =>
+      value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/ł/g, "l")
+
+    const push = (event: string, data: Record<string, unknown>) => {
+      const target = window as Window & {
+        dataLayer?: Record<string, unknown>[]
+      }
+      target.dataLayer = target.dataLayer || []
+      target.dataLayer.push({ event, ...data })
+    }
+
+    function apply() {
+      const needle = normalize(query.trim())
+      let visible = 0
+
+      items.forEach((item) => {
+        const inCategory =
+          category === "all" ||
+          item.closest("[data-faq-group]")?.id === category
+        const matches = !needle || (item.dataset.search || "").includes(needle)
+        const show = inCategory && matches
+        item.hidden = !show
+        if (show) visible += 1
+      })
+
+      groups.forEach((group) => {
+        const hasVisible = group.querySelector<HTMLElement>(
+          "[data-faq-item]:not([hidden])"
+        )
+        group.hidden = !hasVisible
+      })
+
+      statusEl.textContent =
+        category === "all" && !needle
+          ? "Wpisz słowo lub wybierz kategorię."
+          : `${visible} z ${total} pytań`
+
+      if (clear) clear.hidden = !needle && category === "all"
+      if (empty)
+        empty.hidden = !(visible === 0 && (needle || category !== "all"))
+      if (emptyText)
+        emptyText.textContent = query.trim()
+          ? `Brak wyników dla „${query.trim()}”.`
+          : "Brak pytań w tej kategorii."
+
+      const isEmpty = visible === 0 && Boolean(needle)
+      if (isEmpty && !wasEmpty) push("faq_search_empty", {})
+      wasEmpty = isEmpty
+    }
+
+    field.addEventListener("input", () => {
+      query = field.value
+      apply()
+    })
+
+    categories.forEach((button) => {
+      button.addEventListener("click", () => {
+        category = button.dataset.faqCategory || "all"
+        categories.forEach((other) => {
+          other.setAttribute(
+            "aria-pressed",
+            other === button ? "true" : "false"
+          )
+        })
+        apply()
+        push("faq_category", { category })
+      })
+    })
+
+    function reset(focus = true) {
+      query = ""
+      category = "all"
+      field.value = ""
+      categories.forEach((button) => {
+        button.setAttribute(
+          "aria-pressed",
+          button.dataset.faqCategory === "all" ? "true" : "false"
+        )
+      })
+      apply()
+      if (focus) field.focus()
+    }
+
+    clear?.addEventListener("click", () => reset())
+    clearButtons.forEach((button) =>
+      button.addEventListener("click", () => reset())
+    )
+
+    // Otwieranie odpowiedzi z adresu (#pytanie-N) i po zmianie hasha.
+    function openFromHash() {
+      const id = location.hash.replace("#", "")
+      if (!id) return
+      const target = document.getElementById(id)
+      if (!target) return
+
+      if (target.hidden) reset(false)
+
+      if (target instanceof HTMLDetailsElement) {
+        target.open = true
+      }
+      target.scrollIntoView({ block: "start", behavior: "auto" })
+    }
+
+    window.addEventListener("hashchange", openFromHash)
+    openFromHash()
+  }
+</script>

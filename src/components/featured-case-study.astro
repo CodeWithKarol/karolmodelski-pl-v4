@@ -1,0 +1,137 @@
+---
+import { ArrowRight, Pause, Play } from "lucide-react"
+import SectionHeading from "@/components/section-heading.astro"
+import ClientQuote from "@/components/client-quote.astro"
+import { numerabbleTestimonial } from "@/data/testimonials"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+
+const facts = [
+  {
+    label: "Zaplanowane prace",
+    value: "4 tygodnie",
+    note: "nad pierwszą wersją",
+  },
+  {
+    label: "Dostęp",
+    value: "Przeglądarka",
+    note: "bez instalacji",
+  },
+  {
+    label: "Zakres",
+    value: "Gra z komputerem",
+    note: "najważniejsza funkcja",
+  },
+]
+---
+
+<section id="przyklad" class="section-y border-t border-line bg-surface-muted">
+  <div class="shell">
+    <SectionHeading
+      eyebrow="01 · Realizacja"
+      title="Pomysł sprzed prawie 30 lat. Dziś można już w niego zagrać."
+      lead="Pomysłodawca Numerabble rozwijał grę matematyczną od lat. Zamiast budować wszystko naraz, zaczęliśmy od działającej rozgrywki z komputerem."
+      class="max-w-4xl"
+    />
+
+    <div class="mt-12 grid grid-cols-1 gap-10 lg:mt-16 lg:grid-cols-12 lg:gap-16">
+      <div class="order-2 lg:order-1 lg:col-span-5">
+        <p class="copy">
+          Dopracowaliśmy zasady, rozwiązaliśmy nietypowe sytuacje i
+          uruchomiliśmy grę w przeglądarce. Po premierze sprawdziliśmy, jak
+          korzystają z niej pierwsi gracze.
+        </p>
+
+        <dl class="mt-8 border-t border-line">
+          {facts.map(({ label, value, note }) => (
+            <div class="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-4 border-b border-line py-4">
+              <dt class="font-mono text-[10px] tracking-[0.14em] text-ink-soft uppercase">
+                {label}
+              </dt>
+              <dd class="text-right">
+                <span class="block font-heading text-base font-semibold tracking-tight">
+                  {value}
+                </span>
+                <span class="mt-0.5 block text-xs text-ink-soft">{note}</span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        <ClientQuote
+          testimonial={numerabbleTestimonial}
+          excerpt
+          class="mt-8 bg-paper"
+        />
+      </div>
+
+      <figure class="order-1 lg:order-2 lg:col-span-7">
+        <div class="overflow-hidden rounded-xl border border-line bg-[#0f0d0b]">
+          <div
+            class="flex items-center gap-2 border-b border-white/10 px-4 py-2.5"
+            aria-hidden="true"
+          >
+            <span class="size-2 rounded-full bg-signal/80"></span>
+            <span class="size-2 rounded-full bg-white/15"></span>
+            <span class="size-2 rounded-full bg-white/15"></span>
+            <p class="ml-2 truncate font-mono text-[10px] tracking-[0.14em] text-white/50 uppercase">
+              Numerabble · rozgrywka
+            </p>
+          </div>
+          <video
+            data-clip
+            class="block aspect-[4/3] w-full object-cover"
+            src="/showcase/numerabble-gameplay.webm"
+            poster="/showcase/numerabble-gameplay.webp"
+            width="960"
+            height="720"
+            muted
+            loop
+            playsinline
+            preload="none"
+            aria-label="Rozgrywka w grze Numerabble — plansza, ułożone działanie i panel z żetonami"
+          ></video>
+        </div>
+        <figcaption class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-sm leading-relaxed text-pretty text-ink-soft">
+            Prawdziwa gra. Można ją uruchomić i rozegrać partię.
+          </p>
+          <button
+            type="button"
+            data-clip-toggle
+            data-state="playing"
+            class="inline-flex shrink-0 items-center gap-2 self-start rounded-md border border-line px-3 py-1.5 font-mono text-[11px] tracking-[0.14em] text-ink-soft uppercase transition-colors hover:border-ink/25 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+          >
+            <Pause
+              data-clip-icon-pause
+              className="size-3.5"
+              aria-hidden="true"
+            />
+            <Play data-clip-icon-play className="size-3.5" aria-hidden="true" />
+            <span data-clip-label>Wstrzymaj nagrania</span>
+          </button>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-12 flex flex-col items-start gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:gap-8">
+      <a
+        href="/rozmowa/"
+        class={cn(
+          buttonVariants({ size: "lg" }),
+          "h-auto min-h-12 w-full gap-2 rounded-[6px] px-6 py-3 text-center text-base text-balance whitespace-normal sm:w-auto"
+        )}
+      >
+        Porozmawiajmy o Twoim pomyśle
+        <ArrowRight />
+      </a>
+      <a
+        href="/realizacje/numerabble/"
+        class="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-signal"
+      >
+        Studium realizacji Numerabble
+        <ArrowRight className="size-4" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</section>

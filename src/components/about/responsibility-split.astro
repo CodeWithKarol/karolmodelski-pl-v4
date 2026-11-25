@@ -1,0 +1,40 @@
+---
+interface ResponsibilityGroup {
+  label: string
+  lead: string
+  items: string[]
+}
+
+interface Props {
+  groups: ResponsibilityGroup[]
+}
+
+const { groups } = Astro.props
+---
+
+<div class="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
+  {groups.map((group, index) => (
+    <section
+      class="border-t border-line pt-5"
+      aria-labelledby={`odpowiedzialnosc-${index}`}
+    >
+      <p class="font-mono text-[10px] tracking-[0.16em] text-signal-ink uppercase">
+        {String(index + 1).padStart(2, "0")} · {group.label}
+      </p>
+      <h3
+        id={`odpowiedzialnosc-${index}`}
+        class="mt-3 font-heading text-xl leading-snug font-semibold text-balance text-ink"
+      >
+        {group.lead}
+      </h3>
+      <ul class="mt-4 space-y-2.5">
+        {group.items.map((item) => (
+          <li class="flex gap-3 text-sm leading-relaxed text-ink-soft">
+            <span class="mt-2 h-px w-4 shrink-0 bg-signal" aria-hidden="true" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</div>
