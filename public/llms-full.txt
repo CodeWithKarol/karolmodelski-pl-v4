@@ -216,8 +216,8 @@ Wszystkie pytania: https://www.karolmodelski.pl/faq/ — koszty, etapy realizacj
 
 Wszystkie artykuły: https://www.karolmodelski.pl/wiedza/
 
-- [Masz pomysł na aplikację? Od czego zacząć?](https://www.karolmodelski.pl/wiedza/masz-pomysl-na-aplikacje-od-czego-zaczac/) — Potrzebujesz programisty czy całego zespołu? Ile to może kosztować? Wyjaśniam, jak podejść do pierwszej wersji bez zbędnych wydatków.
-- [Ile kosztuje stworzenie aplikacji w 2026 roku?](https://www.karolmodelski.pl/wiedza/ile-kosztuje-stworzenie-aplikacji-2026/) — Realne ceny aplikacji mobilnych i webowych, koszty programistów i sposoby na oszczędności.
+- [Masz pomysł na aplikację? Od czego zacząć?](https://www.karolmodelski.pl/wiedza/masz-pomysl-na-aplikacje-od-czego-zaczac/) — Jeden z moich klientów przyszedł do mnie z pomysłem, który rozwijał przez prawie 30 lat. A ja zaproponowałem, żebyśmy nie budowali od razu całej aplikacji. Duża wizja nie wymaga dużego pierwszego kroku — wymaga właściwego pierwszego kroku.
+- [Ile kosztuje stworzenie aplikacji w 2026 roku?](https://www.karolmodelski.pl/wiedza/ile-kosztuje-stworzenie-aplikacji-2026/) — Największe oszczędności przy tworzeniu aplikacji mogą powstać jeszcze przed napisaniem pierwszej linijki kodu. Konkretne widełki na 2026 rok i moje podejście do planowania budżetu.
 - [Jak zabezpieczyć pomysł na aplikację przed kradzieżą?](https://www.karolmodelski.pl/wiedza/jak-zabezpieczyc-pomysl-na-aplikacje/) — Co chroni prawo, jak działa NDA i o co zadbać w umowie z programistą.
 
 ---

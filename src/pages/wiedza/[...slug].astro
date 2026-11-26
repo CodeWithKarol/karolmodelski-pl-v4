@@ -367,6 +367,24 @@ const jsonLd = [articleSchema, ...faqSchema, breadcrumbSchema]
             write("annual", monthly * 12)
             write("first-year", monthly * 12 + oneTime)
           }
+
+          if (type === "time-value") {
+            const hours = read("hours")
+            const rate = read("rate")
+            const tools = read("tools") ?? 0
+            const months = read("months") ?? 0
+            if (hours === null || rate === null) {
+              write("time-value", null)
+              write("tools-total", null)
+              write("total", null)
+              return
+            }
+            const timeValue = hours * rate
+            const toolsTotal = tools * months
+            write("time-value", timeValue)
+            write("tools-total", toolsTotal)
+            write("total", timeValue + toolsTotal)
+          }
         }
 
         inputs.forEach((input) => input.addEventListener("input", update))

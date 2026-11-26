@@ -1,16 +1,17 @@
 ---
 title: "Prototyp, MVP czy gotowa aplikacja — za co właściwie płacisz?"
 metaTitle: "Prototyp, MVP czy gotowa aplikacja — za co płacisz?"
-description: "Czym różni się prototyp od MVP i gotowej aplikacji? Sprawdź, co otrzymujesz za swoje pieniądze, ile kosztują poszczególne etapy i co warto wybrać."
-teaser: "Trzy poziomy dojrzałości produktu i różnice w kosztach oraz zakresie."
+description: "Czym różni się prototyp od MVP? Pokazuję na przykładach z mojej pracy, które funkcje warto programować, które wystarczy pokazać i za co płacisz."
+teaser: "Nie wszystko, co chcesz pokazać w aplikacji, musisz od razu programować."
 cardDescription: |-
-  Prototyp za kilka tysięcy, MVP za 25 tysięcy, gotowa aplikacja za sto. Trzy oferty, ten sam pomysł — i trzy różne produkty.
+  Nie wszystko, co chcesz pokazać w aplikacji, musi od razu działać.
 
-  Wyjaśniam, co kryje się pod każdą z tych nazw, ile kosztuje poszczególny zakres i o co zapytać wykonawcę, żeby wiedzieć, za co płacisz.
-lead: "Ta sama aplikacja, trzy wyceny i różnice liczone w dziesiątkach tysięcy złotych. Zanim porównasz oferty, warto sprawdzić, czy wszyscy proponują Ci to samo."
+  Na przykładach z mojej pracy pokazuję, czym różni się prototyp od MVP, kiedy warto połączyć oba podejścia i jak świadomie wybrać zakres pierwszej inwestycji.
+lead: "Dwa identycznie wyglądające ekrany aplikacji mogą wymagać zupełnie innego nakładu pracy. Jeden jedynie pokazuje funkcję, drugi rzeczywiście ją realizuje. Wyjaśniam, kiedy warto zapłacić za każdy z tych wariantów."
 category: "pierwsza-wersja"
 order: 9
 publishedAt: 2026-11-18
+updatedAt: 2026-11-26
 related:
   - "ile-kosztuje-stworzenie-aplikacji-2026"
   - "ile-trwa-stworzenie-aplikacji"
@@ -26,125 +27,132 @@ faq:
     answer: "Tak, ale nie każde MVP jest przygotowane z myślą o dalszym rozwoju. Jeśli pierwsza wersja powstała na narzędziu, które szybko generuje ekrany, ale mocno ogranicza kolejne funkcje, część produktu może wymagać przebudowy. Dlatego przed zamówieniem warto zapytać wykonawcę, czy ta wersja będzie podstawą dalszego rozwoju, czy przy większej skali trzeba będzie zacząć od nowa."
   - question: "Od czego zacząć: od prototypu, MVP czy pełnej aplikacji?"
     answer: "Od prototypu, jeśli chcesz przede wszystkim pokazać pomysł inwestorowi, wspólnikowi lub potencjalnym użytkownikom. Od MVP, jeśli masz określony problem i chcesz sprawdzić działający produkt w praktyce. Od szerszej wersji, jeśli masz już sprawdzony model biznesowy, znaną grupę klientów i dokładnie wiesz, jakich funkcji potrzebujesz."
+  - question: "Czym jest model hybrydowy prototypu i MVP?"
+    answer: "To połączenie działających funkcji z klikalnymi makietami. Najważniejszy mechanizm produktu działa naprawdę, a pozostałe elementy pokazują docelową wizję. Dzięki temu można przeprowadzić testy i prezentację bez programowania całego systemu. Trzeba jednak jasno komunikować, które elementy działają, a które są tylko demonstracją."
+  - question: "Jak zdecydować, które funkcje muszą działać w pierwszej wersji?"
+    answer: "Podziel funkcje na trzy grupy: Działa (potrzebne do osiągnięcia obecnego celu i weryfikacji produktu), Pokazuje (wystarczy makieta lub symulacja) oraz Czeka (wartościowe, ale niepotrzebne na tym etapie). Kluczowe jest to, od czego zależy Twoja następna decyzja biznesowa, a nie to, ile funkcji uda się zmieścić w budżecie."
 keyTakeaways:
-  - "Prototyp pokazuje koncepcję, MVP pozwala wykonać kluczową czynność, gotowa aplikacja obsługuje szerszy zakres."
-  - "To nie są obowiązkowe etapy każdego projektu."
-  - "Płać za zakres, przekazanie kodu, dokumentację i utrzymanie, nie tylko za nazwę etapu."
-  - "Wybierz poziom do celu: prezentacja, test rynku czy obsługa większej grupy."
+  - "Nie wszystkie prezentowane funkcje muszą rzeczywiście działać."
+  - "Prototyp, MVP i rozbudowana aplikacja nie są obowiązkowymi etapami każdego projektu."
+  - "Możesz połączyć działającą funkcjonalność z klikalnymi makietami."
+  - "Ograniczenie zakresu MVP nie powinno oznaczać ograniczenia jakości."
+  - "Porównuj rzeczywiste rezultaty ofert, a nie wyłącznie ceny."
 ---
 
-Masz pomysł na aplikację. Wiesz, jak powinna działać, jakie funkcje chciałbyś w niej zobaczyć i komu mogłaby się przydać.
+Podczas planowania edukacyjnego rozszerzenia jednej z aplikacji, nad którymi pracuję, pojawił się pomysł wdrożenia systemu logowania użytkowników.
 
-Zaczynasz więc szukać wykonawcy.
+Zadałem wtedy bardzo proste pytanie.
 
-Jedna firma proponuje Ci prototyp za kilka tysięcy złotych. Druga oferuje MVP za 25 tysięcy, a trzecia przygotowuje wycenę kompletnej aplikacji na ponad 100 tysięcy.
+Po co nam logowanie, jeżeli część aplikacji ma na tym etapie składać się wyłącznie z klikalnych makiet?
 
-I pojawia się pytanie.
+Samo przygotowanie logowania nie musi być szczególnie skomplikowane. Jednak jeśli chcemy przechowywać dane użytkowników, ich wyniki i historię aktywności, potrzebujemy odpowiednio przygotowanego zaplecza technicznego.
 
-**Dlaczego ceny tak bardzo się różnią, skoro wszystkim opowiadasz o tym samym pomyśle?**
+A to oznacza dodatkową pracę i potencjalne koszty utrzymania.
 
-Czy pierwsza firma proponuje coś gorszego? Czy druga ma wyjątkowo sprawny zespół? A może trzecia po prostu chce zarobić więcej?
+Jednocześnie w tym samym projekcie zdecydowanie opowiadałem się za stworzeniem rzeczywiście działającego silnika misji edukacyjnych.
 
-Niekoniecznie.
+Dlaczego?
 
-Bardzo możliwe, że każda z nich proponuje Ci stworzenie czegoś zupełnie innego.
+Ponieważ właśnie od niego zależała możliwość sprawdzenia podstawowej wartości produktu.
 
-Bo prototyp, MVP i gotowa aplikacja to nie są trzy nazwy tego samego produktu.
+Nie widziałem natomiast potrzeby programowania wszystkich pozostałych mechanizmów tylko dlatego, że chcieliśmy pokazać szerszą wizję aplikacji.
 
-Różnią się zakresem, przeznaczeniem, stopniem dopracowania i tym, co rzeczywiście możesz zrobić po zakończeniu realizacji.
+I właśnie w ten sposób podchodzę do wyboru pomiędzy prototypem, MVP a bardziej rozbudowanym produktem.
 
-Dlatego w tym artykule wyjaśnię Ci, **czym różni się prototyp od MVP i pełnej aplikacji, ile mogą kosztować poszczególne rozwiązania oraz na co zwrócić uwagę, żeby wiedzieć, za co właściwie płacisz.**
+**Nie wszystko, co chcesz pokazać w aplikacji, musisz od razu programować. Inwestuj w rzeczywiste działanie tych funkcji, od których zależy Twoja kolejna decyzja biznesowa.**
 
-Pokażę też, dlaczego nie zawsze warto zaczynać od najdroższego wariantu.
+Stopień zaawansowania produktu powinien wynikać z celu inwestycji, a nie z tego, jak imponująco ma wyglądać aplikacja.
 
-## 1. Prototyp, MVP i gotowa aplikacja — czym się różnią?
+## 1. Ten sam pomysł, trzy wyceny i trzy różne produkty
 
-Zacznijmy od podstaw.
+Wyobraź sobie, że masz pomysł na aplikację i rozpoczynasz rozmowy z wykonawcami.
 
-Wyobraź sobie, że chcesz stworzyć aplikację do rezerwowania wizyt u specjalistów.
+Pierwsza firma proponuje przygotowanie prototypu za 8 tysięcy złotych.
+
+Druga oferuje stworzenie MVP za 30 tysięcy.
+
+Trzecia przedstawia wycenę rozbudowanej aplikacji na 90 tysięcy złotych.
+
+Wszystkim opowiadasz przecież o tym samym pomyśle.
+
+Skąd więc tak duże różnice?
+
+Bardzo możliwe, że każda z tych firm proponuje Ci stworzenie czegoś zupełnie innego.
+
+Jedna chce przygotować wizualizację przyszłego produktu.
+
+Druga zamierza stworzyć jego pierwszą działającą wersję.
+
+Trzecia zakłada realizację znacznie większej części Twojej docelowej wizji.
+
+Nie oznacza to automatycznie, że którykolwiek z wykonawców przygotował nieodpowiednią ofertę.
+
+Problem może polegać na tym, że jeszcze nie ustaliliście, jaki rezultat jest Ci rzeczywiście potrzebny.
+
+Dlatego zanim zacznę porównywać ceny, chciałbym wiedzieć, co będziesz mógł zrobić z aplikacją po zakończeniu prac.
+
+## 2. Prototyp, MVP i gotowa aplikacja — czym się różnią?
+
+Załóżmy, że chcesz stworzyć aplikację do rezerwowania wizyt u specjalistów.
 
 Użytkownik wybiera usługę, sprawdza dostępne terminy i dokonuje rezerwacji.
 
-W przyszłości chciałbyś dodać również płatności, powiadomienia, opinie, program lojalnościowy i możliwość obsługi wielu różnych firm.
+W przyszłości chciałbyś również wprowadzić płatności, opinie, powiadomienia, program lojalnościowy oraz możliwość obsługi wielu usługodawców.
 
-To jeden pomysł na biznes.
+Ten sam pomysł możemy zrealizować na kilka sposobów.
 
-Ale możemy zrealizować go na trzy różne sposoby.
+### Prototyp — pokazujemy, jak produkt ma działać
 
-### Prototyp — pokazuje, jak aplikacja będzie wyglądać i działać
+Przygotowujemy ekrany przedstawiające listę usług, kalendarz i proces rezerwacji.
 
-Na początku przygotowujemy kilka ekranów.
+Użytkownik może klikać przyciski i przechodzić pomiędzy poszczególnymi widokami.
 
-Użytkownik widzi listę usług, wybiera termin i przechodzi do potwierdzenia.
+Po wybraniu terminu pojawia się ekran potwierdzenia.
 
-Może nawet klikać przyciski i przechodzić między kolejnymi widokami.
+Jednak rezerwacja nie musi być rzeczywiście zapisywana.
 
-Wszystko przypomina prawdziwą aplikację.
+Nie potrzebujemy jeszcze pełnej bazy danych, systemu kont ani działającego mechanizmu wysyłania wiadomości.
 
-Tylko że rezerwacja nie musi być faktycznie zapisywana.
+Dzięki temu możemy sprawdzić, czy sposób korzystania z przyszłej aplikacji jest zrozumiały.
 
-Nie ma jeszcze pełnego systemu użytkowników, bazy danych ani mechanizmu wysyłania potwierdzeń.
+### MVP — najważniejsza funkcja rzeczywiście działa
 
-To prototyp.
+Teraz użytkownik może naprawdę zarezerwować termin.
 
-**Płacisz przede wszystkim za przedstawienie i sprawdzenie pomysłu, a nie za kompletny działający produkt.**
+Właściciel firmy otrzymuje zgłoszenie i może nim zarządzać.
 
-### MVP — pierwsza działająca wersja
+System odpowiednio obsługuje dostępność terminów i zapisuje informacje potrzebne do realizacji rezerwacji.
 
-Teraz robimy krok dalej.
+Nie wdrażamy jeszcze wszystkich dodatkowych możliwości.
 
-Użytkownik może rzeczywiście wybrać usługę, zarezerwować termin i otrzymać potwierdzenie.
+Jednak produkt wykonuje swoje podstawowe zadanie i po odpowiednim przygotowaniu można udostępnić go pierwszym użytkownikom.
 
-Właściciel firmy widzi rezerwację i może nią zarządzać.
+### Rozbudowana aplikacja — obsługujemy szerszy zakres biznesu
 
-Aplikacja wykonuje swoje podstawowe zadanie.
+W tym wariancie mogą pojawić się płatności internetowe, różne rodzaje kont, obsługa wielu firm, integracje z kalendarzami, raporty i automatyczne powiadomienia.
 
-Nie ma jeszcze wszystkich dodatkowych funkcji, ale można już udostępnić ją pierwszym użytkownikom.
+Produkt realizuje znacznie więcej procesów.
 
-To właśnie MVP, czyli *Minimum Viable Product*.
+Więcej jest również sytuacji, które trzeba odpowiednio obsłużyć i przetestować.
 
-**Płacisz za działający produkt o ograniczonym zakresie, który pozwala sprawdzić pomysł w praktyce.**
+Warto jednak pamiętać, że określenie „gotowa aplikacja” nie jest formalnym standardem.
 
-### Gotowa aplikacja — produkt o szerszym zakresie
+Nawet niewielkie MVP może być gotowym produktem, jeśli spełnia swoje przeznaczenie.
 
-W trzecim wariancie realizujemy znacznie więcej.
+Dlatego wolę rozmawiać o konkretnym zakresie działania niż o samej nazwie etapu realizacji.
 
-Dodajemy płatności, różne rodzaje kont, powiadomienia, zaawansowany panel zarządzania, raporty i kolejne integracje.
-
-Przygotowujemy produkt do szerszego wykorzystania zgodnie z założonymi potrzebami biznesowymi.
-
-To już bardziej rozbudowana aplikacja.
-
-Ale ważna uwaga: określenie „gotowa aplikacja” nie jest żadnym formalnym standardem.
-
-Może oznaczać zarówno stosunkowo prosty produkt gotowy do sprzedaży, jak i bardzo duży system.
-
-Dlatego w umowie trzeba dokładnie określić, co rzeczywiście ma zostać dostarczone.
-
-## 2. Porównajmy wszystkie trzy rozwiązania
+## 3. Co otrzymujesz w każdym z tych wariantów?
 
 | Kryterium | Prototyp | MVP | Rozbudowana aplikacja |
 | --- | --- | --- | --- |
-| Główny cel | Pokazać i sprawdzić koncepcję | Przetestować działający produkt z użytkownikami | Obsługiwać szerszy zakres potrzeb |
-| Czy działa naprawdę? | Niekoniecznie | Tak, w podstawowym zakresie | Tak, zgodnie z uzgodnioną specyfikacją |
-| Baza danych | Często niepotrzebna | Jeśli wymaga tego funkcja | Zależnie od architektury produktu |
-| Konta użytkowników | Mogą być tylko symulowane | Jeśli są niezbędne | Zgodnie z potrzebami |
-| Testy | Głównie wyglądu i użyteczności | Funkcjonalne i bezpieczeństwa odpowiednie do zakresu | Szersze testy dopasowane do ryzyka |
-| Możliwość udostępnienia klientom | Zwykle do demonstracji i badań | Tak, po odpowiednim przygotowaniu | Tak |
-| Koszt | Zazwyczaj najniższy | Wyższy niż prototypu | Zazwyczaj najwyższy |
-| Dalszy rozwój | Może wymagać budowy od podstaw | Może stanowić podstawę kolejnych wersji | Kolejne funkcje i utrzymanie |
-
-Najważniejsze jest jednak coś innego.
-
-**Prototyp, MVP i gotowa aplikacja nie muszą być trzema obowiązkowymi etapami każdego projektu.**
-
-Czasami wystarczy prosty prototyp.
-
-Czasami można od razu przejść do MVP.
-
-A jeśli masz dokładnie określone wymagania, budżet i sprawdzoną grupę klientów, możesz potrzebować od razu szerszej wersji produktu.
-
-Wszystko zależy od tego, co chcesz osiągnąć.
+| Główny cel | Pokazanie koncepcji | Sprawdzenie produktu w praktyce | Obsługa szerszych potrzeb biznesowych |
+| Działające funkcje | Zwykle symulowane | Najważniejsze funkcje | Szerszy uzgodniony zakres |
+| Baza danych | Często zbędna | Jeśli jest potrzebna | Zależnie od architektury |
+| Konta użytkowników | Mogą być makietą | Jeśli są niezbędne | Zgodnie z potrzebami produktu |
+| Testowanie | Głównie użyteczność | Działanie i bezpieczeństwo w uzgodnionym zakresie | Szersze testy dopasowane do ryzyka |
+| Prawdziwi użytkownicy | Demonstracje i badania | Rzeczywiste korzystanie z produktu | Szersze wykorzystanie biznesowe |
+| Dalszy rozwój | Może wymagać programowania od podstaw | Może stanowić fundament kolejnych wersji | Rozwój istniejącego systemu |
+| Koszt | Zazwyczaj najniższy | Zależny od kluczowych funkcji | Zazwyczaj najwyższy |
 
 <div class="article-module article-levels" role="group" aria-labelledby="poziomy-realizacji">
   <p class="article-module__eyebrow" id="poziomy-realizacji">Trzy poziomy realizacji</p>
@@ -165,294 +173,454 @@ Wszystko zależy od tego, co chcesz osiągnąć.
       <p>Szerszy zestaw funkcji, integracji i wymagań, zgodny z uzgodnioną specyfikacją.</p>
     </div>
   </div>
-  <p class="article-module__note">To nie są obowiązkowe etapy każdego projektu. Wybierz poziom do celu, budżetu i tego, co chcesz sprawdzić.</p>
+  <p class="article-module__note">To nie są obowiązkowe etapy każdego projektu. Istnieje również rozwiązanie hybrydowe, łączące działające funkcje z makietami.</p>
 </div>
 
-## 3. Prototyp aplikacji — za co właściwie płacisz?
+Nie traktowałbym tych wariantów jako obowiązkowych etapów, przez które musi przejść każda aplikacja.
 
-Zacznijmy od rozwiązania, które zwykle wymaga najmniejszej inwestycji.
+Czasami można rozpocząć od MVP.
 
-Załóżmy, że masz pomysł na aplikację do organizowania wspólnych treningów.
+Czasami wystarczy prototyp.
 
-Chcesz pokazać inwestorowi, jak będzie wyglądał produkt.
+A jeśli masz już sprawdzony model biznesowy i dokładnie określone wymagania, szerszy zakres realizacji może mieć uzasadnienie od samego początku.
 
-Albo zaprosić kilkanaście osób i sprawdzić, czy rozumieją sposób jego działania.
+## 4. Najważniejsze pytanie: co musi rzeczywiście działać?
 
-Nie potrzebujesz jeszcze pełnego oprogramowania.
+Podczas planowania pierwszej wersji aplikacji nie ograniczałbym się do przygotowania listy funkcji.
 
-Wystarczy kilka ekranów przygotowanych w narzędziu graficznym, na przykład w Figmie.
+Każdy jej element spróbowałbym przeanalizować pod kątem celu, jaki ma spełniać.
 
-### Co możesz otrzymać?
+Załóżmy, że chcesz pokazać inwestorowi przyszłą platformę edukacyjną.
 
-W zależności od uzgodnionego zakresu będą to:
+W docelowej wersji planujesz lekcje, konta uczniów, panele nauczycieli, statystyki, rankingi i indywidualne rekomendacje.
 
-- Projekt najważniejszych ekranów aplikacji.
-- Rozmieszczenie przycisków, formularzy i innych elementów.
-- Klikalna makieta pozwalająca przechodzić między ekranami.
-- Prosty scenariusz przedstawiający sposób korzystania z produktu.
-- Materiały do rozmów z potencjalnymi użytkownikami lub inwestorami.
-
-To bardzo przydatne, jeśli chcesz sprawdzić, czy Twoja koncepcja jest zrozumiała.
-
-Możesz pokazać prototyp kilku osobom i zobaczyć, czy potrafią znaleźć najważniejsze funkcje.
-
-Jeśli nie, poprawki można wprowadzić jeszcze przed rozpoczęciem programowania.
-
-### Czego zazwyczaj nie otrzymujesz?
-
-Przede wszystkim działającej aplikacji z pełnym zapleczem technicznym.
-
-Jeśli klikniesz przycisk „Zapisz”, prototyp może jedynie wyświetlić kolejny ekran.
-
-Nie oznacza to, że dane zostały rzeczywiście zapisane.
-
-I tutaj pojawia się częste nieporozumienie.
-
-Klient widzi gotowy projekt graficzny i ma wrażenie, że aplikacja jest już prawie skończona.
-
-Tymczasem znaczna część pracy może dopiero się zaczynać.
-
-**Prototyp pokazuje, jak produkt ma działać. Niekoniecznie zawiera mechanizmy, które sprawiają, że rzeczywiście działa.**
-
-## 4. Ile kosztuje prototyp aplikacji?
-
-Cena zależy przede wszystkim od liczby ekranów, stopnia dopracowania i zakresu badań.
-
-Możesz samodzielnie przygotować prosty szkic praktycznie bez kosztów zewnętrznych.
-
-Możesz też zamówić profesjonalny projekt, który będzie zawierał szczegółowe makiety, interakcje i testy z użytkownikami.
-
-W takim przypadku koszt może wynosić od kilkuset złotych za bardzo prosty zakres do kilku lub kilkunastu tysięcy za bardziej rozbudowany proces projektowy.
-
-Nie traktuj jednak tych kwot jako oficjalnego cennika.
-
-Wiele zależy od tego, czy zamawiasz wyłącznie wygląd kilku ekranów, czy także analizę funkcji, badanie użyteczności i przygotowanie dokumentacji.
-
-### Kiedy warto zamówić prototyp?
-
-Przede wszystkim wtedy, gdy nie masz jeszcze pewności, jak dokładnie aplikacja powinna działać.
-
-Albo gdy chcesz przedstawić pomysł innym osobom bez inwestowania w programowanie.
-
-Natomiast jeśli masz już jasno określony zakres i chcesz jak najszybciej zacząć testować działający produkt, osobny, rozbudowany etap prototypowania nie zawsze będzie konieczny.
-
-## 5. MVP — co naprawdę otrzymujesz za swoje pieniądze?
-
-Przejdźmy teraz do rozwiązania, które uważam za szczególnie interesujące dla osób rozpoczynających własny biznes oparty na aplikacji.
-
-MVP.
-
-Jak już wspomniałem, jest to pierwsza działająca wersja produktu.
-
-Ale chciałbym zwrócić uwagę na jedno ważne rozróżnienie.
-
-**MVP nie oznacza aplikacji zrobionej byle jak. Oznacza aplikację z ograniczonym zakresem funkcji.**
-
-To naprawdę duża różnica.
-
-Załóżmy, że tworzysz aplikację pomagającą właścicielom małych firm przygotowywać oferty dla klientów.
-
-W przyszłości planujesz integrację z księgowością, systemem CRM, płatnościami i sztuczną inteligencją.
-
-Ale najważniejsza funkcja jest znacznie prostsza.
-
-Użytkownik wpisuje informacje o usłudze, wybiera szablon i generuje ofertę w PDF.
-
-Jeżeli właśnie na tym polega główna wartość produktu, możemy zacząć od takiego zakresu.
-
-Nie potrzebujemy od razu wszystkich dodatkowych możliwości.
-
-### Za co płacisz w przypadku MVP?
-
-W zależności od oferty wykonawcy płacisz między innymi za:
-
-**Uporządkowanie pomysłu.** Ustalenie, które funkcje rzeczywiście powinny znaleźć się w pierwszej wersji.
-
-**Projekt sposobu działania.** Zaplanowanie najważniejszych ekranów i czynności wykonywanych przez użytkownika.
-
-**Programowanie.** Przygotowanie rzeczywistych mechanizmów, dzięki którym aplikacja wykonuje swoje zadanie.
-
-**Zaplecze techniczne.** Na przykład bazę danych, uwierzytelnianie lub serwer, jeśli są potrzebne.
-
-**Testowanie.** Sprawdzenie, czy aplikacja działa zgodnie z ustalonym zakresem.
-
-**Uruchomienie.** Przygotowanie produktu do udostępnienia pierwszym użytkownikom, jeśli zostało to objęte umową.
-
-To już znacznie więcej niż klikalna makieta.
-
-I właśnie dlatego koszt MVP będzie zwykle wyższy niż koszt prostego prototypu.
-
-## 6. Ile kosztuje MVP w 2026 roku?
-
-Tutaj ceny potrafią się naprawdę mocno różnić.
-
-Według oferty [AppCreo](https://appcreo.pl/budowa-mvp/) proste webowe MVP zaczyna się od około 15 000 zł netto, a wariant mobilny od około 25 000 zł netto, przy określonym zakresie funkcji.
-
-Z kolei [Devstock](https://devstock.pl/blog/aplikacje-webowe-i-mobilne/wycena-aplikacji-mobilnej-czynniki-wplywajace/) przedstawia znacznie wyższe widełki dla MVP mobilnych, sięgające 60 000–150 000 zł netto, zastrzegając, że chodzi o zakresy z publicznych cenników wybranych wykonawców, a nie średnią całego polskiego rynku.
-
-Dlaczego te wyceny są tak różne?
-
-Ponieważ MVP nie ma jednej, uniwersalnej specyfikacji.
-
-Dla jednej firmy będzie to niewielka aplikacja internetowa z jedną najważniejszą funkcją.
-
-Dla innej — aplikacja mobilna na dwie platformy, z kontami użytkowników, panelem administracyjnym i płatnościami.
-
-Obie mogą być określane jako MVP.
-
-Dlatego samo pytanie „Ile kosztuje MVP?” nie wystarczy.
-
-Znacznie lepiej zapytać:
-
-**„Ile będzie kosztować pierwsza działająca wersja mojej aplikacji z konkretnie określonymi funkcjami?”.**
-
-Dopiero wtedy można sensownie porównywać oferty.
-
-Warto też sprawdzać, czy podawana kwota jest netto, czy brutto.
-
-## 7. Czy MVP można później rozbudować do pełnej aplikacji?
-
-Tak — i często właśnie na tym polega cały pomysł.
-
-Najpierw tworzysz podstawową wersję.
-
-Udostępniasz ją pierwszym użytkownikom.
-
-Sprawdzasz, co rzeczywiście jest dla nich ważne.
-
-A później rozwijasz kolejne funkcje.
-
-Ale jest tutaj pewien szczegół.
-
-**Nie każde MVP zostało przygotowane z myślą o łatwej rozbudowie.**
-
-Załóżmy, że ktoś zbudował bardzo prostą aplikację, wykorzystując narzędzie pozwalające szybko generować ekrany.
-
-Na początku wszystko działa świetnie.
-
-Ale kiedy chcesz dodać bardziej zaawansowane funkcje, okazuje się, że wybrana technologia mocno ogranicza dalszy rozwój.
-
-Wtedy część produktu może wymagać przebudowy.
-
-Nie zawsze jest to błąd.
-
-Jeżeli celem było wyłącznie tanie sprawdzenie zainteresowania, taki kompromis może być uzasadniony.
-
-Ale warto wiedzieć o nim wcześniej.
-
-Dlatego przed zamówieniem MVP zapytałbym wykonawcę:
-
-**Czy ta wersja będzie mogła stanowić podstawę dalszego rozwoju, czy przy większej skali trzeba będzie stworzyć aplikację od nowa?**
-
-To jedno z ważniejszych pytań, jakie możesz zadać.
-
-## 8. Gotowa aplikacja — za co płacisz więcej?
-
-Przejdźmy teraz do trzeciego wariantu.
-
-Załóżmy, że Twoje MVP zostało już przetestowane.
-
-Masz pierwszych klientów, którzy rzeczywiście korzystają z produktu.
-
-Wiesz, jakie funkcje są potrzebne, a które nie mają większego znaczenia.
-
-Chcesz teraz rozwinąć aplikację i udostępnić ją szerszej grupie użytkowników.
-
-I tutaj zaczyna się kolejny etap inwestycji.
-
-### Co może pojawić się w rozbudowanej aplikacji?
-
-Na przykład:
-
-- Dodatkowe rodzaje kont i poziomy uprawnień.
-- Płatności i subskrypcje.
-- Rozbudowany panel administracyjny.
-- Zaawansowane raporty i statystyki.
-- Integracje z innymi systemami.
-- Automatyczne powiadomienia.
-- Obsługa większej liczby użytkowników.
-- Dodatkowe zabezpieczenia i monitorowanie działania.
-- Rozwinięty system testów i wdrożeń.
-
-Nie oznacza to jednak, że każda gotowa aplikacja musi zawierać wszystkie te elementy.
-
-Wszystko zależy od potrzeb produktu.
-
-Najważniejsza różnica polega na tym, że projekt zwykle obejmuje większą liczbę procesów, wyjątków i sytuacji, które trzeba odpowiednio obsłużyć.
-
-### Dlaczego koszt rośnie?
-
-Wyobraź sobie prostą aplikację do obsługi zamówień.
-
-W pierwszej wersji użytkownik składa zamówienie, a właściciel firmy widzi je w panelu.
-
-Teraz dodajmy możliwość płacenia online, anulowania zamówień, zwrotów pieniędzy, generowania faktur i automatycznych rozliczeń prowizji.
-
-Każdy nowy element oznacza kolejne zasady, które trzeba zaprogramować i przetestować.
-
-A dodatkowe funkcje często wpływają również na te, które już istnieją.
-
-Dlatego stworzenie rozbudowanego produktu nie polega wyłącznie na dodawaniu kolejnych ekranów.
-
-To także coraz bardziej złożony system, który musi poprawnie działać jako całość.
-
-## 9. Ile kosztuje pełna aplikacja?
-
-Tutaj nie ma jednej odpowiedzi.
-
-Prosta aplikacja gotowa do codziennego wykorzystania w małej firmie może kosztować znacznie mniej niż rozbudowana platforma obsługująca tysiące użytkowników.
-
-Analizy rynku, takie jak opracowania [DECODE](https://decode.agency/article/cost-of-custom-software-development/) i [Azilen Technologies](https://www.azilen.com/learning/custom-software-development-cost/), wskazują, że przy bardziej zaawansowanych projektach budżety mogą sięgać dziesiątek lub setek tysięcy dolarów, zależnie od funkcji, architektury i wymagań.
-
-Ale nie chciałbym, żebyś wyciągnął z tego wniosek, że każda aplikacja wymaga ogromnej inwestycji.
-
-Nie wymaga.
-
-Jeśli potrzebujesz niewielkiego narzędzia biznesowego, nie ma sensu porównywać go z międzynarodową platformą finansową.
-
-Dlatego zdecydowanie lepiej oceniać koszt w odniesieniu do konkretnego zakresu.
-
-**Nie płacisz za samą nazwę „aplikacja”. Płacisz za określone funkcje, ich jakość, sposób działania i pracę potrzebną do ich przygotowania.**
-
-## 10. Dlaczego dwie podobne aplikacje mogą kosztować zupełnie inaczej?
-
-To pytanie pojawia się bardzo często.
-
-Wyobraź sobie, że dwóch przedsiębiorców chce stworzyć aplikację do rezerwacji.
-
-Pierwszy otrzymuje wycenę na 25 tysięcy złotych.
-
-Drugi na 80 tysięcy.
-
-Czy to znaczy, że drugi wykonawca jest trzy razy droższy?
+Czy wszystkie te funkcje muszą rzeczywiście działać, żeby można było przedstawić koncepcję produktu?
 
 Niekoniecznie.
 
-Spójrzmy na możliwe różnice.
+Być może najważniejsze jest to, żeby użytkownik mógł przejść przez jedną rzeczywistą lekcję i przekonać się, jak wygląda proces nauki.
 
-Pierwsza aplikacja może obsługiwać jedną firmę, jeden kalendarz i prosty formularz rezerwacji.
+Pozostałe możliwości mogą zostać przedstawione jako klikalne makiety.
 
-Druga może oferować konta dla setek usługodawców, różne poziomy uprawnień, płatności, automatyczne prowizje i integrację z zewnętrznymi kalendarzami.
+Dzięki temu osoba oglądająca produkt może zrozumieć jego docelową wizję.
 
-Z perspektywy użytkownika obie służą do rezerwowania terminów.
+Ty natomiast nie musisz jeszcze inwestować w kompletne zaplecze techniczne wszystkich modułów.
 
-Ale technicznie to zupełnie inne projekty.
+Oczywiście trzeba jasno informować odbiorców o tym, które elementy rzeczywiście działają, a które jedynie przedstawiają planowane możliwości.
 
-Na wycenę wpływają również:
+Proponuję podzielić funkcje na trzy grupy.
 
-**Technologia.** Aplikacja internetowa może wymagać innego zakresu pracy niż oddzielne wersje na Androida i iPhone'a.
+<div class="article-module article-factors" role="group" aria-labelledby="dziala-pokazuje-czeka">
+  <p class="article-module__eyebrow" id="dziala-pokazuje-czeka">Działa. Pokazuje. Czeka.</p>
+  <ol>
+    <li><span class="article-factors__num">01</span><div><strong>Działa</strong><span>Funkcja jest potrzebna do osiągnięcia obecnego celu. Programujemy ją, testujemy i przygotowujemy do uzgodnionego wykorzystania.</span></div></li>
+    <li><span class="article-factors__num">02</span><div><strong>Pokazuje</strong><span>Funkcja pomaga przedstawić docelową wizję, ale jej rzeczywiste działanie nie jest jeszcze konieczne. Inwestujemy w zrozumienie koncepcji.</span></div></li>
+    <li><span class="article-factors__num">03</span><div><strong>Czeka</strong><span>Funkcja może być wartościowa w przyszłości, ale nie jest potrzebna do osiągnięcia aktualnego celu. Zachowujemy pomysł i chronimy budżet.</span></div></li>
+  </ol>
+  <p class="article-module__note">Nie usuwamy funkcji z wizji produktu. Decydujemy, kiedy warto w nie zainwestować.</p>
+</div>
 
-**Projekt graficzny.** Gotowe, sprawdzone komponenty mogą ograniczyć koszt w porównaniu z całkowicie indywidualnym interfejsem.
+Nie musimy więc wybierać pomiędzy przygotowaniem wyłącznie makiet a stworzeniem kompletnej aplikacji.
 
-**Liczba integracji.** Każde połączenie z zewnętrznym systemem wymaga odpowiedniego przygotowania i przetestowania.
+Możemy zaplanować rozwiązanie znajdujące się pomiędzy tymi wariantami.
 
-**Bezpieczeństwo.** Aplikacja przetwarzająca dane medyczne czy finansowe będzie wymagała szczególnej analizy.
+<div class="article-module article-exercise" data-article-brief>
+  <p class="article-module__eyebrow">Ćwiczenie: zakres pierwszej wersji</p>
+  <h3 id="brief-title">Co naprawdę musi działać w Twojej aplikacji?</h3>
+  <p class="article-exercise__intro">Wpisz funkcje w trzy grupy. Nie musisz wypełniać wszystkich pól — puste również są informacją.</p>
+  <div class="article-exercise__fields" role="group" aria-labelledby="brief-title">
+    <div><label for="brief-works">Działa — funkcje potrzebne do obecnego celu</label><textarea id="brief-works" name="works" rows="3" placeholder="np. najważniejsza funkcja produktu"></textarea></div>
+    <div><label for="brief-shows">Pokazuje — wystarczy makieta lub symulacja</label><textarea id="brief-shows" name="shows" rows="3" placeholder="np. logowanie, panel administracyjny"></textarea></div>
+    <div><label for="brief-waits">Czeka — wartościowe, ale na później</label><textarea id="brief-waits" name="waits" rows="3" placeholder="np. płatności, powiadomienia"></textarea></div>
+  </div>
+  <div class="article-exercise__actions">
+    <button type="button" class="article-exercise__button" data-exercise-copy hidden>Kopiuj zakres aplikacji</button>
+    <span class="article-exercise__status" data-exercise-status aria-live="polite"></span>
+  </div>
+  <p class="article-exercise__note">To ćwiczenie pomaga ustalić priorytety. Liczba funkcji nie jest miarą kosztu realizacji ani nakładu pracy.</p>
+</div>
 
-**Testowanie i dokumentacja.** Im większy produkt, tym więcej sytuacji trzeba sprawdzić oraz odpowiednio udokumentować.
+## 5. Przykład z mojej pracy: kiedy sama makieta nie wystarczy, ale pełna aplikacja nie jest jeszcze potrzebna
 
-Dlatego zamiast porównywać dwie kwoty, warto porównać listę tego, co wykonawca zobowiązuje się dostarczyć.
+Podczas planowania edukacyjnego rozszerzenia gry Numerabble zastanawialiśmy się, jak przygotować produkt, który będzie można zaprezentować przyszłym odbiorcom, wykorzystać podczas testów w szkołach i przedstawić w procesie pozyskiwania finansowania.
 
-## 11. Kod źródłowy, prawa autorskie i dokumentacja — czy są w cenie?
+Docelowa wizja obejmowała wiele interesujących możliwości.
+
+Pojawiały się między innymi pomysły dotyczące misji edukacyjnych, paneli ucznia i nauczyciela, statystyk, rankingów oraz dodatkowych mechanizmów angażujących użytkowników.
+
+Jednocześnie realizacja wszystkich tych elementów oznaczałaby znacznie większy zakres prac.
+
+Dlatego podczas rozmów zaczęliśmy analizować, które funkcje rzeczywiście powinny działać już w pierwszej wersji.
+
+Najważniejszym elementem miała być jedna kompletna misja edukacyjna.
+
+Użytkownik powinien móc przejść przez przygotowane zadania i korzystać z działającej mechaniki matematycznej.
+
+Do tego potrzebowaliśmy odpowiednio przygotowanego silnika misji.
+
+Pozostałe elementy produktu mogły natomiast w większym stopniu przedstawiać przyszły kierunek rozwoju platformy.
+
+Zaproponowałem więc, żeby ograniczyć zakres dodatkowych mechanizmów, skoncentrować się na działającej misji, a wybrane pozostałe ekrany zachować w formie klikalnych makiet.
+
+| Element planowanej platformy | Rozważany sposób realizacji |
+| --- | --- |
+| Pierwsza misja edukacyjna | Rzeczywiście działająca funkcjonalność |
+| Mechanika matematyczna | Działające rozwiązanie |
+| Silnik misji | Fundament umożliwiający przygotowywanie kolejnych misji |
+| Wybrane widoki ucznia i nauczyciela | Klikalne makiety |
+| Kolejne moduły akademii | Ograniczona prezentacja lub późniejszy etap |
+| Rozbudowane rankingi i dodatkowe mechanizmy | Potencjalny dalszy rozwój |
+
+Nie oznaczało to rezygnacji z docelowej wizji platformy.
+
+Chodziło o dopasowanie zakresu pierwszej inwestycji do aktualnego celu biznesowego.
+
+Przygotowanie wszystkich ekranów jako niedziałających makiet mogłoby nie wystarczyć do przeprowadzenia rzeczywistych testów edukacyjnych.
+
+Z kolei programowanie całej platformy na tym etapie mogłoby oznaczać poniesienie kosztów, które nie były jeszcze potrzebne.
+
+Dlatego szukaliśmy rozwiązania pośredniego.
+
+To przykład procesu planowania kolejnego etapu produktu, a nie zakończonej realizacji czy potwierdzonych wyników testów w szkołach.
+
+**Programujemy to, czego działania potrzebujemy. Pokazujemy to, czego koncepcję chcemy przedstawić. Pozostałe elementy świadomie zostawiamy na później.**
+
+## 6. Dlaczego nie zawsze warto programować logowanie?
+
+System logowania jest dobrym przykładem funkcji, która na pierwszy rzut oka wydaje się naturalnym elementem niemal każdej aplikacji.
+
+Ale czy zawsze jest potrzebna?
+
+Jeśli przygotowujemy klikalny prototyp platformy edukacyjnej, być może wystarczy pokazać ekran logowania i przykładowy panel ucznia.
+
+Jeżeli natomiast chcemy przechowywać rzeczywiste wyniki uczniów, umożliwiać im powrót do rozpoczętych lekcji i udostępniać nauczycielom informacje o postępach, sytuacja wygląda inaczej.
+
+Potrzebujemy wtedy odpowiednich mechanizmów uwierzytelniania, przechowywania danych i kontroli dostępu.
+
+Pojawiają się również kwestie bezpieczeństwa oraz potencjalne koszty infrastruktury.
+
+To bardzo dobrze pokazuje różnicę pomiędzy makietą a rzeczywistą funkcjonalnością.
+
+Sam ekran logowania może wyglądać niemal identycznie w obu przypadkach.
+
+Jednak za działającą wersją znajduje się znacznie więcej pracy.
+
+Dlatego nie pytałbym wyłącznie, ile kosztuje stworzenie danej funkcji.
+
+Najpierw zastanowiłbym się, po co potrzebujemy jej na tym etapie.
+
+## 7. Prototyp aplikacji — za co właściwie płacisz?
+
+Prototyp może być bardzo wartościowym narzędziem, jeżeli chcesz przedstawić pomysł inwestorowi, wspólnikowi albo potencjalnym użytkownikom.
+
+W zależności od zakresu możesz otrzymać:
+
+- projekty najważniejszych ekranów,
+- rozmieszczenie przycisków i formularzy,
+- klikalną makietę,
+- scenariusze korzystania z produktu,
+- materiały do prezentacji i badań z użytkownikami.
+
+Takie rozwiązanie pozwala zobaczyć, jak może wyglądać przyszła aplikacja, jeszcze przed rozpoczęciem programowania.
+
+Możesz również sprawdzić, czy użytkownicy rozumieją sposób korzystania z produktu.
+
+Jeżeli określony proces jest zbyt skomplikowany albo nieintuicyjny, zmiany można wprowadzić na etapie makiet.
+
+Trzeba jednak rozumieć ograniczenia takiego rozwiązania.
+
+Prototyp systemu rezerwacyjnego nie musi rzeczywiście obsługiwać rezerwacji.
+
+Prototyp aplikacji finansowej nie musi wykonywać prawdziwych obliczeń.
+
+A wizualizacja gry nie musi zawierać działającego silnika rozgrywki.
+
+Dlatego pięknie wyglądająca makieta nie oznacza automatycznie, że aplikacja jest już prawie skończona.
+
+W niektórych przypadkach najtrudniejsza część pracy dopiero się zaczyna.
+
+## 8. Ile kosztuje prototyp aplikacji?
+
+Wszystko zależy od tego, czego oczekujesz.
+
+Prosty szkic możesz przygotować samodzielnie, praktycznie bez dodatkowych kosztów finansowych.
+
+Możesz również wykorzystać narzędzia no-code, sztuczną inteligencję albo wizualny edytor, taki jak Figma.
+
+Jeśli zlecasz wykonanie prototypu specjalistom, cena zależy między innymi od liczby ekranów, stopnia dopracowania, zakresu analizy oraz ewentualnych badań z użytkownikami.
+
+| Zakres | Przykładowy koszt |
+| --- | --- |
+| Samodzielny szkic | Praktycznie bezkosztowo, nie licząc własnego czasu |
+| Bardzo prosty zamawiany prototyp | Od kilkuset złotych |
+| Klikalna makieta kilku lub kilkunastu ekranów | Kilka tysięcy złotych |
+| Rozbudowany proces projektowy i badania | Nawet kilkanaście tysięcy złotych |
+
+Nie są to gwarantowane ceny ani oficjalny cennik.
+
+Ważniejsze od samej liczby ekranów jest dla mnie to, jakich informacji potrzebujesz.
+
+Jeżeli chcesz sprawdzić jeden konkretny proces, być może nie potrzebujesz prototypu całej aplikacji.
+
+A jeśli sposób korzystania z produktu jest już dobrze określony, oddzielny, rozbudowany etap prototypowania może nie być konieczny.
+
+## 9. MVP — nie ograniczamy jakości, tylko zakres
+
+MVP to skrót od Minimum Viable Product.
+
+Najprościej mówiąc, jest to pierwsza działająca wersja produktu, która dostarcza podstawowej wartości i pozwala sprawdzić najważniejsze założenia.
+
+Nie uważam jednak, żeby określenie „minimalna wersja” oznaczało przyzwolenie na niedopracowane działanie.
+
+Wyobraź sobie aplikację pomagającą przedsiębiorcom przygotowywać oferty dla klientów.
+
+W przyszłości planujesz integrację z księgowością, CRM, płatnościami i sztuczną inteligencją.
+
+Na początku możesz jednak skoncentrować się na prostym procesie.
+
+Użytkownik wpisuje informacje o usłudze, wybiera szablon i generuje ofertę w formacie PDF.
+
+Jeśli właśnie na tym polega podstawowa wartość produktu, możemy zacząć od tej funkcji.
+
+Powinna ona jednak działać zgodnie z ustaleniami.
+
+Nie chodzi o to, żeby dokument generował się tylko czasami albo zawierał błędne dane, ponieważ przecież tworzymy MVP.
+
+Świadomie rezygnujemy z dodatkowych funkcji, ale nie z odpowiedniej realizacji tych, które zdecydowaliśmy się stworzyć.
+
+**MVP powinno być małe pod względem zakresu, a nie wartości dostarczanej użytkownikowi.**
+
+## 10. Za co płacisz, zamawiając MVP?
+
+W przypadku pierwszej działającej wersji produktu zakres prac jest zazwyczaj znacznie większy niż przy przygotowywaniu klikalnej makiety.
+
+| Obszar | Co rzeczywiście powstaje? |
+| --- | --- |
+| Planowanie | Uzgodniony zakres i sposób działania produktu |
+| Projektowanie | Interfejs oraz najważniejsze ścieżki użytkownika |
+| Programowanie | Działające mechanizmy aplikacji |
+| Infrastruktura | Potrzebne serwery, bazy danych i usługi |
+| Testowanie | Sprawdzenie działania i obsługi istotnych sytuacji |
+| Wdrożenie | Przygotowanie produktu do udostępnienia użytkownikom |
+| Dokumentacja | Informacje potrzebne do korzystania z produktu i jego dalszego rozwoju |
+| Analityka | Możliwość obserwowania wybranych zachowań użytkowników, jeśli przewiduje to zakres |
+
+Nie każde MVP musi zawierać wszystkie wymienione elementy.
+
+Przykładowo prosta gra może nie potrzebować systemu kont użytkowników ani przechowywania indywidualnych wyników.
+
+Dlatego podczas porównywania ofert szczególnie interesowałoby mnie to, które elementy są rzeczywiście uwzględnione w cenie.
+
+Sama deklaracja, że otrzymasz MVP, nie mówi jeszcze wystarczająco dużo o rezultacie.
+
+## 11. Ile kosztuje MVP w 2026 roku?
+
+Publicznie dostępne oferty pokazują bardzo różne poziomy cen.
+
+Według materiałów AppCreo proste MVP aplikacji internetowej może zaczynać się od około 15 000 zł netto, a wariant mobilny od około 25 000 zł netto.
+
+Z kolei opracowanie Devstock przytacza widełki od 60 000 do 150 000 zł netto dla bardziej rozbudowanych MVP mobilnych.
+
+| Przykładowa oferta lub zestawienie | Orientacyjna cena |
+| --- | --- |
+| Proste MVP webowe — AppCreo | Od 15 000 zł netto |
+| Proste MVP mobilne — AppCreo | Od 25 000 zł netto |
+| Bardziej rozbudowane MVP mobilne — Devstock | 60 000–150 000 zł netto |
+| Moja standardowa pierwsza działająca wersja w uzgodnionym zakresie | 29 500 zł brutto |
+
+Nie traktowałbym tych kwot jako średnich cen całego rynku.
+
+Poszczególne zestawienia dotyczą różnych zakresów realizacji.
+
+Jedna firma może określać mianem MVP aplikację internetową z jedną kluczową funkcją.
+
+Inna może używać tego samego określenia w odniesieniu do aplikacji mobilnej z kontami użytkowników, płatnościami i rozbudowanym panelem administracyjnym.
+
+Dlatego zamiast pytać, ile kosztuje MVP, proponowałbym zadać wykonawcy bardziej konkretne pytanie.
+
+„Ile będzie kosztowała pierwsza działająca wersja mojej aplikacji, w której użytkownik może wykonać następujące czynności?”.
+
+Dopiero wtedy zaczynamy rozmawiać o porównywalnych rezultatach.
+
+Warto również sprawdzić, czy poszczególne ceny są podawane netto, czy brutto.
+
+Szerzej omawiam ten temat w artykule [Ile kosztuje stworzenie aplikacji w 2026 roku?](/wiedza/ile-kosztuje-stworzenie-aplikacji-2026/).
+
+## 12. Czy pierwsza wersja powinna być fundamentem dalszego rozwoju?
+
+Moim zdaniem to jedna z ważniejszych decyzji, które warto podjąć przed rozpoczęciem realizacji.
+
+Wyobraź sobie, że przygotowujesz pierwszą wersję aplikacji za pomocą narzędzia pozwalającego szybko generować ekrany i podstawowe funkcje.
+
+Produkt może dobrze odpowiadać na aktualne potrzeby.
+
+Jednak po kilku miesiącach okazuje się, że potrzebujesz bardziej zaawansowanej logiki albo integracji, których wybrana technologia nie obsługuje.
+
+Część aplikacji trzeba przebudować.
+
+Czy to oznacza, że pierwsza inwestycja była błędem?
+
+Niekoniecznie.
+
+Jeżeli od początku wiedzieliśmy, że tworzymy rozwiązanie służące wyłącznie do szybkiego eksperymentu, mogło to być całkowicie uzasadnione.
+
+Problem pojawia się wtedy, gdy oczekiwałeś fundamentu przyszłego biznesu, a otrzymałeś rozwiązanie przygotowane jedynie na potrzeby krótkiego testu.
+
+<div class="article-module article-compare" role="group" aria-labelledby="eksperyment-fundament">
+  <p class="article-module__eyebrow" id="eksperyment-fundament">Eksperyment czy fundament?</p>
+  <div class="article-compare__grid">
+    <div class="article-compare__col">
+      <h3>Pierwsza wersja jako eksperyment</h3>
+      <ul>
+        <li>najważniejsze jest zdobycie wiedzy,</li>
+        <li>akceptujemy późniejszą wymianę części rozwiązania,</li>
+        <li>optymalizujemy czas i koszt testu.</li>
+      </ul>
+    </div>
+    <div class="article-compare__col article-compare__col--signal">
+      <h3>Pierwsza wersja jako fundament</h3>
+      <ul>
+        <li>uwzględniamy przewidywany kierunek rozwoju,</li>
+        <li>ograniczamy ryzyko niepotrzebnej przebudowy,</li>
+        <li>inwestujemy w kluczowe decyzje technologiczne.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="article-module__note">Nie budujemy infrastruktury dla milionów użytkowników. Świadomie wybieramy, co ma przetrwać kolejne etapy.</p>
+</div>
+
+Nie oznacza to oczywiście przygotowywania od pierwszego dnia infrastruktury dla milionów użytkowników.
+
+Chodzi o świadome podejmowanie decyzji technologicznych.
+
+Przed rozpoczęciem realizacji chciałbym wiedzieć, czy budujemy coś, co przede wszystkim pozwoli nam zdobyć informacje, czy rozwiązanie, które planujemy później rozwijać.
+
+## 13. Nie buduj wszystkich przyszłych funkcji, ale pomyśl o ich fundamentach
+
+W przypadku Numerabble EDU podczas planowania pierwszej misji pojawiło się pytanie, czy przygotowany silnik będzie można wykorzystać również do tworzenia kolejnych misji.
+
+To bardzo istotna kwestia.
+
+Możemy ograniczyć liczbę rzeczywiście działających misji do jednej.
+
+Jednocześnie warto rozważyć przygotowanie podstawowego mechanizmu w taki sposób, żeby można było go wykorzystać w przyszłości.
+
+Właśnie na tym polega różnica pomiędzy ograniczaniem zakresu a podejmowaniem krótkowzrocznych decyzji technicznych.
+
+Nie potrzebujemy od razu wszystkich lekcji.
+
+Nie potrzebujemy wszystkich dodatkowych modułów.
+
+Jeżeli jednak wiemy, że działanie przyszłego produktu będzie opierało się na określonym mechanizmie, warto zastanowić się nad jego odpowiednim przygotowaniem.
+
+Silnik misji był dla nas elementem, na którym nie chcieliśmy oszczędzać — to on miał wykonać główną pracę i umożliwić rozwój kolejnych treści.
+
+Nie wszystko, czego nie budujemy dzisiaj, powinno być całkowicie ignorowane podczas planowania architektury.
+
+Jednocześnie nie próbowałbym przewidywać wszystkich potrzeb produktu na najbliższe pięć lat.
+
+Szukam kompromisu pomiędzy aktualnym zakresem a rozsądnie przewidywanymi możliwościami rozwoju.
+
+## 14. Gotowa aplikacja — za co płacisz więcej?
+
+Załóżmy, że pierwsza wersja Twojego produktu została już udostępniona użytkownikom.
+
+Wiesz, które funkcje są dla nich istotne.
+
+Masz podstawy do dalszego rozwoju i chciałbyś zwiększyć zakres działania aplikacji.
+
+Wtedy może pojawić się potrzeba wdrożenia:
+
+- dodatkowych rodzajów kont i uprawnień,
+- płatności i subskrypcji,
+- rozbudowanych paneli administracyjnych,
+- raportów i statystyk,
+- integracji z zewnętrznymi systemami,
+- automatycznych powiadomień,
+- większych możliwości infrastruktury,
+- dodatkowych zabezpieczeń i monitorowania.
+
+Nie chodzi jednak wyłącznie o zwiększenie liczby ekranów.
+
+Wyobraź sobie system obsługi zamówień.
+
+Pierwsza wersja umożliwia złożenie zamówienia i wyświetlenie go właścicielowi firmy.
+
+Następnie dodajemy płatności, zwroty, anulowanie zamówień, faktury i rozliczenia prowizji.
+
+Każda z tych funkcji wpływa na sposób działania innych elementów produktu.
+
+Pojawiają się kolejne reguły, wyjątki oraz sytuacje wymagające obsługi.
+
+Dlatego rozbudowanie aplikacji często oznacza znacznie więcej pracy, niż mogłoby wynikać z liczby dodatkowych ekranów.
+
+Właśnie za tę złożoność również płacisz.
+
+## 15. Ile kosztuje bardziej rozbudowana aplikacja?
+
+Nie istnieje jedna uniwersalna cena.
+
+Opracowania dotyczące zaawansowanych systemów, takie jak materiały DECODE i Azilen Technologies, pokazują, że budżety mogą sięgać dziesiątek lub setek tysięcy dolarów.
+
+Nie oznacza to jednak, że każda aplikacja wymaga takiej inwestycji.
+
+Niewielkie narzędzie biznesowe może być kompletnym produktem dla konkretnej firmy, mimo że zawiera stosunkowo niewiele funkcji.
+
+Dlatego nie porównywałbym jego kosztu z budżetem międzynarodowej platformy usługowej.
+
+Znacznie bardziej interesowałoby mnie to, jakie procesy ma obsługiwać produkt i jakich wymagań musi przestrzegać.
+
+Dwie aplikacje do rezerwacji mogą kosztować odpowiednio 25 i 80 tysięcy złotych.
+
+Pierwsza może obsługiwać jedną firmę i jeden kalendarz.
+
+Druga może umożliwiać obsługę wielu usługodawców, płatności, prowizji i integracji.
+
+Obie służą do rezerwowania terminów.
+
+Ale nie są tym samym produktem.
+
+Dlatego za każdym razem wracam do konkretnego zakresu, zamiast przywiązywać się do ogólnej nazwy aplikacji.
+
+## 16. Za co płacisz poza samym programowaniem?
+
+Podczas porównywania ofert łatwo skoncentrować się przede wszystkim na liczbie funkcji.
+
+Jednak przygotowanie produktu to również szereg działań, których użytkownik może nigdy nie zobaczyć.
+
+Ktoś musi uporządkować wymagania, zaplanować sposób działania, dobrać technologię, zorganizować pracę zespołu i zweryfikować rezultaty.
+
+Ktoś musi również ustalić, czy wszystkie elementy aplikacji współpracują ze sobą zgodnie z oczekiwaniami.
+
+W moim modelu współpracy zajmuję się organizacją tych obszarów.
+
+Nie oczekuję, że klient samodzielnie przygotuje szczegółową dokumentację techniczną i będzie później koordynował pracę programistów.
+
+Chciałbym natomiast, żeby rozumiał, jaki zakres realizujemy, czego może oczekiwać i jakie decyzje wymagają jego zaangażowania.
+
+Dlatego porównując dwie oferty, zwróciłbym uwagę również na zakres odpowiedzialności wykonawcy.
+
+Być może jedna oferta obejmuje wyłącznie wykonanie określonych funkcji.
+
+Druga może uwzględniać także planowanie, organizację prac, testowanie, wdrożenie i przekazanie produktu.
+
+Sama cena nie pokazuje tej różnicy.
+
+## 17. Kod źródłowy, prawa autorskie i dokumentacja — co otrzymasz na końcu?
+
+Moim zdaniem warto oceniać ofertę również z perspektywy tego, co wydarzy się po zakończeniu współpracy.
+
+Czy otrzymasz kod źródłowy?
+
+Czy będziesz miał odpowiednio uregulowane prawa do jego wykorzystania?
+
+Czy inny zespół będzie mógł przejąć dalszy rozwój aplikacji?
+
+Podczas końcowego odbioru Numerabble przygotowaliśmy między innymi repozytorium kodu oraz dokumentację opisującą technologię i sposób uruchomienia produktu.
+
+Zależało mi na tym, żeby klient nie był uzależniony od dalszej współpracy z nami.
+
+Nawet jeśli planujemy razem realizować kolejne etapy, powinien mieć możliwość podjęcia innej decyzji w przyszłości.
 
 <div class="article-module article-checklist" data-article-checklist role="group" aria-labelledby="checklista-przekazanie">
   <p class="article-module__eyebrow" id="checklista-przekazanie">Co powinno być w przekazaniu</p>
@@ -467,221 +635,150 @@ Dlatego zamiast porównywać dwie kwoty, warto porównać listę tego, co wykona
   <p class="article-checklist__status" data-checklist-status aria-live="polite">Zaznacz pozycje</p>
 </div>
 
-To temat, którego zdecydowanie nie pomijałbym podczas wyboru wykonawcy.
+W moim modelu współpracy zakładam przekazanie klientowi kodu źródłowego oraz uzgodnionych majątkowych praw autorskich po zakończeniu i rozliczeniu projektu.
 
-Załóżmy, że zamówiłeś aplikację.
+Oczywiście zewnętrzne biblioteki i komponenty mogą podlegać odrębnym licencjom.
 
-Zapłaciłeś za projekt i otrzymałeś działający produkt.
+Dlatego przed podpisaniem umowy warto sprawdzić:
 
-Po roku chcesz dodać kolejne funkcje.
+- zakres przekazywanego kodu,
+- zasady przenoszenia praw autorskich,
+- dokumentację techniczną,
+- dostęp do najważniejszych kont i infrastruktury,
+- możliwość zlecenia dalszego rozwoju innemu wykonawcy.
 
-Ale obecny wykonawca nie ma czasu.
+Nie chciałbym, żeby klient oceniał wartość otrzymanego produktu wyłącznie na podstawie tego, czy może go uruchomić.
 
-Postanawiasz więc znaleźć inną firmę.
+Ważne jest również to, co będzie mógł z nim zrobić później.
 
-I wtedy okazuje się, że nie masz kodu źródłowego albo odpowiednio uregulowanych praw do jego wykorzystania.
-
-To może poważnie utrudnić dalszy rozwój.
-
-### Co powinieneś ustalić?
-
-Przede wszystkim:
-
-- Czy otrzymasz kod źródłowy stworzonego oprogramowania?
-- Jakie autorskie prawa majątkowe zostaną Ci przeniesione lub na jakiej licencji będziesz korzystać z produktu?
-- Czy będziesz mógł zlecić jego rozwój innemu wykonawcy?
-- Czy otrzymasz dostęp do najważniejszych kont i usług?
-- Czy dokumentacja będzie wystarczająca do przejęcia projektu przez inny zespół?
-
-Warto pamiętać, że przeniesienie praw do kodu nie oznacza automatycznego przejęcia praw do wszystkich zewnętrznych bibliotek czy narzędzi wykorzystanych podczas tworzenia aplikacji.
-
-Takie elementy często mają własne licencje.
-
-Dlatego odpowiednio przygotowana umowa powinna jasno określać, do czego otrzymujesz prawa.
-
-W moim modelu współpracy zakładam przekazanie klientowi kodu źródłowego i uzgodnionych majątkowych praw autorskich po zakończeniu i rozliczeniu projektu, z uwzględnieniem zasad korzystania z zewnętrznych komponentów.
-
-Chodzi o to, żeby klient wiedział, jakie możliwości dalszego rozwoju produktu rzeczywiście posiada.
+Więcej o tych zagadnieniach przeczytasz w artykule [Jak zabezpieczyć pomysł na aplikację?](/wiedza/jak-zabezpieczyc-pomysl-na-aplikacje/).
 
 ![Makieta architektoniczna z łukiem, klockami i rysunkiem](../../assets/images/editorial/a08-stable-foundations.webp)
 
 <p class="article-caption">Gotowa aplikacja to także fundamenty: kod, dokumentacja, dostępy i zasady utrzymania.</p>
 
-## 12. Testowanie, poprawki i gwarancja — co powinno być uwzględnione?
+## 18. Testy, poprawki i gwarancja — na czym polega różnica?
 
-Teraz kolejna istotna kwestia.
+Załóżmy, że uzgodniliśmy stworzenie aplikacji umożliwiającej rezerwowanie wizyt.
 
-Wyobraź sobie, że otrzymujesz aplikację, uruchamiasz ją i zauważasz błąd.
+Jeśli użytkownik klika przycisk „Zarezerwuj”, ale rezerwacja nie zostaje zapisana, mamy do czynienia z niezgodnością względem ustalonego zakresu.
 
-Przycisk nie działa.
+Jeżeli natomiast po zakończeniu projektu pojawia się pomysł wysyłania automatycznych przypomnień SMS, których wcześniej nie przewidywaliśmy, może to być już nowa funkcjonalność.
 
-Dane zapisują się nieprawidłowo.
+To rozróżnienie ma znaczenie zarówno dla klienta, jak i wykonawcy.
 
-Albo określona funkcja zachowuje się inaczej, niż ustaliliście.
+Podczas realizacji projektów zależy mi na tym, żeby możliwie wcześnie określać, co dokładnie ma działać.
 
-Co wtedy?
+Dzięki temu łatwiej przygotować scenariusze testowe i ocenić, czy otrzymany produkt odpowiada ustaleniom.
 
-Czy wykonawca ma obowiązek to poprawić?
+W mojej standardowej ofercie przewiduję trzy miesiące gwarancji technicznej, dotyczącej błędów wykonanego rozwiązania w uzgodnionym zakresie.
 
-I czy będzie to dodatkowo płatne?
+Nie oznacza to jednak bezpłatnego realizowania wszystkich pomysłów, które pojawią się po zakończeniu projektu.
 
-Odpowiedź zależy od umowy.
+Nowe funkcje możemy zaplanować jako kolejny etap współpracy.
 
-Dlatego już na początku warto ustalić, co obejmują testy, odbiór projektu i okres gwarancyjny.
+Właśnie dlatego tak istotne jest wcześniejsze ustalenie zakresu i zasad odbioru.
 
-### Ważne rozróżnienie: błąd a nowa funkcja
+## 19. Czy płacisz tylko raz, czy również po uruchomieniu produktu?
 
-Załóżmy, że ustaliliśmy, iż aplikacja ma umożliwiać zapisanie rezerwacji.
+Jeżeli zamawiasz aplikację, warto uwzględnić nie tylko koszt jej stworzenia, ale również dalszego działania.
 
-Jeśli przycisk „Zapisz” nie działa, mamy do czynienia z niezgodnością wymagającą poprawy.
+Każda rzeczywiście działająca funkcja może wiązać się z określonymi konsekwencjami.
 
-Ale jeśli po zakończeniu projektu stwierdzisz, że aplikacja powinna również automatycznie wysyłać przypomnienia SMS, to może być już nowa funkcja.
+System kont użytkowników może wymagać odpowiedniej infrastruktury.
 
-I jej realizacja będzie wymagała dodatkowej pracy.
+Wysyłanie wiadomości SMS może generować opłaty za ich wykorzystanie.
 
-Dlatego dobrze przygotowany zakres projektu powinien określać, co dokładnie ma działać.
+Integracja z modelem sztucznej inteligencji może wiązać się z kosztami przetwarzania danych.
 
-Wtedy znacznie łatwiej odróżnić poprawkę od rozszerzenia.
+Dlatego już podczas planowania pierwszej wersji zastanawiam się, które mechanizmy rzeczywiście są potrzebne.
 
-W mojej ofercie przewiduję **3-miesięczną gwarancję techniczną** w ustalonym zakresie, dotyczącą błędów wykonanego rozwiązania.
+Nie chodzi wyłącznie o ograniczenie kosztów programowania.
 
-Nie oznacza to jednak bezpłatnego dodawania dowolnych nowych funkcji.
+Chodzi również o unikanie niepotrzebnych kosztów utrzymania.
 
-I właśnie dlatego tak ważne jest wcześniejsze ustalenie oczekiwań.
+W opracowaniach branżowych można spotkać orientacyjne szacunki rocznych kosztów utrzymania na poziomie 15–25% pierwotnego kosztu stworzenia aplikacji.
 
-## 13. Pamiętaj o kosztach po uruchomieniu aplikacji
+Nie traktowałbym tego jednak jako uniwersalnego przelicznika.
 
-Niezależnie od tego, czy zamawiasz MVP, czy bardziej rozbudowany produkt, warto pamiętać o kosztach późniejszego utrzymania.
+Niewielki produkt może generować bardzo niskie koszty infrastruktury, podczas gdy rozbudowany system może wymagać znacznie większych nakładów.
 
-Samo stworzenie aplikacji nie oznacza jeszcze końca wszystkich wydatków.
+Dlatego zamiast opierać budżet wyłącznie na ogólnych wskaźnikach, wolę analizować konkretne usługi i potrzeby produktu.
 
-W zależności od projektu mogą pojawić się opłaty za:
+Szerzej opisuję ten temat w artykule [Co dzieje się po stworzeniu aplikacji?](/wiedza/co-po-stworzeniu-aplikacji-koszty-utrzymania/).
 
-- Serwery i przechowywanie danych.
-- Zewnętrzne usługi, takie jak mapy, SMS-y czy narzędzia AI.
-- Konta deweloperskie i publikację w sklepach.
-- Aktualizacje oprogramowania.
-- Monitorowanie działania i kopie zapasowe.
-- Opiekę techniczną oraz dalszy rozwój.
+## 20. Jak porównałbym oferty wykonawców?
 
-W opracowaniach branżowych spotkasz orientacyjny budżet utrzymania na poziomie około 15–25% pierwotnego kosztu budowy rocznie.
+Gdybym sam otrzymał kilka różnych wycen, nie próbowałbym od razu ustalić, która firma jest najtańsza.
 
-To jednak tylko punkt odniesienia, a nie uniwersalna reguła.
+Najpierw przygotowałbym zestawienie tego, co faktycznie otrzymam.
 
-Niewielka aplikacja internetowa może generować znacznie mniejsze wydatki niż rozbudowany system biznesowy, który musi być stale dostępny i obsługiwać dużą liczbę użytkowników.
+| Pytanie | Dlaczego jest ważne? |
+| --- | --- |
+| Co będzie rzeczywiście działało? | Pozwala odróżnić funkcjonalność od demonstracji |
+| Co będzie jedynie makietą? | Pomaga zrozumieć ograniczenia produktu |
+| Czego oferta nie obejmuje? | Ujawnia potencjalne dodatkowe wydatki |
+| Czy można udostępnić produkt użytkownikom? | Pozwala ocenić gotowość do rzeczywistych testów |
+| Czy wersja będzie podstawą dalszego rozwoju? | Pomaga przewidzieć konsekwencje technologiczne |
+| Czy otrzymam kod i odpowiednie prawa? | Wpływa na niezależność klienta |
+| Czy cena obejmuje testy i wdrożenie? | Pozwala ocenić kompletność realizacji |
+| Jakie będą późniejsze koszty? | Pomaga zaplanować dalsze działanie produktu |
 
-Dlatego podczas rozmowy z wykonawcą zapytałbym:
+Dopiero po uzyskaniu takich informacji porównywałbym ceny.
 
-**„Ile orientacyjnie będzie kosztowało utrzymywanie tej aplikacji po jej uruchomieniu?”.**
+Być może najtańsza oferta w zupełności odpowiada Twoim potrzebom.
 
-Bo cena stworzenia produktu i koszt jego dalszego działania to dwie osobne kwestie.
+Być może droższa będzie bardziej opłacalna, ponieważ obejmuje rzeczywiście działający produkt, którego potrzebujesz.
 
-## 14. Czy najtańsza oferta jest zawsze najlepsza?
+Nie ma sensu płacić za rozbudowaną aplikację, jeśli na obecnym etapie wystarczy prototyp.
 
-Nie.
+Nie ma również sensu płacić za prototyp, jeśli potrzebujesz produktu gotowego do obsługi rzeczywistych klientów.
 
-Ale najdroższa również nie musi być najlepsza.
+## 21. Jak wygląda to w moim modelu współpracy?
 
-Wyobraź sobie, że otrzymujesz trzy oferty.
+Moja standardowa oferta koncentruje się na stworzeniu pierwszej działającej wersji aplikacji.
 
-Pierwsza opiewa na 8 tysięcy złotych.
+Jednak nie oznacza to, że każdy pomysł musi automatycznie prowadzić do zamówienia takiego zakresu.
 
-Druga na 30 tysięcy.
+Zaczynamy od rozmowy.
 
-Trzecia na 90 tysięcy.
+Chcę zrozumieć, co próbujesz osiągnąć.
 
-Jeżeli wybierzesz wyłącznie na podstawie ceny, możesz popełnić błąd.
+Być może potrzebujesz materiałów do prezentacji inwestorowi.
 
-Pierwsza oferta może dotyczyć klikalnego prototypu.
+Być może chcesz sprawdzić zainteresowanie użytkowników.
 
-Druga — pierwszej działającej wersji z najważniejszymi funkcjami.
+A może masz już działający biznes i potrzebujesz produktu, który usprawni określony proces.
 
-Trzecia — rozbudowanego produktu z wieloma dodatkowymi możliwościami.
+W zależności od sytuacji możemy zastanowić się, czy właściwym rozwiązaniem będzie prototyp, ograniczona wersja działająca, połączenie obu tych podejść albo szersza realizacja.
 
-Nie możesz więc powiedzieć, że jedna z firm jest automatycznie tańsza od pozostałych.
+| Element | Warunki |
+| --- | --- |
+| Cena | 29 500 zł brutto |
+| Zakres | Pierwsza działająca wersja aplikacji w uzgodnionym zakresie |
+| Czas prac nad pierwszą wersją | Około 4 tygodni od ustalonego rozpoczęcia |
+| Cały proces | Zwykle 6–8 tygodni wraz z odbiorem i poprawkami |
+| Organizacja realizacji | Dobór specjalistów, koordynacja i jedna osoba do kontaktu |
+| Gwarancja techniczna | 3 miesiące w ustalonym zakresie |
+| Przekazanie produktu | Kod i uzgodnione prawa zgodnie z umową |
 
-Bo nie oferują tego samego.
+Nie oznacza to, że każdą aplikację można stworzyć w tym czasie i budżecie.
 
-### Jak porównać oferty?
+Jeżeli Twój projekt wymaga bardziej złożonej realizacji, ustalimy odpowiedni zakres pierwszego etapu albo przeanalizujemy go indywidualnie.
 
-Najlepiej poprosić wykonawców o możliwie konkretny opis.
+Nie chciałbym dopasowywać każdego pomysłu na siłę do gotowego pakietu.
 
-Co dokładnie otrzymasz?
+Najpierw trzeba zrozumieć cel inwestycji.
 
-Jakie funkcje będą działały?
+Szczegóły znajdziesz na stronie [oferty](/oferta/).
 
-Czy aplikacja będzie gotowa do udostępnienia użytkownikom?
-
-Czy cena obejmuje projektowanie, testowanie i uruchomienie?
-
-Jakie prawa otrzymasz po zakończeniu współpracy?
-
-I co będzie wymagało dodatkowej opłaty?
-
-Dopiero wtedy możesz sensownie porównać poszczególne propozycje.
-
-**Warto porównywać nie tylko cenę, ale również rezultat, za który płacisz.**
-
-## 15. Jak wygląda to w moim modelu współpracy?
-
-W mojej ofercie skupiam się przede wszystkim na tworzeniu pierwszych działających wersji aplikacji.
-
-Nie chodzi mi wyłącznie o przygotowanie projektu graficznego ani o tworzenie od razu całego rozbudowanego systemu.
-
-Chodzi o to, żeby przejść od pomysłu do produktu, który rzeczywiście działa i który można sprawdzić w praktyce.
-
-### Jak zaczynamy?
-
-Najpierw rozmawiamy o Twoim pomyśle.
-
-Nie musisz przygotowywać dokumentacji technicznej.
-
-Wystarczy, że opowiesz, co chcesz stworzyć i jak wyobrażasz sobie działanie aplikacji.
-
-Następnie ustalamy najważniejsze funkcje.
-
-Nie staramy się od razu realizować wszystkiego, co potencjalnie mogłoby się przydać w przyszłości.
-
-Wybieramy zakres odpowiedni do pierwszego etapu.
-
-### Co obejmuje współpraca?
-
-W uzgodnionym zakresie organizuję cały proces realizacji.
-
-Pomagam uporządkować pomysł, przygotować plan, dobrać specjalistów i skoordynować ich pracę.
-
-Nadzoruję tworzenie aplikacji, komunikację i proces testowania.
-
-Ty nie musisz samodzielnie zarządzać programistami ani znać się na technologii.
-
-Masz jedną osobę do kontaktu, której możesz zadawać pytania i zgłaszać uwagi.
-
-### Ile to kosztuje?
-
-**Kompleksowa realizacja pierwszej działającej wersji aplikacji kosztuje w moim modelu 29 500 zł brutto**, przy wcześniej uzgodnionym zakresie prac.
-
-Zakładam przygotowanie pierwszej wersji w ciągu około 4 tygodni od ustalonego rozpoczęcia prac.
-
-Cały proces, wraz z odbiorem i ewentualnymi poprawkami, trwa zwykle 6–8 tygodni.
-
-Nie oznacza to oczywiście, że za tę kwotę można stworzyć dowolną aplikację.
-
-Jeśli projekt wymaga bardziej zaawansowanych funkcji, trzeba odpowiednio zaplanować zakres lub kolejne etapy.
-
-Ale właśnie dlatego rozpoczynamy od rozmowy.
-
-Chcę najpierw zrozumieć, czego naprawdę potrzebujesz.
-
-A dopiero później ustalić, jaki wariant realizacji będzie miał sens.
-
-Pełny zakres pakietu, harmonogram i podział płatności znajdziesz na stronie [oferty](/oferta/).
-
-## 16. Co wybrać: prototyp, MVP czy gotową aplikację?
+## 22. Co wybrać: prototyp, MVP, model hybrydowy czy pełną aplikację?
 
 <div class="article-module article-decision" role="group" aria-labelledby="wybor-poziomu">
   <p class="article-module__eyebrow" id="wybor-poziomu">Szybka decyzja</p>
   <ul>
     <li><strong>Chcesz pokazać pomysł inwestorowi lub użytkownikom</strong><span>Prototyp</span></li>
+    <li><strong>Chcesz pokazać wizję i sprawdzić jedną funkcję</strong><span>Model hybrydowy</span></li>
     <li><strong>Chcesz sprawdzić działający produkt w praktyce</strong><span>MVP</span></li>
     <li><strong>Masz sprawdzony model i znany zakres</strong><span>Szersza aplikacja</span></li>
     <li><strong>Nie wiesz, czego potrzebujesz</strong><span>Zacznij od rozmowy o zakresie</span></li>
@@ -689,7 +786,7 @@ Pełny zakres pakietu, harmonogram i podział płatności znajdziesz na stronie 
   <p class="article-module__note">Decyzja zależy od celu, nie od tego, który etap brzmi najbardziej profesjonalnie.</p>
 </div>
 
-Gdybym miał podsumować to najprościej, podzieliłbym sytuacje na trzy przypadki.
+Gdybym miał pomóc Ci podjąć pierwszą decyzję, zacząłbym od określenia rezultatu, jakiego potrzebujesz.
 
 ### Wybierz prototyp, jeśli chcesz przede wszystkim pokazać pomysł
 
@@ -699,125 +796,112 @@ Nie potrzebujesz jeszcze wszystkich działających mechanizmów.
 
 Chcesz sprawdzić, czy koncepcja jest zrozumiała i czy ludzie potrafią korzystać z zaprojektowanych ekranów.
 
-### Wybierz MVP, jeśli chcesz przetestować pomysł w praktyce
+### Rozważ rozwiązanie hybrydowe, jeśli chcesz pokazać szeroką wizję i sprawdzić jedną funkcję
 
-Masz już określony problem, który aplikacja ma rozwiązywać.
+Potrzebujesz działającego mechanizmu, który pokazuje podstawową wartość produktu.
 
-Chcesz stworzyć działającą wersję z najważniejszymi funkcjami i sprawdzić, czy ludzie rzeczywiście będą z niej korzystać.
+Jednocześnie zależy Ci na przedstawieniu przyszłych możliwości aplikacji.
 
-Nie potrzebujesz jeszcze wszystkich dodatków.
+Nie wszystkie z nich muszą już działać.
 
-Potrzebujesz produktu, który pozwoli Ci zrobić pierwszy realny krok.
+### Wybierz MVP, jeśli chcesz sprawdzić działający produkt w praktyce
 
-### Wybierz bardziej rozbudowaną aplikację, jeśli znasz już swoje potrzeby
+Masz określony problem i chcesz umożliwić użytkownikom wykonanie najważniejszej czynności.
 
-Masz sprawdzony model biznesowy, określoną grupę klientów i dokładnie wiesz, jakich funkcji potrzebujesz.
+Interesują Cię rzeczywiste zachowania, doświadczenia i potrzeby.
 
-Być może rozwijasz istniejącą działalność albo zastępujesz obecne rozwiązanie informatyczne.
+### Rozważ szerszą aplikację, jeśli masz już dobrze określone wymagania
 
-Wtedy szerszy zakres może być uzasadniony od samego początku.
+Znasz potrzeby odbiorców i wiesz, które procesy powinny zostać obsłużone.
 
-Żaden z tych wyborów nie jest automatycznie lepszy.
+Być może rozwijasz istniejący biznes albo zastępujesz dotychczasowe oprogramowanie.
 
-Najważniejsze, żeby był dopasowany do Twojego celu.
+Żadne z tych rozwiązań nie jest automatycznie najlepsze.
 
-## 17. Siedem pytań, które warto zadać przed zapłaceniem za aplikację
+Najważniejsze jest to, czy pozwoli osiągnąć Twój aktualny cel.
 
-Jeżeli rozmawiasz już z wykonawcą, polecam sprawdzić kilka rzeczy.
+## 23. Osiem pytań, które warto zadać przed zapłaceniem za aplikację
 
-**1. Czy otrzymam prototyp, MVP czy produkt o szerszym zakresie?**
+Jeżeli rozmawiasz już z wykonawcą, proponuję wykorzystać poniższą listę.
 
-Nie sugeruj się samą nazwą usługi. Poproś o opis konkretnego rezultatu.
+1. Wiem, jaki konkretny rezultat otrzymam po zakończeniu realizacji.
+2. Wiem, które funkcje będą rzeczywiście działały.
+3. Wiem, które elementy będą jedynie makietami lub symulacjami.
+4. Wiem, czy produkt będzie gotowy do udostępnienia prawdziwym użytkownikom.
+5. Rozumiem, czy pierwsza wersja może stanowić fundament dalszego rozwoju.
+6. Wiem, jakie prawa, kod i dokumentację otrzymam.
+7. Rozumiem zasady testowania, odbioru, poprawek i gwarancji.
+8. Znam orientacyjne koszty późniejszego utrzymania produktu.
 
-**2. Które funkcje będą rzeczywiście działały?**
+Jeśli nie potrafisz odpowiedzieć na wszystkie te pytania, warto wyjaśnić brakujące kwestie przed rozpoczęciem prac.
 
-Ustal, co zostanie zaprogramowane, a co będzie jedynie pokazane na makiecie.
+Dzięki temu możesz świadomie zdecydować, czy przedstawiona oferta odpowiada Twoim potrzebom.
 
-**3. Czy aplikacja będzie gotowa do udostępnienia użytkownikom?**
+## Podsumowanie. Nie płać za wyższy poziom realizacji tylko dlatego, że możesz sobie na niego pozwolić
 
-Zapytaj, czy cena obejmuje także odpowiednie testy i wdrożenie.
+Prototyp, MVP i rozbudowana aplikacja mogą wyglądać bardzo podobnie podczas prezentacji.
 
-**4. Czy otrzymam kod źródłowy i prawa do produktu?**
+Różnią się jednak tym, co rzeczywiście dzieje się po wykonaniu określonej czynności.
 
-Upewnij się, że po zakończeniu współpracy będziesz wiedział, na jakich zasadach możesz rozwijać aplikację.
+Prototyp pomaga przedstawić koncepcję.
 
-**5. Czy projekt można będzie później rozbudować?**
+MVP pozwala sprawdzić działający produkt.
 
-Sprawdź, czy przy kolejnych etapach nie będzie konieczne budowanie wszystkiego od początku.
+Rozbudowana aplikacja umożliwia obsługę szerszego zakresu potrzeb biznesowych.
 
-**6. Co obejmują poprawki i gwarancja?**
+Możemy również połączyć działające funkcje z klikalnymi makietami, jeśli właśnie takie rozwiązanie odpowiada aktualnemu celowi projektu.
 
-Ustal, w jaki sposób będą rozwiązywane błędy i jak rozliczane będą nowe funkcje.
+Nie uważam, żeby każda funkcja znajdująca się w docelowej wizji musiała być od razu zaprogramowana.
 
-**7. Ile będzie kosztowało utrzymanie aplikacji?**
+Jednocześnie nie chciałbym oszczędzać na tych elementach, od których zależy rzeczywista wartość produktu.
 
-Poproś o oszacowanie opłat za infrastrukturę oraz ewentualną opiekę techniczną.
+Dlatego podczas planowania pierwszej inwestycji zawsze warto zastanowić się nad trzema rzeczami.
 
-Odpowiedzi na te pytania mogą być dla Ciebie znacznie bardziej wartościowe niż sama informacja o cenie.
+Co musi działać?
 
-## Zanim porównasz oferty wykonawców, uporządkuj własne wymagania
+Co wystarczy pokazać?
 
-Warto wiedzieć nie tylko, o co zapytać wykonawcę, ale też czego rzeczywiście potrzebujesz w pierwszej wersji aplikacji.
+Co możemy zostawić na później?
 
-Moja bezpłatna checklista zawiera 12 pytań dotyczących pomysłu, zakresu, budżetu i dalszego rozwoju produktu.
+Odpowiedzi na te pytania mogą pomóc znacznie lepiej wykorzystać dostępny budżet.
 
-[Przygotuj swój pomysł do wyceny](/checklista/)
+**Nie chodzi o to, żeby zbudować jak najwięcej za określoną kwotę. Chodzi o to, żeby zapłacić za taki poziom realizacji, który rzeczywiście przybliży Cię do Twojego celu.**
 
-*Bezpłatna checklista PDF. Możesz otrzymać ją e-mailem razem z newsletterem albo pobrać bez zapisu.*
+## Masz pomysł na aplikację, ale nie wiesz, którego rozwiązania potrzebujesz?
 
-## Podsumowanie. Za co właściwie płacisz, zamawiając aplikację?
+Nie musisz samodzielnie decydować, czy powinieneś zamówić prototyp, MVP czy rozbudowaną aplikację.
 
-Jak widzisz, prototyp, MVP i gotowa aplikacja mogą wyglądać podobnie na pierwszy rzut oka.
+Podczas bezpłatnej rozmowy możemy wspólnie zastanowić się, co chciałbyś osiągnąć i jakie elementy produktu muszą rzeczywiście działać, żeby było to możliwe.
 
-Ale różnice między nimi są naprawdę duże.
+Być może nie potrzebujesz jeszcze pełnego zaplecza technicznego.
 
-**Prototyp** pomaga pokazać pomysł i sprawdzić sposób korzystania z produktu.
+Być może warto przygotować jedną kluczową funkcjonalność.
 
-**MVP** pozwala udostępnić pierwszą działającą wersję użytkownikom i przetestować najważniejsze założenia.
+A może Twój projekt jest już gotowy na szerszą realizację.
 
-**Bardziej rozbudowana aplikacja** realizuje szerszy zakres funkcji i może być przygotowana do obsługi bardziej złożonych procesów biznesowych.
-
-I właśnie dlatego ceny są tak różne.
-
-Nie płacisz wyłącznie za liczbę ekranów czy czas programisty.
-
-Płacisz za konkretny zakres działania, zaplanowanie rozwiązania, jego przygotowanie, testowanie i możliwość dalszego wykorzystania.
-
-Dlatego przed podpisaniem umowy warto dokładnie wiedzieć, co otrzymasz.
-
-I jeszcze jedna rzecz.
-
-Jeżeli dopiero zaczynasz realizować swój pomysł, nie zawsze potrzebujesz od razu kompletnej, rozbudowanej aplikacji.
-
-Czasami znacznie rozsądniej będzie rozpocząć od mniejszego produktu, sprawdzić zainteresowanie użytkowników i dopiero później inwestować w kolejne funkcje.
-
-Bo celem nie jest przecież wydanie jak największej kwoty na programowanie.
-
-**Celem jest stworzenie produktu, który rzeczywiście rozwiązuje problem i ma sens z biznesowego punktu widzenia.**
-
-A im lepiej dopasujesz pierwszy etap do swoich potrzeb, tym rozsądniej wykorzystasz dostępny budżet.
-
-## Masz pomysł na aplikację, ale nie wiesz, od czego zacząć?
-
-Nie musisz samodzielnie decydować, czy potrzebujesz prototypu, MVP czy rozbudowanego systemu.
-
-Podczas krótkiej, niezobowiązującej rozmowy opowiesz mi o swoim pomyśle. Wstępnie ocenimy, czy potrzebujesz prototypu, pierwszej działającej wersji czy innego podejścia. Dokładny zakres ustalimy dopiero na odpowiednim etapie przygotowania projektu.
-
-Nie musisz znać się na programowaniu ani przygotowywać profesjonalnej dokumentacji technicznej.
-
-Wystarczy, że opowiesz własnymi słowami, co chcesz stworzyć.
-
-Jeśli Twój projekt będzie odpowiedni do mojego modelu współpracy, możemy zaplanować pierwszą działającą wersję aplikacji za **29 500 zł brutto**.
-
-Ty koncentrujesz się na swoim pomyśle i rozwoju produktu.
-
-Ja zajmuję się organizacją i techniczną realizacją projektu.
+Najpierw ustalmy właściwy zakres.
 
 [Umów bezpłatną rozmowę](/rozmowa/) albo zobacz, [jak wygląda współpraca krok po kroku](/jak-pracuje/).
 
+## Zanim zaczniesz porównywać wyceny
+
+Przygotowałem bezpłatną checklistę „12 pytań, zanim zaczniesz budować aplikację”.
+
+Pomoże Ci uporządkować pomysł, określić najważniejsze funkcje i przygotować się do rozmowy o zakresie realizacji.
+
+[Pobierz bezpłatną checklistę](/checklista/)
+
+*Bezpłatna checklista PDF. Możesz pobrać ją bez zapisu albo otrzymać e-mailem razem z newsletterem.*
+
+**Karol Modelski**\
+Consulting Technologiczny
+
+**E-mail:** [kontakt@karolmodelski.pl](mailto:kontakt@karolmodelski.pl)\
+**Telefon / WhatsApp:** +48 664 598 563
+
 ## Źródła
 
-Przy opracowaniu artykułu wykorzystano następujące materiały dotyczące prototypowania, tworzenia MVP, wyceny aplikacji i kosztów rozwoju oprogramowania:
+Artykuł łączy moje doświadczenia z planowania i realizowania produktów technologicznych z materiałami dotyczącymi prototypowania, MVP i kosztów tworzenia oprogramowania.
 
 1. [Budowa MVP aplikacji — AppCreo](https://appcreo.pl/budowa-mvp/) — zakres pierwszych wersji aplikacji, orientacyjne ceny i terminy.
 2. [How to Build an MVP for Your Startup — Uinno](https://uinno.io/blog/mvp-development-for-startups) — różnice między prototypem, MVP i pełnym produktem.
@@ -830,4 +914,4 @@ Przy opracowaniu artykułu wykorzystano następujące materiały dotyczące prot
 9. [Rapid MVP Development: Launch in 4 Weeks — Emvigo Technologies](https://emvigotech.com/blog/mvp-in-4-weeks/) — podejście do ograniczania zakresu pierwszej wersji.
 10. [Wycena aplikacji webowej — informatix](https://informatix.com.pl/blog/wycena-aplikacji-webowej-ile-kosztuje) — czynniki wpływające na budżet realizacji.
 
-*Przedstawione ceny mają charakter orientacyjny. Koszt konkretnego projektu zależy od zakresu funkcji, technologii, rodzaju aplikacji i elementów uwzględnionych w ofercie wykonawcy.*
+Przedstawione ceny mają charakter orientacyjny. Koszt konkretnego projektu zależy od zakresu funkcji, technologii, rodzaju aplikacji i elementów uwzględnionych w ofercie wykonawcy. Przykład Numerabble EDU dotyczy planowania kolejnego etapu produktu i nie stanowi deklaracji jego ukończenia ani uzyskania finansowania.
