@@ -7,6 +7,7 @@ const wiedza = defineCollection({
   loader: glob({ base: "./src/content/wiedza", pattern: "**/*.md" }),
   schema: z.object({
     title: z.string(),
+    h1: z.string().optional(),
     metaTitle: z.string().max(70).optional(),
     description: z.string().max(160),
     teaser: z.string().max(180).optional(),
